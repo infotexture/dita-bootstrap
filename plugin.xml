@@ -7,5 +7,5 @@
   <transtype name="html5-bootstrap" extends="common-html" abstract="true" desc="HTML5 with Bootstrap style">
   </transtype>
   <feature extension="dita.conductor.transtype.check" value="html5-bootstrap"/>
-  <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
+  <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
 </plugin>
