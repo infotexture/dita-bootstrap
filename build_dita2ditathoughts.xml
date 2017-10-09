@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- (c) Copyright IBM Corp. 2006 All Rights Reserved.  hosted on 
+     Sourceforge.net. See the accompanying license.txt file for 
+     applicable licenses.--><!-- (c) Copyright IBM Corp. 2006 All Rights Reserved. --><project xmlns:dita="http://dita-ot.sourceforge.net" name="dita2ditathoughts">
+
+  <target name="dita2ditathougths.init">
+    <property name="args.xsl" value="${dita.plugin.org.metadita.ditathoughts.dir}/xsl/ditathoughts.xsl"/>
+  </target>
+	
+    <target name="dita2ditathoughts" depends="dita2ditathougths.init, dita2html5">
+    </target>
+  
+</project>

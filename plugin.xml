@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.metadita.ditathoughts">
+  <transtype name="ditathoughts" extends="common-html" abstract="true" desc="DITA Thoughts for metadita.org">
+  </transtype>
+  <feature extension="dita.conductor.transtype.check" value="ditathoughts"/>
+  <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
+</plugin>
