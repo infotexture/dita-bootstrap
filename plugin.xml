@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="org.metadita.ditathoughts">
-  <transtype name="ditathoughts" extends="common-html" abstract="true" desc="DITA Thoughts for metadita.org">
+<plugin id="net.infotexture.dita-bootstrap">
+  <transtype name="html5-bootstrap" extends="common-html" abstract="true" desc="HTML5 with Bootstrap style">
   </transtype>
-  <feature extension="dita.conductor.transtype.check" value="ditathoughts"/>
+  <feature extension="dita.conductor.transtype.check" value="html5-bootstrap"/>
   <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
 </plugin>

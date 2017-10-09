@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="org.metadita.ditathoughts.conductor">
-  <import file="build_dita2ditathoughts.xml"/>
+<project name="net.infotexture.dita-bootstrap.conductor">
+  <import file="build_dita2html5-bootstrap.xml"/>
 </project>
