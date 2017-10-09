@@ -4,7 +4,7 @@
 <!-- See the accompanying LICENSE file for applicable license -->
 
 <plugin id="net.infotexture.dita-bootstrap">
-  <transtype name="html5-bootstrap" extends="common-html" abstract="true" desc="HTML5 with Bootstrap style">
+  <transtype name="html5-bootstrap" extends="html5" desc="HTML5 with Bootstrap style">
   </transtype>
   <feature extension="dita.conductor.transtype.check" value="html5-bootstrap"/>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
