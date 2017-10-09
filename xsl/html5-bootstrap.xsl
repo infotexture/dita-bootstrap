@@ -11,14 +11,6 @@
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
-  <xsl:template match="codeph">
-    <xsl:choose>
-      <xsl:when test="contains(.,'@')"><code class="keyword markupname xmlatt"><xsl:apply-templates/></code></xsl:when>
-      <xsl:when test="contains(.,'&lt;')"><code class="keyword markupname xmlelement"><xsl:apply-templates/></code></xsl:when>
-      <xsl:otherwise><xsl:next-match/></xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-
   <xsl:template name="chapter-setup">
     <html>
       <xsl:call-template name="setTopicLanguage"/>
