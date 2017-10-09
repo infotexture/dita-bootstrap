@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
+<!-- See the accompanying LICENSE file for applicable license -->
+
 <plugin id="net.infotexture.dita-bootstrap">
   <transtype name="html5-bootstrap" extends="common-html" abstract="true" desc="HTML5 with Bootstrap style">
   </transtype>

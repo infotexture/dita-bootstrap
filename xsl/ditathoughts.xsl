@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This file is part of the DITA Open Toolkit project.
-     See the accompanying license.txt file for applicable licenses. -->
+
+<!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
+<!-- See the accompanying LICENSE file for applicable license -->
+
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
@@ -16,13 +18,13 @@
       <xsl:otherwise><xsl:next-match/></xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-  
+
   <xsl:template name="chapter-setup">
     <html>
       <xsl:call-template name="setTopicLanguage"/>
       <xsl:value-of select="$newline"/>
       <xsl:call-template name="chapterHead"/>
-      <xsl:call-template name="chapterBody"/> 
+      <xsl:call-template name="chapterBody"/>
     </html>
   </xsl:template>
 
@@ -52,7 +54,7 @@
       <meta property="og:locale" content="en_US"/>
       <meta property="og:title" content="{$textTitle}"/>
       <meta property="og:description" content="{$textShortdesc}"/>
-    
+
       <link rel="shortcut icon" href="{$siteIcon}"/>
 
       <title><xsl:value-of select="$textTitle"/></title>
@@ -72,7 +74,7 @@
   <xsl:template match="*" mode="chapterBody">
     <body>
       <xsl:apply-templates select="." mode="addAttributesToHtmlBodyElement"/>
-       
+
       <div class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -104,7 +106,7 @@
     </body>
     <xsl:value-of select="$newline"/>
   </xsl:template>
-  
+
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main role="main">
       <article role="article">
