@@ -21,44 +21,25 @@
   </xsl:template>
 
   <xsl:template match="*" mode="chapterHead">
-    <xsl:variable name="textTitle">
-      <xsl:apply-templates select="/*/*[contains(@class,' topic/title ')]" mode="text-only"/>
-    </xsl:variable>
-    <xsl:variable name="textShortdesc">
-      <xsl:apply-templates select="/*/*[contains(@class,' topic/shortdesc ')]" mode="text-only"/>
-    </xsl:variable>
-    <xsl:variable name="siteIcon" select="'http://metadita.org/puffinHead.png'"/>
-    <xsl:variable name="largerSiteImage" select="'http://metadita.org/puffinFull.png'"/>
     <head>
-      <meta charset="utf-8"/>
+      <!-- initial meta information -->
+      <xsl:call-template name="generateCharset"/>   <!-- Set the character set to UTF-8 -->
+      <!-- Add <meta> elements from basic Bootstrap template -->
       <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
-      <meta name="description" content=""/>
-      <meta name="author" content="Robert D. Anderson"/>
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@robander" />
-      <meta name="twitter:title" content="{$textTitle}" />
-      <meta name="twitter:description" content="{$textShortdesc}" />
-      <meta name="twitter:image" content="{$largerSiteImage}" />
-      <meta property="og:type" content="article"/>
-      <meta property="og:image" content="{$largerSiteImage}"/>
-      <meta property="og:site_name" content="MetaDITA"/>
-      <meta property="og:locale" content="en_US"/>
-      <meta property="og:title" content="{$textTitle}"/>
-      <meta property="og:description" content="{$textShortdesc}"/>
-
-      <link rel="shortcut icon" href="{$siteIcon}"/>
-
-      <title><xsl:value-of select="$textTitle"/></title>
-
+      <!-- Continue with DITA-OT defaults -->
+      <xsl:call-template name="generateDefaultCopyright"/> <!-- Generate a default copyright, if needed -->
+      <xsl:call-template name="generateDefaultMeta"/> <!-- Standard meta for security, robots, etc -->
+      <xsl:call-template name="getMeta"/>           <!-- Process metadata from topic prolog -->
+      <xsl:call-template name="copyright"/>         <!-- Generate copyright, if specified manually -->
+      <xsl:call-template name="generateCssLinks"/>  <!-- Generate links to CSS files -->
+      <xsl:call-template name="generateChapterTitle"/> <!-- Generate the <title> element -->
+      <xsl:call-template name="gen-user-head" />    <!-- include user's XSL HEAD processing here -->
+      <xsl:call-template name="gen-user-scripts" /> <!-- include user's XSL javascripts here -->
       <!-- Bootstrap core CSS -->
       <link href="/css/bootstrap.min.css" rel="stylesheet"/>
-      <link href="/css/basics.css" rel="stylesheet"/>
-      <style>
-.cmdname, .filepath {
-  font-family: monospace;
-}</style>
-
+      <xsl:call-template name="gen-user-styles" />  <!-- include user's XSL style element and content here -->
+      <xsl:call-template name="processHDF"/>        <!-- Add user HDF file, if specified -->
     </head>
     <xsl:value-of select="$newline"/>
   </xsl:template>
