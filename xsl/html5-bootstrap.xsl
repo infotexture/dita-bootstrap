@@ -47,35 +47,37 @@
   <xsl:template match="*" mode="chapterBody">
     <body>
       <xsl:apply-templates select="." mode="addAttributesToHtmlBodyElement"/>
+      <xsl:call-template name="setaname"/>  <!-- For HTML4 compatibility, if needed -->
+      <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
 
-      <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <!-- Include a user's XSL call here to generate a toc based on what's a child of topic -->
+      <xsl:call-template name="gen-user-sidetoc"/>
+
+      <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">MetaDITA</a>
+            <a class="navbar-brand" href="/">DITA Bootstrap</a>
           </div>
-          <div class="navbar-collapse collapse">
+          <div class="collapse navbar-collapse bs-navbar-collapse">
             <ul class="nav navbar-nav">
-              <li><a href="/">Home</a></li>
-              <li class="active"><a href="/toolkit/">DITA Thoughts</a></li>
-              <li><a href="/music/">Music of DITA</a></li>
-              <li><a href="/books/">Books</a></li>
-              <li><a href="/presentations.html">Presentations</a></li>
-              <li><a href="/catfurniture.html">Cats</a></li>
+              <li><a href="#">Link One</a></li>
+              <li><a href="#">Link Two</a></li>
+              <li><a href="#">Link Three</a></li>
             </ul>
           </div>
         </div>
       </div>
 
-
-      <div class="container">
+      <div id="content" class="container">
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
       </div>
+      <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
     </body>
     <xsl:value-of select="$newline"/>
   </xsl:template>
