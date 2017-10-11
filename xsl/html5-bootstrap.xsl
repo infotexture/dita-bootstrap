@@ -14,7 +14,6 @@
   <xsl:template name="chapter-setup">
     <html>
       <xsl:call-template name="setTopicLanguage"/>
-      <xsl:value-of select="$newline"/>
       <xsl:call-template name="chapterHead"/>
       <xsl:call-template name="chapterBody"/>
     </html>
@@ -41,7 +40,6 @@
       <xsl:call-template name="gen-user-styles" />  <!-- include user's XSL style element and content here -->
       <xsl:call-template name="processHDF"/>        <!-- Add user HDF file, if specified -->
     </head>
-    <xsl:value-of select="$newline"/>
   </xsl:template>
 
   <xsl:template match="*" mode="chapterBody">
@@ -79,7 +77,6 @@
       </div>
       <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
     </body>
-    <xsl:value-of select="$newline"/>
   </xsl:template>
 
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
