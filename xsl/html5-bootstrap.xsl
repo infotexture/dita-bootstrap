@@ -72,9 +72,9 @@
         </div>
       </div>
 
-      <div id="content" class="container">
+      <main id="content" class="col-md-9 container" role="main">
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
-      </div>
+      </main>
       <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
     </body>
   </xsl:template>
