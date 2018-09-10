@@ -35,8 +35,6 @@
       <xsl:call-template name="generateChapterTitle"/> <!-- Generate the <title> element -->
       <xsl:call-template name="gen-user-head" />    <!-- include user's XSL HEAD processing here -->
       <xsl:call-template name="gen-user-scripts" /> <!-- include user's XSL javascripts here -->
-      <!-- Bootstrap core CSS -->
-      <link href="/css/bootstrap.min.css" rel="stylesheet"/>
       <xsl:call-template name="gen-user-styles" />  <!-- include user's XSL style element and content here -->
       <xsl:call-template name="processHDF"/>        <!-- Add user HDF file, if specified -->
     </head>
