@@ -5,14 +5,16 @@
 
 <project xmlns:dita="http://dita-ot.sourceforge.net" name="dita2html5-bootstrap">
   <target name="dita2html5-bootstrap.init">
-    <property name="args.xsl" value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"/>
-    <!-- Custom .css file used to style output -->
-    <param name="args.css"
-           value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/bootstrap.min.css"/>
-    <!-- Copy the custom .css file to the output directory -->
-    <param name="args.copycss" value="yes"/>
-    <!-- Location of the copied .css file relative to the output -->
-    <param name="args.csspath" value="css"/>
+    <antcall target="dita2html5">
+      <property name="args.xsl" value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"/>
+      <!-- Custom .css file used to style output -->
+      <param name="args.css"
+             value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/bootstrap.min.css"/>
+      <!-- Copy the custom .css file to the output directory -->
+      <param name="args.copycss" value="yes"/>
+      <!-- Location of the copied .css file relative to the output -->
+      <param name="args.csspath" value="css"/>
+    </antcall>
   </target>
   <target name="dita2html5-bootstrap" depends="dita2html5-bootstrap.init, dita2html5">
   </target>
