@@ -9,7 +9,10 @@
     <antcall target="dita2html5">
       <!-- Custom .css file used to style output -->
       <param name="args.css"
-             value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/bootstrap.min.css"/>
+             value="bootstrap.min.css"/>
+      <!-- Force absolute path for `cssroot` per https://github.com/dita-ot/dita-ot/issues/3016 -->
+      <param name="args.cssroot"
+             value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/"/>
       <!-- Copy the custom .css file to the output directory -->
       <param name="args.copycss" value="yes"/>
       <!-- Location of the copied .css file relative to the output -->
