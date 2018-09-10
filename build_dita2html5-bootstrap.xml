@@ -5,19 +5,21 @@
 
 <project xmlns:dita="http://dita-ot.sourceforge.net" name="dita2html5-bootstrap">
   <target name="dita2html5-bootstrap.init">
-    <property name="args.xsl" value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"/>
-    <antcall target="dita2html5">
-      <!-- Custom .css file used to style output -->
-      <param name="args.css"
-             value="bootstrap.min.css"/>
-      <!-- Force absolute path for `cssroot` per https://github.com/dita-ot/dita-ot/issues/3016 -->
-      <param name="args.cssroot"
-             value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/"/>
-      <!-- Copy the custom .css file to the output directory -->
-      <param name="args.copycss" value="yes"/>
-      <!-- Location of the copied .css file relative to the output -->
-      <param name="args.csspath" value="css"/>
-    </antcall>
+    <property name="args.xsl" 
+              value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"/>
+    <property name="args.html5.toc.xsl" 
+              value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/map2html5-cover.xsl"/>
+    <property name="args.html5.toc" value="toc"/>
+    <!-- Custom .css file used to style output -->
+    <property name="args.css"
+              value="bootstrap.min.css"/>
+    <!-- Force absolute path for `cssroot` per https://github.com/dita-ot/dita-ot/issues/3016 -->
+    <property name="args.cssroot"
+              value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css"/>
+    <!-- Copy the custom .css file to the output directory -->
+    <property name="args.copycss" value="yes"/>
+    <!-- Location of the copied .css file relative to the output -->
+    <property name="args.csspath" value="css"/>
   </target>
   <target name="dita2html5-bootstrap" depends="dita2html5-bootstrap.init, dita2html5">
   </target>
