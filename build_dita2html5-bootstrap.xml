@@ -10,6 +10,8 @@
     <property name="args.html5.toc.xsl" 
               value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/map2html5-cover.xsl"/>
     <property name="args.html5.toc" value="toc"/>
+    <!-- Generate a partial navigation TOC in topic pages: -->
+    <property name="nav-toc" value="partial"/>
     <!-- Custom .css file used to style output -->
     <property name="args.css"
               value="bootstrap.min.css"/>
