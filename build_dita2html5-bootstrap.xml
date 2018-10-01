@@ -23,6 +23,8 @@
     <!-- Location of the copied .css file relative to the output -->
     <property name="args.csspath" value="css"/>
   </target>
-  <target name="dita2html5-bootstrap" depends="dita2html5-bootstrap.init, dita2html5">
-  </target>
+
+  <target name="dita2html5-bootstrap" 
+          depends="dita2html5-bootstrap.init, 
+                   dita2html5"/>
 </project>
