@@ -14,7 +14,7 @@
     <property name="nav-toc" value="partial"/>
     <!-- Custom .css file used to style output -->
     <property name="args.css"
-              value="bootstrap.min.css"/>
+              value="custom.css"/>
     <!-- Force absolute path for `cssroot` per https://github.com/dita-ot/dita-ot/issues/3016 -->
     <property name="args.cssroot"
               value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css"/>

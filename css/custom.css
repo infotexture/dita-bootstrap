@@ -1,0 +1,10 @@
+/* Style navigation as sidebar */
+nav[role=toc] {
+  float: left;
+  width: 300px;
+}
+
+/* Highlight current topic in bold */
+nav[role=toc] li.active > a {
+  font-weight: bold;
+}
