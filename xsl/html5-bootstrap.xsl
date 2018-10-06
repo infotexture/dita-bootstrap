@@ -46,9 +46,6 @@
       <xsl:call-template name="setaname"/>  <!-- For HTML4 compatibility, if needed -->
       <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
 
-      <!-- Include a user's XSL call here to generate a toc based on what's a child of topic -->
-      <xsl:call-template name="gen-user-sidetoc"/>
-
       <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
           <div class="navbar-header">
@@ -69,6 +66,9 @@
           </div>
         </div>
       </div>
+
+      <!-- Include a user's XSL call here to generate a toc based on what's a child of topic -->
+      <xsl:call-template name="gen-user-sidetoc"/>
 
       <main id="content" class="col-md-9 container" role="main">
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
