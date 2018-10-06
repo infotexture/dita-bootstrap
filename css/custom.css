@@ -8,3 +8,9 @@ nav[role=toc] {
 nav[role=toc] li.active > a {
   font-weight: bold;
 }
+
+/* Adjust navigation indendation */
+.bs-docs-sidenav,
+.bs-docs-sidenav li ul {
+  padding-left: 20px;
+}
