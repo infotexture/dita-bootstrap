@@ -5,8 +5,6 @@
 
 <plugin id="net.infotexture.dita-bootstrap">
   <require plugin="org.dita.html5"/>
-  <transtype name="html5-bootstrap" extends="html5" desc="HTML5 with Bootstrap style">
-  </transtype>
-  <feature extension="dita.conductor.transtype.check" value="html5-bootstrap"/>
+  <transtype name="html5-bootstrap" extends="html5" desc="HTML5 with Bootstrap style"/>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
 </plugin>
