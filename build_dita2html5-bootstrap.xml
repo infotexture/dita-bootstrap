@@ -3,15 +3,18 @@
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
 
-<project xmlns:dita="http://dita-ot.sourceforge.net" name="dita2html5-bootstrap">
+<project>
+  <target name="dita2html5-bootstrap"
+       depends="dita2html5-bootstrap.init,
+                dita2html5"/>
   <target name="dita2html5-bootstrap.init">
     <!-- Add Bootstrap resources to the <head> element of the generated HTML files -->
     <property name="args.hdf"
-              value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"/>
+          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"/>
     <property name="args.xsl"
-              value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"/>
+          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"/>
     <property name="args.html5.toc.xsl"
-              value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/map2html5-cover.xsl"/>
+          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/map2html5-cover.xsl"/>
     <property name="args.html5.toc" value="toc"/>
     <!-- Generate a partial navigation TOC in topic pages: -->
     <property name="nav-toc" value="partial"/>
@@ -20,14 +23,10 @@
               value="custom.css"/>
     <!-- Force absolute path for `cssroot` per https://github.com/dita-ot/dita-ot/issues/3016 -->
     <property name="args.cssroot"
-              value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css"/>
+          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css"/>
     <!-- Copy the custom .css file to the output directory -->
     <property name="args.copycss" value="yes"/>
     <!-- Location of the copied .css file relative to the output -->
     <property name="args.csspath" value="css"/>
   </target>
-
-  <target name="dita2html5-bootstrap"
-          depends="dita2html5-bootstrap.init,
-                   dita2html5"/>
 </project>
