@@ -43,21 +43,27 @@
     </head>
   </xsl:template>
 
-  <!-- Override to add <main> element to body content -->
+  <!-- Override to add Bootstrap fluid container & row to page body -->
+  <!-- https://getbootstrap.com/docs/3.3/css/#grid-example-fluid -->
   <xsl:template match="*" mode="chapterBody">
     <body>
       <xsl:apply-templates select="." mode="addAttributesToHtmlBodyElement"/>
       <xsl:call-template name="setaname"/>  <!-- For HTML4 compatibility, if needed -->
       <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
 
-      <!-- Include a user's XSL call here to generate a toc based on what's a child of topic -->
-      <xsl:call-template name="gen-user-sidetoc"/>
-      <!-- ↓ Wrap body content in <main> element with Bootstrap classes -->
-      <main id="content" class="col-md-9 container" role="main">
-        <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
-      </main>
+      <!-- ↓ Add Bootstrap fluid container & row -->
+      <div class="container-fluid container" id="content">
+        <div class="row">
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-      <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
+          <!-- Include a user's XSL call here to generate a toc based on what's a child of topic -->
+          <xsl:call-template name="gen-user-sidetoc"/>
+
+          <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
+          <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
+      <!-- ↓ Close Bootstrap divs -->
+        </div>
+      </div>
+      <!-- ↑ End customization -->
     </body>
   </xsl:template>
 
@@ -90,7 +96,7 @@
   </xsl:template>
 
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
-    <main role="main">
+    <main class="col-md-9" role="main">
       <article role="article">
         <xsl:attribute name="aria-labelledby">
           <xsl:apply-templates select="*[contains(@class,' topic/title ')] |
