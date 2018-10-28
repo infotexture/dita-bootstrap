@@ -67,34 +67,6 @@
     </body>
   </xsl:template>
 
-  <!-- Override to add Bootstrap navbar -->
-  <xsl:template match="/|node()|@*" mode="gen-user-header">
-    <!-- to customize: copy this to your override transform, add the content you want. -->
-    <!-- it will be placed in the running heading section of the XHTML. -->
-    <!-- ↓ Add static navbar with Bootstrap classes -->
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">DITA Bootstrap</a>
-        </div>
-        <div class="collapse navbar-collapse bs-navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Link One</a></li>
-            <li><a href="#">Link Two</a></li>
-            <li><a href="#">Link Three</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- ↑ End customization -->
-  </xsl:template>
-
   <!-- Override to add Bootstrap grid class -->
   <!-- https://getbootstrap.com/docs/3.3/css/#grid -->
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
