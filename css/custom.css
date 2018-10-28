@@ -1,7 +1,6 @@
 /* Style navigation as sidebar */
 nav[role=toc] {
   float: left;
-  width: 300px;
 }
 
 /* Highlight current topic in bold */
