@@ -11,6 +11,8 @@
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
+  <!-- ========== DEFAULT PAGE LAYOUT ========== -->
+
   <xsl:template name="chapter-setup">
     <html>
       <xsl:call-template name="setTopicLanguage"/>
@@ -19,14 +21,15 @@
     </html>
   </xsl:template>
 
+  <!-- Override to add <meta> elements to page heads -->
   <xsl:template match="*" mode="chapterHead">
     <head>
       <!-- initial meta information -->
       <xsl:call-template name="generateCharset"/>   <!-- Set the character set to UTF-8 -->
-      <!-- Add <meta> elements from basic Bootstrap template -->
+      <!-- ↓ Add <meta> elements from basic Bootstrap template -->
       <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
-      <!-- Continue with DITA-OT defaults -->
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <xsl:call-template name="generateDefaultCopyright"/> <!-- Generate a default copyright, if needed -->
       <xsl:call-template name="generateDefaultMeta"/> <!-- Standard meta for security, robots, etc -->
       <xsl:call-template name="getMeta"/>           <!-- Process metadata from topic prolog -->
@@ -40,6 +43,7 @@
     </head>
   </xsl:template>
 
+  <!-- Override to add <main> element to body content -->
   <xsl:template match="*" mode="chapterBody">
     <body>
       <xsl:apply-templates select="." mode="addAttributesToHtmlBodyElement"/>
@@ -48,17 +52,20 @@
 
       <!-- Include a user's XSL call here to generate a toc based on what's a child of topic -->
       <xsl:call-template name="gen-user-sidetoc"/>
-
+      <!-- ↓ Wrap body content in <main> element with Bootstrap classes -->
       <main id="content" class="col-md-9 container" role="main">
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
       </main>
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
     </body>
   </xsl:template>
 
+  <!-- Override to add Bootstrap navbar -->
   <xsl:template match="/|node()|@*" mode="gen-user-header">
     <!-- to customize: copy this to your override transform, add the content you want. -->
     <!-- it will be placed in the running heading section of the XHTML. -->
+    <!-- ↓ Add static navbar with Bootstrap classes -->
     <div class="navbar navbar-default navbar-static-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -79,6 +86,7 @@
         </div>
       </div>
     </div>
+    <!-- ↑ End customization -->
   </xsl:template>
 
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
