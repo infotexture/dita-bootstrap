@@ -95,8 +95,12 @@
     <!-- ↑ End customization -->
   </xsl:template>
 
+  <!-- Override to add Bootstrap grid class -->
+  <!-- https://getbootstrap.com/docs/3.3/css/#grid -->
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
+    <!-- ↓ Add grid class -->
     <main class="col-md-9" role="main">
+    <!-- ↑ End customization -->
       <article role="article">
         <xsl:attribute name="aria-labelledby">
           <xsl:apply-templates select="*[contains(@class,' topic/title ')] |
@@ -115,11 +119,14 @@
     </main>
   </xsl:template>
 
+  <!-- Override `nav.xsl` to add Bootstrap classes -->
   <xsl:template match="*" mode="gen-user-sidetoc">
     <xsl:if test="$nav-toc = ('partial', 'full')">
+      <!-- ↓ Add grid class to <nav>, wrap <ul> in small well <div> & add .bs-docs-sidenav class -->
       <nav class="col-md-3" role="toc">
         <div class="well well-sm">
           <ul class="bs-docs-sidenav">
+            <!-- ↑ End customization -->
             <xsl:choose>
               <xsl:when test="$nav-toc = 'partial'">
                 <xsl:apply-templates select="$current-topicrefs[1]" mode="toc-pull">
@@ -138,7 +145,9 @@
               </xsl:when>
             </xsl:choose>
           </ul>
+        <!-- ↓ Close Bootstrap divs -->
         </div>
+        <!-- ↑ End customization -->
       </nav>
     </xsl:if>
   </xsl:template>
