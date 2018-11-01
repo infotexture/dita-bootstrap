@@ -10,6 +10,8 @@
   <target name="dita2html5-bootstrap.init">
     <property name="args.hdf"
           location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"/>
+    <property name="args.hdr"
+          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bs-navbar-default.hdr.xml"/>
     <property name="args.xsl"
           location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"/>
     <property name="args.html5.toc.xsl"
