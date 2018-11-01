@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
+<!-- See the accompanying LICENSE file for applicable license -->
+
+<plugin id="net.infotexture.dita-bootstrap">
+  <require plugin="org.dita.html5"/>
+  <transtype name="html5-bootstrap" extends="html5" desc="HTML5 with Bootstrap style"/>
+  <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
+</plugin>

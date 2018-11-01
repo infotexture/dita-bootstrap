@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
+<!-- See the accompanying LICENSE file for applicable license -->
+
+<project>
+  <target name="dita2html5-bootstrap"
+       depends="dita2html5-bootstrap.init,
+                dita2html5"/>
+  <target name="dita2html5-bootstrap.init">
+    <property name="args.hdf"
+          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"/>
+    <property name="args.hdr"
+          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bs-navbar-default.hdr.xml"/>
+    <property name="args.xsl"
+          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"/>
+    <property name="args.html5.toc.xsl"
+          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/map2html5-cover.xsl"/>
+    <property name="args.html5.toc" value="toc"/>
+    <property name="nav-toc" value="partial"/>
+    <property name="args.cssroot"
+          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css"/>
+    <property name="args.css" value="custom.css"/>
+    <property name="args.copycss" value="yes"/>
+    <property name="args.csspath" value="css"/>
+  </target>
+</project>
