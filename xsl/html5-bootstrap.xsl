@@ -41,7 +41,7 @@
       <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
 
       <!-- ↓ Add Bootstrap fluid container & row -->
-      <div class="container-fluid container" id="content">
+      <div class="container-fluid" id="content">
         <div class="row">
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <!-- Include a user's XSL call here to generate a toc based on what's a child of topic -->
