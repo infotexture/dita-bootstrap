@@ -40,8 +40,8 @@
       <xsl:call-template name="setaname"/>  <!-- For HTML4 compatibility, if needed -->
       <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
 
-      <!-- ↓ Add Bootstrap fluid container & row -->
-      <div class="container-fluid" id="content">
+      <!-- ↓ Add Bootstrap container & row -->
+      <div class="container" id="content">
         <div class="row">
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <!-- Include a user's XSL call here to generate a toc based on what's a child of topic -->
