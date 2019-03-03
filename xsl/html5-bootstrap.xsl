@@ -71,7 +71,7 @@
   <!-- https://getbootstrap.com/docs/3.3/css/#grid -->
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <!-- ↓ Add grid class -->
-    <main class="col-md-9" role="main">
+    <main class="col-lg-9" role="main">
     <!-- ↑ End customization -->
       <article role="article">
         <xsl:attribute name="aria-labelledby">
@@ -95,7 +95,7 @@
   <xsl:template match="*" mode="gen-user-sidetoc">
     <xsl:if test="$nav-toc = ('partial', 'full')">
       <!-- ↓ Add grid class to <nav>, wrap <ul> in small well <div> & add .bs-docs-sidenav class -->
-      <nav class="col-md-3" role="toc">
+      <nav class="col-lg-3" role="toc">
         <div class="well well-sm">
           <ul class="bs-docs-sidenav">
             <!-- ↑ End customization -->
