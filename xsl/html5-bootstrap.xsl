@@ -16,9 +16,8 @@
     <head>
       <!-- initial meta information -->
       <xsl:call-template name="generateCharset"/>   <!-- Set the character set to UTF-8 -->
-      <!-- ↓ Add <meta> elements from basic Bootstrap template -->
-      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <!-- ↓ Add <meta> element from Bootstrap starter template ↑ -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <xsl:call-template name="generateDefaultCopyright"/> <!-- Generate a default copyright, if needed -->
       <xsl:call-template name="generateDefaultMeta"/> <!-- Standard meta for security, robots, etc -->
