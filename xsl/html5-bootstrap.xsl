@@ -11,16 +11,6 @@
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
-  <!-- ========== DEFAULT PAGE LAYOUT ========== -->
-
-  <xsl:template name="chapter-setup">
-    <html>
-      <xsl:call-template name="setTopicLanguage"/>
-      <xsl:call-template name="chapterHead"/>
-      <xsl:call-template name="chapterBody"/>
-    </html>
-  </xsl:template>
-
   <!-- Override to add <meta> elements to page heads -->
   <xsl:template match="*" mode="chapterHead">
     <head>
