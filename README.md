@@ -17,11 +17,11 @@ A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with 
 
 Use the `dita` command to add this plug-in to your DITA Open Toolkit installation:
 
-DITA-OT 3.2:
+DITA-OT 3.3:
 
     dita --install net.infotexture.dita-bootstrap
 
-DITA-OT 3.1 and older:
+DITA-OT 3.2 and older:
 
     dita --install https://github.com/infotexture/dita-bootstrap/archive/3.1.zip
 
@@ -58,15 +58,15 @@ For more extensive customizations, you may want to [fork][5] this repository and
 
 - If you find this useful and build something of your own on top of it, [let me know][6].
 
-- If you find a bug or would like to suggest a change, [create an issue][7].  
+- If you find a bug or would like to suggest a change, [create an issue][7].
   _(If it's a bug, provide steps to recreate the issue.)_
 
 - If you know how to fix it yourself, [submit a pull request][8] with the proposed changes.
 
 [1]: http://www.dita-ot.org
 [2]: https://getbootstrap.com/docs/3.3
-[3]: https://github.com/infotexture/dita-bootstrap/blob/3.1/includes/bs-navbar-inverse.hdr.xml
-[4]: https://github.com/infotexture/dita-bootstrap/blob/3.1/css/custom.css
+[3]: https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml
+[4]: https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css
 [5]: https://help.github.com/articles/fork-a-repo/
 [6]: https://twitter.com/infotexture
 [7]: https://github.com/infotexture/dita-bootstrap/issues/new
