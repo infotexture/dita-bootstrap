@@ -40,7 +40,7 @@ The plug-in includes a default static navbar with a project name and global link
     dita --input=path/to/your.ditamap --format=html5-bootstrap \
          --args.hdr=path/to/your-header.xml
 
-The plug-in includes a sample [header alternative with a black navbar][3].
+The plug-in includes a sample [header alternative with a dark navbar][3].
 
 Edit a copy of this file to adjust the content of the global navigation.
 
