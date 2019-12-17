@@ -14,6 +14,11 @@ nav[role=toc] li.active > a {
   padding-left: 20px;
 }
 
+/* Fix table conflict with bootstrap's row class */
+.table .row {
+  display: table-row;
+}
+
 /* Override DITA-OT heading styles with Bootstrap’s defaults */
 /* Increase specificity for precedence over `commonltr.css`. */
 
