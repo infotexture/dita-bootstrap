@@ -17,7 +17,7 @@ A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with 
 
 Use the `dita` command to add this plug-in to your DITA Open Toolkit installation:
 
-DITA-OT 3.3:
+DITA-OT 3.3 and newer:
 
     dita --install net.infotexture.dita-bootstrap
 
