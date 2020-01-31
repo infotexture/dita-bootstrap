@@ -5,7 +5,7 @@
 <!-- See the accompanying LICENSE file for applicable license -->
 
 <plugin id="net.infotexture.dita-bootstrap">
-  <feature extension="package.version" value="3.4"/>
+  <feature extension="package.version" value="3.4.1"/>
   <require plugin="org.dita.html5"/>
   <transtype name="html5-bootstrap" extends="html5" desc="HTML5 with Bootstrap style"/>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
