@@ -33,7 +33,7 @@
   </xsl:template>
 
   <!-- Override to add Bootstrap container & row to page -->
-  <!-- https://getbootstrap.com/docs/4.4/layout/grid/ -->
+  <!-- https://getbootstrap.com/docs/4.5/layout/grid/ -->
   <xsl:template match="*" mode="chapterBody">
     <body>
       <xsl:apply-templates select="." mode="addAttributesToHtmlBodyElement"/>
@@ -57,7 +57,7 @@
   </xsl:template>
 
   <!-- Override to add Bootstrap large grid classes. -->
-  <!-- https://getbootstrap.com/docs/4.4/layout/grid -->
+  <!-- https://getbootstrap.com/docs/4.5/layout/grid -->
   <xsl:attribute-set name="main">
     <xsl:attribute name="class">col-lg-9</xsl:attribute>
     <xsl:attribute name="role">main</xsl:attribute>
