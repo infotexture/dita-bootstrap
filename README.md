@@ -68,7 +68,7 @@ For more extensive customizations, you may want to [fork][5] this repository and
 - If you know how to fix it yourself, [submit a pull request][8] with the proposed changes.
 
 [1]: http://www.dita-ot.org
-[2]: https://getbootstrap.com/docs/4.4
+[2]: https://getbootstrap.com/docs/4.5
 [3]: https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml
 [4]: https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css
 [5]: https://help.github.com/articles/fork-a-repo/
