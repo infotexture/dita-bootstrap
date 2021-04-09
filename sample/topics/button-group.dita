@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="button-group">
+   <title>Button Group</title>
+   <abstract>Group a series of buttons together on a single line or stack them in a vertical column.</abstract>
+   <body outputclass="language-markup">
+      <section>
+         <title>Basic Example</title>
+         <p>Wrap a series of buttons with <codeph>.btn</codeph> in <codeph>.btn-group</codeph></p>
+      </section>
+      <bodydiv outputclass="bd-example">
+         <bodydiv outputclass="row">
+            <div outputclass="col-sm-3">
+               <p>One of three columns</p>
+            </div>
+            <div outputclass="col-sm-3">
+               <p>One of three columns</p>
+            </div>
+            <div outputclass="col-sm-3">
+               <p>One of three columns</p>
+            </div>
+         </bodydiv>
+      </bodydiv>
+      <codeblock>
+&lt;bodydiv outputclass="row"&gt;
+   &lt;div outputclass="col-sm-3"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div outputclass="col-sm-3"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;bodydiv outputclass="col-sm-3"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/bodydiv&gt;
+&lt;/bodydiv&gt;
+      </codeblock>
+      <section>
+         <title>Equal-width</title>
+         <p>For example, here are two grid layouts that apply to every device and viewport, from <codeph>xs</codeph> to <codeph>xxl</codeph>. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.</p>
+      </section>
+      <bodydiv outputclass="bd-example">
+         <bodydiv outputclass="row">
+            <div outputclass="col">
+               <p>One of two columns</p>
+            </div>
+            <div outputclass="col">
+               <p>One of two columns</p>
+            </div>
+         </bodydiv>
+         <bodydiv outputclass="row">
+            <div outputclass="col">
+               <p>One of three columns</p>
+            </div>
+            <div outputclass="col">
+               <p>One of three columns</p>
+            </div>
+            <div outputclass="col">
+               <p>One of three columns</p>
+            </div>
+         </bodydiv>
+      </bodydiv>
+      <codeblock>
+&lt;bodydiv outputclass="row"&gt;
+   &lt;div outputclass="col"&gt;
+      &lt;p&gt;One of two columns&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div outputclass="col"&gt;
+      &lt;p&gt;One of two columns&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/bodydiv&gt;
+&lt;bodydiv outputclass="row"&gt;
+   &lt;div outputclass="col"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div outputclass="col"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div outputclass="col"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/bodydiv&gt;
+      </codeblock>
+   </body>
+</topic>

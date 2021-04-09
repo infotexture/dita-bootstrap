@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="alerts">
+   <title>Alerts</title>
+   <abstract>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</abstract>
+   <body outputclass="language-markup">
+      <section>
+         <title>Example</title>
+         <p>
+            Alerts are available for any length of text, as well as an optional close button. For proper styling, use one of the eight required contextual classes (e.g., <codeph>.alert-success</codeph>).
+         </p>
+      </section>
+      <bodydiv outputclass="bd-example">
+         <section outputclass="alert-primary">
+           A simple primary alert—check it out!
+         </section>
+         <section outputclass="alert-secondary">
+           A simple secondary alert—check it out!
+         </section>
+         <section outputclass="alert-success">
+           A simple success alert—check it out!
+         </section>
+         <section outputclass="alert-danger">
+           A simple danger alert—check it out!
+         </section>
+         <section outputclass="alert-warning">
+           A simple warning alert—check it out!
+         </section>
+         <section outputclass="alert-info">
+           A simple info alert—check it out!
+         </section>
+         <section outputclass="alert-light">
+           A simple light alert—check it out!
+         </section>
+         <section outputclass="alert-dark">
+           A simple dark alert—check it out!
+         </section>
+      </bodydiv>
+      <codeblock>
+&lt;section outputclass="alert-primary"&gt;
+  A simple primary alert—check it out!
+&lt;/section&gt;
+&lt;section outputclass="alert-secondary"&gt;
+  A simple secondary alert—check it out!
+&lt;/section&gt;
+&lt;section outputclass="alert-success"&gt;
+  A simple success alert—check it out!
+&lt;/section&gt;
+&lt;section outputclass="alert-danger"&gt;
+  A simple danger alert—check it out!
+&lt;/section&gt;
+&lt;section outputclass="alert-warning"&gt;
+  A simple warning alert—check it out!
+&lt;/section&gt;
+&lt;section outputclass="alert-info"&gt;
+  A simple info alert—check it out!
+&lt;/section&gt;
+&lt;section outputclass="alert-light"&gt;
+  A simple light alert—check it out!
+&lt;/section&gt;
+&lt;section outputclass="alert-dark"&gt;
+  A simple dark alert—check it out!
+&lt;/section&gt;
+      </codeblock>
+      <section>
+         <title>Additional content</title>
+         <p>Alerts can also contain additional HTML elements like headings, paragraphs and links.</p>
+      </section>
+      <bodydiv outputclass="bd-example">
+         <section outputclass="alert-success">
+            <title>Well done!</title>
+            <p>
+               Aww yeah, you successfully read this important alert message. This example text with a <xref href="#">link</xref> is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+            </p>
+            <p>
+               Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+            </p>
+         </section>
+      </bodydiv>
+      <codeblock>
+&lt;section outputclass="alert-success"&gt;
+   &lt;title&gt;Well done!&lt;/title&gt;
+   &lt;p&gt;
+      Aww yeah, you successfully read this important alert message. This example text with a 
+      &lt;xref href="#"&gt;link&lt;/xref&gt; is going to run a bit longer so that you can see 
+      how spacing within an alert works with this kind of content.
+   &lt;/p&gt;
+   &lt;p&gt;
+      Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+   &lt;/p&gt;
+&lt;/section&gt;
+      </codeblock>
+   </body>
+</topic>

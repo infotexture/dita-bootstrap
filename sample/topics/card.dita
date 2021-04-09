@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="cards">
+   <title>Cards</title>
+   <abstract>Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.</abstract>
+   <body outputclass="language-markup">
+      <section>
+         <title>About</title>
+         <p>A <b>card</b> is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options. If you’re familiar with Bootstrap 3, cards replace our old panels, wells, and thumbnails. Similar functionality to those components is available as modifier classes for cards.</p>
+      </section>
+      <section>
+         <title>Example</title>
+         <p>Cards are built with as little markup and styles as possible, but still manage to deliver a ton of control and customization. Built with flexbox, they offer easy alignment and mix well with other Bootstrap components. They have no <codeph>margin</codeph> by default, so use <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/spacing/">spacing utilities</xref> as needed.</p>
+         <p>
+         Below is an example of a basic card with mixed content and a fixed width. Cards have no fixed width to start, so they’ll naturally fill the full width of its parent element. This is easily customized with our various <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/card/#sizing">sizing options.</xref></p>
+      </section>
+      <bodydiv outputclass="bd-example">
+         <bodydiv outputclass="row">
+            <div outputclass="col-sm-3">
+               <p>One of three columns</p>
+            </div>
+            <div outputclass="col-sm-3">
+               <p>One of three columns</p>
+            </div>
+            <div outputclass="col-sm-3">
+               <p>One of three columns</p>
+            </div>
+         </bodydiv>
+      </bodydiv>
+      <codeblock>
+&lt;bodydiv outputclass="row"&gt;
+   &lt;div outputclass="col-sm-3"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div outputclass="col-sm-3"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;bodydiv outputclass="col-sm-3"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/bodydiv&gt;
+&lt;/bodydiv&gt;
+      </codeblock>
+      <section>
+         <title>Equal-width</title>
+         <p>For example, here are two grid layouts that apply to every device and viewport, from <codeph>xs</codeph> to <codeph>xxl</codeph>. Add any number of unit-less classes for each breakpoint you need and every column will be the same width.</p>
+      </section>
+      <bodydiv outputclass="bd-example">
+         <bodydiv outputclass="row">
+            <div outputclass="col">
+               <p>One of two columns</p>
+            </div>
+            <div outputclass="col">
+               <p>One of two columns</p>
+            </div>
+         </bodydiv>
+         <bodydiv outputclass="row">
+            <div outputclass="col">
+               <p>One of three columns</p>
+            </div>
+            <div outputclass="col">
+               <p>One of three columns</p>
+            </div>
+            <div outputclass="col">
+               <p>One of three columns</p>
+            </div>
+         </bodydiv>
+      </bodydiv>
+      <codeblock>
+&lt;bodydiv outputclass="row"&gt;
+   &lt;div outputclass="col"&gt;
+      &lt;p&gt;One of two columns&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div outputclass="col"&gt;
+      &lt;p&gt;One of two columns&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/bodydiv&gt;
+&lt;bodydiv outputclass="row"&gt;
+   &lt;div outputclass="col"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div outputclass="col"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div outputclass="col"&gt;
+      &lt;p&gt;One of three columns&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/bodydiv&gt;
+      </codeblock>
+   </body>
+</topic>
