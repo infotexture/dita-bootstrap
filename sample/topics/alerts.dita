@@ -11,7 +11,7 @@
          </p>
       </section>
       <bodydiv outputclass="bd-example">
-         <section outputclass="alert-primary">
+         <section>
            A simple primary alert—check it out!
          </section>
          <section outputclass="alert-secondary">

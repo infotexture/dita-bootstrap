@@ -2,28 +2,39 @@
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <bookmap>
 
-	<chapter navtitle="Layout" href="topics/layout.dita">
+	<chapter>
+		<topicmeta>
+        	<navtitle>Layout</navtitle>
+    	</topicmeta>
 		<topicref navtitle="Grid" format="dita" type="topic" href="topics/grid.dita"/>
 	</chapter>
-	<chapter navtitle="Content" href="topics/content.dita">
+	<chapter>
+		<topicmeta>
+        	<navtitle>Content</navtitle>
+    	</topicmeta>
 		<topicref navtitle="Images" format="dita" type="topic" href="topics/images.dita"/>
 		<topicref navtitle="Tables" format="dita" type="topic" href="topics/tables.dita"/>
 	</chapter>
-	<chapter navtitle="Components" href="topics/components.dita">
+	<chapter>
+		<topicmeta>
+        	<navtitle>Components</navtitle>
+    	</topicmeta>
 		<topicref navtitle="Accordion" format="dita" type="topic" href="topics/accordion.dita"/>
 		<topicref navtitle="Alerts" format="dita" type="topic" href="topics/alerts.dita"/>
 		<topicref navtitle="Badges" format="dita" type="topic" href="topics/badge.dita"/>
 		<topicref navtitle="Buttons" format="dita" type="topic" href="topics/buttons.dita"/>
 		<topicref navtitle="Button Group" format="dita" type="topic" href="topics/button-group.dita"/>
 		<topicref navtitle="Card" format="dita" type="topic" href="topics/card.dita"/>
+		<topicref navtitle="Carousel" format="dita" type="topic" href="topics/carousel.dita"/>
 	</chapter>
 
 
 
-
+    <!--
 	<chapter navtitle="prism" format="dita" type="topic" href="topics/prism.dita">
 		<topicref navtitle="examples" format="dita" type="topic" href="topics/examples.dita"/>
 		<topicref navtitle="features" format="dita" type="topic" href="topics/features-full.dita"/>
 		<topicref navtitle="basic-usage" format="dita" type="topic" href="topics/basic-usage.dita"/>
 	</chapter>
+	-->
 </bookmap>

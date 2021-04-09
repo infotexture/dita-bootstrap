@@ -4,7 +4,7 @@
   See the accompanying LICENSE file for applicable licenses.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" exclude-result-prefixes="xs dita-ot">
-   
+
 
    <xsl:include href="../Customization/xsl/accordion.xsl" />
    <xsl:include href="../Customization/xsl/card.xsl" />
@@ -17,11 +17,17 @@
          <xsl:when test="contains(@outputclass, 'alert-')">
             <xsl:attribute name="role" select="'alert'" />
          </xsl:when>
+         <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
+            <xsl:attribute name="role" select="'group'" />
+         </xsl:when>
          <xsl:when test="contains(@outputclass, 'btn-group')">
             <xsl:attribute name="role" select="'group'" />
          </xsl:when>
          <xsl:when test="contains(@outputclass, 'btn-toolbar')">
             <xsl:attribute name="role" select="'toolbar'" />
+         </xsl:when>
+         <xsl:when test="contains(@outputclass, 'btn-')">
+            <xsl:attribute name="role" select="'button'" />
          </xsl:when>
       </xsl:choose>
    </xsl:template>
@@ -30,7 +36,7 @@
    <xsl:template name="bootstrap-class">
       <xsl:choose>
          <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
-            <xsl:text>btn-group</xsl:text>
+            <xsl:text />
          </xsl:when>
          <xsl:when test="contains(@outputclass, 'btn-group')">
             <xsl:text />

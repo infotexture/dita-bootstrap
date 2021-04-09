@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="badges">
    <title>Badges</title>
-   <abstract>Documentation and examples for badges, our small count and labeling component.</abstract>
+   <abstract>Documentation and examples for badges, Bootstrap's small count and labeling component.</abstract>
    <body outputclass="language-markup">
       <section>
          <title>Example</title>

@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="accordion">
    <title>Accordion</title>
-   <abstract>Build vertically collapsing accordions in combination with our Collapse JavaScript plugin.</abstract>
+   <abstract>Build vertically collapsing accordions in combination with Bootstrap's Collapse JavaScript plugin.</abstract>
    <body outputclass="language-markup">
       <section>
          <title>How it works</title>

@@ -10,15 +10,15 @@
       </section>
       <bodydiv outputclass="bd-example">
          <bodydiv outputclass="row">
-            <div outputclass="col-sm-3">
+            <bodydiv outputclass="col-sm-3">
                <p>One of three columns</p>
-            </div>
-            <div outputclass="col-sm-3">
+            </bodydiv>
+            <bodydiv outputclass="col-sm-3">
                <p>One of three columns</p>
-            </div>
-            <div outputclass="col-sm-3">
+            </bodydiv>
+            <bodydiv outputclass="col-sm-3">
                <p>One of three columns</p>
-            </div>
+            </bodydiv>
          </bodydiv>
       </bodydiv>
       <codeblock>
