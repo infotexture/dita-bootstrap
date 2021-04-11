@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="grid">
+<topic id="buttons">
    <title>Buttons</title>
    <abstract>Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.</abstract>
    <body outputclass="language-markup">
@@ -30,7 +30,7 @@
       </codeblock>
       <section>
          <title>Outline Buttons</title>
-         <p>In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the <codeph>.btn-outline-*</codeph> ones to remove all background images and colors on any button.</p>
+         <p>In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the <codeph>outputclass="btn-outline-*"</codeph> ones to remove all background images and colors on any button.</p>
       </section>
       <bodydiv outputclass="bd-example">
          <xref href="#" outputclass="btn-outline-primary">Primary</xref>

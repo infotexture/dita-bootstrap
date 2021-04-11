@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="images">
+<topic id="tables">
    <title>Tables</title>
    <abstract>Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Bootstrap.</abstract>
    <body outputclass="language-markup">
       <section>
          <title>Overview</title>
          <p>
-            Due to the widespread use of <codeph>&lt;table&gt;</codeph> elements across third-party widgets like calendars and date pickers, Bootstrap’s tables are opt-in. Add the base class <codeph>.table</codeph> to any <codeph>&lt;table&gt;</codeph>, then extend with our optional modifier classes or custom styles. All table styles are not inherited in Bootstrap, meaning any nested tables can be styled independent from the parent.
+            Due to the widespread use of <codeph>&lt;table&gt;</codeph> elements across third-party widgets like calendars and date pickers, Bootstrap’s tables are opt-in. Extend with optional modifier outputclasses or custom styles. All table styles are not inherited in Bootstrap, meaning any nested tables can be styled independent from the parent.
          </p>
          <p>
-            Using the most basic table markup, here’s how <codeph>.table</codeph>-based tables look in Bootstrap
+            Using the most basic table markup, here’s how  the default DITA Bootstrap <codeph>.table</codeph>-based tables look in Bootstrap
          </p>
       </section>
       <bodydiv outputclass="bd-example">
-<table outputclass="table">
+<table>
 <tgroup cols="2">
-<colspec colname="COLSPEC0" />
-<colspec colname="COLSPEC1" />
+<colspec colname="COLSPEC0" colwidth="1*" />
+<colspec colname="COLSPEC1" colwidth="2*" />
 <thead>
 <row>
 <entry colname="COLSPEC0" valign="top">Animal</entry>
@@ -46,7 +46,7 @@
 </table>
       </bodydiv>
       <codeblock>
-&lt;table outputclass="table"&gt;
+&lt;table&gt;
    ...etc
 &lt;/table&gt;
       </codeblock>
@@ -55,11 +55,11 @@
          <p>Use contextual classes to color tables, table rows or individual cells..</p>
       </section>
       <bodydiv outputclass="bd-example">
-<table outputclass="table">
+<table>
 <tgroup cols="3">
-<colspec colname="COLSPEC0" />
-<colspec colname="COLSPEC1" />
-<colspec colname="COLSPEC2" />
+<colspec colname="COLSPEC0" colwidth="2*" />
+<colspec colname="COLSPEC1" colwidth="1*" />
+<colspec colname="COLSPEC2" colwidth="1*" />
 <thead>
 <row>
 <entry colname="COLSPEC0" valign="top">Class</entry>
@@ -155,11 +155,11 @@
             <section>
          <title>Striped rows</title>
          <p>
-            Use <codeph>.table-striped</codeph> to add zebra-striping to any table row within the <codeph>&lt;tbody&gt;</codeph>.
+            Use <codeph>outputclass="table-striped"</codeph> to add zebra-striping to any table row within the <codeph>&lt;tbody&gt;</codeph>.
          </p>
       </section>
       <bodydiv outputclass="bd-example">
-<table outputclass="table table-striped">
+<table outputclass="table-striped">
 <tgroup cols="2">
 <colspec colname="COLSPEC0" />
 <colspec colname="COLSPEC1" />
@@ -191,7 +191,7 @@
 </table>
       </bodydiv>
       <codeblock>
-&lt;table outputclass="table table-striped"&gt;
+&lt;table outputclass="table-striped"&gt;
    ...etc
 &lt;/table&gt;
       </codeblock>

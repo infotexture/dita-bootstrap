@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<topic id="cards">
+<topic id="carousel">
    <title>Carousel</title>
    <abstract>A slideshow component for cycling through elements—images or slides of text—like a carousel.</abstract>
    <body outputclass="language-markup">

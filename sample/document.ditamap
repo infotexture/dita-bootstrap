@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <bookmap>
+  <title>DITA Bootstrap</title>
+    <frontmatter>
+        <booklists>
+            <toc/>
+        </booklists>
+    </frontmatter>
+    <chapter>
+    <topicmeta>
+          <navtitle>Getting Started</navtitle>
+      </topicmeta>
+    <topicref navtitle="Introduction" format="dita" href="index.dita"/>
+  </chapter>
 
-	<chapter>
-		<topicmeta>
-        	<navtitle>Layout</navtitle>
-    	</topicmeta>
-		<topicref navtitle="Grid" format="dita" type="topic" href="topics/grid.dita"/>
-	</chapter>
-	<chapter>
-		<topicmeta>
-        	<navtitle>Content</navtitle>
-    	</topicmeta>
-		<topicref navtitle="Images" format="dita" type="topic" href="topics/images.dita"/>
-		<topicref navtitle="Tables" format="dita" type="topic" href="topics/tables.dita"/>
-	</chapter>
-	<chapter>
-		<topicmeta>
-        	<navtitle>Components</navtitle>
-    	</topicmeta>
-		<topicref navtitle="Accordion" format="dita" type="topic" href="topics/accordion.dita"/>
-		<topicref navtitle="Alerts" format="dita" type="topic" href="topics/alerts.dita"/>
-		<topicref navtitle="Badges" format="dita" type="topic" href="topics/badge.dita"/>
-		<topicref navtitle="Buttons" format="dita" type="topic" href="topics/buttons.dita"/>
-		<topicref navtitle="Button Group" format="dita" type="topic" href="topics/button-group.dita"/>
-		<topicref navtitle="Card" format="dita" type="topic" href="topics/card.dita"/>
-		<topicref navtitle="Carousel" format="dita" type="topic" href="topics/carousel.dita"/>
-	</chapter>
-
-
-
-    <!--
-	<chapter navtitle="prism" format="dita" type="topic" href="topics/prism.dita">
-		<topicref navtitle="examples" format="dita" type="topic" href="topics/examples.dita"/>
-		<topicref navtitle="features" format="dita" type="topic" href="topics/features-full.dita"/>
-		<topicref navtitle="basic-usage" format="dita" type="topic" href="topics/basic-usage.dita"/>
-	</chapter>
-	-->
+  <chapter>
+    <topicmeta>
+          <navtitle>Layout</navtitle>
+      </topicmeta>
+    <topicref navtitle="Grid" format="dita" type="topic" href="grid.dita"/>
+  </chapter>
+  <chapter>
+    <topicmeta>
+          <navtitle>Content</navtitle>
+      </topicmeta>
+    <topicref navtitle="Images" format="dita" type="topic" href="images.dita"/>
+    <topicref navtitle="Tables" format="dita" type="topic" href="tables.dita"/>
+  </chapter>
+  <chapter>
+    <topicmeta>
+          <navtitle>Components</navtitle>
+      </topicmeta>
+    <topicref navtitle="Accordion" format="dita" type="topic" href="accordion.dita"/>
+    <topicref navtitle="Alerts" format="dita" type="topic" href="alerts.dita"/>
+    <topicref navtitle="Badges" format="dita" type="topic" href="badge.dita"/>
+    <topicref navtitle="Buttons" format="dita" type="topic" href="buttons.dita"/>
+    <topicref navtitle="Button Group" format="dita" type="topic" href="button-group.dita"/>
+    <topicref navtitle="Card" format="dita" type="topic" href="card.dita"/>
+    <topicref navtitle="Carousel" format="dita" type="topic" href="carousel.dita"/>
+    <topicref navtitle="List Group" format="dita" type="topic" href="list-group.dita"/>
+    <topicref navtitle="Offcanvas" format="dita" type="topic" href="offcanvas.dita"/>
+    <topicref navtitle="Tabs" format="dita" type="topic" href="tabs.dita"/>
+  </chapter>
 </bookmap>

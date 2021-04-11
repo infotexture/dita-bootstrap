@@ -6,7 +6,7 @@
    <body outputclass="language-markup">
       <section>
          <title>Basic Example</title>
-         <p>Wrap a series of buttons with <codeph>.btn</codeph> in <codeph>.btn-group</codeph></p>
+         <p>Wrap a series of buttons with <codeph>&lt;xref outputclass="btn-*"&gt;</codeph> in a <codeph>&lt;div outputclass="btn-group"&gt;</codeph></p>
       </section>
       <bodydiv outputclass="bd-example">
          <div outputclass="btn-group">
@@ -109,7 +109,7 @@
       </bodydiv>
       <codeblock>
 &lt;div class="btn-group-vertical"&gt;
-  ...
+  ...etc
 &lt;/div&gt;
       </codeblock>
    </body>

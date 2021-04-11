@@ -28,3 +28,6 @@
 *.otf   binary
 *.ttf   binary
 *.woff  binary
+
+css/* linguist-vendored
+sample/* linguist-documentation

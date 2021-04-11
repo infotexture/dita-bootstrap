@@ -4,9 +4,12 @@
 	See the accompanying LICENSE file for applicable licenses.
 -->
 <xsl:stylesheet version="2.0" exclude-result-prefixes="xs xhtml dita-ot"
-	xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" 
-	xmlns:xhtml="http://www.w3.org/1999/xhtml" 
+	xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+  <!-- Customization to add Bootstrap Card Component -->
+  <!-- https://getbootstrap.com/docs/5.0/components/card/ -->
 
 	<xsl:template match="*[contains(@class,' topic/section ') and contains(@outputclass, 'card')]">
 		<div>
@@ -21,10 +24,10 @@
 			<xsl:apply-templates select="*[contains(@outputclass, 'card-img-bottom')]" />
 			<xsl:apply-templates select="*[contains(@class, ' topic/sectiondiv ') and contains(@outputclass, 'card-footer')]"/>
 		</div>
-    </xsl:template>
+  </xsl:template>
 
 
-
+  <!-- Card Body -->
   <xsl:template match="*" mode="card">
     <xsl:param name="headLevel">
       <xsl:variable name="headCount" select="count(ancestor::*[contains(@class, ' topic/topic ')])+1"/>

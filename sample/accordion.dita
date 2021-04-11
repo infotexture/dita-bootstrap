@@ -6,7 +6,7 @@
    <body outputclass="language-markup">
       <section>
          <title>How it works</title>
-         <p>The accordion uses <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/collapse/">collapse</xref> internally to make it collapsible. To render an accordion that’s expanded, add the <codeph>.open</codeph> class on the <codeph>.accordion</codeph>.</p>
+         <p>The accordion uses <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/collapse/">collapse</xref> internally to make it collapsible. To render an accordion that’s expanded, add the <codeph>outputclass="open"</codeph> class on the <codeph>outputclass="accordion"</codeph>.</p>
       </section>
       <section>
          <title>Example</title>
@@ -55,7 +55,7 @@
       </codeblock>
       <section>
          <title>Flush</title>
-         <p>Add <codeph>.accordion-flush</codeph> to remove the default background-color, some borders, and some rounded corners to render accordions edge-to-edge with their parent container.</p>
+         <p>Add <codeph>outputclass="accordion-flush"</codeph> to remove the default background-color, some borders, and some rounded corners to render accordions edge-to-edge with their parent container.</p>
       </section>
       <bodydiv outputclass="bd-example">
          <bodydiv outputclass="accordion accordion-flush">

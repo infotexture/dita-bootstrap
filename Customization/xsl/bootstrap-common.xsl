@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This file is part of the DITA-OT Bootstrap Components Plug-in project.
+  See the accompanying LICENSE file for applicable licenses.
+-->
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" exclude-result-prefixes="xs dita-ot">
+
+   <!-- add role attributes based on outputclass -->
+   <xsl:template name="bootstrap-role">
+      <xsl:choose>
+         <xsl:when test="contains(@outputclass, 'alert-')">
+            <xsl:attribute name="role" select="'alert'" />
+         </xsl:when>
+         <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
+            <xsl:attribute name="role" select="'group'" />
+         </xsl:when>
+         <xsl:when test="contains(@outputclass, 'btn-group')">
+            <xsl:attribute name="role" select="'group'" />
+         </xsl:when>
+         <xsl:when test="contains(@outputclass, 'btn-toolbar')">
+            <xsl:attribute name="role" select="'toolbar'" />
+         </xsl:when>
+         <xsl:when test="contains(@outputclass, 'btn-')">
+            <xsl:attribute name="role" select="'button'" />
+         </xsl:when>
+      </xsl:choose>
+   </xsl:template>
+
+   <!-- add additional bootstrap classes based on outputclass -->
+   <xsl:template name="bootstrap-class">
+      <xsl:choose>
+         <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
+            <xsl:text />
+         </xsl:when>
+         <xsl:when test="contains(@outputclass, 'btn-group')">
+            <xsl:text />
+         </xsl:when>
+         <xsl:when test="contains(@outputclass, 'btn-toolbar')">
+            <xsl:text />
+         </xsl:when>
+         <xsl:when test="contains(@outputclass, 'btn-')">
+            <xsl:text>btn</xsl:text>
+         </xsl:when>
+         <xsl:when test="contains(@outputclass, 'bg-')">
+            <xsl:text>badge</xsl:text>
+         </xsl:when>
+         <xsl:when test="contains(@outputclass, 'alert-')">
+            <xsl:text>alert</xsl:text>
+         </xsl:when>
+         <xsl:when test="contains(@class, ' topic/title ') and ancestor::*[contains(@outputclass, 'alert-')]">
+            <xsl:text>alert-heading</xsl:text>
+         </xsl:when>
+         <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'alert-')]">
+            <xsl:text>alert-link</xsl:text>
+         </xsl:when>
+         <xsl:when test="contains(@class, ' topic/li ') and ancestor::ul[contains(@outputclass, 'list-group')]">
+            <xsl:text>list-group-item</xsl:text>
+         </xsl:when>
+      </xsl:choose>
+   </xsl:template>
+
+      <!-- Override to add Bootstrap classes and roles to <note> elements -->
+   <xsl:template name="bootstrap-note">
+    <xsl:text>alert </xsl:text>
+      <xsl:choose>
+        <xsl:when test="@type='tip'">
+          <xsl:text>alert-success</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='fastpath'">
+          <xsl:text>alert-success</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='remember'">
+          <xsl:text>alert-success</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='restriction'">
+          <xsl:text>alert-warning</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='important'">
+          <xsl:text>alert-warning</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='attention'">
+          <xsl:text>alert-warning</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='caution'">
+          <xsl:text>alert-warning</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='warning'">
+          <xsl:text>alert-warning</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='trouble'">
+          <xsl:text>alert-warning</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='danger'">
+          <xsl:text>alert-danger</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='notice'">
+          <xsl:text>alert-info</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='note'">
+          <xsl:text>alert-info</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='other'">
+          <xsl:text>alert-dark</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+           <xsl:text>alert-info</xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+   </xsl:template>
+
+   <!-- Override to add Bootstrap classes and roles -->
+   <xsl:template name="commonattributes">
+      <xsl:param name="default-output-class" />
+      <!-- ↓ Add Bootstrap class attributes template ↑ -->
+      <xsl:variable name="bootstrap-class">
+         <xsl:call-template name="bootstrap-class" />
+         <xsl:value-of select="$default-output-class" />
+      </xsl:variable>
+      <xsl:call-template name="bootstrap-role" />
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+      <xsl:apply-templates select="@xml:lang" />
+      <xsl:apply-templates select="@dir" />
+      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/@style" mode="add-ditaval-style" />
+      <xsl:choose>
+        <!-- ↓ Remove DITA-OT styling from titles since Bootstrap does this ↑ -->
+        <xsl:when test="starts-with($default-output-class , 'topictitle')">
+          <xsl:apply-templates select="." mode="set-output-class">
+           <xsl:with-param name="default" select="replace($bootstrap-class, 'topictitle\d+', '')" />
+          </xsl:apply-templates>
+        </xsl:when>
+         <xsl:when test="starts-with($default-output-class , 'sectiontitle')">
+          <xsl:apply-templates select="." mode="set-output-class">
+           <xsl:with-param name="default" select="replace($bootstrap-class, 'sectiontitle', '')" />
+          </xsl:apply-templates>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="." mode="set-output-class">
+           <xsl:with-param name="default" select="$bootstrap-class" />
+        </xsl:apply-templates>
+        </xsl:otherwise>
+      </xsl:choose>
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+      <xsl:choose>
+         <xsl:when test="exists($passthrough-attrs[empty(@att) and empty(@value)])">
+            <xsl:variable name="specializations" as="xs:string*">
+               <xsl:for-each select="ancestor-or-self::*[@domains][1]/@domains">
+                  <xsl:analyze-string select="normalize-space(.)" regex="a\(props (.+?)\)">
+                     <xsl:matching-substring>
+                        <xsl:sequence select="tokenize(regex-group(1), '\s+')" />
+                     </xsl:matching-substring>
+                  </xsl:analyze-string>
+               </xsl:for-each>
+            </xsl:variable>
+            <xsl:for-each select="@props |  @audience | @platform | @product | @otherprops | @deliveryTarget |  @*[local-name() = $specializations]">
+               <xsl:attribute name="data-{name()}" select="." />
+            </xsl:for-each>
+         </xsl:when>
+         <xsl:when test="exists($passthrough-attrs)">
+            <xsl:for-each select="@*">
+               <xsl:if test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]">
+                  <xsl:attribute name="data-{name()}" select="." />
+               </xsl:if>
+            </xsl:for-each>
+         </xsl:when>
+      </xsl:choose>
+   </xsl:template>
+
+  <!--override row processing -->
+  <xsl:template match="*[contains(@class, ' topic/row ')]" name="topic.row">
+    <tr>
+      <xsl:attribute name="class" select="@outputclass"/>
+      <xsl:apply-templates select="@xml:lang" />
+      <xsl:apply-templates select="@dir" />
+      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/@style" mode="add-ditaval-style" />
+      <xsl:call-template name="setid"/>
+      <xsl:apply-templates/>
+    </tr>
+  </xsl:template>
+
+  <!-- Override  Notes to add Bootstrap classes and roles -->
+  <xsl:template match="*" mode="process.note.common-processing">
+    <xsl:param name="type" select="@type"/>
+    <xsl:param name="title">
+      <xsl:call-template name="getVariable">
+        <xsl:with-param name="id" select="concat(upper-case(substring($type, 1, 1)), substring($type, 2))"/>
+      </xsl:call-template>
+    </xsl:param>
+    <!-- ↓ Add Bootstrap class attributes template ↑ -->
+    <xsl:variable name="bootstrap-class">
+        <xsl:if test="not(contains(@outputclass, 'alert-'))">
+          <xsl:call-template name="bootstrap-note" />
+        </xsl:if>
+    </xsl:variable>
+    <div role="alert">
+      <xsl:call-template name="commonattributes">
+        <xsl:with-param name="default-output-class" select="$bootstrap-class"/>
+        <!--xsl:with-param name="default-output-class" select="string-join(($type, concat('note_', $type)), ' ')"/-->
+      </xsl:call-template>
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+      <xsl:call-template name="setidaname"/>
+      <!-- Normal flags go before the generated title; revision flags only go on the content. -->
+      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/prop" mode="ditaval-outputflag"/>
+      <span class="note__title">
+        <xsl:copy-of select="$title"/>
+        <xsl:call-template name="getVariable">
+          <xsl:with-param name="id" select="'ColonSymbol'"/>
+        </xsl:call-template>
+      </span>
+      <xsl:text> </xsl:text>
+      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop" mode="ditaval-outputflag"/>
+      <xsl:apply-templates/>
+      <!-- Normal end flags and revision end flags both go out after the content. -->
+      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
+    </div>
+  </xsl:template>
+
+</xsl:stylesheet>

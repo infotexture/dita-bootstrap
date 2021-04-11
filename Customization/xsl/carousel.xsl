@@ -5,8 +5,10 @@
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" exclude-result-prefixes="xs xhtml dita-ot">
 
+  <!-- Customization to add Bootstrap Carousel Component -->
+  <!-- https://getbootstrap.com/docs/5.0/components/carousel/ -->
 
-   <xsl:template match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]">
+  <xsl:template match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]">
       <xsl:variable name="id">
          <xsl:value-of select="concat('carousel_' ,dita-ot:generate-html-id(.))" />
       </xsl:variable>
@@ -31,8 +33,8 @@
       </div>
    </xsl:template>
 
-
-   <xsl:template match="*[contains(@class,' topic/li ')]" mode="carousel">
+  <!-- Carousel Items, Slides only -->
+  <xsl:template match="*[contains(@class,' topic/li ')]" mode="carousel">
       <div>
          <xsl:attribute name="class">
             <xsl:text>carousel-item</xsl:text>
@@ -44,11 +46,11 @@
       </div>
    </xsl:template>
 
-
-    <xsl:template match="*[contains(@class,' topic/fig ')]" mode="carousel">
-      <xsl:apply-templates select="*[contains(@class,' topic/image ')]" mode="carousel" />
-      <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="carousel" />
-    </xsl:template>
+  <!-- Carousel Items Slides with Captions -->
+  <xsl:template match="*[contains(@class,' topic/fig ')]" mode="carousel">
+    <xsl:apply-templates select="*[contains(@class,' topic/image ')]" mode="carousel" />
+    <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="carousel" />
+  </xsl:template>
 
    <xsl:template match="*[contains(@class,' topic/image ')]" mode="carousel">
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line" />
@@ -82,12 +84,13 @@
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line" />
    </xsl:template>
 
-    <xsl:template match="*[contains(@class,' topic/title ')]" mode="carousel">
-      <div class="carousel-caption d-none d-md-block">
-        <p>
-         <xsl:call-template name="commonattributes"/>
-         <xsl:value-of select="."/>
-        </p>
-      </div>
-    </xsl:template>
+  <!-- Slide Caption -->
+  <xsl:template match="*[contains(@class,' topic/title ')]" mode="carousel">
+    <div class="carousel-caption d-none d-md-block">
+      <p>
+       <xsl:call-template name="commonattributes"/>
+       <xsl:value-of select="."/>
+      </p>
+    </div>
+  </xsl:template>
 </xsl:stylesheet>

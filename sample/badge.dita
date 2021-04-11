@@ -10,8 +10,12 @@
       </section>
       <bodydiv outputclass="bd-example">
          <section>
-            <title>Example Heading <ph outputclass="bg-secondary">New</ph></title>
-            <p>Example Text <ph outputclass="bg-secondary">New</ph></p>
+            <p outputclass="h1">Example heading <ph outputclass="bg-secondary">New</ph></p>
+            <p outputclass="h2">Example heading <ph outputclass="bg-secondary">New</ph></p>
+            <p outputclass="h3">Example heading <ph outputclass="bg-secondary">New</ph></p>
+            <p outputclass="h4">Example heading <ph outputclass="bg-secondary">New</ph></p>
+            <p outputclass="h5">Example heading <ph outputclass="bg-secondary">New</ph></p>
+            <p outputclass="h6">Example heading <ph outputclass="bg-secondary">New</ph></p>
          </section>
       </bodydiv>
       <codeblock>
@@ -20,7 +24,7 @@
       </codeblock>
       <section>
          <title>Background colors</title>
-         <p>Use Bootstrap's background utility classes to quickly change the appearance of a badge. Please note that when using Bootstrap’s default <codeph>.bg-light</codeph>, you’ll likely need a text color utility like <codeph>.text-dark</codeph> for proper styling. This is because background utilities do not set anything but background-color.</p>
+         <p>Use Bootstrap's background utility classes to quickly change the appearance of a badge. Please note that when using Bootstrap’s default <codeph>outputclass="bg-light"</codeph>, you’ll likely need a text color utility like <codeph>outputclass="text-dark"</codeph> for proper styling. This is because background utilities do not set anything but background-color.</p>
       </section>
       <bodydiv outputclass="bd-example">
          <ph outputclass="bg-primary">Primary</ph>
