@@ -47,7 +47,7 @@
       <title>Offcanvas components</title>
       <p>
          Below is an offcanvas example that is displayed when the button is clicked. Add
-         <codeph>props="offcanvas-toggle"</codeph> to an <codeph>&lt;xref&gt;</codeph>
+         <codeph>props="offcanvas-toggle"</codeph> to an <xmlelement>xref</xmlelement>
          element to associate a button to an offcanvas
       </p>
     </section>
@@ -79,15 +79,15 @@
       </p>
       <ul>
         <li>
-           <codeph>outputclass="offcanvas-start"</codeph> places offcanvas on the left of
+           Setting <xmlatt>outputclass</xmlatt> to <codeph>offcanvas-start</codeph> places offcanvas on the left of
            the viewport (shown above)
         </li>
         <li>
-           <codeph>outputclass="offcanvas-end"</codeph> places offcanvas on the right of
+           Setting  <xmlatt>outputclass</xmlatt> to <codeph>offcanvas-end</codeph> places offcanvas on the right of
            the viewport
         </li>
         <li>
-           <codeph>outputclass="offcanvas-bottom"</codeph> places offcanvas on the bottom
+           Setting <xmlatt>outputclass</xmlatt> to <codeph>offcanvas-bottom</codeph> places offcanvas on the bottom
            of the viewport
         </li>
       </ul>

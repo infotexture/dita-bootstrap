@@ -63,7 +63,7 @@
     <section>
       <title>With captions</title>
       <p>
-         Add captions by using <codeph>&lt;fig&gt;</codeph> elements
+         Add captions by using <xmlelement>fig</xmlelement> elements
       </p>
     </section>
     <bodydiv outputclass="bd-example">

@@ -49,7 +49,7 @@
     <section>
       <title>Flush</title>
       <p>
-         Add <codeph>outputclass="list-group-flush"</codeph> to remove some borders and
+         Add an <xmlatt>outputclass</xmlatt> and set it to <codeph>list-group-flush</codeph> to remove some borders and
          rounded corners to render list group items edge-to-edge in a parent container
          (e.g., cards).
       </p>

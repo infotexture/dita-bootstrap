@@ -37,8 +37,8 @@
       <title>Outline Buttons</title>
       <p>
          In need of a button, but not the hefty background colors they bring? Replace the
-         default modifier classes with the <codeph>outputclass="btn-outline-*"</codeph>
-         ones to remove all background images and colors on any button.
+         default modifier classes with the <xmlatt>outputclass</xmlatt> and a value of <codeph>btn-outline-*</codeph>
+         to remove all background images and colors on any button.
       </p>
     </section>
        <bodydiv outputclass="bd-example"><xref href="#" outputclass="btn-outline-primary">Primary</xref><xref

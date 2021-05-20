@@ -18,7 +18,7 @@
          The accordion uses <xref scope="external"
          href="https://getbootstrap.com/docs/5.0/components/collapse/">collapse</xref>
          internally to make it collapsible. To render an accordion that’s expanded, add
-         the <codeph>outputclass="open"</codeph> class on the <codeph>outputclass="accordion"</codeph>.
+         the class <codeph>open</codeph> in addition to <codeph>accordion</codeph> to the <xmlatt>outputclass</xmlatt>.
       </p>
     </section>
     <section>
@@ -84,7 +84,7 @@
     <section>
       <title>Flush</title>
       <p>
-         Add <codeph>outputclass="accordion-flush"</codeph> to remove the default
+         Add the class <codeph>accordion-flush</codeph> to <xmlatt>outputclass</xmlatt> to remove the default
          background-color, some borders, and some rounded corners to render accordions
          edge-to-edge with their parent container.
       </p>

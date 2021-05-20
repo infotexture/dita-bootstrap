@@ -15,7 +15,7 @@
     <section>
       <title>Overview</title>
       <p>
-         Due to the widespread use of <codeph>&lt;table&gt;</codeph> elements across
+         Due to the widespread use of <xmlelement>table</xmlelement> elements across
          third-party widgets like calendars and date pickers, Bootstrap’s tables are
          opt-in. Extend with optional modifier outputclasses or custom styles. All table
          styles are not inherited in Bootstrap, meaning any nested tables can be styled
@@ -165,8 +165,8 @@
     <section>
       <title>Striped rows</title>
       <p>
-         Use <codeph>outputclass="table-striped"</codeph> to add zebra-striping to any
-         table row within the <codeph>&lt;tbody&gt;</codeph>.
+         Use <xmlatt>outputclass</xmlatt> and add <codeph>table-striped</codeph> to add zebra-striping to any
+         table row within the <xmlelement>tbody</xmlelement>.
       </p>
     </section>
     <bodydiv outputclass="bd-example">

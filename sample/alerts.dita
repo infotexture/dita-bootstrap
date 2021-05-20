@@ -17,7 +17,7 @@
       <p>
          Alerts are available for any length of text, as well as an optional close
          button. For proper styling, use one of the eight required contextual classes
-         (e.g., <codeph>outputclass="alert-success"</codeph>).
+         (e.g., set <xmlatt>outputclass</xmlatt> to <codeph>alert-success</codeph>).
       </p>
     </section>
     <bodydiv outputclass="bd-example">
@@ -104,8 +104,8 @@
     <section>
       <title>Notes</title>
       <p>
-         DITA <codeph>&lt;note&gt;</codeph> elements are displayed as alerts according
-         to the <codeph>type</codeph> attribute
+         DITA <xmlelement>note</xmlelement> elements are displayed as alerts according
+         to the <xmlatt>type</xmlatt> attribute
       </p>
     </section>
     <div outputclass="bd-example">
@@ -151,7 +151,7 @@
 &lt;note type="danger"&gt;You may  hurt yourself!&lt;/note&gt;
 &lt;note type="other"&gt;This is something other than a normal note.&lt;/note&gt;</codeblock>
     <p>
-       The <codeph>type</codeph> can be overridden by using an <codeph>outputclass</codeph>
+       The <xmlatt>type</xmlatt> can be overridden by using an <xmlatt>outputclass</xmlatt>
     </p>
     <div outputclass="bd-example">
       <note outputclass="alert-primary">

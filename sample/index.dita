@@ -15,7 +15,7 @@
      have been aligned directly from the official Bootstrap 5.0 documentation (found
      at <codeph>https://getbootstrap.com/docs/5.0</codeph>), however DITA markup is
      used throughout the examples describing how to implement these components
-     correctly using <codeph>outputclass</codeph>.
+     correctly using <xmlatt>outputclass</xmlatt>.
   </abstract>
   <body outputclass="language-bash">
     <section>
@@ -26,32 +26,32 @@
       <p>
          DITA-OT 3.5 and newer:
       </p>
-      <codeblock outputclass="bash"><cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap</codeblock>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap</codeblock>
       <p>
          DITA-OT 3.3 and newer:
       </p>
-      <codeblock outputclass="bash"><cmdname>dita</cmdname> <parmname>--install</parmname> net.infotexture.dita-bootstrap</codeblock>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--install</parmname> net.infotexture.dita-bootstrap</codeblock>
       <p>
          DITA-OT 3.2 and older:
       </p>
-      <codeblock outputclass="bash"><cmdname>dita</cmdname> <parmname>--install</parmname> https://github.com/infotexture/dita-bootstrap/archive/3.1.zip</codeblock>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--install</parmname> https://github.com/infotexture/dita-bootstrap/archive/3.1.zip</codeblock>
     </section>
     <section>
       <title>Using</title>
       <p>
          Specify the html5-bootstrap format when building output with the dita command:
       </p>
-      <codeblock outputclass="bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
     </section>
     <section>
       <title>Customizing Headers</title>
       <p>
          The plug-in includes a default static navbar with a project name and global
          links. To override the global navigation with a header of your own, pass a
-         custom header file to the dita command via the <codeph>--args.hdr</codeph>
+         custom header file to the dita command via the <parmname>--args.hdr</parmname>
          parameter:
       </p>
-      <codeblock outputclass="bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath></codeblock>
       <p>
@@ -72,9 +72,9 @@
          href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css">custom CSS</xref>
          styles. You can edit this file to add style rules of your own. Override the
          default Bootstrap theme by passing a custom CSS file to the dita command via
-         the <codeph>--args.css</codeph> parameter:
+         the <parmname>--args.css</parmname> parameter:
       </p>
-      <codeblock outputclass="bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
      <parmname>--args.css</parmname>=&lt;name-of-css&gt;.css \

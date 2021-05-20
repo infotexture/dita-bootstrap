@@ -30,7 +30,7 @@
       <p>
          In addition to Bootstrap's <xref scope="external"
          href="https://getbootstrap.com/docs/5.0/utilities/borders/">border-radius utilities</xref>,
-         you can use <codeph>outputclass="img-thumbnail"</codeph> to give an image a
+         you can set <xmlatt>outputclass</xmlatt> to <codeph>img-thumbnail</codeph> to give an image a
          rounded 1px border appearance.
       </p>
     </section>

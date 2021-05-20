@@ -15,8 +15,8 @@
     <section>
       <title>Basic Example</title>
       <p>
-         Wrap a series of buttons with <codeph>&lt;xref outputclass="btn-*"&gt;</codeph>
-         in a <codeph>&lt;div outputclass="btn-group"&gt;</codeph>
+         Wrap a series of buttons with <xmlelement>xref outputclass="btn-*"</xmlelement>
+         in a <xmlelement>div outputclass="btn-group"</xmlelement>
       </p>
     </section>
     <bodydiv outputclass="bd-example">

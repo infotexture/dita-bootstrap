@@ -15,9 +15,9 @@
     <section>
       <title>Basic example</title>
       <p>
-         The following example shows a simple tabbed dialog using a <codeph>&lt;bodydiv
-         outputclass="nav-tabs"&gt;</codeph> element containing a series of
-         <codeph>&lt;section&gt;</codeph> elements
+         The following example shows a simple tabbed dialog using a <xmlelement>bodydiv
+         outputclass="nav-tabs"</xmlelement> element containing a series of
+         <xmlelement>section</xmlelement> elements
       </p>
     </section>
     <bodydiv outputclass="bd-example">
@@ -73,8 +73,8 @@
   &lt;/section&gt;
 &lt;/bodydiv&gt;</codeblock>
     <p>
-       The tabs plugin also works with pills using <codeph>&lt;bodydiv
-       outputclass="nav-pills"&gt;</codeph>
+       The tabs plugin also works with pills using <xmlelement>bodydiv
+       outputclass="nav-pills"</xmlelement>
     </p>
     <bodydiv outputclass="bd-example">
       <bodydiv outputclass="nav-pills">
@@ -129,7 +129,7 @@
   &lt;/section&gt;
 &lt;/bodydiv&gt;</codeblock>
     <p>
-       And with vertical pills using <codeph>&lt;bodydiv outputclass="nav-pills-vertical"&gt;</codeph>
+       And with vertical pills using <xmlelement>bodydiv outputclass="nav-pills-vertical"</xmlelement>
     </p>
     <bodydiv outputclass="bd-example">
       <bodydiv outputclass="nav-pills-vertical">
