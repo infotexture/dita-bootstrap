@@ -73,14 +73,12 @@
          default Bootstrap theme by passing a custom CSS file to the dita command via
          the <codeph>--args.css</codeph> parameter:
       </p>
-      <codeblock>
-dita --input=path/to/your.ditamap --format=html5-bootstrap \
+      <codeblock>dita --input=path/to/your.ditamap --format=html5-bootstrap \
      --args.hdr=path/to/your-header.xml \
      --args.css=&lt;name-of-css&gt;.css \
      --args.copycss=yes \
      --args.csspath=css
-     --args.cssroot=path/to/your/theme
-</codeblock>
+     --args.cssroot=path/to/your/theme</codeblock>
       <p>
          For more extensive customizations, you may want to fork this repository and
          create a new plug-in of your own.
