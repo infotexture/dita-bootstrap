@@ -1,49 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Within the sample documentation, where necessary, the texts describing the
-  usage of each component have been copied directly from the official Bootstrap
-  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
-  markup is used throughout the examples describing how to implement these
-  components correctly using outputclass.
--->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+   <!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass. -->
 <topic id="alerts">
-   <title>Alerts</title>
-   <abstract>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</abstract>
-   <body outputclass="language-markup">
-      <section>
-         <title>Example</title>
-         <p>
-            Alerts are available for any length of text, as well as an optional close button. For proper styling, use one of the eight required contextual classes (e.g., <codeph>outputclass="alert-success"</codeph>).
-         </p>
-      </section>
-      <bodydiv outputclass="bd-example">
-         <section outputclass="alert-primary">
-           A simple primary alert—check it out!
+  <title>Alerts</title>
+  <abstract>
+     Provide contextual feedback messages for typical user actions with the handful
+     of available and flexible alert messages.
+  </abstract>
+  <body outputclass="language-markup">
+    <section>
+      <title>Example</title>
+      <p>
+         Alerts are available for any length of text, as well as an optional close
+         button. For proper styling, use one of the eight required contextual classes
+         (e.g., <codeph>outputclass="alert-success"</codeph>).
+      </p>
+    </section>
+    <bodydiv outputclass="bd-example">
+      <section outputclass="alert-primary">
+         A simple primary alert—check it out!
          </section>
-         <section outputclass="alert-secondary">
-           A simple secondary alert—check it out!
+      <section outputclass="alert-secondary">
+         A simple secondary alert—check it out!
          </section>
-         <section outputclass="alert-success">
-           A simple success alert—check it out!
+      <section outputclass="alert-success">
+         A simple success alert—check it out!
          </section>
-         <section outputclass="alert-danger">
-           A simple danger alert—check it out!
+      <section outputclass="alert-danger">
+         A simple danger alert—check it out!
          </section>
-         <section outputclass="alert-warning">
-           A simple warning alert—check it out!
+      <section outputclass="alert-warning">
+         A simple warning alert—check it out!
          </section>
-         <section outputclass="alert-info">
-           A simple info alert—check it out!
+      <section outputclass="alert-info">
+         A simple info alert—check it out!
          </section>
-         <section outputclass="alert-light">
-           A simple light alert—check it out!
+      <section outputclass="alert-light">
+         A simple light alert—check it out!
          </section>
-         <section outputclass="alert-dark">
-           A simple dark alert—check it out!
+      <section outputclass="alert-dark">
+         A simple dark alert—check it out!
          </section>
-      </bodydiv>
-      <codeblock>&lt;section outputclass="alert-primary"&gt;
+    </bodydiv>
+    <codeblock>&lt;section outputclass="alert-primary"&gt;
   A simple primary alert—check it out!
 &lt;/section&gt;
 &lt;section outputclass="alert-secondary"&gt;
@@ -67,22 +70,27 @@
 &lt;section outputclass="alert-dark"&gt;
   A simple dark alert—check it out!
 &lt;/section&gt;</codeblock>
-      <section>
-         <title>Additional content</title>
-         <p>Alerts can also contain additional HTML elements like headings, paragraphs and links.</p>
+    <section>
+      <title>Additional content</title>
+      <p>
+         Alerts can also contain additional HTML elements like headings, paragraphs and
+         links.
+      </p>
+    </section>
+    <bodydiv outputclass="bd-example">
+      <section outputclass="alert-success">
+        <title>Well done!</title>
+        <p>
+           Aww yeah, you successfully read this important alert message. This example text
+           with a <xref href="#">link</xref> is going to run a bit longer so that you can
+           see how spacing within an alert works with this kind of content.
+        </p>
+        <p>
+           Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+        </p>
       </section>
-      <bodydiv outputclass="bd-example">
-         <section outputclass="alert-success">
-            <title>Well done!</title>
-            <p>
-               Aww yeah, you successfully read this important alert message. This example text with a <xref href="#">link</xref> is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
-            </p>
-            <p>
-               Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
-            </p>
-         </section>
-      </bodydiv>
-      <codeblock>&lt;section outputclass="alert-success"&gt;
+    </bodydiv>
+    <codeblock>&lt;section outputclass="alert-success"&gt;
    &lt;title&gt;Well done!&lt;/title&gt;
    &lt;p&gt;
       Aww yeah, you successfully read this important alert message. This example text with a
@@ -93,25 +101,46 @@
       Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
    &lt;/p&gt;
 &lt;/section&gt;</codeblock>
-      <section>
-         <title>Notes</title>
-         <p>
-            DITA <codeph>&lt;note&gt;</codeph> elements are displayed as alerts according to the <codeph>type</codeph> attribute
-         </p>
-      </section>
-      <div outputclass="bd-example">
-        <note type="note">This is just a note.</note>
-        <note type="fastpath">This note will speed you on your way.</note>
-        <note type="remember">Don't forget to do what this note says.</note>
-        <note type="tip">This is a fine little tip.</note>
-        <note type="attention">Please pay extra attention to this note.</note>
-        <note type="caution">Care is required when proceeding.</note>
-        <note type="important">This note is important.</note>
-        <note type="restriction">You can't do what this note says.</note>
-        <note type="danger">You may  hurt yourself!</note>
-        <note type="other">This is something other than a normal note.</note>
-      </div>
-      <codeblock>&lt;note type="note"&gt;This is just a note.&lt;/note&gt;
+    <section>
+      <title>Notes</title>
+      <p>
+         DITA <codeph>&lt;note&gt;</codeph> elements are displayed as alerts according
+         to the <codeph>type</codeph> attribute
+      </p>
+    </section>
+    <div outputclass="bd-example">
+      <note type="note">
+         This is just a note.
+      </note>
+      <note type="fastpath">
+         This note will speed you on your way.
+      </note>
+      <note type="remember">
+         Don't forget to do what this note says.
+      </note>
+      <note type="tip">
+         This is a fine little tip.
+      </note>
+      <note type="attention">
+         Please pay extra attention to this note.
+      </note>
+      <note type="caution">
+         Care is required when proceeding.
+      </note>
+      <note type="important">
+         This note is important.
+      </note>
+      <note type="restriction">
+         You can't do what this note says.
+      </note>
+      <note type="danger">
+         You may  hurt yourself!
+      </note>
+      <note type="other">
+         This is something other than a normal note.
+      </note>
+    </div>
+    <codeblock>&lt;note type="note"&gt;This is just a note.&lt;/note&gt;
 &lt;note type="fastpath"&gt;This note will speed you on your way.&lt;/note&gt;
 &lt;note type="remember"&gt;Don't forget to do what this note says.&lt;/note&gt;
 &lt;note type="tip"&gt;This is a fine little tip.&lt;/note&gt;
@@ -121,19 +150,27 @@
 &lt;note type="restriction"&gt;You can't do what this note says.&lt;/note&gt;
 &lt;note type="danger"&gt;You may  hurt yourself!&lt;/note&gt;
 &lt;note type="other"&gt;This is something other than a normal note.&lt;/note&gt;</codeblock>
-      <p>
-         The <codeph>type</codeph> can be overridden by using an <codeph>outputclass</codeph>
-      </p>
-      <div outputclass="bd-example">
-        <note outputclass="alert-primary">This is a primary note.</note>
-        <note outputclass="alert-secondary">This is a secondary note.</note>
-        <note outputclass="alert-light">This is light note.</note>
-        <note outputclass="alert-dark">This is dark note.</note>
-      </div>
-       <codeblock>&lt;note outputclass="alert-primary"&gt;This is a primary note.&lt;/note&gt;
+    <p>
+       The <codeph>type</codeph> can be overridden by using an <codeph>outputclass</codeph>
+    </p>
+    <div outputclass="bd-example">
+      <note outputclass="alert-primary">
+         This is a primary note.
+      </note>
+      <note outputclass="alert-secondary">
+         This is a secondary note.
+      </note>
+      <note outputclass="alert-light">
+         This is light note.
+      </note>
+      <note outputclass="alert-dark">
+         This is dark note.
+      </note>
+    </div>
+    <codeblock>&lt;note outputclass="alert-primary"&gt;This is a primary note.&lt;/note&gt;
 &lt;note outputclass="alert-secondary"&gt;This is a secondary note.&lt;/note&gt;
 &lt;note outputclass="alert-light"&gt;This is light note.&lt;/note&gt;
 &lt;note outputclass="alert-dark"&gt;This is dark note.&lt;/note&gt;
        </codeblock>
-   </body>
+  </body>
 </topic>

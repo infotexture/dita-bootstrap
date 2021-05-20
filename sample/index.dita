@@ -1,58 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Within the sample documentation, where necessary, the texts describing the
-  usage of each component have been copied directly from the official Bootstrap
-  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
-  markup is used throughout the examples describing how to implement these
-  components correctly using outputclass.
--->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+   <!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass. -->
 <topic id="index">
-   <title>DITA Bootstrap</title>
-   <abstract>A plug-in for <xref scope="external" href="http://www.dita-ot.org">DITA Open Toolkit</xref> that extends the default HTML5 output with a <xref scope="external" href="https://getbootstrap.com/docs/5.0">Bootstrap 5.0</xref> template and components. Where necessary,
-   the texts describing the usage of each component have been aligned directly from the official Bootstrap 5.0 documentation (found at <codeph>https://getbootstrap.com/docs/5.0</codeph>),
-   however DITA markup is used throughout the examples describing how to implement these components correctly using <codeph>outputclass</codeph>.
- </abstract>
-   <body outputclass="language-bash">
-
-		<section>
-			<title>Installing</title>
-			<p>
-				Use the dita command to add this plug-in to your DITA Open Toolkit installation:
-			</p>
-			<p>DITA-OT 3.5 and newer:</p>
-			<codeblock>dita install net.infotexture.dita-bootstrap</codeblock>
-			<p>DITA-OT 3.3 and newer:</p>
-			<codeblock>dita --install net.infotexture.dita-bootstrap</codeblock>
-			<p>DITA-OT 3.2 and older:</p>
-			<codeblock>dita --install https://github.com/infotexture/dita-bootstrap/archive/3.1.zip</codeblock>
-		</section>
-		<section>
-			<title>Using</title>
-			<p>Specify the html5-bootstrap format when building output with the dita command:</p>
-		<codeblock>dita --input=path/to/your.ditamap --format=html5-bootstrap</codeblock>
-		</section>
-		<section>
-			<title>Customizing Headers</title>
-			<p>The plug-in includes a default static navbar with a project name and global links. To override the global navigation with a header of your own, pass a custom header file to the dita command via the <codeph>--args.hdr</codeph> parameter:</p>
-
-			<codeblock>dita --input=path/to/your.ditamap --format=html5-bootstrap \
+  <title>DITA Bootstrap</title>
+  <abstract>
+     A plug-in for <xref scope="external" href="http://www.dita-ot.org">DITA Open Toolkit</xref>
+     that extends the default HTML5 output with a <xref scope="external"
+     href="https://getbootstrap.com/docs/5.0">Bootstrap 5.0</xref> template and
+     components. Where necessary, the texts describing the usage of each component
+     have been aligned directly from the official Bootstrap 5.0 documentation (found
+     at <codeph>https://getbootstrap.com/docs/5.0</codeph>), however DITA markup is
+     used throughout the examples describing how to implement these components
+     correctly using <codeph>outputclass</codeph>.
+  </abstract>
+  <body outputclass="language-bash">
+    <section>
+      <title>Installing</title>
+      <p>
+         Use the dita command to add this plug-in to your DITA Open Toolkit installation:
+      </p>
+      <p>
+         DITA-OT 3.5 and newer:
+      </p>
+      <codeblock>dita install net.infotexture.dita-bootstrap</codeblock>
+      <p>
+         DITA-OT 3.3 and newer:
+      </p>
+      <codeblock>dita --install net.infotexture.dita-bootstrap</codeblock>
+      <p>
+         DITA-OT 3.2 and older:
+      </p>
+      <codeblock>dita --install https://github.com/infotexture/dita-bootstrap/archive/3.1.zip</codeblock>
+    </section>
+    <section>
+      <title>Using</title>
+      <p>
+         Specify the html5-bootstrap format when building output with the dita command:
+      </p>
+      <codeblock>dita --input=path/to/your.ditamap --format=html5-bootstrap</codeblock>
+    </section>
+    <section>
+      <title>Customizing Headers</title>
+      <p>
+         The plug-in includes a default static navbar with a project name and global
+         links. To override the global navigation with a header of your own, pass a
+         custom header file to the dita command via the <codeph>--args.hdr</codeph>
+         parameter:
+      </p>
+      <codeblock>dita --input=path/to/your.ditamap --format=html5-bootstrap \
      --args.hdr=path/to/your-header.xml</codeblock>
-			<p>
-				The plug-in includes a <xref scope="external" href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml">sample header</xref> alternative with a dark navbar.
-			</p>
-			<p>
-				Edit a copy of this file to adjust the content of the global navigation.
-			</p>
-		</section>
-		<section>
-			<title>Custom CSS</title>
-			<p>
-        Bootstrap themes can be generated using the <xref scope="external" href="https://themestr.app/theme">Themestr.app</xref>.
-				The plug-in includes a basic placeholder for <xref scope="external" href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css">custom CSS</xref> styles. You can edit this file to add style rules of your own. Override the default Bootstrap theme by passing a custom CSS file to the dita command via the <codeph>--args.css</codeph> parameter:
-			</p>
-
-			<codeblock>
+      <p>
+         The plug-in includes a <xref scope="external"
+         href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml">sample
+         header</xref> alternative with a dark navbar.
+      </p>
+      <p>
+         Edit a copy of this file to adjust the content of the global navigation.
+      </p>
+    </section>
+    <section>
+      <title>Custom CSS</title>
+      <p>
+         Bootstrap themes can be generated using the <xref scope="external"
+         href="https://themestr.app/theme">Themestr.app</xref>. The plug-in includes a
+         basic placeholder for <xref scope="external"
+         href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css">custom CSS</xref>
+         styles. You can edit this file to add style rules of your own. Override the
+         default Bootstrap theme by passing a custom CSS file to the dita command via
+         the <codeph>--args.css</codeph> parameter:
+      </p>
+      <codeblock>
 dita --input=path/to/your.ditamap --format=html5-bootstrap \
      --args.hdr=path/to/your-header.xml \
      --args.css=&lt;name-of-css&gt;.css \
@@ -60,10 +81,10 @@ dita --input=path/to/your.ditamap --format=html5-bootstrap \
      --args.csspath=css
      --args.cssroot=path/to/your/theme
 </codeblock>
-
-			<p>
-				For more extensive customizations, you may want to fork this repository and create a new plug-in of your own.
-			</p>
-		</section>
-	</body>
+      <p>
+         For more extensive customizations, you may want to fork this repository and
+         create a new plug-in of your own.
+      </p>
+    </section>
+  </body>
 </topic>

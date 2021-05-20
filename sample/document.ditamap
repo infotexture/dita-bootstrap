@@ -2,35 +2,34 @@
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <bookmap>
   <title>DITA Bootstrap</title>
-    <frontmatter>
-        <booklists>
-            <toc/>
-        </booklists>
-    </frontmatter>
-    <chapter>
-    <topicmeta>
-          <navtitle>Getting Started</navtitle>
-      </topicmeta>
-    <topicref navtitle="Introduction" format="dita" href="index.dita"/>
-  </chapter>
-
+  <frontmatter>
+    <booklists>
+      <toc/>
+    </booklists>
+  </frontmatter>
   <chapter>
     <topicmeta>
-          <navtitle>Layout</navtitle>
-      </topicmeta>
+      <navtitle>Getting Started</navtitle>
+    </topicmeta>
+    <topicref navtitle="Introduction" format="dita" href="index.dita"/>
+  </chapter>
+  <chapter>
+    <topicmeta>
+      <navtitle>Layout</navtitle>
+    </topicmeta>
     <topicref navtitle="Grid" format="dita" type="topic" href="grid.dita"/>
   </chapter>
   <chapter>
     <topicmeta>
-          <navtitle>Content</navtitle>
-      </topicmeta>
+      <navtitle>Content</navtitle>
+    </topicmeta>
     <topicref navtitle="Images" format="dita" type="topic" href="images.dita"/>
     <topicref navtitle="Tables" format="dita" type="topic" href="tables.dita"/>
   </chapter>
   <chapter>
     <topicmeta>
-          <navtitle>Components</navtitle>
-      </topicmeta>
+      <navtitle>Components</navtitle>
+    </topicmeta>
     <topicref navtitle="Accordion" format="dita" type="topic" href="accordion.dita"/>
     <topicref navtitle="Alerts" format="dita" type="topic" href="alerts.dita"/>
     <topicref navtitle="Badges" format="dita" type="topic" href="badge.dita"/>
