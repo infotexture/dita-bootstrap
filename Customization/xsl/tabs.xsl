@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-	This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
-	See the accompanying LICENSE file for applicable licenses.
+  This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
+  See the accompanying LICENSE file for applicable licenses.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" exclude-result-prefixes="xs xhtml dita-ot">
 
@@ -11,22 +11,22 @@
 
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-tabs')]">
 
-		<ul role="tablist">
-			<xsl:call-template name="commonattributes">
-				<xsl:with-param name="default-output-class" select="'nav'" />
-			</xsl:call-template>
-			<xsl:call-template name="setid"/>
-			<xsl:apply-templates mode="nav-tabs" select="*[contains(@class,' topic/section ')]/*[contains(@class,' topic/title ')]"/>
-		</ul>
+    <ul role="tablist">
+      <xsl:call-template name="commonattributes">
+        <xsl:with-param name="default-output-class" select="'nav'" />
+      </xsl:call-template>
+      <xsl:call-template name="setid"/>
+      <xsl:apply-templates mode="nav-tabs" select="*[contains(@class,' topic/section ')]/*[contains(@class,' topic/title ')]"/>
+    </ul>
     <div class="tab-content">
       <xsl:apply-templates mode="nav-tabs" select="*[contains(@class,' topic/section ')]"/>
     </div>
-	</xsl:template>
+  </xsl:template>
 
   <!-- Customization to add Bootstrap Tabbed Dialog with Pills Component -->
   <!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/#pills -->
 
-	<xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-pills')]">
+  <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-pills')]">
 
     <xsl:choose>
       <!-- Pills with Vertical alignment -->
@@ -47,28 +47,28 @@
       </xsl:when>
       <!-- Pills with Horizontal alignment -->
       <xsl:otherwise>
-    		<ul role="tablist">
-    			<xsl:call-template name="commonattributes">
-    				<xsl:with-param name="default-output-class" select="'nav'" />
-    			</xsl:call-template>
-    			<xsl:call-template name="setid"/>
-    			<xsl:apply-templates mode="nav-tabs" select="*[contains(@class,' topic/section ')]/*[contains(@class,' topic/title ')]"/>
-    		</ul>
+        <ul role="tablist">
+          <xsl:call-template name="commonattributes">
+            <xsl:with-param name="default-output-class" select="'nav'" />
+          </xsl:call-template>
+          <xsl:call-template name="setid"/>
+          <xsl:apply-templates mode="nav-tabs" select="*[contains(@class,' topic/section ')]/*[contains(@class,' topic/title ')]"/>
+        </ul>
         <div class="tab-content">
           <xsl:apply-templates mode="nav-tabs" select="*[contains(@class,' topic/section ')]"/>
         </div>
       </xsl:otherwise>
     </xsl:choose>
-	</xsl:template>
+  </xsl:template>
 
   <!-- Tabbed dialog header -->
-	<xsl:template match="*[contains(@class,' topic/title ')]" mode="nav-tabs">
+  <xsl:template match="*[contains(@class,' topic/title ')]" mode="nav-tabs">
     <xsl:variable name="parent" select="dita-ot:generate-html-id(..)" />
     <xsl:variable name="title" select="." />
     <xsl:variable name="index" select="count(../preceding-sibling::*[contains(@class, ' topic/section ')])" />
 
-		<li class="nav-item" role="presentation">
-	    	<button data-bs-toggle="tab" type="button" role="tab">
+    <li class="nav-item" role="presentation">
+        <button data-bs-toggle="tab" type="button" role="tab">
           <xsl:attribute name="id" select="concat('heading_' ,$parent)" />
           <xsl:attribute name="data-bs-target" select="concat('#tab_' ,$parent)" />
           <xsl:attribute name="class">
@@ -79,10 +79,10 @@
           </xsl:attribute>
           <xsl:attribute name="aria-selected" select="$index=0"/>
           <xsl:attribute name="aria-controls" select="$title"/>
-	    		<xsl:value-of select="$title"/>
-	    	</button>
-	  </li>
-	</xsl:template>
+          <xsl:value-of select="$title"/>
+        </button>
+    </li>
+  </xsl:template>
 
 
   <!-- Pills with Vertical alignment header -->
