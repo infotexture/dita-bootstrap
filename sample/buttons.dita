@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Within the sample documentation, where necessary, the texts describing the
+  usage of each component have been copied directly from the official Bootstrap
+  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+  markup is used throughout the examples describing how to implement these
+  components correctly using outputclass.
+-->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="buttons">
    <title>Buttons</title>
@@ -18,16 +25,14 @@
          <xref href="#" outputclass="btn-light">Light</xref>
          <xref href="#" outputclass="btn-dark">Dark</xref>
       </bodydiv>
-      <codeblock>
-&lt;xref href="#" outputclass="btn-primary"&gt;Primary&lt;/xref&gt;
+      <codeblock>&lt;xref href="#" outputclass="btn-primary"&gt;Primary&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-secondary"&gt;Secondary&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-success"&gt;Success&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-danger"&gt;Danger&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-warning"&gt;Warning&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-info"&gt;Info&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-light"&gt;Light&lt;/xref&gt;
-&lt;xref href="#" outputclass="btn-dark"&gt;Dark&lt;/xref&gt;
-      </codeblock>
+&lt;xref href="#" outputclass="btn-dark"&gt;Dark&lt;/xref&gt;</codeblock>
       <section>
          <title>Outline Buttons</title>
          <p>In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with the <codeph>outputclass="btn-outline-*"</codeph> ones to remove all background images and colors on any button.</p>
@@ -42,15 +47,13 @@
          <xref href="#" outputclass="btn-outline-light">Light</xref>
          <xref href="#" outputclass="btn-outline-dark">Dark</xref>
       </bodydiv>
-      <codeblock>
-&lt;xref href="#" outputclass="btn-outline-primary"&gt;Primary&lt;/xref&gt;
+      <codeblock>&lt;xref href="#" outputclass="btn-outline-primary"&gt;Primary&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-outline-secondary"&gt;Secondary&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-outline-success"&gt;Success&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-outline-danger"&gt;Danger&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-outline-warning"&gt;Warning&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-outline-info"&gt;Info&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-outline-light"&gt;Light&lt;/xref&gt;
-&lt;xref href="#" outputclass="btn-outline-dark"&gt;Dark&lt;/xref&gt;
-      </codeblock>
+&lt;xref href="#" outputclass="btn-outline-dark"&gt;Dark&lt;/xref&gt;</codeblock>
    </body>
 </topic>

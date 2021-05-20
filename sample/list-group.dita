@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Within the sample documentation, where necessary, the texts describing the
+  usage of each component have been copied directly from the official Bootstrap
+  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+  markup is used throughout the examples describing how to implement these
+  components correctly using outputclass.
+-->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="list-group">
    <title>List Group</title>
@@ -17,15 +24,13 @@
            <li>And a fifth one</li>
          </ul>
       </bodydiv>
-      <codeblock>
-&lt;ul outputclass="list-group"&gt;
+      <codeblock>&lt;ul outputclass="list-group"&gt;
   &lt;li&gt;An item&lt;/li&gt;
   &lt;li&gt;A second item&lt;/li&gt;
   &lt;li&gt;A third item&lt;/li&gt;
   &lt;li&gt;A fourth item&lt;/li&gt;
   &lt;li&gt;And a fifth one&lt;/li&gt;
-&lt;/ul&gt;
-      </codeblock>
+&lt;/ul&gt;</codeblock>
       <section>
          <title>Flush</title>
          <p>Add <codeph>outputclass="list-group-flush"</codeph> to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).</p>
@@ -39,14 +44,12 @@
            <li>And a fifth one</li>
          </ul>
       </bodydiv>
-      <codeblock>
-&lt;ul outputclass="list-group list-group-flush"&gt;
+      <codeblock>&lt;ul outputclass="list-group list-group-flush"&gt;
   &lt;li&gt;An item&lt;/li&gt;
   &lt;li&gt;A second item&lt;/li&gt;
   &lt;li&gt;A third item&lt;/li&gt;
   &lt;li&gt;A fourth item&lt;/li&gt;
   &lt;li&gt;And a fifth one&lt;/li&gt;
-&lt;/ul&gt;
-      </codeblock>
+&lt;/ul&gt;</codeblock>
    </body>
 </topic>

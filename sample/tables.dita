@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Within the sample documentation, where necessary, the texts describing the
+  usage of each component have been copied directly from the official Bootstrap
+  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+  markup is used throughout the examples describing how to implement these
+  components correctly using outputclass.
+-->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="tables">
    <title>Tables</title>
@@ -45,11 +52,9 @@
 </tgroup>
 </table>
       </bodydiv>
-      <codeblock>
-&lt;table&gt;
+      <codeblock>&lt;table&gt;
    ...etc
-&lt;/table&gt;
-      </codeblock>
+&lt;/table&gt;</codeblock>
       <section>
          <title>Variants</title>
          <p>Use contextual classes to color tables, table rows or individual cells..</p>
@@ -148,8 +153,7 @@
   &lt;entry outputclass="table-info"&gt;...&lt;/td&gt;
   &lt;entry outputclass="table-light"&gt;...&lt;/td&gt;
   &lt;entry outputclass="table-dark"&gt;...&lt;/td>
-&lt;/row&gt;
-      </codeblock>
+&lt;/row&gt;</codeblock>
 
 
             <section>
@@ -190,10 +194,8 @@
 </tgroup>
 </table>
       </bodydiv>
-      <codeblock>
-&lt;table outputclass="table-striped"&gt;
+      <codeblock>&lt;table outputclass="table-striped"&gt;
    ...etc
-&lt;/table&gt;
-      </codeblock>
+&lt;/table&gt;</codeblock>
    </body>
 </topic>

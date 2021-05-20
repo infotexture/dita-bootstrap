@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Within the sample documentation, where necessary, the texts describing the
+  usage of each component have been copied directly from the official Bootstrap
+  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+  markup is used throughout the examples describing how to implement these
+  components correctly using outputclass.
+-->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="offcanvas">
    <title>Offcanvas</title>
@@ -6,7 +13,7 @@
    <body outputclass="language-markup">
       <section>
          <title>How it works</title>
-         <p>Offcanvas is a sidebar component that can be toggled via JavaScript to appear from the left, right, or bottom edge of the viewport. Buttons or anchors are used as triggers that are attached to specific elements you toggle, and data attributes are used to invoke our JavaScript.</p>
+         <p>Offcanvas is a sidebar component that can be toggled via JavaScript to appear from the left, right, or bottom edge of the viewport. Buttons or anchors are used as triggers that are attached to specific elements you toggle, and data attributes are used to invoke Bootstrap's JavaScript.</p>
          <ul>
             <li>
                Offcanvas shares some of the same JavaScript code as modals. Conceptually, they are quite similar, but they are separate plugins.
@@ -40,8 +47,7 @@
             </p>
          </section>
       </bodydiv>
-      <codeblock>
-&lt;xref outputclass="btn-primary" props="offcanvas-toggle" href="#offcanvas1"&gt;
+      <codeblock>&lt;xref outputclass="btn-primary" props="offcanvas-toggle" href="#offcanvas1"&gt;
   Click here
 &lt;/xref&gt;
 &lt;section outputclass="offcanvas-start" id="offcanvas1"&gt;
@@ -49,8 +55,7 @@
    &lt;p&gt;
       Content for the offcanvas goes here. You can place just about any section elements here.
    &lt;/p&gt;
-&lt;/section&gt;
-      </codeblock>
+&lt;/section&gt;</codeblock>
       <section>
          <title>Placement</title>
          <p>There’s no default placement for offcanvas components, so you must add one of the modifier outputclasses below</p>
@@ -71,11 +76,9 @@
             </p>
          </section>
       </bodydiv>
-      <codeblock>
-&lt;section outputclass="offcanvas-end"&gt;
+      <codeblock>&lt;section outputclass="offcanvas-end"&gt;
    ...etc
-&lt;section&gt;
-      </codeblock>
+&lt;section&gt;</codeblock>
       <bodydiv outputclass="bd-example">
          <xref outputclass="btn-primary" props="offcanvas-toggle" href="#offcanvas3">
            Toggle bottom offcanvas
@@ -87,10 +90,8 @@
             </p>
          </section>
       </bodydiv>
-      <codeblock>
-&lt;section outputclass="offcanvas-bottom"&gt;
+      <codeblock>&lt;section outputclass="offcanvas-bottom"&gt;
    ...etc
-&lt;section&gt;
-      </codeblock>
+&lt;section&gt;</codeblock>
    </body>
 </topic>

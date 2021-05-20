@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Within the sample documentation, where necessary, the texts describing the
+  usage of each component have been copied directly from the official Bootstrap
+  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+  markup is used throughout the examples describing how to implement these
+  components correctly using outputclass.
+-->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="badges">
    <title>Badges</title>
@@ -18,10 +25,8 @@
             <p outputclass="h6">Example heading <ph outputclass="bg-secondary">New</ph></p>
          </section>
       </bodydiv>
-      <codeblock>
-&lt;title&gt;Example Heading &lt;ph outputclass="bg-secondary"&gt;New&lt;/ph&gt;&lt;/title&gt;
-&lt;p&gt;Example Text &lt;ph outputclass="bg-secondary"&gt;New&lt;/ph&gt;&lt;/p&gt;
-      </codeblock>
+      <codeblock>&lt;title&gt;Example Heading &lt;ph outputclass="bg-secondary"&gt;New&lt;/ph&gt;&lt;/title&gt;
+&lt;p&gt;Example Text &lt;ph outputclass="bg-secondary"&gt;New&lt;/ph&gt;&lt;/p&gt;</codeblock>
       <section>
          <title>Background colors</title>
          <p>Use Bootstrap's background utility classes to quickly change the appearance of a badge. Please note that when using Bootstrap’s default <codeph>outputclass="bg-light"</codeph>, you’ll likely need a text color utility like <codeph>outputclass="text-dark"</codeph> for proper styling. This is because background utilities do not set anything but background-color.</p>
@@ -36,15 +41,13 @@
          <ph outputclass="bg-light text-dark">Light</ph>
          <ph outputclass="bg-dark">Dark</ph>
       </bodydiv>
-      <codeblock>
-&lt;ph outputclass="bg-primary"&gt;Primary&lt;/ph&gt;
+      <codeblock>&lt;ph outputclass="bg-primary"&gt;Primary&lt;/ph&gt;
 &lt;ph outputclass="bg-secondary"&gt;Secondary&lt;/ph&gt;
 &lt;ph outputclass="bg-success"&gt;Success&lt;/ph&gt;
 &lt;ph outputclass="bg-danger"&gt;Danger&lt;/ph&gt;
 &lt;ph outputclass="bg-warning text-dark"&gt;Warning&lt;/ph&gt;
 &lt;ph outputclass="bg-info text-dark"&gt;Info&lt;/ph&gt;
 &lt;ph outputclass="bg-light text-dark"&gt;Light&lt;/ph&gt;
-&lt;ph outputclass="bg-dark"&gt;Dark&lt;/ph&gt;
-      </codeblock>
+&lt;ph outputclass="bg-dark"&gt;Dark&lt;/ph&gt;</codeblock>
    </body>
 </topic>

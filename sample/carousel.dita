@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Within the sample documentation, where necessary, the texts describing the
+  usage of each component have been copied directly from the official Bootstrap
+  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+  markup is used throughout the examples describing how to implement these
+  components correctly using outputclass.
+-->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="carousel">
    <title>Carousel</title>
@@ -31,8 +38,7 @@
             </li>
          </ol>
       </bodydiv>
-      <codeblock>
-&lt;ol outputclass="carousel"&gt;
+      <codeblock>&lt;ol outputclass="carousel"&gt;
    &lt;li&gt;
       &lt;image href="..." /&gt;
    &lt;/li&gt;
@@ -42,8 +48,7 @@
    &lt;li&gt;
       &lt;image href="..." /&gt;
    &lt;/li&gt;
-&lt;/ol&gt;
-      </codeblock>
+&lt;/ol&gt;</codeblock>
       <section>
          <title>With captions</title>
          <p>Add captions by using <codeph>&lt;fig&gt;</codeph> elements</p>
@@ -70,8 +75,7 @@
             </li>
          </ol>
       </bodydiv>
-      <codeblock>
-&lt;ol outputclass="carousel"&gt;
+      <codeblock>&lt;ol outputclass="carousel"&gt;
    &lt;li&gt;
       &lt;fig&gt;
          &lt;title&gt;The First Slide&lt;/title&gt;
@@ -90,7 +94,6 @@
          &lt;image href="..." /&gt;
       &lt;/fig&gt;
    &lt;/li&gt;
-&lt;/ol&gt;
-      </codeblock>
+&lt;/ol&gt;</codeblock>
    </body>
 </topic>

@@ -31,8 +31,7 @@
             </section>
          </bodydiv>
       </bodydiv>
-      <codeblock>
-&lt;bodydiv outputclass="accordion"&gt;
+      <codeblock>&lt;bodydiv outputclass="accordion"&gt;
    &lt;section id="accordion1"&gt;
       &lt;title&gt;Accordion Item #1&lt;/title&gt;
       &lt;p&gt;
@@ -51,8 +50,7 @@
          &lt;b&gt;This is the third item's accordion body.&lt;/b&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding Bootstrap's default variables.
       &lt;/p&gt;
    &lt;/section&gt;
-&lt;/bodydiv&gt;
-      </codeblock>
+&lt;/bodydiv&gt;</codeblock>
       <section>
          <title>Flush</title>
          <p>Add <codeph>outputclass="accordion-flush"</codeph> to remove the default background-color, some borders, and some rounded corners to render accordions edge-to-edge with their parent container.</p>
@@ -76,10 +74,8 @@
             </section>
          </bodydiv>
       </bodydiv>
-      <codeblock>
-&lt;bodydiv outputclass="accordion accordion-flush"&gt;
+      <codeblock>&lt;bodydiv outputclass="accordion accordion-flush"&gt;
    ...etc
-&lt;bodydiv&gt;
-      </codeblock>
+&lt;bodydiv&gt;</codeblock>
    </body>
 </topic>

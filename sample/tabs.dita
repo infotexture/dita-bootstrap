@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Within the sample documentation, where necessary, the texts describing the
+  usage of each component have been copied directly from the official Bootstrap
+  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+  markup is used throughout the examples describing how to implement these
+  components correctly using outputclass.
+-->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="tabs">
    <title>Tabbed Dialogs</title>
@@ -24,8 +31,7 @@
           </section>
         </bodydiv>
       </bodydiv>
-      <codeblock>
-&lt;bodydiv outputclass="nav-tabs"&gt;
+      <codeblock>&lt;bodydiv outputclass="nav-tabs"&gt;
   &lt;section&gt;
     &lt;title&gt;Home&lt;/title&gt;
     ...etc
@@ -38,8 +44,7 @@
     &lt;title&gt;Contact&lt;/title&gt;
     ...etc
   &lt;/section&gt;
-&lt;/bodydiv&gt;
-      </codeblock>
+&lt;/bodydiv&gt;</codeblock>
       <p>The tabs plugin also works with pills using <codeph>&lt;bodydiv outputclass="nav-pills"&gt;</codeph></p>
       <bodydiv outputclass="bd-example">
          <bodydiv outputclass="nav-pills">
@@ -57,8 +62,7 @@
           </section>
         </bodydiv>
       </bodydiv>
-      <codeblock>
-&lt;bodydiv outputclass="nav-pills"&gt;
+      <codeblock>&lt;bodydiv outputclass="nav-pills"&gt;
   &lt;section&gt;
     &lt;title&gt;Home&lt;/title&gt;
     ...etc
@@ -71,8 +75,7 @@
     &lt;title&gt;Contact&lt;/title&gt;
     ...etc
   &lt;/section&gt;
-&lt;/bodydiv&gt;
-      </codeblock>
+&lt;/bodydiv&gt;</codeblock>
       <p>And with vertical pills using <codeph>&lt;bodydiv outputclass="nav-pills-vertical"&gt;</codeph></p>
       <bodydiv outputclass="bd-example">
          <bodydiv outputclass="nav-pills-vertical">
@@ -90,8 +93,7 @@
           </section>
         </bodydiv>
       </bodydiv>
-      <codeblock>
-&lt;bodydiv outputclass="nav-pills-vertical"&gt;
+      <codeblock>&lt;bodydiv outputclass="nav-pills-vertical"&gt;
   &lt;section&gt;
     &lt;title&gt;Home&lt;/title&gt;
     ...etc
@@ -104,7 +106,6 @@
     &lt;title&gt;Contact&lt;/title&gt;
     ...etc
   &lt;/section&gt;
-&lt;/bodydiv&gt;
-      </codeblock>
+&lt;/bodydiv&gt;</codeblock>
    </body>
 </topic>

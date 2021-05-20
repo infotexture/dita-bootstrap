@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Within the sample documentation, where necessary, the texts describing the
+  usage of each component have been copied directly from the official Bootstrap
+  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+  markup is used throughout the examples describing how to implement these
+  components correctly using outputclass.
+-->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="alerts">
    <title>Alerts</title>
@@ -36,8 +43,7 @@
            A simple dark alert—check it out!
          </section>
       </bodydiv>
-      <codeblock>
-&lt;section outputclass="alert-primary"&gt;
+      <codeblock>&lt;section outputclass="alert-primary"&gt;
   A simple primary alert—check it out!
 &lt;/section&gt;
 &lt;section outputclass="alert-secondary"&gt;
@@ -60,8 +66,7 @@
 &lt;/section&gt;
 &lt;section outputclass="alert-dark"&gt;
   A simple dark alert—check it out!
-&lt;/section&gt;
-      </codeblock>
+&lt;/section&gt;</codeblock>
       <section>
          <title>Additional content</title>
          <p>Alerts can also contain additional HTML elements like headings, paragraphs and links.</p>
@@ -77,8 +82,7 @@
             </p>
          </section>
       </bodydiv>
-      <codeblock>
-&lt;section outputclass="alert-success"&gt;
+      <codeblock>&lt;section outputclass="alert-success"&gt;
    &lt;title&gt;Well done!&lt;/title&gt;
    &lt;p&gt;
       Aww yeah, you successfully read this important alert message. This example text with a
@@ -88,8 +92,7 @@
    &lt;p&gt;
       Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
    &lt;/p&gt;
-&lt;/section&gt;
-      </codeblock>
+&lt;/section&gt;</codeblock>
       <section>
          <title>Notes</title>
          <p>
@@ -108,8 +111,7 @@
         <note type="danger">You may  hurt yourself!</note>
         <note type="other">This is something other than a normal note.</note>
       </div>
-      <codeblock>
-&lt;note type="note"&gt;This is just a note.&lt;/note&gt;
+      <codeblock>&lt;note type="note"&gt;This is just a note.&lt;/note&gt;
 &lt;note type="fastpath"&gt;This note will speed you on your way.&lt;/note&gt;
 &lt;note type="remember"&gt;Don't forget to do what this note says.&lt;/note&gt;
 &lt;note type="tip"&gt;This is a fine little tip.&lt;/note&gt;
@@ -118,8 +120,7 @@
 &lt;note type="important"&gt;This note is important.&lt;/note&gt;
 &lt;note type="restriction"&gt;You can't do what this note says.&lt;/note&gt;
 &lt;note type="danger"&gt;You may  hurt yourself!&lt;/note&gt;
-&lt;note type="other"&gt;This is something other than a normal note.&lt;/note&gt;
-      </codeblock>
+&lt;note type="other"&gt;This is something other than a normal note.&lt;/note&gt;</codeblock>
       <p>
          The <codeph>type</codeph> can be overridden by using an <codeph>outputclass</codeph>
       </p>
@@ -129,8 +130,7 @@
         <note outputclass="alert-light">This is light note.</note>
         <note outputclass="alert-dark">This is dark note.</note>
       </div>
-       <codeblock>
-&lt;note outputclass="alert-primary"&gt;This is a primary note.&lt;/note&gt;
+       <codeblock>&lt;note outputclass="alert-primary"&gt;This is a primary note.&lt;/note&gt;
 &lt;note outputclass="alert-secondary"&gt;This is a secondary note.&lt;/note&gt;
 &lt;note outputclass="alert-light"&gt;This is light note.&lt;/note&gt;
 &lt;note outputclass="alert-dark"&gt;This is dark note.&lt;/note&gt;

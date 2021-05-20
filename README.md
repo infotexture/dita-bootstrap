@@ -8,6 +8,7 @@ A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with 
 - [Using](#using)
 - [Customizing](#customizing)
 - [Feedback](#feedback)
+- [License](#license)
 
 <!-- /MarkdownTOC -->
 
@@ -83,6 +84,17 @@ For more extensive customizations, you may want to [fork][5] this repository and
   _(If it's a bug, provide steps to recreate the issue.)_
 
 - If you know how to fix it yourself, [submit a pull request][8] with the proposed changes.
+
+
+## License
+
+[Apache 2.0](LICENSE) © 2017 - 2021 Roger W. Fienhold Sheen
+
+Within the sample documentation, where necessary, the texts describing the
+usage of each component have been copied directly from the official Bootstrap
+5.0 documentation (found at `https://getbootstrap.com/docs/5.0`), however DITA
+markup is used throughout the examples describing how to implement these
+components correctly using `outputclass`.
 
 [1]: http://www.dita-ot.org
 [2]: https://getbootstrap.com/docs/5.0

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-	This file is part of the DITA-OT Bootstrap Components Plug-in project.
+	This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
 	See the accompanying LICENSE file for applicable licenses.
 -->
 <xsl:stylesheet version="2.0" exclude-result-prefixes="xs xhtml dita-ot"

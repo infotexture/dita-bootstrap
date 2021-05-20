@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Within the sample documentation, where necessary, the texts describing the
+  usage of each component have been copied directly from the official Bootstrap
+  5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+  markup is used throughout the examples describing how to implement these
+  components correctly using outputclass.
+-->
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <topic id="button-group">
    <title>Button Group</title>
@@ -15,13 +22,11 @@
             <xref outputclass="btn-primary" href="#">Right</xref>
          </div>
       </bodydiv>
-      <codeblock>
-&lt;div outputclass="btn-group"&gt;
+      <codeblock>&lt;div outputclass="btn-group"&gt;
    &lt;xref outputclass="btn-primary" href="#"&gt;Left&lt;/xref&gt;
    &lt;xref outputclass="btn-primary" href="#"&gt;Middle&lt;/xref&gt;
    &lt;xref outputclass="btn-primary" href="#"&gt;Right&lt;/xref&gt;
-&lt;/div&gt;
-</codeblock>
+&lt;/div&gt;</codeblock>
       <section>
          <title>Mixed Styles</title>
       </section>
@@ -32,13 +37,11 @@
             <xref outputclass="btn-success" href="#">Right</xref>
          </div>
       </bodydiv>
-      <codeblock>
-&lt;div outputclass="btn-group"&gt;
+      <codeblock>&lt;div outputclass="btn-group"&gt;
    &lt;xref outputclass="btn-danger" href="#"&gt;Left&lt;/xref&gt;
    &lt;xref outputclass="btn-warning" href="#"&gt;Middle&lt;/xref&gt;
    &lt;xref outputclass="btn-success" href="#"&gt;Right&lt;/xref&gt;
-&lt;/div&gt;
-</codeblock>
+&lt;/div&gt;</codeblock>
       <section>
          <title>Outlined styles</title>
       </section>
@@ -49,13 +52,11 @@
             <xref outputclass="btn-outline-primary" href="#">Right</xref>
          </div>
       </bodydiv>
-      <codeblock>
-&lt;div outputclass="btn-group"&gt;
+      <codeblock>&lt;div outputclass="btn-group"&gt;
    &lt;xref outputclass="btn-outline-primary" href="#"&gt;Left&lt;/xref&gt;
    &lt;xref outputclass="btn-outline-primary" href="#"&gt;Middle&lt;/xref&gt;
    &lt;xref outputclass="btn-outline-primary" href="#"&gt;Right&lt;/xref&gt;
-&lt;/div&gt;
-</codeblock>
+&lt;/div&gt;</codeblock>
       <section>
          <title>Button toolbar</title>
          <p>Combine sets of button groups into button toolbars for more complex components</p>
@@ -78,8 +79,7 @@
             </div>
          </div>
       </bodydiv>
-      <codeblock>
-&lt;div outputclass="btn-toolbar"&gt;
+      <codeblock>&lt;div outputclass="btn-toolbar"&gt;
    &lt;div outputclass="btn-group me-2"&gt;
       &lt;xref outputclass="btn-primary" href="#"&gt;1&lt;/xref&gt;
       &lt;xref outputclass="btn-primary" href="#"&gt;2&lt;/xref&gt;
@@ -94,8 +94,7 @@
    &lt;div outputclass="btn-group me-2"&gt;
       &lt;xref outputclass="btn-info" href="#"&gt;8&lt;/xref&gt;
    &lt;/div&gt;
-&lt;/div&gt;
-</codeblock>
+&lt;/div&gt;</codeblock>
       <section>
          <title>Vertical Variation</title>
          <p>Make a set of buttons appear vertically stacked rather than horizontally</p>
@@ -107,10 +106,8 @@
             <xref outputclass="btn-primary" href="#">Bottom</xref>
          </div>
       </bodydiv>
-      <codeblock>
-&lt;div class="btn-group-vertical"&gt;
+      <codeblock>&lt;div class="btn-group-vertical"&gt;
   ...etc
-&lt;/div&gt;
-      </codeblock>
+&lt;/div&gt;</codeblock>
    </body>
 </topic>
