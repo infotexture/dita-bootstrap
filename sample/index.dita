@@ -12,10 +12,10 @@
      that extends the default HTML5 output with a <xref scope="external"
      href="https://getbootstrap.com/docs/5.0">Bootstrap 5.0</xref> template and
      components. Where necessary, the texts describing the usage of each component
-     have been aligned directly from the official Bootstrap 5.0 documentation (found
+     have been copied directly from the official Bootstrap 5.0 documentation (found
      at <codeph>https://getbootstrap.com/docs/5.0</codeph>), however DITA markup is
      used throughout the examples describing how to implement these components
-     correctly using <xmlatt>outputclass</xmlatt>.
+     correctly using DITA's <xmlatt>outputclass</xmlatt> attribute.
   </abstract>
   <body outputclass="language-bash">
     <section>
