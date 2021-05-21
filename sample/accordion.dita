@@ -11,6 +11,17 @@
      Build vertically collapsing accordions in combination with Bootstrap's Collapse
      JavaScript plugin.
   </abstract>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Accordion</indexterm>
+        <indexterm>CSS
+            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>bodydiv</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
   <body outputclass="language-markup">
     <section>
       <title>How it works</title>
@@ -27,7 +38,7 @@
          Click the accordions below to expand/collapse the accordion content.
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <bodydiv outputclass="accordion">
         <section id="accordion1">
           <title>Accordion Item #1</title>
@@ -89,7 +100,7 @@
          edge-to-edge with their parent container.
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <bodydiv outputclass="accordion accordion-flush">
         <section id="accordion4">
           <title>Accordion Item #1</title>

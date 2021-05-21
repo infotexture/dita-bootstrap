@@ -11,6 +11,17 @@
      Use Bootstrap’s custom button styles for actions in forms, dialogs, and more
      with support for multiple sizes, states, and more.
   </abstract>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Buttons</indexterm>
+        <indexterm>CSS
+            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>xref</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
   <body outputclass="language-markup">
     <section>
       <title>Example</title>
@@ -19,7 +30,7 @@
          semantic purpose, with a few extras thrown in for more control.
       </p>
     </section>
-       <bodydiv outputclass="bd-example"><xref href="#" outputclass="btn-primary">Primary</xref><xref
+       <bodydiv outputclass="bd-example" print="no"><xref href="#" outputclass="btn-primary">Primary</xref><xref
        href="#" outputclass="btn-secondary">Secondary</xref><xref href="#"
        outputclass="btn-success">Success</xref><xref href="#" outputclass="btn-danger">Danger</xref><xref
        href="#" outputclass="btn-warning">Warning</xref><xref href="#"
@@ -41,7 +52,7 @@
          to remove all background images and colors on any button.
       </p>
     </section>
-       <bodydiv outputclass="bd-example"><xref href="#" outputclass="btn-outline-primary">Primary</xref><xref
+       <bodydiv outputclass="bd-example" print="no"><xref href="#" outputclass="btn-outline-primary">Primary</xref><xref
        href="#" outputclass="btn-outline-secondary">Secondary</xref><xref href="#"
        outputclass="btn-outline-success">Success</xref><xref href="#"
        outputclass="btn-outline-danger">Danger</xref><xref href="#"

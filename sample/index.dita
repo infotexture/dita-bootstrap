@@ -17,6 +17,15 @@
      used throughout the examples describing how to implement these components
      correctly using DITA's <xmlatt>outputclass</xmlatt> attribute.
   </abstract>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Bootstrap 5.0</indexterm>
+        <indexterm>DITA</indexterm>
+        <indexterm>installing</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
   <body outputclass="language-bash">
     <section>
       <title>Installing</title>
@@ -45,6 +54,7 @@
     </section>
     <section>
       <title>Customizing Headers</title>
+      <indexterm><parmname>--args.hdr</parmname></indexterm>
       <p>
          The plug-in includes a default static navbar with a project name and global
          links. To override the global navigation with a header of your own, pass a
@@ -65,6 +75,10 @@
     </section>
     <section>
       <title>Custom CSS</title>
+      <indexterm><parmname>--args.css</parmname></indexterm>
+      <indexterm><parmname>--args.copycss</parmname></indexterm>
+      <indexterm><parmname>--args.csspath</parmname></indexterm>
+      <indexterm><parmname>--args.cssroot</parmname></indexterm>
       <p>
          Bootstrap themes can be generated using the <xref scope="external"
          href="https://themestr.app/theme">Themestr.app</xref>. The plug-in includes a

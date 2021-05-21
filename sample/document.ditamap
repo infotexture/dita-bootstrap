@@ -2,7 +2,7 @@
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN" "bookmap.dtd">
 <bookmap>
   <title>DITA Bootstrap</title>
-  <frontmatter>
+  <frontmatter print="printonly">
     <booklists>
       <toc/>
     </booklists>
@@ -41,4 +41,9 @@
     <topicref navtitle="Offcanvas" format="dita" type="topic" href="offcanvas.dita"/>
     <topicref navtitle="Tabs" format="dita" type="topic" href="tabs.dita"/>
   </chapter>
+  <backmatter print="printonly">
+    <booklists>
+      <indexlist/>
+    </booklists>
+  </backmatter>
 </bookmap>

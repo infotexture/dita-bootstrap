@@ -11,6 +11,18 @@
      List groups are a flexible and powerful component for displaying a series of
      content. Modify and extend them to support just about any content within.
   </abstract>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>List Group</indexterm>
+        <indexterm>CSS
+            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>ul</xmlelement></indexterm>
+        <indexterm><xmlelement>ol</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
   <body outputclass="language-markup">
     <section>
       <title>Basic example</title>
@@ -20,7 +32,7 @@
          needed.
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <ul outputclass="list-group">
         <li>
            An item
@@ -54,7 +66,7 @@
          (e.g., cards).
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <ul outputclass="list-group list-group-flush">
         <li>
            An item

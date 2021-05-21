@@ -12,6 +12,17 @@
      shapes and sizes thanks to a twelve column system, six default responsive
      tiers, Sass variables and mixins, and dozens of predefined classes.
   </abstract>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Grid</indexterm>
+        <indexterm>CSS
+            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>bodydiv</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
   <body outputclass="language-markup">
     <section>
       <title>Example</title>
@@ -21,7 +32,7 @@
          example and an in-depth explanation for how the grid system comes together.
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col-sm-3">
           <p>
@@ -59,7 +70,7 @@
          breakpoint you need and every column will be the same width.
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <bodydiv outputclass="row">
         <div outputclass="col">
           <p>

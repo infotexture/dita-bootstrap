@@ -11,6 +11,18 @@
      Provide contextual feedback messages for typical user actions with the handful
      of available and flexible alert messages.
   </abstract>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Alerts</indexterm>
+        <indexterm>CSS
+            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>note</xmlelement></indexterm>
+        <indexterm><xmlelement>section</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
   <body outputclass="language-markup">
     <section>
       <title>Example</title>
@@ -20,7 +32,7 @@
          (e.g., set <xmlatt>outputclass</xmlatt> to <codeph>alert-success</codeph>).
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <section outputclass="alert-primary">
          A simple primary alert—check it out!
          </section>
@@ -77,7 +89,7 @@
          links.
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <section outputclass="alert-success">
         <title>Well done!</title>
         <p>
@@ -108,7 +120,7 @@
          to the <xmlatt>type</xmlatt> attribute
       </p>
     </section>
-    <div outputclass="bd-example">
+    <div outputclass="bd-example" print="no">
       <note type="note">
          This is just a note.
       </note>
@@ -153,7 +165,7 @@
     <p>
        The <xmlatt>type</xmlatt> can be overridden by using an <xmlatt>outputclass</xmlatt>
     </p>
-    <div outputclass="bd-example">
+    <div outputclass="bd-example" print="no">
       <note outputclass="alert-primary">
          This is a primary note.
       </note>

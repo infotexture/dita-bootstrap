@@ -11,6 +11,17 @@
      Documentation and examples for badges, Bootstrap's small count and labeling
      component.
   </abstract>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Badges</indexterm>
+        <indexterm>CSS
+            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>ph</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
   <body outputclass="language-markup">
     <section>
       <title>Example</title>
@@ -20,7 +31,7 @@
          focus or hover styles for links.
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <section>
         <p outputclass="h1">
            Example heading <ph outputclass="bg-secondary">New</ph>
@@ -54,7 +65,7 @@
          but background-color.
       </p>
     </section>
-       <bodydiv outputclass="bd-example"><ph outputclass="bg-primary">Primary</ph><ph
+       <bodydiv outputclass="bd-example" print="no"><ph outputclass="bg-primary">Primary</ph><ph
        outputclass="bg-secondary">Secondary</ph><ph outputclass="bg-success">Success</ph><ph
        outputclass="bg-danger">Danger</ph><ph outputclass="bg-warning text-dark">Warning</ph><ph
        outputclass="bg-info text-dark">Info</ph><ph outputclass="bg-light

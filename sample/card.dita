@@ -11,6 +11,17 @@
      Bootstrap’s cards provide a flexible and extensible content container with
      multiple variants and options.
   </abstract>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Card</indexterm>
+        <indexterm>CSS
+            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>section</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
   <body outputclass="language-markup">
     <section>
       <title>About</title>
@@ -18,7 +29,7 @@
          A <b>card</b> is a flexible and extensible content container. It includes
          options for headers and footers, a wide variety of content, contextual
          background colors, and powerful display options. If you’re familiar with
-         Bootstrap 3, cards replace our Bootstrap 4.0's panels, wells, and thumbnails.
+         Bootstrap 3, cards replace Bootstrap 4.0's panels, wells, and thumbnails.
          Similar functionality to those components is available as modifier classes for
          cards.
       </p>
@@ -40,7 +51,7 @@
          scope="external" href="https://getbootstrap.com/docs/5.0/components/card/#sizing">sizing options.</xref>
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
@@ -73,7 +84,7 @@
          Subtitles are used by adding a second <xmlelement>title</xmlelement> tag.
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
@@ -104,7 +115,7 @@
          Setting <xmlatt>outputclass</xmlatt> to <codeph>card-img-top</codeph> places an image to the top of the card
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
@@ -132,7 +143,7 @@
          <xmlatt>outputclass</xmlatt> attribute and adding <codeph>card-header</codeph> and <codeph>card-footer</codeph>
       </p>
     </section>
-    <bodydiv outputclass="bd-example">
+    <bodydiv outputclass="bd-example" print="no">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
