@@ -32,7 +32,7 @@
          to the image so that it scales with the parent element.
       </p>
     </section>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <image outputclass="img-fluid" scope="external" href="https://picsum.photos/1200/600?a"/>
     </bodydiv>
     <codeblock>&lt;image outputclass="img-fluid" href="..." /&gt;</codeblock>
@@ -45,7 +45,7 @@
          rounded 1px border appearance.
       </p>
     </section>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <image outputclass="img-thumbnail" scope="external" href="https://picsum.photos/200/200?a"/>
     </bodydiv>
     <codeblock>&lt;image outputclass="img-thumbnail" href="..." /&gt;</codeblock>

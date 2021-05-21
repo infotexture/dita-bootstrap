@@ -32,7 +32,7 @@
          example and an in-depth explanation for how the grid system comes together.
       </p>
     </section>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col-sm-3">
           <p>
@@ -70,7 +70,7 @@
          breakpoint you need and every column will be the same width.
       </p>
     </section>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row">
         <div outputclass="col">
           <p>

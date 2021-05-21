@@ -51,7 +51,7 @@
          scope="external" href="https://getbootstrap.com/docs/5.0/components/card/#sizing">sizing options.</xref>
       </p>
     </section>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
@@ -84,7 +84,7 @@
          Subtitles are used by adding a second <xmlelement>title</xmlelement> tag.
       </p>
     </section>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
@@ -115,7 +115,7 @@
          Setting <xmlatt>outputclass</xmlatt> to <codeph>card-img-top</codeph> places an image to the top of the card
       </p>
     </section>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
@@ -143,7 +143,7 @@
          <xmlatt>outputclass</xmlatt> attribute and adding <codeph>card-header</codeph> and <codeph>card-footer</codeph>
       </p>
     </section>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">

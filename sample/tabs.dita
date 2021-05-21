@@ -32,7 +32,7 @@
          <xmlelement>section</xmlelement> elements
       </p>
     </section>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="nav-tabs">
         <section>
           <title>Home</title>
@@ -88,7 +88,7 @@
        The tabs plugin also works with pills using <xmlelement>bodydiv
        outputclass="nav-pills"</xmlelement>
     </p>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="nav-pills">
         <section>
           <title>Home</title>
@@ -143,7 +143,7 @@
     <p>
        And with vertical pills using <xmlelement>bodydiv outputclass="nav-pills-vertical"</xmlelement>
     </p>
-    <bodydiv outputclass="bd-example" print="no">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="nav-pills-vertical">
         <section>
           <title>Home</title>
