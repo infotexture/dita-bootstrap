@@ -57,6 +57,10 @@
             <xsl:text>list-group-item</xsl:text>
          </xsl:when>
       </xsl:choose>
+
+      <xsl:if test="contains(@class, ' topic/shortdesc ')">
+          <xsl:text> lead</xsl:text>
+      </xsl:if>
    </xsl:template>
 
       <!-- Override to add Bootstrap classes and roles to <note> elements -->
@@ -213,5 +217,17 @@
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
     </div>
   </xsl:template>
+
+
+
+  <!--xsl:template match="*[contains(@class, ' topic/shortdesc ')]" mode="outofline">
+    <p>
+       <xsl:call-template name="commonattributes">
+        <xsl:with-param name="default-output-class" select="lead"/>
+      </xsl:call-template>
+      <xsl:apply-templates/>
+    </p>
+  </xsl:template-->
+
 
 </xsl:stylesheet>

@@ -7,10 +7,10 @@
    components correctly using outputclass. -->
 <topic id="alerts">
   <title>Alerts</title>
-  <abstract>
+  <shortdesc>
      Provide contextual feedback messages for typical user actions with the handful
      of available and flexible alert messages.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

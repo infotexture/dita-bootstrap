@@ -7,10 +7,10 @@
    components correctly using outputclass. -->
 <topic id="cards">
   <title>Cards</title>
-  <abstract>
+  <shortdesc>
      Bootstrap’s cards provide a flexible and extensible content container with
      multiple variants and options.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

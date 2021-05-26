@@ -7,7 +7,7 @@
    components correctly using outputclass. -->
 <topic id="index">
   <title>DITA Bootstrap</title>
-  <abstract>
+  <shortdesc>
      A plug-in for <xref scope="external" href="http://www.dita-ot.org">DITA Open Toolkit</xref>
      that extends the default HTML5 output with a <xref scope="external"
      href="https://getbootstrap.com/docs/5.0">Bootstrap 5.0</xref> template and
@@ -16,7 +16,7 @@
      at <codeph>https://getbootstrap.com/docs/5.0</codeph>), however DITA markup is
      used throughout the examples describing how to implement these components
      correctly using DITA's <xmlatt>outputclass</xmlatt> attribute.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

@@ -7,10 +7,10 @@
    components correctly using outputclass. -->
 <topic id="badges">
   <title>Badges</title>
-  <abstract>
+  <shortdesc>
      Documentation and examples for badges, Bootstrap's small count and labeling
      component.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

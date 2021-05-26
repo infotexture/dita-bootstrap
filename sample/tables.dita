@@ -7,10 +7,10 @@
    components correctly using outputclass. -->
 <topic id="tables">
   <title>Tables</title>
-  <abstract>
+  <shortdesc>
      Documentation and examples for opt-in styling of tables (given their prevalent
      use in JavaScript plugins) with Bootstrap.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

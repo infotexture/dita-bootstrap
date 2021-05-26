@@ -7,10 +7,10 @@
    components correctly using outputclass. -->
 <topic id="tabs">
   <title>Tabbed Dialogs</title>
-  <abstract>
+  <shortdesc>
      Use the tab JavaScript plugin to extend Bootstrap's navigational tabs and pills
      to create tabbable panes of local content.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

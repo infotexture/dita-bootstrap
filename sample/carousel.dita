@@ -7,10 +7,10 @@
    components correctly using outputclass. -->
 <topic id="carousel">
   <title>Carousel</title>
-  <abstract>
+  <shortdesc>
      A slideshow component for cycling through elements—images or slides of text—like
      a carousel.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

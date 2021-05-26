@@ -7,10 +7,10 @@
    components correctly using outputclass. -->
 <topic id="accordion">
   <title>Accordion</title>
-  <abstract>
+  <shortdesc>
      Build vertically collapsing accordions in combination with Bootstrap's Collapse
      JavaScript plugin.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

@@ -7,11 +7,11 @@
    components correctly using outputclass. -->
 <topic id="images">
   <title>Images</title>
-  <abstract>
+  <shortdesc>
      Documentation and examples for opting images into responsive behavior (so they
      never become larger than their parent elements) and add lightweight styles to
      them—all via classes.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

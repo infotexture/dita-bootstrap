@@ -7,10 +7,10 @@
    components correctly using outputclass. -->
 <topic id="button-group">
   <title>Button Group</title>
-  <abstract>
+  <shortdesc>
      Group a series of buttons together on a single line or stack them in a vertical
      column.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

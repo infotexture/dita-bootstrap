@@ -7,10 +7,10 @@
    components correctly using outputclass. -->
 <topic id="offcanvas">
   <title>Offcanvas</title>
-  <abstract>
+  <shortdesc>
      Build hidden sidebars into your project for navigation, shopping carts, and more
      with a few classes and Bootstrap's JavaScript plugin.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

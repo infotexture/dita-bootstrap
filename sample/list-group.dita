@@ -7,10 +7,10 @@
    components correctly using outputclass. -->
 <topic id="list-group">
   <title>List Group</title>
-  <abstract>
+  <shortdesc>
      List groups are a flexible and powerful component for displaying a series of
      content. Modify and extend them to support just about any content within.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>

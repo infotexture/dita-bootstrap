@@ -7,11 +7,11 @@
    components correctly using outputclass. -->
 <topic id="grid">
   <title>Grid System</title>
-  <abstract>
+  <shortdesc>
      Use Bootstrap's powerful mobile-first flexbox grid to build layouts of all
      shapes and sizes thanks to a twelve column system, six default responsive
      tiers, Sass variables and mixins, and dozens of predefined classes.
-  </abstract>
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>
