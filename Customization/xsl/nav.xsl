@@ -155,6 +155,9 @@
                 <!-- ↓ Add Bootstrap list-group-item and action classes ↑ -->
                 <xsl:attribute name="class">
                   <xsl:text>list-group-item list-group-item-action</xsl:text>
+                  <xsl:if test="ancestor::*[contains(@class, ' map/topicref ')]/@href">
+                    <xsl:text> list-group-item-secondary</xsl:text>
+                  </xsl:if>
                   <xsl:if test=". is $current-topicref">
                     <xsl:text> active</xsl:text>
                   </xsl:if>
@@ -190,8 +193,8 @@
               </a>
             </xsl:when>
             <xsl:otherwise>
-              <!-- ↓ Add Bootstrap list-group-item class and secondary color ↑ -->
-              <span class="list-group-item list-group-item-secondary">
+              <!-- ↓ Add Bootstrap list-group-item class and dark color ↑ -->
+              <span class="list-group-item list-group-item-dark">
                 <xsl:value-of select="$title"/>
               </span>
               <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
