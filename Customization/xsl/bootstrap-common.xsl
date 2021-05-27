@@ -217,17 +217,4 @@
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
     </div>
   </xsl:template>
-
-
-
-  <!--xsl:template match="*[contains(@class, ' topic/shortdesc ')]" mode="outofline">
-    <p>
-       <xsl:call-template name="commonattributes">
-        <xsl:with-param name="default-output-class" select="lead"/>
-      </xsl:call-template>
-      <xsl:apply-templates/>
-    </p>
-  </xsl:template-->
-
-
 </xsl:stylesheet>
