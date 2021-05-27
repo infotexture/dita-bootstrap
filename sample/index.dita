@@ -16,10 +16,10 @@
     </shortdesc>
     <p>
        Where necessary, the texts describing the usage of each component
-       have been copied directly from the official Bootstrap 5.0 documentation (found
-       at <codeph>https://getbootstrap.com/docs/5.0</codeph>), however DITA markup is
-       used throughout the examples describing how to implement these components
-       correctly using DITA's <xmlatt>outputclass</xmlatt> attribute.
+       have been copied directly from the <xref href="https://getbootstrap.com/docs/5.0"
+       format="html" scope="external">official Bootstrap 5.0 documentation</xref>,
+       however DITA markup is used throughout the examples describing how to implement
+       these components correctly using DITA's <xmlatt>outputclass</xmlatt> attribute.
     </p>
   </abstract>
   <prolog>
