@@ -6,7 +6,18 @@
 <project>
   <target name="dita2html5-bootstrap"
        depends="dita2html5-bootstrap.init,
-                dita2html5"/>
+                dita2html5,
+                bootstrap.css"/>
+
+  <target name="bootstrap.css" unless="user.csspath.url" description="Copy CSS files">
+    <mkdir dir="${user.csspath.real}"/>
+    <!-- Always copy system default css files -->
+    <copy todir="${user.csspath.real}" overwrite="true">
+      <fileset dir="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css" includes="*.css" excludes="custom.css"/>
+    </copy>
+  </target>
+
+
   <target name="dita2html5-bootstrap.init">
     <property name="args.hdf"
           location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"/>
