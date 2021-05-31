@@ -21,19 +21,24 @@ Use the `dita` command to add this plug-in to your DITA Open Toolkit installatio
 DITA-OT 3.5 and newer:
 
 ```console
+dita install fox.jason.extend.css
 dita install net.infotexture.dita-bootstrap
 ```
 
 DITA-OT 3.3 and newer:
 
 ```console
+dita --install fox.jason.extend.css
 dita --install net.infotexture.dita-bootstrap
 ```
 
 DITA-OT 3.2 and older:
 
 ```console
-dita --install https://github.com/infotexture/dita-bootstrap/archive/3.1.zip
+dita --install \
+    https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
+dita --install \
+    https://github.com/infotexture/dita-bootstrap/archive/master.zip
 ```
 
 ## Using

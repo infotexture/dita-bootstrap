@@ -40,15 +40,18 @@
       <p>
          DITA-OT 3.5 and newer:
       </p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap</codeblock>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>install</parmname> fox.jason.extend.css
+<cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap</codeblock>
       <p>
          DITA-OT 3.3 and newer:
       </p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--install</parmname> net.infotexture.dita-bootstrap</codeblock>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--install</parmname> fox.jason.extend.css
+<cmdname>dita</cmdname> <parmname>--install</parmname> net.infotexture.dita-bootstrap</codeblock>
       <p>
          DITA-OT 3.2 and older:
       </p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--install</parmname> https://github.com/infotexture/dita-bootstrap/archive/3.1.zip</codeblock>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--install</parmname> https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
+<cmdname>dita</cmdname> <parmname>--install</parmname> https://github.com/infotexture/dita-bootstrap/archive/master.zip</codeblock>
     </section>
     <section>
       <title>Using</title>

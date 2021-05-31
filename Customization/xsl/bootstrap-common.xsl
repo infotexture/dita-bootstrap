@@ -61,6 +61,9 @@
       <xsl:if test="contains(@class, ' topic/shortdesc ')">
           <xsl:text> lead</xsl:text>
       </xsl:if>
+      <xsl:if test="@scalefit='yes'">
+          <xsl:text> img-fluid</xsl:text>
+      </xsl:if>
    </xsl:template>
 
       <!-- Override to add Bootstrap classes and roles to <note> elements -->
