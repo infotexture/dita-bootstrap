@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+   <!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass. -->
+<topic id="images">
+  <title>Images</title>
+  <shortdesc>
+     Documentation and examples for opting images into responsive behavior (so they
+     never become larger than their parent elements) and add lightweight styles to
+     them—all via classes.
+  </shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Images</indexterm>
+        <indexterm>CSS
+            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>image</xmlelement></indexterm>
+        <indexterm><xmlatt>scalefit</xmlatt></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+    <section>
+      <title>Responsive images</title>
+      <p>
+         Images in DITA Bootstrap are made responsive with <xmlatt>scalefit="yes"</xmlatt>.
+         This applies <codeph>max-width: 100%;</codeph> and <codeph>height: auto;</codeph>
+         to the image so that it scales with the parent element.
+      </p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <image scalefit="yes" scope="external" href="https://picsum.photos/1200/600?a"/>
+    </bodydiv>
+    <codeblock>&lt;image scalefit="yes" href="..." /&gt;</codeblock>
+    <section>
+      <title>Image thumbnails</title>
+      <p>
+         In addition to Bootstrap's <xref scope="external"
+         href="https://getbootstrap.com/docs/5.0/utilities/borders/">border-radius utilities</xref>,
+         you can set <xmlatt>outputclass</xmlatt> to <codeph>img-thumbnail</codeph> to give an image a
+         rounded 1px border appearance.
+      </p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <image outputclass="img-thumbnail" scope="external" href="https://picsum.photos/200/200?a"/>
+    </bodydiv>
+    <codeblock>&lt;image outputclass="img-thumbnail" href="..." /&gt;</codeblock>
+  </body>
+</topic>

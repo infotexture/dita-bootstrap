@@ -7,6 +7,8 @@
 <plugin id="net.infotexture.dita-bootstrap">
   <feature extension="package.version" value="3.6"/>
   <require plugin="org.dita.html5"/>
+  <require plugin="fox.jason.extend.css"/>
   <transtype name="html5-bootstrap" extends="html5" desc="HTML5 with Bootstrap style"/>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
+  <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
 </plugin>

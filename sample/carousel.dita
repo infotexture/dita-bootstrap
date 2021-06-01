@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+   <!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass. -->
+<topic id="carousel">
+  <title>Carousel</title>
+  <shortdesc>
+     A slideshow component for cycling through elements—images or slides of text—like
+     a carousel.
+  </shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Carousel</indexterm>
+        <indexterm>CSS
+            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>ol</xmlelement></indexterm>
+        <indexterm><xmlelement>fig</xmlelement></indexterm>
+        <indexterm><xmlelement>image</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+    <section>
+      <title>How it works</title>
+      <p>
+         The carousel is a slideshow for cycling through a series of content, built with
+         CSS 3D transforms and a bit of JavaScript. It works with a series of images,
+         text, or custom markup. It also includes support for previous/next controls
+         and indicators.
+      </p>
+    </section>
+    <section>
+      <title>Example</title>
+      <p>
+         Carousels don’t automatically normalize slide dimensions. As such, you may need
+         to use additional utilities or custom styles to appropriately size content.
+         While carousels support previous/next controls and indicators, they’re not
+         explicitly required. Add and customize as you see fit.
+      </p>
+    </section>
+    <section>
+      <title>Example</title>
+      <p>
+         Here is an example with slides
+      </p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ol outputclass="carousel">
+        <li>
+          <image scope="external" href="https://picsum.photos/200/100?c"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/200/100?d"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/200/100?e"/>
+        </li>
+      </ol>
+    </bodydiv>
+    <codeblock>&lt;ol outputclass="carousel"&gt;
+   &lt;li&gt;
+      &lt;image href="..." /&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+      &lt;image href="..." /&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+      &lt;image href="..." /&gt;
+   &lt;/li&gt;
+&lt;/ol&gt;</codeblock>
+    <section>
+      <title>With captions</title>
+      <p>
+         Add captions by using <xmlelement>fig</xmlelement> elements
+      </p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ol outputclass="carousel">
+        <li>
+          <fig>
+            <title>The First Slide</title>
+            <image scope="external" href="https://picsum.photos/200/100?g"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
+            <title>The Second Slide</title>
+            <image scope="external" href="https://picsum.photos/200/100?h"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
+            <title>The Third Slide</title>
+            <image scope="external" href="https://picsum.photos/200/100?i"/>
+          </fig>
+        </li>
+      </ol>
+    </bodydiv>
+    <codeblock>&lt;ol outputclass="carousel"&gt;
+   &lt;li&gt;
+      &lt;fig&gt;
+         &lt;title&gt;The First Slide&lt;/title&gt;
+         &lt;image href="..." /&gt;
+      &lt;/fig&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+      &lt;fig&gt;
+         &lt;title&gt;The Second Slide&lt;/title&gt;
+         &lt;image href="..." /&gt;
+      &lt;/fig&gt;
+   &lt;/li&gt;
+   &lt;li&gt;
+      &lt;fig&gt;
+         &lt;title&gt;The Third Slide&lt;/title&gt;
+         &lt;image href="..." /&gt;
+      &lt;/fig&gt;
+   &lt;/li&gt;
+&lt;/ol&gt;</codeblock>
+  </body>
+</topic>
