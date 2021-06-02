@@ -4,11 +4,14 @@ A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with 
 
 <!-- MarkdownTOC levels="1,2" -->
 
-- [Installing](#installing)
-- [Using](#using)
-- [Customizing](#customizing)
-- [Feedback](#feedback)
-- [License](#license)
+- [DITA Bootstrap](#dita-bootstrap)
+  - [Installing](#installing)
+  - [Using](#using)
+  - [Customizing](#customizing)
+    - [Header menu](#header-menu)
+    - [Custom CSS](#custom-css)
+  - [Feedback](#feedback)
+  - [License](#license)
 
 <!-- /MarkdownTOC -->
 
@@ -87,7 +90,7 @@ You can add your own XSLT customizations by creating a new plug-in that extends 
 
 - If you find this useful and build something of your own on top of it, [let me know][6].
 
-- If you find a bug or would like to suggest a change, [create an issue][7].
+- If you find a bug or would like to suggest a change, [create an issue][7].  
   _(If it's a bug, provide steps to recreate the issue.)_
 
 - If you know how to fix it yourself, [submit a pull request][8] with the proposed changes.
