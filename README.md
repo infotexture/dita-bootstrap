@@ -2,16 +2,15 @@
 
 A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with a basic [Bootstrap][2] template.
 
-<!-- MarkdownTOC levels="1,2" -->
+<!-- MarkdownTOC levels="2,3" -->
 
-- [DITA Bootstrap](#dita-bootstrap)
-  - [Installing](#installing)
-  - [Using](#using)
-  - [Customizing](#customizing)
-    - [Header menu](#header-menu)
-    - [Custom CSS](#custom-css)
-  - [Feedback](#feedback)
-  - [License](#license)
+- [Installing](#installing)
+- [Using](#using)
+- [Customizing](#customizing)
+  - [Header menu](#header-menu)
+  - [Custom CSS](#custom-css)
+- [Feedback](#feedback)
+- [License](#license)
 
 <!-- /MarkdownTOC -->
 
