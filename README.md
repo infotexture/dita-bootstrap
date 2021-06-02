@@ -53,8 +53,7 @@ dita --input=path/to/your.ditamap --format=html5-bootstrap
 
 ### Header menu
 
-The plug-in includes a default static navbar with a project name and global links. To override the global navigation
-with a header of your own, pass a custom header file to the `dita` command via the `--args.hdr` parameter:
+The plug-in includes a default static navbar with a project name and global links. To override the global navigation with a header of your own, pass a custom header file to the `dita` command via the `--args.hdr` parameter:
 
 ```console
 dita --input=path/to/your.ditamap --format=html5-bootstrap \
@@ -67,16 +66,14 @@ Edit a copy of this file to adjust the content of the global navigation.
 
 ### Custom CSS
 
-Bootstrap themes can be generated using the [Themestr.app](https://themestr.app/theme). The plug-in includes a sample
-placeholder for [custom CSS][4] styles. You can edit this file to add style rules of your own. Override the default
-Bootstrap theme by passing a custom CSS file to the `dita` command via the `--args.css` parameter:
+Bootstrap themes can be generated using the [Themestr.app](https://themestr.app/theme). The plug-in includes a sample placeholder for [custom CSS][4] styles. You can edit this file to add style rules of your own. Override the default Bootstrap theme by passing a custom CSS file to the `dita` command via the `--args.css` parameter:
 
 ```console
 dita --input=path/to/your.ditamap --format=html5-bootstrap \
      --args.hdr=path/to/your-header.xml \
      --args.css=<name-of-css>.css \
      --args.copycss=yes \
-     --args.csspath=css
+     --args.csspath=css \
      --args.cssroot=path/to/your/theme
 ```
 
@@ -84,16 +81,14 @@ dita --input=path/to/your.ditamap --format=html5-bootstrap \
 
 For more extensive customizations, you may want to [fork][5] this repository and create a new plug-in of your own.
 
-It is possible to add you own XSLT customizations by creating your own plugin extending the DITA bootstrap XSLT
-transforms. Just amend `args.xsl` to point to your own XSLT files. An
-[XSLT template](./xsl/html5-bootstrap-template.xsl) is included within this repository
+You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template](./xsl/html5-bootstrap-template.xsl) is included within this repository.
 
 ## Feedback
 
 - If you find this useful and build something of your own on top of it, [let me know][6].
 
-- If you find a bug or would like to suggest a change, [create an issue][7]. _(If it's a bug, provide steps to recreate
-  the issue.)_
+- If you find a bug or would like to suggest a change, [create an issue][7].
+  _(If it's a bug, provide steps to recreate the issue.)_
 
 - If you know how to fix it yourself, [submit a pull request][8] with the proposed changes.
 
@@ -101,9 +96,7 @@ transforms. Just amend `args.xsl` to point to your own XSLT files. An
 
 [Apache 2.0](LICENSE) © 2017 - 2021 Roger W. Fienhold Sheen
 
-Within the sample documentation, where necessary, the texts describing the usage of each component have been copied
-directly from the official Bootstrap 5.0 documentation (found at `https://getbootstrap.com/docs/5.0`), however DITA
-markup is used throughout the examples describing how to implement these components correctly using `outputclass`.
+Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.0 documentation][9], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`.
 
 [1]: http://www.dita-ot.org
 [2]: https://getbootstrap.com/docs/5.0
@@ -113,3 +106,4 @@ markup is used throughout the examples describing how to implement these compone
 [6]: https://twitter.com/infotexture
 [7]: https://github.com/infotexture/dita-bootstrap/issues/new
 [8]: https://help.github.com/articles/using-pull-requests/
+[9]: https://getbootstrap.com/docs/5.0
