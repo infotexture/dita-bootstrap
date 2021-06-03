@@ -12,7 +12,7 @@
     <output href="html"/>
     <publication transtype="html5-bootstrap">
       <param name="args.copycss" value="yes"/>
-      <param name="args.css" value="dita.css"/>
+      <param name="args.css" value="theme.css"/>
       <param name="args.csspath" value="css"/>
       <param name="args.cssroot" path="."/>
       <param name="args.hdr" href="header.xml"/>
