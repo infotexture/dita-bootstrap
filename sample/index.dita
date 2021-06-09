@@ -82,6 +82,34 @@
       </p>
     </section>
     <section>
+      <title>Sidebar menu</title>
+      <indexterm><parmname>--nav-toc</parmname></indexterm>
+      <p>
+        The plug-in extends the standard  <parmname>--nav-toc</parmname> parameter to add
+        styled list groups for the sidebar. Five styles now are supported:
+      </p>
+      <ul>
+        <li>
+          <option>bootstrap-full</option> - Bootstrap styled full TOC (default)
+        </li>
+        <li>
+          <option>bootstrap-partial</option>  -  Bootstrap styled partial TOC that shows the current topic
+        </li>
+        <li>
+          <option>full</option>  - Unstyled full TOC - same as HTML5 Plugin
+        </li>
+        <li>
+          <option>partial</option>  - Unstyled  partial TOC that shows the current topic - same as HTML5 Plugin
+        </li>
+        <li>
+          <option>none</option>  - no TOC
+        </li>
+      </ul>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--nav-toc</parmname>=<option>bootstrap-partial</option></codeblock>
+    </section>
+    <section>
       <title>Custom CSS</title>
       <indexterm><parmname>--args.css</parmname></indexterm>
       <indexterm><parmname>--args.copycss</parmname></indexterm>

@@ -23,6 +23,6 @@
     <property name="args.xsl"
           location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"/>
     <property name="args.html5.toc" value="toc"/>
-    <property name="nav-toc" value="full"/>
+    <property name="nav-toc" value="bootstrap-full"/>
   </target>
 </project>

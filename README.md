@@ -48,7 +48,8 @@ dita --install \
 Specify the `html5-bootstrap` format when building output with the `dita` command:
 
 ```console
-dita --input=path/to/your.ditamap --format=html5-bootstrap
+dita --input=path/to/your.ditamap \
+     --format=html5-bootstrap
 ```
 
 ## Customizing
@@ -58,13 +59,31 @@ dita --input=path/to/your.ditamap --format=html5-bootstrap
 The plug-in includes a default static navbar with a project name and global links. To override the global navigation with a header of your own, pass a custom header file to the `dita` command via the `--args.hdr` parameter:
 
 ```console
-dita --input=path/to/your.ditamap --format=html5-bootstrap \
+dita --input=path/to/your.ditamap \
+     --format=html5-bootstrap \
      --args.hdr=path/to/your-header.xml
 ```
 
 The plug-in includes a sample [header alternative with a dark navbar][3].
 
 Edit a copy of this file to adjust the content of the global navigation.
+
+### Sidebar menu
+
+The plug-in extends the standard  `--nav-toc` parameter to add styled list groups for the sidebar. Five styles now are supported:
+
+-  `bootstrap-full`  -  Bootstrap styled full TOC (default)
+-  `bootstrap-partial` -  Bootstrap styled partial TOC that shows the current topic
+-  `full` - Unstyled full TOC - same as HTML5 Plugin
+-  `partial` - Unstyled  partial TOC that shows the current topic - same as HTML5 Plugin
+-  `none` - no TOC
+
+```console
+dita --input=path/to/your.ditamap \
+     --format=html5-bootstrap \
+     --nav-toc=bootstrap-partial
+```
+
 
 ### Custom CSS
 
