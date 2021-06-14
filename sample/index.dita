@@ -90,16 +90,18 @@
       </p>
       <ul>
         <li>
-          <option>bootstrap-full</option> - Bootstrap styled full TOC (default)
+          <option>full</option> - Unstyled full TOC - same as HTML5 Plugin (default)
         </li>
         <li>
-          <option>bootstrap-partial</option>  -  Bootstrap styled partial TOC that shows the current topic
+          <option>partial</option> - Unstyled  partial TOC that shows the current topic - same as HTML5 Plugin
         </li>
         <li>
-          <option>full</option>  - Unstyled full TOC - same as HTML5 Plugin
+          <option>list-group-full</option> - Styled full TOC within a Bootstrap
+          <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/list-group/">List Group</xref>
         </li>
         <li>
-          <option>partial</option>  - Unstyled  partial TOC that shows the current topic - same as HTML5 Plugin
+          <option>list-group-partial</option> - Styled partial TOC that shows the current topic within a Bootstrap
+          <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/list-group/">List Group</xref>
         </li>
         <li>
           <option>none</option>  - no TOC
@@ -107,7 +109,7 @@
       </ul>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-     <parmname>--nav-toc</parmname>=<option>bootstrap-partial</option></codeblock>
+     <parmname>--nav-toc</parmname>=<option>list-group-partial</option></codeblock>
     </section>
     <section>
       <title>Custom CSS</title>
