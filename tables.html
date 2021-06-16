@@ -1,0 +1,201 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="copyright" content="(C) Copyright 2021"><meta name="generator" content="DITA-OT"><meta name="description" content="Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Bootstrap."><meta name="keywords" content="Tables, CSS, outputclass, table, row, entry"><title>Tables</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/commonltr.css"><link rel="stylesheet" type="text/css" href="css/theme.css"><link rel="stylesheet" type="text/css" href="./css/common-extended.css"></head><body id="tables"><header role="banner"><nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+
+  <div class="container">
+    <a class="navbar-brand" href="https://www.dita-ot.org/">DITA Bootstrap</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="https://www.dita-ot.org/dev">Docs</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.dita-ot.org/download">Download</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.dita-ot.org/plugins">Plugins</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://getbootstrap.com/docs/5.0">Bootstrap 5.0</a></li>
+      </ul>
+    </div>
+  </div>
+</nav></header><div class="container" id="content"><div class="row"><nav role="toc" class="col-lg-3"><div class="list-group me-3"><span class="list-group-item list-group-item-dark">Getting Started</span><a class="list-group-item list-group-item-action" href="index.html">DITA Bootstrap</a><span class="list-group-item list-group-item-dark">Layout</span><a class="list-group-item list-group-item-action" href="grid.html">Grid System</a><span class="list-group-item list-group-item-dark">Content</span><a class="list-group-item list-group-item-action" href="images.html">Images</a><a class="list-group-item list-group-item-action active" href="tables.html">Tables</a><span class="list-group-item list-group-item-dark">Components</span><a class="list-group-item list-group-item-action" href="accordion.html">Accordion</a><a class="list-group-item list-group-item-action" href="alerts.html">Alerts</a><a class="list-group-item list-group-item-action" href="badge.html">Badges</a><a class="list-group-item list-group-item-action" href="buttons.html">Buttons</a><a class="list-group-item list-group-item-action" href="button-group.html">Button Group</a><a class="list-group-item list-group-item-action" href="card.html">Cards</a><a class="list-group-item list-group-item-action" href="carousel.html">Carousel</a><a class="list-group-item list-group-item-action" href="list-group.html">List Group</a><a class="list-group-item list-group-item-action" href="offcanvas.html">Offcanvas</a><a class="list-group-item list-group-item-action" href="tabs.html">Tabbed Dialogs</a></div></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title" id="ariaid-title1">Tables</h1>
+  
+  
+  <div class="body language-markup"><p class="shortdesc lead">
+     Documentation and examples for opt-in styling of tables (given their prevalent
+     use in JavaScript plugins) with Bootstrap.
+  </p>
+    <section class="section"><h2 class="title">Overview</h2>
+      
+      <p class="p">
+         Due to the widespread use of <code class="keyword markupname xmlelement">&lt;table&gt;</code> elements across
+         third-party widgets like calendars and date pickers, Bootstrap’s tables are
+         opt-in. Extend with optional modifier outputclasses or custom styles. All table
+         styles are not inherited in Bootstrap, meaning any nested tables can be styled
+         independent from the parent.
+      </p>
+      <p class="p">
+         Using the most basic table markup, here’s how  the default DITA Bootstrap <code class="ph codeph language-markup">.table</code>-based
+         tables look in Bootstrap
+      </p>
+    </section>
+    <div class="bodydiv bd-example">
+      <table class="table"><caption></caption><colgroup><col style="width:33.33333333333333%"><col style="width:66.66666666666666%"></colgroup><thead class="thead">
+            <tr class="">
+              <th class="entry valign-top" id="tables__entry__1">Animal</th>
+              <th class="entry valign-top" id="tables__entry__2">Gestation</th>
+            </tr>
+          </thead><tbody class="tbody">
+            <tr class="">
+              <td class="entry" headers="tables__entry__1">Elephant (African and Asian)</td>
+              <td class="entry" headers="tables__entry__2">19-22 months</td>
+            </tr>
+            <tr class="">
+              <td class="entry" headers="tables__entry__1">Giraffe</td>
+              <td class="entry" headers="tables__entry__2">15 months</td>
+            </tr>
+            <tr class="">
+              <td class="entry" headers="tables__entry__1">Rhinoceros</td>
+              <td class="entry" headers="tables__entry__2">14-16 months</td>
+            </tr>
+            <tr class="">
+              <td class="entry" headers="tables__entry__1">Hippopotamus</td>
+              <td class="entry" headers="tables__entry__2">7 1/2 months</td>
+            </tr>
+          </tbody></table>
+    </div>
+    <pre class="pre codeblock language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span><span class="ph token punctuation">&gt;</span></span>
+   ...etc
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <section class="section"><h2 class="title">Variants</h2>
+      
+      <p class="p">
+         Use contextual classes to color tables, table rows or individual cells..
+      </p>
+    </section>
+    <div class="bodydiv bd-example">
+      <table class="table"><caption></caption><colgroup><col style="width:50%"><col style="width:25%"><col style="width:25%"></colgroup><thead class="thead">
+            <tr class="">
+              <th class="entry valign-top" id="tables__entry__11">Class</th>
+              <th class="entry valign-top" id="tables__entry__12">Heading</th>
+              <th class="entry valign-top" id="tables__entry__13">Heading</th>
+            </tr>
+          </thead><tbody class="tbody">
+            <tr class="">
+              <td class="entry" headers="tables__entry__11">Default</td>
+              <td class="entry" headers="tables__entry__12">Cell</td>
+              <td class="entry" headers="tables__entry__13">Cell</td>
+            </tr>
+            <tr class="table-primary">
+              <td class="entry" headers="tables__entry__11">Primary</td>
+              <td class="entry" headers="tables__entry__12">Cell</td>
+              <td class="entry" headers="tables__entry__13">Cell</td>
+            </tr>
+            <tr class="table-secondary">
+              <td class="entry" headers="tables__entry__11">Secondary </td>
+              <td class="entry" headers="tables__entry__12">Cell</td>
+              <td class="entry" headers="tables__entry__13">Cell</td>
+            </tr>
+            <tr class="table-success">
+              <td class="entry" headers="tables__entry__11">Success</td>
+              <td class="entry" headers="tables__entry__12">Cell</td>
+              <td class="entry" headers="tables__entry__13">Cell</td>
+            </tr>
+            <tr class="table-danger">
+              <td class="entry" headers="tables__entry__11">Danger</td>
+              <td class="entry" headers="tables__entry__12">Cell</td>
+              <td class="entry" headers="tables__entry__13">Cell</td>
+            </tr>
+            <tr class="table-warning">
+              <td class="entry" headers="tables__entry__11">Warning</td>
+              <td class="entry" headers="tables__entry__12">Cell</td>
+              <td class="entry" headers="tables__entry__13">Cell</td>
+            </tr>
+            <tr class="table-info">
+              <td class="entry" headers="tables__entry__11">Info</td>
+              <td class="entry" headers="tables__entry__12">Cell</td>
+              <td class="entry" headers="tables__entry__13">Cell</td>
+            </tr>
+            <tr class="table-light">
+              <td class="entry" headers="tables__entry__11">Light</td>
+              <td class="entry" headers="tables__entry__12">Cell</td>
+              <td class="entry" headers="tables__entry__13">Cell</td>
+            </tr>
+            <tr class="table-dark">
+              <td class="entry" headers="tables__entry__11">Dark</td>
+              <td class="entry" headers="tables__entry__12">Cell</td>
+              <td class="entry" headers="tables__entry__13">Cell</td>
+            </tr>
+          </tbody></table>
+    </div>
+    <pre class="pre codeblock language-xml"><code>
+<span class="ph token comment">&lt;!-- On tables --&gt;</span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-primary<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-secondary<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-success<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-danger<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-warning<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-info<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-light<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-dark<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span>
+
+<span class="ph token comment">&lt;!-- On rows --&gt;</span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>row</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-primary<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tr</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>row</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-secondary<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tr</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>row</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-success<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tr</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>row</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-danger<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tr</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>row</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-warning<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tr</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>row</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-info<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tr</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>row</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-light<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tr</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>row</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-dark<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tr</span><span class="ph token punctuation">&gt;</span></span>
+
+<span class="ph token comment">&lt;!-- On cells (`td` or `th`) --&gt;</span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>row</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>entry</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-primary<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>td</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>entry</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-secondary<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>td</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>entry</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-success<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>td</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>entry</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-danger<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>td</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>entry</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-warning<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>td</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>entry</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-info<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>td</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>entry</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-light<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>td</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>entry</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-dark<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>td</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>row</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <section class="section"><h2 class="title">Striped rows</h2>
+      
+      <p class="p">
+         Use <code class="keyword markupname xmlatt">@outputclass</code> and add <code class="ph codeph language-markup">table-striped</code> to add zebra-striping to any
+         table row within the <code class="keyword markupname xmlelement">&lt;tbody&gt;</code>.
+      </p>
+    </section>
+    <div class="bodydiv bd-example">
+      <table class="table table-striped"><caption></caption><colgroup><col><col></colgroup><thead class="thead">
+            <tr class="">
+              <th class="entry valign-top" id="tables__entry__41">Animal</th>
+              <th class="entry valign-top" id="tables__entry__42">Gestation</th>
+            </tr>
+          </thead><tbody class="tbody">
+            <tr class="">
+              <td class="entry" headers="tables__entry__41">Elephant (African and Asian)</td>
+              <td class="entry" headers="tables__entry__42">19-22 months</td>
+            </tr>
+            <tr class="">
+              <td class="entry" headers="tables__entry__41">Giraffe</td>
+              <td class="entry" headers="tables__entry__42">15 months</td>
+            </tr>
+            <tr class="">
+              <td class="entry" headers="tables__entry__41">Rhinoceros</td>
+              <td class="entry" headers="tables__entry__42">14-16 months</td>
+            </tr>
+            <tr class="">
+              <td class="entry" headers="tables__entry__41">Hippopotamus</td>
+              <td class="entry" headers="tables__entry__42">7 1/2 months</td>
+            </tr>
+          </tbody></table>
+    </div>
+    <pre class="pre codeblock language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-striped<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+   ...etc
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+  </div>
+</article></main></div></div></body></html>

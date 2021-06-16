@@ -1,0 +1,130 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="copyright" content="(C) Copyright 2021"><meta name="generator" content="DITA-OT"><meta name="description" content="Build hidden sidebars into your project for navigation, shopping carts, and more with a few classes and Bootstrap's JavaScript plugin."><meta name="keywords" content="Offcanvas, CSS, outputclass, section, xref, props"><title>Offcanvas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/commonltr.css"><link rel="stylesheet" type="text/css" href="css/theme.css"><link rel="stylesheet" type="text/css" href="./css/common-extended.css"></head><body id="offcanvas"><header role="banner"><nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+
+  <div class="container">
+    <a class="navbar-brand" href="https://www.dita-ot.org/">DITA Bootstrap</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="https://www.dita-ot.org/dev">Docs</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.dita-ot.org/download">Download</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.dita-ot.org/plugins">Plugins</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://getbootstrap.com/docs/5.0">Bootstrap 5.0</a></li>
+      </ul>
+    </div>
+  </div>
+</nav></header><div class="container" id="content"><div class="row"><nav role="toc" class="col-lg-3"><div class="list-group me-3"><span class="list-group-item list-group-item-dark">Getting Started</span><a class="list-group-item list-group-item-action" href="index.html">DITA Bootstrap</a><span class="list-group-item list-group-item-dark">Layout</span><a class="list-group-item list-group-item-action" href="grid.html">Grid System</a><span class="list-group-item list-group-item-dark">Content</span><a class="list-group-item list-group-item-action" href="images.html">Images</a><a class="list-group-item list-group-item-action" href="tables.html">Tables</a><span class="list-group-item list-group-item-dark">Components</span><a class="list-group-item list-group-item-action" href="accordion.html">Accordion</a><a class="list-group-item list-group-item-action" href="alerts.html">Alerts</a><a class="list-group-item list-group-item-action" href="badge.html">Badges</a><a class="list-group-item list-group-item-action" href="buttons.html">Buttons</a><a class="list-group-item list-group-item-action" href="button-group.html">Button Group</a><a class="list-group-item list-group-item-action" href="card.html">Cards</a><a class="list-group-item list-group-item-action" href="carousel.html">Carousel</a><a class="list-group-item list-group-item-action" href="list-group.html">List Group</a><a class="list-group-item list-group-item-action active" href="offcanvas.html">Offcanvas</a><a class="list-group-item list-group-item-action" href="tabs.html">Tabbed Dialogs</a></div></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title" id="ariaid-title1">Offcanvas</h1>
+  
+  
+  <div class="body language-markup"><p class="shortdesc lead">
+     Build hidden sidebars into your project for navigation, shopping carts, and more
+     with a few classes and Bootstrap's JavaScript plugin.
+  </p>
+    <section class="section"><h2 class="title">How it works</h2>
+      
+      <p class="p">
+         Offcanvas is a sidebar component that can be toggled via JavaScript to appear
+         from the left, right, or bottom edge of the viewport. Buttons or anchors are
+         used as triggers that are attached to specific elements you toggle, and data
+         attributes are used to invoke Bootstrap's JavaScript.
+      </p>
+      <ul class="ul">
+        <li class="li">
+           Offcanvas shares some of the same JavaScript code as modals. Conceptually, they
+           are quite similar, but they are separate plugins.
+        </li>
+        <li class="li">
+           Similarly, some source Sass variables for offcanvas’s styles and dimensions are
+           inherited from the modal’s variables.
+        </li>
+        <li class="li">
+           When shown, offcanvas includes a default backdrop that can be clicked to hide
+           the offcanvas.
+        </li>
+        <li class="li">
+           Similar to modals, only one offcanvas can be shown at a time.
+        </li>
+      </ul>
+      <p class="p">
+         Heads up! Given how CSS handles animations, you cannot use margin or translate
+         in a Bootstrap offcanvas element. Instead, use the class as an independent
+         wrapping element.
+      </p>
+    </section>
+    <section class="section"><h2 class="title">Offcanvas components</h2>
+      
+      <p class="p">
+         Below is an offcanvas example that is displayed when the button is clicked. Add
+         <code class="ph codeph language-markup">props="offcanvas-toggle"</code> to an <code class="keyword markupname xmlelement">&lt;xref&gt;</code>
+         element to associate a button to an offcanvas
+      </p>
+    </section>
+    <div class="bodydiv bd-example"><a data-bs-toggle="offcanvas" role="button" class="xref btn btn-primary" href="#offcanvas__offcanvas1">
+       Click here to display offcanvas
+         </a>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas__offcanvas1" aria-labelledby="false"><div class="offcanvas-header"><h2 id="offcanvasLabel_offcanvas__offcanvas1" class="">Offcanvas</h2><button type="button" class="btn-close text-reset" aria-label="Close" data-bs-dismiss="offcanvas"></button></div><div class="offcanvas-body"><p class="p">
+           Content for the offcanvas goes here. You can place just about any section
+           elements here.
+        </p></div></div>
+    </div>
+    <pre class="pre codeblock language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>btn-primary<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">props</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offcanvas-toggle<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#offcanvas1<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  Click here
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offcanvas-start<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">id</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offcanvas1<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+   <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>title</span><span class="ph token punctuation">&gt;</span></span>Offcanvas<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>title</span><span class="ph token punctuation">&gt;</span></span>
+   <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>p</span><span class="ph token punctuation">&gt;</span></span>
+      Content for the offcanvas goes here. You can place just about any section elements here.
+   <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>p</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>section</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <section class="section"><h2 class="title">Placement</h2>
+      
+      <p class="p">
+         There’s no default placement for offcanvas components, so you must add one of
+         the modifier outputclasses below
+      </p>
+      <ul class="ul">
+        <li class="li">
+           Setting <code class="keyword markupname xmlatt">@outputclass</code> to <code class="ph codeph language-markup">offcanvas-start</code> places offcanvas on the left of
+           the viewport (shown above)
+        </li>
+        <li class="li">
+           Setting  <code class="keyword markupname xmlatt">@outputclass</code> to <code class="ph codeph language-markup">offcanvas-end</code> places offcanvas on the right of
+           the viewport
+        </li>
+        <li class="li">
+           Setting <code class="keyword markupname xmlatt">@outputclass</code> to <code class="ph codeph language-markup">offcanvas-bottom</code> places offcanvas on the bottom
+           of the viewport
+        </li>
+      </ul>
+    </section>
+    <div class="bodydiv bd-example"><a data-bs-toggle="offcanvas" role="button" class="xref btn btn-primary" href="#offcanvas__offcanvas2">
+       Toggle right offcanvas
+         </a>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas__offcanvas2" aria-labelledby="false"><div class="offcanvas-header"><h2 id="offcanvasLabel_offcanvas__offcanvas2" class="">Offcanvas</h2><button type="button" class="btn-close text-reset" aria-label="Close" data-bs-dismiss="offcanvas"></button></div><div class="offcanvas-body"><p class="p">
+           Content for the offcanvas goes here. You can place just about any section
+           elements here.
+        </p></div></div>
+    </div>
+    <pre class="pre codeblock language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offcanvas-end<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+   ...etc
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <div class="bodydiv bd-example"><a data-bs-toggle="offcanvas" role="button" class="xref btn btn-primary" href="#offcanvas__offcanvas3">
+       Toggle bottom offcanvas
+         </a>
+      <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvas__offcanvas3" aria-labelledby="false"><div class="offcanvas-header"><h2 id="offcanvasLabel_offcanvas__offcanvas3" class="">Offcanvas</h2><button type="button" class="btn-close text-reset" aria-label="Close" data-bs-dismiss="offcanvas"></button></div><div class="offcanvas-body"><p class="p">
+           Content for the offcanvas goes here. You can place just about any section
+           elements here.
+        </p></div></div>
+    </div>
+    <pre class="pre codeblock language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offcanvas-bottom<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+   ...etc
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+  </div>
+</article></main></div></div></body></html>
