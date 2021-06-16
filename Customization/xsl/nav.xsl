@@ -151,9 +151,7 @@
                 </xsl:otherwise-->
               </xsl:choose>
               <xsl:if test="exists($children)">
-                <div class="list-group">
                   <xsl:copy-of select="$children"/>
-                </div>
               </xsl:if>
           </xsl:when>
           <xsl:otherwise>
