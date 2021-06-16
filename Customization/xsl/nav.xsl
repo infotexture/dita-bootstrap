@@ -37,7 +37,7 @@
                 <xsl:apply-templates select="$current-topicref" mode="list-group-toc-pull">
                   <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
                   <xsl:with-param name="children" as="element()*">
-                      <xsl:apply-templates select="$current-topicref/*[contains(@class, ' map/topicref ')]" mode="toc">
+                      <xsl:apply-templates select="$current-topicref/*[contains(@class, ' map/topicref ')]" mode="list-group-toc">
                       <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
                     </xsl:apply-templates>
                   </xsl:with-param>
@@ -72,7 +72,7 @@
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:param name="children" select="()" as="element()*"/>
     <xsl:param name="parent" select="parent::*" as="element()?"/>
-    <xsl:apply-templates select="$parent" mode="toc-pull">
+    <xsl:apply-templates select="$parent" mode="list-group-toc-pull">
       <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
       <xsl:with-param name="children" select="$children"/>
     </xsl:apply-templates>
