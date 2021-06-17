@@ -107,6 +107,20 @@
           <option>none</option>  - no TOC
         </li>
       </ul>
+      <ol outputclass="carousel carousel-dark border">
+        <li>
+          <image href="./src/full.png"/>
+        </li>
+        <li>
+          <image href="./src/partial.png"/>
+        </li>
+        <li>
+          <image href="./src/list-group-full.png"/>
+        </li>
+        <li>
+          <image href="./src/list-group-partial.png"/>
+        </li>
+      </ol>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--nav-toc</parmname>=<option>list-group-partial</option></codeblock>
