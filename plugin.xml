@@ -6,5 +6,8 @@
 <plugin id="net.infotexture.dita-bootstrap">
   <require plugin="org.dita.html5"/>
   <transtype name="html5-bootstrap" extends="html5" desc="HTML5 with Bootstrap style"/>
-  <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
+  <!-- ↓ DITA-OT 2.5 and older ↓ -->
+  <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
+  <!-- ↓ DITA-OT 3.0 and newer ↓ -->
+  <!-- <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/> -->
 </plugin>
