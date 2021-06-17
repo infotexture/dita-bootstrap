@@ -57,13 +57,12 @@
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <!-- Include a user's XSL call here to generate a toc based on what's a child of topic -->
           <xsl:call-template name="gen-user-sidetoc"/>
-
           <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
-          <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
       <!-- ↓ Close Bootstrap divs -->
         </div>
       </div>
       <!-- ↑ End customization -->
+      <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
     </body>
   </xsl:template>
 
