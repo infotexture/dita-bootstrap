@@ -109,16 +109,28 @@
       </ul>
       <ol outputclass="carousel carousel-dark border">
         <li>
-          <image href="./src/full.png"/>
+          <fig>
+            <title><option>full</option>  - Unstyled full TOC</title>
+            <image href="./src/full.png"/>
+          </fig>
         </li>
         <li>
-          <image href="./src/partial.png"/>
+          <fig>
+            <title><option>partial</option> - Unstyled  partial TOC</title>
+            <image href="./src/partial.png"/>
+          </fig>
         </li>
         <li>
-          <image href="./src/list-group-full.png"/>
+          <fig>
+            <title><option>list-group-full</option> - Styled full TOC within a List Group</title>
+            <image href="./src/list-group-full.png"/>
+          </fig>
         </li>
         <li>
-          <image href="./src/list-group-partial.png"/>
+          <fig>
+            <title><option>list-group-partial</option> - Styled partial TOC within a List Group</title>
+            <image href="./src/list-group-partial.png"/>
+          </fig>
         </li>
       </ol>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \

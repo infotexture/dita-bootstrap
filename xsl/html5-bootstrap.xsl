@@ -12,13 +12,16 @@
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
 
-  <xsl:include href="../Customization/xsl/bootstrap-common.xsl" />
+  <xsl:include href="../Customization/xsl/bootstrap.xsl" />
   <xsl:include href="../Customization/xsl/accordion.xsl" />
   <xsl:include href="../Customization/xsl/card.xsl" />
   <xsl:include href="../Customization/xsl/carousel.xsl" />
   <xsl:include href="../Customization/xsl/offcanvas.xsl" />
   <xsl:include href="../Customization/xsl/nav.xsl" />
   <xsl:include href="../Customization/xsl/tabs.xsl" />
+  <xsl:include href="../Customization/xsl/tables.xsl" />
+  <xsl:include href="../Customization/xsl/topic.xsl" />
+  <xsl:include href="../Customization/xsl/utility-classes.xsl" />
 
   <!-- Override to add <meta> elements to page heads -->
   <xsl:template match="*" mode="chapterHead">
