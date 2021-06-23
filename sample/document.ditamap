@@ -41,6 +41,12 @@
     <topicref navtitle="Offcanvas" format="dita" type="topic" href="offcanvas.dita"/>
     <topicref navtitle="Tabs" format="dita" type="topic" href="tabs.dita"/>
   </chapter>
+  <chapter>
+    <topicmeta>
+      <navtitle>Utilities</navtitle>
+    </topicmeta>
+    <topicref navtitle="Colors &amp; etc." format="dita" type="topic" href="utilities.dita"/>
+  </chapter>
   <backmatter deliveryTarget="pdf">
     <booklists>
       <indexlist/>

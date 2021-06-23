@@ -26,33 +26,64 @@
 
   <!-- Override to add Bootstrap list-group classes -->
   <xsl:template match="*" mode="gen-user-sidetoc">
-    <xsl:if test="$nav-toc = ('partial', 'full')">
-      <nav xsl:use-attribute-sets="toc">
-        <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↑ -->
-        <div class="list-group me-3">
-        <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-          <xsl:choose>
-            <xsl:when test="$nav-toc = 'partial'">
-              <xsl:apply-templates select="$current-topicref" mode="toc-pull">
-                <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-                <xsl:with-param name="children" as="element()*">
-                    <xsl:apply-templates select="$current-topicref/*[contains(@class, ' map/topicref ')]" mode="toc">
-                    <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-                  </xsl:apply-templates>
-                </xsl:with-param>
-              </xsl:apply-templates>
-            </xsl:when>
-            <xsl:when test="$nav-toc = 'full'">
-              <xsl:apply-templates select="$input.map" mode="toc">
-                <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-              </xsl:apply-templates>
-            </xsl:when>
-          </xsl:choose>
-        <!-- ↓ Close <div> element from Bootstrap list-group ↑ -->
-        </div>
-        <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-      </nav>
-    </xsl:if>
+    <xsl:choose>
+      <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
+        <nav xsl:use-attribute-sets="toc">
+          <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↑ -->
+          <div class="list-group me-3">
+          <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+            <xsl:choose>
+              <xsl:when test="$nav-toc = 'list-group-partial'">
+                <xsl:apply-templates select="$current-topicref" mode="list-group-toc-pull">
+                  <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+                  <xsl:with-param name="children" as="element()*">
+                      <xsl:apply-templates select="$current-topicref/*[contains(@class, ' map/topicref ')]" mode="list-group-toc">
+                      <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+                    </xsl:apply-templates>
+                  </xsl:with-param>
+                </xsl:apply-templates>
+              </xsl:when>
+              <xsl:when test="$nav-toc = 'list-group-full'">
+                <xsl:apply-templates select="$input.map" mode="list-group-toc">
+                  <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+                </xsl:apply-templates>
+              </xsl:when>
+            </xsl:choose>
+          <!-- ↓ Close <div> element from Bootstrap list-group ↑ -->
+          </div>
+          <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+        </nav>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:next-match/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+
+  <xsl:template match="*[contains(@class, ' map/map ')]" mode="list-group-toc-pull">
+    <xsl:param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+    <xsl:param name="children" select="()" as="element()*"/>
+    <xsl:param name="parent" select="parent::*" as="element()?"/>
+    <xsl:copy-of select="$children"/>
+  </xsl:template>
+
+  <xsl:template match="*" mode="list-group-toc-pull" priority="-10">
+    <xsl:param name="pathFromMaplist" as="xs:string"/>
+    <xsl:param name="children" select="()" as="element()*"/>
+    <xsl:param name="parent" select="parent::*" as="element()?"/>
+    <xsl:apply-templates select="$parent" mode="list-group-toc-pull">
+      <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
+      <xsl:with-param name="children" select="$children"/>
+    </xsl:apply-templates>
+  </xsl:template>
+
+
+  <xsl:template match="*" mode="list-group-toc" priority="-10">
+    <xsl:param name="pathFromMaplist" as="xs:string"/>
+    <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="list-group-toc">
+      <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
+    </xsl:apply-templates>
   </xsl:template>
 
 
@@ -60,17 +91,17 @@
   <xsl:template match="*[contains(@class, ' map/topicref ')]
                         [not(@toc = 'no')]
                         [not(@processing-role = 'resource-only')]"
-                mode="toc-pull" priority="10">
+                mode="list-group-toc-pull" priority="10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:param name="children" select="()" as="element()*"/>
     <xsl:param name="parent" select="parent::*" as="element()?"/>
     <xsl:variable name="title">
       <xsl:apply-templates select="." mode="get-navtitle"/>
     </xsl:variable>
-    <xsl:apply-templates select="$parent" mode="toc-pull">
+    <xsl:apply-templates select="$parent" mode="list-group-toc-pull">
       <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
       <xsl:with-param name="children" as="element()*">
-        <xsl:apply-templates select="preceding-sibling::*[contains(@class, ' map/topicref ')]" mode="toc">
+        <xsl:apply-templates select="preceding-sibling::*[contains(@class, ' map/topicref ')]" mode="list-group-toc">
           <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
         </xsl:apply-templates>
         <xsl:choose>
@@ -120,18 +151,16 @@
                 </xsl:otherwise-->
               </xsl:choose>
               <xsl:if test="exists($children)">
-                <div class="list-group">
                   <xsl:copy-of select="$children"/>
-                </div>
               </xsl:if>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="toc">
+            <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="list-group-toc">
               <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
             </xsl:apply-templates>
           </xsl:otherwise>
         </xsl:choose>
-        <xsl:apply-templates select="following-sibling::*[contains(@class, ' map/topicref ')]" mode="toc">
+        <xsl:apply-templates select="following-sibling::*[contains(@class, ' map/topicref ')]" mode="list-group-toc">
           <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
         </xsl:apply-templates>
       </xsl:with-param>
@@ -141,9 +170,9 @@
   <xsl:template match="*[contains(@class, ' map/topicref ')]
                         [not(@toc = 'no')]
                         [not(@processing-role = 'resource-only')]"
-                mode="toc" priority="10">
+                mode="list-group-toc" priority="10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
-    <xsl:param name="children" select="if ($nav-toc = 'full') then *[contains(@class, ' map/topicref ')] else ()" as="element()*"/>
+    <xsl:param name="children" select="if ($nav-toc = 'list-group-full') then *[contains(@class, ' map/topicref ')] else ()" as="element()*"/>
     <xsl:variable name="title">
       <xsl:apply-templates select="." mode="get-navtitle"/>
     </xsl:variable>

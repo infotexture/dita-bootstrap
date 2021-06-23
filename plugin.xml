@@ -8,7 +8,12 @@
   <feature extension="package.version" value="3.6"/>
   <require plugin="org.dita.html5"/>
   <require plugin="fox.jason.extend.css"/>
-  <transtype name="html5-bootstrap" extends="html5" desc="HTML5 with Bootstrap style"/>
+  <transtype name="html5-bootstrap" extends="html5" desc="HTML5 with Bootstrap style">
+    <param name="nav-toc" type="enum" desc="Specifies whether to generate a navigation TOC in topic pages.">
+     <val desc="Bootstrap styled partial TOC that shows the current topic">list-group-partial</val>
+     <val desc="Bootstrap styled full TOC">list-group-full</val>
+    </param>
+  </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
 </plugin>

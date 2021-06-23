@@ -82,6 +82,62 @@
       </p>
     </section>
     <section>
+      <title>Sidebar menu</title>
+      <indexterm><parmname>--nav-toc</parmname></indexterm>
+      <p>
+        The plug-in extends the standard  <parmname>--nav-toc</parmname> parameter to add
+        styled list groups for the sidebar. Five styles now are supported:
+      </p>
+      <ul>
+        <li>
+          <option>full</option> - Unstyled full TOC - same as HTML5 Plugin (default)
+        </li>
+        <li>
+          <option>partial</option> - Unstyled  partial TOC that shows the current topic - same as HTML5 Plugin
+        </li>
+        <li>
+          <option>list-group-full</option> - Styled full TOC within a Bootstrap
+          <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/list-group/">List Group</xref>
+        </li>
+        <li>
+          <option>list-group-partial</option> - Styled partial TOC that shows the current topic within a Bootstrap
+          <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/list-group/">List Group</xref>
+        </li>
+        <li>
+          <option>none</option>  - no TOC
+        </li>
+      </ul>
+      <ol outputclass="carousel carousel-dark border">
+        <li>
+          <fig>
+            <title><option>full</option>  - Unstyled full TOC</title>
+            <image href="./src/full.png"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
+            <title><option>partial</option> - Unstyled  partial TOC</title>
+            <image href="./src/partial.png"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
+            <title><option>list-group-full</option> - Styled full TOC within a List Group</title>
+            <image href="./src/list-group-full.png"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
+            <title><option>list-group-partial</option> - Styled partial TOC within a List Group</title>
+            <image href="./src/list-group-partial.png"/>
+          </fig>
+        </li>
+      </ol>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--nav-toc</parmname>=<option>list-group-partial</option></codeblock>
+    </section>
+    <section>
       <title>Custom CSS</title>
       <indexterm><parmname>--args.css</parmname></indexterm>
       <indexterm><parmname>--args.copycss</parmname></indexterm>
