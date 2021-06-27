@@ -34,7 +34,7 @@
   </xsl:template>
 
   <!-- Override to add Bootstrap fluid container & row to page body -->
-  <!-- https://getbootstrap.com/docs/3.3/css/#grid-example-fluid -->
+  <!-- https://getbootstrap.com/docs/3.4/css/#grid-example-fluid -->
   <xsl:template match="*" mode="chapterBody">
     <body>
       <xsl:apply-templates select="." mode="addAttributesToHtmlBodyElement"/>
@@ -57,7 +57,7 @@
   </xsl:template>
 
   <!-- Override to add Bootstrap grid class -->
-  <!-- https://getbootstrap.com/docs/3.3/css/#grid -->
+  <!-- https://getbootstrap.com/docs/3.4/css/#grid -->
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <!-- ↓ Add grid class -->
     <main class="col-md-9" role="main">
