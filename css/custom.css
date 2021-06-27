@@ -13,3 +13,71 @@ nav[role=toc] li.active > a {
 .bs-docs-sidenav li ul {
   padding-left: 20px;
 }
+
+/* Fix table conflict with bootstrap's row class */
+.table .row {
+  display: table-row;
+}
+
+.table .row:before {
+   content: none;
+}
+
+/* Override DITA-OT heading styles with Bootstrap’s defaults */
+/* Increase specificity for precedence over `commonltr.css`. */
+
+h1.topictitle1 {
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h2.topictitle2 {
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h3.topictitle3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h4.topictitle4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h5.topictitle5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h6.topictitle6 {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h2.sectiontitle {
+  color: inherit;
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h3.sectiontitle {
+  color: inherit;
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
