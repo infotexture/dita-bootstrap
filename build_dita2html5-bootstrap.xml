@@ -16,6 +16,8 @@
 
 
   <target name="dita2html5-bootstrap.init">
+    <property name="icons.cdn.path" location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.icons.hdf.xml"/>
+    <property name="icons.include" value="yes"/>
     <property name="args.hdf"
           location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"/>
     <property name="args.hdr"

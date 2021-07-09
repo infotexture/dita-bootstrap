@@ -19,6 +19,7 @@
   <!--xsl:include href="../Customization/xsl/accordion.xsl" /-->
   <!--xsl:include href="../Customization/xsl/card.xsl" /-->
   <!--xsl:include href="../Customization/xsl/carousel.xsl" /-->
+  <!--xsl:include href="../Customization/xsl/hi-d.xsl" /-->
   <!--xsl:include href="../Customization/xsl/nav.xsl" /-->
   <!--xsl:include href="../Customization/xsl/offcanvas.xsl" /-->
   <!--xsl:include href="../Customization/xsl/tables.xsl" /-->

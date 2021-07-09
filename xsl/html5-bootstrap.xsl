@@ -9,6 +9,13 @@
                 version="2.0"
                 exclude-result-prefixes="xs dita-ot">
 
+
+  <!-- the file name containing XHTML to be placed in the HEAD area
+       (file name and extension only - no path). -->
+  <xsl:param as="xs:string" name="BOOTSTRAP_ICONS_CDN"/>
+  <!-- Whether include bootstrap icons.  values are 'yes' or 'no' -->
+  <xsl:param as="xs:string" name="BOOTSTRAP_ICONS_INCLUDE"/>
+
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
 
@@ -17,6 +24,7 @@
   <xsl:include href="../Customization/xsl/card.xsl" />
   <xsl:include href="../Customization/xsl/carousel.xsl" />
   <xsl:include href="../Customization/xsl/offcanvas.xsl" />
+  <xsl:include href="../Customization/xsl/hi-d.xsl" />
   <xsl:include href="../Customization/xsl/nav.xsl" />
   <xsl:include href="../Customization/xsl/tabs.xsl" />
   <xsl:include href="../Customization/xsl/tables.xsl" />
@@ -41,6 +49,34 @@
       <xsl:call-template name="processHDF"/>        <!-- Add user HDF file, if specified -->
       <xsl:call-template name="generateCssLinks"/>  <!-- Generate links to CSS files -->
       <xsl:call-template name="gen-user-styles" />  <!-- include user's XSL style element and content here -->
+
+
+     <!--Check the file Url Definition of HDF HDR FTR-->
+      <xsl:variable name="BOOTSTRAP_CDNFILE">
+        <xsl:choose>
+         <xsl:when test="not($BOOTSTRAP_ICONS_CDN)"/> <!-- If no filterfile leave empty -->
+         <xsl:when test="starts-with($BOOTSTRAP_ICONS_CDN, 'file:')">
+           <xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
+         </xsl:when>
+         <xsl:otherwise>
+           <xsl:choose>
+             <xsl:when test="starts-with($BOOTSTRAP_ICONS_CDN, '/')">
+               <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
+             </xsl:when>
+             <xsl:otherwise>
+               <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
+             </xsl:otherwise>
+           </xsl:choose>
+         </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+
+      <xsl:if test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">
+        <xsl:if test="string-length($BOOTSTRAP_CDNFILE) > 0">
+          <xsl:copy-of select="document($BOOTSTRAP_CDNFILE, /)"/>
+        </xsl:if>
+      </xsl:if>
     </head>
   </xsl:template>
 
