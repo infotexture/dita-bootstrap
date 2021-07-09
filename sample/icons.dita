@@ -8,8 +8,8 @@
 <topic id="icons">
   <title>Icons</title>
   <shortdesc>
-    DITA Bootstrap doesn’t include an icon set by default. Icon libraries such as Bootstrap Icons
-    can be added using additional command line parameters.
+    DITA Bootstrap includes the Bootstrap Icons set by default. Other Icon libraries such as
+    can be added or removed using command line parameters.
   </shortdesc>
   <body outputclass="language-markup">
     <section>
