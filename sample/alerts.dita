@@ -124,6 +124,9 @@
       <note type="note">
          This is just a note.
       </note>
+      <note type="notice">
+         Notice this piece of information.
+      </note>
       <note type="fastpath">
          This note will speed you on your way.
       </note>
@@ -146,13 +149,14 @@
          You can't do what this note says.
       </note>
       <note type="danger">
-         You may  hurt yourself!
+         You may hurt yourself!
       </note>
       <note type="other">
          This is something other than a normal note.
       </note>
     </div>
     <codeblock>&lt;note type="note"&gt;This is just a note.&lt;/note&gt;
+&lt;note type="notice"&gt;Notice this piece of information.&lt;/note&gt;
 &lt;note type="fastpath"&gt;This note will speed you on your way.&lt;/note&gt;
 &lt;note type="remember"&gt;Don't forget to do what this note says.&lt;/note&gt;
 &lt;note type="tip"&gt;This is a fine little tip.&lt;/note&gt;
@@ -160,7 +164,7 @@
 &lt;note type="caution"&gt;Care is required when proceeding.&lt;/note&gt;
 &lt;note type="important"&gt;This note is important.&lt;/note&gt;
 &lt;note type="restriction"&gt;You can't do what this note says.&lt;/note&gt;
-&lt;note type="danger"&gt;You may  hurt yourself!&lt;/note&gt;
+&lt;note type="danger"&gt;You may hurt yourself!&lt;/note&gt;
 &lt;note type="other"&gt;This is something other than a normal note.&lt;/note&gt;</codeblock>
     <p>
        The <xmlatt>type</xmlatt> can be overridden by using an <xmlatt>outputclass</xmlatt>

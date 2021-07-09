@@ -65,8 +65,8 @@
       </xsl:if>
    </xsl:template>
 
-      <!-- Override to add Bootstrap classes and roles to <note> elements -->
-   <xsl:template name="bootstrap-note">
+  <!-- Override to add Bootstrap classes and roles to <note> elements -->
+  <xsl:template name="bootstrap-note">
     <xsl:text>alert </xsl:text>
       <xsl:choose>
         <xsl:when test="@type='tip'">
@@ -111,6 +111,46 @@
         <xsl:otherwise>
            <xsl:text>alert-info</xsl:text>
         </xsl:otherwise>
+      </xsl:choose>
+   </xsl:template>
+
+   <xsl:template name="bootstrap-icon">
+      <xsl:choose>
+        <xsl:when test="@type='tip'">
+          <i class="pe-2 bi bi-lightbulb"/>
+        </xsl:when>
+        <xsl:when test="@type='fastpath'">
+          <i class="pe-2 bi bi-shield-check"/>
+        </xsl:when>
+        <xsl:when test="@type='remember'">
+          <i class="pe-2 bi bi-clipboard-check"/>
+        </xsl:when>
+        <xsl:when test="@type='restriction'">
+          <i class="pe-2 bi bi-slash-circle"/>
+        </xsl:when>
+        <xsl:when test="@type='important'">
+          <i class="pe-2 bi bi-exclamation-circle-fill"/>
+        </xsl:when>
+        <xsl:when test="@type='attention'">
+          <i class="pe-2 bi bi-exclamation-triangle"/>
+        </xsl:when>
+        <xsl:when test="@type='caution'">
+          <i class="pe-2 bi bi-exclamation-triangle"/>
+        </xsl:when>
+        <xsl:when test="@type='warning'">
+          <i class="pe-2 bi bi-exclamation-triangle"/>
+        </xsl:when>
+        <xsl:when test="@type='trouble'">
+          <i class="pe-2 bi bi-exclamation-triangle"/>
+        </xsl:when>
+        <xsl:when test="@type='danger'">
+          <i class="pe-2 bi bi-exclamation-triangle"/>
+        </xsl:when>
+        <xsl:when test="@type='notice'">
+          <i class="pe-2 bi bi-info-circle-fill"/>
+        </xsl:when>
+        <!--xsl:when test="@type='note'"/-->
+        <!--xsl:when test="@type='other'"/-->
       </xsl:choose>
    </xsl:template>
 </xsl:stylesheet>
