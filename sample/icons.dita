@@ -44,7 +44,7 @@
       </p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-     <parmname>--args.hdr</parmname>=<filepath>path/to/icon-cdn-header.xml</filepath></codeblock>
+     <parmname>--icons.cdn.path</parmname>=<filepath>path/to/icon-cdn-header.xml</filepath></codeblock>
     </section>
     <section>
       <title>Example</title>
