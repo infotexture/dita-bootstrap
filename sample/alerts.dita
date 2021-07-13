@@ -85,13 +85,13 @@
     <section>
       <title>Additional content</title>
       <p>
-         Alerts can also contain additional HTML elements like headings, paragraphs and
+         Alerts can also contain additional HTML elements like headings, paragraphs, icons and
          links.
       </p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <section outputclass="alert-success">
-        <title>Well done!</title>
+        <title><i outputclass="bi bi-emoji-smile pe-2"/>Well done!</title>
         <p>
            Aww yeah, you successfully read this important alert message. This example text
            with a <xref href="#">link</xref> is going to run a bit longer so that you can
@@ -103,7 +103,7 @@
       </section>
     </bodydiv>
     <codeblock>&lt;section outputclass="alert-success"&gt;
-   &lt;title&gt;Well done!&lt;/title&gt;
+   &lt;title&gt;&lt;i outputclass="bi bi-emoji-smile pe-2"/&gt;Well done!&lt;/title&gt;
    &lt;p&gt;
       Aww yeah, you successfully read this important alert message. This example text with a
       &lt;xref href="#"&gt;link&lt;/xref&gt; is going to run a bit longer so that you can see
