@@ -47,6 +47,12 @@
     </topicmeta>
     <topicref navtitle="Colors &amp; etc." format="dita" type="topic" href="utilities.dita"/>
   </chapter>
+  <chapter>
+    <topicmeta>
+      <navtitle>Extend</navtitle>
+    </topicmeta>
+    <topicref navtitle="Icons" format="dita" type="topic" href="icons.dita"/>
+  </chapter>
   <backmatter deliveryTarget="pdf">
     <booklists>
       <indexlist/>

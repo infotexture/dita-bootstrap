@@ -20,6 +20,7 @@
       <param name="args.rellinks" value="none"/>
       <param name="nav-toc" value="list-group-full"/>
       <param name="processing-mode" value="strict"/>
+      <param name="icons.include" value="yes"/>
     </publication>
   </deliverable>
 </project>

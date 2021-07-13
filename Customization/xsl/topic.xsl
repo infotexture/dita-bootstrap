@@ -87,6 +87,11 @@
       <!-- Normal flags go before the generated title; revision flags only go on the content. -->
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/prop" mode="ditaval-outputflag"/>
       <span class="note__title">
+        <!-- ↓ Add Bootstrap icon ↑ -->
+        <xsl:if test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">
+          <xsl:call-template name="bootstrap-icon" />
+        </xsl:if>
+        <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:copy-of select="$title"/>
         <xsl:call-template name="getVariable">
           <xsl:with-param name="id" select="'ColonSymbol'"/>
