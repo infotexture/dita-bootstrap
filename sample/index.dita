@@ -61,8 +61,9 @@
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
     </section>
     <section>
-      <title>Customizing Headers</title>
+      <title>Customizing Headers and Footers</title>
       <indexterm><parmname>--args.hdr</parmname></indexterm>
+      <indexterm><parmname>--args.ftr</parmname></indexterm>
       <p>
          The plug-in includes a default static navbar with a project name and global
          links. To override the global navigation with a header of your own, pass a
@@ -79,6 +80,19 @@
       </p>
       <p>
          Edit a copy of this file to adjust the content of the global navigation.
+      </p>
+
+      <p>
+        The footer is omitted by default. To add a custom footer, pass a custom footer file
+        to the dita command via the <parmname>--args.ftr</parmname> parameter:
+       </p>
+ <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--args.ftr</parmname>=<filepath>path/to/your-footer.xml</filepath></codeblock>
+      <p>
+         The plug-in includes a <xref scope="external"
+         href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-footer-example.xml">sample
+         footer file</xref>.
       </p>
     </section>
     <section>

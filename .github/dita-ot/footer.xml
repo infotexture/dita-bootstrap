@@ -1,0 +1,30 @@
+<!-- Footer -->
+<footer class="text-center" style="background-color: rgba(0, 0, 0, 0.2)">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- Social Media -->
+        <p class="text-center p-3">
+          <!-- Twitter -->
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/infotexture" role="button"><i class="bi bi-twitter"></i></a>
+          <!-- Slack -->
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #611f69" href="http://slack.dita-ot.org/" role="button"><i class="bi bi-slack"></i></a>
+          <!-- Linkedin -->
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/infotexture/" role="button"><i class="bi bi-linkedin"></i></a>
+          <!-- Github -->
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/dita-ot/" role="button"><i class="bi bi-github"></i></a>
+        </p>
+      </div>
+      <div>
+        <!-- Copyright -->
+        <p class="p-3">
+          <small>
+            © 2021
+            <a class="text-dark" href="https://infotexture.net/">Roger Fienhold Sheen</a>
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer -->

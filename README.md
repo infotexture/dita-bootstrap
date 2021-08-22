@@ -54,7 +54,7 @@ dita --input=path/to/your.ditamap \
 
 ## Customizing
 
-### Header menu
+### Headers and Footers
 
 The plug-in includes a default static navbar with a project name and global links. To override the global navigation with a header of your own, pass a custom header file to the `dita` command via the `--args.hdr` parameter:
 
@@ -67,6 +67,16 @@ dita --input=path/to/your.ditamap \
 The plug-in includes a sample [header alternative with a dark navbar][3].
 
 Edit a copy of this file to adjust the content of the global navigation.
+
+No footer is added by default. To add a footer, pass a custom footer file to the `dita` command via the `--args.ftr` parameter:
+
+```console
+dita --input=path/to/your.ditamap \
+     --format=html5-bootstrap \
+     --args.ftr=path/to/your-footer.xml
+```
+
+The plug-in also includes a sample [footer file][4].
 
 ### Sidebar menu
 
@@ -87,7 +97,7 @@ dita --input=path/to/your.ditamap \
 
 ### Custom CSS
 
-Bootstrap themes can be generated using the [Themestr.app](https://themestr.app/theme). The plug-in includes a sample placeholder for [custom CSS][4] styles. You can edit this file to add style rules of your own. Override the default Bootstrap theme by passing a custom CSS file to the `dita` command via the `--args.css` parameter:
+Bootstrap themes can be generated using the [Themestr.app](https://themestr.app/theme). The plug-in includes a sample placeholder for [custom CSS][5] styles. You can edit this file to add style rules of your own. Override the default Bootstrap theme by passing a custom CSS file to the `dita` command via the `--args.css` parameter:
 
 ```console
 dita --input=path/to/your.ditamap --format=html5-bootstrap \
@@ -100,31 +110,32 @@ dita --input=path/to/your.ditamap --format=html5-bootstrap \
 
 ![Sample DITA Bootstrap output](images/custom-bootstrap.png)
 
-For more extensive customizations, you may want to [fork][5] this repository and create a new plug-in of your own.
+For more extensive customizations, you may want to [fork][6] this repository and create a new plug-in of your own.
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template](./xsl/html5-bootstrap-template.xsl) is included within this repository.
 
 ## Feedback
 
-- If you find this useful and build something of your own on top of it, [let me know][6].
+- If you find this useful and build something of your own on top of it, [let me know][7].
 
-- If you find a bug or would like to suggest a change, [create an issue][7].  
+- If you find a bug or would like to suggest a change, [create an issue][8].
   _(If it's a bug, provide steps to recreate the issue.)_
 
-- If you know how to fix it yourself, [submit a pull request][8] with the proposed changes.
+- If you know how to fix it yourself, [submit a pull request][9] with the proposed changes.
 
 ## License
 
 [Apache 2.0](LICENSE) © 2017 - 2021 Roger W. Fienhold Sheen
 
-Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.0 documentation][9], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`.
+Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.0 documentation][10], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`.
 
 [1]: http://www.dita-ot.org
 [2]: https://getbootstrap.com/docs/5.0
 [3]: https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml
-[4]: https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css
-[5]: https://help.github.com/articles/fork-a-repo/
-[6]: https://twitter.com/infotexture
-[7]: https://github.com/infotexture/dita-bootstrap/issues/new
-[8]: https://help.github.com/articles/using-pull-requests/
-[9]: https://getbootstrap.com/docs/5.0
+[4]: https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-footer-example.xml
+[5]: https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css
+[6]: https://help.github.com/articles/fork-a-repo/
+[7]: https://twitter.com/infotexture
+[8]: https://github.com/infotexture/dita-bootstrap/issues/new
+[9]: https://help.github.com/articles/using-pull-requests/
+[10]: https://getbootstrap.com/docs/5.0
