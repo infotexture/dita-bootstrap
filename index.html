@@ -64,7 +64,8 @@
       </p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span>path/to/your.ditamap <span class="keyword parmname">--format</span><span class="ph token operator">=</span>html5-bootstrap</code></pre>
     </section>
-    <section class="section"><h2 class="title text-dark">Customizing Headers</h2>
+    <section class="section"><h2 class="title text-dark">Customizing Headers and Footers</h2>
+      
       
       
       <p class="p">
@@ -82,6 +83,18 @@
       </p>
       <p class="p">
          Edit a copy of this file to adjust the content of the global navigation.
+      </p>
+
+      <p class="p">
+        The footer is omitted by default. To add a custom footer, pass a custom footer file
+        to the dita command via the <span class="keyword parmname">--args.ftr</span> parameter:
+       </p>
+ <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--args.ftr</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your-footer.xml</span></code></pre>
+      <p class="p">
+         The plug-in includes a <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-footer-example.xml" target="_blank" rel="external noopener">sample
+         footer file</a>.
       </p>
     </section>
     <section class="section"><h2 class="title text-dark">Sidebar menu</h2>
@@ -146,4 +159,31 @@
       </p>
     </section>
   </div>
-</article></main></div></div></body></html>
+</article></main></div></div><footer role="contentinfo"><!-- Footer --><footer class="text-center" style="background-color: rgba(0, 0, 0, 0.2)">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <!-- Social Media -->
+        <p class="text-center p-3">
+          <!-- Twitter -->
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/infotexture" role="button"><i class="bi bi-twitter"></i></a>
+          <!-- Slack -->
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #611f69" href="http://slack.dita-ot.org/" role="button"><i class="bi bi-slack"></i></a>
+          <!-- Linkedin -->
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/infotexture/" role="button"><i class="bi bi-linkedin"></i></a>
+          <!-- Github -->
+          <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/dita-ot/" role="button"><i class="bi bi-github"></i></a>
+        </p>
+      </div>
+      <div>
+        <!-- Copyright -->
+        <p class="p-3">
+          <small>
+            © 2021
+            <a class="text-dark" href="https://infotexture.net/">Roger Fienhold Sheen</a>
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><!-- Footer --></footer></body></html>
