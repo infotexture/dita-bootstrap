@@ -60,6 +60,11 @@
   font-family: var(--bs-font-monospace);
 }
 
+.navbar-brand > svg {
+  margin: 4px 6px;
+  vertical-align: text-top;
+}
+
 /* PrismJS 1.15.0
 https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
 /**
