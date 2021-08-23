@@ -58,3 +58,8 @@
   color: var(--bs-pink);
   font-family: var(--bs-font-monospace);
 }
+
+.navbar-brand > svg {
+  margin: 4px 6px;
+  vertical-align: text-top;
+}
