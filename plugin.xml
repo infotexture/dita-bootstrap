@@ -18,6 +18,16 @@
       <val>yes</val>
       <val default="true">no</val>
     </param>
+    <param name="bootstrap.css.shortdesc" type="string" desc="Common Bootstrap classes for DITA &lt;shortdesc&gt; elements"/>
+    <param name="bootstrap.css.codeblock" type="string" desc="Common Bootstrap classes for DITA &lt;codeblock&gt; elements"/>
+    <param name="bootstrap.css.header" type="string" desc="Common Bootstrap classes for DITA &lt;title&gt; elements"/>
+    <param name="bootstrap.css.card" type="string" desc="Bootstrap classes for card components"/>
+    <param name="bootstrap.css.carousel"  type="string" desc="Bootstrap classes for carousel components"/>
+    <param name="bootstrap.css.carousel.caption" type="string" desc="Bootstrap classes for carousel captions"/>
+    <param name="bootstrap.css.tabs" type="string" desc="Bootstrap classes for tabbed dialog components"/>
+    <param name="bootstrap.css.tabs.vertical" type="string" desc="Bootstrap classes for vertical tabbed dialog components"/>
+    <param name="bootstrap.css.accordion" type="string" desc="Bootstrap classes for accordion components"/>
+    <param name="bootstrap.css.accordion.flush" type="string" desc="Bootstrap classes for flush accordion components"/>
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>

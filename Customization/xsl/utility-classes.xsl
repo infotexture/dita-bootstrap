@@ -5,39 +5,71 @@
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" exclude-result-prefixes="xs dita-ot">
 
+
+  <xsl:param name="BOOTSTRAP_CSS_SHORTDESC" select="'text-muted lead'"/>
+  <xsl:param name="BOOTSTRAP_CSS_CODEBLOCK" select="'border rounded'"/>
+  <xsl:param name="BOOTSTRAP_CSS_HEADER" select="'text-dark'"/>
+  <xsl:param name="BOOTSTRAP_CSS_CARD" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_CAROUSEL" select="'slide'"/>
+  <xsl:param name="BOOTSTRAP_CSS_CAPTION" select="'text-white bg-dark'"/>
+  <xsl:param name="BOOTSTRAP_CSS_TABS" select="'nav'"/>
+  <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'nav flex-column nav-pills me-3'"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="'accordion'"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACCORDION_FLUSH" select="'accordion-flush'"/>
+
+
   <!-- Add a Bootstrap CSS border to codeblocks -->
-  <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">border rounded</xsl:template>
+  <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_CODEBLOCK"/>
+  </xsl:template>
 
   <!-- Enhance the short desc with a Bootstrap CSS lead class -->
-  <xsl:template match="*[contains(@class, ' topic/shortdesc ')]" mode="get-output-class">text-muted lead</xsl:template>
+  <xsl:template match="*[contains(@class, ' topic/shortdesc ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_SHORTDESC"/>
+  </xsl:template>
 
   <!-- Change the default Bootstrap CSS text color of the headers -->
-  <xsl:template match="*[contains(@class, ' topic/title ')]" mode="get-output-class">text-dark</xsl:template>
+  <xsl:template match="*[contains(@class, ' topic/title ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_HEADER"/>
+  </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of cards -->
-  <xsl:template match="*[contains(@class,' topic/section ') and contains(@outputclass, 'card')]" mode="get-output-class"></xsl:template>
+  <xsl:template match="*[contains(@class,' topic/section ') and contains(@outputclass, 'card')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_CARD"/>
+  </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of carousel -->
-  <xsl:template match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]" mode="get-output-class">slide</xsl:template>
+  <xsl:template match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_CAROUSEL"/>
+  </xsl:template>
 
   <!-- Amend the text and background of Figure Captions -->
-  <xsl:template match="*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class" priority="5">text-white bg-dark</xsl:template>
+  <xsl:template match="*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class" priority="5">
+    <xsl:value-of select="$BOOTSTRAP_CSS_CAPTION"/>
+  </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of tabs -->
-  <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-tabs')]" mode="get-output-class">nav</xsl:template>
+  <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-tabs')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_TABS"/>
+  </xsl:template>
   <!-- Change the default Bootstrap CSS classes of tab pills -->
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-pills')]" mode="get-output-class">
     <xsl:choose>
-      <xsl:when test="contains(@outputclass, 'nav-pills-vertical')">nav flex-column nav-pills me-3</xsl:when>
-      <xsl:otherwise>nav</xsl:otherwise>
+      <xsl:when test="contains(@outputclass, 'nav-pills-vertical')">
+        <xsl:value-of select="$BOOTSTRAP_CSS_TABS_VERTICAL"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$BOOTSTRAP_CSS_TABS"/>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of accordion -->
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'accordion')]" mode="get-output-class">
-    <xsl:text>accordion</xsl:text>
+    <xsl:value-of select="BOOTSTRAP_CSS_ACCORDION"/>
     <xsl:if test="contains(@outputclass, 'accordion-flush')">
-       <xsl:text> accordion-flush</xsl:text>
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="BOOTSTRAP_CSS_ACCORDION_FLUSH"/>
     </xsl:if>
   </xsl:template>
 

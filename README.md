@@ -114,6 +114,21 @@ For more extensive customizations, you may want to [fork][6] this repository and
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template](./xsl/html5-bootstrap-template.xsl) is included within this repository.
 
+### Common Bootstrap Utility Classes
+
+The HTML output for the following DITA elements can be standardized with common bootstrap utility classes for borders, background, text etc. using the following command line parameters:
+
+- `bootstrap.css.shortdesc` - common Bootstrap utility classes for DITA `<shortdesc>` elements
+- `bootstrap.css.codeblock` - common Bootstrap utility classes for DITA `<codeblock>` elements
+- `bootstrap.css.header` - common Bootstrap utility classes for DITA `<title>` elements
+- `bootstrap.css.card` - common utility classes for Bootstrap classes for card components
+- `bootstrap.css.carousel` - common utility classes for Bootstrap carousel components
+- `bootstrap.css.carousel.caption` - common utility classes for Bootstrap carousel captions
+- `bootstrap.css.tabs` - common utility classes for Bootstrap tabbed dialog components
+- `bootstrap.css.tabs.vertical` - common utility classes for Bootstrap vertical tabbed dialog components
+- `bootstrap.css.accordion` - common utility classes for Bootstrap accordion components
+- `bootstrap.css.accordion.flush` - common utility classes for Bootstrap flush accordion components
+
 ## Feedback
 
 - If you find this useful and build something of your own on top of it, [let me know][7].
