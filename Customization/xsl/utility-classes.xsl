@@ -10,14 +10,11 @@
   <xsl:param name="BOOTSTRAP_CSS_CODEBLOCK" select="'border rounded'"/>
   <xsl:param name="BOOTSTRAP_CSS_HEADER" select="'text-dark'"/>
   <xsl:param name="BOOTSTRAP_CSS_CARD" select="''"/>
-  <xsl:param name="BOOTSTRAP_CSS_CAROUSEL" select="'slide'"/>
+  <xsl:param name="BOOTSTRAP_CSS_CAROUSEL" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_CAPTION" select="'text-white bg-dark'"/>
-  <xsl:param name="BOOTSTRAP_CSS_TABS" select="'nav'"/>
-  <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'nav flex-column nav-pills me-3'"/>
-  <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="'accordion'"/>
-  <xsl:param name="BOOTSTRAP_CSS_ACCORDION_FLUSH" select="'accordion-flush'"/>
-
-
+  <xsl:param name="BOOTSTRAP_CSS_TABS" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'me-3'"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="''"/>
   <!-- Add a Bootstrap CSS border to codeblocks -->
   <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_CODEBLOCK"/>
@@ -40,6 +37,7 @@
 
   <!-- Change the default Bootstrap CSS classes of carousel -->
   <xsl:template match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]" mode="get-output-class">
+    <xsl:text>slide </xsl:text>
     <xsl:value-of select="$BOOTSTRAP_CSS_CAROUSEL"/>
   </xsl:template>
 
@@ -50,12 +48,15 @@
 
   <!-- Change the default Bootstrap CSS classes of tabs -->
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-tabs')]" mode="get-output-class">
+    <xsl:text>nav </xsl:text>
     <xsl:value-of select="$BOOTSTRAP_CSS_TABS"/>
   </xsl:template>
   <!-- Change the default Bootstrap CSS classes of tab pills -->
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-pills')]" mode="get-output-class">
+    <xsl:text>nav </xsl:text>
     <xsl:choose>
       <xsl:when test="contains(@outputclass, 'nav-pills-vertical')">
+        <xsl:text>flex-column nav-pills </xsl:text>
         <xsl:value-of select="$BOOTSTRAP_CSS_TABS_VERTICAL"/>
       </xsl:when>
       <xsl:otherwise>
@@ -66,11 +67,8 @@
 
   <!-- Change the default Bootstrap CSS classes of accordion -->
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'accordion')]" mode="get-output-class">
+    <xsl:text>accordion </xsl:text>
     <xsl:value-of select="BOOTSTRAP_CSS_ACCORDION"/>
-    <xsl:if test="contains(@outputclass, 'accordion-flush')">
-      <xsl:text> </xsl:text>
-      <xsl:value-of select="BOOTSTRAP_CSS_ACCORDION_FLUSH"/>
-    </xsl:if>
   </xsl:template>
 
 

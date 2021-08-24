@@ -127,7 +127,6 @@ The HTML output for the following DITA elements can be standardized with common 
 - `bootstrap.css.tabs` - common utility classes for Bootstrap tabbed dialog components
 - `bootstrap.css.tabs.vertical` - common utility classes for Bootstrap vertical tabbed dialog components
 - `bootstrap.css.accordion` - common utility classes for Bootstrap accordion components
-- `bootstrap.css.accordion.flush` - common utility classes for Bootstrap flush accordion components
 
 ## Feedback
 

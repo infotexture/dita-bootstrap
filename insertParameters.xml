@@ -21,6 +21,4 @@
          if:set="bootstrap.css.tabs.vertical"/>
   <param name="BOOTSTRAP_CSS_ACCORDION" expression="${bootstrap.css.accordion}"
          if:set="bootstrap.css.accordion"/>
-  <param name="BOOTSTRAP_CSS_ACCORDION_FLUSH" expression="${bootstrap.css.accordion.flush}"
-         if:set="bootstrap.css.accordion.flush"/>
 </dummy>
