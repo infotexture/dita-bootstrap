@@ -5,27 +5,27 @@
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" exclude-result-prefixes="xs dita-ot">
 
-  <!-- Add a border to codeblocks -->
+  <!-- Add a Bootstrap CSS border to codeblocks -->
   <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">border rounded</xsl:template>
 
-  <!-- Enhance the short desc with a lead class -->
+  <!-- Enhance the short desc with a Bootstrap CSS lead class -->
   <xsl:template match="*[contains(@class, ' topic/shortdesc ')]" mode="get-output-class">text-muted lead</xsl:template>
 
-  <!-- Change the text color of the headers -->
+  <!-- Change the default Bootstrap CSS text color of the headers -->
   <xsl:template match="*[contains(@class, ' topic/title ')]" mode="get-output-class">text-dark</xsl:template>
 
-  <!-- Change the defaults of cards -->
+  <!-- Change the default Bootstrap CSS classes of cards -->
   <xsl:template match="*[contains(@class,' topic/section ') and contains(@outputclass, 'card')]" mode="get-output-class"></xsl:template>
 
-  <!-- Change the defaults of carousel -->
+  <!-- Change the default Bootstrap CSS classes of carousel -->
   <xsl:template match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]" mode="get-output-class">slide</xsl:template>
 
   <!-- Amend the text and background of Figure Captions -->
   <xsl:template match="*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class" priority="5">text-white bg-dark</xsl:template>
 
-  <!-- Change the defaults of tabs -->
+  <!-- Change the default Bootstrap CSS classes of tabs -->
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-tabs')]" mode="get-output-class">nav</xsl:template>
-  <!-- Change the defaults of tab pills -->
+  <!-- Change the default Bootstrap CSS classes of tab pills -->
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-pills')]" mode="get-output-class">
     <xsl:choose>
       <xsl:when test="contains(@outputclass, 'nav-pills-vertical')">nav flex-column nav-pills me-3</xsl:when>
@@ -33,8 +33,16 @@
     </xsl:choose>
   </xsl:template>
 
+  <!-- Change the default Bootstrap CSS classes of accordion -->
+  <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'accordion')]" mode="get-output-class">
+    <xsl:text>accordion</xsl:text>
+    <xsl:if test="contains(@outputclass, 'accordion-flush')">
+       <xsl:text> accordion-flush</xsl:text>
+    </xsl:if>
+  </xsl:template>
 
-  <!-- add additional bootstrap classes based on outputclass -->
+
+  <!-- Add additional Bootstrap CSS classes based on outputclass -->
   <xsl:template name="bootstrap-class">
     <xsl:choose>
       <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
@@ -73,7 +81,7 @@
     </xsl:if>
   </xsl:template>
 
-  <!-- Override to add Bootstrap classes and roles to <note> elements -->
+  <!-- Add additional Bootstrap CSS classes and roles to <note> elements -->
   <xsl:template name="bootstrap-note">
     <xsl:text>alert </xsl:text>
     <xsl:choose>
