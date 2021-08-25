@@ -101,7 +101,7 @@
       </p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <bodydiv outputclass="accordion accordion-flush">
+      <bodydiv outputclass="accordion-flush">
         <section id="accordion4">
           <title>Accordion Item #1</title>
           <p>
@@ -134,7 +134,7 @@
         </section>
       </bodydiv>
     </bodydiv>
-    <codeblock>&lt;bodydiv outputclass="accordion accordion-flush"&gt;
+    <codeblock>&lt;bodydiv outputclass="accordion-flush"&gt;
    ...etc
 &lt;bodydiv&gt;</codeblock>
   </body>

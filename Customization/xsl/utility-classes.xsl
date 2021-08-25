@@ -65,12 +65,17 @@
     </xsl:choose>
   </xsl:template>
 
+
   <!-- Change the default Bootstrap CSS classes of accordion -->
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'accordion')]" mode="get-output-class">
-    <xsl:text>accordion </xsl:text>
     <xsl:value-of select="BOOTSTRAP_CSS_ACCORDION"/>
   </xsl:template>
 
+  <!-- Change the default Bootstrap CSS classes of accordion flush -->
+  <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'accordion-flush')]" mode="get-output-class">
+    <xsl:text>accordion </xsl:text>
+    <xsl:value-of select="BOOTSTRAP_CSS_ACCORDION"/>
+  </xsl:template>
 
   <!-- Add additional Bootstrap CSS classes based on outputclass -->
   <xsl:template name="bootstrap-class">
