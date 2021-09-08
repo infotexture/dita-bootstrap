@@ -1,6 +1,8 @@
-/* Style navigation as sidebar */
-nav[role=toc] {
-  float: left;
+/* Style navigation as sidebar @ desktop breakpoints */
+@media screen and (min-width: 992px) {
+  nav[role="toc"] {
+    float: left;
+  }
 }
 
 /* Highlight current topic in bold */
