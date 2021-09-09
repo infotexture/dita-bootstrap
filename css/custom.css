@@ -1,12 +1,12 @@
 /* Style navigation as sidebar @ desktop breakpoints */
 @media screen and (min-width: 992px) {
-  nav[role='toc'] {
+  nav[role='navigation'] {
     float: left;
   }
 }
 
 /* Highlight current topic in bold */
-nav[role='toc'] li.active > a {
+nav[role='navigation'] li.active > a {
   font-weight: bold;
 }
 
