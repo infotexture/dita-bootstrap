@@ -9,7 +9,13 @@
                 version="2.0"
                 exclude-result-prefixes="xs dita-ot">
 
-  <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
+  <xsl:import href="plugin:org.dita.html5:xsl/dita2html5Impl.xsl"/>
+
+  <xsl:output method="html"
+              include-content-type="no"
+              indent="no"
+              doctype-system="about:legacy-compat"
+              omit-xml-declaration="yes"/>
 
   <!-- Override to add <meta> elements to page heads -->
   <xsl:template match="*" mode="chapterHead">

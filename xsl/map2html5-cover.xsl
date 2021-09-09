@@ -7,7 +7,7 @@
   <xsl:import href="plugin:org.dita.html5:xsl/map2html5-coverImpl.xsl"/>
 
   <xsl:output method="html"
-              encoding="UTF-8"
+              include-content-type="no"
               doctype-system="about:legacy-compat"
               omit-xml-declaration="yes"/>
 
