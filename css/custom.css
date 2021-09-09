@@ -1,12 +1,12 @@
 /* Style navigation as sidebar @ desktop breakpoints */
 @media screen and (min-width: 992px) {
-  nav[role="toc"] {
+  nav[role='toc'] {
     float: left;
   }
 }
 
 /* Highlight current topic in bold */
-nav[role=toc] li.active > a {
+nav[role='toc'] li.active > a {
   font-weight: bold;
 }
 
@@ -21,8 +21,8 @@ nav[role=toc] li.active > a {
   display: table-row;
 }
 
-.table .row:before {
-   content: none;
+.table .row::before {
+  content: none;
 }
 
 /* Override DITA-OT heading styles with Bootstrap’s defaults */
@@ -30,56 +30,56 @@ nav[role=toc] li.active > a {
 
 h1.topictitle1 {
   font-size: 36px;
-  margin-top: 0;
   margin-bottom: 10px;
+  margin-top: 0;
 }
 
 h2.topictitle2 {
   font-size: 30px;
-  margin-top: 20px;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 h3.topictitle3 {
   font-size: 24px;
   font-weight: 500;
-  margin-top: 20px;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 h4.topictitle4 {
   font-size: 18px;
   font-weight: 500;
-  margin-top: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 h5.topictitle5 {
   font-size: 14px;
   font-weight: 500;
-  margin-top: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 h6.topictitle6 {
   font-size: 12px;
   font-style: italic;
-  margin-top: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 h2.sectiontitle {
   color: inherit;
   font-size: 30px;
   font-weight: 500;
-  margin-top: 20px;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 h3.sectiontitle {
   color: inherit;
   font-size: 24px;
   font-weight: 500;
-  margin-top: 20px;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
