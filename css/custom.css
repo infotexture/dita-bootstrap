@@ -1,5 +1,5 @@
 /* Highlight current topic in bold */
-nav[role='navigation'] li.active > a {
+nav.toc li.active > a {
   font-weight: bold;
 }
 

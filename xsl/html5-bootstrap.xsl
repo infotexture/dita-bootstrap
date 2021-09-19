@@ -88,8 +88,8 @@
   <!-- Override `nav.xsl` to add Bootstrap classes -->
   <xsl:template match="*" mode="gen-user-sidetoc">
     <xsl:if test="$nav-toc = ('partial', 'full')">
-      <!-- ↓ Add grid class to <nav>, wrap <ul> in small well <div> & add .bs-docs-sidenav class -->
-      <nav class="col-md-3" role="navigation">
+      <!-- ↓ Add grid & toc classes to <nav>, wrap <ul> in small well <div> & add .bs-docs-sidenav class -->
+      <nav class="col-md-3 toc" role="navigation">
         <div class="well well-sm">
           <ul class="bs-docs-sidenav">
             <!-- ↑ End customization -->
