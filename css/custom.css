@@ -6,7 +6,7 @@ nav.toc li.active > a {
 /* Adjust navigation indendation */
 .bs-docs-sidenav,
 .bs-docs-sidenav li ul {
-  padding-left: 20px;
+  padding-left: 16px;
 }
 
 /* Fix table conflict with bootstrap's row class */
