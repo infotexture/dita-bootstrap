@@ -1,29 +1,47 @@
 <?xml version='1.0' encoding='UTF-8'?>
-
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
-
 <project>
-  <target name="dita2html5-bootstrap"
-       depends="dita2html5-bootstrap.init,
-                dita2html5"/>
+  <target
+    name="dita2html5-bootstrap"
+    depends="dita2html5-bootstrap.init,
+             dita2html5"
+  />
 
   <target name="dita-bootstrap.css.copy" description="Copy CSS files">
-    <property name="dita-bootstrap.css.file" value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/style.css"/>
-    <loadfile property="dita-bootstrap.css" srcFile="${dita-bootstrap.css.file}"/>
-    <echo append="true" message="${line.separator}${dita-bootstrap.css}" file="${extend.css.file}"/>
+    <property
+      name="dita-bootstrap.css.file"
+      value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/style.css"
+    />
+    <loadfile
+      property="dita-bootstrap.css"
+      srcFile="${dita-bootstrap.css.file}"
+    />
+    <echo
+      append="true"
+      message="${line.separator}${dita-bootstrap.css}"
+      file="${extend.css.file}"
+    />
   </target>
 
-
   <target name="dita2html5-bootstrap.init">
-    <property name="icons.cdn.path" location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.icons.hdf.xml"/>
+    <property
+      name="icons.cdn.path"
+      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.icons.hdf.xml"
+    />
     <property name="icons.include" value="no"/>
-    <property name="args.hdf"
-          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"/>
-    <property name="args.hdr"
-          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bs-navbar-default.hdr.xml"/>
-    <property name="args.xsl"
-          location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"/>
+    <property
+      name="args.hdf"
+      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"
+    />
+    <property
+      name="args.hdr"
+      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bs-navbar-default.hdr.xml"
+    />
+    <property
+      name="args.xsl"
+      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"
+    />
     <property name="args.html5.toc" value="toc"/>
     <property name="nav-toc" value="full"/>
     <property name="args.copycss" value="yes"/>

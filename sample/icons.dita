@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-   <!-- Within the sample documentation, where necessary, the texts describing the
+<!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
    5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
    markup is used throughout the examples describing how to implement these
@@ -31,18 +31,23 @@
         If you do not need any icons you can exclude them by setting
         the <parmname>--icons.include</parmname>=<option>no</option>
       </p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--icons.include</parmname>=<option>no</option></codeblock>
       <p>
         Other icon sets such as <xref scope="external" href="https://fontawesome.com/">Font Awesome</xref>
         <xref scope="external" href="https://feathericons.com/">Feather</xref> and
         <xref scope="external" href="https://octicons.github.com/">Octicons</xref> are available. To
-        use an alternative set of icons, modify the <xref scope="external"
-         href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bootstrap.icons.hdr.xml">sample
-         header</xref> or specify the path of the Icons CDN file using the <parmname>--icons.cdn.path</parmname> parameter.
+        use an alternative set of icons, modify the <xref
+          scope="external"
+          href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bootstrap.icons.hdr.xml"
+        >sample
+         header</xref> or specify the path of the Icons CDN file using the <parmname
+        >--icons.cdn.path</parmname> parameter.
       </p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--icons.cdn.path</parmname>=<filepath>path/to/icon-cdn-header.xml</filepath></codeblock>
     </section>
@@ -53,7 +58,8 @@
         <xmlelement>i outputclass="bi-alarm"/</xmlelement>).
       </p>
       <p>
-        Use an additional <xmlatt>otherprops</xmlatt> and alter the CSS font-size and color to change the icon appearance.
+        Use an additional <xmlatt
+        >otherprops</xmlatt> and alter the CSS font-size and color to change the icon appearance.
       </p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">

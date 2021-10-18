@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-   <!-- Within the sample documentation, where necessary, the texts describing the
+<!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
    5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
    markup is used throughout the examples describing how to implement these
@@ -30,11 +30,19 @@
          semantic purpose, with a few extras thrown in for more control.
       </p>
     </section>
-       <bodydiv outputclass="bd-example" deliveryTarget="html"><xref href="#" outputclass="btn-primary">Primary</xref><xref
-       href="#" outputclass="btn-secondary">Secondary</xref><xref href="#"
-       outputclass="btn-success">Success</xref><xref href="#" outputclass="btn-danger">Danger</xref><xref
-       href="#" outputclass="btn-warning">Warning</xref><xref href="#"
-       outputclass="btn-info">Info</xref><xref href="#" outputclass="btn-light">Light</xref><xref href="#" outputclass="btn-dark">Dark</xref>
+       <bodydiv outputclass="bd-example" deliveryTarget="html"><xref
+        href="#"
+        outputclass="btn-primary"
+      >Primary</xref><xref href="#" outputclass="btn-secondary">Secondary</xref><xref
+        href="#"
+        outputclass="btn-success"
+      >Success</xref><xref href="#" outputclass="btn-danger">Danger</xref><xref
+        href="#"
+        outputclass="btn-warning"
+      >Warning</xref><xref href="#" outputclass="btn-info">Info</xref><xref
+        href="#"
+        outputclass="btn-light"
+      >Light</xref><xref href="#" outputclass="btn-dark">Dark</xref>
     </bodydiv>
     <codeblock>&lt;xref href="#" outputclass="btn-primary"&gt;Primary&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-secondary"&gt;Secondary&lt;/xref&gt;
@@ -52,13 +60,19 @@
          to remove all background images and colors on any button.
       </p>
     </section>
-       <bodydiv outputclass="bd-example" deliveryTarget="html"><xref href="#" outputclass="btn-outline-primary">Primary</xref><xref
-       href="#" outputclass="btn-outline-secondary">Secondary</xref><xref href="#"
-       outputclass="btn-outline-success">Success</xref><xref href="#"
-       outputclass="btn-outline-danger">Danger</xref><xref href="#"
-       outputclass="btn-outline-warning">Warning</xref><xref href="#" outputclass="btn-outline-info">Info</xref><xref
-       href="#" outputclass="btn-outline-light">Light</xref><xref href="#"
-       outputclass="btn-outline-dark">Dark</xref>
+       <bodydiv outputclass="bd-example" deliveryTarget="html"><xref
+        href="#"
+        outputclass="btn-outline-primary"
+      >Primary</xref><xref href="#" outputclass="btn-outline-secondary">Secondary</xref><xref
+        href="#"
+        outputclass="btn-outline-success"
+      >Success</xref><xref href="#" outputclass="btn-outline-danger">Danger</xref><xref
+        href="#"
+        outputclass="btn-outline-warning"
+      >Warning</xref><xref href="#" outputclass="btn-outline-info">Info</xref><xref
+        href="#"
+        outputclass="btn-outline-light"
+      >Light</xref><xref href="#" outputclass="btn-outline-dark">Dark</xref>
     </bodydiv>
     <codeblock>&lt;xref href="#" outputclass="btn-outline-primary"&gt;Primary&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-outline-secondary"&gt;Secondary&lt;/xref&gt;

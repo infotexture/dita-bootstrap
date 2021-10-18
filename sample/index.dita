@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-   <!-- Within the sample documentation, where necessary, the texts describing the
+<!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
    5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
    markup is used throughout the examples describing how to implement these
@@ -10,14 +10,19 @@
   <abstract>
     <shortdesc>
        A plug-in for <xref scope="external" href="http://www.dita-ot.org">DITA Open Toolkit</xref>
-       that extends the default HTML5 output with a <xref scope="external"
-       href="https://getbootstrap.com/docs/5.0">Bootstrap 5.0</xref> template and
+       that extends the default HTML5 output with a <xref
+        scope="external"
+        href="https://getbootstrap.com/docs/5.0"
+      >Bootstrap 5.0</xref> template and
        components.
     </shortdesc>
     <p>
        Where necessary, the texts describing the usage of each component
-       have been copied directly from the <xref href="https://getbootstrap.com/docs/5.0"
-       format="html" scope="external">official Bootstrap 5.0 documentation</xref>,
+       have been copied directly from the <xref
+        href="https://getbootstrap.com/docs/5.0"
+        format="html"
+        scope="external"
+      >official Bootstrap 5.0 documentation</xref>,
        however DITA markup is used throughout the examples describing how to implement
        these components correctly using DITA's <xmlatt>outputclass</xmlatt> attribute.
     </p>
@@ -50,15 +55,18 @@
       <p>
          DITA-OT 3.2 and older:
       </p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--install</parmname> https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
-<cmdname>dita</cmdname> <parmname>--install</parmname> https://github.com/infotexture/dita-bootstrap/archive/master.zip</codeblock>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
+        >--install</parmname> https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
+<cmdname>dita</cmdname> <parmname
+        >--install</parmname> https://github.com/infotexture/dita-bootstrap/archive/master.zip</codeblock>
     </section>
     <section>
       <title>Using</title>
       <p>
          Specify the html5-bootstrap format when building output with the dita command:
       </p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
+        >--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
     </section>
     <section>
       <title>Customizing Headers and Footers</title>
@@ -70,12 +78,15 @@
          custom header file to the dita command via the <parmname>--args.hdr</parmname>
          parameter:
       </p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath></codeblock>
       <p>
-         The plug-in includes a <xref scope="external"
-         href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml">sample
+         The plug-in includes a <xref
+          scope="external"
+          href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml"
+        >sample
          header</xref> alternative with a dark navbar.
       </p>
       <p>
@@ -86,12 +97,15 @@
         The footer is omitted by default. To add a custom footer, pass a custom footer file
         to the dita command via the <parmname>--args.ftr</parmname> parameter:
        </p>
- <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+ <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--args.ftr</parmname>=<filepath>path/to/your-footer.xml</filepath></codeblock>
       <p>
-         The plug-in includes a <xref scope="external"
-         href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-footer-example.xml">sample
+         The plug-in includes a <xref
+          scope="external"
+          href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-footer-example.xml"
+        >sample
          footer file</xref>.
       </p>
     </section>
@@ -147,7 +161,8 @@
           </fig>
         </li>
       </ol>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--nav-toc</parmname>=<option>list-group-partial</option></codeblock>
     </section>
@@ -158,15 +173,20 @@
       <indexterm><parmname>--args.csspath</parmname></indexterm>
       <indexterm><parmname>--args.cssroot</parmname></indexterm>
       <p>
-         Bootstrap themes can be generated using the <xref scope="external"
-         href="https://themestr.app/theme">Themestr.app</xref>. The plug-in includes a
-         basic placeholder for <xref scope="external"
-         href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css">custom CSS</xref>
+         Bootstrap themes can be generated using the <xref
+          scope="external"
+          href="https://themestr.app/theme"
+        >Themestr.app</xref>. The plug-in includes a
+         basic placeholder for <xref
+          scope="external"
+          href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css"
+        >custom CSS</xref>
          styles. You can edit this file to add style rules of your own. Override the
          default Bootstrap theme by passing a custom CSS file to the dita command via
          the <parmname>--args.css</parmname> parameter:
       </p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
      <parmname>--args.css</parmname>=&lt;name-of-css&gt;.css \

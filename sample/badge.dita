@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-   <!-- Within the sample documentation, where necessary, the texts describing the
+<!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
    5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
    markup is used throughout the examples describing how to implement these
@@ -59,17 +59,22 @@
       <title>Background colors</title>
       <p>
          Use Bootstrap's background utility classes to quickly change the appearance of a
-         badge. Please note that when using Bootstrap's default CSS classes using DITA's <xmlatt>outputclass</xmlatt> with the value <codeph>bg-light</codeph>,
-         you’ll likely need a text color utility attribute on <xmlatt>outputclass</xmlatt> like <codeph>text-dark</codeph> as well
+         badge. Please note that when using Bootstrap's default CSS classes using DITA's <xmlatt
+        >outputclass</xmlatt> with the value <codeph>bg-light</codeph>,
+         you’ll likely need a text color utility attribute on <xmlatt>outputclass</xmlatt> like <codeph
+        >text-dark</codeph> as well
          for proper styling. This is because background utilities do not set anything
          but background-color.
       </p>
     </section>
        <bodydiv outputclass="bd-example" deliveryTarget="html"><ph outputclass="bg-primary">Primary</ph><ph
-       outputclass="bg-secondary">Secondary</ph><ph outputclass="bg-success">Success</ph><ph
-       outputclass="bg-danger">Danger</ph><ph outputclass="bg-warning text-dark">Warning</ph><ph
-       outputclass="bg-info text-dark">Info</ph><ph outputclass="bg-light
-       text-dark">Light</ph><ph outputclass="bg-dark">Dark</ph>
+        outputclass="bg-secondary"
+      >Secondary</ph><ph outputclass="bg-success">Success</ph><ph outputclass="bg-danger">Danger</ph><ph
+        outputclass="bg-warning text-dark"
+      >Warning</ph><ph outputclass="bg-info text-dark">Info</ph><ph outputclass="bg-light
+       text-dark">Light</ph><ph
+        outputclass="bg-dark"
+      >Dark</ph>
     </bodydiv>
     <codeblock>&lt;ph outputclass="bg-primary"&gt;Primary&lt;/ph&gt;
 &lt;ph outputclass="bg-secondary"&gt;Secondary&lt;/ph&gt;

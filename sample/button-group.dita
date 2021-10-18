@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-   <!-- Within the sample documentation, where necessary, the texts describing the
+<!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
    5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
    markup is used throughout the examples describing how to implement these
@@ -31,8 +31,10 @@
       </p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-       <div outputclass="btn-group"><xref outputclass="btn-primary"
-       href="#">Left</xref><xref outputclass="btn-primary" href="#">Middle</xref><xref outputclass="btn-primary" href="#">Right</xref>
+       <div outputclass="btn-group"><xref outputclass="btn-primary" href="#">Left</xref><xref
+          outputclass="btn-primary"
+          href="#"
+        >Middle</xref><xref outputclass="btn-primary" href="#">Right</xref>
       </div>
     </bodydiv>
     <codeblock>&lt;div outputclass="btn-group"&gt;
@@ -44,8 +46,10 @@
       <title>Mixed Styles</title>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-       <div outputclass="btn-group"><xref outputclass="btn-danger"
-       href="#">Left</xref><xref outputclass="btn-warning" href="#">Middle</xref><xref outputclass="btn-success" href="#">Right</xref>
+       <div outputclass="btn-group"><xref outputclass="btn-danger" href="#">Left</xref><xref
+          outputclass="btn-warning"
+          href="#"
+        >Middle</xref><xref outputclass="btn-success" href="#">Right</xref>
       </div>
     </bodydiv>
     <codeblock>&lt;div outputclass="btn-group"&gt;
@@ -58,8 +62,9 @@
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
        <div outputclass="btn-group"><xref outputclass="btn-outline-primary" href="#">Left</xref><xref
-       outputclass="btn-outline-primary" href="#">Middle</xref><xref
-       outputclass="btn-outline-primary" href="#">Right</xref>
+          outputclass="btn-outline-primary"
+          href="#"
+        >Middle</xref><xref outputclass="btn-outline-primary" href="#">Right</xref>
       </div>
     </bodydiv>
     <codeblock>&lt;div outputclass="btn-group"&gt;
@@ -76,11 +81,14 @@
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <div outputclass="btn-toolbar">
          <div outputclass="btn-group me-2"><xref outputclass="btn-primary" href="#">1</xref><xref
-         outputclass="btn-primary" href="#">2</xref><xref outputclass="btn-primary"
-         href="#">3</xref><xref outputclass="btn-primary" href="#">4</xref>
+            outputclass="btn-primary"
+            href="#"
+          >2</xref><xref outputclass="btn-primary" href="#">3</xref><xref outputclass="btn-primary" href="#">4</xref>
         </div>
-           <div outputclass="btn-group me-2"><xref outputclass="btn-secondary"
-           href="#">5</xref><xref outputclass="btn-secondary" href="#">6</xref><xref outputclass="btn-secondary" href="#">7</xref>
+           <div outputclass="btn-group me-2"><xref outputclass="btn-secondary" href="#">5</xref><xref
+            outputclass="btn-secondary"
+            href="#"
+          >6</xref><xref outputclass="btn-secondary" href="#">7</xref>
         </div>
            <div outputclass="btn-group me-2"><xref outputclass="btn-info" href="#">8</xref>
         </div>
@@ -109,8 +117,10 @@
       </p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-       <div outputclass="btn-group-vertical"><xref outputclass="btn-primary"
-       href="#">Top</xref><xref outputclass="btn-primary" href="#">Middle</xref><xref outputclass="btn-primary" href="#">Bottom</xref>
+       <div outputclass="btn-group-vertical"><xref outputclass="btn-primary" href="#">Top</xref><xref
+          outputclass="btn-primary"
+          href="#"
+        >Middle</xref><xref outputclass="btn-primary" href="#">Bottom</xref>
       </div>
     </bodydiv>
     <codeblock>&lt;div class="btn-group-vertical"&gt;
