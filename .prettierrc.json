@@ -26,6 +26,12 @@
       "options": {
         "printWidth": 80
       }
+    },
+    {
+      "files": "*.xsl",
+      "options": {
+        "parser": "xml"
+      }
     }
   ]
 }

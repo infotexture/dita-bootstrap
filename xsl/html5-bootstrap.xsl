@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
-
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
-                version="2.0"
-                exclude-result-prefixes="xs dita-ot">
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+  version="2.0"
+  exclude-result-prefixes="xs dita-ot"
+>
 
 
   <!-- the file name containing XHTML to be placed in the HEAD area
@@ -18,16 +18,16 @@
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
-  <xsl:include href="../Customization/xsl/accordion.xsl" />
-  <xsl:include href="../Customization/xsl/card.xsl" />
-  <xsl:include href="../Customization/xsl/carousel.xsl" />
-  <xsl:include href="../Customization/xsl/offcanvas.xsl" />
-  <xsl:include href="../Customization/xsl/hi-d.xsl" />
-  <xsl:include href="../Customization/xsl/nav.xsl" />
-  <xsl:include href="../Customization/xsl/tabs.xsl" />
-  <xsl:include href="../Customization/xsl/tables.xsl" />
-  <xsl:include href="../Customization/xsl/topic.xsl" />
-  <xsl:include href="../Customization/xsl/utility-classes.xsl" />
+  <xsl:include href="../Customization/xsl/accordion.xsl"/>
+  <xsl:include href="../Customization/xsl/card.xsl"/>
+  <xsl:include href="../Customization/xsl/carousel.xsl"/>
+  <xsl:include href="../Customization/xsl/offcanvas.xsl"/>
+  <xsl:include href="../Customization/xsl/hi-d.xsl"/>
+  <xsl:include href="../Customization/xsl/nav.xsl"/>
+  <xsl:include href="../Customization/xsl/tabs.xsl"/>
+  <xsl:include href="../Customization/xsl/tables.xsl"/>
+  <xsl:include href="../Customization/xsl/topic.xsl"/>
+  <xsl:include href="../Customization/xsl/utility-classes.xsl"/>
 
   <!-- Override to add <meta> elements to page heads -->
   <xsl:template match="*" mode="chapterHead">
@@ -42,11 +42,11 @@
       <xsl:call-template name="getMeta"/>           <!-- Process metadata from topic prolog -->
       <xsl:call-template name="copyright"/>         <!-- Generate copyright, if specified manually -->
       <xsl:call-template name="generateChapterTitle"/> <!-- Generate the <title> element -->
-      <xsl:call-template name="gen-user-head" />    <!-- include user's XSL HEAD processing here -->
-      <xsl:call-template name="gen-user-scripts" /> <!-- include user's XSL javascripts here -->
+      <xsl:call-template name="gen-user-head"/>    <!-- include user's XSL HEAD processing here -->
+      <xsl:call-template name="gen-user-scripts"/> <!-- include user's XSL javascripts here -->
       <xsl:call-template name="processHDF"/>        <!-- Add user HDF file, if specified -->
       <xsl:call-template name="generateCssLinks"/>  <!-- Generate links to CSS files -->
-      <xsl:call-template name="gen-user-styles" />  <!-- include user's XSL style element and content here -->
+      <xsl:call-template name="gen-user-styles"/>  <!-- include user's XSL style element and content here -->
 
 
       <xsl:if test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">

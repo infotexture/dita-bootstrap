@@ -3,7 +3,14 @@
   This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
   See the accompanying LICENSE file for applicable licenses.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" exclude-result-prefixes="xs xhtml dita-ot">
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="2.0"
+  exclude-result-prefixes="xs xhtml dita-ot"
+>
 
    <!-- Customization to add Bootstrap Offcanvas Component -->
    <!-- https://getbootstrap.com/docs/5.0/components/offcanvas/ -->
@@ -16,7 +23,7 @@
            <xsl:otherwise>h<xsl:value-of select="$headCount"/></xsl:otherwise>
          </xsl:choose>
        </xsl:param>
-      <xsl:variable name="id" select="dita-ot:generate-html-id(.)" />
+      <xsl:variable name="id" select="dita-ot:generate-html-id(.)"/>
       <div>
          <xsl:attribute name="class">
             <xsl:text>offcanvas </xsl:text>
@@ -24,12 +31,12 @@
           </xsl:attribute>
           <xsl:attribute name="tabindex" select="'-1'"/>
           <xsl:attribute name="id" select="$id"/>
-          <xsl:attribute name="aria-labelledby" select="concat=('offcanvasLabel_', $id)" />
+          <xsl:attribute name="aria-labelledby" select="concat=('offcanvasLabel_', $id)"/>
           <div class="offcanvas-header">
             <xsl:element name="{$headLevel}">
-              <xsl:attribute name="id" select="concat('offcanvasLabel_' ,$id)" />
+              <xsl:attribute name="id" select="concat('offcanvasLabel_' ,$id)"/>
               <xsl:attribute name="class" select='offcanvas-title'/>
-              <xsl:value-of select="*[contains(@class, ' topic/title ')]" />
+              <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
             </xsl:element>
             <button type="button" class="btn-close text-reset" aria-label="Close" data-bs-dismiss="offcanvas"/>
           </div>
@@ -43,7 +50,7 @@
    <xsl:template match="*[contains(@class,' topic/xref ') and contains(@props, 'offcanvas-toggle')]">
 
       <xsl:variable name="href" select="replace(@href, '#', '')"/>
-      <xsl:variable name="id" select="dita-ot:generate-html-id(../*[@id=$href])" />
+      <xsl:variable name="id" select="dita-ot:generate-html-id(../*[@id=$href])"/>
 
       <a data-bs-toggle="offcanvas">
         <xsl:call-template name="commonattributes"/>
