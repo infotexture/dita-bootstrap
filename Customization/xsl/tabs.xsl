@@ -12,9 +12,7 @@
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-tabs')]">
 
     <ul role="tablist">
-      <xsl:call-template name="commonattributes">
-        <xsl:with-param name="default-output-class" select="'nav'" />
-      </xsl:call-template>
+      <xsl:call-template name="commonattributes"/>
       <xsl:call-template name="setid"/>
       <xsl:apply-templates mode="nav-tabs" select="*[contains(@class,' topic/section ')]/*[contains(@class,' topic/title ')]"/>
     </ul>
@@ -34,9 +32,7 @@
       <xsl:when test="contains(@outputclass, 'nav-pills-vertical')">
         <div class="d-flex align-items-start">
           <div role="tablist" aria-orientation="vertical">
-            <xsl:call-template name="commonattributes">
-              <xsl:with-param name="default-output-class" select="'nav flex-column nav-pills me-3'" />
-            </xsl:call-template>
+            <xsl:call-template name="commonattributes"/>
             <xsl:call-template name="setid"/>
             <xsl:apply-templates mode="nav-pills-vertical" select="*[contains(@class,' topic/section ')]/*[contains(@class,' topic/title ')]"/>
           </div>
@@ -48,9 +44,7 @@
       <!-- Pills with Horizontal alignment -->
       <xsl:otherwise>
         <ul role="tablist">
-          <xsl:call-template name="commonattributes">
-            <xsl:with-param name="default-output-class" select="'nav'" />
-          </xsl:call-template>
+          <xsl:call-template name="commonattributes"/>
           <xsl:call-template name="setid"/>
           <xsl:apply-templates mode="nav-tabs" select="*[contains(@class,' topic/section ')]/*[contains(@class,' topic/title ')]"/>
         </ul>

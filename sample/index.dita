@@ -178,5 +178,63 @@
          create a new plug-in of your own.
       </p>
     </section>
+    <section>
+      <title>Common Bootstrap Utility classes</title>
+      <indexterm><parmname>--bootstrap.css.shortdesc</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.codeblock</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.header</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.card</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.carousel</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.carousel.caption</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.tabs</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.tabs.vertical</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.accordion</parmname></indexterm>
+      <p>
+        The output HTML for the following DITA elements can be annotated with common bootstrap utility classes for
+        <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/borders">borders</xref>,
+        <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/background">background</xref>,
+        <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/text">text</xref>
+        <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/spacing">spacing</xref>
+        etc. using the following command line parameters:
+      </p>
+      <ul>
+        <li>
+          <parmname>--bootstrap.css.shortdesc</parmname> - common Bootstrap utility classes for DITA
+           <xmlelement>shortdesc</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.codeblock</parmname> - common Bootstrap utility classes for DITA
+          <xmlelement>codeblock</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.header</parmname> - common Bootstrap utility classes for DITA
+          <xmlelement>title</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.card</parmname> - common utility classes for Bootstrap classes for
+          <xref href="./card.dita" format="dita">card components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.carousel</parmname> - common utility classes for Bootstrap
+          <xref href="./carousel.dita" format="dita">carousel components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.carousel.caption</parmname> - common utility classes for Bootstrap
+          <xref href="./carousel.dita" format="dita">carousel captions</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.tabs</parmname> - common utility classes for Bootstrap
+          <xref href="./tabs.dita" format="dita">tabbed dialog components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.tabs.vertical</parmname> - common utility classes for Bootstrap
+          <xref href="./tabs.dita" format="dita">vertical tabbed dialog components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.accordion</parmname> - common utility classes for Bootstrap
+          <xref href="./accordion.dita" format="dita">accordion components</xref>
+        </li>
+      </ul>
+    </section>
   </body>
 </topic>

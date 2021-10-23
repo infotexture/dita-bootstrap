@@ -15,7 +15,6 @@
       To override a customization, uncomment one or more of the widgets defined
       below:
   -->
-  <!--xsl:include href="../Customization/xsl/bootstrap.xsl" /-->
   <!--xsl:include href="../Customization/xsl/accordion.xsl" /-->
   <!--xsl:include href="../Customization/xsl/card.xsl" /-->
   <!--xsl:include href="../Customization/xsl/carousel.xsl" /-->

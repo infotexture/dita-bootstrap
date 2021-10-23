@@ -14,9 +14,7 @@
       </xsl:variable>
       <div data-bs-ride="carousel">
          <xsl:attribute name="id" select="$id" />
-         <xsl:call-template name="commonattributes">
-            <xsl:with-param name="default-output-class" select="'slide'" />
-         </xsl:call-template>
+         <xsl:call-template name="commonattributes"/>
          <div class="carousel-inner">
             <xsl:apply-templates mode="carousel" />
          </div>
