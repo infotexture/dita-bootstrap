@@ -3,7 +3,13 @@
   This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
   See the accompanying LICENSE file for applicable licenses.
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0" exclude-result-prefixes="xs dita-ot">
+<xsl:stylesheet
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  version="2.0"
+  exclude-result-prefixes="xs dita-ot"
+>
 
 
   <xsl:param name="BOOTSTRAP_CSS_SHORTDESC" select="'text-muted lead'"/>
@@ -31,28 +37,44 @@
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of cards -->
-  <xsl:template match="*[contains(@class,' topic/section ') and contains(@outputclass, 'card')]" mode="get-output-class">
+  <xsl:template
+    match="*[contains(@class,' topic/section ') and contains(@outputclass, 'card')]"
+    mode="get-output-class"
+  >
     <xsl:value-of select="$BOOTSTRAP_CSS_CARD"/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of carousel -->
-  <xsl:template match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]" mode="get-output-class">
+  <xsl:template
+    match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]"
+    mode="get-output-class"
+  >
     <xsl:text>slide </xsl:text>
     <xsl:value-of select="$BOOTSTRAP_CSS_CAROUSEL"/>
   </xsl:template>
 
   <!-- Amend the text and background of Figure Captions -->
-  <xsl:template match="*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class" priority="5">
+  <xsl:template
+    match="*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')]"
+    mode="get-output-class"
+    priority="5"
+  >
     <xsl:value-of select="$BOOTSTRAP_CSS_CAPTION"/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of tabs -->
-  <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-tabs')]" mode="get-output-class">
+  <xsl:template
+    match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-tabs')]"
+    mode="get-output-class"
+  >
     <xsl:text>nav </xsl:text>
     <xsl:value-of select="$BOOTSTRAP_CSS_TABS"/>
   </xsl:template>
   <!-- Change the default Bootstrap CSS classes of tab pills -->
-  <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-pills')]" mode="get-output-class">
+  <xsl:template
+    match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-pills')]"
+    mode="get-output-class"
+  >
     <xsl:text>nav </xsl:text>
     <xsl:choose>
       <xsl:when test="contains(@outputclass, 'nav-pills-vertical')">
@@ -67,7 +89,10 @@
 
 
   <!-- Change the default Bootstrap CSS classes of accordion -->
-  <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'accordion')]" mode="get-output-class">
+  <xsl:template
+    match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'accordion')]"
+    mode="get-output-class"
+  >
     <xsl:value-of select="BOOTSTRAP_CSS_ACCORDION"/>
   </xsl:template>
 
@@ -75,15 +100,15 @@
   <xsl:template name="bootstrap-class">
     <xsl:choose>
       <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
-        <xsl:text />
+        <xsl:text/>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'btn-group')">
-        <xsl:text />
+        <xsl:text/>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'btn-toolbar')">
-        <xsl:text />
+        <xsl:text/>
       </xsl:when>
-       <xsl:when test="contains(@outputclass, 'accordion-flush')">
+        <xsl:when test="contains(@outputclass, 'accordion-flush')">
         <xsl:text>accordion</xsl:text>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'btn-')">
@@ -207,19 +232,19 @@
   <xsl:template name="bootstrap-role">
     <xsl:choose>
        <xsl:when test="contains(@outputclass, 'alert-')">
-          <xsl:attribute name="role" select="'alert'" />
+          <xsl:attribute name="role" select="'alert'"/>
        </xsl:when>
        <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
-          <xsl:attribute name="role" select="'group'" />
+          <xsl:attribute name="role" select="'group'"/>
        </xsl:when>
        <xsl:when test="contains(@outputclass, 'btn-group')">
-          <xsl:attribute name="role" select="'group'" />
+          <xsl:attribute name="role" select="'group'"/>
        </xsl:when>
        <xsl:when test="contains(@outputclass, 'btn-toolbar')">
-          <xsl:attribute name="role" select="'toolbar'" />
+          <xsl:attribute name="role" select="'toolbar'"/>
        </xsl:when>
        <xsl:when test="contains(@outputclass, 'btn-')">
-          <xsl:attribute name="role" select="'button'" />
+          <xsl:attribute name="role" select="'button'"/>
        </xsl:when>
     </xsl:choose>
   </xsl:template>

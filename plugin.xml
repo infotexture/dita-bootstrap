@@ -1,36 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://www.dita-ot.org/rng/plugin.rnc" type="application/relax-ng-compact-syntax"?>
-
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
-
 <plugin id="net.infotexture.dita-bootstrap">
   <feature extension="package.version" value="3.6"/>
   <require plugin="org.dita.html5"/>
   <require plugin="fox.jason.extend.css"/>
-  <transtype name="html5-bootstrap" extends="html5" desc="HTML5 with Bootstrap style">
-    <param name="nav-toc" type="enum" desc="Specifies whether to generate a navigation TOC in topic pages.">
-     <val desc="Bootstrap styled partial TOC that shows the current topic">list-group-partial</val>
-     <val desc="Bootstrap styled full TOC">list-group-full</val>
+  <transtype
+    name="html5-bootstrap"
+    extends="html5"
+    desc="HTML5 with Bootstrap style"
+  >
+    <param
+      name="nav-toc"
+      type="enum"
+      desc="Specifies whether to generate a navigation TOC in topic pages."
+    >
+      <val desc="Bootstrap styled partial TOC that shows the current topic">
+        list-group-partial
+      </val>
+      <val desc="Bootstrap styled full TOC">list-group-full</val>
     </param>
-    <param name="icons.cdn.path" type="file" desc="Specifies the URL for a icon fonts stylesheet CDN"/>
-    <param name="icons.include" desc="Specifies whether include an icon fonts stylesheet in the header" type="enum">
+    <param
+      name="icons.cdn.path"
+      type="file"
+      desc="Specifies the URL for a icon fonts stylesheet CDN"
+    />
+    <param
+      name="icons.include"
+      desc="Specifies whether include an icon fonts stylesheet in the header"
+      type="enum"
+    >
       <val>yes</val>
       <val default="true">no</val>
     </param>
-    <param name="bootstrap.css.shortdesc" type="string" desc="Common Bootstrap classes for DITA &lt;shortdesc&gt; elements"/>
-    <param name="bootstrap.css.codeblock" type="string" desc="Common Bootstrap classes for DITA &lt;codeblock&gt; elements"/>
-    <param name="bootstrap.css.header" type="string" desc="Common Bootstrap classes for DITA &lt;title&gt; elements"/>
-    <param name="bootstrap.css.card" type="string" desc="Bootstrap classes for card components"/>
-    <param name="bootstrap.css.carousel"  type="string" desc="Bootstrap classes for carousel components"/>
-    <param name="bootstrap.css.carousel.caption" type="string" desc="Bootstrap classes for carousel captions"/>
-    <param name="bootstrap.css.tabs" type="string" desc="Bootstrap classes for tabbed dialog components"/>
-    <param name="bootstrap.css.tabs.vertical" type="string" desc="Bootstrap classes for vertical tabbed dialog components"/>
-    <param name="bootstrap.css.accordion" type="string" desc="Bootstrap classes for accordion components"/>
-    <param name="bootstrap.css.accordion.flush" type="string" desc="Bootstrap classes for flush accordion components"/>
+    <param
+      name="bootstrap.css.shortdesc"
+      type="string"
+      desc="Common Bootstrap classes for DITA &lt;shortdesc&gt; elements"
+    />
+    <param
+      name="bootstrap.css.codeblock"
+      type="string"
+      desc="Common Bootstrap classes for DITA &lt;codeblock&gt; elements"
+    />
+    <param
+      name="bootstrap.css.header"
+      type="string"
+      desc="Common Bootstrap classes for DITA &lt;title&gt; elements"
+    />
+    <param
+      name="bootstrap.css.card"
+      type="string"
+      desc="Bootstrap classes for card components"
+    />
+    <param
+      name="bootstrap.css.carousel"
+      type="string"
+      desc="Bootstrap classes for carousel components"
+    />
+    <param
+      name="bootstrap.css.carousel.caption"
+      type="string"
+      desc="Bootstrap classes for carousel captions"
+    />
+    <param
+      name="bootstrap.css.tabs"
+      type="string"
+      desc="Bootstrap classes for tabbed dialog components"
+    />
+    <param
+      name="bootstrap.css.tabs.vertical"
+      type="string"
+      desc="Bootstrap classes for vertical tabbed dialog components"
+    />
+    <param
+      name="bootstrap.css.accordion"
+      type="string"
+      desc="Bootstrap classes for accordion components"
+    />
+    <param
+      name="bootstrap.css.accordion.flush"
+      type="string"
+      desc="Bootstrap classes for flush accordion components"
+    />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
-  <feature extension="dita.conductor.html5.toc.param" file="insertParameters.xml"/>
+  <feature
+    extension="dita.conductor.html5.toc.param"
+    file="insertParameters.xml"
+  />
   <feature extension="dita.conductor.html5.param" file="insertParameters.xml"/>
 </plugin>

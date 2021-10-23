@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-   <!-- Within the sample documentation, where necessary, the texts describing the
+<!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
    5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
    markup is used throughout the examples describing how to implement these
@@ -64,7 +64,11 @@
          element to associate a button to an offcanvas
       </p>
     </section>
-    <bodydiv outputclass="bd-example" deliveryTarget="html"><xref outputclass="btn-primary" props="offcanvas-toggle" href="#offcanvas1">
+    <bodydiv outputclass="bd-example" deliveryTarget="html"><xref
+        outputclass="btn-primary"
+        props="offcanvas-toggle"
+        href="#offcanvas1"
+      >
        Click here to display offcanvas
          </xref>
       <section outputclass="offcanvas-start" id="offcanvas1">
@@ -105,7 +109,11 @@
         </li>
       </ul>
     </section>
-    <bodydiv outputclass="bd-example" deliveryTarget="html"><xref outputclass="btn-primary" props="offcanvas-toggle" href="#offcanvas2">
+    <bodydiv outputclass="bd-example" deliveryTarget="html"><xref
+        outputclass="btn-primary"
+        props="offcanvas-toggle"
+        href="#offcanvas2"
+      >
        Toggle right offcanvas
          </xref>
       <section outputclass="offcanvas-end" id="offcanvas2">
@@ -119,7 +127,11 @@
     <codeblock>&lt;section outputclass="offcanvas-end"&gt;
    ...etc
 &lt;section&gt;</codeblock>
-    <bodydiv outputclass="bd-example" deliveryTarget="html"><xref outputclass="btn-primary" props="offcanvas-toggle" href="#offcanvas3">
+    <bodydiv outputclass="bd-example" deliveryTarget="html"><xref
+        outputclass="btn-primary"
+        props="offcanvas-toggle"
+        href="#offcanvas3"
+      >
        Toggle bottom offcanvas
          </xref>
       <section outputclass="offcanvas-bottom" id="offcanvas3">

@@ -80,20 +80,19 @@ The plug-in also includes a sample [footer file][4].
 
 ### Sidebar menu
 
-The plug-in extends the standard  `--nav-toc` parameter to add styled list groups for the sidebar. Five styles now are supported:
+The plug-in extends the standard `--nav-toc` parameter to add styled list groups for the sidebar. Five styles now are supported:
 
--  `full` - Unstyled full TOC - same as HTML5 Plugin (default)
--  `partial` - Unstyled  partial TOC that shows the current topic - same as HTML5 Plugin
--  `list-group-full`  -  Styled full TOC within a Bootstrap [List Group](https://getbootstrap.com/docs/5.0/components/list-group/)
--  `list-group-partial` -  Styled partial TOC that shows the current topic  within a Bootstrap [List Group](https://getbootstrap.com/docs/5.0/components/list-group/)
--  `none` - no TOC
+- `full` - Unstyled full TOC - same as HTML5 Plugin (default)
+- `partial` - Unstyled partial TOC that shows the current topic - same as HTML5 Plugin
+- `list-group-full` - Styled full TOC within a Bootstrap [List Group](https://getbootstrap.com/docs/5.0/components/list-group/)
+- `list-group-partial` - Styled partial TOC that shows the current topic within a Bootstrap [List Group](https://getbootstrap.com/docs/5.0/components/list-group/)
+- `none` - no TOC
 
 ```console
 dita --input=path/to/your.ditamap \
      --format=html5-bootstrap \
      --nav-toc=list-group-partial
 ```
-
 
 ### Custom CSS
 
