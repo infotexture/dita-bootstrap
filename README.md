@@ -7,8 +7,10 @@ A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with 
 - [Installing](#installing)
 - [Using](#using)
 - [Customizing](#customizing)
-  - [Header menu](#header-menu)
+  - [Headers and footers](#headers-and-footers)
+  - [Sidebar menu](#sidebar-menu)
   - [Custom CSS](#custom-css)
+  - [Common Bootstrap utility classes](#common-bootstrap-utility-classes)
 - [Feedback](#feedback)
 - [License](#license)
 
@@ -54,9 +56,20 @@ dita --input=path/to/your.ditamap \
 
 ## Customizing
 
-### Headers and Footers
+### Headers and footers
 
-The plug-in includes a default static navbar with a project name and global links. To override the global navigation with a header of your own, pass a custom header file to the `dita` command via the `--args.hdr` parameter:
+The plug-in includes a default static navigation menu with a project name and global link placeholders.
+
+The default header file `includes/bs-navbar-default.hdr.xml` uses the Bootstrap primary (blue) background color for the [navbar component][3].
+
+To change the color to a dark (black) background, replace the primary background color class `bg-primary` on the first line with the dark variant `bg-dark`:
+
+```diff
+- <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
++ <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+```
+
+You can edit a copy of this file to adjust the content of the global navigation. To override the global navigation with your own header, pass a custom header file to the `dita` command via the `--args.hdr` parameter:
 
 ```console
 dita --input=path/to/your.ditamap \
@@ -64,11 +77,9 @@ dita --input=path/to/your.ditamap \
      --args.hdr=path/to/your-header.xml
 ```
 
-The plug-in includes a sample [header alternative with a dark navbar][3].
+The plug-in includes a sample [header alternative with a light navbar][4].
 
-Edit a copy of this file to adjust the content of the global navigation.
-
-No footer is added by default. To add a footer, pass a custom footer file to the `dita` command via the `--args.ftr` parameter:
+No footer is added by default, but the plug-in also includes a sample [footer file][5]. To add a footer to the generated output, pass a custom footer file to the `dita` command via the `--args.ftr` parameter:
 
 ```console
 dita --input=path/to/your.ditamap \
@@ -76,11 +87,11 @@ dita --input=path/to/your.ditamap \
      --args.ftr=path/to/your-footer.xml
 ```
 
-The plug-in also includes a sample [footer file][4].
-
 ### Sidebar menu
 
-The plug-in extends the standard `--nav-toc` parameter to add styled list groups for the sidebar. Five styles now are supported:
+The plug-in extends the standard HTML5 table of contents (ToC) [navigation parameter][6] `--nav-toc` to add styled list groups to the sidebar.
+
+Five styles now are supported:
 
 - `full` - Unstyled full TOC - same as HTML5 Plugin (default)
 - `partial` - Unstyled partial TOC that shows the current topic - same as HTML5 Plugin
@@ -96,7 +107,7 @@ dita --input=path/to/your.ditamap \
 
 ### Custom CSS
 
-Bootstrap themes can be generated using the [Themestr.app](https://themestr.app/theme). The plug-in includes a sample placeholder for [custom CSS][5] styles. You can edit this file to add style rules of your own. Override the default Bootstrap theme by passing a custom CSS file to the `dita` command via the `--args.css` parameter:
+Bootstrap themes can be generated using the [Themestr.app](https://themestr.app/theme). The plug-in includes a sample placeholder for [custom CSS][7] styles. You can edit this file to add style rules of your own. Override the default Bootstrap theme by passing a custom CSS file to the `dita` command via the `--args.css` parameter:
 
 ```console
 dita --input=path/to/your.ditamap --format=html5-bootstrap \
@@ -109,11 +120,11 @@ dita --input=path/to/your.ditamap --format=html5-bootstrap \
 
 ![Sample DITA Bootstrap output](images/custom-bootstrap.png)
 
-For more extensive customizations, you may want to [fork][6] this repository and create a new plug-in of your own.
+For more extensive customizations, you may want to [fork][8] this repository and create a new plug-in of your own.
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template](./xsl/html5-bootstrap-template.xsl) is included within this repository.
 
-### Common Bootstrap Utility Classes
+### Common Bootstrap utility classes
 
 The HTML output for the following DITA elements can be standardized with common bootstrap utility classes for borders, background, text etc. using the following command line parameters:
 
@@ -129,26 +140,28 @@ The HTML output for the following DITA elements can be standardized with common 
 
 ## Feedback
 
-- If you find this useful and build something of your own on top of it, [let me know][7].
+- If you find this useful and build something of your own on top of it, [let me know][9].
 
-- If you find a bug or would like to suggest a change, [create an issue][8].
+- If you find a bug or would like to suggest a change, [create an issue][10].
   _(If it's a bug, provide steps to recreate the issue.)_
 
-- If you know how to fix it yourself, [submit a pull request][9] with the proposed changes.
+- If you know how to fix it yourself, [submit a pull request][11] with the proposed changes.
 
 ## License
 
 [Apache 2.0](LICENSE) © 2017 - 2021 Roger W. Fienhold Sheen
 
-Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.0 documentation][10], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`.
+Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.0 documentation][12], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`.
 
 [1]: http://www.dita-ot.org
 [2]: https://getbootstrap.com/docs/5.0
-[3]: https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml
-[4]: https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-footer-example.xml
-[5]: https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css
-[6]: https://help.github.com/articles/fork-a-repo/
-[7]: https://twitter.com/infotexture
-[8]: https://github.com/infotexture/dita-bootstrap/issues/new
-[9]: https://help.github.com/articles/using-pull-requests/
-[10]: https://getbootstrap.com/docs/5.0
+[3]: https://getbootstrap.com/docs/5.0/examples/navbars/
+[4]: https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-navbar-light.hdr.xml
+[5]: https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-footer-example.xml
+[6]: https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc
+[7]: https://github.com/infotexture/dita-bootstrap/blob/develop/css/custom.css
+[8]: https://help.github.com/articles/fork-a-repo/
+[9]: https://twitter.com/infotexture
+[10]: https://github.com/infotexture/dita-bootstrap/issues/new
+[11]: https://help.github.com/articles/using-pull-requests/
+[12]: https://getbootstrap.com/docs/5.0
