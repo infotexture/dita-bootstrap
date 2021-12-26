@@ -29,7 +29,7 @@
          A <b>card</b> is a flexible and extensible content container. It includes
          options for headers and footers, a wide variety of content, contextual
          background colors, and powerful display options. If you’re familiar with
-         Bootstrap 3, cards replace Bootstrap 4.0's panels, wells, and thumbnails.
+         Bootstrap 3, cards replace Bootstrap 4.0’s panels, wells, and thumbnails.
          Similar functionality to those components is available as modifier classes for
          cards.
       </p>
@@ -49,7 +49,7 @@
       <p>
          Below is an example of a basic card with mixed content and a fixed width. Cards
          have no fixed width to start, so they’ll naturally fill the full width of its
-         parent element. This is easily customized with Bootstrap's various <xref
+         parent element. This is easily customized with Bootstrap’s various <xref
           scope="external"
           href="https://getbootstrap.com/docs/5.0/components/card/#sizing"
         >sizing options.</xref>
@@ -63,7 +63,7 @@
             <title outputclass="h5">Card Title</title>
             <p>
                Some quick example text to build on the card title and make up the bulk of the
-               card's content. </p><xref outputclass="btn-primary" href="#">Go Somewhere</xref>
+               card’s content. </p><xref outputclass="btn-primary" href="#">Go Somewhere</xref>
           </section>
         </bodydiv>
       </bodydiv>
@@ -73,7 +73,7 @@
       &lt;section outputclass="card w-50"&gt;
          &lt;image outputclass="card-img-top" href="..." /&gt;
          &lt;title outputclass="h5"&gt;Card Title&lt;/title&gt;
-         &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p&gt;
+         &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
          &lt;xref outputclass="btn-primary" href="#"&gt;Go Somewhere&lt;/xref&gt;
       &lt;/section&gt;
    &lt;/bodydiv&gt;
@@ -96,7 +96,7 @@
             <title outputclass="h5">Card Title</title>
             <title outputclass="h6">Card Subtitle</title>
             <p>
-               Some quick example text to build on the card title and make up the bulk of the card's content. </p><xref
+               Some quick example text to build on the card title and make up the bulk of the card’s content. </p><xref
               outputclass="card-link"
               href="#"
             >Card Link</xref><xref outputclass="card-link" href="#">Another Link</xref>
@@ -109,7 +109,7 @@
       &lt;section outputclass="card w-50"&gt;
          &lt;title outputclass="h5"&gt;Card Title&lt;/title&gt;
          &lt;title outputclass="h6"&gt;Card Subtitle&lt;/title&gt;
-         &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p&gt;
+         &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
          &lt;xref outputclass="card-link" href="#"&gt;Card Link&lt;/xref&gt;
          &lt;xref outputclass="card-link" href="#"&gt;Another Link&lt;/xref&gt;
       &lt;/section&gt;
@@ -128,7 +128,7 @@
             <image outputclass="card-img-top" scope="external" href="https://picsum.photos/400/240?a"/>
             <p>
                Some quick example text to build on the card title and make up the bulk of the
-               card's content.
+               card’s content.
             </p>
           </section>
         </bodydiv>
@@ -138,7 +138,7 @@
    &lt;bodydiv outputclass="col"&gt;
       &lt;section outputclass="card w-50"&gt;
          &lt;image outputclass="card-img-top" href="..." /&gt;
-         &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p&gt;
+         &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
       &lt;/section&gt;
    &lt;/bodydiv&gt;
 &lt;/bodydiv&gt;</codeblock>

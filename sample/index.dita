@@ -24,7 +24,7 @@
         scope="external"
       >official Bootstrap 5.0 documentation</xref>,
        however DITA markup is used throughout the examples describing how to implement
-       these components correctly using DITA's <xmlatt>outputclass</xmlatt> attribute.
+       these components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute.
     </p>
   </abstract>
   <prolog>

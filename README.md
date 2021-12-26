@@ -146,7 +146,7 @@ The HTML output for the following DITA elements can be standardized with common 
 - If you find this useful and build something of your own on top of it, [let me know][10].
 
 - If you find a bug or would like to suggest a change, [create an issue][11].
-  _(If it's a bug, provide steps to recreate the issue.)_
+  _(If it’s a bug, provide steps to recreate the issue.)_
 
 - If you know how to fix it yourself, [submit a pull request][12] with the proposed changes.
 

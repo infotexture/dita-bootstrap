@@ -8,7 +8,7 @@
 <topic id="accordion">
   <title>Accordion</title>
   <shortdesc>
-     Build vertically collapsing accordions in combination with Bootstrap's Collapse
+     Build vertically collapsing accordions in combination with Bootstrap’s Collapse
      JavaScript plugin.
   </shortdesc>
   <prolog>
@@ -45,31 +45,31 @@
         <section id="accordion1">
           <title>Accordion Item #1</title>
           <p>
-             <b>This is the first item's accordion body.</b> It is hidden by default, until
+             <b>This is the first item’s accordion body.</b> It is hidden by default, until
              the collapse plugin adds the appropriate classes that we use to style each
              element. These classes control the overall appearance, as well as the showing
              and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap's default variables.
+             overriding Bootstrap’s default variables.
           </p>
         </section>
         <section id="accordion2">
           <title>Accordion Item #2</title>
           <p>
-             <b>This is the second item's accordion body.</b> It is hidden by default, until
+             <b>This is the second item’s accordion body.</b> It is hidden by default, until
              the collapse plugin adds the appropriate classes that we use to style each
              element. These classes control the overall appearance, as well as the showing
              and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap's default variables.
+             overriding Bootstrap’s default variables.
           </p>
         </section>
         <section id="accordion3">
           <title>Accordion Item #3</title>
           <p>
-             <b>This is the third item's accordion body.</b> It is hidden by default, until
+             <b>This is the third item’s accordion body.</b> It is hidden by default, until
              the collapse plugin adds the appropriate classes that we use to style each
              element. These classes control the overall appearance, as well as the showing
              and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap's default variables.
+             overriding Bootstrap’s default variables.
           </p>
         </section>
       </bodydiv>
@@ -78,19 +78,19 @@
    &lt;section id="accordion1"&gt;
       &lt;title&gt;Accordion Item #1&lt;/title&gt;
       &lt;p&gt;
-         &lt;b&gt;This is the first item's accordion body.&lt;/b&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding Bootstrap's default variables.
+         &lt;b&gt;This is the first item’s accordion body.&lt;/b&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding Bootstrap’s default variables.
       &lt;/p&gt;
    &lt;/section&gt;
    &lt;section id="accordion2"&gt;
       &lt;title&gt;Accordion Item #2&lt;/title&gt;
       &lt;p&gt;
-         &lt;b&gt;This is the second item's accordion body.&lt;/b&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding Bootstrap's default variables.
+         &lt;b&gt;This is the second item’s accordion body.&lt;/b&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding Bootstrap’s default variables.
       &lt;/p&gt;
    &lt;/section&gt;
    &lt;section id="accordion3"&gt;
       &lt;title&gt;Accordion Item #3&lt;/title&gt;
       &lt;p&gt;
-         &lt;b&gt;This is the third item's accordion body.&lt;/b&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding Bootstrap's default variables.
+         &lt;b&gt;This is the third item’s accordion body.&lt;/b&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding Bootstrap’s default variables.
       &lt;/p&gt;
    &lt;/section&gt;
 &lt;/bodydiv&gt;</codeblock>
@@ -107,31 +107,31 @@
         <section id="accordion4">
           <title>Accordion Item #1</title>
           <p>
-             <b>This is the first item's accordion body.</b> It is hidden by default, until
+             <b>This is the first item’s accordion body.</b> It is hidden by default, until
              the collapse plugin adds the appropriate classes that we use to style each
              element. These classes control the overall appearance, as well as the showing
              and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap's default variables.
+             overriding Bootstrap’s default variables.
           </p>
         </section>
         <section id="accordion5">
           <title>Accordion Item #2</title>
           <p>
-             <b>This is the second item's accordion body.</b> It is hidden by default, until
+             <b>This is the second item’s accordion body.</b> It is hidden by default, until
              the collapse plugin adds the appropriate classes that we use to style each
              element. These classes control the overall appearance, as well as the showing
              and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap's default variables.
+             overriding Bootstrap’s default variables.
           </p>
         </section>
         <section id="accordion6">
           <title>Accordion Item #3</title>
           <p>
-             <b>This is the third item's accordion body.</b> It is hidden by default, until
+             <b>This is the third item’s accordion body.</b> It is hidden by default, until
              the collapse plugin adds the appropriate classes that we use to style each
              element. These classes control the overall appearance, as well as the showing
              and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap's default variables.
+             overriding Bootstrap’s default variables.
           </p>
         </section>
       </bodydiv>

@@ -8,7 +8,7 @@
 <topic id="badges">
   <title>Badges</title>
   <shortdesc>
-     Documentation and examples for badges, Bootstrap's small count and labeling
+     Documentation and examples for badges, Bootstrap’s small count and labeling
      component.
   </shortdesc>
   <prolog>
@@ -58,9 +58,9 @@
     <section>
       <title>Background colors</title>
       <p>
-         Use Bootstrap's background utility classes to quickly change the appearance of a
-         badge. Please note that when using Bootstrap's default CSS classes using DITA's <xmlatt
-        >outputclass</xmlatt> with the value <codeph>bg-light</codeph>,
+         Use Bootstrap’s background utility classes to quickly change the appearance of a
+         badge. Please note that when using Bootstrap’s default CSS classes using the DITA <xmlatt
+        >outputclass</xmlatt> attribute with the value <codeph>bg-light</codeph>,
          you’ll likely need a text color utility attribute on <xmlatt>outputclass</xmlatt> like <codeph
         >text-dark</codeph> as well
          for proper styling. This is because background utilities do not set anything
