@@ -4,15 +4,13 @@
  ↓ For a custom look-and-feel a generated Bootstrap theme would be added in the line below ↓
 */
 
-
 /* ↑  End Generated Bootstrap theme Theme ↑  */
-
 
 /* This  additional CSS adds a documentation example highlight
   (Following the example of Bootstrap Documentation's own custom CSS) */
 .bd-example {
-    position: relative;
-    padding: 1rem;
-    margin: 1rem -.75rem 0;
-    border: solid #dee2e6 1px;
+  position: relative;
+  padding: 1rem;
+  margin: 1rem -0.75rem 0;
+  border: solid #dee2e6 1px;
 }
