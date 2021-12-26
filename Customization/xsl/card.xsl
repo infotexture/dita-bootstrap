@@ -11,7 +11,6 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
-
   <!-- Customization to add Bootstrap Card Component -->
   <!-- https://getbootstrap.com/docs/5.0/components/card/ -->
 
@@ -35,7 +34,6 @@
       />
     </div>
   </xsl:template>
-
 
   <!-- Card Body -->
   <xsl:template match="*" mode="card">
@@ -66,5 +64,4 @@
       <xsl:apply-templates/>
     </xsl:element>
   </xsl:template>
-
 </xsl:stylesheet>

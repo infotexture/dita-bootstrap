@@ -10,8 +10,6 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot"
 >
-
-
   <xsl:param name="BOOTSTRAP_CSS_SHORTDESC" select="'text-muted lead'"/>
   <xsl:param name="BOOTSTRAP_CSS_CODEBLOCK" select="'border rounded'"/>
   <xsl:param name="BOOTSTRAP_CSS_HEADER" select="'text-dark'"/>
@@ -87,7 +85,6 @@
     </xsl:choose>
   </xsl:template>
 
-
   <!-- Change the default Bootstrap CSS classes of accordion -->
   <xsl:template
     match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'accordion')]"
@@ -108,7 +105,7 @@
       <xsl:when test="contains(@outputclass, 'btn-toolbar')">
         <xsl:text/>
       </xsl:when>
-        <xsl:when test="contains(@outputclass, 'accordion-flush')">
+      <xsl:when test="contains(@outputclass, 'accordion-flush')">
         <xsl:text>accordion</xsl:text>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'btn-')">
@@ -182,7 +179,7 @@
         <xsl:text>alert-dark</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-         <xsl:text>alert-info</xsl:text>
+        <xsl:text>alert-info</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -231,21 +228,21 @@
   <!-- add role attributes based on outputclass -->
   <xsl:template name="bootstrap-role">
     <xsl:choose>
-       <xsl:when test="contains(@outputclass, 'alert-')">
-          <xsl:attribute name="role" select="'alert'"/>
-       </xsl:when>
-       <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
-          <xsl:attribute name="role" select="'group'"/>
-       </xsl:when>
-       <xsl:when test="contains(@outputclass, 'btn-group')">
-          <xsl:attribute name="role" select="'group'"/>
-       </xsl:when>
-       <xsl:when test="contains(@outputclass, 'btn-toolbar')">
-          <xsl:attribute name="role" select="'toolbar'"/>
-       </xsl:when>
-       <xsl:when test="contains(@outputclass, 'btn-')">
-          <xsl:attribute name="role" select="'button'"/>
-       </xsl:when>
+      <xsl:when test="contains(@outputclass, 'alert-')">
+        <xsl:attribute name="role" select="'alert'"/>
+      </xsl:when>
+      <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
+        <xsl:attribute name="role" select="'group'"/>
+      </xsl:when>
+      <xsl:when test="contains(@outputclass, 'btn-group')">
+        <xsl:attribute name="role" select="'group'"/>
+      </xsl:when>
+      <xsl:when test="contains(@outputclass, 'btn-toolbar')">
+        <xsl:attribute name="role" select="'toolbar'"/>
+      </xsl:when>
+      <xsl:when test="contains(@outputclass, 'btn-')">
+        <xsl:attribute name="role" select="'button'"/>
+      </xsl:when>
     </xsl:choose>
   </xsl:template>
 </xsl:stylesheet>

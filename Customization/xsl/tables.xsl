@@ -10,8 +10,6 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot"
 >
-
-
   <!--override row processing -->
   <xsl:template match="*[contains(@class, ' topic/row ')]" name="topic.row">
     <tr>
@@ -26,6 +24,4 @@
       <xsl:apply-templates/>
     </tr>
   </xsl:template>
-
-
 </xsl:stylesheet>

@@ -8,8 +8,6 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot"
 >
-
-
   <!-- the file name containing XHTML to be placed in the HEAD area
        (file name and extension only - no path). -->
   <xsl:param name="BOOTSTRAP_ICONS_CDN"/>
@@ -34,7 +32,7 @@
     <head>
       <!-- initial meta information -->
       <xsl:call-template name="generateCharset"/>   <!-- Set the character set to UTF-8 -->
-      <!-- ↓ Add <meta> element from Bootstrap starter template ↑ -->
+      <!-- ↓ Add <meta> element from Bootstrap starter template ↓ -->
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <xsl:call-template name="generateDefaultCopyright"/> <!-- Generate a default copyright, if needed -->
@@ -46,27 +44,27 @@
       <xsl:call-template name="gen-user-scripts"/> <!-- include user's XSL javascripts here -->
       <xsl:call-template name="processHDF"/>        <!-- Add user HDF file, if specified -->
       <xsl:call-template name="generateCssLinks"/>  <!-- Generate links to CSS files -->
-      <xsl:call-template name="gen-user-styles"/>  <!-- include user's XSL style element and content here -->
+      <xsl:call-template name="gen-user-styles"/>   <!-- include user's XSL style element and content here -->
 
-
+      <!-- Add Bootstrap icons -->
       <xsl:if test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">
-       <!--Check the file Url Definition of HDF HDR FTR-->
+        <!--Check the file Url Definition of HDF HDR FTR-->
         <xsl:variable name="BOOTSTRAP_CDNFILE">
           <xsl:choose>
-           <xsl:when test="not($BOOTSTRAP_ICONS_CDN)"/> <!-- If no filterfile leave empty -->
-           <xsl:when test="starts-with($BOOTSTRAP_ICONS_CDN, 'file:')">
-             <xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
-           </xsl:when>
-           <xsl:otherwise>
-             <xsl:choose>
-               <xsl:when test="starts-with($BOOTSTRAP_ICONS_CDN, '/')">
-                 <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
-               </xsl:when>
-               <xsl:otherwise>
-                 <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
-               </xsl:otherwise>
-             </xsl:choose>
-           </xsl:otherwise>
+            <xsl:when test="not($BOOTSTRAP_ICONS_CDN)"/> <!-- If no filterfile leave empty -->
+            <xsl:when test="starts-with($BOOTSTRAP_ICONS_CDN, 'file:')">
+              <xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:choose>
+                <xsl:when test="starts-with($BOOTSTRAP_ICONS_CDN, '/')">
+                  <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:otherwise>
           </xsl:choose>
         </xsl:variable>
         <xsl:if test="string-length($BOOTSTRAP_CDNFILE) > 0">
@@ -110,5 +108,4 @@
     <xsl:attribute name="class">col-lg-3</xsl:attribute>
     <xsl:attribute name="role">navigation</xsl:attribute>
   </xsl:attribute-set>
-
 </xsl:stylesheet>

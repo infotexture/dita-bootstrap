@@ -10,15 +10,13 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot"
 >
-
-
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template name="commonattributes">
     <xsl:param name="default-output-class"/>
     <!-- ↓ Add Bootstrap class attributes template ↑ -->
     <xsl:variable name="bootstrap-class">
-       <xsl:call-template name="bootstrap-class"/>
-       <xsl:value-of select="$default-output-class"/>
+      <xsl:call-template name="bootstrap-class"/>
+      <xsl:value-of select="$default-output-class"/>
     </xsl:variable>
     <xsl:call-template name="bootstrap-role"/>
     <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
@@ -29,47 +27,47 @@
       <!-- ↓ Remove DITA-OT styling from titles since Bootstrap does this ↑ -->
       <xsl:when test="starts-with($default-output-class , 'topictitle')">
         <xsl:apply-templates select="." mode="set-output-class">
-         <xsl:with-param name="default" select="replace($bootstrap-class, 'topictitle\d+', '')"/>
+          <xsl:with-param name="default" select="replace($bootstrap-class, 'topictitle\d+', '')"/>
         </xsl:apply-templates>
       </xsl:when>
-       <xsl:when test="starts-with($default-output-class , 'sectiontitle')">
+      <xsl:when test="starts-with($default-output-class , 'sectiontitle')">
         <xsl:apply-templates select="." mode="set-output-class">
-         <xsl:with-param name="default" select="replace($bootstrap-class, 'sectiontitle', '')"/>
+          <xsl:with-param name="default" select="replace($bootstrap-class, 'sectiontitle', '')"/>
         </xsl:apply-templates>
       </xsl:when>
       <xsl:otherwise>
         <xsl:apply-templates select="." mode="set-output-class">
-         <xsl:with-param name="default" select="$bootstrap-class"/>
-      </xsl:apply-templates>
+          <xsl:with-param name="default" select="$bootstrap-class"/>
+        </xsl:apply-templates>
       </xsl:otherwise>
     </xsl:choose>
     <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
     <xsl:choose>
-       <xsl:when test="exists($passthrough-attrs[empty(@att) and empty(@value)])">
-          <xsl:variable name="specializations" as="xs:string*">
-             <xsl:for-each select="ancestor-or-self::*[@domains][1]/@domains">
-                <xsl:analyze-string select="normalize-space(.)" regex="a\(props (.+?)\)">
-                   <xsl:matching-substring>
-                      <xsl:sequence select="tokenize(regex-group(1), '\s+')"/>
-                   </xsl:matching-substring>
-                </xsl:analyze-string>
-             </xsl:for-each>
-          </xsl:variable>
-          <xsl:for-each
+      <xsl:when test="exists($passthrough-attrs[empty(@att) and empty(@value)])">
+        <xsl:variable name="specializations" as="xs:string*">
+          <xsl:for-each select="ancestor-or-self::*[@domains][1]/@domains">
+            <xsl:analyze-string select="normalize-space(.)" regex="a\(props (.+?)\)">
+              <xsl:matching-substring>
+                <xsl:sequence select="tokenize(regex-group(1), '\s+')"/>
+              </xsl:matching-substring>
+            </xsl:analyze-string>
+          </xsl:for-each>
+        </xsl:variable>
+        <xsl:for-each
           select="@props |  @audience | @platform | @product | @otherprops | @deliveryTarget |  @*[local-name() = $specializations]"
         >
-             <xsl:attribute name="data-{name()}" select="."/>
-          </xsl:for-each>
-       </xsl:when>
-       <xsl:when test="exists($passthrough-attrs)">
-          <xsl:for-each select="@*">
-             <xsl:if
+          <xsl:attribute name="data-{name()}" select="."/>
+        </xsl:for-each>
+      </xsl:when>
+      <xsl:when test="exists($passthrough-attrs)">
+        <xsl:for-each select="@*">
+          <xsl:if
             test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]"
           >
-                <xsl:attribute name="data-{name()}" select="."/>
-             </xsl:if>
-          </xsl:for-each>
-       </xsl:when>
+            <xsl:attribute name="data-{name()}" select="."/>
+          </xsl:if>
+        </xsl:for-each>
+      </xsl:when>
     </xsl:choose>
   </xsl:template>
 
@@ -83,9 +81,9 @@
     </xsl:param>
     <!-- ↓ Add Bootstrap class attributes template ↑ -->
     <xsl:variable name="bootstrap-class">
-        <xsl:if test="not(contains(@outputclass, 'alert-'))">
-          <xsl:call-template name="bootstrap-note"/>
-        </xsl:if>
+      <xsl:if test="not(contains(@outputclass, 'alert-'))">
+        <xsl:call-template name="bootstrap-note"/>
+      </xsl:if>
     </xsl:variable>
     <div role="alert">
       <xsl:call-template name="commonattributes">

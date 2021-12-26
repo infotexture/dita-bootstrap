@@ -11,13 +11,10 @@
   version="2.0"
   exclude-result-prefixes="xs xhtml dita-ot"
 >
-
-
   <!-- Customization to add Bootstrap Tabbed Dialog Component -->
   <!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/#tabs -->
 
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-tabs')]">
-
     <ul role="tablist">
       <xsl:call-template name="commonattributes"/>
       <xsl:call-template name="setid"/>
@@ -35,7 +32,6 @@
   <!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/#pills -->
 
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'nav-pills')]">
-
     <xsl:choose>
       <!-- Pills with Vertical alignment -->
       <!-- https://getbootstrap.com/docs/5.0/components/navs-tabs/#vertical -->
@@ -78,22 +74,21 @@
     <xsl:variable name="index" select="count(../preceding-sibling::*[contains(@class, ' topic/section ')])"/>
 
     <li class="nav-item" role="presentation">
-        <button data-bs-toggle="tab" type="button" role="tab">
-          <xsl:attribute name="id" select="concat('heading_' ,$parent)"/>
-          <xsl:attribute name="data-bs-target" select="concat('#tab_' ,$parent)"/>
-          <xsl:attribute name="class">
-            <xsl:text>nav-link</xsl:text>
-            <xsl:if test="$index = 0">
-              <xsl:text> active</xsl:text>
-            </xsl:if>
-          </xsl:attribute>
-          <xsl:attribute name="aria-selected" select="$index=0"/>
-          <xsl:attribute name="aria-controls" select="$title"/>
-          <xsl:value-of select="$title"/>
-        </button>
+      <button data-bs-toggle="tab" type="button" role="tab">
+        <xsl:attribute name="id" select="concat('heading_' ,$parent)"/>
+        <xsl:attribute name="data-bs-target" select="concat('#tab_' ,$parent)"/>
+        <xsl:attribute name="class">
+          <xsl:text>nav-link</xsl:text>
+          <xsl:if test="$index = 0">
+            <xsl:text> active</xsl:text>
+          </xsl:if>
+        </xsl:attribute>
+        <xsl:attribute name="aria-selected" select="$index=0"/>
+        <xsl:attribute name="aria-controls" select="$title"/>
+        <xsl:value-of select="$title"/>
+      </button>
     </li>
   </xsl:template>
-
 
   <!-- Pills with Vertical alignment header -->
   <xsl:template match="*[contains(@class,' topic/title ')]" mode="nav-pills-vertical">
@@ -133,5 +128,4 @@
       <xsl:apply-templates select="*[not(contains(@class,' topic/title '))]"/>
     </div>
   </xsl:template>
-
 </xsl:stylesheet>
