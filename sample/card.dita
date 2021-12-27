@@ -45,8 +45,8 @@
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
-            <image outputclass="card-img-top" scope="external" href="https://picsum.photos/400/240?a"/>
             <title outputclass="h5">Card Title</title>
+            <image outputclass="card-img-top" scope="external" href="https://picsum.photos/400/240?a"/>
             <p>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
             <xref outputclass="btn-primary" href="#">Go Somewhere</xref>
           </section>
@@ -56,8 +56,8 @@
     <codeblock>&lt;bodydiv outputclass="row"&gt;
    &lt;bodydiv outputclass="col"&gt;
       &lt;section outputclass="card w-50"&gt;
-         &lt;image outputclass="card-img-top" href="..." /&gt;
          &lt;title outputclass="h5"&gt;Card Title&lt;/title&gt;
+         &lt;image outputclass="card-img-top" href="..." /&gt;
          &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
          &lt;xref outputclass="btn-primary" href="#"&gt;Go Somewhere&lt;/xref&gt;
       &lt;/section&gt;
@@ -126,8 +126,8 @@
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
-            <sectiondiv outputclass="card-header">Featured</sectiondiv>
             <title outputclass="h5">Special title treatment</title>
+            <sectiondiv outputclass="card-header">Featured</sectiondiv>
             <p>With supporting text below as a natural lead-in to additional content.</p>
             <xref href="#" outputclass="btn-primary">Go somewhere</xref>
           </section>
