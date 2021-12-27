@@ -8,24 +8,15 @@
 <topic id="index">
   <title>DITA Bootstrap</title>
   <abstract>
-    <shortdesc>
-       A plug-in for <xref scope="external" href="http://www.dita-ot.org">DITA Open Toolkit</xref>
-       that extends the default HTML5 output with a <xref
-        scope="external"
-        href="https://getbootstrap.com/docs/5.0"
-      >Bootstrap 5.0</xref> template and
-       components.
-    </shortdesc>
-    <p>
-       Where necessary, the texts describing the usage of each component
-       have been copied directly from the <xref
-        href="https://getbootstrap.com/docs/5.0"
-        format="html"
-        scope="external"
-      >official Bootstrap 5.0 documentation</xref>,
-       however DITA markup is used throughout the examples describing how to implement
-       these components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute.
-    </p>
+    <shortdesc>A plug-in for
+      <xref scope="external" href="http://www.dita-ot.org">DITA Open Toolkit</xref> that extends the default HTML5
+      output with a
+      <xref scope="external" href="https://getbootstrap.com/docs/5.0">Bootstrap 5.0</xref> template and
+      components.</shortdesc>
+    <p>Where necessary, the texts describing the usage of each component have been copied directly from the
+      <xref href="https://getbootstrap.com/docs/5.0" format="html" scope="external">official Bootstrap 5.0
+        documentation</xref>, however DITA markup is used throughout the examples describing how to implement these
+      components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute.</p>
   </abstract>
   <prolog>
     <metadata>
@@ -39,22 +30,14 @@
   <body outputclass="language-bash">
     <section>
       <title>Installing</title>
-      <p>
-         Use the dita command to add this plug-in to your DITA Open Toolkit installation:
-      </p>
-      <p>
-         DITA-OT 3.5 and newer:
-      </p>
+      <p>Use the dita command to add this plug-in to your DITA Open Toolkit installation:</p>
+      <p>DITA-OT 3.5 and newer:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>install</parmname> fox.jason.extend.css
 <cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap</codeblock>
-      <p>
-         DITA-OT 3.3 and newer:
-      </p>
+      <p>DITA-OT 3.3 and newer:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--install</parmname> fox.jason.extend.css
 <cmdname>dita</cmdname> <parmname>--install</parmname> net.infotexture.dita-bootstrap</codeblock>
-      <p>
-         DITA-OT 3.2 and older:
-      </p>
+      <p>DITA-OT 3.2 and older:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >--install</parmname> https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
 <cmdname>dita</cmdname> <parmname
@@ -62,9 +45,7 @@
     </section>
     <section>
       <title>Using</title>
-      <p>
-         Specify the html5-bootstrap format when building output with the dita command:
-      </p>
+      <p>Specify the html5-bootstrap format when building output with the dita command:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
     </section>
@@ -72,57 +53,43 @@
       <title>Customizing Headers and Footers</title>
       <indexterm><parmname>--args.hdr</parmname></indexterm>
       <indexterm><parmname>--args.ftr</parmname></indexterm>
-      <p>
-         The plug-in includes a default static navbar with a project name and global
-         links. To override the global navigation with a header of your own, pass a
-         custom header file to the dita command via the <parmname>--args.hdr</parmname>
-         parameter:
-      </p>
+      <p>The plug-in includes a default static navbar with a project name and global links. To override the global
+        navigation with a header of your own, pass a custom header file to the dita command via the
+          <parmname>--args.hdr</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath></codeblock>
-      <p>
-         The plug-in includes a <xref
+      <p>The plug-in includes a
+        <xref
           scope="external"
           href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml"
         >sample
-         header</xref> alternative with a dark navbar.
-      </p>
-      <p>
-         Edit a copy of this file to adjust the content of the global navigation.
-      </p>
-
-      <p>
-        The footer is omitted by default. To add a custom footer, pass a custom footer file
-        to the dita command via the <parmname>--args.ftr</parmname> parameter:
-       </p>
- <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+          header</xref> alternative with a dark navbar.</p>
+      <p>Edit a copy of this file to adjust the content of the global navigation.</p>
+      <p>The footer is omitted by default. To add a custom footer, pass a custom footer file to the dita command via the
+          <parmname>--args.ftr</parmname> parameter:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--args.ftr</parmname>=<filepath>path/to/your-footer.xml</filepath></codeblock>
-      <p>
-         The plug-in includes a <xref
+      <p>The plug-in includes a
+        <xref
           scope="external"
           href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-footer-example.xml"
-        >sample
-         footer file</xref>.
-      </p>
+        >sample footer
+          file</xref>.</p>
     </section>
     <section>
       <title>Sidebar menu</title>
       <indexterm><parmname>--nav-toc</parmname></indexterm>
-      <p>
-        The plug-in extends the standard  <parmname>--nav-toc</parmname> parameter to add
-        styled list groups for the sidebar. Five styles now are supported:
-      </p>
+      <p>The plug-in extends the standard <parmname>--nav-toc</parmname> parameter to add styled list groups for the
+        sidebar. Five styles now are supported:</p>
       <ul>
         <li>
-          <option>full</option> - Unstyled full TOC - same as HTML5 Plugin (default)
-        </li>
+          <option>full</option> - Unstyled full TOC - same as HTML5 Plugin (default)</li>
         <li>
-          <option>partial</option> - Unstyled  partial TOC that shows the current topic - same as HTML5 Plugin
-        </li>
+          <option>partial</option> - Unstyled partial TOC that shows the current topic - same as HTML5 Plugin</li>
         <li>
           <option>list-group-full</option> - Styled full TOC within a Bootstrap
           <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/list-group/">List Group</xref>
@@ -132,19 +99,18 @@
           <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/list-group/">List Group</xref>
         </li>
         <li>
-          <option>none</option>  - no TOC
-        </li>
+          <option>none</option> - no TOC</li>
       </ul>
       <ol outputclass="carousel carousel-dark border">
         <li>
           <fig>
-            <title><option>full</option>  - Unstyled full TOC</title>
+            <title><option>full</option> - Unstyled full TOC</title>
             <image href="./src/full.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><option>partial</option> - Unstyled  partial TOC</title>
+            <title><option>partial</option> - Unstyled partial TOC</title>
             <image href="./src/partial.png"/>
           </fig>
         </li>
@@ -172,19 +138,12 @@
       <indexterm><parmname>--args.copycss</parmname></indexterm>
       <indexterm><parmname>--args.csspath</parmname></indexterm>
       <indexterm><parmname>--args.cssroot</parmname></indexterm>
-      <p>
-         Bootstrap themes can be generated using the <xref
-          scope="external"
-          href="https://themestr.app/theme"
-        >Themestr.app</xref>. The plug-in includes a
-         basic placeholder for <xref
-          scope="external"
-          href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css"
-        >custom CSS</xref>
-         styles. You can edit this file to add style rules of your own. Override the
-         default Bootstrap theme by passing a custom CSS file to the dita command via
-         the <parmname>--args.css</parmname> parameter:
-      </p>
+      <p>Bootstrap themes can be generated using the
+        <xref scope="external" href="https://themestr.app/theme">Themestr.app</xref>. The plug-in includes a basic
+        placeholder for
+        <xref scope="external" href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css">custom
+          CSS</xref> styles. You can edit this file to add style rules of your own. Override the default Bootstrap theme
+        by passing a custom CSS file to the dita command via the <parmname>--args.css</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
@@ -193,9 +152,7 @@
      <parmname>--args.copycss</parmname>=<option>yes</option> \
      <parmname>--args.csspath</parmname>=<option>css</option>
      <parmname>--args.cssroot</parmname>=<filepath>path/to/your/theme</filepath></codeblock>
-      <p>
-         For more extensive customizations, you may want to fork this repository and
-         create a new plug-in of your own.
+      <p>For more extensive customizations, you may want to fork this repository and create a new plug-in of your own.
       </p>
     </section>
     <section>
@@ -209,27 +166,22 @@
       <indexterm><parmname>--bootstrap.css.tabs</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs.vertical</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.accordion</parmname></indexterm>
-      <p>
-        The output HTML for the following DITA elements can be annotated with common bootstrap utility classes for
+      <p>The output HTML for the following DITA elements can be annotated with common bootstrap utility classes for
         <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/borders">borders</xref>,
         <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/background">background</xref>,
         <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/text">text</xref>
-        <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/spacing">spacing</xref>
-        etc. using the following command line parameters:
-      </p>
+        <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/spacing">spacing</xref> etc. using the
+        following command line parameters:</p>
       <ul>
         <li>
           <parmname>--bootstrap.css.shortdesc</parmname> - common Bootstrap utility classes for DITA
-           <xmlelement>shortdesc</xmlelement> elements
-        </li>
+            <xmlelement>shortdesc</xmlelement> elements</li>
         <li>
           <parmname>--bootstrap.css.codeblock</parmname> - common Bootstrap utility classes for DITA
-          <xmlelement>codeblock</xmlelement> elements
-        </li>
+            <xmlelement>codeblock</xmlelement> elements</li>
         <li>
           <parmname>--bootstrap.css.header</parmname> - common Bootstrap utility classes for DITA
-          <xmlelement>title</xmlelement> elements
-        </li>
+            <xmlelement>title</xmlelement> elements</li>
         <li>
           <parmname>--bootstrap.css.card</parmname> - common utility classes for Bootstrap classes for
           <xref href="./card.dita" format="dita">card components</xref>

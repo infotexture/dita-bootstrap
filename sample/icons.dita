@@ -7,18 +7,15 @@
    components correctly using outputclass. -->
 <topic id="icons">
   <title>Icons</title>
-  <shortdesc>
-    DITA Bootstrap includes Bootstrap Icons by default. Other icon libraries such as
-    can be added or removed using command line parameters.
-  </shortdesc>
+  <shortdesc>DITA Bootstrap includes Bootstrap Icons by default. Other icon libraries such as can be added or removed
+    using command line parameters.</shortdesc>
   <body outputclass="language-markup">
     <section>
       <title>Bootstrap Icons</title>
       <p>
-        <xref scope="external" href="https://icons.getbootstrap.com/">Bootstrap Icons</xref> is a growing library
-        of SVG icons that are designed by @mdo and maintained by the Bootstrap Team. They are open
-        source and licensed under MIT, just like Bootstrap so the icon set is freely available to everyone.
-      </p>
+        <xref scope="external" href="https://icons.getbootstrap.com/">Bootstrap Icons</xref> is a growing library of SVG
+        icons that are designed by @mdo and maintained by the Bootstrap Team. They are open source and licensed under
+        MIT, just like Bootstrap so the icon set is freely available to everyone.</p>
     </section>
 
 
@@ -26,26 +23,24 @@
       <title>Installing icons</title>
       <indexterm><parmname>--icons.cdn.path</parmname></indexterm>
       <indexterm><parmname>--icons.include</parmname></indexterm>
-      <p>
-        A <xmlelement>Link</xmlelement> to the default Bootstrap Icons CDN set is included by default.
-        If you do not need any icons you can exclude them by setting
-        the <parmname>--icons.include</parmname>=<option>no</option>
+      <p>A <xmlelement>Link</xmlelement> to the default Bootstrap Icons CDN set is included by default. If you do not
+        need any icons you can exclude them by setting the <parmname>--icons.include</parmname>=<option>no</option>
       </p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--icons.include</parmname>=<option>no</option></codeblock>
-      <p>
-        Other icon sets such as <xref scope="external" href="https://fontawesome.com/">Font Awesome</xref>
+      <p>Other icon sets such as
+        <xref scope="external" href="https://fontawesome.com/">Font Awesome</xref>
         <xref scope="external" href="https://feathericons.com/">Feather</xref> and
-        <xref scope="external" href="https://octicons.github.com/">Octicons</xref> are available. To
-        use an alternative set of icons, modify the <xref
+        <xref scope="external" href="https://octicons.github.com/">Octicons</xref> are available. To use an alternative
+        set of icons, modify the
+        <xref
           scope="external"
           href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bootstrap.icons.hdr.xml"
         >sample
-         header</xref> or specify the path of the Icons CDN file using the <parmname
-        >--icons.cdn.path</parmname> parameter.
-      </p>
+          header</xref> or specify the path of the Icons CDN file using the <parmname>--icons.cdn.path</parmname>
+        parameter.</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
@@ -53,14 +48,11 @@
     </section>
     <section>
       <title>Example</title>
-      <p>
-        Icon fonts with classes for every icon are included in Bootstrap Icons. Include the icon web fonts in your page via CSS, then reference the class names as needed in your DITA (e.g.,
-        <xmlelement>i outputclass="bi-alarm"/</xmlelement>).
-      </p>
-      <p>
-        Use an additional <xmlatt
-        >otherprops</xmlatt> and alter the CSS font-size and color to change the icon appearance.
-      </p>
+      <p>Icon fonts with classes for every icon are included in Bootstrap Icons. Include the icon web fonts in your page
+        via CSS, then reference the class names as needed in your DITA (e.g., <xmlelement>i
+          outputclass="bi-alarm"/</xmlelement>).</p>
+      <p>Use an additional <xmlatt>otherprops</xmlatt> and alter the CSS font-size and color to change the icon
+        appearance.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <p>
@@ -70,9 +62,7 @@
     </bodydiv>
     <codeblock>&lt;i outputclass="bi-alarm"/&gt;
 &lt;i outputclass="bi-alarm" otherprops="style(font-size: 2rem; color: cornflowerblue;)"/&gt;</codeblock>
-    <p>
-        Icons can also be placed within buttons as shown:
-    </p>
+    <p>Icons can also be placed within buttons as shown:</p>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <xref outputclass="btn-primary btn-floating m-1" href="#"><i outputclass="bi-arrow-down-square-fill"/></xref>
       <xref outputclass="btn-primary btn-floating m-1" href="#"><i outputclass="bi-chat-left-quote-fill"/></xref>

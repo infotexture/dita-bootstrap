@@ -7,16 +7,13 @@
    components correctly using outputclass. -->
 <topic id="carousel">
   <title>Carousel</title>
-  <shortdesc>
-     A slideshow component for cycling through elements—images or slides of text—like
-     a carousel.
-  </shortdesc>
+  <shortdesc>A slideshow component for cycling through elements—images or slides of text—like a carousel.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
         <indexterm>Carousel</indexterm>
         <indexterm>CSS
-            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
         <indexterm><xmlelement>ol</xmlelement></indexterm>
         <indexterm><xmlelement>fig</xmlelement></indexterm>
@@ -27,27 +24,19 @@
   <body outputclass="language-markup">
     <section>
       <title>How it works</title>
-      <p>
-         The carousel is a slideshow for cycling through a series of content, built with
-         CSS 3D transforms and a bit of JavaScript. It works with a series of images,
-         text, or custom markup. It also includes support for previous/next controls
-         and indicators.
-      </p>
+      <p>The carousel is a slideshow for cycling through a series of content, built with CSS 3D transforms and a bit of
+        JavaScript. It works with a series of images, text, or custom markup. It also includes support for previous/next
+        controls and indicators.</p>
     </section>
     <section>
       <title>Example</title>
-      <p>
-         Carousels don’t automatically normalize slide dimensions. As such, you may need
-         to use additional utilities or custom styles to appropriately size content.
-         While carousels support previous/next controls and indicators, they’re not
-         explicitly required. Add and customize as you see fit.
-      </p>
+      <p>Carousels don’t automatically normalize slide dimensions. As such, you may need to use additional utilities or
+        custom styles to appropriately size content. While carousels support previous/next controls and indicators,
+        they’re not explicitly required. Add and customize as you see fit.</p>
     </section>
     <section>
       <title>Example</title>
-      <p>
-         Here is an example with slides
-      </p>
+      <p>Here is an example with slides</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel">
@@ -75,9 +64,7 @@
 &lt;/ol&gt;</codeblock>
     <section>
       <title>With captions</title>
-      <p>
-         Add captions by using <xmlelement>fig</xmlelement> elements
-      </p>
+      <p>Add captions by using <xmlelement>fig</xmlelement> elements</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel">

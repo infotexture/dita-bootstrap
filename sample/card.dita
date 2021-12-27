@@ -7,16 +7,14 @@
    components correctly using outputclass. -->
 <topic id="cards">
   <title>Cards</title>
-  <shortdesc>
-     Bootstrap’s cards provide a flexible and extensible content container with
-     multiple variants and options.
-  </shortdesc>
+  <shortdesc>Bootstrap’s cards provide a flexible and extensible content container with multiple variants and
+    options.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
         <indexterm>Card</indexterm>
         <indexterm>CSS
-            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
         <indexterm><xmlelement>section</xmlelement></indexterm>
       </keywords>
@@ -25,34 +23,22 @@
   <body outputclass="language-markup">
     <section>
       <title>About</title>
-      <p>
-         A <b>card</b> is a flexible and extensible content container. It includes
-         options for headers and footers, a wide variety of content, contextual
-         background colors, and powerful display options. If you’re familiar with
-         Bootstrap 3, cards replace Bootstrap 4.0’s panels, wells, and thumbnails.
-         Similar functionality to those components is available as modifier classes for
-         cards.
-      </p>
+      <p>A <b>card</b> is a flexible and extensible content container. It includes options for headers and footers, a
+        wide variety of content, contextual background colors, and powerful display options. If you’re familiar with
+        Bootstrap 3, cards replace Bootstrap 4.0’s panels, wells, and thumbnails. Similar functionality to those
+        components is available as modifier classes for cards.</p>
     </section>
     <section>
       <title>Example</title>
-      <p>
-         Cards are built with as little markup and styles as possible, but still manage
-         to deliver a ton of control and customization. Built with flexbox, they offer
-         easy alignment and mix well with other Bootstrap components. They have no <xmlatt>margin</xmlatt>
-         by default, so use <xref
-          scope="external"
-          href="https://getbootstrap.com/docs/5.0/utilities/spacing/"
-        >spacing utilities</xref>
-         as needed.
-      </p>
-      <p>
-         Below is an example of a basic card with mixed content and a fixed width. Cards
-         have no fixed width to start, so they’ll naturally fill the full width of its
-         parent element. This is easily customized with Bootstrap’s various <xref
-          scope="external"
-          href="https://getbootstrap.com/docs/5.0/components/card/#sizing"
-        >sizing options.</xref>
+      <p>Cards are built with as little markup and styles as possible, but still manage to deliver a ton of control and
+        customization. Built with flexbox, they offer easy alignment and mix well with other Bootstrap components. They
+        have no <xmlatt>margin</xmlatt> by default, so use
+        <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/spacing/">spacing utilities</xref> as
+        needed.</p>
+      <p>Below is an example of a basic card with mixed content and a fixed width. Cards have no fixed width to start,
+        so they’ll naturally fill the full width of its parent element. This is easily customized with Bootstrap’s
+        various
+        <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/card/#sizing">sizing options.</xref>
       </p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
@@ -61,9 +47,8 @@
           <section outputclass="card w-50">
             <image outputclass="card-img-top" scope="external" href="https://picsum.photos/400/240?a"/>
             <title outputclass="h5">Card Title</title>
-            <p>
-               Some quick example text to build on the card title and make up the bulk of the
-               card’s content. </p><xref outputclass="btn-primary" href="#">Go Somewhere</xref>
+            <p>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <xref outputclass="btn-primary" href="#">Go Somewhere</xref>
           </section>
         </bodydiv>
       </bodydiv>
@@ -80,14 +65,9 @@
 &lt;/bodydiv&gt;</codeblock>
     <section>
       <title>Titles, text, and links</title>
-      <p>
-         Links are added and placed next to each other by altering the <xmlatt>outputclass</xmlatt> and adding <codeph
-        >card-link</codeph>
-         to an <xmlelement>xref</xmlelement> tag.
-      </p>
-      <p>
-         Subtitles are used by adding a second <xmlelement>title</xmlelement> tag.
-      </p>
+      <p>Links are added and placed next to each other by altering the <xmlatt>outputclass</xmlatt> and adding
+          <codeph>card-link</codeph> to an <xmlelement>xref</xmlelement> tag.</p>
+      <p>Subtitles are used by adding a second <xmlelement>title</xmlelement> tag.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row">
@@ -95,11 +75,9 @@
           <section outputclass="card w-50">
             <title outputclass="h5">Card Title</title>
             <title outputclass="h6">Card Subtitle</title>
-            <p>
-               Some quick example text to build on the card title and make up the bulk of the card’s content. </p><xref
-              outputclass="card-link"
-              href="#"
-            >Card Link</xref><xref outputclass="card-link" href="#">Another Link</xref>
+            <p>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+            <xref outputclass="card-link" href="#">Card Link</xref>
+            <xref outputclass="card-link" href="#">Another Link</xref>
           </section>
         </bodydiv>
       </bodydiv>
@@ -117,8 +95,7 @@
 &lt;/bodydiv&gt;</codeblock>
     <section>
       <title>Images</title>
-      <p>
-         Setting <xmlatt>outputclass</xmlatt> to <codeph>card-img-top</codeph> places an image to the top of the card
+      <p>Setting <xmlatt>outputclass</xmlatt> to <codeph>card-img-top</codeph> places an image to the top of the card
       </p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
@@ -126,10 +103,7 @@
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
             <image outputclass="card-img-top" scope="external" href="https://picsum.photos/400/240?a"/>
-            <p>
-               Some quick example text to build on the card title and make up the bulk of the
-               card’s content.
-            </p>
+            <p>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
           </section>
         </bodydiv>
       </bodydiv>
@@ -144,22 +118,18 @@
 &lt;/bodydiv&gt;</codeblock>
     <section>
       <title>Header and footer</title>
-      <p>
-         Add an optional header and/or footer within a card using the
-         <xmlatt>outputclass</xmlatt> attribute and adding <codeph>card-header</codeph> and <codeph>card-footer</codeph>
+      <p>Add an optional header and/or footer within a card using the <xmlatt>outputclass</xmlatt> attribute and adding
+          <codeph>card-header</codeph> and <codeph>card-footer</codeph>
       </p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
-            <sectiondiv outputclass="card-header">
-               Featured
-                  </sectiondiv>
+            <sectiondiv outputclass="card-header">Featured</sectiondiv>
             <title outputclass="h5">Special title treatment</title>
-            <p>
-               With supporting text below as a natural lead-in to additional content.
-               </p><xref href="#" outputclass="btn-primary">Go somewhere</xref>
+            <p>With supporting text below as a natural lead-in to additional content.</p>
+            <xref href="#" outputclass="btn-primary">Go somewhere</xref>
           </section>
         </bodydiv>
       </bodydiv>
@@ -167,9 +137,7 @@
     <codeblock>&lt;bodydiv outputclass="row"&gt;
    &lt;bodydiv outputclass="col"&gt;
       &lt;section outputclass="card w-50"&gt;
-         &lt;sectiondiv outputclass="card-header"&gt;
-            Featured
-         &lt;/sectiondiv&gt;
+         &lt;sectiondiv outputclass="card-header"&gt;Featured&lt;/sectiondiv&gt;
          &lt;title outputclass="h5"&gt;Special title treatment&lt;/title&gt;
          &lt;p&gt;With supporting text below as a natural lead-in to additional content.&lt;/p&gt;
          &lt;xref href="#" outputclass="btn-primary"&gt;Go somewhere&lt;/xref&gt;

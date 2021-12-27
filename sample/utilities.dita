@@ -7,11 +7,8 @@
    components correctly using outputclass. -->
 <topic id="cards">
   <title>Borders, Color and Background</title>
-  <shortdesc>
-     Use border utilities to quickly style the border and border-radius of an element and
-     convey meaning through <codeph>color</codeph> and <codeph
-    >background-color</codeph> with a handful of color utility classes.
-  </shortdesc>
+  <shortdesc>Use border utilities to quickly style the border and border-radius of an element and convey meaning through
+      <codeph>color</codeph> and <codeph>background-color</codeph> with a handful of color utility classes.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
@@ -19,7 +16,7 @@
         <indexterm>Color</indexterm>
         <indexterm>Background</indexterm>
         <indexterm>CSS
-            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
       </keywords>
     </metadata>
@@ -28,10 +25,7 @@
 
     <section>
       <title>Border</title>
-      <p>
-        Use border utilities to add or remove an element’s borders. Choose from all
-        borders or one at a time.
-      </p>
+      <p>Use border utilities to add or remove an element’s borders. Choose from all borders or one at a time.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ph outputclass="border p-3 bg-light text-dark">&#xA0;border&#xA0;</ph>&#xA0;
@@ -80,11 +74,10 @@
     </codeblock>
     <section>
       <title>Background color</title>
-      <p>
-         Similar to the contextual text color classes, set the background of an element to any
-         contextual class. Background utilities do not set <codeph>color</codeph>, so in some cases
-         you’ll want to use <codeph>.text-*</codeph> <xmlatt>outputclass</xmlatt> utilities.
-      </p>
+      <p>Similar to the contextual text color classes, set the background of an element to any contextual class.
+        Background utilities do not set <codeph>color</codeph>, so in some cases you’ll want to use
+          <codeph>.text-*</codeph>
+        <xmlatt>outputclass</xmlatt> utilities.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <section outputclass="p-3 bg-primary text-white">.bg-primary</section>
@@ -112,9 +105,8 @@
 &lt;section outputclass="p-3 bg-transparent text-dark"&gt;.bg-transparent&lt;/section&gt;</codeblock>
     <section>
       <title>Styling DITA elements</title>
-      <p>
-         Apply consistent Bootstrap utility classes across DITA elements by amending <filepath
-        >/Customization/xsl/utility-classes.xsl</filepath>
+      <p>Apply consistent Bootstrap utility classes across DITA elements by amending
+          <filepath>/Customization/xsl/utility-classes.xsl</filepath>
       </p>
     </section>
     <codeblock>&lt;!-- Add a border to codeblocks --&gt;

@@ -7,16 +7,14 @@
    components correctly using outputclass. -->
 <topic id="list-group">
   <title>List Group</title>
-  <shortdesc>
-     List groups are a flexible and powerful component for displaying a series of
-     content. Modify and extend them to support just about any content within.
-  </shortdesc>
+  <shortdesc>List groups are a flexible and powerful component for displaying a series of content. Modify and extend
+    them to support just about any content within.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
         <indexterm>List Group</indexterm>
         <indexterm>CSS
-            <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
         <indexterm><xmlelement>ul</xmlelement></indexterm>
         <indexterm><xmlelement>ol</xmlelement></indexterm>
@@ -26,29 +24,16 @@
   <body outputclass="language-markup">
     <section>
       <title>Basic example</title>
-      <p>
-         The most basic list group is an unordered list with list items and the proper
-         classes. Build upon it with the options that follow, or with your own CSS as
-         needed.
-      </p>
+      <p>The most basic list group is an unordered list with list items and the proper classes. Build upon it with the
+        options that follow, or with your own CSS as needed.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ul outputclass="list-group">
-        <li>
-           An item
-        </li>
-        <li>
-           A second item
-        </li>
-        <li>
-           A third item
-        </li>
-        <li>
-           A fourth item
-        </li>
-        <li>
-           And a fifth one
-        </li>
+        <li>An item</li>
+        <li>A second item</li>
+        <li>A third item</li>
+        <li>A fourth item</li>
+        <li>And a fifth one</li>
       </ul>
     </bodydiv>
     <codeblock>&lt;ul outputclass="list-group"&gt;
@@ -60,29 +45,16 @@
 &lt;/ul&gt;</codeblock>
     <section>
       <title>Flush</title>
-      <p>
-         Add an <xmlatt>outputclass</xmlatt> and set it to <codeph>list-group-flush</codeph> to remove some borders and
-         rounded corners to render list group items edge-to-edge in a parent container
-         (e.g., cards).
-      </p>
+      <p>Add an <xmlatt>outputclass</xmlatt> and set it to <codeph>list-group-flush</codeph> to remove some borders and
+        rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ul outputclass="list-group list-group-flush">
-        <li>
-           An item
-        </li>
-        <li>
-           A second item
-        </li>
-        <li>
-           A third item
-        </li>
-        <li>
-           A fourth item
-        </li>
-        <li>
-           And a fifth one
-        </li>
+        <li>An item</li>
+        <li>A second item</li>
+        <li>A third item</li>
+        <li>A fourth item</li>
+        <li>And a fifth one</li>
       </ul>
     </bodydiv>
     <codeblock>&lt;ul outputclass="list-group list-group-flush"&gt;
