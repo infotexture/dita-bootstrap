@@ -102,7 +102,7 @@
       <note type="important">This note is important.</note>
       <note type="restriction">You can't do what this note says.</note>
       <note type="danger">You may hurt yourself! </note>
-      <note type="other">This is something other than a normal note.</note>
+      <note type="other" othertype="another-note">This is something other than a normal note.</note>
     </div>
     <codeblock>&lt;note type="note"&gt;This is just a note.&lt;/note&gt;
 &lt;note type="notice"&gt;Notice this piece of information.&lt;/note&gt;
