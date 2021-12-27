@@ -67,14 +67,14 @@
       <title>Titles, text, and links</title>
       <p>Links are added and placed next to each other by altering the <xmlatt>outputclass</xmlatt> and adding
           <codeph>card-link</codeph> to an <xmlelement>xref</xmlelement> tag.</p>
-      <p>Subtitles are used by adding a second <xmlelement>title</xmlelement> tag.</p>
+      <p>Subtitles are used by adding a <xmlelement>sectiondiv</xmlelement> element.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
             <title outputclass="h5">Card Title</title>
-            <title outputclass="h6">Card Subtitle</title>
+            <sectiondiv outputclass="h6">Card Subtitle</sectiondiv>
             <p>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
             <xref outputclass="card-link" href="#">Card Link</xref>
             <xref outputclass="card-link" href="#">Another Link</xref>
@@ -86,7 +86,7 @@
    &lt;bodydiv outputclass="col"&gt;
       &lt;section outputclass="card w-50"&gt;
          &lt;title outputclass="h5"&gt;Card Title&lt;/title&gt;
-         &lt;title outputclass="h6"&gt;Card Subtitle&lt;/title&gt;
+         &lt;sectiondiv outputclass="h6"&gt;Card Subtitle&lt;/title&gt;
          &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
          &lt;xref outputclass="card-link" href="#"&gt;Card Link&lt;/xref&gt;
          &lt;xref outputclass="card-link" href="#"&gt;Another Link&lt;/xref&gt;
