@@ -89,7 +89,7 @@
     <section>
       <title>Notes</title>
       <p>DITA <xmlelement>note</xmlelement> elements are displayed as alerts according to the <xmlatt>type</xmlatt>
-        attribute</p>
+        attribute.</p>
     </section>
     <div outputclass="bd-example" deliveryTarget="html">
       <note type="note">This is just a note.</note>
@@ -102,7 +102,7 @@
       <note type="important">This note is important.</note>
       <note type="restriction">You can't do what this note says.</note>
       <note type="danger">You may hurt yourself! </note>
-      <note type="other" othertype="another-note">This is something other than a normal note.</note>
+      <note type="other" othertype="Another note">This is something other than a normal note.</note>
     </div>
     <codeblock>&lt;note type="note"&gt;This is just a note.&lt;/note&gt;
 &lt;note type="notice"&gt;Notice this piece of information.&lt;/note&gt;
@@ -114,8 +114,8 @@
 &lt;note type="important"&gt;This note is important.&lt;/note&gt;
 &lt;note type="restriction"&gt;You can't do what this note says.&lt;/note&gt;
 &lt;note type="danger"&gt;You may hurt yourself!&lt;/note&gt;
-&lt;note type="other"&gt;This is something other than a normal note.&lt;/note&gt;</codeblock>
-    <p>The <xmlatt>type</xmlatt> can be overridden by using an <xmlatt>outputclass</xmlatt></p>
+&lt;note type="other" othertype="Another note"&gt;This is something other than a normal note.&lt;/note&gt;</codeblock>
+    <p>The <xmlatt>type</xmlatt> can be overridden by using an <xmlatt>outputclass</xmlatt>.</p>
     <div outputclass="bd-example" deliveryTarget="html">
       <note outputclass="alert-primary">This is a primary note.</note>
       <note outputclass="alert-secondary">This is a secondary note.</note>
