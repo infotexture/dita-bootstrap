@@ -93,62 +93,60 @@
     </section>
 
     <section>
-      <title>Sidebar menu</title>
+      <title>Navigation menu</title>
       <indexterm><parmname>--nav-toc</parmname></indexterm>
-      <p>The plug-in extends the standard HTML5 table of contents (ToC) 
+      <p>The plug-in extends the standard HTML5 table of contents (ToC)
         <xref
           href="https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc"
           format="html"
           scope="external"
-        >navigation parameter</xref> <parmname>--nav-toc</parmname> to add styled list groups to the
-        sidebar.</p>
-      <p>Five styles now are supported:</p>
+        >navigation parameter</xref>
+        <parmname
+        >--nav-toc</parmname> to add styled list groups to the navigation menu. (The navigation is rendered as a
+        sidebar in desktop browsers and above the content on smaller devices.)</p>
+      <p>By default, the plug-in uses the <codeph>partial</codeph> option to include the current topic in the ToC 
+        along with its parents, siblings and children. As with the default HTML5 plug-in, the <codeph>full</codeph> 
+        option can also be used to generate a complete ToC for the entire map, or <codeph>none</codeph> to disable 
+        the table of contents entirely.</p>
+      <p>As of version 5.3, the plug-in provides two new options to style the table of contents navigation with the 
+        Bootstrap
+        <xref
+          href="https://getbootstrap.com/docs/5.0/components/list-group/"
+          format="html"
+          scope="external"
+        >list group</xref> component.
+      </p>
       <ul>
         <li>
-          <option>full</option> - Unstyled full TOC - same as HTML5 Plugin (default)</li>
-        <li>
-          <option>partial</option> - Unstyled partial TOC that shows the current topic - same as HTML5 Plugin</li>
-        <li>
-          <option>list-group-full</option> - Styled full TOC within a Bootstrap
-          <xref
-            href="https://getbootstrap.com/docs/5.0/components/list-group/"
-            format="html"
-            scope="external"
-          >List Group</xref>
+          <codeph>list-group-full</codeph> – Styled full ToC within a Bootstrap list group
         </li>
         <li>
-          <option>list-group-partial</option> - Styled partial TOC that shows the current topic within a Bootstrap
-          <xref
-            href="https://getbootstrap.com/docs/5.0/components/list-group/"
-            format="html"
-            scope="external"
-          >List Group</xref>
+          <codeph>list-group-partial</codeph> – Partial ToC with the current topic, parents, siblings, and children in a
+          list group
         </li>
-        <li>
-          <option>none</option> - no TOC</li>
       </ul>
       <ol outputclass="carousel carousel-dark border">
         <li>
           <fig>
-            <title><option>full</option> - Unstyled full TOC</title>
+            <title><codeph>full</codeph> – Unstyled full TOC</title>
             <image href="./src/full.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><option>partial</option> - Unstyled partial TOC</title>
+            <title><codeph>partial</codeph> – Unstyled partial TOC</title>
             <image href="./src/partial.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><option>list-group-full</option> - Styled full TOC within a List Group</title>
+            <title><codeph>list-group-full</codeph> – Styled full ToC within a list group</title>
             <image href="./src/list-group-full.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><option>list-group-partial</option> - Styled partial TOC within a List Group</title>
+            <title><codeph>list-group-partial</codeph> – Styled partial ToC within a list group</title>
             <image href="./src/list-group-partial.png"/>
           </fig>
         </li>
@@ -157,6 +155,13 @@
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--nav-toc</parmname>=<option>list-group-partial</option></codeblock>
+      <note outputclass="alert-primary">For an example of <codeph>list-group-full</codeph> styling, see the output at
+        <xref
+          href="https://infotexture.github.io/dita-bootstrap/"
+          format="html"
+          scope="external"
+        >infotexture.github.io/dita-bootstrap</xref>.
+      </note>
     </section>
     <section>
       <title>Custom CSS</title>
@@ -169,7 +174,7 @@
           href="https://themestr.app/theme"
           format="html"
           scope="external"
-        >Themestr.app</xref>. The plug-in includes a basic placeholder for
+        >Themestr.app</xref>. The plug-in includes a sample placeholder for
         <xref
           href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css"
           format="html"

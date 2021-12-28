@@ -8,7 +8,7 @@ A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with 
 - [Using](#using)
 - [Customizing](#customizing)
   - [Headers and footers](#headers-and-footers)
-  - [Navigation sidebar](#navigation-sidebar)
+  - [Navigation menu](#navigation-menu)
   - [Custom CSS](#custom-css)
   - [Common Bootstrap utility classes](#common-bootstrap-utility-classes)
 - [Feedback](#feedback)
@@ -87,11 +87,11 @@ dita --input=path/to/your.ditamap \
      --args.ftr=path/to/your-footer.xml
 ```
 
-### Navigation sidebar
+### Navigation menu
 
-The plug-in extends the standard HTML5 table of contents (ToC) [navigation parameter][6] `--nav-toc` to add styled list groups to the navigation sidebar.
+The plug-in extends the standard HTML5 table of contents (ToC) [navigation parameter][6] `--nav-toc` to add styled list groups to the navigation menu. (The navigation is rendered as a sidebar in desktop browsers and above the content on smaller devices.)
 
-By default, the plug-in uses the `partial` option to include the current topic in the ToC along with its parents, siblings and children. As with `org.dita.html5`, the `full` option can also be used to generate a complete ToC for the entire map, or `none` to disable the table of contents entirely.
+By default, the plug-in uses the `partial` option to include the current topic in the ToC along with its parents, siblings and children. As with the default HTML5 plug-in, the `full` option can also be used to generate a complete ToC for the entire map, or `none` to disable the table of contents entirely.
 
 As of version 5.3, the plug-in provides two new options to style the table of contents navigation with the Bootstrap [list group][7] component.
 
