@@ -129,17 +129,17 @@ You can add your own XSLT customizations by creating a new plug-in that extends 
 
 ### Common Bootstrap utility classes
 
-The HTML output for the following DITA elements can be standardized with common bootstrap utility classes for borders, background, text etc. using the following command line parameters:
+The HTML output for the following DITA elements can be annotated with common Bootstrap utility classes for borders, background, text, spacing, etc. using additional command line parameters:
 
-- `bootstrap.css.shortdesc` - common Bootstrap utility classes for DITA `<shortdesc>` elements
-- `bootstrap.css.codeblock` - common Bootstrap utility classes for DITA `<codeblock>` elements
-- `bootstrap.css.header` - common Bootstrap utility classes for DITA `<title>` elements
-- `bootstrap.css.card` - common utility classes for Bootstrap classes for card components
-- `bootstrap.css.carousel` - common utility classes for Bootstrap carousel components
-- `bootstrap.css.carousel.caption` - common utility classes for Bootstrap carousel captions
-- `bootstrap.css.tabs` - common utility classes for Bootstrap tabbed dialog components
-- `bootstrap.css.tabs.vertical` - common utility classes for Bootstrap vertical tabbed dialog components
-- `bootstrap.css.accordion` - common utility classes for Bootstrap accordion components
+- `bootstrap.css.shortdesc` – common Bootstrap utility classes for DITA `<shortdesc>` elements
+- `bootstrap.css.codeblock` – common Bootstrap utility classes for DITA `<codeblock>` elements
+- `bootstrap.css.header` – common Bootstrap utility classes for DITA `<title>` elements
+- `bootstrap.css.card` – common utility classes for Bootstrap card components
+- `bootstrap.css.carousel` – common utility classes for Bootstrap carousel components
+- `bootstrap.css.carousel.caption` – common utility classes for Bootstrap carousel captions
+- `bootstrap.css.tabs` – common utility classes for Bootstrap tabbed dialog components
+- `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabbed dialog components
+- `bootstrap.css.accordion` – common utility classes for Bootstrap accordion components
 
 ## Feedback
 
