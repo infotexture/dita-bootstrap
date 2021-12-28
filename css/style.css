@@ -67,3 +67,9 @@
 .list-group-item-dark {
   background-color: #e7f1ff;
 }
+
+footer {
+  background-color: #e7f1ff;
+  border-top: 1px solid rgba(0,0,0,.125);
+  margin-top: 3rem;
+}
