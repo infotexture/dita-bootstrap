@@ -33,12 +33,13 @@
       <p>Cards are built with as little markup and styles as possible, but still manage to deliver a ton of control and
         customization. Built with flexbox, they offer easy alignment and mix well with other Bootstrap components. They
         have no <xmlatt>margin</xmlatt> by default, so use
-        <xref scope="external" href="https://getbootstrap.com/docs/5.0/utilities/spacing/">spacing utilities</xref> as
-        needed.</p>
+        <xref href="https://getbootstrap.com/docs/5.0/utilities/spacing/" format="html" scope="external">spacing
+          utilities</xref> as needed.</p>
       <p>Below is an example of a basic card with mixed content and a fixed width. Cards have no fixed width to start,
         so they’ll naturally fill the full width of its parent element. This is easily customized with Bootstrap’s
         various
-        <xref scope="external" href="https://getbootstrap.com/docs/5.0/components/card/#sizing">sizing options.</xref>
+        <xref href="https://getbootstrap.com/docs/5.0/components/card/#sizing" format="html" scope="external">sizing
+          options.</xref>
       </p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">

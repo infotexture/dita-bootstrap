@@ -13,9 +13,9 @@
     <section>
       <title>Bootstrap Icons</title>
       <p>
-        <xref scope="external" href="https://icons.getbootstrap.com/">Bootstrap Icons</xref> is a growing library of SVG
-        icons that are designed by @mdo and maintained by the Bootstrap Team. They are open source and licensed under
-        MIT, just like Bootstrap so the icon set is freely available to everyone.</p>
+        <xref href="https://icons.getbootstrap.com/" format="html" scope="external">Bootstrap Icons</xref> is a growing
+        library of SVG icons that are designed by @mdo and maintained by the Bootstrap Team. They are open source and
+        licensed under MIT, just like Bootstrap so the icon set is freely available to everyone.</p>
     </section>
 
 
@@ -31,13 +31,17 @@
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--icons.include</parmname>=<option>no</option></codeblock>
       <p>Other icon sets such as
-        <xref scope="external" href="https://fontawesome.com/">Font Awesome</xref>
-        <xref scope="external" href="https://feathericons.com/">Feather</xref> and
-        <xref scope="external" href="https://octicons.github.com/">Octicons</xref> are available. To use an alternative
-        set of icons, modify the
+        <xref href="https://fontawesome.com/" format="html" scope="external">Font Awesome</xref>
+        <xref href="https://feathericons.com/" format="html" scope="external">Feather</xref> and
         <xref
+          href="https://octicons.github.com/"
+          format="html"
           scope="external"
+        >Octicons</xref> are available. To use an alternative set of icons, modify the
+        <xref
           href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bootstrap.icons.hdr.xml"
+          format="html"
+          scope="external"
         >sample
           header</xref> or specify the path of the Icons CDN file using the <parmname>--icons.cdn.path</parmname>
         parameter.</p>
