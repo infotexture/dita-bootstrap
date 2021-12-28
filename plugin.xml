@@ -16,9 +16,9 @@
       type="enum"
       desc="Specifies whether to generate a navigation TOC in topic pages."
     >
-      <val desc="Bootstrap styled partial TOC that shows the current topic">
-        list-group-partial
-      </val>
+      <val
+        desc="Bootstrap styled partial TOC that shows the current topic"
+      >list-group-partial</val>
       <val desc="Bootstrap styled full TOC">list-group-full</val>
     </param>
     <param
