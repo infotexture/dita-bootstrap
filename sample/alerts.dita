@@ -76,15 +76,15 @@
       </section>
     </bodydiv>
     <codeblock>&lt;section outputclass="alert-success"&gt;
-   &lt;title&gt;&lt;i outputclass="bi bi-emoji-smile pe-2"/&gt;Well done!&lt;/title&gt;
-   &lt;p&gt;
-      Aww yeah, you successfully read this important alert message. This example text with a
-      &lt;xref href="#"&gt;link&lt;/xref&gt; is going to run a bit longer so that you can see
-      how spacing within an alert works with this kind of content.
-   &lt;/p&gt;
-   &lt;p&gt;
-      Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
-   &lt;/p&gt;
+  &lt;title&gt;&lt;i outputclass="bi bi-emoji-smile pe-2"/&gt;Well done!&lt;/title&gt;
+  &lt;p&gt;
+    Aww yeah, you successfully read this important alert message. This example text with a
+    &lt;xref href="#"&gt;link&lt;/xref&gt; is going to run a bit longer so that you can see
+    how spacing within an alert works with this kind of content.
+  &lt;/p&gt;
+  &lt;p&gt;
+    Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+  &lt;/p&gt;
 &lt;/section&gt;</codeblock>
     <section>
       <title>Notes</title>
@@ -125,7 +125,6 @@
     <codeblock>&lt;note outputclass="alert-primary"&gt;This is a primary note.&lt;/note&gt;
 &lt;note outputclass="alert-secondary"&gt;This is a secondary note.&lt;/note&gt;
 &lt;note outputclass="alert-light"&gt;This is light note.&lt;/note&gt;
-&lt;note outputclass="alert-dark"&gt;This is dark note.&lt;/note&gt;
-       </codeblock>
+&lt;note outputclass="alert-dark"&gt;This is dark note.&lt;/note&gt;</codeblock>
   </body>
 </topic>

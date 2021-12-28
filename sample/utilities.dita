@@ -70,8 +70,7 @@
 &lt;section outputclass="text-muted"&gt;.text-muted&lt;/section&gt;
 &lt;section outputclass="text-white bg-dark"&gt;.text-white&lt;/section&gt;
 &lt;section outputclass="text-black-50"&gt;.text-black-50&lt;/section&gt;
-&lt;section outputclass="text-white-50 bg-dark"&gt;.text-white-50&lt;/section&gt;
-    </codeblock>
+&lt;section outputclass="text-white-50 bg-dark"&gt;.text-white-50&lt;/section&gt;</codeblock>
     <section>
       <title>Background color</title>
       <p>Similar to the contextual text color classes, set the background of an element to any contextual class.

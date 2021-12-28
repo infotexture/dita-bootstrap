@@ -64,7 +64,7 @@
       </table>
     </bodydiv>
     <codeblock>&lt;table&gt;
-   ...etc
+  ...etc
 &lt;/table&gt;</codeblock>
     <section>
       <title>Variants</title>
@@ -203,7 +203,7 @@
       </table>
     </bodydiv>
     <codeblock>&lt;table outputclass="table-striped"&gt;
-   ...etc
+  ...etc
 &lt;/table&gt;</codeblock>
   </body>
 </topic>

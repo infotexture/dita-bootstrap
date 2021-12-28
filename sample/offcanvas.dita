@@ -56,10 +56,10 @@
   Click here
 &lt;/xref&gt;
 &lt;section outputclass="offcanvas-start" id="offcanvas1"&gt;
-   &lt;title&gt;Offcanvas&lt;/title&gt;
-   &lt;p&gt;
-      Content for the offcanvas goes here. You can place just about any section elements here.
-   &lt;/p&gt;
+  &lt;title&gt;Offcanvas&lt;/title&gt;
+  &lt;p&gt;
+    Content for the offcanvas goes here. You can place just about any section elements here.
+  &lt;/p&gt;
 &lt;/section&gt;</codeblock>
     <section>
       <title>Placement</title>
@@ -82,7 +82,7 @@
       </section>
     </bodydiv>
     <codeblock>&lt;section outputclass="offcanvas-end"&gt;
-   ...etc
+  ...etc
 &lt;section&gt;</codeblock>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <xref outputclass="btn-primary" props="offcanvas-toggle" href="#offcanvas3">Toggle bottom offcanvas</xref>
@@ -92,7 +92,7 @@
       </section>
     </bodydiv>
     <codeblock>&lt;section outputclass="offcanvas-bottom"&gt;
-   ...etc
+  ...etc
 &lt;section&gt;</codeblock>
   </body>
 </topic>

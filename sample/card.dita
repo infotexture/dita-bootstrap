@@ -55,14 +55,14 @@
       </bodydiv>
     </bodydiv>
     <codeblock>&lt;bodydiv outputclass="row"&gt;
-   &lt;bodydiv outputclass="col"&gt;
-      &lt;section outputclass="card w-50"&gt;
-         &lt;title outputclass="h5"&gt;Card Title&lt;/title&gt;
-         &lt;image outputclass="card-img-top" href="..." /&gt;
-         &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
-         &lt;xref outputclass="btn-primary" href="#"&gt;Go Somewhere&lt;/xref&gt;
-      &lt;/section&gt;
-   &lt;/bodydiv&gt;
+  &lt;bodydiv outputclass="col"&gt;
+    &lt;section outputclass="card w-50"&gt;
+      &lt;title outputclass="h5"&gt;Card Title&lt;/title&gt;
+      &lt;image outputclass="card-img-top" href="..." /&gt;
+      &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
+      &lt;xref outputclass="btn-primary" href="#"&gt;Go Somewhere&lt;/xref&gt;
+    &lt;/section&gt;
+  &lt;/bodydiv&gt;
 &lt;/bodydiv&gt;</codeblock>
     <section>
       <title>Titles, text, and links</title>
@@ -84,15 +84,15 @@
       </bodydiv>
     </bodydiv>
     <codeblock>&lt;bodydiv outputclass="row"&gt;
-   &lt;bodydiv outputclass="col"&gt;
-      &lt;section outputclass="card w-50"&gt;
-         &lt;title outputclass="h5"&gt;Card Title&lt;/title&gt;
-         &lt;sectiondiv outputclass="h6"&gt;Card Subtitle&lt;/title&gt;
-         &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
-         &lt;xref outputclass="card-link" href="#"&gt;Card Link&lt;/xref&gt;
-         &lt;xref outputclass="card-link" href="#"&gt;Another Link&lt;/xref&gt;
-      &lt;/section&gt;
-   &lt;/bodydiv&gt;
+  &lt;bodydiv outputclass="col"&gt;
+    &lt;section outputclass="card w-50"&gt;
+      &lt;title outputclass="h5"&gt;Card Title&lt;/title&gt;
+      &lt;sectiondiv outputclass="h6"&gt;Card Subtitle&lt;/title&gt;
+      &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
+      &lt;xref outputclass="card-link" href="#"&gt;Card Link&lt;/xref&gt;
+      &lt;xref outputclass="card-link" href="#"&gt;Another Link&lt;/xref&gt;
+    &lt;/section&gt;
+  &lt;/bodydiv&gt;
 &lt;/bodydiv&gt;</codeblock>
     <section>
       <title>Images</title>
@@ -110,12 +110,12 @@
       </bodydiv>
     </bodydiv>
     <codeblock>&lt;bodydiv outputclass="row"&gt;
-   &lt;bodydiv outputclass="col"&gt;
-      &lt;section outputclass="card w-50"&gt;
-         &lt;image outputclass="card-img-top" href="..." /&gt;
-         &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
-      &lt;/section&gt;
-   &lt;/bodydiv&gt;
+  &lt;bodydiv outputclass="col"&gt;
+    &lt;section outputclass="card w-50"&gt;
+      &lt;image outputclass="card-img-top" href="..." /&gt;
+      &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/bodydiv&gt;
 &lt;/bodydiv&gt;</codeblock>
     <section>
       <title>Header and footer</title>
@@ -136,14 +136,14 @@
       </bodydiv>
     </bodydiv>
     <codeblock>&lt;bodydiv outputclass="row"&gt;
-   &lt;bodydiv outputclass="col"&gt;
-      &lt;section outputclass="card w-50"&gt;
-         &lt;sectiondiv outputclass="card-header"&gt;Featured&lt;/sectiondiv&gt;
-         &lt;title outputclass="h5"&gt;Special title treatment&lt;/title&gt;
-         &lt;p&gt;With supporting text below as a natural lead-in to additional content.&lt;/p&gt;
-         &lt;xref href="#" outputclass="btn-primary"&gt;Go somewhere&lt;/xref&gt;
-      &lt;/section&gt;
-   &lt;/bodydiv&gt;
+  &lt;bodydiv outputclass="col"&gt;
+    &lt;section outputclass="card w-50"&gt;
+      &lt;sectiondiv outputclass="card-header"&gt;Featured&lt;/sectiondiv&gt;
+      &lt;title outputclass="h5"&gt;Special title treatment&lt;/title&gt;
+      &lt;p&gt;With supporting text below as a natural lead-in to additional content.&lt;/p&gt;
+      &lt;xref href="#" outputclass="btn-primary"&gt;Go somewhere&lt;/xref&gt;
+    &lt;/section&gt;
+  &lt;/bodydiv&gt;
 &lt;/bodydiv&gt;</codeblock>
   </body>
 </topic>

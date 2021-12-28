@@ -34,9 +34,9 @@
       </div>
     </bodydiv>
     <codeblock>&lt;div outputclass="btn-group"&gt;
-   &lt;xref outputclass="btn-primary" href="#"&gt;Left&lt;/xref&gt;
-   &lt;xref outputclass="btn-primary" href="#"&gt;Middle&lt;/xref&gt;
-   &lt;xref outputclass="btn-primary" href="#"&gt;Right&lt;/xref&gt;
+  &lt;xref outputclass="btn-primary" href="#"&gt;Left&lt;/xref&gt;
+  &lt;xref outputclass="btn-primary" href="#"&gt;Middle&lt;/xref&gt;
+  &lt;xref outputclass="btn-primary" href="#"&gt;Right&lt;/xref&gt;
 &lt;/div&gt;</codeblock>
     <section>
       <title>Mixed Styles</title>
@@ -49,9 +49,9 @@
       </div>
     </bodydiv>
     <codeblock>&lt;div outputclass="btn-group"&gt;
-   &lt;xref outputclass="btn-danger" href="#"&gt;Left&lt;/xref&gt;
-   &lt;xref outputclass="btn-warning" href="#"&gt;Middle&lt;/xref&gt;
-   &lt;xref outputclass="btn-success" href="#"&gt;Right&lt;/xref&gt;
+  &lt;xref outputclass="btn-danger" href="#"&gt;Left&lt;/xref&gt;
+  &lt;xref outputclass="btn-warning" href="#"&gt;Middle&lt;/xref&gt;
+  &lt;xref outputclass="btn-success" href="#"&gt;Right&lt;/xref&gt;
 &lt;/div&gt;</codeblock>
     <section>
       <title>Outlined styles</title>
@@ -64,9 +64,9 @@
       </div>
     </bodydiv>
     <codeblock>&lt;div outputclass="btn-group"&gt;
-   &lt;xref outputclass="btn-outline-primary" href="#"&gt;Left&lt;/xref&gt;
-   &lt;xref outputclass="btn-outline-primary" href="#"&gt;Middle&lt;/xref&gt;
-   &lt;xref outputclass="btn-outline-primary" href="#"&gt;Right&lt;/xref&gt;
+  &lt;xref outputclass="btn-outline-primary" href="#"&gt;Left&lt;/xref&gt;
+  &lt;xref outputclass="btn-outline-primary" href="#"&gt;Middle&lt;/xref&gt;
+  &lt;xref outputclass="btn-outline-primary" href="#"&gt;Right&lt;/xref&gt;
 &lt;/div&gt;</codeblock>
     <section>
       <title>Button toolbar</title>
@@ -91,20 +91,20 @@
       </div>
     </bodydiv>
     <codeblock>&lt;div outputclass="btn-toolbar"&gt;
-   &lt;div outputclass="btn-group me-2"&gt;
-      &lt;xref outputclass="btn-primary" href="#"&gt;1&lt;/xref&gt;
-      &lt;xref outputclass="btn-primary" href="#"&gt;2&lt;/xref&gt;
-      &lt;xref outputclass="btn-primary" href="#"&gt;3&lt;/xref&gt;
-      &lt;xref outputclass="btn-primary" href="#"&gt;4&lt;/xref&gt;
-   &lt;/div&gt;
-   &lt;div outputclass="btn-group me-2"&gt;
-      &lt;xref outputclass="btn-secondary" href="#"&gt;5&lt;/xref&gt;
-      &lt;xref outputclass="btn-secondary" href="#"&gt;6&lt;/xref&gt;
-      &lt;xref outputclass="btn-secondary" href="#"&gt;7&lt;/xref&gt;
-   &lt;/div&gt;
-   &lt;div outputclass="btn-group me-2"&gt;
-      &lt;xref outputclass="btn-info" href="#"&gt;8&lt;/xref&gt;
-   &lt;/div&gt;
+  &lt;div outputclass="btn-group me-2"&gt;
+    &lt;xref outputclass="btn-primary" href="#"&gt;1&lt;/xref&gt;
+    &lt;xref outputclass="btn-primary" href="#"&gt;2&lt;/xref&gt;
+    &lt;xref outputclass="btn-primary" href="#"&gt;3&lt;/xref&gt;
+    &lt;xref outputclass="btn-primary" href="#"&gt;4&lt;/xref&gt;
+  &lt;/div&gt;
+  &lt;div outputclass="btn-group me-2"&gt;
+    &lt;xref outputclass="btn-secondary" href="#"&gt;5&lt;/xref&gt;
+    &lt;xref outputclass="btn-secondary" href="#"&gt;6&lt;/xref&gt;
+    &lt;xref outputclass="btn-secondary" href="#"&gt;7&lt;/xref&gt;
+  &lt;/div&gt;
+  &lt;div outputclass="btn-group me-2"&gt;
+    &lt;xref outputclass="btn-info" href="#"&gt;8&lt;/xref&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</codeblock>
     <section>
       <title>Vertical Variation</title>

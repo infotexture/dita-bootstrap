@@ -52,15 +52,15 @@
       </ol>
     </bodydiv>
     <codeblock>&lt;ol outputclass="carousel"&gt;
-   &lt;li&gt;
-      &lt;image href="..." /&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-      &lt;image href="..." /&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-      &lt;image href="..." /&gt;
-   &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
     <section>
       <title>With captions</title>
@@ -89,24 +89,24 @@
       </ol>
     </bodydiv>
     <codeblock>&lt;ol outputclass="carousel"&gt;
-   &lt;li&gt;
-      &lt;fig&gt;
-         &lt;title&gt;The First Slide&lt;/title&gt;
-         &lt;image href="..." /&gt;
-      &lt;/fig&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-      &lt;fig&gt;
-         &lt;title&gt;The Second Slide&lt;/title&gt;
-         &lt;image href="..." /&gt;
-      &lt;/fig&gt;
-   &lt;/li&gt;
-   &lt;li&gt;
-      &lt;fig&gt;
-         &lt;title&gt;The Third Slide&lt;/title&gt;
-         &lt;image href="..." /&gt;
-      &lt;/fig&gt;
-   &lt;/li&gt;
+  &lt;li&gt;
+    &lt;fig&gt;
+      &lt;title&gt;The First Slide&lt;/title&gt;
+      &lt;image href="..." /&gt;
+    &lt;/fig&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;fig&gt;
+      &lt;title&gt;The Second Slide&lt;/title&gt;
+      &lt;image href="..." /&gt;
+    &lt;/fig&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;fig&gt;
+      &lt;title&gt;The Third Slide&lt;/title&gt;
+      &lt;image href="..." /&gt;
+    &lt;/fig&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
   </body>
 </topic>
