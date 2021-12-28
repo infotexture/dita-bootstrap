@@ -81,7 +81,7 @@
             <row>
               <entry colname="COLSPEC0" valign="top">Class</entry>
               <entry colname="COLSPEC1" valign="top">Heading</entry>
-              <entry colname="COLSPEC1" valign="top">Heading</entry>
+              <entry colname="COLSPEC2" valign="top">Heading</entry>
             </row>
           </thead>
           <tbody>
