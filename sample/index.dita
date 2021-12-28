@@ -53,44 +53,56 @@
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
     </section>
+
     <section>
-      <title>Customizing Headers and Footers</title>
+      <title>Customizing headers and footers</title>
       <indexterm><parmname>--args.hdr</parmname></indexterm>
       <indexterm><parmname>--args.ftr</parmname></indexterm>
-      <p>The plug-in includes a default static navbar with a project name and global links. To override the global
-        navigation with a header of your own, pass a custom header file to the dita command via the
+      <p>The plug-in includes a default static navigation menu with a project name and global link placeholders.</p>
+      <p>The default header file <filepath>includes/bs-navbar-default.hdr.xml</filepath> uses the Bootstrap primary
+        (blue) background color for the 
+        <xref
+          href="https://getbootstrap.com/docs/5.0/examples/navbars/"
+          format="html"
+          scope="external"
+        >navbar component</xref>.</p>
+      <p>You can edit a copy of this file to adjust the content of the global navigation. To override the global
+        navigation with your own header, pass a custom header file to the <cmdname>dita</cmdname> command via the
           <parmname>--args.hdr</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath></codeblock>
-      <p>The plug-in includes a
+      <p>The plug-in includes a sample
         <xref
-          href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml"
+          href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-navbar-light.hdr.xml"
           format="html"
           scope="external"
-        >sample
-          header</xref> alternative with a dark navbar.</p>
-      <p>Edit a copy of this file to adjust the content of the global navigation.</p>
-      <p>The footer is omitted by default. To add a custom footer, pass a custom footer file to the dita command via the
-          <parmname>--args.ftr</parmname> parameter:</p>
+        >header alternative with a light navbar</xref>.</p>
+      <p>No footer is added by default, but the plug-in also includes a sample
+        <xref
+          href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-footer-example.xml"
+          format="html"
+          scope="external"
+        >footer file</xref>. To add a footer to the generated output, pass a custom footer file to the <cmdname
+        >dita</cmdname> command via the <parmname>--args.ftr</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--args.ftr</parmname>=<filepath>path/to/your-footer.xml</filepath></codeblock>
-      <p>The plug-in includes a
-        <xref
-          href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-footer-example.xml"
-          format="html"
-          scope="external"
-        >sample footer
-          file</xref>.</p>
     </section>
+
     <section>
       <title>Sidebar menu</title>
       <indexterm><parmname>--nav-toc</parmname></indexterm>
-      <p>The plug-in extends the standard <parmname>--nav-toc</parmname> parameter to add styled list groups for the
-        sidebar. Five styles now are supported:</p>
+      <p>The plug-in extends the standard HTML5 table of contents (ToC) 
+        <xref
+          href="https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc"
+          format="html"
+          scope="external"
+        >navigation parameter</xref> <parmname>--nav-toc</parmname> to add styled list groups to the
+        sidebar.</p>
+      <p>Five styles now are supported:</p>
       <ul>
         <li>
           <option>full</option> - Unstyled full TOC - same as HTML5 Plugin (default)</li>
@@ -176,7 +188,7 @@
       </p>
     </section>
     <section>
-      <title>Common Bootstrap Utility classes</title>
+      <title>Common Bootstrap utility classes</title>
       <indexterm><parmname>--bootstrap.css.shortdesc</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.codeblock</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.header</parmname></indexterm>
