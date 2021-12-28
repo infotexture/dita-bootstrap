@@ -35,8 +35,8 @@
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <table>
         <tgroup cols="2">
-          <colspec colname="COLSPEC0" colwidth="1*"/>
-          <colspec colname="COLSPEC1" colwidth="2*"/>
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
           <thead>
             <row>
               <entry colname="COLSPEC0" valign="top">Animal</entry>
