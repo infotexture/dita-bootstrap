@@ -37,55 +37,43 @@
   <h1 class="title text-dark" id="ariaid-title1">Accordion</h1>
   
   
-  <div class="body language-markup"><p class="shortdesc text-muted lead">
-     Build vertically collapsing accordions in combination with Bootstrap’s Collapse
-     JavaScript plugin.
-  </p>
+  <div class="body language-markup"><p class="shortdesc text-muted lead">Build vertically collapsing accordions in combination with Bootstrap’s Collapse JavaScript
+    plugin.</p>
     <section class="section"><h2 class="title text-dark">How it works</h2>
       
-      <p class="p">
-         The accordion uses <a class="xref" href="https://getbootstrap.com/docs/5.0/components/collapse/" target="_blank" rel="external noopener">collapse</a>
-         internally to make it collapsible. To render an accordion that’s expanded, add
-         the class <code class="ph codeph language-markup">open</code> in addition to <code class="ph codeph language-markup">accordion</code> to the <code class="keyword markupname xmlatt">@outputclass</code>.
-      </p>
+      <p class="p">The accordion uses
+        <a class="xref" href="https://getbootstrap.com/docs/5.0/components/collapse/" target="_blank" rel="external noopener">collapse</a> internally to make it collapsible. To render an accordion that’s expanded, add the class
+          <code class="ph codeph language-markup">open</code> in addition to <code class="ph codeph language-markup">accordion</code> to the <code class="keyword markupname xmlatt">@outputclass</code>.</p>
     </section>
     <section class="section"><h2 class="title text-dark">Example</h2>
       
-      <p class="p">
-         Click the accordions below to expand/collapse the accordion content.
-      </p>
+      <p class="p">Click the accordions below to expand/collapse the accordion content.</p>
     </section>
     <div class="bodydiv bd-example">
       <div id="accordion__bodydiv__2" class="bodydiv accordion">
         <div class="accordion-item"><h2 type="accordion-header" id="heading_accordion__accordion1"><button class="accordion-button" type="button" data-bs-toggle="collapse" aria-expanded="true" data-bs-target="#collapse_accordion__accordion1" aria-controls="collapse_accordion__accordion1">Accordion Item #1</button></h2><div class="accordion-collapse collapse show" id="collapse_accordion__accordion1" aria-labelledby="heading_accordion__accordion1" data-bs-parent="#accordion__bodydiv__2"><div class="accordion-body" id="accordion__accordion1">
           
           <p class="p">
-             <strong class="ph b">This is the first item’s accordion body.</strong> It is hidden by default, until
-             the collapse plugin adds the appropriate classes that we use to style each
-             element. These classes control the overall appearance, as well as the showing
-             and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap’s default variables.
-          </p>
+            <strong class="ph b">This is the first item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes control the overall appearance, as well
+            as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+            Bootstrap’s default variables.</p>
         </div></div></div>
         <div class="accordion-item"><h2 type="accordion-header" id="heading_accordion__accordion2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_accordion__accordion2" aria-controls="collapse_accordion__accordion2">Accordion Item #2</button></h2><div class="accordion-collapse collapse" id="collapse_accordion__accordion2" aria-labelledby="heading_accordion__accordion2" data-bs-parent="#accordion__bodydiv__2"><div class="accordion-body" id="accordion__accordion2">
           
           <p class="p">
-             <strong class="ph b">This is the second item’s accordion body.</strong> It is hidden by default, until
-             the collapse plugin adds the appropriate classes that we use to style each
-             element. These classes control the overall appearance, as well as the showing
-             and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap’s default variables.
-          </p>
+            <strong class="ph b">This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes control the overall appearance, as well
+            as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+            Bootstrap’s default variables.</p>
         </div></div></div>
         <div class="accordion-item"><h2 type="accordion-header" id="heading_accordion__accordion3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_accordion__accordion3" aria-controls="collapse_accordion__accordion3">Accordion Item #3</button></h2><div class="accordion-collapse collapse" id="collapse_accordion__accordion3" aria-labelledby="heading_accordion__accordion3" data-bs-parent="#accordion__bodydiv__2"><div class="accordion-body" id="accordion__accordion3">
           
           <p class="p">
-             <strong class="ph b">This is the third item’s accordion body.</strong> It is hidden by default, until
-             the collapse plugin adds the appropriate classes that we use to style each
-             element. These classes control the overall appearance, as well as the showing
-             and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap’s default variables.
-          </p>
+            <strong class="ph b">This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes control the overall appearance, as well
+            as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+            Bootstrap’s default variables.</p>
         </div></div></div>
       </div>
     </div>
@@ -111,43 +99,35 @@
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>bodydiv</span><span class="ph token punctuation">&gt;</span></span></code></pre>
     <section class="section"><h2 class="title text-dark">Flush</h2>
       
-      <p class="p">
-         Add the class <code class="ph codeph language-markup">accordion-flush</code> to <code class="keyword markupname xmlatt">@outputclass</code> to remove the default
-         background-color, some borders, and some rounded corners to render accordions
-         edge-to-edge with their parent container.
-      </p>
+      <p class="p">Add the class <code class="ph codeph language-markup">accordion-flush</code> to <code class="keyword markupname xmlatt">@outputclass</code> to remove the default
+        background-color, some borders, and some rounded corners to render accordions edge-to-edge with their parent
+        container.</p>
     </section>
     <div class="bodydiv bd-example">
       <div id="accordion__bodydiv__4" class="bodydiv accordion accordion-flush">
         <div class="accordion-item"><h2 type="accordion-header" id="heading_accordion__accordion4"><button class="accordion-button" type="button" data-bs-toggle="collapse" aria-expanded="true" data-bs-target="#collapse_accordion__accordion4" aria-controls="collapse_accordion__accordion4">Accordion Item #1</button></h2><div class="accordion-collapse collapse show" id="collapse_accordion__accordion4" aria-labelledby="heading_accordion__accordion4" data-bs-parent="#accordion__bodydiv__4"><div class="accordion-body" id="accordion__accordion4">
           
           <p class="p">
-             <strong class="ph b">This is the first item’s accordion body.</strong> It is hidden by default, until
-             the collapse plugin adds the appropriate classes that we use to style each
-             element. These classes control the overall appearance, as well as the showing
-             and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap’s default variables.
-          </p>
+            <strong class="ph b">This is the first item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes control the overall appearance, as well
+            as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+            Bootstrap’s default variables.</p>
         </div></div></div>
         <div class="accordion-item"><h2 type="accordion-header" id="heading_accordion__accordion5"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_accordion__accordion5" aria-controls="collapse_accordion__accordion5">Accordion Item #2</button></h2><div class="accordion-collapse collapse" id="collapse_accordion__accordion5" aria-labelledby="heading_accordion__accordion5" data-bs-parent="#accordion__bodydiv__4"><div class="accordion-body" id="accordion__accordion5">
           
           <p class="p">
-             <strong class="ph b">This is the second item’s accordion body.</strong> It is hidden by default, until
-             the collapse plugin adds the appropriate classes that we use to style each
-             element. These classes control the overall appearance, as well as the showing
-             and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap’s default variables.
-          </p>
+            <strong class="ph b">This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes control the overall appearance, as well
+            as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+            Bootstrap’s default variables.</p>
         </div></div></div>
         <div class="accordion-item"><h2 type="accordion-header" id="heading_accordion__accordion6"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#collapse_accordion__accordion6" aria-controls="collapse_accordion__accordion6">Accordion Item #3</button></h2><div class="accordion-collapse collapse" id="collapse_accordion__accordion6" aria-labelledby="heading_accordion__accordion6" data-bs-parent="#accordion__bodydiv__4"><div class="accordion-body" id="accordion__accordion6">
           
           <p class="p">
-             <strong class="ph b">This is the third item’s accordion body.</strong> It is hidden by default, until
-             the collapse plugin adds the appropriate classes that we use to style each
-             element. These classes control the overall appearance, as well as the showing
-             and hiding via CSS transitions. You can modify any of this with custom CSS or
-             overriding Bootstrap’s default variables.
-          </p>
+            <strong class="ph b">This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the
+            appropriate classes that we use to style each element. These classes control the overall appearance, as well
+            as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+            Bootstrap’s default variables.</p>
         </div></div></div>
       </div>
     </div>

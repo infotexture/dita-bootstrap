@@ -37,43 +37,23 @@
   <h1 class="title text-dark" id="ariaid-title1">Alerts</h1>
   
   
-  <div class="body language-markup"><p class="shortdesc text-muted lead">
-     Provide contextual feedback messages for typical user actions with the handful
-     of available and flexible alert messages.
-  </p>
+  <div class="body language-markup"><p class="shortdesc text-muted lead">Provide contextual feedback messages for typical user actions with the handful of available and flexible
+    alert messages.</p>
     <section class="section"><h2 class="title text-dark">Example</h2>
       
-      <p class="p">
-         Alerts are available for any length of text, as well as an optional close
-         button. For proper styling, use one of the eight required contextual classes
-         (e.g., set <code class="keyword markupname xmlatt">@outputclass</code> to <code class="ph codeph language-markup">alert-success</code>).
-      </p>
+      <p class="p">Alerts are available for any length of text, as well as an optional close button. For proper styling, use one
+        of the eight required contextual classes (e.g., set <code class="keyword markupname xmlatt">@outputclass</code> to
+          <code class="ph codeph language-markup">alert-success</code>).</p>
     </section>
     <div class="bodydiv bd-example">
-      <section class="section alert alert-primary" role="alert">
-         A simple primary alert—check it out!
-         </section>
-      <section class="section alert alert-secondary" role="alert">
-         A simple secondary alert—check it out!
-         </section>
-      <section class="section alert alert-success" role="alert">
-         A simple success alert—check it out!
-         </section>
-      <section class="section alert alert-danger" role="alert">
-         A simple danger alert—check it out!
-         </section>
-      <section class="section alert alert-warning" role="alert">
-         A simple warning alert—check it out!
-         </section>
-      <section class="section alert alert-info" role="alert">
-         A simple info alert—check it out!
-         </section>
-      <section class="section alert alert-light" role="alert">
-         A simple light alert—check it out!
-         </section>
-      <section class="section alert alert-dark" role="alert">
-         A simple dark alert—check it out!
-         </section>
+      <section class="section alert alert-primary" role="alert">A simple primary alert—check it out! </section>
+      <section class="section alert alert-secondary" role="alert">A simple secondary alert—check it out! </section>
+      <section class="section alert alert-success" role="alert">A simple success alert—check it out! </section>
+      <section class="section alert alert-danger" role="alert">A simple danger alert—check it out! </section>
+      <section class="section alert alert-warning" role="alert">A simple warning alert—check it out! </section>
+      <section class="section alert alert-info" role="alert">A simple info alert—check it out! </section>
+      <section class="section alert alert-light" role="alert">A simple light alert—check it out! </section>
+      <section class="section alert alert-dark" role="alert">A simple dark alert—check it out! </section>
     </div>
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>alert-primary<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
   A simple primary alert—check it out!
@@ -101,22 +81,15 @@
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>section</span><span class="ph token punctuation">&gt;</span></span></code></pre>
     <section class="section"><h2 class="title text-dark">Additional content</h2>
       
-      <p class="p">
-         Alerts can also contain additional HTML elements like headings, paragraphs, icons and
-         links.
-      </p>
+      <p class="p">Alerts can also contain additional HTML elements like headings, paragraphs, icons and links.</p>
     </section>
     <div class="bodydiv bd-example">
       <section class="section alert alert-success" role="alert"><h2 class="title text-dark"><em class="ph i bi bi-emoji-smile pe-2"></em>Well done!</h2>
         
-        <p class="p">
-           Aww yeah, you successfully read this important alert message. This example text
-           with a <a class="xref alert-link" href="#" title="Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.">link</a> is going to run a bit longer so that you can
-           see how spacing within an alert works with this kind of content.
-        </p>
-        <p class="p">
-           Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
-        </p>
+        <p class="p">Aww yeah, you successfully read this important alert message. This example text with a
+          <a class="xref alert-link" href="#" title="Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.">link</a> is going to run a bit longer so that you can see how spacing within an alert works
+          with this kind of content.</p>
+        <p class="p">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
       </section>
     </div>
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>alert-success<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
@@ -132,45 +105,21 @@
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>section</span><span class="ph token punctuation">&gt;</span></span></code></pre>
     <section class="section"><h2 class="title text-dark">Notes</h2>
       
-      <p class="p">
-         DITA <code class="keyword markupname xmlelement">&lt;note&gt;</code> elements are displayed as alerts according
-         to the <code class="keyword markupname xmlatt">@type</code> attribute
-      </p>
+      <p class="p">DITA <code class="keyword markupname xmlelement">&lt;note&gt;</code> elements are displayed as alerts according to the <code class="keyword markupname xmlatt">@type</code>
+        attribute</p>
     </section>
     <div class="div bd-example">
-      <div role="alert" class="note alert alert-info"><span class="note__title">Note:</span> 
-         This is just a note.
-      </div>
-      <div role="alert" class="note alert alert-info"><span class="note__title"><i class="pe-2 bi bi-info-circle-fill"></i>Notice:</span> 
-         Notice this piece of information.
-      </div>
-      <div role="alert" class="note alert alert-success"><span class="note__title"><i class="pe-2 bi bi-shield-check"></i>Fastpath:</span> 
-         This note will speed you on your way.
-      </div>
-      <div role="alert" class="note alert alert-success"><span class="note__title"><i class="pe-2 bi bi-clipboard-check"></i>Remember:</span> 
-         Don't forget to do what this note says.
-      </div>
-      <div role="alert" class="note alert alert-success"><span class="note__title"><i class="pe-2 bi bi-lightbulb"></i>Tip:</span> 
-         This is a fine little tip.
-      </div>
-      <div role="alert" class="note alert alert-warning"><span class="note__title"><i class="pe-2 bi bi-exclamation-triangle"></i>Attention:</span> 
-         Please pay extra attention to this note.
-      </div>
-      <div role="alert" class="note alert alert-warning"><span class="note__title"><i class="pe-2 bi bi-exclamation-triangle"></i>CAUTION:</span> 
-         Care is required when proceeding.
-      </div>
-      <div role="alert" class="note alert alert-warning"><span class="note__title"><i class="pe-2 bi bi-exclamation-circle-fill"></i>Important:</span> 
-         This note is important.
-      </div>
-      <div role="alert" class="note alert alert-warning"><span class="note__title"><i class="pe-2 bi bi-slash-circle"></i>Restriction:</span> 
-         You can't do what this note says.
-      </div>
-      <div role="alert" class="note alert alert-danger"><span class="note__title"><i class="pe-2 bi bi-exclamation-triangle"></i>DANGER:</span> 
-         You may hurt yourself!
-      </div>
-      <div role="alert" class="note alert alert-dark"><span class="note__title">Note:</span> 
-         This is something other than a normal note.
-      </div>
+      <div role="alert" class="note alert alert-info"><span class="note__title">Note:</span> This is just a note.</div>
+      <div role="alert" class="note alert alert-info"><span class="note__title"><i class="pe-2 bi bi-info-circle-fill"></i>Notice:</span> Notice this piece of information.</div>
+      <div role="alert" class="note alert alert-success"><span class="note__title"><i class="pe-2 bi bi-shield-check"></i>Fastpath:</span> This note will speed you on your way.</div>
+      <div role="alert" class="note alert alert-success"><span class="note__title"><i class="pe-2 bi bi-clipboard-check"></i>Remember:</span> Don't forget to do what this note says.</div>
+      <div role="alert" class="note alert alert-success"><span class="note__title"><i class="pe-2 bi bi-lightbulb"></i>Tip:</span> This is a fine little tip.</div>
+      <div role="alert" class="note alert alert-warning"><span class="note__title"><i class="pe-2 bi bi-exclamation-triangle"></i>Attention:</span> Please pay extra attention to this note.</div>
+      <div role="alert" class="note alert alert-warning"><span class="note__title"><i class="pe-2 bi bi-exclamation-triangle"></i>CAUTION:</span> Care is required when proceeding.</div>
+      <div role="alert" class="note alert alert-warning"><span class="note__title"><i class="pe-2 bi bi-exclamation-circle-fill"></i>Important:</span> This note is important.</div>
+      <div role="alert" class="note alert alert-warning"><span class="note__title"><i class="pe-2 bi bi-slash-circle"></i>Restriction:</span> You can't do what this note says.</div>
+      <div role="alert" class="note alert alert-danger"><span class="note__title"><i class="pe-2 bi bi-exclamation-triangle"></i>DANGER:</span> You may hurt yourself! </div>
+      <div role="alert" class="note alert alert-dark"><span class="note__title">another-note:</span> This is something other than a normal note.</div>
     </div>
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>note</span> <span class="ph token attr-name">type</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>note<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>This is just a note.<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>note</span><span class="ph token punctuation">&gt;</span></span>
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>note</span> <span class="ph token attr-name">type</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>notice<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Notice this piece of information.<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>note</span><span class="ph token punctuation">&gt;</span></span>
@@ -183,22 +132,12 @@
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>note</span> <span class="ph token attr-name">type</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>restriction<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>You can't do what this note says.<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>note</span><span class="ph token punctuation">&gt;</span></span>
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>note</span> <span class="ph token attr-name">type</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>danger<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>You may hurt yourself!<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>note</span><span class="ph token punctuation">&gt;</span></span>
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>note</span> <span class="ph token attr-name">type</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>other<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>This is something other than a normal note.<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>note</span><span class="ph token punctuation">&gt;</span></span></code></pre>
-    <p class="p">
-       The <code class="keyword markupname xmlatt">@type</code> can be overridden by using an <code class="keyword markupname xmlatt">@outputclass</code>
-    </p>
+    <p class="p">The <code class="keyword markupname xmlatt">@type</code> can be overridden by using an <code class="keyword markupname xmlatt">@outputclass</code></p>
     <div class="div bd-example">
-      <div role="alert" class="note alert alert-primary"><span class="note__title">Note:</span> 
-         This is a primary note.
-      </div>
-      <div role="alert" class="note alert alert-secondary"><span class="note__title">Note:</span> 
-         This is a secondary note.
-      </div>
-      <div role="alert" class="note alert alert-light"><span class="note__title">Note:</span> 
-         This is light note.
-      </div>
-      <div role="alert" class="note alert alert-dark"><span class="note__title">Note:</span> 
-         This is dark note.
-      </div>
+      <div role="alert" class="note alert alert-primary"><span class="note__title">Note:</span> This is a primary note.</div>
+      <div role="alert" class="note alert alert-secondary"><span class="note__title">Note:</span> This is a secondary note.</div>
+      <div role="alert" class="note alert alert-light"><span class="note__title">Note:</span> This is light note.</div>
+      <div role="alert" class="note alert alert-dark"><span class="note__title">Note:</span> This is dark note.</div>
     </div>
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>note</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>alert-primary<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>This is a primary note.<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>note</span><span class="ph token punctuation">&gt;</span></span>
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>note</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>alert-secondary<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>This is a secondary note.<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>note</span><span class="ph token punctuation">&gt;</span></span>

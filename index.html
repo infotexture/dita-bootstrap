@@ -38,93 +38,67 @@
   
   
   <div class="body language-bash"><div class="abstract">
-    <p class="shortdesc text-muted lead">
-       A plug-in for <a class="xref" href="http://www.dita-ot.org" target="_blank" rel="external noopener">DITA Open Toolkit</a>
-       that extends the default HTML5 output with a <a class="xref" href="https://getbootstrap.com/docs/5.0" target="_blank" rel="external noopener">Bootstrap 5.0</a> template and
-       components.
-    </p>
-    <p class="p">
-       Where necessary, the texts describing the usage of each component
-       have been copied directly from the <a class="xref" href="https://getbootstrap.com/docs/5.0" target="_blank" rel="external noopener">official Bootstrap 5.0 documentation</a>,
-       however DITA markup is used throughout the examples describing how to implement
-       these components correctly using the DITA <code class="keyword markupname xmlatt">@outputclass</code> attribute.
-    </p>
+    <p class="shortdesc text-muted lead">A plug-in for
+      <a class="xref" href="http://www.dita-ot.org" target="_blank" rel="external noopener">DITA Open Toolkit</a> that extends the default HTML5
+      output with a
+      <a class="xref" href="https://getbootstrap.com/docs/5.0" target="_blank" rel="external noopener">Bootstrap 5.0</a> template and
+      components.</p>
+    <p class="p">Where necessary, the texts describing the usage of each component have been copied directly from the
+      <a class="xref" href="https://getbootstrap.com/docs/5.0" target="_blank" rel="external noopener">official Bootstrap 5.0
+        documentation</a>, however DITA markup is used throughout the examples describing how to implement these
+      components correctly using the DITA <code class="keyword markupname xmlatt">@outputclass</code> attribute.</p>
   </div>
     <section class="section"><h2 class="title text-dark">Installing</h2>
       
-      <p class="p">
-         Use the dita command to add this plug-in to your DITA Open Toolkit installation:
-      </p>
-      <p class="p">
-         DITA-OT 3.5 and newer:
-      </p>
+      <p class="p">Use the dita command to add this plug-in to your DITA Open Toolkit installation:</p>
+      <p class="p">DITA-OT 3.5 and newer:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname"><span class="ph token function">install</span></span> fox.jason.extend.css
 <span class="keyword cmdname">dita</span> <span class="keyword parmname"><span class="ph token function">install</span></span> net.infotexture.dita-bootstrap</code></pre>
-      <p class="p">
-         DITA-OT 3.3 and newer:
-      </p>
+      <p class="p">DITA-OT 3.3 and newer:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span> fox.jason.extend.css
 <span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span> net.infotexture.dita-bootstrap</code></pre>
-      <p class="p">
-         DITA-OT 3.2 and older:
-      </p>
+      <p class="p">DITA-OT 3.2 and older:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span> https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
 <span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span> https://github.com/infotexture/dita-bootstrap/archive/master.zip</code></pre>
     </section>
     <section class="section"><h2 class="title text-dark">Using</h2>
       
-      <p class="p">
-         Specify the html5-bootstrap format when building output with the dita command:
-      </p>
+      <p class="p">Specify the html5-bootstrap format when building output with the dita command:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span>path/to/your.ditamap <span class="keyword parmname">--format</span><span class="ph token operator">=</span>html5-bootstrap</code></pre>
     </section>
     <section class="section"><h2 class="title text-dark">Customizing Headers and Footers</h2>
       
       
       
-      <p class="p">
-         The plug-in includes a default static navbar with a project name and global
-         links. To override the global navigation with a header of your own, pass a
-         custom header file to the dita command via the <span class="keyword parmname">--args.hdr</span>
-         parameter:
-      </p>
+      <p class="p">The plug-in includes a default static navbar with a project name and global links. To override the global
+        navigation with a header of your own, pass a custom header file to the dita command via the
+          <span class="keyword parmname">--args.hdr</span> parameter:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--args.hdr</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your-header.xml</span></code></pre>
-      <p class="p">
-         The plug-in includes a <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml" target="_blank" rel="external noopener">sample
-         header</a> alternative with a dark navbar.
-      </p>
-      <p class="p">
-         Edit a copy of this file to adjust the content of the global navigation.
-      </p>
-
-      <p class="p">
-        The footer is omitted by default. To add a custom footer, pass a custom footer file
-        to the dita command via the <span class="keyword parmname">--args.ftr</span> parameter:
-       </p>
- <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
+      <p class="p">The plug-in includes a
+        <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-navbar-inverse.hdr.xml" target="_blank" rel="external noopener">sample
+          header</a> alternative with a dark navbar.</p>
+      <p class="p">Edit a copy of this file to adjust the content of the global navigation.</p>
+      <p class="p">The footer is omitted by default. To add a custom footer, pass a custom footer file to the dita command via the
+          <span class="keyword parmname">--args.ftr</span> parameter:</p>
+      <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--args.ftr</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your-footer.xml</span></code></pre>
-      <p class="p">
-         The plug-in includes a <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-footer-example.xml" target="_blank" rel="external noopener">sample
-         footer file</a>.
-      </p>
+      <p class="p">The plug-in includes a
+        <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bs-footer-example.xml" target="_blank" rel="external noopener">sample footer
+          file</a>.</p>
     </section>
     <section class="section"><h2 class="title text-dark">Sidebar menu</h2>
       
       
-      <p class="p">
-        The plug-in extends the standard  <span class="keyword parmname">--nav-toc</span> parameter to add
-        styled list groups for the sidebar. Five styles now are supported:
-      </p>
+      <p class="p">The plug-in extends the standard <span class="keyword parmname">--nav-toc</span> parameter to add styled list groups for the
+        sidebar. Five styles now are supported:</p>
       <ul class="ul">
         <li class="li">
-          <span class="keyword option">full</span> - Unstyled full TOC - same as HTML5 Plugin (default)
-        </li>
+          <span class="keyword option">full</span> - Unstyled full TOC - same as HTML5 Plugin (default)</li>
         <li class="li">
-          <span class="keyword option">partial</span> - Unstyled  partial TOC that shows the current topic - same as HTML5 Plugin
-        </li>
+          <span class="keyword option">partial</span> - Unstyled partial TOC that shows the current topic - same as HTML5 Plugin</li>
         <li class="li">
           <span class="keyword option">list-group-full</span> - Styled full TOC within a Bootstrap
           <a class="xref" href="https://getbootstrap.com/docs/5.0/components/list-group/" target="_blank" rel="external noopener">List Group</a>
@@ -134,12 +108,11 @@
           <a class="xref" href="https://getbootstrap.com/docs/5.0/components/list-group/" target="_blank" rel="external noopener">List Group</a>
         </li>
         <li class="li">
-          <span class="keyword option">none</span>  - no TOC
-        </li>
+          <span class="keyword option">none</span> - no TOC</li>
       </ul>
       <div data-bs-ride="carousel" id="carousel_index__ol__1" class="ol slide carousel carousel-dark border"><div class="carousel-inner">
-        <div class="carousel-item active"><img class="image d-block w-100" src="src/full.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">full  - Unstyled full TOC</p></div></div>
-        <div class="carousel-item"><img class="image d-block w-100" src="src/partial.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">partial - Unstyled  partial TOC</p></div></div>
+        <div class="carousel-item active"><img class="image d-block w-100" src="src/full.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">full - Unstyled full TOC</p></div></div>
+        <div class="carousel-item"><img class="image d-block w-100" src="src/partial.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">partial - Unstyled partial TOC</p></div></div>
         <div class="carousel-item"><img class="image d-block w-100" src="src/list-group-full.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">list-group-full - Styled full TOC within a List Group</p></div></div>
         <div class="carousel-item"><img class="image d-block w-100" src="src/list-group-partial.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">list-group-partial - Styled partial TOC within a List Group</p></div></div>
       </div><a class="carousel-control-prev" role="button" data-bs-slide="prev" data-bs-target="#carousel_index__ol__1"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" role="button" data-bs-slide="next" data-bs-target="#carousel_index__ol__1"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
@@ -153,13 +126,10 @@
       
       
       
-      <p class="p">
-         Bootstrap themes can be generated using the <a class="xref" href="https://themestr.app/theme" target="_blank" rel="external noopener">Themestr.app</a>. The plug-in includes a
-         basic placeholder for <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css" target="_blank" rel="external noopener">custom CSS</a>
-         styles. You can edit this file to add style rules of your own. Override the
-         default Bootstrap theme by passing a custom CSS file to the dita command via
-         the <span class="keyword parmname">--args.css</span> parameter:
-      </p>
+      <p class="p">Bootstrap themes can be generated using the
+        <a class="xref" href="https://themestr.app/theme" target="_blank" rel="external noopener">Themestr.app</a>. The plug-in includes a basic placeholder for
+        <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css" target="_blank" rel="external noopener">custom CSS</a> styles. You can edit this file to add style rules of your own. Override the default Bootstrap
+        theme by passing a custom CSS file to the dita command via the <span class="keyword parmname">--args.css</span> parameter:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--args.hdr</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your-header.xml</span> <span class="ph token punctuation">\</span>
@@ -167,9 +137,7 @@
      <span class="keyword parmname">--args.copycss</span><span class="ph token operator">=</span><span class="keyword option"><span class="ph token function">yes</span></span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--args.csspath</span><span class="ph token operator">=</span><span class="keyword option">css</span>
      <span class="keyword parmname">--args.cssroot</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your/theme</span></code></pre>
-      <p class="p">
-         For more extensive customizations, you may want to fork this repository and
-         create a new plug-in of your own.
+      <p class="p">For more extensive customizations, you may want to fork this repository and create a new plug-in of your own.
       </p>
     </section>
     <section class="section"><h2 class="title text-dark">Common Bootstrap Utility classes</h2>
@@ -183,27 +151,22 @@
       
       
       
-      <p class="p">
-        The output HTML for the following DITA elements can be annotated with common bootstrap utility classes for
+      <p class="p">The output HTML for the following DITA elements can be annotated with common bootstrap utility classes for
         <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/borders" target="_blank" rel="external noopener">borders</a>,
         <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/background" target="_blank" rel="external noopener">background</a>,
         <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/text" target="_blank" rel="external noopener">text</a>
-        <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/spacing" target="_blank" rel="external noopener">spacing</a>
-        etc. using the following command line parameters:
-      </p>
+        <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/spacing" target="_blank" rel="external noopener">spacing</a>, etc. using the
+        following command line parameters:</p>
       <ul class="ul">
         <li class="li">
           <span class="keyword parmname">--bootstrap.css.shortdesc</span> - common Bootstrap utility classes for DITA
-           <code class="keyword markupname xmlelement">&lt;shortdesc&gt;</code> elements
-        </li>
+            <code class="keyword markupname xmlelement">&lt;shortdesc&gt;</code> elements</li>
         <li class="li">
           <span class="keyword parmname">--bootstrap.css.codeblock</span> - common Bootstrap utility classes for DITA
-          <code class="keyword markupname xmlelement">&lt;codeblock&gt;</code> elements
-        </li>
+            <code class="keyword markupname xmlelement">&lt;codeblock&gt;</code> elements</li>
         <li class="li">
           <span class="keyword parmname">--bootstrap.css.header</span> - common Bootstrap utility classes for DITA
-          <code class="keyword markupname xmlelement">&lt;title&gt;</code> elements
-        </li>
+            <code class="keyword markupname xmlelement">&lt;title&gt;</code> elements</li>
         <li class="li">
           <span class="keyword parmname">--bootstrap.css.card</span> - common utility classes for Bootstrap classes for
           <a class="xref" href="card.html" title="Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.">card components</a>

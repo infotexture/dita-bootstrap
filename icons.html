@@ -36,17 +36,14 @@
 </nav></header><div class="container" id="content"><div class="row"><nav role="navigation" class="col-lg-3"><div class="list-group me-3"><span class="list-group-item list-group-item-dark">Getting Started</span><a class="list-group-item list-group-item-action" href="index.html">DITA Bootstrap</a><span class="list-group-item list-group-item-dark">Layout</span><a class="list-group-item list-group-item-action" href="grid.html">Grid System</a><span class="list-group-item list-group-item-dark">Content</span><a class="list-group-item list-group-item-action" href="images.html">Images</a><a class="list-group-item list-group-item-action" href="tables.html">Tables</a><span class="list-group-item list-group-item-dark">Components</span><a class="list-group-item list-group-item-action" href="accordion.html">Accordion</a><a class="list-group-item list-group-item-action" href="alerts.html">Alerts</a><a class="list-group-item list-group-item-action" href="badge.html">Badges</a><a class="list-group-item list-group-item-action" href="buttons.html">Buttons</a><a class="list-group-item list-group-item-action" href="button-group.html">Button Group</a><a class="list-group-item list-group-item-action" href="card.html">Cards</a><a class="list-group-item list-group-item-action" href="carousel.html">Carousel</a><a class="list-group-item list-group-item-action" href="list-group.html">List Group</a><a class="list-group-item list-group-item-action" href="offcanvas.html">Offcanvas</a><a class="list-group-item list-group-item-action" href="tabs.html">Tabbed Dialogs</a><span class="list-group-item list-group-item-dark">Utilities</span><a class="list-group-item list-group-item-action" href="utilities.html">Borders, Color and Background</a><span class="list-group-item list-group-item-dark">Extend</span><a class="list-group-item list-group-item-action active" href="icons.html">Icons</a></div></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
   <h1 class="title text-dark" id="ariaid-title1">Icons</h1>
   
-  <div class="body language-markup"><p class="shortdesc text-muted lead">
-    DITA Bootstrap includes Bootstrap Icons by default. Other icon libraries such as
-    can be added or removed using command line parameters.
-  </p>
+  <div class="body language-markup"><p class="shortdesc text-muted lead">DITA Bootstrap includes Bootstrap Icons by default. Other icon libraries such as can be added or removed
+    using command line parameters.</p>
     <section class="section"><h2 class="title text-dark">Bootstrap Icons</h2>
       
       <p class="p">
-        <a class="xref" href="https://icons.getbootstrap.com/" target="_blank" rel="external noopener">Bootstrap Icons</a> is a growing library
-        of SVG icons that are designed by @mdo and maintained by the Bootstrap Team. They are open
-        source and licensed under MIT, just like Bootstrap so the icon set is freely available to everyone.
-      </p>
+        <a class="xref" href="https://icons.getbootstrap.com/" target="_blank" rel="external noopener">Bootstrap Icons</a> is a growing
+        library of SVG icons that are designed by @mdo and maintained by the Bootstrap Team. They are open source and
+        licensed under MIT, just like Bootstrap so the icon set is freely available to everyone.</p>
     </section>
 
 
@@ -54,34 +51,30 @@
       
       
       
-      <p class="p">
-        A <code class="keyword markupname xmlelement">&lt;Link&gt;</code> to the default Bootstrap Icons CDN set is included by default.
-        If you do not need any icons you can exclude them by setting
-        the <span class="keyword parmname">--icons.include</span>=<span class="keyword option">no</span>
+      <p class="p">A <code class="keyword markupname xmlelement">&lt;Link&gt;</code> to the default Bootstrap Icons CDN set is included by default. If you do not
+        need any icons you can exclude them by setting the <span class="keyword parmname">--icons.include</span>=<span class="keyword option">no</span>
       </p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--icons.include</span><span class="ph token operator">=</span><span class="keyword option">no</span></code></pre>
-      <p class="p">
-        Other icon sets such as <a class="xref" href="https://fontawesome.com/" target="_blank" rel="external noopener">Font Awesome</a>
+      <p class="p">Other icon sets such as
+        <a class="xref" href="https://fontawesome.com/" target="_blank" rel="external noopener">Font Awesome</a>
         <a class="xref" href="https://feathericons.com/" target="_blank" rel="external noopener">Feather</a> and
-        <a class="xref" href="https://octicons.github.com/" target="_blank" rel="external noopener">Octicons</a> are available. To
-        use an alternative set of icons, modify the <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bootstrap.icons.hdr.xml" target="_blank" rel="external noopener">sample
-         header</a> or specify the path of the Icons CDN file using the <span class="keyword parmname">--icons.cdn.path</span> parameter.
-      </p>
+        <a class="xref" href="https://octicons.github.com/" target="_blank" rel="external noopener">Octicons</a> are available. To use an alternative set of icons, modify the
+        <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bootstrap.icons.hdr.xml" target="_blank" rel="external noopener">sample
+          header</a> or specify the path of the Icons CDN file using the <span class="keyword parmname">--icons.cdn.path</span>
+        parameter.</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--icons.cdn.path</span><span class="ph token operator">=</span><span class="ph filepath">path/to/icon-cdn-header.xml</span></code></pre>
     </section>
     <section class="section"><h2 class="title text-dark">Example</h2>
       
-      <p class="p">
-        Icon fonts with classes for every icon are included in Bootstrap Icons. Include the icon web fonts in your page via CSS, then reference the class names as needed in your DITA (e.g.,
-        <code class="keyword markupname xmlelement">&lt;i outputclass="bi-alarm"/&gt;</code>).
-      </p>
-      <p class="p">
-        Use an additional <code class="keyword markupname xmlatt">@otherprops</code> and alter the CSS font-size and color to change the icon appearance.
-      </p>
+      <p class="p">Icon fonts with classes for every icon are included in Bootstrap Icons. Include the icon web fonts in your page
+        via CSS, then reference the class names as needed in your DITA (e.g., <code class="keyword markupname xmlelement">&lt;i
+          outputclass="bi-alarm"/&gt;</code>).</p>
+      <p class="p">Use an additional <code class="keyword markupname xmlatt">@otherprops</code> and alter the CSS font-size and color to change the icon
+        appearance.</p>
     </section>
     <div class="bodydiv bd-example">
       <p class="p">
@@ -91,9 +84,7 @@
     </div>
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>i</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>bi-alarm<span class="ph token punctuation">"</span></span><span class="ph token punctuation">/&gt;</span></span>
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>i</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>bi-alarm<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">otherprops</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>style(font-size: 2rem; color: cornflowerblue;)<span class="ph token punctuation">"</span></span><span class="ph token punctuation">/&gt;</span></span></code></pre>
-    <p class="p">
-        Icons can also be placed within buttons as shown:
-    </p>
+    <p class="p">Icons can also be placed within buttons as shown:</p>
     <div class="bodydiv bd-example">
       <a role="button" class="xref btn btn-primary btn-floating m-1" href="#" title="DITA Bootstrap includes Bootstrap Icons by default. Other icon libraries such as can be added or removed using command line parameters."><em class="ph i bi-arrow-down-square-fill"></em></a>
       <a role="button" class="xref btn btn-primary btn-floating m-1" href="#" title="DITA Bootstrap includes Bootstrap Icons by default. Other icon libraries such as can be added or removed using command line parameters."><em class="ph i bi-chat-left-quote-fill"></em></a>
