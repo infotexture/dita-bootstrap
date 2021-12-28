@@ -7,8 +7,7 @@
    components correctly using outputclass. -->
 <topic id="tables">
   <title>Tables</title>
-  <shortdesc>Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins)
-    with Bootstrap.</shortdesc>
+  <shortdesc>Documentation and examples for styling DITA tables with Bootstrap classes.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
