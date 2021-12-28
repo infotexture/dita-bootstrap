@@ -63,3 +63,7 @@
   margin: 4px 6px;
   vertical-align: text-top;
 }
+
+.list-group-item-dark {
+  background-color: #e7f1ff;
+}
