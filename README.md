@@ -40,9 +40,9 @@ DITA-OT 3.2 and older:
 
 ```console
 dita --install \
-    https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
+       https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
 dita --install \
-    https://github.com/infotexture/dita-bootstrap/archive/master.zip
+       https://github.com/infotexture/dita-bootstrap/archive/master.zip
 ```
 
 ## Using
@@ -145,16 +145,16 @@ The HTML output for the following DITA elements can be standardized with common 
 
 - If you find this useful and build something of your own on top of it, [let me know][10].
 
-- If you find a bug or would like to suggest a change, [create an issue][11].
+- If you find a bug or would like to suggest a change, [create an issue][11].  
   _(If it’s a bug, provide steps to recreate the issue.)_
 
 - If you know how to fix it yourself, [submit a pull request][12] with the proposed changes.
 
 ## License
 
-[Apache 2.0](LICENSE) © 2017 - 2021 Roger W. Fienhold Sheen
+[Apache 2.0](LICENSE) © 2017–2021 Roger W. Fienhold Sheen
 
-Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.0 documentation][13], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`.
+Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.0 documentation][2], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`.
 
 [1]: http://www.dita-ot.org
 [2]: https://getbootstrap.com/docs/5.0
@@ -168,4 +168,3 @@ Within the sample documentation, where necessary, the texts describing the usage
 [10]: https://twitter.com/infotexture
 [11]: https://github.com/infotexture/dita-bootstrap/issues/new
 [12]: https://help.github.com/articles/using-pull-requests/
-[13]: https://getbootstrap.com/docs/5.0
