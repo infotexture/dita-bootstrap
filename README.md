@@ -111,7 +111,9 @@ For an example of `list-group-full` styling, see the output at
 
 ### Custom CSS
 
-Bootstrap themes can be generated using the [Themestr.app](https://themestr.app/theme). The plug-in includes a sample placeholder for [custom CSS][8] styles. You can edit this file to add style rules of your own. Override the default Bootstrap theme by passing a custom CSS file to the `dita` command via the `--args.css` parameter:
+Bootstrap themes can be generated via [Themestr.app](https://themestr.app/theme). The plug-in includes a sample placeholder for [custom CSS][8] styles. You can edit the `css/custom.css` file to replace the theme, or add style rules of your own.
+
+To override the default Bootstrap theme, pass a custom CSS file like this to the `dita` command via the `--args.css` parameter:
 
 ```console
 dita --input=path/to/your.ditamap --format=html5-bootstrap \
@@ -126,8 +128,6 @@ dita --input=path/to/your.ditamap --format=html5-bootstrap \
 
 For more extensive customizations, you may want to [fork][9] this repository and create a new plug-in of your own.
 
-You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template](./xsl/html5-bootstrap-template.xsl) is included within this repository.
-
 ### Common Bootstrap utility classes
 
 The HTML output for the following DITA elements can be annotated with common Bootstrap utility classes for borders, background, text, spacing, etc. using additional command line parameters:
@@ -141,6 +141,8 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.tabs` – common utility classes for Bootstrap tabbed dialog components
 - `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabbed dialog components
 - `bootstrap.css.accordion` – common utility classes for Bootstrap accordion components
+
+You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template](./xsl/html5-bootstrap-template.xsl) is included within this repository.
 
 ## Feedback
 

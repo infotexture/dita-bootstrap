@@ -172,7 +172,7 @@
       <indexterm><parmname>--args.copycss</parmname></indexterm>
       <indexterm><parmname>--args.csspath</parmname></indexterm>
       <indexterm><parmname>--args.cssroot</parmname></indexterm>
-      <p>Bootstrap themes can be generated using the
+      <p>Bootstrap themes can be generated via
         <xref
           href="https://themestr.app/theme"
           format="html"
@@ -182,9 +182,10 @@
           href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css"
           format="html"
           scope="external"
-        >custom CSS</xref> styles. You can edit this file to add style rules of your own. Override the default Bootstrap
-        theme by passing a custom CSS file to the <cmdname>dita</cmdname> command via the <parmname
-        >--args.css</parmname> parameter:</p>
+        >custom CSS</xref> styles. You can edit the <filepath
+        >css/custom.css</filepath> file to replace the theme, or add style rules of your own.</p>
+      <p>To override the default Bootstrap theme, pass a custom CSS file like this to the <cmdname
+        >dita</cmdname> command via the <parmname>--args.css</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
