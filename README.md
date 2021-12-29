@@ -107,11 +107,11 @@ dita --input=path/to/your.ditamap \
 ```
 
 For an example of `list-group-full` styling, see the output at
-[infotexture.github.io/dita-bootstrap](https://infotexture.github.io/dita-bootstrap/).
+[infotexture.github.io/dita-bootstrap][8].
 
 ### Custom CSS
 
-Bootstrap themes can be generated via [Themestr.app](https://themestr.app/theme). The plug-in includes a sample placeholder for [custom CSS][8] styles. You can edit the `css/custom.css` file to replace the theme, or add style rules of your own.
+Bootstrap themes can be generated via [Themestr.app][9]. The plug-in includes a sample placeholder for [custom CSS][10] styles. You can edit the `css/custom.css` file to replace the theme, or add style rules of your own.
 
 To override the default Bootstrap theme, pass a custom CSS file like this to the `dita` command via the `--args.css` parameter:
 
@@ -126,7 +126,7 @@ dita --input=path/to/your.ditamap --format=html5-bootstrap \
 
 ![Sample DITA Bootstrap output](images/custom-bootstrap.png)
 
-For more extensive customizations, you may want to [fork][9] this repository and create a new plug-in of your own.
+For more extensive customizations, you may want to [fork][11] this repository and create a new plug-in of your own.
 
 ### Common Bootstrap utility classes
 
@@ -142,16 +142,16 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabbed dialog components
 - `bootstrap.css.accordion` – common utility classes for Bootstrap accordion components
 
-You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template](./xsl/html5-bootstrap-template.xsl) is included within this repository.
+You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
 
 ## Feedback
 
-- If you find this useful and build something of your own on top of it, [let me know][10].
+- If you find this useful and build something of your own on top of it, [let me know][13].
 
-- If you find a bug or would like to suggest a change, [create an issue][11].  
+- If you find a bug or would like to suggest a change, [create an issue][14].  
   _(If it’s a bug, provide steps to recreate the issue.)_
 
-- If you know how to fix it yourself, [submit a pull request][12] with the proposed changes.
+- If you know how to fix it yourself, [submit a pull request][15] with the proposed changes.
 
 ## License
 
@@ -162,12 +162,15 @@ Within the sample documentation, where necessary, the texts describing the usage
 [1]: http://www.dita-ot.org
 [2]: https://getbootstrap.com/docs/5.0
 [3]: https://getbootstrap.com/docs/5.0/examples/navbars/
-[4]: https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-navbar-light.hdr.xml
-[5]: https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-footer-example.xml
+[4]: ./includes/bs-navbar-light.hdr.xml
+[5]: ./includes/bs-footer-example.xml
 [6]: https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc
 [7]: https://getbootstrap.com/docs/5.0/components/list-group/
-[8]: https://github.com/infotexture/dita-bootstrap/blob/develop/css/custom.css
-[9]: https://help.github.com/articles/fork-a-repo/
-[10]: https://twitter.com/infotexture
-[11]: https://github.com/infotexture/dita-bootstrap/issues/new
-[12]: https://help.github.com/articles/using-pull-requests/
+[8]: https://infotexture.github.io/dita-bootstrap
+[9]: https://themestr.app/theme
+[10]: ./css/custom.css
+[11]: https://help.github.com/articles/fork-a-repo/
+[12]: ./xsl/html5-bootstrap-template.xsl
+[13]: https://twitter.com/infotexture
+[14]: https://github.com/infotexture/dita-bootstrap/issues/new
+[15]: https://help.github.com/articles/using-pull-requests/
