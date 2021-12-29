@@ -106,7 +106,8 @@ dita --input=path/to/your.ditamap \
      --nav-toc=list-group-partial
 ```
 
-For an example of the `list-group-full` styling, see the output at https://infotexture.github.io/dita-bootstrap/.
+For an example of `list-group-full` styling, see the output at
+[infotexture.github.io/dita-bootstrap](https://infotexture.github.io/dita-bootstrap/).
 
 ### Custom CSS
 
