@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass. -->
+<topic id="icons">
+  <title>Icons</title>
+  <shortdesc>DITA Bootstrap includes Bootstrap Icons by default. Other icon libraries such as can be added or removed
+    using command line parameters.</shortdesc>
+  <body outputclass="language-markup">
+    <section>
+      <title>Bootstrap Icons</title>
+      <p>
+        <xref href="https://icons.getbootstrap.com/" format="html" scope="external">Bootstrap Icons</xref> is a growing
+        library of SVG icons that are designed by @mdo and maintained by the Bootstrap Team. They are open source and
+        licensed under MIT, just like Bootstrap so the icon set is freely available to everyone.</p>
+    </section>
+
+
+    <section>
+      <title>Installing icons</title>
+      <indexterm><parmname>--icons.cdn.path</parmname></indexterm>
+      <indexterm><parmname>--icons.include</parmname></indexterm>
+      <p>A <xmlelement>Link</xmlelement> to the default Bootstrap Icons CDN set is included by default. If you do not
+        need any icons you can exclude them by setting the <parmname>--icons.include</parmname>=<option>no</option>
+      </p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--icons.include</parmname>=<option>no</option></codeblock>
+      <p>Other icon sets such as
+        <xref href="https://fontawesome.com/" format="html" scope="external">Font Awesome</xref>
+        <xref href="https://feathericons.com/" format="html" scope="external">Feather</xref> and
+        <xref
+          href="https://octicons.github.com/"
+          format="html"
+          scope="external"
+        >Octicons</xref> are available. To use an alternative set of icons, modify the
+        <xref
+          href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bootstrap.icons.hdr.xml"
+          format="html"
+          scope="external"
+        >sample
+          header</xref> or specify the path of the Icons CDN file using the <parmname>--icons.cdn.path</parmname>
+        parameter.</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--icons.cdn.path</parmname>=<filepath>path/to/icon-cdn-header.xml</filepath></codeblock>
+    </section>
+    <section>
+      <title>Example</title>
+      <p>Icon fonts with classes for every icon are included in Bootstrap Icons. Include the icon web fonts in your page
+        via CSS, then reference the class names as needed in your DITA (e.g., <xmlelement>i
+          outputclass="bi-alarm"/</xmlelement>).</p>
+      <p>Use an additional <xmlatt>otherprops</xmlatt> and alter the CSS font-size and color to change the icon
+        appearance.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <p>
+        <i outputclass="bi-alarm"/>
+        <i outputclass="bi-alarm" otherprops="style(font-size: 2rem; color: cornflowerblue;)"/>
+      </p>
+    </bodydiv>
+    <codeblock>&lt;i outputclass="bi-alarm"/&gt;
+&lt;i outputclass="bi-alarm" otherprops="style(font-size: 2rem; color: cornflowerblue;)"/&gt;</codeblock>
+    <p>Icons can also be placed within buttons as shown:</p>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <xref outputclass="btn-primary btn-floating m-1" href="#"><i outputclass="bi-arrow-down-square-fill"/></xref>
+      <xref outputclass="btn-primary btn-floating m-1" href="#"><i outputclass="bi-chat-left-quote-fill"/></xref>
+      <xref outputclass="btn-primary btn-floating m-1" href="#"><i outputclass="bi-speedometer"/></xref>
+      <xref outputclass="btn-primary btn-floating m-1" href="#"><i outputclass="bi-camera-fill"/></xref>
+      <xref outputclass="btn-primary btn-floating m-1" href="#"><i outputclass="bi-link"/></xref>
+      <xref outputclass="btn-primary btn-floating m-1" href="#"><i outputclass="bi-share-fill"/></xref>
+    </bodydiv>
+    <codeblock>&lt;xref outputclass="btn-primary btn-floating m-1" href="#"&gt;
+  &lt;i outputclass="bi-arrow-down-square-fill"/&gt;
+&lt;/xref&gt;
+&lt;xref outputclass="btn-primary btn-floating m-1" href="#"&gt;
+  &lt;i outputclass="bi-chat-left-quote-fill"/&gt;
+&lt;/xref&gt;
+&lt;xref outputclass="btn-primary btn-floating m-1" href="#"&gt;
+  &lt;i outputclass="bi-speedometer"/&gt;
+&lt;/xref&gt;
+&lt;xref outputclass="btn-primary btn-floating m-1" href="#"&gt;
+  &lt;i outputclass="bi-camera-fill"/&gt;
+&lt;/xref&gt;
+&lt;xref outputclass="btn-primary btn-floating m-1" href="#"&gt;
+  &lt;i outputclass="bi-link"/&gt;
+&lt;/xref&gt;
+&lt;xref outputclass="btn-primary btn-floating m-1" href="#"&gt;
+  &lt;i outputclass="bi-share-fill"/&gt;
+&lt;/xref&gt;</codeblock>
+  </body>
+</topic>

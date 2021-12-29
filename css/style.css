@@ -1,0 +1,32 @@
+/*!
+ *  This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
+ *  See the accompanying LICENSE file for applicable licenses.
+ */
+
+.cmdname,
+.codeph,
+.filepath,
+.option,
+.parmname {
+  color: var(--bs-gray);
+  font-family: var(--bs-font-monospace);
+}
+
+.cmdname,
+.parmname {
+  color: #1d365d;
+  font-weight: bold;
+}
+
+.boolean {
+  color: var(--bs-success);
+}
+
+.state {
+  color: var(--bs-danger);
+}
+
+.navbar-brand > svg {
+  margin: 4px 6px;
+  vertical-align: text-top;
+}

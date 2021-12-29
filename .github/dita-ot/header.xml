@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
 
   <div class="container">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="https://infotexture.github.io/dita-bootstrap">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -33,13 +33,28 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Link One</a>
+          <a
+            class="nav-link"
+            href="https://www.dita-ot.org/plugins#!net.infotexture.dita-bootstrap"
+          >Plugin</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link Two</a>
+          <a
+            class="nav-link"
+            href="https://github.com/infotexture/dita-bootstrap/releases"
+          >Releases</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link Three</a>
+          <a
+            class="nav-link"
+            href="https://github.com/infotexture/dita-bootstrap"
+          >Source</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="https://getbootstrap.com/docs/5.0"
+          >Bootstrap Docs</a>
         </li>
       </ul>
     </div>

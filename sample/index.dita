@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass. -->
+<topic id="index">
+  <title>DITA Bootstrap</title>
+  <abstract>
+    <shortdesc>A plug-in for
+      <xref
+        href="http://www.dita-ot.org"
+        format="html"
+        scope="external"
+      >DITA Open Toolkit</xref> that extends the default HTML5
+      output with a
+      <xref href="https://getbootstrap.com/docs/5.0" format="html" scope="external">Bootstrap 5.0</xref> template and
+      components.</shortdesc>
+    <p>Where necessary, the texts describing the usage of each component have been copied directly from the
+      <xref href="https://getbootstrap.com/docs/5.0" format="html" scope="external">official Bootstrap 5.0
+        documentation</xref>, however DITA markup is used throughout the examples describing how to implement these
+      components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute.</p>
+  </abstract>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Bootstrap 5.0</indexterm>
+        <indexterm>DITA</indexterm>
+        <indexterm>installing</indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-bash">
+    <section>
+      <title>Installing</title>
+      <p>Use the <cmdname>dita</cmdname> command to add this plug-in to your DITA Open Toolkit installation:</p>
+      <p>DITA-OT 3.5 and newer:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>install</parmname> fox.jason.extend.css
+<cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap</codeblock>
+      <p>DITA-OT 3.3 and newer:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--install</parmname> fox.jason.extend.css
+<cmdname>dita</cmdname> <parmname>--install</parmname> net.infotexture.dita-bootstrap</codeblock>
+      <p>DITA-OT 3.2 and older:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
+        >--install</parmname> https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
+<cmdname>dita</cmdname> <parmname
+        >--install</parmname> https://github.com/infotexture/dita-bootstrap/archive/master.zip</codeblock>
+    </section>
+    <section>
+      <title>Using</title>
+      <p>Specify the <option>html5-bootstrap</option> format when building output with the <cmdname
+        >dita</cmdname> command:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
+        >--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
+    </section>
+
+    <section>
+      <title>Customizing headers and footers</title>
+      <indexterm><parmname>--args.hdr</parmname></indexterm>
+      <indexterm><parmname>--args.ftr</parmname></indexterm>
+      <p>The plug-in includes a default static navigation menu with a project name and global link placeholders.</p>
+      <p>The default header file <filepath>includes/bs-navbar-default.hdr.xml</filepath> uses the Bootstrap primary
+        (blue) background color for the 
+        <xref
+          href="https://getbootstrap.com/docs/5.0/examples/navbars/"
+          format="html"
+          scope="external"
+        >navbar component</xref>.</p>
+      <p>You can edit a copy of this file to adjust the content of the global navigation. To override the global
+        navigation with your own header, pass a custom header file to the <cmdname>dita</cmdname> command via the
+          <parmname>--args.hdr</parmname> parameter:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath></codeblock>
+      <p>The plug-in includes a sample
+        <xref
+          href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-navbar-light.hdr.xml"
+          format="html"
+          scope="external"
+        >header alternative with a light navbar</xref>.</p>
+      <p>No footer is added by default, but the plug-in also includes a sample
+        <xref
+          href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-footer-example.xml"
+          format="html"
+          scope="external"
+        >footer file</xref>. To add a footer to the generated output, pass a custom footer file to the <cmdname
+        >dita</cmdname> command via the <parmname>--args.ftr</parmname> parameter:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--args.ftr</parmname>=<filepath>path/to/your-footer.xml</filepath></codeblock>
+    </section>
+
+    <section>
+      <title>Navigation menu</title>
+      <indexterm><parmname>--nav-toc</parmname></indexterm>
+      <p>The plug-in extends the standard HTML5 table of contents (ToC)
+        <xref
+          href="https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc"
+          format="html"
+          scope="external"
+        >navigation parameter</xref>
+        <parmname
+        >--nav-toc</parmname> to add styled list groups to the navigation menu. (The navigation is rendered as a
+        sidebar in desktop browsers and above the content on smaller devices.)</p>
+      <p>By default, the plug-in uses the <codeph>partial</codeph> option to include the current topic in the ToC 
+        along with its parents, siblings and children. As with the default HTML5 plug-in, the <codeph>full</codeph> 
+        option can also be used to generate a complete ToC for the entire map, or <codeph>none</codeph> to disable 
+        the table of contents entirely.</p>
+      <p>As of version 5.3, the plug-in provides two new options to style the table of contents navigation with the 
+        Bootstrap
+        <xref
+          href="https://getbootstrap.com/docs/5.0/components/list-group/"
+          format="html"
+          scope="external"
+        >list group</xref> component.
+      </p>
+      <ul>
+        <li>
+          <codeph>list-group-full</codeph> – Styled full ToC within a Bootstrap list group
+        </li>
+        <li>
+          <codeph>list-group-partial</codeph> – Partial ToC with the current topic, parents, siblings, and children in a
+          list group
+        </li>
+      </ul>
+      <p>To use these options, pass the desired value to the <cmdname>dita</cmdname> command via the
+          <parmname>--nav-toc</parmname> parameter:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--nav-toc</parmname>=<option>list-group-partial</option></codeblock>
+      <ol outputclass="carousel carousel-dark border">
+        <li>
+          <fig>
+            <title><codeph>full</codeph> – Unstyled full TOC</title>
+            <image href="./src/full.png"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
+            <title><codeph>partial</codeph> – Unstyled partial TOC</title>
+            <image href="./src/partial.png"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
+            <title><codeph>list-group-full</codeph> – Styled full ToC within a list group</title>
+            <image href="./src/list-group-full.png"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
+            <title><codeph>list-group-partial</codeph> – Styled partial ToC within a list group</title>
+            <image href="./src/list-group-partial.png"/>
+          </fig>
+        </li>
+      </ol>
+      <note outputclass="alert-primary">For an example of <codeph>list-group-full</codeph> styling, see the output at
+        <xref
+          href="https://infotexture.github.io/dita-bootstrap/"
+          format="html"
+          scope="external"
+        >infotexture.github.io/dita-bootstrap</xref>.
+      </note>
+    </section>
+    <section>
+      <title>Custom CSS</title>
+      <indexterm><parmname>--args.css</parmname></indexterm>
+      <indexterm><parmname>--args.copycss</parmname></indexterm>
+      <indexterm><parmname>--args.csspath</parmname></indexterm>
+      <indexterm><parmname>--args.cssroot</parmname></indexterm>
+      <p>Bootstrap themes can be generated via
+        <xref
+          href="https://themestr.app/theme"
+          format="html"
+          scope="external"
+        >Themestr.app</xref>. The plug-in includes a sample placeholder for
+        <xref
+          href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css"
+          format="html"
+          scope="external"
+        >custom CSS</xref> styles. You can edit the <filepath
+        >css/custom.css</filepath> file to replace the theme, or add style rules of your own.</p>
+      <p>To override the default Bootstrap theme, pass a custom CSS file like this to the <cmdname
+        >dita</cmdname> command via the <parmname>--args.css</parmname> parameter:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
+     <parmname>--args.css</parmname>=&lt;name-of-css&gt;.css \
+     <parmname>--args.copycss</parmname>=<option>yes</option> \
+     <parmname>--args.csspath</parmname>=<option>css</option>
+     <parmname>--args.cssroot</parmname>=<filepath>path/to/your/theme</filepath></codeblock>
+      <p>For more extensive customizations, you may want to fork this repository and create a new plug-in of your own.
+      </p>
+    </section>
+    <section>
+      <title>Common Bootstrap utility classes</title>
+      <indexterm><parmname>--bootstrap.css.shortdesc</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.codeblock</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.header</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.card</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.carousel</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.carousel.caption</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.tabs</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.tabs.vertical</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.accordion</parmname></indexterm>
+      <p>The HTML output for the following DITA elements can be annotated with common Bootstrap utility classes for
+        <xref href="https://getbootstrap.com/docs/5.0/utilities/borders" format="html" scope="external">borders</xref>,
+        <xref
+          href="https://getbootstrap.com/docs/5.0/utilities/background"
+          format="html"
+          scope="external"
+        >background</xref>,
+        <xref href="https://getbootstrap.com/docs/5.0/utilities/text" format="html" scope="external">text</xref>,
+        <xref
+          href="https://getbootstrap.com/docs/5.0/utilities/spacing"
+          format="html"
+          scope="external"
+        >spacing</xref>, etc. using additional command line parameters:</p>
+      <ul>
+        <li>
+          <parmname>--bootstrap.css.shortdesc</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>shortdesc</xmlelement> elements</li>
+        <li>
+          <parmname>--bootstrap.css.codeblock</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>codeblock</xmlelement> elements</li>
+        <li>
+          <parmname>--bootstrap.css.header</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>title</xmlelement> elements</li>
+        <li>
+          <parmname>--bootstrap.css.card</parmname> – common utility classes for Bootstrap
+          <xref href="./card.dita" format="dita">card components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.carousel</parmname> – common utility classes for Bootstrap
+          <xref href="./carousel.dita" format="dita">carousel components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.carousel.caption</parmname> – common utility classes for Bootstrap
+          <xref href="./carousel.dita" format="dita">carousel captions</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.tabs</parmname> – common utility classes for Bootstrap
+          <xref href="./tabs.dita" format="dita">tabbed dialog components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.tabs.vertical</parmname> – common utility classes for Bootstrap
+          <xref href="./tabs.dita" format="dita">vertical tabbed dialog components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.accordion</parmname> – common utility classes for Bootstrap
+          <xref href="./accordion.dita" format="dita">accordion components</xref>
+        </li>
+      </ul>
+    </section>
+  </body>
+</topic>

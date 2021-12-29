@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass. -->
+<topic id="tables">
+  <title>Tables</title>
+  <shortdesc>Documentation and examples for styling DITA tables with Bootstrap classes.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Tables</indexterm>
+        <indexterm>CSS
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlelement>table</xmlelement></indexterm>
+        <indexterm><xmlelement>row</xmlelement></indexterm>
+        <indexterm><xmlelement>entry</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+    <section>
+      <title>Overview</title>
+      <p>Due to the widespread use of <xmlelement>table</xmlelement> elements across third-party widgets like calendars
+        and date pickers, Bootstrap’s tables are opt-in. Extend with optional modifier outputclasses or custom styles.
+        All table styles are not inherited in Bootstrap, meaning any nested tables can be styled independent from the
+        parent.</p>
+      <p>Using the most basic table markup, here’s how the default DITA Bootstrap <codeph>.table</codeph>-based tables
+        look in Bootstrap</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table>
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <codeblock>&lt;table&gt;
+  ...etc
+&lt;/table&gt;</codeblock>
+    <section>
+      <title>Variants</title>
+      <p>Use contextual classes to color tables, table rows or individual cells.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table>
+        <tgroup cols="3">
+          <colspec colname="COLSPEC0" colwidth="2*"/>
+          <colspec colname="COLSPEC1" colwidth="1*"/>
+          <colspec colname="COLSPEC2" colwidth="1*"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Class</entry>
+              <entry colname="COLSPEC1" valign="top">Heading</entry>
+              <entry colname="COLSPEC2" valign="top">Heading</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Default</entry>
+              <entry>Cell</entry>
+              <entry>Cell</entry>
+            </row>
+            <row outputclass="table-primary">
+              <entry>Primary</entry>
+              <entry>Cell</entry>
+              <entry>Cell</entry>
+            </row>
+            <row outputclass="table-secondary">
+              <entry>Secondary </entry>
+              <entry>Cell</entry>
+              <entry>Cell</entry>
+            </row>
+            <row outputclass="table-success">
+              <entry>Success</entry>
+              <entry>Cell</entry>
+              <entry>Cell</entry>
+            </row>
+            <row outputclass="table-danger">
+              <entry>Danger</entry>
+              <entry>Cell</entry>
+              <entry>Cell</entry>
+            </row>
+            <row outputclass="table-warning">
+              <entry>Warning</entry>
+              <entry>Cell</entry>
+              <entry>Cell</entry>
+            </row>
+            <row outputclass="table-info">
+              <entry>Info</entry>
+              <entry>Cell</entry>
+              <entry>Cell</entry>
+            </row>
+            <row outputclass="table-light">
+              <entry>Light</entry>
+              <entry>Cell</entry>
+              <entry>Cell</entry>
+            </row>
+            <row outputclass="table-dark">
+              <entry>Dark</entry>
+              <entry>Cell</entry>
+              <entry>Cell</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <codeblock outputclass="xml">
+&lt;!-- On tables --&gt;
+&lt;table class="table-primary"&gt;...&lt;/table&gt;
+&lt;table class="table-secondary"&gt;...&lt;/table&gt;
+&lt;table class="table-success"&gt;...&lt;/table&gt;
+&lt;table class="table-danger"&gt;...&lt;/table&gt;
+&lt;table class="table-warning"&gt;...&lt;/table&gt;
+&lt;table class="table-info"&gt;...&lt;/table&gt;
+&lt;table class="table-light"&gt;...&lt;/table&gt;
+&lt;table class="table-dark"&gt;...&lt;/table&gt;
+
+&lt;!-- On rows --&gt;
+&lt;row class="table-primary"&gt;...&lt;/tr&gt;
+&lt;row class="table-secondary"&gt;...&lt;/tr&gt;
+&lt;row class="table-success"&gt;...&lt;/tr&gt;
+&lt;row class="table-danger"&gt;...&lt;/tr&gt;
+&lt;row class="table-warning"&gt;...&lt;/tr&gt;
+&lt;row class="table-info"&gt;...&lt;/tr&gt;
+&lt;row class="table-light"&gt;...&lt;/tr&gt;
+&lt;row class="table-dark"&gt;...&lt;/tr&gt;
+
+&lt;!-- On cells (`td` or `th`) --&gt;
+&lt;row&gt;
+  &lt;entry outputclass="table-primary"&gt;...&lt;/td&gt;
+  &lt;entry outputclass="table-secondary"&gt;...&lt;/td&gt;
+  &lt;entry outputclass="table-success"&gt;...&lt;/td&gt;
+  &lt;entry outputclass="table-danger"&gt;...&lt;/td&gt;
+  &lt;entry outputclass="table-warning"&gt;...&lt;/td&gt;
+  &lt;entry outputclass="table-info"&gt;...&lt;/td&gt;
+  &lt;entry outputclass="table-light"&gt;...&lt;/td&gt;
+  &lt;entry outputclass="table-dark"&gt;...&lt;/td&gt;
+&lt;/row&gt;</codeblock>
+    <section>
+      <title>Striped rows</title>
+      <p>Use <xmlatt>outputclass</xmlatt> and add <codeph>table-striped</codeph> to add zebra-striping to any table row
+        within the <xmlelement>tbody</xmlelement>.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table outputclass="table-striped">
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <codeblock>&lt;table outputclass="table-striped"&gt;
+  ...etc
+&lt;/table&gt;</codeblock>
+  </body>
+</topic>

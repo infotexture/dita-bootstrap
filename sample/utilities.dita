@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass. -->
+<topic id="cards">
+  <title>Borders, Color and Background</title>
+  <shortdesc>Use border utilities to quickly style the border and border-radius of an element and convey meaning through
+      <codeph>color</codeph> and <codeph>background-color</codeph> with a handful of color utility classes.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Borders</indexterm>
+        <indexterm>Color</indexterm>
+        <indexterm>Background</indexterm>
+        <indexterm>CSS
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+
+    <section>
+      <title>Border</title>
+      <p>Use border utilities to add or remove an element’s borders. Choose from all borders or one at a time.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ph outputclass="border p-3 bg-light text-dark">&#xA0;border&#xA0;</ph>&#xA0;
+      <ph outputclass="border-top p-3 bg-light text-dark">&#xA0;border-top</ph>&#xA0;
+      <ph outputclass="border-end p-3 bg-light text-dark">&#xA0;border-end</ph>&#xA0;
+      <ph outputclass="border-bottom p-3 bg-light text-dark">&#xA0;border-bottom</ph>&#xA0;
+      <ph outputclass="border-start p-3 bg-light text-dark">&#xA0;border-start</ph>
+    </bodydiv>
+    <codeblock>&lt;ph outputclass="border"&gt;...&lt;/ph&gt;
+&lt;ph outputclass="border-top"&gt;...&lt;/ph&gt;
+&lt;ph outputclass="border-end"&gt;...&lt;/ph&gt;
+&lt;ph outputclass="border-bottom"&gt;...&lt;/ph&gt;
+&lt;ph outputclass="border-start"&gt;...&lt;/ph&gt;</codeblock>
+    <section>
+      <title>Colors</title>
+      <p>Colorize text with color utilities</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <section outputclass="text-primary">.text-primary</section>
+      <section outputclass="text-secondary">.text-secondary</section>
+      <section outputclass="text-success">.text-success</section>
+      <section outputclass="text-danger">.text-danger</section>
+      <section outputclass="text-warning bg-dark">.text-warning</section>
+      <section outputclass="text-info bg-dark">.text-info</section>
+      <section outputclass="text-light bg-dark">.text-light</section>
+      <section outputclass="text-dark">.text-dark</section>
+      <section outputclass="text-body">.text-body</section>
+      <section outputclass="text-muted">.text-muted</section>
+      <section outputclass="text-white bg-dark">.text-white</section>
+      <section outputclass="text-black-50">.text-black-50</section>
+      <section outputclass="text-white-50 bg-dark">.text-white-50</section>
+    </bodydiv>
+    <codeblock>&lt;section outputclass="text-primary"&gt;.text-primary&lt;/section&gt;
+&lt;section outputclass="text-secondary"&gt;.text-secondary&lt;/section&gt;
+&lt;section outputclass="text-success"&gt;.text-success&lt;/section&gt;
+&lt;section outputclass="text-danger"&gt;.text-danger&lt;/section&gt;
+&lt;section outputclass="text-warning bg-dark"&gt;.text-warning&lt;/section&gt;
+&lt;section outputclass="text-info bg-dark"&gt;.text-info&lt;/section&gt;
+&lt;section outputclass="text-light bg-dark"&gt;.text-light&lt;/section&gt;
+&lt;section outputclass="text-dark"&gt;.text-dark&lt;/section&gt;
+&lt;section outputclass="text-body"&gt;.text-body&lt;/section&gt;
+&lt;section outputclass="text-muted"&gt;.text-muted&lt;/section&gt;
+&lt;section outputclass="text-white bg-dark"&gt;.text-white&lt;/section&gt;
+&lt;section outputclass="text-black-50"&gt;.text-black-50&lt;/section&gt;
+&lt;section outputclass="text-white-50 bg-dark"&gt;.text-white-50&lt;/section&gt;</codeblock>
+    <section>
+      <title>Background color</title>
+      <p>Similar to the contextual text color classes, set the background of an element to any contextual class.
+        Background utilities do not set <codeph>color</codeph>, so in some cases you’ll want to use
+          <codeph>.text-*</codeph>
+        <xmlatt>outputclass</xmlatt> utilities.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <section outputclass="p-3 bg-primary text-white">.bg-primary</section>
+      <section outputclass="p-3 bg-secondary text-white">.bg-secondary</section>
+      <section outputclass="p-3 bg-success text-white">.bg-success</section>
+      <section outputclass="p-3 bg-danger text-white">.bg-danger</section>
+      <section outputclass="p-3 bg-warning text-dark">.bg-warning</section>
+      <section outputclass="p-3 bg-info text-dark">.bg-info</section>
+      <section outputclass="p-3 bg-light text-dark">.bg-light</section>
+      <section outputclass="p-3 bg-dark text-white">.bg-dark</section>
+      <section outputclass="p-3 bg-body text-dark">.bg-body</section>
+      <section outputclass="p-3 bg-white text-dark">.bg-white</section>
+      <section outputclass="p-3 bg-transparent text-dark">.bg-transparent</section>
+    </bodydiv>
+    <codeblock>&lt;section outputclass="p-3 bg-primary text-white"&gt;.bg-primary&lt;/section&gt;
+&lt;section outputclass="p-3 bg-secondary text-white"&gt;.bg-secondary&lt;/section&gt;
+&lt;section outputclass="p-3 bg-success text-white"&gt;.bg-success&lt;/section&gt;
+&lt;section outputclass="p-3 bg-danger text-white"&gt;.bg-danger&lt;/section&gt;
+&lt;section outputclass="p-3 bg-warning text-dark"&gt;.bg-warning&lt;/section&gt;
+&lt;section outputclass="p-3 bg-info text-dark"&gt;.bg-info&lt;/section&gt;
+&lt;section outputclass="p-3 bg-light text-dark"&gt;.bg-light&lt;/section&gt;
+&lt;section outputclass="p-3 bg-dark text-white"&gt;.bg-dark&lt;/section&gt;
+&lt;section outputclass="p-3 bg-body text-dark"&gt;.bg-body&lt;/section&gt;
+&lt;section outputclass="p-3 bg-white text-dark"&gt;.bg-white&lt;/section&gt;
+&lt;section outputclass="p-3 bg-transparent text-dark"&gt;.bg-transparent&lt;/section&gt;</codeblock>
+    <section>
+      <title>Styling DITA elements</title>
+      <p>Apply consistent Bootstrap utility classes across DITA elements by amending
+          <filepath>/Customization/xsl/utility-classes.xsl</filepath>
+      </p>
+    </section>
+    <codeblock>&lt;!-- Add a border to codeblocks --&gt;
+&lt;xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class"&gt;
+  border rounded
+&lt;/xsl:template&gt;
+&lt;!-- Enhance the short desc with a lead class --&gt;
+&lt;xsl:template match="*[contains(@class, ' topic/shortdesc ')]" mode="get-output-class"&gt;
+  text-muted lead
+&lt;/xsl:template&gt;
+&lt;!-- Change the text color of the headers --&gt;
+&lt;xsl:template match="*[contains(@class, ' topic/title ')]" mode="get-output-class"&gt;
+  text-dark
+&lt;/xsl:template&gt;
+&lt;!-- Amend the text and background of Figure Captions --&gt;
+&lt;xsl:template match="*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')]"
+  mode="get-output-class" priority="5"&gt;
+  text-white bg-dark
+&lt;/xsl:template&gt;</codeblock>
+  </body>
+</topic>

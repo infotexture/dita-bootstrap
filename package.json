@@ -1,0 +1,31 @@
+{
+  "name": "dita-bootstrap",
+  "description": "DITA Open Toolkit plug-in for HTML5 output with basic Bootstrap style",
+  "homepage": "https://infotexture.github.io/dita-bootstrap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/infotexture/dita-bootstrap.git"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "check": "npm run prettier-check",
+    "fmt": "npm run format",
+    "format": "prettier --write \"**/*.{css,dita*,json,md,xml,yml}\"",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install",
+    "prettier": "prettier --write \"**/*.{css,dita*,json,md,xml,yml}\"",
+    "prettier-check": "prettier --check \"**/*.{css,dita*,json,md,xml,yml}\"",
+    "test": "prettier --list-different \"**/*.{css,dita*,json,md,xml,yml}\""
+  },
+  "lint-staged": {
+    "*.{css,dita*,json,md,xml,yml}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "1.2.0",
+    "husky": "^7.0.4",
+    "lint-staged": "12.1.4",
+    "prettier": "2.5.1"
+  }
+}
