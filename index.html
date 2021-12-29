@@ -50,7 +50,7 @@
   </div>
     <section class="section"><h2 class="title text-dark">Installing</h2>
       
-      <p class="p">Use the dita command to add this plug-in to your DITA Open Toolkit installation:</p>
+      <p class="p">Use the <span class="keyword cmdname">dita</span> command to add this plug-in to your DITA Open Toolkit installation:</p>
       <p class="p">DITA-OT 3.5 and newer:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname"><span class="ph token function">install</span></span> fox.jason.extend.css
 <span class="keyword cmdname">dita</span> <span class="keyword parmname"><span class="ph token function">install</span></span> net.infotexture.dita-bootstrap</code></pre>
@@ -63,7 +63,7 @@
     </section>
     <section class="section"><h2 class="title text-dark">Using</h2>
       
-      <p class="p">Specify the html5-bootstrap format when building output with the dita command:</p>
+      <p class="p">Specify the <span class="keyword option">html5-bootstrap</span> format when building output with the <span class="keyword cmdname">dita</span> command:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span>path/to/your.ditamap <span class="keyword parmname">--format</span><span class="ph token operator">=</span>html5-bootstrap</code></pre>
     </section>
 
@@ -136,7 +136,7 @@
       <p class="p">Bootstrap themes can be generated using the
         <a class="xref" href="https://themestr.app/theme" target="_blank" rel="external noopener">Themestr.app</a>. The plug-in includes a sample placeholder for
         <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css" target="_blank" rel="external noopener">custom CSS</a> styles. You can edit this file to add style rules of your own. Override the default Bootstrap
-        theme by passing a custom CSS file to the dita command via the <span class="keyword parmname">--args.css</span> parameter:</p>
+        theme by passing a custom CSS file to the <span class="keyword cmdname">dita</span> command via the <span class="keyword parmname">--args.css</span> parameter:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--args.hdr</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your-header.xml</span> <span class="ph token punctuation">\</span>
@@ -158,44 +158,43 @@
       
       
       
-      <p class="p">The output HTML for the following DITA elements can be annotated with common bootstrap utility classes for
+      <p class="p">The HTML output for the following DITA elements can be annotated with common Bootstrap utility classes for
         <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/borders" target="_blank" rel="external noopener">borders</a>,
         <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/background" target="_blank" rel="external noopener">background</a>,
-        <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/text" target="_blank" rel="external noopener">text</a>
-        <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/spacing" target="_blank" rel="external noopener">spacing</a>, etc. using the
-        following command line parameters:</p>
+        <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/text" target="_blank" rel="external noopener">text</a>,
+        <a class="xref" href="https://getbootstrap.com/docs/5.0/utilities/spacing" target="_blank" rel="external noopener">spacing</a>, etc. using additional command line parameters:</p>
       <ul class="ul">
         <li class="li">
-          <span class="keyword parmname">--bootstrap.css.shortdesc</span> - common Bootstrap utility classes for DITA
+          <span class="keyword parmname">--bootstrap.css.shortdesc</span> – common Bootstrap utility classes for DITA
             <code class="keyword markupname xmlelement">&lt;shortdesc&gt;</code> elements</li>
         <li class="li">
-          <span class="keyword parmname">--bootstrap.css.codeblock</span> - common Bootstrap utility classes for DITA
+          <span class="keyword parmname">--bootstrap.css.codeblock</span> – common Bootstrap utility classes for DITA
             <code class="keyword markupname xmlelement">&lt;codeblock&gt;</code> elements</li>
         <li class="li">
-          <span class="keyword parmname">--bootstrap.css.header</span> - common Bootstrap utility classes for DITA
+          <span class="keyword parmname">--bootstrap.css.header</span> – common Bootstrap utility classes for DITA
             <code class="keyword markupname xmlelement">&lt;title&gt;</code> elements</li>
         <li class="li">
-          <span class="keyword parmname">--bootstrap.css.card</span> - common utility classes for Bootstrap classes for
+          <span class="keyword parmname">--bootstrap.css.card</span> – common utility classes for Bootstrap
           <a class="xref" href="card.html" title="Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.">card components</a>
         </li>
         <li class="li">
-          <span class="keyword parmname">--bootstrap.css.carousel</span> - common utility classes for Bootstrap
+          <span class="keyword parmname">--bootstrap.css.carousel</span> – common utility classes for Bootstrap
           <a class="xref" href="carousel.html" title="A slideshow component for cycling through elements—images or slides of text—like a carousel.">carousel components</a>
         </li>
         <li class="li">
-          <span class="keyword parmname">--bootstrap.css.carousel.caption</span> - common utility classes for Bootstrap
+          <span class="keyword parmname">--bootstrap.css.carousel.caption</span> – common utility classes for Bootstrap
           <a class="xref" href="carousel.html" title="A slideshow component for cycling through elements—images or slides of text—like a carousel.">carousel captions</a>
         </li>
         <li class="li">
-          <span class="keyword parmname">--bootstrap.css.tabs</span> - common utility classes for Bootstrap
+          <span class="keyword parmname">--bootstrap.css.tabs</span> – common utility classes for Bootstrap
           <a class="xref" href="tabs.html" title="Use the tab JavaScript plugin to extend Bootstrap’s navigational tabs and pills to create tabbable panes of local content.">tabbed dialog components</a>
         </li>
         <li class="li">
-          <span class="keyword parmname">--bootstrap.css.tabs.vertical</span> - common utility classes for Bootstrap
+          <span class="keyword parmname">--bootstrap.css.tabs.vertical</span> – common utility classes for Bootstrap
           <a class="xref" href="tabs.html" title="Use the tab JavaScript plugin to extend Bootstrap’s navigational tabs and pills to create tabbable panes of local content.">vertical tabbed dialog components</a>
         </li>
         <li class="li">
-          <span class="keyword parmname">--bootstrap.css.accordion</span> - common utility classes for Bootstrap
+          <span class="keyword parmname">--bootstrap.css.accordion</span> – common utility classes for Bootstrap
           <a class="xref" href="accordion.html" title="Build vertically collapsing accordions in combination with Bootstrap’s Collapse JavaScript plugin.">accordion components</a>
         </li>
       </ul>

@@ -1,20 +1,22 @@
 
 /*!
- *
  *  This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
  *  See the accompanying LICENSE file for applicable licenses.
  */
 
-.codeblock {
+.cmdname,
+.codeph,
+.filepath,
+.option,
+.parmname {
+  color: var(--bs-gray);
   font-family: var(--bs-font-monospace);
 }
 
-.codeph {
-  font-family: var(--bs-font-monospace);
-}
-
-.filepath {
-  font-family: var(--bs-font-monospace);
+.cmdname,
+.parmname {
+  color: #1d365d;
+  font-weight: bold;
 }
 
 .boolean {
@@ -23,41 +25,6 @@
 
 .state {
   color: var(--bs-danger);
-}
-
-.numcharref {
-  color: var(--bs-pink);
-  font-family: var(--bs-font-monospace);
-}
-
-.parameterentity {
-  color: var(--bs-pink);
-  font-family: var(--bs-font-monospace);
-}
-
-.textentity {
-  color: var(--bs-pink);
-  font-family: var(--bs-font-monospace);
-}
-
-.xmlatt {
-  color: var(--bs-pink);
-  font-family: var(--bs-font-monospace);
-}
-
-.xmlelement {
-  color: var(--bs-pink);
-  font-family: var(--bs-font-monospace);
-}
-
-.xmlnsname {
-  color: var(--bs-pink);
-  font-family: var(--bs-font-monospace);
-}
-
-.xmlpi {
-  color: var(--bs-pink);
-  font-family: var(--bs-font-monospace);
 }
 
 .navbar-brand > svg {
