@@ -34,7 +34,7 @@
   <body outputclass="language-bash">
     <section>
       <title>Installing</title>
-      <p>Use the dita command to add this plug-in to your DITA Open Toolkit installation:</p>
+      <p>Use the <cmdname>dita</cmdname> command to add this plug-in to your DITA Open Toolkit installation:</p>
       <p>DITA-OT 3.5 and newer:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>install</parmname> fox.jason.extend.css
 <cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap</codeblock>
@@ -49,7 +49,8 @@
     </section>
     <section>
       <title>Using</title>
-      <p>Specify the html5-bootstrap format when building output with the dita command:</p>
+      <p>Specify the <option>html5-bootstrap</option> format when building output with the <cmdname
+        >dita</cmdname> command:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
     </section>
@@ -180,7 +181,8 @@
           format="html"
           scope="external"
         >custom CSS</xref> styles. You can edit this file to add style rules of your own. Override the default Bootstrap
-        theme by passing a custom CSS file to the dita command via the <parmname>--args.css</parmname> parameter:</p>
+        theme by passing a custom CSS file to the <cmdname>dita</cmdname> command via the <parmname
+        >--args.css</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
