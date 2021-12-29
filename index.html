@@ -114,15 +114,17 @@
           list group
         </li>
       </ul>
+      <p class="p">To use these options, pass the desired value to the <span class="keyword cmdname">dita</span> command via the
+          <span class="keyword parmname">--nav-toc</span> parameter:</p>
+      <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--nav-toc</span><span class="ph token operator">=</span><span class="keyword option">list-group-partial</span></code></pre>
       <div data-bs-ride="carousel" id="carousel_index__ol__1" class="ol slide carousel carousel-dark border"><div class="carousel-inner">
         <div class="carousel-item active"><img class="image d-block w-100" src="src/full.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">full – Unstyled full TOC</p></div></div>
         <div class="carousel-item"><img class="image d-block w-100" src="src/partial.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">partial – Unstyled partial TOC</p></div></div>
         <div class="carousel-item"><img class="image d-block w-100" src="src/list-group-full.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">list-group-full – Styled full ToC within a list group</p></div></div>
         <div class="carousel-item"><img class="image d-block w-100" src="src/list-group-partial.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">list-group-partial – Styled partial ToC within a list group</p></div></div>
       </div><a class="carousel-control-prev" role="button" data-bs-slide="prev" data-bs-target="#carousel_index__ol__1"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" role="button" data-bs-slide="next" data-bs-target="#carousel_index__ol__1"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
-      <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
-     <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
-     <span class="keyword parmname">--nav-toc</span><span class="ph token operator">=</span><span class="keyword option">list-group-partial</span></code></pre>
       <div role="alert" class="note alert alert-primary"><span class="note__title">Note:</span> For an example of <code class="ph codeph language-bash">list-group-full</code> styling, see the output at
         <a class="xref alert-link" href="https://infotexture.github.io/dita-bootstrap/" target="_blank" rel="external noopener">infotexture.github.io/dita-bootstrap</a>.
       </div>
@@ -133,10 +135,10 @@
       
       
       
-      <p class="p">Bootstrap themes can be generated using the
+      <p class="p">Bootstrap themes can be generated via
         <a class="xref" href="https://themestr.app/theme" target="_blank" rel="external noopener">Themestr.app</a>. The plug-in includes a sample placeholder for
-        <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css" target="_blank" rel="external noopener">custom CSS</a> styles. You can edit this file to add style rules of your own. Override the default Bootstrap
-        theme by passing a custom CSS file to the <span class="keyword cmdname">dita</span> command via the <span class="keyword parmname">--args.css</span> parameter:</p>
+        <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css" target="_blank" rel="external noopener">custom CSS</a> styles. You can edit the <span class="ph filepath">css/custom.css</span> file to replace the theme, or add style rules of your own.</p>
+      <p class="p">To override the default Bootstrap theme, pass a custom CSS file like this to the <span class="keyword cmdname">dita</span> command via the <span class="keyword parmname">--args.css</span> parameter:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
      <span class="keyword parmname">--args.hdr</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your-header.xml</span> <span class="ph token punctuation">\</span>
