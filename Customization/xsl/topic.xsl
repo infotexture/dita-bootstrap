@@ -6,9 +6,10 @@
 <xsl:stylesheet
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+  xmlns:dita2html="http://dita-ot.sourceforge.net/ns/200801/dita2html"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   version="2.0"
-  exclude-result-prefixes="xs dita-ot"
+  exclude-result-prefixes="xs dita-ot dita2html"
 >
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template name="commonattributes">
@@ -114,5 +115,106 @@
       <!-- Normal end flags and revision end flags both go out after the content. -->
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
     </div>
+  </xsl:template>
+
+  <!-- =========== FIGURE =========== -->
+  <xsl:template match="*[contains(@class, ' topic/fig ')]" name="topic.fig">
+    <xsl:variable name="default-fig-class">
+      <xsl:apply-templates select="." mode="dita2html:get-default-fig-class"/>
+    </xsl:variable>
+    <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
+    <figure>
+      <xsl:if test="$default-fig-class != ''">
+        <xsl:attribute name="class" select="$default-fig-class"/>
+      </xsl:if>
+      <xsl:call-template name="commonattributes">
+        <xsl:with-param name="default-output-class" select="$default-fig-class"/>
+      </xsl:call-template>
+      <xsl:call-template name="setscale"/>
+      <xsl:call-template name="setidaname"/>
+      <!--xsl:call-template name="place-fig-lbl"/-->
+      <xsl:apply-templates select="node() except *[contains(@class, ' topic/title ') or contains(@class, ' topic/desc ')]"/>
+      <!-- ↓ Move Figure title below image ↑ -->
+      <xsl:call-template name="place-fig-lbl"/>
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+    </figure>
+    <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
+    <xsl:value-of select="$newline"/>
+  </xsl:template>
+
+
+
+  <!-- Figure caption -->
+  <xsl:template name="place-fig-lbl">
+    <xsl:param name="stringName"/>
+    <!-- Number of fig/title's including this one -->
+    <xsl:variable name="fig-count-actual" select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"/>
+    <xsl:variable name="ancestorlang">
+      <xsl:call-template name="getLowerCaseLang"/>
+    </xsl:variable>
+    <xsl:choose>
+      <!-- title -or- title & desc -->
+      <xsl:when test="*[contains(@class, ' topic/title ')]">
+        <figcaption>
+          <!-- ↑ Start customization · Add Bootstrap class ↓ -->
+          <xsl:variable name="fig-caption-class" select="concat('figure-caption ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
+          <xsl:apply-templates select="." mode="set-output-class">
+            <xsl:with-param name="default" select="concat($fig-caption-class, ./*[contains(@class, ' topic/title ')][1]/@outputclass)"/>
+          </xsl:apply-templates>
+          <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+          <span class="fig--title-label">
+            <xsl:choose>      <!-- Hungarian: "1. Figure " -->
+              <xsl:when test="$ancestorlang = ('hu', 'hu-hu')">
+                <xsl:value-of select="$fig-count-actual"/>
+                <xsl:text>. </xsl:text>
+                <xsl:call-template name="getVariable">
+                  <xsl:with-param name="id" select="'Figure'"/>
+                </xsl:call-template>
+                <xsl:text> </xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:call-template name="getVariable">
+                  <xsl:with-param name="id" select="'Figure'"/>
+                </xsl:call-template>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$fig-count-actual"/>
+                <xsl:text>. </xsl:text>
+              </xsl:otherwise>
+            </xsl:choose>
+          </span>
+          <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="figtitle"/>
+          <xsl:if test="*[contains(@class, ' topic/desc ')]">
+            <xsl:text>. </xsl:text>
+          </xsl:if>
+          <xsl:for-each select="*[contains(@class, ' topic/desc ')]">
+            <span class="figdesc">
+              <xsl:call-template name="commonattributes"/>
+              <xsl:apply-templates select="." mode="figdesc"/>
+            </span>
+          </xsl:for-each>
+        </figcaption>
+      </xsl:when>
+      <!-- desc -->
+      <xsl:when test="*[contains(@class, ' topic/desc ')]">
+        <xsl:for-each select="*[contains(@class, ' topic/desc ')]">
+          <figcaption>
+            <xsl:call-template name="commonattributes"/>
+            <xsl:apply-templates select="." mode="figdesc"/>
+          </figcaption>
+        </xsl:for-each>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- Determine the default Bootstrap class attribute for a figure -->
+  <xsl:template match="*" mode="dita2html:get-default-fig-class">
+    <xsl:choose>
+      <xsl:when test="@frame = 'all'">border</xsl:when>
+      <xsl:when test="@frame = 'sides'">border-start border-end</xsl:when>
+      <xsl:when test="@frame = 'top'">border-top</xsl:when>
+      <xsl:when test="@frame = 'bottom'">border-bottom</xsl:when>
+      <xsl:when test="@frame = 'topbot'">border-top border-bottom</xsl:when>
+      <xsl:otherwise></xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 </xsl:stylesheet>

@@ -23,7 +23,7 @@
   </prolog>
   <body outputclass="language-markup">
 
-    <section>
+    <section id="border">
       <title>Border</title>
       <p>Use border utilities to add or remove an element’s borders. Choose from all borders or one at a time.</p>
     </section>
@@ -39,7 +39,7 @@
 &lt;ph outputclass="border-end"&gt;...&lt;/ph&gt;
 &lt;ph outputclass="border-bottom"&gt;...&lt;/ph&gt;
 &lt;ph outputclass="border-start"&gt;...&lt;/ph&gt;</codeblock>
-    <section>
+    <section id="colors">
       <title>Colors</title>
       <p>Colorize text with color utilities</p>
     </section>
@@ -71,7 +71,7 @@
 &lt;section outputclass="text-white bg-dark"&gt;.text-white&lt;/section&gt;
 &lt;section outputclass="text-black-50"&gt;.text-black-50&lt;/section&gt;
 &lt;section outputclass="text-white-50 bg-dark"&gt;.text-white-50&lt;/section&gt;</codeblock>
-    <section>
+    <section id="background-color">
       <title>Background color</title>
       <p>Similar to the contextual text color classes, set the background of an element to any contextual class.
         Background utilities do not set <codeph>color</codeph>, so in some cases you’ll want to use

@@ -25,6 +25,7 @@
     </topicmeta>
     <topicref navtitle="Images" format="dita" type="topic" href="images.dita"/>
     <topicref navtitle="Tables" format="dita" type="topic" href="tables.dita"/>
+    <topicref navtitle="Figures" format="dita" type="topic" href="figures.dita"/>
   </chapter>
   <chapter>
     <topicmeta>

@@ -19,6 +19,10 @@
   <xsl:param name="BOOTSTRAP_CSS_TABS" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'me-3'"/>
   <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_FIGURE" select="' w-100 mw-100 p-3 '"/>
+  <xsl:param name="BOOTSTRAP_CSS_FIGURE_CAPTION" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_FIGURE_IMAGE" select="'img-fluid border rounded'"/>
+
   <!-- Add a Bootstrap CSS border to codeblocks -->
   <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_CODEBLOCK"/>
@@ -93,6 +97,12 @@
     <xsl:value-of select="BOOTSTRAP_CSS_ACCORDION"/>
   </xsl:template>
 
+  <!-- Change the default Bootstrap CSS text color of the figure captions -->
+  <xsl:template match="*[contains(@class, ' topic/figcaption ')]" mode="get-output-class">
+    <xsl:text>figure-caption </xsl:text>
+    <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE_CAPTION"/>
+  </xsl:template>
+
   <!-- Add additional Bootstrap CSS classes based on outputclass -->
   <xsl:template name="bootstrap-class">
     <xsl:choose>
@@ -116,6 +126,14 @@
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'alert-')">
         <xsl:text>alert</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/fig ')">
+        <xsl:text> figure </xsl:text>
+        <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE"/>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/image ') and ancestor::*[contains(@class, ' topic/fig ')]">
+        <xsl:text> figure-img </xsl:text>
+        <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE_IMAGE"/>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'carousel-')">
         <xsl:text>carousel</xsl:text>

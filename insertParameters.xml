@@ -54,4 +54,16 @@
     expression="${bootstrap.css.accordion}"
     if:set="bootstrap.css.accordion"
   />
+  <param
+    name="BOOTSTRAP_CSS_FIGURE"
+    expression="${bootstrap.css.figure}"
+    if:set="bootstrap.css.figure"/>
+  <param
+    name="BOOTSTRAP_CSS_FIGURE_CAPTION"
+    expression="${bootstrap.css.figure.caption}"
+    if:set="bootstrap.css.figure.caption"/>
+  <param
+    name="BOOTSTRAP_CSS_FIGURE_IMAGE"
+    expression="${bootstrap.css.figure.image}"
+    if:set="bootstrap.css.figure.image"/>
 </dummy>

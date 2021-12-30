@@ -208,6 +208,9 @@
       <indexterm><parmname>--bootstrap.css.tabs</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs.vertical</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.accordion</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.figure</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.figure.caption</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.figure.image</parmname></indexterm>
       <p>The HTML output for the following DITA elements can be annotated with common Bootstrap utility classes for
         <xref href="https://getbootstrap.com/docs/5.0/utilities/borders" format="html" scope="external">borders</xref>,
         <xref
@@ -231,6 +234,18 @@
         <li>
           <parmname>--bootstrap.css.header</parmname> – common Bootstrap utility classes for DITA
             <xmlelement>title</xmlelement> elements</li>
+        <li>
+          <parmname>--bootstrap.css.figure</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.figure.caption</parmname> – common Bootstrap utility classes for DITA
+          <xmlelement>title</xmlelement> elements within <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.figure.image</parmname> – common Bootstrap utility classes for DITA
+          <xmlelement>image</xmlelement> elements within <xmlelement>fig</xmlelement> elements
+        </li>
         <li>
           <parmname>--bootstrap.css.card</parmname> – common utility classes for Bootstrap
           <xref href="./card.dita" format="dita">card components</xref>
