@@ -12,18 +12,13 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Tooltips Component -->
-  <!-- https://getbootstrap.com/docs/5.0/components/offcanvas/ -->
+  <!-- https://getbootstrap.com/docs/5.0/components/tooltips/ -->
 
 
    <xsl:template match="*" mode="add-bootstrap-tooltip">
     <xsl:attribute name="data-bs-toggle">
       <xsl:text>tooltip</xsl:text>
     </xsl:attribute>
-    <xsl:if test="desc/@props = 'html'">
-      <xsl:attribute name="data-bs-html">
-        <xsl:text>true</xsl:text>
-      </xsl:attribute>
-    </xsl:if>
     <xsl:attribute name="data-bs-placement">
       <xsl:choose>
         <xsl:when test="contains(@outputclass, 'tooltip-left')">
@@ -40,8 +35,72 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:attribute>
-   </xsl:template>
 
+    <xsl:choose>
+      <xsl:when test="*[contains(@class, ' topic/desc ')]/*">
+        <xsl:attribute name="data-bs-html">
+          <xsl:text>true</xsl:text>
+        </xsl:attribute>
+        <xsl:attribute name="title">
+          <xsl:apply-templates select="*[contains(@class, ' topic/desc ')][1]" mode="tooltipdesc"/>
+        </xsl:attribute>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:apply-templates select="." mode="add-desc-as-hoverhelp"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+
+  <xsl:template match="*[contains(@class, ' topic/desc ')]" mode="tooltipdesc">
+    <xsl:for-each select="*|text()">
+      <xsl:choose>
+        <xsl:when test="contains(@class,' hi-d/b ')">
+          <xsl:text>&lt;strong&gt;</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>&lt;/strong&gt;</xsl:text>
+        </xsl:when>
+        <xsl:when test="contains(@class,' hi-d/i ')">
+          <xsl:text>&lt;em&gt;</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>&lt;/em&gt;</xsl:text>
+        </xsl:when>
+        <xsl:when test="contains(@class,' hi-d/u ')">
+          <xsl:text>&lt;u&gt;</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>&lt;/u&gt;</xsl:text>
+        </xsl:when>
+        <xsl:when test="contains(@class,' hi-d/tt ')">
+          <xsl:text>&lt;tt&gt;</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>&lt;/tt&gt;</xsl:text>
+        </xsl:when>
+        <xsl:when test="contains(@class,' hi-d/sup ')">
+          <xsl:text>&lt;sup&gt;</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>&lt;/sup&gt;</xsl:text>
+        </xsl:when>
+        <xsl:when test="contains(@class,' hi-d/sub ')">
+          <xsl:text>&lt;sub&gt;</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>&lt;/sub&gt;</xsl:text>
+        </xsl:when>
+        <xsl:when test="contains(@class,' hi-d/line-through ')">
+          <xsl:text>&lt;span style="text-decoration:line-through"&gt;</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>&lt;/span&gt;</xsl:text>
+        </xsl:when>
+        <xsl:when test="contains(@class,' hi-d/overline ')">
+          <xsl:text>&lt;span style="text-decoration:overline"&gt;</xsl:text>
+          <xsl:apply-templates/>
+          <xsl:text>&lt;/span&gt;</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="."/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:for-each>
+  </xsl:template>
 
   <!--template for xref-->
   <xsl:template match="*[contains(@class, ' topic/xref ') and contains(@outputclass, 'tooltip-')]" name="topic.xref">
@@ -53,7 +112,6 @@
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <xsl:call-template name="commonattributes"/>
           <xsl:apply-templates select="." mode="add-linking-attributes"/>
-          <xsl:apply-templates select="." mode="add-desc-as-hoverhelp"/>
           <!-- if there is text or sub element other than desc, apply templates to them
           otherwise, use the href as the value of link text. -->
           <xsl:choose>
@@ -91,7 +149,6 @@
           <!-- ↓ Add Bootstrap class attributes template ↑ -->
           <xsl:apply-templates select="." mode="add-bootstrap-tooltip"/>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-          <xsl:apply-templates select="." mode="add-desc-as-hoverhelp"/>
           <xsl:apply-templates select="*[not(contains(@class, ' topic/desc '))] | text() | comment() | processing-instruction()"/>
         </span>
       </xsl:otherwise>

@@ -103,9 +103,11 @@
         Tooltip on left
       </xref>
 
-      <p>When adding custom HTML to tooltips, add <xmlatt>props="html"</xmlatt> to the <xmlelement>desc</xmlelement> element</p>
+      <p>
+        Custom HTML can be added to tooltips using DITA elements in the <xmlelement>desc</xmlelement>
+      </p>
       <xref href="#" outputclass="btn-secondary tooltip-top">
-        <desc props="html">&lt;em&gt;Tooltip&lt;/em&gt; &lt;u&gt;with&lt;/u&gt; &lt;b&gt;HTML&lt;/b&gt;</desc>
+        <desc><b>Tooltip</b> <u>with</u> <b>DITA</b> elements</desc>
         Tooltip with HTML
       </xref>
     </bodydiv>
@@ -126,7 +128,7 @@
   Tooltip on left
 &lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
-  &lt;desc props="html"&gt;&amp;&#x2060;lt;em&amp;&#x2060;gt;Tooltip&amp;&#x2060;lt;/em&amp;&#x2060;gt; &amp;&#x2060;lt;u&amp;&#x2060;gt;with&amp;lt;/u&amp;&#x2060;gt; &amp;&#x2060;lt;b&amp;&#x2060;gt;HTML&amp;&#x2060;lt;/b&amp;&#x2060;gt;&lt;/desc&gt;
+  &lt;desc props="html"&gt;&lt;b&gt;Tooltip&lt;/b&gt; &lt;u&gt;with&amp;lt;/u&gt; &lt;b&gt;DITA&lt;/b&gt; elements&lt;/desc&gt;
   Tooltip with HTML
 &lt;/xref&gt;</codeblock>
   </body>
