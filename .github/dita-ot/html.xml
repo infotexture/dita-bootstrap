@@ -22,6 +22,7 @@
       <param name="nav-toc" value="list-group-full"/>
       <param name="processing-mode" value="strict"/>
       <param name="icons.include" value="yes"/>
+      <param name="popovers.include" value="yes"/>
     </publication>
   </deliverable>
 </project>

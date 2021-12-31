@@ -46,5 +46,6 @@
     <property name="nav-toc" value="partial"/>
     <property name="args.copycss" value="yes"/>
     <property name="args.csspath" value="css"/>
+    <property name="popovers.include" value="no"/>
   </target>
 </project>

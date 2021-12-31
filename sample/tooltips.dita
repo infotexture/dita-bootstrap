@@ -13,11 +13,11 @@
   <prolog>
     <metadata>
       <keywords>
+        <indexterm><parmname>--popovers.include</parmname></indexterm>
         <indexterm>Tooltips</indexterm>
         <indexterm>CSS
           <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
-        <indexterm><xmlatt>props</xmlatt></indexterm>
         <indexterm><xmlelement>desc</xmlelement></indexterm>
         <indexterm><xmlelement>xref</xmlelement></indexterm>
       </keywords>
@@ -35,16 +35,16 @@
           Tooltips rely on the 3rd party library <xref scope="external" href="https://popper.js.org/">Popper</xref> for positioning.
         </li>
         <li>
-          Tooltips are opt-in for performance reasons, so <b>you must initialize them yourself</b>.
+          Tooltips are opt-in for performance reasons, so <b>you must initialize them yourself</b> by setting <parmname>--popovers.include</parmname>=<option>yes</option>.
         </li>
         <li>
-          Tooltips with zero-length titles are never displayed.
+          Tooltips with a zero-length <xmlelement>desc</xmlelement> element are never displayed.
         </li>
         <li>
           Triggering tooltips on hidden elements will not work.
         </li>
         <li>
-          Tooltips for <xmlatt>outputclass="disabled"</xmlattr> elements must be triggered on a wrapper element.
+          Tooltips for <xmlatt>outputclass="disabled"</xmlatt> elements must be triggered on a wrapper element.
         </li>
         <li>
           Tooltips must be hidden before their corresponding elements have been removed from the DOM.
@@ -99,16 +99,7 @@
         <desc>Tooltip on left</desc>
         Tooltip on left
       </xref>
-
-      <p>
-        Custom HTML can be added to tooltips using DITA elements in the <xmlelement>desc</xmlelement>
-      </p>
-      <xref href="#" outputclass="btn-secondary tooltip-top">
-        <desc><b>Tooltip</b> <u>with</u> <b>DITA</b> elements</desc>
-        Tooltip with embedded DITA
-      </xref>
-    </bodydiv>
-    <codeblock>&lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
+      <codeblock>&lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
   &lt;desc&gt;Tooltip on top&lt;/desc&gt;
   Tooltip on top
 &lt;/xref&gt;
@@ -123,8 +114,16 @@
 &lt;xref href="#" outputclass="btn-secondary tooltip-left"&gt;
   &lt;desc&gt;Tooltip on left&lt;/desc&gt;
   Tooltip on left
-&lt;/xref&gt;
-&lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
+&lt;/xref&gt;</codeblock>
+      <p>
+        Custom HTML can be added to tooltips using additional DITA elements within the <xmlelement>desc</xmlelement>
+      </p>
+      <xref href="#" outputclass="btn-secondary tooltip-top">
+        <desc><b>Tooltip</b> <u>with</u> <b>DITA</b> elements</desc>
+        Tooltip with embedded DITA
+      </xref>
+    </bodydiv>
+    <codeblock>&lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
   &lt;desc&gt;&lt;b&gt;Tooltip&lt;/b&gt; &lt;u&gt;with&amp;lt;/u&gt; &lt;b&gt;DITA&lt;/b&gt; elements&lt;/desc&gt;
   Tooltip with embedded DITA
 &lt;/xref&gt;</codeblock>

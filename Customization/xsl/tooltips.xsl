@@ -64,8 +64,39 @@
      <xsl:value-of select="substring($htmlAsString, 7, string-length($htmlAsString) - 13)"/>
   </xsl:template>
 
+
+  <xsl:template match="*" mode="serialize">
+    <xsl:text>&lt;</xsl:text>
+    <xsl:value-of select="name()"/>
+    <xsl:apply-templates select="@*" mode="serialize" />
+    <xsl:choose>
+        <xsl:when test="node()">
+            <xsl:text>&gt;</xsl:text>
+            <xsl:apply-templates mode="serialize" />
+            <xsl:text>&lt;/</xsl:text>
+            <xsl:value-of select="name()"/>
+            <xsl:text>&gt;</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:text> /&gt;</xsl:text>
+        </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="@*" mode="serialize">
+      <xsl:text> </xsl:text>
+      <xsl:value-of select="name()"/>
+      <xsl:text>="</xsl:text>
+      <xsl:value-of select="."/>
+      <xsl:text>"</xsl:text>
+  </xsl:template>
+
+  <xsl:template match="text()" mode="serialize">
+      <xsl:value-of select="."/>
+  </xsl:template>
+
   <!--template for xref-->
-  <xsl:template match="*[contains(@class, ' topic/xref ') and contains(@outputclass, 'tooltip-')]" name="topic.xref">
+  <xsl:template match="*[contains(@class, ' topic/xref ') and contains(@outputclass, 'tooltip-')]">
     <xsl:choose>
       <xsl:when test="@href and normalize-space(@href)">
         <a>
