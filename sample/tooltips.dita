@@ -44,10 +44,7 @@
           Triggering tooltips on hidden elements will not work.
         </li>
         <li>
-          Tooltips for <codeph>.disabled</codeph> or <codeph>disabled</codeph> elements must be triggered on a wrapper element.
-        </li>
-        <li>
-          When triggered from hyperlinks that span multiple lines, tooltips will be centered. Use <codeph>white-space: nowrap;</codeph> on your <codeph>&lt;a&gt;</codeph>s to avoid this behavior.
+          Tooltips for <xmlatt>outputclass="disabled"</xmlattr> elements must be triggered on a wrapper element.
         </li>
         <li>
           Tooltips must be hidden before their corresponding elements have been removed from the DOM.
@@ -82,8 +79,8 @@
         The direction of the tooltip is appended to the <xmlatt>output-class</xmlatt>.
     </p>
     <p>
-        Hover over the buttons below to see the four tooltips directions: top, right, bottom, and left. Directions are
-        mirrored when using Bootstrap in RTL.
+        Hover over the buttons below to see the four tooltips directions: <codeph>top</codeph>, <codeph>right</codeph>, <codeph>bottom</codeph>, and
+        <codeph>left</codeph>. Directions are mirrored when using Bootstrap in RTL.
     </p>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <xref href="#" outputclass="btn-secondary tooltip-top">
@@ -108,7 +105,7 @@
       </p>
       <xref href="#" outputclass="btn-secondary tooltip-top">
         <desc><b>Tooltip</b> <u>with</u> <b>DITA</b> elements</desc>
-        Tooltip with HTML
+        Tooltip with embedded DITA
       </xref>
     </bodydiv>
     <codeblock>&lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
@@ -128,8 +125,8 @@
   Tooltip on left
 &lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
-  &lt;desc props="html"&gt;&lt;b&gt;Tooltip&lt;/b&gt; &lt;u&gt;with&amp;lt;/u&gt; &lt;b&gt;DITA&lt;/b&gt; elements&lt;/desc&gt;
-  Tooltip with HTML
+  &lt;desc&gt;&lt;b&gt;Tooltip&lt;/b&gt; &lt;u&gt;with&amp;lt;/u&gt; &lt;b&gt;DITA&lt;/b&gt; elements&lt;/desc&gt;
+  Tooltip with embedded DITA
 &lt;/xref&gt;</codeblock>
   </body>
 </topic>

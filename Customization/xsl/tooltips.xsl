@@ -53,53 +53,15 @@
 
 
   <xsl:template match="*[contains(@class, ' topic/desc ')]" mode="tooltipdesc">
-    <xsl:for-each select="*|text()">
-      <xsl:choose>
-        <xsl:when test="contains(@class,' hi-d/b ')">
-          <xsl:text>&lt;strong&gt;</xsl:text>
-          <xsl:apply-templates/>
-          <xsl:text>&lt;/strong&gt;</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@class,' hi-d/i ')">
-          <xsl:text>&lt;em&gt;</xsl:text>
-          <xsl:apply-templates/>
-          <xsl:text>&lt;/em&gt;</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@class,' hi-d/u ')">
-          <xsl:text>&lt;u&gt;</xsl:text>
-          <xsl:apply-templates/>
-          <xsl:text>&lt;/u&gt;</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@class,' hi-d/tt ')">
-          <xsl:text>&lt;tt&gt;</xsl:text>
-          <xsl:apply-templates/>
-          <xsl:text>&lt;/tt&gt;</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@class,' hi-d/sup ')">
-          <xsl:text>&lt;sup&gt;</xsl:text>
-          <xsl:apply-templates/>
-          <xsl:text>&lt;/sup&gt;</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@class,' hi-d/sub ')">
-          <xsl:text>&lt;sub&gt;</xsl:text>
-          <xsl:apply-templates/>
-          <xsl:text>&lt;/sub&gt;</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@class,' hi-d/line-through ')">
-          <xsl:text>&lt;span style="text-decoration:line-through"&gt;</xsl:text>
-          <xsl:apply-templates/>
-          <xsl:text>&lt;/span&gt;</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@class,' hi-d/overline ')">
-          <xsl:text>&lt;span style="text-decoration:overline"&gt;</xsl:text>
-          <xsl:apply-templates/>
-          <xsl:text>&lt;/span&gt;</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of select="."/>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:for-each>
+     <xsl:variable name="htmlAsString">
+       <xsl:variable name="htmlContent">
+        <xsl:copy>
+           <xsl:apply-templates/>
+        </xsl:copy>
+       </xsl:variable>
+       <xsl:apply-templates select="$htmlContent"  mode="serialize"/>
+     </xsl:variable>
+     <xsl:value-of select="substring($htmlAsString, 7, string-length($htmlAsString) - 13)"/>
   </xsl:template>
 
   <!--template for xref-->
