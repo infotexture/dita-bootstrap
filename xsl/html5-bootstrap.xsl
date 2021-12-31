@@ -25,6 +25,7 @@
   <xsl:include href="../Customization/xsl/tabs.xsl"/>
   <xsl:include href="../Customization/xsl/tables.xsl"/>
   <xsl:include href="../Customization/xsl/topic.xsl"/>
+  <xsl:include href="../Customization/xsl/tooltips.xsl" />
   <xsl:include href="../Customization/xsl/utility-classes.xsl"/>
 
   <!-- Override to add <meta> elements to page heads -->
@@ -92,6 +93,15 @@
       <!-- ↓ Close Bootstrap divs -->
         </div>
       </div>
+
+      <script language="javascript">//
+        <![CDATA[
+          var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+          var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+          })
+       // ]]>
+     </script>
       <!-- ↑ End customization -->
       <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
     </body>

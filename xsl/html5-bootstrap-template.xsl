@@ -23,5 +23,6 @@
   <!--xsl:include href="../Customization/xsl/tables.xsl" /-->
   <!--xsl:include href="../Customization/xsl/tabs.xsl" /-->
   <!--xsl:include href="../Customization/xsl/topic.xsl" /-->
+  <!--xsl:include href="../Customization/xsl/tooltips.xsl" /-->
   <!--xsl:include href="../Customization/xsl/utilty-classes.xsl" /-->
 </xsl:stylesheet>
