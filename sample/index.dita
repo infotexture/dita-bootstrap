@@ -257,5 +257,22 @@
         </li>
       </ul>
     </section>
+    <section>
+      <title>Opt-In elements</title>
+      <indexterm><parmname>--icons.include</parmname></indexterm>
+      <indexterm><parmname>--popovers.include</parmname></indexterm>
+      <p>
+        For performance reasons, Bootstrap <xref href="./icons.dita" format="dita">icons</xref>,
+        <xref href="./popovers.dita" format="dita">popovers</xref> and <xref href="./tooltips.dita" format="dita">tooltips</xref>
+        are disabled by default, they can be enabled by using the following command line parameters:
+      </p>
+      <ul>
+        <li>
+          <parmname>--icons.include</parmname> – enable Bootstrap <xref href="./icons.dita" format="dita">icons</xref></li>
+        <li>
+          <parmname>--popovers.include</parmname> – enable Bootstrap <xref href="./popovers.dita" format="dita">popover components</xref> and <xref href="./tooltips.dita" format="dita">tooltip components</xref></li>
+      </ul>
+    </section>
+
   </body>
 </topic>

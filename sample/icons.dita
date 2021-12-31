@@ -7,8 +7,11 @@
    components correctly using outputclass. -->
 <topic id="icons">
   <title>Icons</title>
-  <shortdesc>DITA Bootstrap includes Bootstrap Icons by default. Other icon libraries such as can be added or removed
-    using command line parameters.</shortdesc>
+  <shortdesc>When enabled, DITA Bootstrap includes Bootstrap Icons by default. Additional icon libraries such as
+    <xref href="https://fontawesome.com/" format="html" scope="external">Font Awesome</xref>
+    <xref href="https://feathericons.com/" format="html" scope="external">Feather</xref> and
+    <xref href="https://octicons.github.com/" format="html" scope="external">Octicons</xref>
+    can also be added using command line parameters.</shortdesc>
   <body outputclass="language-markup">
     <section>
       <title>Bootstrap Icons</title>
@@ -17,19 +20,17 @@
         library of SVG icons that are designed by @mdo and maintained by the Bootstrap Team. They are open source and
         licensed under MIT, just like Bootstrap so the icon set is freely available to everyone.</p>
     </section>
-
-
     <section>
       <title>Installing icons</title>
       <indexterm><parmname>--icons.cdn.path</parmname></indexterm>
       <indexterm><parmname>--icons.include</parmname></indexterm>
-      <p>A <xmlelement>Link</xmlelement> to the default Bootstrap Icons CDN set is included by default. If you do not
-        need any icons you can exclude them by setting the <parmname>--icons.include</parmname>=<option>no</option>
+      <p>A <xmlelement>Link</xmlelement> to the default Bootstrap Icons CDN set is not included by default. If you
+        need any icons you can include them by setting the <parmname>--icons.include</parmname>=<option>yes</option>
       </p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-     <parmname>--icons.include</parmname>=<option>no</option></codeblock>
+     <parmname>--icons.include</parmname>=<option>yes</option></codeblock>
       <p>Other icon sets such as
         <xref href="https://fontawesome.com/" format="html" scope="external">Font Awesome</xref>
         <xref href="https://feathericons.com/" format="html" scope="external">Feather</xref> and
@@ -48,6 +49,7 @@
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--icons.include</parmname>=<option>yes</option> \
      <parmname>--icons.cdn.path</parmname>=<filepath>path/to/icon-cdn-header.xml</filepath></codeblock>
     </section>
     <section>
