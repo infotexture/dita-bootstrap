@@ -206,6 +206,57 @@
     </xsl:choose>
   </xsl:template>
 
+
+    <!-- PRE -->
+  <xsl:template match="*[contains(@class, ' topic/pre ') and @frame]">
+    <xsl:variable name="default-fig-class">
+      <xsl:apply-templates select="." mode="dita2html:get-default-fig-class"/>
+    </xsl:variable>
+    <figure>
+      <xsl:if test="$default-fig-class != ''">
+        <xsl:attribute name="class" >
+          <xsl:value-of select="$default-fig-class"/>
+          <xsl:text> figure </xsl:text>
+          <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
+      <xsl:call-template name="spec-title-nospace"/>
+      <pre>
+        <xsl:attribute name="class" select="name()"/>
+        <xsl:call-template name="commonattributes"/>
+        <xsl:call-template name="setscale"/>
+        <xsl:call-template name="setidaname"/>
+        <xsl:apply-templates/>
+      </pre>
+      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
+    </figure>
+
+  </xsl:template>
+
+  <!-- lines - body font -->
+  <xsl:template match="*[contains(@class, ' topic/lines ') and @frame]">
+    <xsl:variable name="default-fig-class">
+      <xsl:apply-templates select="." mode="dita2html:get-default-fig-class"/>
+    </xsl:variable>
+    <figure>
+      <xsl:if test="$default-fig-class != ''">
+        <xsl:attribute name="class" >
+          <xsl:value-of select="$default-fig-class"/>
+          <xsl:text> figure </xsl:text>
+          <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE"/>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:call-template name="spec-title-nospace"/>
+      <p>
+        <xsl:call-template name="commonattributes"/>
+        <xsl:call-template name="setscale"/>
+        <xsl:call-template name="setidaname"/>
+        <xsl:apply-templates/>
+      </p>
+    </figure>
+  </xsl:template>
+
   <!-- Determine the default Bootstrap class attribute for a figure -->
   <xsl:template match="*" mode="dita2html:get-default-fig-class">
     <xsl:choose>
