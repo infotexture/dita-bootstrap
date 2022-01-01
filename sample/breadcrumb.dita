@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass. -->
+<topic id="breadcrumb">
+  <title>Breadcrumb</title>
+  <shortdesc>Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Breadcrumb</indexterm>
+        <indexterm><parmname>--args.breadcrumbs</parmname></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+    <image scalefit="yes" href="./src/breadcrumb.png"/>
+    <section>
+      <title>Adding breadcrumbs</title>
+      <p>Breadcrumbs are not included by default. You can add a breadcrumb component to each page by setting the <parmname>--args.breadcrumbs</parmname>=<option>yes</option>
+      </p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--args.breadcrumbs</parmname>=<option>yes</option></codeblock>
+   </section>
+  </body>
+</topic>

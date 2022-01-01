@@ -18,6 +18,39 @@
 </xsl:text>
   </xsl:variable>
 
+  <!-- Whether include bootstrap icons.  values are 'yes' or 'no' -->
+  <xsl:param name="BREADCRUMBS" select="'no'"/>
+
+  <xsl:template match="*" mode="addContentToHtmlBodyElement">
+    <main xsl:use-attribute-sets="main">
+      <article xsl:use-attribute-sets="article">
+        <xsl:attribute name="aria-labelledby">
+          <xsl:apply-templates select="*[contains(@class,' topic/title ')] |
+                                       self::dita/*[1]/*[contains(@class,' topic/title ')]" mode="return-aria-label-id"/>
+        </xsl:attribute>
+        <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
+
+        <!-- ↓ Add Bootstrap breadcrumb ↑ -->
+        <xsl:if test="$BREADCRUMBS = 'yes'">
+          <xsl:apply-templates select="$current-topicref" mode="gen-user-breadcrumb"/>
+        </xsl:if>
+        <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+
+
+        <xsl:apply-templates/> <!-- this will include all things within topic; therefore, -->
+                               <!-- title content will appear here by fall-through -->
+                               <!-- followed by prolog (but no fall-through is permitted for it) -->
+                               <!-- followed by body content, again by fall-through in document order -->
+                               <!-- followed by related links -->
+                               <!-- followed by child topics by fall-through -->
+        <xsl:call-template name="gen-endnotes"/>    <!-- include footnote-endnotes -->
+        <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
+      </article>
+    </main>
+  </xsl:template>
+
+
+
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template name="commonattributes">
     <xsl:param name="default-output-class"/>

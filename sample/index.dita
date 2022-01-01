@@ -282,6 +282,7 @@
       <title>Opt-In elements</title>
       <indexterm><parmname>--icons.include</parmname></indexterm>
       <indexterm><parmname>--popovers.include</parmname></indexterm>
+      <indexterm><parmname>--args.breadcrumbs</parmname></indexterm>
       <p>
         For performance reasons, Bootstrap <xref href="./icons.dita" format="dita">icons</xref>,
         <xref href="./popovers.dita" format="dita">popovers</xref> and <xref href="./tooltips.dita" format="dita">tooltips</xref>
@@ -293,7 +294,10 @@
         <li>
           <parmname>--popovers.include</parmname> – enable Bootstrap <xref href="./popovers.dita" format="dita">popover components</xref> and <xref href="./tooltips.dita" format="dita">tooltip components</xref></li>
       </ul>
+      <ul>
+        <li>
+          <parmname>--args.breadcrumbs</parmname> – enable Bootstrap <xref href="./breadcrumb.dita" format="dita">breadcrumb components</xref></li>
+      </ul>
     </section>
-
   </body>
 </topic>

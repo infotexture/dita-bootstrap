@@ -148,13 +148,13 @@ The HTML output for the following DITA elements can be annotated with common Boo
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
 
-
 ### Opt-In elements
 
 For performance reasons, Bootstrap icons, popovers and tooltips are disabled by default, they can be enabled by using the following command line parameters:
 
 - `icons.include` – enable Bootstrap icons
 - `popovers.include` – enable Bootstrap popover components and tooltip components
+- `args.breadcrumbs` – add Bootstrap breadcrumb components
 
 ## Feedback
 

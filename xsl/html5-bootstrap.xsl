@@ -19,6 +19,7 @@
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
   <xsl:include href="../Customization/xsl/accordion.xsl"/>
+  <xsl:include href="../Customization/xsl/breadcrumb.xsl"/>
   <xsl:include href="../Customization/xsl/card.xsl"/>
   <xsl:include href="../Customization/xsl/carousel.xsl"/>
   <xsl:include href="../Customization/xsl/offcanvas.xsl"/>
