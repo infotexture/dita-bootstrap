@@ -30,7 +30,16 @@
               <xsl:choose>
                 <xsl:when test="@href">
                   <a>
-                    <xsl:attribute name="href" select="@href"/>
+                    <xsl:attribute name="href">
+
+                      <xsl:call-template name="replace-extension">
+                        <xsl:with-param name="filename">
+                          <xsl:value-of select="$PATH2PROJ"/>
+                          <xsl:value-of select="@href"/>
+                        </xsl:with-param>
+                        <xsl:with-param name="extension" select="$OUTEXT"/>
+                      </xsl:call-template>
+                    </xsl:attribute>
                     <xsl:value-of select="$title"/>
                   </a>
                 </xsl:when>
