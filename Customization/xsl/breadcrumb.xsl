@@ -31,14 +31,34 @@
                 <xsl:when test="@href">
                   <a>
                     <xsl:attribute name="href">
-
-                      <xsl:call-template name="replace-extension">
-                        <xsl:with-param name="filename">
-                          <xsl:value-of select="$PATH2PROJ"/>
+                      <xsl:if test="not(@scope = 'external')">
+                        <xsl:value-of select="$PATH2PROJ"/>
+                      </xsl:if>
+                      <xsl:choose>
+                        <xsl:when
+                          test="@copy-to and not(contains(@chunk, 'to-content')) and
+                                          (not(@format) or @format = 'dita' or @format = 'ditamap') "
+                        >
+                          <xsl:call-template name="replace-extension">
+                            <xsl:with-param name="filename" select="@copy-to"/>
+                            <xsl:with-param name="extension" select="$OUTEXT"/>
+                          </xsl:call-template>
+                          <xsl:if test="not(contains(@copy-to, '#')) and contains(@href, '#')">
+                            <xsl:value-of select="concat('#', substring-after(@href, '#'))"/>
+                          </xsl:if>
+                        </xsl:when>
+                        <xsl:when
+                          test="not(@scope = 'external') and (not(@format) or @format = 'dita' or @format = 'ditamap')"
+                        >
+                          <xsl:call-template name="replace-extension">
+                            <xsl:with-param name="filename" select="@href"/>
+                            <xsl:with-param name="extension" select="$OUTEXT"/>
+                          </xsl:call-template>
+                        </xsl:when>
+                        <xsl:otherwise>
                           <xsl:value-of select="@href"/>
-                        </xsl:with-param>
-                        <xsl:with-param name="extension" select="$OUTEXT"/>
-                      </xsl:call-template>
+                        </xsl:otherwise>
+                      </xsl:choose>
                     </xsl:attribute>
                     <xsl:value-of select="$title"/>
                   </a>
