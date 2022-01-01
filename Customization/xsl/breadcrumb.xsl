@@ -11,12 +11,12 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot ditamsg"
 >
-  <!-- Override to add Bootstrap list-group menu -->
+  <!-- Override to add Bootstrap breadcrumb component -->
   <!-- https://getbootstrap.com/docs/5.0/components/breadcrumb/ -->
 
   <xsl:param name="breadcrumb" as="xs:string?"/>
 
-  <!-- Override to add Bootstrap list-group classes -->
+  <!-- Add Bootstrap breadcrumb -->
   <xsl:template match="*" mode="gen-user-breadcrumb">
 
     <nav aria-label="breadcrumb">
