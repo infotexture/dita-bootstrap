@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs dita-ot ditamsg"
 >
   <!-- Override to add Bootstrap list-group menu -->
-  <!-- https://getbootstrap.com/docs/5.0/components/list-group/ -->
+  <!-- https://getbootstrap.com/docs/5.1/components/list-group/ -->
 
   <xsl:param name="nav-toc" as="xs:string?"/>
   <xsl:param name="FILEDIR" as="xs:string?"/>

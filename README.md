@@ -157,15 +157,17 @@ You can add your own XSLT customizations by creating a new plug-in that extends 
 
 [Apache 2.0](LICENSE) © 2017–2021 Roger W. Fienhold Sheen
 
-Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.0 documentation][2], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`.
+Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.1 documentation][2], however
+DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`. The text is therefore a derivative of "Bootstrap 5.1 docs" by
+Twitter, Inc. and the Bootstrap Authors, and used under CC BY 3.0.
 
 [1]: http://www.dita-ot.org
-[2]: https://getbootstrap.com/docs/5.0
-[3]: https://getbootstrap.com/docs/5.0/examples/navbars/
+[2]: https://getbootstrap.com/docs/5.1
+[3]: https://getbootstrap.com/docs/5.1/examples/navbars/
 [4]: ./includes/bs-navbar-light.hdr.xml
 [5]: ./includes/bs-footer-example.xml
 [6]: https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc
-[7]: https://getbootstrap.com/docs/5.0/components/list-group/
+[7]: https://getbootstrap.com/docs/5.1/components/list-group/
 [8]: https://infotexture.github.io/dita-bootstrap
 [9]: https://themestr.app/theme
 [10]: ./css/custom.css
