@@ -25,8 +25,11 @@
     <main xsl:use-attribute-sets="main">
       <article xsl:use-attribute-sets="article">
         <xsl:attribute name="aria-labelledby">
-          <xsl:apply-templates select="*[contains(@class,' topic/title ')] |
-                                       self::dita/*[1]/*[contains(@class,' topic/title ')]" mode="return-aria-label-id"/>
+          <xsl:apply-templates
+            select="*[contains(@class,' topic/title ')] |
+                                       self::dita/*[1]/*[contains(@class,' topic/title ')]"
+            mode="return-aria-label-id"
+          />
         </xsl:attribute>
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
 

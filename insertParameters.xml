@@ -1,7 +1,9 @@
 <dummy xmlns:if="ant:if" xmlns:unless="ant:unless">
-  <param name="BREADCRUMBS"
+  <param
+    name="BREADCRUMBS"
     expression="${args.breadcrumbs}"
-    if:set="args.breadcrumbs"/>
+    if:set="args.breadcrumbs"
+  />
   <param
     name="BOOTSTRAP_POPOVERS_INCLUDE"
     expression="${popovers.include}"

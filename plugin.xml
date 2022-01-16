@@ -11,7 +11,11 @@
     extends="html5"
     desc="HTML5 with Bootstrap style"
   >
-    <param name="args.breadcrumbs" desc="Specifies whether to generate breadcrumb links." type="enum">
+    <param
+      name="args.breadcrumbs"
+      desc="Specifies whether to generate breadcrumb links."
+      type="enum"
+    >
       <val>yes</val>
       <val default="true">no</val>
     </param>
