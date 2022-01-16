@@ -38,7 +38,7 @@
 
 
     <xsl:attribute name="title">
-      <xsl:value-of select="*[contains(@class, ' topic/data ')][1]/*[contains(@class, ' topic/title ')][1]" />
+      <xsl:value-of select="*[contains(@class, ' topic/data ')][1]/*[contains(@class, ' topic/title ')][1]"/>
     </xsl:attribute>
     <xsl:attribute name="data-bs-content">
       <xsl:value-of select="*[contains(@class, ' topic/desc ')][1]"/>
@@ -53,7 +53,9 @@
       <!-- ↓ Add Bootstrap class attributes template ↑ -->
       <xsl:apply-templates select="." mode="add-bootstrap-popover"/>
       <xsl:call-template name="commonattributes"/>
-      <xsl:apply-templates select="*[not(contains(@class, ' topic/desc '))] | text() | comment() | processing-instruction()"/>
+      <xsl:apply-templates
+        select="*[not(contains(@class, ' topic/desc '))] | text() | comment() | processing-instruction()"
+      />
     </a>
   </xsl:template>
 </xsl:stylesheet>

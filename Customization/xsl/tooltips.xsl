@@ -59,7 +59,7 @@
            <xsl:apply-templates/>
         </xsl:copy>
        </xsl:variable>
-       <xsl:apply-templates select="$htmlContent"  mode="serialize"/>
+       <xsl:apply-templates select="$htmlContent" mode="serialize"/>
      </xsl:variable>
      <xsl:value-of select="substring($htmlAsString, 7, string-length($htmlAsString) - 13)"/>
   </xsl:template>
@@ -68,11 +68,11 @@
   <xsl:template match="*" mode="serialize">
     <xsl:text>&lt;</xsl:text>
     <xsl:value-of select="name()"/>
-    <xsl:apply-templates select="@*" mode="serialize" />
+    <xsl:apply-templates select="@*" mode="serialize"/>
     <xsl:choose>
         <xsl:when test="node()">
             <xsl:text>&gt;</xsl:text>
-            <xsl:apply-templates mode="serialize" />
+            <xsl:apply-templates mode="serialize"/>
             <xsl:text>&lt;/</xsl:text>
             <xsl:value-of select="name()"/>
             <xsl:text>&gt;</xsl:text>
@@ -142,7 +142,9 @@
           <!-- ↓ Add Bootstrap class attributes template ↑ -->
           <xsl:apply-templates select="." mode="add-bootstrap-tooltip"/>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-          <xsl:apply-templates select="*[not(contains(@class, ' topic/desc '))] | text() | comment() | processing-instruction()"/>
+          <xsl:apply-templates
+            select="*[not(contains(@class, ' topic/desc '))] | text() | comment() | processing-instruction()"
+          />
         </span>
       </xsl:otherwise>
     </xsl:choose>
