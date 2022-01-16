@@ -133,7 +133,9 @@
       <xsl:call-template name="setscale"/>
       <xsl:call-template name="setidaname"/>
       <!--xsl:call-template name="place-fig-lbl"/-->
-      <xsl:apply-templates select="node() except *[contains(@class, ' topic/title ') or contains(@class, ' topic/desc ')]"/>
+      <xsl:apply-templates
+        select="node() except *[contains(@class, ' topic/title ') or contains(@class, ' topic/desc ')]"
+      />
       <!-- ↓ Move Figure title below image ↑ -->
       <xsl:call-template name="place-fig-lbl"/>
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
@@ -148,7 +150,10 @@
   <xsl:template name="place-fig-lbl">
     <xsl:param name="stringName"/>
     <!-- Number of fig/title's including this one -->
-    <xsl:variable name="fig-count-actual" select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"/>
+    <xsl:variable
+      name="fig-count-actual"
+      select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"
+    />
     <xsl:variable name="ancestorlang">
       <xsl:call-template name="getLowerCaseLang"/>
     </xsl:variable>
@@ -159,7 +164,10 @@
           <!-- ↑ Start customization · Add Bootstrap class ↓ -->
           <xsl:variable name="fig-caption-class" select="concat('figure-caption ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
           <xsl:apply-templates select="." mode="set-output-class">
-            <xsl:with-param name="default" select="concat($fig-caption-class, ./*[contains(@class, ' topic/title ')][1]/@outputclass)"/>
+            <xsl:with-param
+              name="default"
+              select="concat($fig-caption-class, ./*[contains(@class, ' topic/title ')][1]/@outputclass)"
+            />
           </xsl:apply-templates>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <span class="fig--title-label">
@@ -214,7 +222,7 @@
     </xsl:variable>
     <figure>
       <xsl:if test="$default-fig-class != ''">
-        <xsl:attribute name="class" >
+        <xsl:attribute name="class">
           <xsl:value-of select="$default-fig-class"/>
           <xsl:text> figure </xsl:text>
           <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE"/>
@@ -241,7 +249,7 @@
     </xsl:variable>
     <figure>
       <xsl:if test="$default-fig-class != ''">
-        <xsl:attribute name="class" >
+        <xsl:attribute name="class">
           <xsl:value-of select="$default-fig-class"/>
           <xsl:text> figure </xsl:text>
           <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE"/>
@@ -265,7 +273,7 @@
       <xsl:when test="@frame = 'top'">border-top</xsl:when>
       <xsl:when test="@frame = 'bottom'">border-bottom</xsl:when>
       <xsl:when test="@frame = 'topbot'">border-top border-bottom</xsl:when>
-      <xsl:otherwise></xsl:otherwise>
+      <xsl:otherwise/>
     </xsl:choose>
   </xsl:template>
 </xsl:stylesheet>
