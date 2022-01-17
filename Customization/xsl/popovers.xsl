@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Tooltips Component -->
-  <!-- https://getbootstrap.com/docs/5.0/components/tooltips/ -->
+  <!-- https://getbootstrap.com/docs/5.1/components/tooltips/ -->
 
 
    <xsl:template match="*" mode="add-bootstrap-popover">
