@@ -171,7 +171,16 @@
       <xsl:when test="*[contains(@class, ' topic/title ')]">
         <figcaption>
           <!-- ↑ Start customization · Add Bootstrap class ↓ -->
-          <xsl:variable name="fig-caption-class" select="concat('figure-caption ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
+          <xsl:variable name="fig-caption-class">
+            <xsl:choose>
+              <xsl:when test="*[contains(@class, ' topic/lq ')]">
+                  <xsl:value-of select="concat('blockquote-footer ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="concat('figure-caption ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
+              </xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>
           <xsl:apply-templates select="." mode="set-output-class">
             <xsl:with-param
               name="default"
@@ -180,7 +189,11 @@
           </xsl:apply-templates>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <span class="fig--title-label">
-            <xsl:choose>      <!-- Hungarian: "1. Figure " -->
+              <xsl:choose>
+              <!-- Blockquote - figure -->
+              <xsl:when test="*[contains(@class, ' topic/lq ')]">
+              </xsl:when>
+              <!-- Hungarian: "1. Figure " -->
               <xsl:when test="$ancestorlang = ('hu', 'hu-hu')">
                 <xsl:value-of select="$fig-count-actual"/>
                 <xsl:text>. </xsl:text>
