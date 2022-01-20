@@ -300,4 +300,30 @@
       <xsl:otherwise/>
     </xsl:choose>
   </xsl:template>
+
+
+  <!-- -->
+  <xsl:template match="*[contains(@class, ' topic/ph ') and contains(@otherprops, 'title(')  and (contains(@outputclass, 'initialism') or contains(@outputclass, 'abbreviation'))]">
+    <abbr>
+      <xsl:attribute name="title">
+        <xsl:analyze-string select="@otherprops" regex="[a-z]*\([^\)]*\)">
+          <xsl:matching-substring>
+            <xsl:variable name="var">
+              <xsl:value-of select="."/>
+            </xsl:variable>
+            <xsl:variable name="attr">
+              <xsl:value-of select="substring-before($var, '(')"/>
+            </xsl:variable>
+            <xsl:attribute name="{$attr}">
+              <xsl:value-of select="substring-before(substring-after($var, '('),')')"/>
+            </xsl:attribute>
+          </xsl:matching-substring>
+        </xsl:analyze-string>
+      </xsl:attribute>
+      <xsl:call-template name="commonattributes"/>
+      <xsl:call-template name="setidaname"/>
+      <xsl:apply-templates/>
+    </abbr>
+  </xsl:template>
+
 </xsl:stylesheet>

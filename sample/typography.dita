@@ -102,6 +102,32 @@
       Change text alignment, transform, style, weight, line-height, decoration and color with Bootstrap's <xref href="./utilities.dita" format="dita">text and color utilities</xref>.
     </p>
   </section>
+
+  <section>
+    <title>Abbreviations</title>
+    <p>Stylized implementation of HTML’s <xmlelement>abbr</xmlelement> element for abbreviations
+      and acronyms to show the expanded version on hover. Abbreviations have a default underline
+      and gain a help cursor to provide additional context on hover and to users of assistive
+      technologies.
+    </p>
+    <p>Add <xmlatt>outputclass="initialism"</xmlatt> to an abbreviation for a slightly smaller
+    font-size.</p>
+  </section>
+  <bodydiv outputclass="bd-example" deliveryTarget="html">
+    <p>
+      <ph outputclass="abbreviation" otherprops="title(attribute)">attr</ph>
+    </p>
+    <p>
+      <ph outputclass="initialism" otherprops="title(HyperText Markup Language)">HTML</ph>
+    </p>
+  </bodydiv>
+  <codeblock>&lt;p&gt;
+  &lt;ph outputclass="abbreviation" otherprops="title(attribute)"&gt;attr&lt;/ph&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;ph outputclass="initialism" otherprops="title(HyperText Markup Language)"&gt;HTML&lt;/ph&gt;
+&lt;/p&gt;
+  </codeblock>
   <section>
     <title>Blockquotes</title>
     <p>
@@ -305,64 +331,3 @@
 &lt;/dl&gt;</codeblock>
   </body>
 </topic>
-
-<!--
-
-Stylized implementation of HTML’s <abbr> element for abbreviations and acronyms to show the expanded version on hover. Abbreviations have a default underline and gain a help cursor to provide additional context on hover and to users of assistive technologies.
-
-Add .initialism to an abbreviation for a slightly smaller font-size.
-
-attr
-
-HTML
-
-Copy
-<p><abbr title="attribute">attr</abbr></p>
-<p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
-
-
-
-
-Description list alignment
-Align terms and descriptions horizontally by using our grid system’s predefined classes (or semantic mixins). For longer terms, you can optionally add a .text-truncate class to truncate the text with an ellipsis.
-
-Description lists
-A description list is perfect for defining terms.
-Term
-Definition for the term.
-
-And some more placeholder definition text.
-
-Another term
-This definition is short, so no extra paragraphs or anything.
-Truncated term is truncated
-This can be useful when space is tight. Adds an ellipsis at the end.
-Nesting
-Nested definition list
-I heard you like definition lists. Let me put a definition list inside your definition list.
-Copy
-<dl class="row">
-  <dt class="col-sm-3">Description lists</dt>
-  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
-
-  <dt class="col-sm-3">Term</dt>
-  <dd class="col-sm-9">
-    <p>Definition for the term.</p>
-    <p>And some more placeholder definition text.</p>
-  </dd>
-
-  <dt class="col-sm-3">Another term</dt>
-  <dd class="col-sm-9">This definition is short, so no extra paragraphs or anything.</dd>
-
-  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-  <dd class="col-sm-9">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
-
-  <dt class="col-sm-3">Nesting</dt>
-  <dd class="col-sm-9">
-    <dl class="row">
-      <dt class="col-sm-4">Nested definition list</dt>
-      <dd class="col-sm-8">I heard you like definition lists. Let me put a definition list inside your definition list.</dd>
-    </dl>
-  </dd>
-</dl>
--->
