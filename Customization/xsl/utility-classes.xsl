@@ -19,7 +19,6 @@
   <xsl:param name="BOOTSTRAP_CSS_TABS" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'me-3'"/>
   <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="''"/>
-  <xsl:param name="BOOTSTRAP_CSS_PAGINATION" select="'justify-content-center mt-4'"/>
   <!-- Add a Bootstrap CSS border to codeblocks -->
   <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_CODEBLOCK"/>

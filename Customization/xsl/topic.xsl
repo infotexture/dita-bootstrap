@@ -22,8 +22,6 @@
         </xsl:attribute>
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
 
-
-
         <xsl:apply-templates/> <!-- this will include all things within topic; therefore, -->
                                <!-- title content will appear here by fall-through -->
                                <!-- followed by prolog (but no fall-through is permitted for it) -->
@@ -32,9 +30,10 @@
                                <!-- followed by child topics by fall-through -->
 
         <!-- ↓ Add Bootstrap pagination ↑ -->
-        <xsl:apply-templates select="$current-topicref" mode="gen-user-pagination"/>
+        <xsl:if  test="$BOOTSTRAP_PAGINATION = ('partial', 'full')">
+          <xsl:apply-templates select="$current-topicref" mode="gen-user-pagination"/>
+        </xsl:if>
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-
 
         <xsl:call-template name="gen-endnotes"/>    <!-- include footnote-endnotes -->
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>

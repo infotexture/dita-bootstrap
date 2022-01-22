@@ -35,6 +35,25 @@
       <val default="true">no</val>
     </param>
     <param
+      name="bootstrap.pagination"
+      desc="Specifies whether include a pagination bar at the foot of the page"
+      type="enum"
+    >
+      <val>full</val>
+      <val>partial</val>
+      <val default="true">none</val>
+    </param>
+    <param
+      name="bootstrap.pagination.next"
+      type="string"
+      desc="Character to use as the &quot;Next&quot; icon in a pagination bar"
+    />
+    <param
+      name="bootstrap.pagination.previous"
+      type="string"
+      desc="Character to use as the &quot;Previous&quot; icon in a pagination bar"
+    />
+    <param
       name="bootstrap.css.shortdesc"
       type="string"
       desc="Common Bootstrap classes for DITA &lt;shortdesc&gt; elements"
@@ -83,6 +102,11 @@
       name="bootstrap.css.accordion.flush"
       type="string"
       desc="Bootstrap classes for flush accordion components"
+    />
+    <param
+      name="bootstrap.css.pagination"
+      type="string"
+      desc="Bootstrap classes for pagination components"
     />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>

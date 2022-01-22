@@ -10,6 +10,21 @@
     if:set="icons.include"
   />
   <param
+    name="BOOTSTRAP_PAGINATION"
+    expression="${bootstrap.pagination}"
+    if:set="bootstrap.pagination"
+  />
+  <param
+    name="BOOTSTRAP_PAGINATION_NEXT"
+    expression="${bootstrap.pagination.next}"
+    if:set="bootstrap.pagination.next"
+  />
+  <param
+    name="BOOTSTRAP_PAGINATION_PREVIOUS"
+    expression="${bootstrap.pagination.previous}"
+    if:set="bootstrap.pagination.previous"
+  />
+  <param
     name="BOOTSTRAP_CSS_SHORTDESC"
     expression="${bootstrap.css.shortdesc}"
     if:set="bootstrap.css.shortdesc"
@@ -53,5 +68,10 @@
     name="BOOTSTRAP_CSS_ACCORDION"
     expression="${bootstrap.css.accordion}"
     if:set="bootstrap.css.accordion"
+  />
+  <param
+    name="BOOTSTRAP_CSS_PAGINATION"
+    expression="${bootstrap.css.pagination}"
+    if:set="bootstrap.css.pagination"
   />
 </dummy>
