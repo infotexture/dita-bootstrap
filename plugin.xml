@@ -92,4 +92,5 @@
     file="insertParameters.xml"
   />
   <feature extension="dita.conductor.html5.param" file="insertParameters.xml"/>
+  <feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
 </plugin>
