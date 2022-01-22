@@ -20,6 +20,11 @@
       <val default="true">no</val>
     </param>
     <param
+      name="bootstrap.breadcrumb.divider"
+      type="string"
+      desc="Divider for bootstrap breadcrumbs"
+    />
+    <param
       name="nav-toc"
       type="enum"
       desc="Specifies whether to generate a navigation TOC in topic pages."

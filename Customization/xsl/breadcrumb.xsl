@@ -14,12 +14,23 @@
   <!-- Override to add Bootstrap breadcrumb component -->
   <!-- https://getbootstrap.com/docs/5.1/components/breadcrumb/ -->
 
-  <xsl:param name="breadcrumb" as="xs:string?"/>
+  <!-- Whether include a bootstrap breadcrumb component on each page.  values are 'yes' or 'no' -->
+  <xsl:param name="BREADCRUMBS" select="'no'"/>
+  <!-- Dividers can be changed via an input parameter -->
+  <xsl:param name="BREADCRUMB_DIVIDER" select="'/'"/>
 
   <!-- Add Bootstrap breadcrumb -->
   <xsl:template match="*" mode="gen-user-breadcrumb">
 
     <nav aria-label="breadcrumb">
+      <xsl:if test="not($BREADCRUMB_DIVIDER = '/')">
+         <xsl:attribute name="style">
+          <xsl:text>--bs-breadcrumb-divider: '</xsl:text>
+          <xsl:value-of select="$BREADCRUMB_DIVIDER"/>
+          <xsl:text>';</xsl:text>
+        </xsl:attribute>
+      </xsl:if>
+
       <ol class="breadcrumb">
         <xsl:for-each select="ancestor::node()">
           <xsl:variable name="title">
