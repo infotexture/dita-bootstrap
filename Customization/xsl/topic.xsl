@@ -11,6 +11,13 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot dita2html"
 >
+
+  <!-- Define a newline character -->
+  <xsl:variable name="newline">
+<xsl:text>
+</xsl:text>
+  </xsl:variable>
+
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template name="commonattributes">
     <xsl:param name="default-output-class"/>
