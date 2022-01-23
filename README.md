@@ -143,7 +143,10 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.accordion` – common utility classes for Bootstrap accordion components
 - `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
 - `bootstrap.css.figure.caption` – common utility classes for DITA `<title>` elements within `<fig>` elements
-- `bootstrap.css.figure.image` – common utility classes for for DITA `<image>` elements within `<fig>` elements
+- `bootstrap.css.figure.image` – common utility classes for DITA `<image>` elements within `<fig>` elements
+- `bootstrap.css.dl`  – common utility classes for DITA `<dl>` elements
+- `bootstrap.css.dt`  – common utility classes for DITA `<dt>` elements
+- `bootstrap.css.dd`  – common utility classes for DITA `<dd>` elements
 
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.

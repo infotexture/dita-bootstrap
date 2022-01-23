@@ -74,4 +74,19 @@
     expression="${bootstrap.css.figure.image}"
     if:set="bootstrap.css.figure.image"
   />
+  <param
+    name="BOOTSTRAP_CSS_DL"
+    expression="${bootstrap.css.dl}"
+    if:set="bootstrap.css.dl"
+  />
+  <param
+    name="BOOTSTRAP_CSS_DT"
+    expression="${bootstrap.css.dt}"
+    if:set="bootstrap.css.dt"
+  />
+  <param
+    name="BOOTSTRAP_CSS_DD"
+    expression="${bootstrap.css.dd}"
+    if:set="bootstrap.css.dd"
+  />
 </dummy>

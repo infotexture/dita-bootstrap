@@ -107,6 +107,21 @@
       type="string"
       desc="Bootstrap classes for figure images"
     />
+    <param
+      name="bootstrap.css.dl"
+      type="string"
+      desc="Bootstrap classes for definition lists"
+    />
+    <param
+      name="bootstrap.css.dt"
+      type="string"
+      desc="Bootstrap classes for definition list terms"
+    />
+    <param
+      name="bootstrap.css.dd"
+      type="string"
+      desc="Bootstrap classes for definition list descriptions"
+    />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
