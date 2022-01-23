@@ -14,8 +14,8 @@
   <abstract>
     <shortdesc>Documentation and examples for displaying related images and text with the figure component in Bootstrap.</shortdesc>
     <p>Anytime you need to display a piece of content—like an image with an optional caption, consider
-     using a DITA <xmlelement>fig</xmlelement> element. Bootstrap CSS classes <xmlatt>class="figure"</xmlatt> ,
-     <xmlatt>class="figure-img"</xmlatt> and <xmlatt>class="figure-caption"</xmlatt> are
+     using a DITA <xmlelement>fig</xmlelement> element. Bootstrap CSS classes <xmlatt>class="figure"</xmlatt>,
+     <xmlatt>class="figure-img"</xmlatt>, and <xmlatt>class="figure-caption"</xmlatt> are
      automatically included to the output to provide some baseline styles for the HTML5 <xmlelement>figure</xmlelement> and <xmlelement>figcaption</xmlelement> elements.
     </p>
   </abstract>
