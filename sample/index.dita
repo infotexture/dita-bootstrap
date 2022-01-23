@@ -26,7 +26,11 @@
       documentation</xref>, however DITA markup is used throughout the examples describing how to implement these
       components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute. This text is
       therefore a derivative of <cite>Bootstrap 5 docs</cite> by Twitter, Inc. and the Bootstrap Authors,
-      and used under <xref href="https://creativecommons.org/licenses/by/3.0/" scope="external">CC BY 3.0.</xref></p>
+      and used under <xref
+        href="https://creativecommons.org/licenses/by/3.0/"
+        format="html"
+        scope="external"
+      >CC BY 3.0.</xref></p>
   </abstract>
   <prolog>
     <metadata>
