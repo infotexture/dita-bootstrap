@@ -40,7 +40,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"/>
         <span class="visually-hidden">
           <xsl:call-template name="getVariable">
-            <xsl:with-param name="id" select="'Previous'"/>
+            <xsl:with-param name="id" select="'Next'"/>
           </xsl:call-template>
         </span>
       </a>
