@@ -255,6 +255,10 @@
           <parmname>--bootstrap.css.accordion</parmname> – common utility classes for Bootstrap
           <xref href="./accordion.dita" format="dita">accordion components</xref>
         </li>
+        <li>
+          <parmname>--bootstrap.css.pagination</parmname> – common utility classes for Bootstrap
+          <xref href="./pagination.dita" format="dita">pagination components</xref>
+        </li>
       </ul>
     </section>
   </body>

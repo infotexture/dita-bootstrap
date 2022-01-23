@@ -18,10 +18,28 @@
   <xsl:param name="BOOTSTRAP_PAGINATION" select="'none'"/>
   <xsl:param name="BOOTSTRAP_PAGINATION_NEXT" select="''"/>
   <xsl:param name="BOOTSTRAP_PAGINATION_PREVIOUS" select="''"/>
-  <xsl:param name="BOOTSTRAP_CSS_PAGINATION" select="''"/>
-
 
   <!-- Add Bootstrap pagination -->
+  <xsl:template
+    match="*[ (contains(@class, ' topic/ol ') or contains(@class, ' topic/ul ')) and contains(@outputclass, 'pagination')]"
+  >
+    <nav>
+      <xsl:next-match/>
+    </nav>
+  </xsl:template>
+
+  <xsl:template
+    match="*[ contains(@class, ' topic/section ') and contains(@outputclass, 'pagination')]"
+  >
+    <nav>
+      <xsl:attribute name="aria-label">
+        <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
+      </xsl:attribute>
+      <xsl:apply-templates select="*[(contains(@class, ' topic/ol ') or contains(@class, ' topic/ul '))]" />
+    </nav>
+  </xsl:template>
+
+  <!-- Add Footer pagination -->
   <xsl:template match="*" mode="gen-user-pagination">
 
     <xsl:variable name="hasSiblings" select="count(../*[contains(@class, ' map/topicref ')]) gt 1"/>
@@ -37,7 +55,7 @@
             <xsl:with-param name="id" select="'Contents'"/>
           </xsl:call-template>
         </xsl:attribute>
-        <ul>
+        <ol>
           <xsl:attribute name="class">
             <xsl:text>pagination mt-4 </xsl:text>
             <xsl:value-of select="$BOOTSTRAP_CSS_PAGINATION"/>
@@ -81,7 +99,7 @@
             <xsl:with-param name="hasNext" select="$hasNext" />
             <xsl:with-param name="currentTopic" select="$currentTopic"/>
           </xsl:call-template>
-        </ul>
+        </ol>
       </nav>
     </xsl:if>
   </xsl:template>
