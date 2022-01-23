@@ -1,5 +1,10 @@
 <dummy xmlns:if="ant:if" xmlns:unless="ant:unless">
   <param
+    name="BOOTSTRAP_POPOVERS_INCLUDE"
+    expression="${popovers.include}"
+    if:set="popovers.include"
+  />
+  <param
     name="BOOTSTRAP_ICONS_CDN"
     expression="${icons.cdn.path}"
     if:set="icons.cdn.path"

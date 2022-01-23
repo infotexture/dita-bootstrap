@@ -40,7 +40,9 @@
     <topicref navtitle="Carousel" format="dita" type="topic" href="carousel.dita"/>
     <topicref navtitle="List Group" format="dita" type="topic" href="list-group.dita"/>
     <topicref navtitle="Offcanvas" format="dita" type="topic" href="offcanvas.dita"/>
+    <topicref navtitle="Popovers" format="dita" type="topic" href="popovers.dita"/>
     <topicref navtitle="Tabs" format="dita" type="topic" href="tabs.dita"/>
+    <topicref navtitle="Tooltips" format="dita" type="topic" href="tooltips.dita"/>
   </chapter>
   <chapter>
     <topicmeta>

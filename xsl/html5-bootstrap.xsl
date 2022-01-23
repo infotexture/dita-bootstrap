@@ -11,8 +11,10 @@
   <!-- the file name containing XHTML to be placed in the HEAD area
        (file name and extension only - no path). -->
   <xsl:param name="BOOTSTRAP_ICONS_CDN"/>
-  <!-- Whether include bootstrap icons.  values are 'yes' or 'no' -->
+  <!-- Whether to include bootstrap icons.  values are 'yes' or 'no' -->
   <xsl:param name="BOOTSTRAP_ICONS_INCLUDE" select="'no'"/>
+  <!-- Whether to include bootstrap popovers.  values are 'yes' or 'no' -->
+  <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'no'"/>
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
@@ -22,9 +24,11 @@
   <xsl:include href="../Customization/xsl/offcanvas.xsl"/>
   <xsl:include href="../Customization/xsl/hi-d.xsl"/>
   <xsl:include href="../Customization/xsl/nav.xsl"/>
+  <xsl:include href="../Customization/xsl/popovers.xsl"/>
   <xsl:include href="../Customization/xsl/tabs.xsl"/>
   <xsl:include href="../Customization/xsl/tables.xsl"/>
   <xsl:include href="../Customization/xsl/topic.xsl"/>
+  <xsl:include href="../Customization/xsl/tooltips.xsl"/>
   <xsl:include href="../Customization/xsl/utility-classes.xsl"/>
 
   <!-- Override to add <meta> elements to page heads -->
@@ -92,6 +96,22 @@
       <!-- ↓ Close Bootstrap divs -->
         </div>
       </div>
+
+      <xsl:if test="$BOOTSTRAP_POPOVERS_INCLUDE = 'yes'">
+        <script language="javascript">//
+          <![CDATA[
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+              return new bootstrap.Popover(popoverTriggerEl)
+            })
+         // ]]>
+        </script>
+      </xsl:if>
       <!-- ↑ End customization -->
       <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
     </body>
