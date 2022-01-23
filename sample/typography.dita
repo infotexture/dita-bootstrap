@@ -66,7 +66,7 @@
 &lt;title outputclass="display-6"&gt;Display 6&lt;/title&gt;</codeblock>
     <section>
       <title>Lead</title>
-      <p>Make a paragraph stand out by adding <xmlatt>outputclass="lead"</xmlatt> - this is automatically added to  <xmlelement>shortdesc</xmlelement> elements </p>
+      <p>Make a paragraph stand out by adding <xmlatt>outputclass="lead"</xmlatt> — this is automatically added to <xmlelement>shortdesc</xmlelement> elements.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <p outputclass="lead">
@@ -92,7 +92,7 @@
 &lt;p&gt;&lt;line-through&gt;This line of text is meant to be treated as deleted
   text.&lt;/line-through&gt;&lt;/p&gt;
 &lt;p&gt;&lt;u&gt;This line of text will render as underlined.&lt;/u&gt;&lt;/p&gt;
-&lt;p outputclass="small"&gt;This line of text use &lt;xmlatt&gt;outputclass="small"&lt;/xmlatt&gt;
+&lt;p outputclass="small"&gt;This line of text using &lt;xmlatt&gt;outputclass="small"&lt;/xmlatt&gt;
   is meant to be treated as fine print.&lt;/p&gt;
 &lt;p&gt;&lt;b&gt;This line rendered as bold text.&lt;/b&gt;&lt;/p&gt;
 &lt;p&gt;&lt;i&gt;This line rendered as italicized text.&lt;/i&gt;&lt;/p&gt;</codeblock>
@@ -131,7 +131,7 @@
   <section>
     <title>Blockquotes</title>
     <p>
-      For quoting blocks of content from another source within your document use the DITA <xmlelement>lq</xmlelement>
+      For quoting blocks of content from another source within your document, use the DITA <xmlelement>lq</xmlelement>
       element, it is styled automatically.
     </p>
   </section>
@@ -259,8 +259,8 @@
 &lt;/ul></codeblock>
   <section>
     <title outputclass="h3">Description list alignment</title>
-    <p>Terms and descriptions align horizontally by using Bootstrap's grid system of
-     predefined classes. For longer terms texts are to truncated with an ellipsis.</p>
+    <p>Terms and descriptions align horizontally using Bootstrap's grid system of
+     predefined classes. For longer terms, text is truncated with an ellipsis.</p>
   </section>
   <bodydiv outputclass="bd-example" deliveryTarget="html">
     <dl>
