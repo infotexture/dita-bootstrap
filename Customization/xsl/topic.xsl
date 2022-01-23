@@ -18,9 +18,6 @@
 </xsl:text>
   </xsl:variable>
 
-  <!-- Whether include a bootstrap breadcrumb component on each page.  values are 'yes' or 'no' -->
-  <xsl:param name="BREADCRUMBS" select="'no'"/>
-
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
       <article xsl:use-attribute-sets="article">
