@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Carousel Component -->
-  <!-- https://getbootstrap.com/docs/5.0/components/carousel/ -->
+  <!-- https://getbootstrap.com/docs/5.1/components/carousel/ -->
 
   <xsl:template
     match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]"
