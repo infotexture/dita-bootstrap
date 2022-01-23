@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
-<project>
+<project xmlns:if="ant:if">
   <target
     name="dita2html5-bootstrap"
     depends="dita2html5-bootstrap.init,
@@ -9,17 +9,55 @@
   />
 
   <target name="dita-bootstrap.css.copy" description="Copy CSS files">
-    <property
-      name="dita-bootstrap.css.file"
-      value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/style.css"
-    />
+    <property name="dita-bootstrap.css.dir" value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/"/>
+
+    <!-- Common Bootstrap overrides for DITA-OT css -->
     <loadfile
       property="dita-bootstrap.css"
-      srcFile="${dita-bootstrap.css.file}"
+      srcFile="${dita-bootstrap.css.dir}/common-bootstrap.css"
     />
     <echo
       append="true"
       message="${line.separator}${dita-bootstrap.css}"
+      file="${extend.css.file}"
+    />
+
+    <!-- Add Bootstrap side-toc css unless nav-toc=none -->
+    <condition
+      property="dita-bootstrap.side-toc.css.file"
+      value="${dita-bootstrap.css.dir}/none-toc.css"
+    >
+      <equals arg1="${nav-toc}" arg2="none"/>
+    </condition>
+    <property name="dita-bootstrap.side-toc.css.file"
+      value="${dita-bootstrap.css.dir}/side-toc.css"/>
+
+    <loadfile property="dita-bootstrap.side-toc"
+      srcFile="${dita-bootstrap.side-toc.css.file}"
+    />
+    <echo
+      append="true"
+      message="${line.separator}${dita-bootstrap.side-toc}"
+      file="${extend.css.file}"
+    />
+
+    <!-- Add Bootstrap menubar-toc css if menubar-toc.include=yes -->
+    <condition
+      property="dita-bootstrap.menubar-toc.css.file"
+      value="${dita-bootstrap.css.dir}/menubar-toc.css"
+    >
+      <equals arg1="${menubar-toc.include}" arg2="yes"/>
+    </condition>
+
+    <loadfile
+      if:set="dita-bootstrap.menubar-toc.css.file"
+      property="dita-bootstrap.menubar-toc"
+      srcFile="${dita-bootstrap.menubar-toc.css.file}"
+    />
+    <echo
+      if:set="dita-bootstrap.menubar-toc.css.file"
+      append="true"
+      message="${line.separator}${dita-bootstrap.menubar-toc}"
       file="${extend.css.file}"
     />
   </target>
@@ -46,6 +84,7 @@
     <property name="nav-toc" value="partial"/>
     <property name="args.copycss" value="yes"/>
     <property name="args.csspath" value="css"/>
+    <property name="menubar-toc.include" value="no"/>
     <property name="popovers.include" value="no"/>
   </target>
 </project>

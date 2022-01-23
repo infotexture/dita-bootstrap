@@ -19,6 +19,8 @@
   <xsl:param name="BOOTSTRAP_CSS_TABS" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'me-3'"/>
   <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACCESSIBILITY_NAV" select="'bg-light'"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACCESSIBILITY_LINK" select="'btn btn-outline-primary btn-sm'"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE" select="' w-100 mw-100 p-3 '"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_CAPTION" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_IMAGE" select="'img-fluid border rounded'"/>

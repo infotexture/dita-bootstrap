@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass. -->
+<topic id="scrollspy">
+  <title>Scrollspy</title>
+  <shortdesc>Automatically update a side-bar ToC using Bootstrap navigation or list group components based on scroll position to indicate which link is currently active in the viewport.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Scrollspy</indexterm>
+        <indexterm><parmname>--nav-toc</parmname></indexterm>
+        <indexterm><parmname>--menubar-toc.include</parmname></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+    <note type="note">
+      <p>Unlike other ToC options, scrollspy works only on <b>embedded sub-topics</b> within DITA files. The sidebar
+      will not contain a topic tree based in the main ditamap.</p>
+    </note>
+
+    <note type="tip">
+      <p> Use the <parmname>--menubar-toc.include</parmname> parameter to provide an additional menu bar navigation.</p>
+    </note>
+    <section>
+      <title>Example with nested nav</title>
+      <p>
+        Bootstrap's Scrollspy works with nested <codeph>.navs</codeph>. If a nested <codeph>.nav</codeph> is <codeph>
+        .active</codeph>, its parents will also be <codeph>.active</codeph>. An animation of an example ToC navbar is shown
+        below.</p>
+    <fig>
+      <image scalefit="yes" href="./src/nav-pill-scrollspy.gif"/>
+    </fig>
+    <codeblock>&lt;topic&gt;
+  &lt;title&gt;Navbar&lt;/title&gt;
+  ...
+  &lt;topic id="item1"&gt;
+    &lt;title&gt;Item 1&lt;/title&gt;
+    ...
+    &lt;topic id="item1-1" conref="..."&gt;
+      &lt;title&gt;Item 1.1&lt;/title&gt;
+    &lt;/topic&gt;
+    &lt;topic id="item1-2" conref="..."&gt;
+      &lt;title&gt;Item 1.2&lt;/title&gt;
+    &lt;/topic&gt;
+  &lt;/topic&gt;
+  &lt;topic id="item2" conref="..."&gt;
+    &lt;title&gt;Item 2&lt;/title&gt;
+    ...
+  &lt;/topic&gt;
+&lt;/topic&gt;</codeblock>
+     <p>To use this option, embed the subtopics and add the parameters <parmname>--menubar-toc.include</parmname>=<option>yes</option>
+      and <parmname>--nav-toc</parmname>=<option>nav-pill-scrollspy</option>  to
+      the <cmdname>dita</cmdname> command.</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+  <parmname>--nav-toc</parmname>=<option>nav-pill-scrollspy</option>  \
+  <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
+    </section>
+     <section>
+      <title>Example with list-group</title>
+      <p>
+        Bootstrap's Scrollspy component also works with <xref href="./list-group.dita" format="dita">ist-groups</xref>. An animation of an example ToC menu is shown
+        below.
+      </p>
+      <fig>
+        <image scalefit="yes" href="./src/list-group-scrollspy.gif"/>
+      </fig>
+      <codeblock>&lt;topic id="item1"&gt;
+    &lt;title&gt;Item 1&lt;/title&gt;
+    ...
+    &lt;topic id="item2" conref="..."&gt;
+      &lt;title&gt;Item 2&lt;/title&gt;
+    &lt;/topic&gt;
+    &lt;topic id="item3" conref="..."&gt;
+      &lt;title&gt;Item 3&lt;/title&gt;
+    &lt;/topic&gt;
+  &lt;/topic&gt;
+  &lt;topic id="item4" conref="..."&gt;
+    &lt;title&gt;Item 4&lt;/title&gt;
+  &lt;/topic&gt;
+&lt;/topic&gt;</codeblock>
+      <p>To use this option, embed the subtopics and add the parameters <parmname>--menubar-toc.include</parmname>=<option>yes</option>
+        and <parmname>--nav-toc</parmname>=<option>list-group-scrollspy</option> to
+        the <cmdname>dita</cmdname> command.</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+  <parmname>--nav-toc</parmname>=<option>list-group-scrollspy</option>  \
+  <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
+   </section>
+  </body>
+</topic>

@@ -60,6 +60,21 @@
     if:set="bootstrap.css.accordion"
   />
   <param
+    name="BOOTSTRAP_MENUBAR_TOC"
+    expression="${menubar-toc.include}"
+    if:set="menubar-toc.include"
+  />
+  <param
+    name="BOOTSTRAP_CSS_ACCESSIBILITY_NAV"
+    expression="${bootstrap.css.accessibility.nav}"
+    if:set="bootstrap.css.accessibility.nav"
+  />
+  <param
+    name="BOOTSTRAP_CSS_ACCESSIBILITY_LINK"
+    expression="${bootstrap.css.accessibility.link}"
+    if:set="bootstrap.css.accessibility.link"
+  />
+  <param
     name="BOOTSTRAP_CSS_FIGURE"
     expression="${bootstrap.css.figure}"
     if:set="bootstrap.css.figure"

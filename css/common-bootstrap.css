@@ -30,3 +30,15 @@
   margin: 4px 6px;
   vertical-align: text-top;
 }
+
+.bs-container {
+  margin: 2rem auto 2rem auto;
+}
+
+.bs-sidebar-nav {
+    overflow: auto
+}
+
+.bs-header {
+  z-index: 1020;
+}
