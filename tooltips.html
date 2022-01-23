@@ -1,0 +1,181 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="copyright" content="(C) Copyright 2022"><meta name="generator" content="DITA-OT"><meta name="description" content="Documentation and examples for adding custom Bootstrap tooltips with CSS and JavaScript using CSS3 for animations and data-bs-attributes for local title storage."><meta name="keywords" content=", --popovers.include, Tooltips, CSS, outputclass, desc, xref"><title>Tooltips</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/commonltr.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="./css/common-extended.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous"></head><body id="tooltips"><header role="banner"><nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+
+  <div class="container">
+    <a class="navbar-brand" href="https://infotexture.github.io/dita-bootstrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bootstrap" viewBox="0 0 16 16">
+        <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"/>
+        <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"/>
+      </svg>
+      DITA Bootstrap
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.dita-ot.org/plugins#!net.infotexture.dita-bootstrap">Plugin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/infotexture/dita-bootstrap/releases">Releases</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/infotexture/dita-bootstrap">Source</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://getbootstrap.com/docs/5.1">Bootstrap Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav></header><div class="container" id="content"><div class="row"><nav class="col-lg-3" role="navigation"><div class="list-group me-3"><span class="list-group-item list-group-item-dark">Getting Started</span><a class="list-group-item list-group-item-action" href="index.html">DITA Bootstrap</a><span class="list-group-item list-group-item-dark">Layout</span><a class="list-group-item list-group-item-action" href="grid.html">Grid System</a><span class="list-group-item list-group-item-dark">Content</span><a class="list-group-item list-group-item-action" href="images.html">Images</a><a class="list-group-item list-group-item-action" href="tables.html">Tables</a><a class="list-group-item list-group-item-action" href="figures.html">Figures</a><span class="list-group-item list-group-item-dark">Components</span><a class="list-group-item list-group-item-action" href="accordion.html">Accordion</a><a class="list-group-item list-group-item-action" href="alerts.html">Alerts</a><a class="list-group-item list-group-item-action" href="badge.html">Badges</a><a class="list-group-item list-group-item-action" href="buttons.html">Buttons</a><a class="list-group-item list-group-item-action" href="button-group.html">Button Group</a><a class="list-group-item list-group-item-action" href="card.html">Cards</a><a class="list-group-item list-group-item-action" href="carousel.html">Carousel</a><a class="list-group-item list-group-item-action" href="list-group.html">List Group</a><a class="list-group-item list-group-item-action" href="offcanvas.html">Offcanvas</a><a class="list-group-item list-group-item-action" href="popovers.html">Popovers</a><a class="list-group-item list-group-item-action" href="tabs.html">Tabbed Dialogs</a><a class="list-group-item list-group-item-action active" href="tooltips.html">Tooltips</a><span class="list-group-item list-group-item-dark">Utilities</span><a class="list-group-item list-group-item-action" href="utilities.html">Borders, Color and Background</a><span class="list-group-item list-group-item-dark">Extend</span><a class="list-group-item list-group-item-action" href="icons.html">Icons</a></div></nav><main role="main" class="col-lg-9"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title text-dark" id="ariaid-title1">Tooltips</h1>
+  
+  
+  <div class="body language-markup"><p class="shortdesc text-muted lead">Documentation and examples for adding custom Bootstrap tooltips
+    with CSS and JavaScript using CSS3 for animations and <code class="ph codeph">data-bs-attributes</code>
+    for local title storage.</p>
+    <section class="section"><h2 class="title text-dark">Overview</h2>
+      
+
+      <p class="p">
+        Things to know when using the tooltip plugin:
+      </p>
+      <ul class="ul">
+        <li class="li">
+          Tooltips rely on the 3rd party library <a class="xref" href="https://popper.js.org/" target="_blank" rel="external noopener">Popper</a> for positioning.
+        </li>
+        <li class="li">
+          Tooltips are opt-in for performance reasons, so <strong class="ph b">you must initialize them yourself</strong> by setting <span class="keyword parmname">--popovers.include</span>=<span class="keyword option">yes</span>.
+        </li>
+        <li class="li">
+          Tooltips with a zero-length <code class="keyword markupname xmlelement">&lt;desc&gt;</code> element are never displayed.
+        </li>
+        <li class="li">
+          Triggering tooltips on hidden elements will not work.
+        </li>
+        <li class="li">
+          Tooltips for <code class="keyword markupname xmlatt">@outputclass="disabled"</code> elements must be triggered on a wrapper element.
+        </li>
+        <li class="li">
+          Tooltips must be hidden before their corresponding elements have been removed from the DOM.
+        </li>
+        <li class="li">
+          Tooltips can be triggered thanks to an element inside a shadow DOM.
+        </li>
+      </ul>
+    </section>
+
+
+    <section class="section"><h2 class="title text-dark">Examples</h2>
+      
+      <p class="p">Hover over the links below to see tooltips:</p>
+    </section>
+
+    <div class="bodydiv bd-example">
+
+      <p class="p">
+        Placeholder text to demonstrate some <a data-bs-toggle="tooltip" data-bs-placement="top" title="Default tooltip" class="xref tooltip-top" href="#">inline links </a>
+        with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of
+        <a data-bs-toggle="tooltip" data-bs-placement="top" title="Another tooltip" class="xref tooltip-top" href="#">real text</a>. And all that just to give
+        you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how
+        <a data-bs-toggle="tooltip" data-bs-placement="top" title="Another one here too" class="xref tooltip-top" href="#">these tooltips on links</a> can work
+        in practice, once you use them on <a data-bs-toggle="tooltip" data-bs-placement="top" title="The last tip!" class="xref tooltip-top" href="#">your own</a>
+        site or project.
+      </p>
+    </div>
+
+    <p class="p">
+        To enable tooltips, add <code class="keyword markupname xmlatt">@output-class="tooltip-*"</code> to the enclosing <code class="keyword markupname xmlelement">&lt;xref&gt;</code>.
+        The direction of the tooltip is appended to the <code class="keyword markupname xmlatt">@output-class</code>.
+    </p>
+    <p class="p">
+        Hover over the buttons below to see the four tooltips directions: <code class="ph codeph language-markup">top</code>, <code class="ph codeph language-markup">right</code>, <code class="ph codeph language-markup">bottom</code>, and
+        <code class="ph codeph language-markup">left</code>. Directions are mirrored when using Bootstrap in RTL.
+    </p>
+    <div class="bodydiv bd-example">
+      <a data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top" role="button" class="xref btn btn-secondary tooltip-top" href="#">
+        
+        Tooltip on top
+      </a>
+      <a data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right" role="button" class="xref btn btn-secondary tooltip-right" href="#">
+        
+        Tooltip on right
+      </a>
+      <a data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom" role="button" class="xref btn btn-secondary tooltip-bottom" href="#">
+        
+        Tooltip on bottom
+      </a>
+      <a data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left" role="button" class="xref btn btn-secondary tooltip-left" href="#">
+        
+        Tooltip on left
+      </a>
+      <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>btn-secondary tooltip-top<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>desc</span><span class="ph token punctuation">&gt;</span></span>Tooltip on top<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>desc</span><span class="ph token punctuation">&gt;</span></span>
+  Tooltip on top
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>btn-secondary tooltip-right<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>desc</span><span class="ph token punctuation">&gt;</span></span>Tooltip on right<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>desc</span><span class="ph token punctuation">&gt;</span></span>
+  Tooltip on right
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>btn-secondary tooltip-bottom<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>desc</span><span class="ph token punctuation">&gt;</span></span>Tooltip on bottom<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>desc</span><span class="ph token punctuation">&gt;</span></span>
+  Tooltip on bottom
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>btn-secondary tooltip-left<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>desc</span><span class="ph token punctuation">&gt;</span></span>Tooltip on left<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>desc</span><span class="ph token punctuation">&gt;</span></span>
+  Tooltip on left
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+      <p class="p">
+        Custom HTML can be added to tooltips using additional DITA elements within the <code class="keyword markupname xmlelement">&lt;desc&gt;</code>
+      </p>
+      <a data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title="<strong class=&#34;ph b&#34;&gt;Tooltip</strong&gt; <u class=&#34;ph u&#34;&gt;with</u&gt; <strong class=&#34;ph b&#34;&gt;DITA</strong&gt; elements" role="button" class="xref btn btn-secondary tooltip-top" href="#">
+        
+        Tooltip with embedded DITA
+      </a>
+    </div>
+    <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>btn-secondary tooltip-top<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>desc</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>b</span><span class="ph token punctuation">&gt;</span></span>Tooltip<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>b</span><span class="ph token punctuation">&gt;</span></span> <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>u</span><span class="ph token punctuation">&gt;</span></span>with<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>u</span><span class="ph token punctuation">&gt;</span></span> <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>b</span><span class="ph token punctuation">&gt;</span></span>DITA<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>b</span><span class="ph token punctuation">&gt;</span></span> elements<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>desc</span><span class="ph token punctuation">&gt;</span></span>
+  Tooltip with embedded DITA
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+  </div>
+</article></main></div></div><script language="javascript">//
+          
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+              return new bootstrap.Popover(popoverTriggerEl)
+            })
+         // 
+        </script><footer role="contentinfo"><!-- Footer --><div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <!-- Social media -->
+      <p class="text-center p-3">
+        <!-- GitHub -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/infotexture/dita-bootstrap" role="button"><i class="bi bi-github"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/infotexture/" role="button"><i class="bi bi-linkedin"></i></a>
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/infotexture" role="button"><i class="bi bi-twitter"></i></a>
+      </p>
+      <p class="p-3">
+        <small>
+          © 2017-2022
+          <a class="text-dark" href="https://infotexture.net/">infotexture</a>
+        </small>
+      </p>
+    </div>
+  </div>
+</div><!-- Footer --></footer></body></html>
