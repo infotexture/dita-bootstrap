@@ -23,12 +23,13 @@
         <indexterm>CSS
           <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
+        <xmlatt>frame</xmlatt>
       </keywords>
     </metadata>
   </prolog>
   <body outputclass="language-markup">
 
-    <section>
+    <section id="border">
       <title>Border</title>
       <p>Use border utilities to add or remove an element’s borders. Choose from all borders or one at a time.</p>
     </section>
@@ -44,7 +45,39 @@
 &lt;ph outputclass="border-end"&gt;...&lt;/ph&gt;
 &lt;ph outputclass="border-bottom"&gt;...&lt;/ph&gt;
 &lt;ph outputclass="border-start"&gt;...&lt;/ph&gt;</codeblock>
-    <section>
+    <section id="frames">
+      <title><xmlatt>frame</xmlatt> Support</title>
+      <p>For DITA elements which support the <xmlatt>frame</xmlatt> attribute, such as <xmlelement>lines</xmlelement> and
+      <xmlelement>codeblock</xmlelement>, additional frame borders are automatically added as shown:</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <p/>
+      <codeblock outputclass="language-cpp" frame="sides">// Simple C++ program to display "Hello World"
+
+// Header file for input output functions
+#include&lt;iostream&gt;
+
+using namespace std;
+
+// main function -
+// where the execution of program begins
+int main()
+{
+    // prints hello world
+    cout&lt;&lt;"Hello World";
+    return 0;
+} </codeblock>
+       <p/>
+      <lines outputclass="bg-light" frame="topbot">Shall I compare thee to a summer's day?
+Thou art more lovely and more temperate:
+Rough winds do shake the darling buds of May,
+and summer's lease hath all too short a date:
+...</lines>
+    <p/>
+  </bodydiv>
+   <codeblock>&lt;codeblock frame="sides"&gt;...&lt;/codeblock&gt;
+&lt;lines frame="topbot" outputclass="bg-light"&gt;...&lt;/lines&gt;</codeblock>
+    <section id="colors">
       <title>Colors</title>
       <p>Colorize text with color utilities</p>
     </section>
@@ -76,7 +109,7 @@
 &lt;section outputclass="text-white bg-dark"&gt;.text-white&lt;/section&gt;
 &lt;section outputclass="text-black-50"&gt;.text-black-50&lt;/section&gt;
 &lt;section outputclass="text-white-50 bg-dark"&gt;.text-white-50&lt;/section&gt;</codeblock>
-    <section>
+    <section id="background-color">
       <title>Background color</title>
       <p>Similar to the contextual text color classes, set the background of an element to any contextual class.
         Background utilities do not set <codeph>color</codeph>, so in some cases you’ll want to use

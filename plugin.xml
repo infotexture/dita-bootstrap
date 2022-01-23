@@ -84,6 +84,21 @@
       type="string"
       desc="Bootstrap classes for flush accordion components"
     />
+    <param
+      name="bootstrap.css.figure"
+      type="string"
+      desc="Bootstrap classes for figures"
+    />
+    <param
+      name="bootstrap.css.figure.caption"
+      type="string"
+      desc="Bootstrap classes for figure captions"
+    />
+    <param
+      name="bootstrap.css.figure.image"
+      type="string"
+      desc="Bootstrap classes for figure images"
+    />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
