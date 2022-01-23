@@ -301,8 +301,6 @@
     </xsl:choose>
   </xsl:template>
 
-
-  <!-- -->
   <xsl:template match="*[contains(@class, ' topic/ph ') and contains(@otherprops, 'title(')  and (contains(@outputclass, 'initialism') or contains(@outputclass, 'abbreviation'))]">
     <abbr>
       <xsl:attribute name="title">
