@@ -1,5 +1,15 @@
 <dummy xmlns:if="ant:if" xmlns:unless="ant:unless">
   <param
+    name="BREADCRUMBS"
+    expression="${args.breadcrumbs}"
+    if:set="args.breadcrumbs"
+  />
+  <param
+    name="BREADCRUMB_DIVIDER"
+    expression="${bootstrap.breadcrumb.divider}"
+    if:set="bootstrap.breadcrumb.divider"
+  />
+  <param
     name="BOOTSTRAP_POPOVERS_INCLUDE"
     expression="${popovers.include}"
     if:set="popovers.include"

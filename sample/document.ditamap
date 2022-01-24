@@ -35,6 +35,7 @@
     <topicref navtitle="Accordion" format="dita" type="topic" href="accordion.dita"/>
     <topicref navtitle="Alerts" format="dita" type="topic" href="alerts.dita"/>
     <topicref navtitle="Badges" format="dita" type="topic" href="badge.dita"/>
+    <topicref navtitle="Breadcrumb" format="dita" type="topic" href="breadcrumb.dita"/>
     <topicref navtitle="Buttons" format="dita" type="topic" href="buttons.dita"/>
     <topicref navtitle="Button Group" format="dita" type="topic" href="button-group.dita"/>
     <topicref navtitle="Card" format="dita" type="topic" href="card.dita"/>
