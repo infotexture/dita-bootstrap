@@ -157,11 +157,14 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.accessibility.nav`– common Bootstrap utility classes for accessibility navigation
 - `bootstrap.css.accessibility.link` – common Bootstrap utility classes for accessibility links
 - `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
-- `bootstrap.css.figure.caption` – common utility classes for DITA `<title>` elements within `<fig>`
-- `bootstrap.css.figure.image` – common utility classes for for DITA `<image>` elements within `<fig>`
+- `bootstrap.css.figure.caption` – common utility classes for DITA `<title>` elements within `<fig>` elements
+- `bootstrap.css.figure.image` – common utility classes for DITA `<image>` elements within `<fig>` elements
+- `bootstrap.css.dl`  – common utility classes for DITA `<dl>` elements
+- `bootstrap.css.dt`  – common utility classes for DITA `<dt>` elements
+- `bootstrap.css.dd`  – common utility classes for DITA `<dd>` elements
+
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
-
 
 ### Opt-In elements
 
@@ -169,6 +172,11 @@ For performance reasons, Bootstrap icons, popovers and tooltips are disabled by 
 
 - `icons.include` – enable Bootstrap icons
 - `popovers.include` – enable Bootstrap popover components and tooltip components
+
+Breadcrumbs and menu bars can be added using the following parameters
+
+- `args.breadcrumbs` – add Bootstrap breadcrumb components
+- `menubar-toc.include` – add a Bootstrap menubar
 
 ## Feedback
 

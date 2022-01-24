@@ -18,6 +18,39 @@
 </xsl:text>
   </xsl:variable>
 
+  <xsl:template match="*" mode="addContentToHtmlBodyElement">
+    <main xsl:use-attribute-sets="main">
+      <article xsl:use-attribute-sets="article">
+        <xsl:attribute name="aria-labelledby">
+          <xsl:apply-templates
+            select="*[contains(@class,' topic/title ')] |
+                                       self::dita/*[1]/*[contains(@class,' topic/title ')]"
+            mode="return-aria-label-id"
+          />
+        </xsl:attribute>
+        <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
+
+        <!-- ↓ Add Bootstrap breadcrumb ↑ -->
+        <xsl:if test="$BREADCRUMBS = 'yes'">
+          <xsl:apply-templates select="$current-topicref" mode="gen-user-breadcrumb"/>
+        </xsl:if>
+        <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+
+
+        <xsl:apply-templates/> <!-- this will include all things within topic; therefore, -->
+                               <!-- title content will appear here by fall-through -->
+                               <!-- followed by prolog (but no fall-through is permitted for it) -->
+                               <!-- followed by body content, again by fall-through in document order -->
+                               <!-- followed by related links -->
+                               <!-- followed by child topics by fall-through -->
+        <xsl:call-template name="gen-endnotes"/>    <!-- include footnote-endnotes -->
+        <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
+      </article>
+    </main>
+  </xsl:template>
+
+
+
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template name="commonattributes">
     <xsl:param name="default-output-class"/>
@@ -171,7 +204,16 @@
       <xsl:when test="*[contains(@class, ' topic/title ')]">
         <figcaption>
           <!-- ↑ Start customization · Add Bootstrap class ↓ -->
-          <xsl:variable name="fig-caption-class" select="concat('figure-caption ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
+          <xsl:variable name="fig-caption-class">
+            <xsl:choose>
+              <xsl:when test="*[contains(@class, ' topic/lq ')]">
+                  <xsl:value-of select="concat('blockquote-footer ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="concat('figure-caption ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
+              </xsl:otherwise>
+            </xsl:choose>
+         </xsl:variable>
           <xsl:apply-templates select="." mode="set-output-class">
             <xsl:with-param
               name="default"
@@ -180,7 +222,11 @@
           </xsl:apply-templates>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <span class="fig--title-label">
-            <xsl:choose>      <!-- Hungarian: "1. Figure " -->
+              <xsl:choose>
+              <!-- Blockquote - figure -->
+              <xsl:when test="*[contains(@class, ' topic/lq ')]">
+              </xsl:when>
+              <!-- Hungarian: "1. Figure " -->
               <xsl:when test="$ancestorlang = ('hu', 'hu-hu')">
                 <xsl:value-of select="$fig-count-actual"/>
                 <xsl:text>. </xsl:text>
@@ -287,4 +333,28 @@
       <xsl:otherwise/>
     </xsl:choose>
   </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' topic/ph ') and contains(@otherprops, 'title(')  and (contains(@outputclass, 'initialism') or contains(@outputclass, 'abbreviation'))]">
+    <abbr>
+      <xsl:attribute name="title">
+        <xsl:analyze-string select="@otherprops" regex="[a-z]*\([^\)]*\)">
+          <xsl:matching-substring>
+            <xsl:variable name="var">
+              <xsl:value-of select="."/>
+            </xsl:variable>
+            <xsl:variable name="attr">
+              <xsl:value-of select="substring-before($var, '(')"/>
+            </xsl:variable>
+            <xsl:attribute name="{$attr}">
+              <xsl:value-of select="substring-before(substring-after($var, '('),')')"/>
+            </xsl:attribute>
+          </xsl:matching-substring>
+        </xsl:analyze-string>
+      </xsl:attribute>
+      <xsl:call-template name="commonattributes"/>
+      <xsl:call-template name="setidaname"/>
+      <xsl:apply-templates/>
+    </abbr>
+  </xsl:template>
+
 </xsl:stylesheet>

@@ -24,6 +24,9 @@
   <xsl:param name="BOOTSTRAP_CSS_FIGURE" select="' w-100 mw-100 p-3 '"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_CAPTION" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_IMAGE" select="'img-fluid border rounded'"/>
+  <xsl:param name="BOOTSTRAP_CSS_DL" select="'row'"/>
+  <xsl:param name="BOOTSTRAP_CSS_DT" select="'col-sm-3 text-truncate '"/>
+  <xsl:param name="BOOTSTRAP_CSS_DD" select="'col-sm-9 '"/>
 
   <!-- Add a Bootstrap CSS border to codeblocks -->
   <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">
@@ -132,6 +135,18 @@
       <xsl:when test="contains(@class, ' topic/fig ')">
         <xsl:text> figure </xsl:text>
         <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE"/>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/lq ')">
+        <xsl:text> blockquote </xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/dl ')">
+        <xsl:value-of select="$BOOTSTRAP_CSS_DL"/>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/dt ')">
+        <xsl:value-of select="$BOOTSTRAP_CSS_DT"/>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/dd ')">
+        <xsl:value-of select="$BOOTSTRAP_CSS_DD"/>
       </xsl:when>
       <xsl:when test="contains(@class, ' topic/image ') and ancestor::*[contains(@class, ' topic/fig ')]">
         <xsl:text> figure-img </xsl:text>

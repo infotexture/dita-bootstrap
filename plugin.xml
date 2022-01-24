@@ -12,6 +12,19 @@
     desc="HTML5 with Bootstrap style"
   >
     <param
+      name="args.breadcrumbs"
+      desc="Specifies whether to generate breadcrumb links."
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
+      name="bootstrap.breadcrumb.divider"
+      type="string"
+      desc="Divider for bootstrap breadcrumbs"
+    />
+    <param
       name="nav-toc"
       type="enum"
       desc="Specifies whether to generate a navigation TOC in topic pages."
@@ -138,6 +151,21 @@
       name="bootstrap.css.figure.image"
       type="string"
       desc="Bootstrap classes for figure images"
+    />
+    <param
+      name="bootstrap.css.dl"
+      type="string"
+      desc="Bootstrap classes for definition lists"
+    />
+    <param
+      name="bootstrap.css.dt"
+      type="string"
+      desc="Bootstrap classes for definition list terms"
+    />
+    <param
+      name="bootstrap.css.dd"
+      type="string"
+      desc="Bootstrap classes for definition list descriptions"
     />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>

@@ -26,7 +26,11 @@
       documentation</xref>, however DITA markup is used throughout the examples describing how to implement these
       components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute. This text is
       therefore a derivative of <cite>Bootstrap 5 docs</cite> by Twitter, Inc. and the Bootstrap Authors,
-      and used under <xref href="https://creativecommons.org/licenses/by/3.0/" scope="external">CC BY 3.0.</xref></p>
+      and used under <xref
+        href="https://creativecommons.org/licenses/by/3.0/"
+        format="html"
+        scope="external"
+      >CC BY 3.0.</xref></p>
   </abstract>
   <prolog>
     <metadata>
@@ -255,6 +259,9 @@
       <indexterm><parmname>--bootstrap.css.figure</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.figure.caption</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.figure.image</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.dl</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.dt</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.dd</parmname></indexterm>
       <p>The HTML output for the following DITA elements can be annotated with common Bootstrap utility classes for
         <xref href="https://getbootstrap.com/docs/5.1/utilities/borders" format="html" scope="external">borders</xref>,
         <xref
@@ -289,6 +296,18 @@
         <li>
           <parmname>--bootstrap.css.figure.image</parmname> – common Bootstrap utility classes for DITA
           <xmlelement>image</xmlelement> elements within <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.dl</parmname> – common Bootstrap utility classes for DITA
+          <xmlelement>dl</xmlelement> definition list elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.dt</parmname> – common Bootstrap utility classes for DITA
+          <xmlelement>dt</xmlelement> definition term elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.dd</parmname> – common Bootstrap utility classes for DITA
+          <xmlelement>dd</xmlelement> definition description elements
         </li>
         <li>
           <parmname>--bootstrap.css.card</parmname> – common utility classes for Bootstrap
@@ -326,6 +345,7 @@
       <title>Opt-In elements</title>
       <indexterm><parmname>--icons.include</parmname></indexterm>
       <indexterm><parmname>--popovers.include</parmname></indexterm>
+      <indexterm><parmname>--args.breadcrumbs</parmname></indexterm>
       <p>
         For performance reasons, Bootstrap <xref href="./icons.dita" format="dita">icons</xref>,
         <xref href="./popovers.dita" format="dita">popovers</xref> and <xref href="./tooltips.dita" format="dita">tooltips</xref>
@@ -337,7 +357,15 @@
         <li>
           <parmname>--popovers.include</parmname> – enable Bootstrap <xref href="./popovers.dita" format="dita">popover components</xref> and <xref href="./tooltips.dita" format="dita">tooltip components</xref></li>
       </ul>
+      <p>
+        Breadcrumbs and menu bars can be added using the following parameters:
+      </p>
+      <ul>
+        <li>
+          <parmname>--args.breadcrumbs</parmname> – enable Bootstrap <xref href="./breadcrumb.dita" format="dita">breadcrumb components</xref></li>
+        <li>
+          <parmname>--menubar-toc.include</parmname> – add a Bootstrap menubar</li>
+      </ul>
     </section>
-
   </body>
 </topic>
