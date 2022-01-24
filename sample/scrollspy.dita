@@ -65,7 +65,7 @@
      <section>
       <title>Example with list-group</title>
       <p>
-        Bootstrap's Scrollspy component also works with <xref href="./list-group.dita" format="dita">ist-groups</xref>. An animation of an example ToC menu is shown
+        Bootstrap's Scrollspy component also works with <xref href="./list-group.dita" format="dita">list-groups</xref>. An animation of an example ToC menu is shown
         below.
       </p>
       <fig>
