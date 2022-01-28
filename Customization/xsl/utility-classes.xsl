@@ -25,6 +25,7 @@
   <xsl:param name="BOOTSTRAP_CSS_DL" select="'row'"/>
   <xsl:param name="BOOTSTRAP_CSS_DT" select="'col-sm-3 text-truncate '"/>
   <xsl:param name="BOOTSTRAP_CSS_DD" select="'col-sm-9 '"/>
+  <xsl:param name="BOOTSTRAP_CSS_PAGINATION" select="''"/>
 
   <!-- Add a Bootstrap CSS border to codeblocks -->
   <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">
@@ -106,6 +107,25 @@
     <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE_CAPTION"/>
   </xsl:template>
 
+  <!-- Change the default Bootstrap CSS classes of pagination -->
+  <xsl:template
+    match="*[(contains(@class, ' topic/ol ') or contains(@class, ' topic/ul ')) and contains(@outputclass, 'pagination')]"
+    mode="get-output-class"
+  >
+    <xsl:value-of select="$BOOTSTRAP_CSS_PAGINATION"/>
+  </xsl:template>
+
+  <xsl:template
+    match="*[contains(@class,' topic/section ') and contains(@outputclass, 'pagination')]/*[(contains(@class, ' topic/ol ') or contains(@class, ' topic/ul '))]"
+    mode="get-output-class"
+  >
+    <xsl:if test="ancestor::*[contains(@outputclass, 'pagination-')]">
+      <xsl:text>pagination </xsl:text>
+    </xsl:if>
+    <xsl:value-of select="ancestor::*[contains(@outputclass, 'pagination')][1]/@outputclass"/>
+    <xsl:value-of select="concat(' ', $BOOTSTRAP_CSS_PAGINATION)"/>
+  </xsl:template>
+
   <!-- Add additional Bootstrap CSS classes based on outputclass -->
   <xsl:template name="bootstrap-class">
     <xsl:choose>
@@ -161,6 +181,15 @@
       </xsl:when>
       <xsl:when test="contains(@class, ' topic/li ') and ancestor::ul[contains(@outputclass, 'list-group')]">
         <xsl:text>list-group-item</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@outputclass, 'pagination-')">
+        <xsl:text>pagination</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/li ') and ancestor::*[contains(@outputclass, 'pagination')]">
+        <xsl:text>page-item</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]">
+        <xsl:text>page-link</xsl:text>
       </xsl:when>
     </xsl:choose>
     <xsl:if test="@scalefit='yes'">

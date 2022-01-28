@@ -21,6 +21,7 @@
   <!--xsl:include href="../Customization/xsl/hi-d.xsl"/-->
   <!--xsl:include href="../Customization/xsl/nav.xsl"/-->
   <!--xsl:include href="../Customization/xsl/offcanvas.xsl"/-->
+  <!--xsl:include href="../Customization/xsl/pagination.xsl"/-->
   <!--xsl:include href="../Customization/xsl/popovers.xsl"/-->
   <!--xsl:include href="../Customization/xsl/tables.xsl"/-->
   <!--xsl:include href="../Customization/xsl/tabs.xsl"/-->

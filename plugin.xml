@@ -135,6 +135,11 @@
       type="string"
       desc="Bootstrap classes for definition list descriptions"
     />
+    <param
+      name="bootstrap.css.pagination"
+      type="string"
+      desc="Bootstrap classes for pagination components"
+    />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
