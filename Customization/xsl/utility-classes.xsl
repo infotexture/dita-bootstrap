@@ -159,8 +159,11 @@
       <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'alert-')]">
         <xsl:text>alert-link</xsl:text>
       </xsl:when>
-      <xsl:when test="contains(@class, ' topic/li ') and ancestor::ul[contains(@outputclass, 'list-group')]">
+      <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])">
         <xsl:text>list-group-item</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])">
+        <xsl:text>list-inline-item</xsl:text>
       </xsl:when>
     </xsl:choose>
     <xsl:if test="@scalefit='yes'">
