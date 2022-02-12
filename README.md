@@ -134,7 +134,8 @@ The HTML output for the following DITA elements can be annotated with common Boo
 
 - `bootstrap.css.shortdesc` – common Bootstrap utility classes for DITA `<shortdesc>` elements
 - `bootstrap.css.codeblock` – common Bootstrap utility classes for DITA `<codeblock>` elements
-- `bootstrap.css.header` – common Bootstrap utility classes for DITA `<title>` elements
+- `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<title>` elements within `<topic>` elements
+- `bootstrap.css.section.title` – common Bootstrap utility classes for DITA `<title>` elements  within `<section>` elements
 - `bootstrap.css.card` – common utility classes for Bootstrap card components
 - `bootstrap.css.carousel` – common utility classes for Bootstrap carousel components
 - `bootstrap.css.carousel.caption` – common utility classes for Bootstrap carousel captions
