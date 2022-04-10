@@ -30,9 +30,23 @@
       desc="Specifies whether to generate a navigation TOC in topic pages."
     >
       <val
-        desc="Bootstrap styled partial TOC that shows the current topic"
+        desc="Bootstrap styled partial TOC using a list-group that expands the current topic's descendents"
       >list-group-partial</val>
-      <val desc="Bootstrap styled full TOC">list-group-full</val>
+      <val
+        desc="Bootstrap styled full TOC using a list-group"
+      >list-group-full</val>
+      <val
+        desc="Bootstrap styled scrollspy menu using a list-group"
+      >list-group-scrollspy</val>
+      <val
+        desc="Bootstrap styled partial TOC using indented nav-pills that expands the current topic's descendents"
+      >nav-pill-partial</val>
+      <val
+        desc="Bootstrap styled full ToC using indented nav-pills"
+      >nav-pill-full</val>
+      <val
+        desc="Bootstrap styled scrollspy menu using indented nav-pills"
+      >nav-pill-scrollspy</val>
     </param>
     <param
       name="icons.cdn.path"
@@ -47,7 +61,15 @@
       <val>yes</val>
       <val default="true">no</val>
     </param>
-     <param
+    <param
+      name="menubar-toc.include"
+      desc="Specifies whether to include a menu bar at the top of the page"
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
       name="popovers.include"
       desc="Specifies whether to enable popovers and tooltips"
       type="enum"
@@ -106,6 +128,16 @@
       desc="Bootstrap classes for flush accordion components"
     />
     <param
+      name="bootstrap.css.accessibility.nav"
+      type="string"
+      desc="Bootstrap classes for accessibility navigation"
+    />
+    <param
+      name="bootstrap.css.accessibility.link"
+      type="string"
+      desc="Bootstrap classes for accessibility links"
+    />
+    <param
       name="bootstrap.css.figure"
       type="string"
       desc="Bootstrap classes for figures"
@@ -143,4 +175,5 @@
     file="insertParameters.xml"
   />
   <feature extension="dita.conductor.html5.param" file="insertParameters.xml"/>
+  <feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
 </plugin>

@@ -47,8 +47,8 @@
 &lt;ph outputclass="border-start"&gt;...&lt;/ph&gt;</codeblock>
     <section id="frames">
       <title><xmlatt>frame</xmlatt> Support</title>
-      <p>For DITA elements which support the <xmlatt>frame</xmlatt> attribute, such as <xmlelement>lines</xmlelement> and
-      <xmlelement>codeblock</xmlelement>, additional frame borders are automatically added as shown:</p>
+      <p>For DITA elements which support the <xmlatt>frame</xmlatt> attribute, such as <xmlelement>lines</xmlelement>
+        and <xmlelement>codeblock</xmlelement>, additional frame borders are automatically added as shown:</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <p/>
@@ -67,15 +67,15 @@ int main()
     cout&lt;&lt;"Hello World";
     return 0;
 } </codeblock>
-       <p/>
+      <p/>
       <lines outputclass="bg-light" frame="topbot">Shall I compare thee to a summer's day?
 Thou art more lovely and more temperate:
 Rough winds do shake the darling buds of May,
 and summer's lease hath all too short a date:
 ...</lines>
-    <p/>
-  </bodydiv>
-   <codeblock>&lt;codeblock frame="sides"&gt;...&lt;/codeblock&gt;
+      <p/>
+    </bodydiv>
+    <codeblock>&lt;codeblock frame="sides"&gt;...&lt;/codeblock&gt;
 &lt;lines frame="topbot" outputclass="bg-light"&gt;...&lt;/lines&gt;</codeblock>
     <section id="colors">
       <title>Colors</title>

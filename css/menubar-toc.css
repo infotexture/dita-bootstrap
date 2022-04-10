@@ -1,0 +1,14 @@
+/*!
+ *  This file is part of the DITA Bootstrap plug-in for DITA Open Toolkit.
+ *  See the accompanying LICENSE file for applicable licenses.
+ */
+
+/*! This value keeps the sidebar-nav below the menubar-toc
+ *  main content window compared with the sidebar-nav
+ */
+@media (min-width: 768px) {
+  .bs-sidebar-nav {
+    height: calc(100vh - 11rem);
+    top: 9rem;
+  }
+}

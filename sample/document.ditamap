@@ -45,6 +45,7 @@
     <topicref navtitle="Popovers" format="dita" type="topic" href="popovers.dita"/>
     <topicref navtitle="Tabs" format="dita" type="topic" href="tabs.dita"/>
     <topicref navtitle="Tooltips" format="dita" type="topic" href="tooltips.dita"/>
+    <topicref navtitle="Scrollspy" format="dita" type="topic" href="scrollspy.dita"/>
   </chapter>
   <chapter>
     <topicmeta>
