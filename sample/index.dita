@@ -225,7 +225,8 @@
       <title>Common Bootstrap utility classes</title>
       <indexterm><parmname>--bootstrap.css.shortdesc</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.codeblock</parmname></indexterm>
-      <indexterm><parmname>--bootstrap.css.header</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.topic.title</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.section.title</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.card</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel.caption</parmname></indexterm>
@@ -258,8 +259,11 @@
           <parmname>--bootstrap.css.codeblock</parmname> – common Bootstrap utility classes for DITA
             <xmlelement>codeblock</xmlelement> elements</li>
         <li>
-          <parmname>--bootstrap.css.header</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>title</xmlelement> elements</li>
+          <parmname>--bootstrap.css.topic.title</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>title</xmlelement> elements within <xmlelement>topic</xmlelement> elements</li>
+        <li>
+          <parmname>--bootstrap.css.section.title</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>title</xmlelement> elements within <xmlelement>section</xmlelement> elements</li>
         <li>
           <parmname>--bootstrap.css.figure</parmname> – common Bootstrap utility classes for DITA
             <xmlelement>fig</xmlelement> elements </li>

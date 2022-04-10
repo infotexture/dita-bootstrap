@@ -88,9 +88,14 @@
       desc="Common Bootstrap classes for DITA &lt;codeblock&gt; elements"
     />
     <param
-      name="bootstrap.css.header"
+      name="bootstrap.css.topic.title"
       type="string"
-      desc="Common Bootstrap classes for DITA &lt;title&gt; elements"
+      desc="Common Bootstrap classes for DITA &lt;title&gt; elements within &lt;topic&gt; elements"
+    />
+     <param
+      name="bootstrap.css.section.title"
+      type="string"
+      desc="Common Bootstrap classes for DITA &lt;title&gt; elements within &lt;section&gt; elements"
     />
     <param
       name="bootstrap.css.card"

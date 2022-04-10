@@ -12,7 +12,8 @@
 >
   <xsl:param name="BOOTSTRAP_CSS_SHORTDESC" select="'text-muted lead'"/>
   <xsl:param name="BOOTSTRAP_CSS_CODEBLOCK" select="'border rounded'"/>
-  <xsl:param name="BOOTSTRAP_CSS_HEADER" select="'text-dark'"/>
+  <xsl:param name="BOOTSTRAP_CSS_TOPIC_TITLE" select="'text-dark'"/>
+  <xsl:param name="BOOTSTRAP_CSS_SECTION_TITLE" select="'h4 text-secondary'"/>
   <xsl:param name="BOOTSTRAP_CSS_CARD" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_CAROUSEL" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_CAPTION" select="'text-white bg-dark'"/>
@@ -40,8 +41,12 @@
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS text color of the headers -->
-  <xsl:template match="*[contains(@class, ' topic/title ')]" mode="get-output-class">
-    <xsl:value-of select="$BOOTSTRAP_CSS_HEADER"/>
+  <xsl:template match="*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_TOPIC_TITLE"/>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' topic/section ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_SECTION_TITLE"/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of cards -->
