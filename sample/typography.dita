@@ -239,21 +239,21 @@
 &lt;/ul&gt;</codeblock>
     <section>
       <title outputclass="h3">Inline</title>
-      <p>Remove a list’s bullets and apply some light margin with a combination of the
-          <xmlatt>outputclass="list-inline"</xmlatt> and <xmlatt>outputclass="list-inline-item"</xmlatt> attributes.
+      <p>Remove a list’s bullets and apply some light margin using the
+        <xmlatt>outputclass="list-inline"</xmlatt> attribute.
       </p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ul outputclass="list-inline">
-        <li outputclass="list-inline-item">This is a list item.</li>
-        <li outputclass="list-inline-item">And another one.</li>
-        <li outputclass="list-inline-item">But they're displayed inline.</li>
+        <li>This is a list item.</li>
+        <li>And another one.</li>
+        <li>But they're displayed inline.</li>
       </ul>
     </bodydiv>
     <codeblock>&lt;ul outputclass="list-inline"&gt;
-  &lt;li outputclass="list-inline-item"&gt;This is a list item.&lt;/li&gt;
-  &lt;li outputclass="list-inline-item"&gt;And another one.&lt;/li&gt;
-  &lt;li outputclass="list-inline-item"&gt;But they're displayed inline.&lt;/li&gt;
+  &lt;li&gt;This is a list item.&lt;/li&gt;
+  &lt;li&gt;And another one.&lt;/li&gt;
+  &lt;li&gt;But they're displayed inline.&lt;/li&gt;
 &lt;/ul></codeblock>
     <section>
       <title outputclass="h3">Description list alignment</title>
