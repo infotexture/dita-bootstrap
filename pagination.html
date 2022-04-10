@@ -1,0 +1,245 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="copyright" content="(C) Copyright 2022"><meta name="generator" content="DITA-OT"><meta name="abstract" content="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages."><meta name="description" content="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages."><meta name="keywords" content="Pagination, CSS, outputclass, ol"><title>Pagination</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/commonltr.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="./css/common-extended.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous"></head><body id="pagination"><div class="visually-hidden-focusable overflow-hidden p-2 bg-light"><div class="container-xl"><a class="d-inline-flex m-1 btn btn-outline-primary btn-sm" href="#ariaid-title1">Skip to main content</a><a href="#bs-sidebar-nav" class="d-none d-md-inline-flex m-1 btn btn-outline-primary btn-sm">Skip to docs navigation</a></div></div><div class="bs-header"><header role="banner"><nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+  <div class="container">
+    <a class="navbar-brand" href="https://infotexture.github.io/dita-bootstrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bootstrap" viewBox="0 0 16 16">
+        <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"/>
+        <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"/>
+      </svg>
+      DITA Bootstrap
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.dita-ot.org/plugins#!net.infotexture.dita-bootstrap">Plugin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/infotexture/dita-bootstrap/releases">Releases</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/infotexture/dita-bootstrap">Source</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://getbootstrap.com/docs/5.1">Bootstrap Docs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav></header></div><div class="bs-container" id="content"><nav class="bs-sidebar-nav" role="navigation" id="bs-sidebar-nav"><div class="list-group me-3"><span class="list-group-item bg-light">Getting Started</span><a class="list-group-item list-group-item-action" href="index.html">DITA Bootstrap</a><span class="list-group-item bg-light">Layout</span><a class="list-group-item list-group-item-action" href="grid.html">Grid System</a><span class="list-group-item bg-light">Content</span><a class="list-group-item list-group-item-action" href="typography.html">Typography</a><a class="list-group-item list-group-item-action" href="images.html">Images</a><a class="list-group-item list-group-item-action" href="tables.html">Tables</a><a class="list-group-item list-group-item-action" href="figures.html">Figures</a><span class="list-group-item bg-light">Components</span><a class="list-group-item list-group-item-action" href="accordion.html">Accordion</a><a class="list-group-item list-group-item-action" href="alerts.html">Alerts</a><a class="list-group-item list-group-item-action" href="badge.html">Badges</a><a class="list-group-item list-group-item-action" href="breadcrumb.html">Breadcrumb</a><a class="list-group-item list-group-item-action" href="buttons.html">Buttons</a><a class="list-group-item list-group-item-action" href="button-group.html">Button Group</a><a class="list-group-item list-group-item-action" href="card.html">Cards</a><a class="list-group-item list-group-item-action" href="carousel.html">Carousel</a><a class="list-group-item list-group-item-action" href="list-group.html">List Group</a><a class="list-group-item list-group-item-action" href="offcanvas.html">Offcanvas</a><a class="list-group-item list-group-item-action active" href="pagination.html">Pagination</a><a class="list-group-item list-group-item-action" href="popovers.html">Popovers</a><a class="list-group-item list-group-item-action" href="scrollspy.html">Scrollspy</a><a class="list-group-item list-group-item-action" href="tabs.html">Tabbed Dialogs</a><a class="list-group-item list-group-item-action" href="tooltips.html">Tooltips</a><span class="list-group-item bg-light">Utilities</span><a class="list-group-item list-group-item-action" href="utilities.html">Borders, Color and Background</a><span class="list-group-item bg-light">Extend</span><a class="list-group-item list-group-item-action" href="icons.html">Icons</a></div></nav><main role="main" class="container bs-main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title text-dark" id="ariaid-title1">Pagination</h1>
+  
+  
+  <div class="body language-markup"><div class="abstract">
+    <p class="shortdesc text-muted lead">Documentation and examples for showing pagination to indicate a series of related content exists across
+      multiple pages.</p>
+    <p class="p">Bootstrap uses a large block of connected links for pagination, making links hard to miss and easily scalable—all
+      while providing large hit areas. Pagination is built with <code class="keyword markupname xmlelement">&lt;ol&gt;</code> DITA elements so screen
+      readers can announce the number of available links. They are wrapped in an HTML <code class="keyword markupname xmlelement">&lt;nav&gt;</code>
+      element to identify them as a navigation sections to screen readers and other assistive technologies.</p>
+    <p class="p">In addition, as pages likely have more than one such navigation section, it’s advisable to provide a descriptive
+      aria-label by placing the <code class="keyword markupname xmlelement">&lt;ol&gt;</code> within a dedicated <code class="keyword markupname xmlelement">&lt;section&gt;</code> with a
+        <code class="keyword markupname xmlelement">&lt;title&gt;</code> for the <code class="keyword markupname xmlelement">&lt;nav&gt;</code> to reflect its purpose. For example, if the
+      pagination component is used to navigate between a set of search results, an appropriate
+        <code class="keyword markupname xmlelement">&lt;title&gt;</code> could be <em class="ph i">"Search results pages"</em>.</p>
+  </div>
+    <div class="bodydiv bd-example">
+      <nav aria-label="Page navigation example"><ol class="ol pagination">
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">Previous</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">1</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">2</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">3</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">Next</a>
+          </li>
+        </ol></nav>
+    </div>
+    <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>pagination<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>title</span><span class="ph token punctuation">&gt;</span></span>Page navigation example<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>title</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>ol</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Previous<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>1<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>2<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>3<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Next<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>ol</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>section</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <section class="section"><h2 class="title text-dark">Sizing</h2>
+      
+      <p class="p">Fancy larger or smaller pagination? Use <code class="keyword markupname xmlatt">@outputclass="pagination-lg"</code> or
+          <code class="keyword markupname xmlatt">@outputclass="pagination-sm"</code> for additional sizes.</p>
+    </section>
+    <div class="bodydiv bd-example">
+      <nav aria-label="Page navigation example"><ol class="ol pagination pagination-lg">
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">Previous</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">1</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">2</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">3</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">Next</a>
+          </li>
+        </ol></nav>
+    </div>
+    <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>pagination-lg<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>title</span><span class="ph token punctuation">&gt;</span></span>Page navigation example<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>title</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>ol</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Previous<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>1<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>2<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>3<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Next<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>ol</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>section</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <div class="bodydiv bd-example">
+      <nav aria-label="Page navigation example"><ol class="ol pagination pagination-sm">
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">Previous</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">1</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">2</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">3</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">Next</a>
+          </li>
+        </ol></nav>
+    </div>
+    <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>pagination-sm<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>title</span><span class="ph token punctuation">&gt;</span></span>Page navigation example<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>title</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>ol</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Previous<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>1<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>2<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>3<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Next<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>ol</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>section</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <section class="section"><h2 class="title text-dark">Alignment</h2>
+      
+      <p class="p">Change the alignment of pagination component by appending Bootstrap
+        <a class="xref" href="https://getbootstrap.com/docs/5.1/utilities/flex/" target="_blank" rel="external noopener">flexbox utility</a> classes
+        to the <code class="keyword markupname xmlatt">@outputclass</code>
+      </p>
+    </section>
+    <div class="bodydiv bd-example">
+      <nav aria-label="Page navigation example"><ol class="ol pagination justify-content-center">
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">Previous</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">1</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">2</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">3</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">Next</a>
+          </li>
+        </ol></nav>
+    </div>
+    <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>pagination justify-content-center<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>title</span><span class="ph token punctuation">&gt;</span></span>Page navigation example<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>title</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>ol</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Previous<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>1<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>2<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>3<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Next<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>ol</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>section</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <div class="bodydiv bd-example">
+      <nav aria-label="Page navigation example"><ol class="ol pagination justify-content-end">
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">Previous</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">1</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">2</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">3</a>
+          </li>
+          <li class="li page-item">
+            <a class="xref page-link" href="#" title="Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.">Next</a>
+          </li>
+        </ol></nav>
+    </div>
+    <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>section</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>pagination justify-content-end<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>title</span><span class="ph token punctuation">&gt;</span></span>Page navigation example<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>title</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>ol</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Previous<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>1<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>2<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>3<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>Next<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>ol</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>section</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+  </div>
+</article></main></div><script language="javascript">//
+          
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+              return new bootstrap.Popover(popoverTriggerEl)
+            })
+         // 
+        </script><footer role="contentinfo"><!-- Footer --><div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <!-- Social media -->
+      <p class="text-center p-3">
+        <!-- GitHub -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/infotexture/dita-bootstrap" role="button"><i class="bi bi-github"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/infotexture/" role="button"><i class="bi bi-linkedin"></i></a>
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/infotexture" role="button"><i class="bi bi-twitter"></i></a>
+      </p>
+      <p class="p-3">
+        <small>
+          © 2017-2022
+          <a class="text-dark" href="https://infotexture.net/">infotexture</a>
+        </small>
+      </p>
+    </div>
+  </div>
+</div><!-- Footer --></footer></body></html>
