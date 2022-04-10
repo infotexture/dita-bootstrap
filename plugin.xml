@@ -64,7 +64,7 @@
     <param
       name="menubar-toc.include"
       desc="Specifies whether to include a menu bar at the top of the page"
-       type="enum"
+      type="enum"
     >
       <val>yes</val>
       <val default="true">no</val>

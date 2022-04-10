@@ -9,7 +9,10 @@
   />
 
   <target name="dita-bootstrap.css.copy" description="Copy CSS files">
-    <property name="dita-bootstrap.css.dir" value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/"/>
+    <property
+      name="dita-bootstrap.css.dir"
+      value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/"
+    />
 
     <!-- Common Bootstrap overrides for DITA-OT css -->
     <loadfile
@@ -29,10 +32,13 @@
     >
       <equals arg1="${nav-toc}" arg2="none"/>
     </condition>
-    <property name="dita-bootstrap.side-toc.css.file"
-      value="${dita-bootstrap.css.dir}/side-toc.css"/>
+    <property
+      name="dita-bootstrap.side-toc.css.file"
+      value="${dita-bootstrap.css.dir}/side-toc.css"
+    />
 
-    <loadfile property="dita-bootstrap.side-toc"
+    <loadfile
+      property="dita-bootstrap.side-toc"
       srcFile="${dita-bootstrap.side-toc.css.file}"
     />
     <echo
