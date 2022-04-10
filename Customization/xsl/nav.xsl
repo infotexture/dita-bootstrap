@@ -356,8 +356,8 @@
             </a>
           </xsl:when>
           <xsl:otherwise>
-            <!-- ↓ Add Bootstrap list-group-item class and dark color ↓ -->
-            <span class="list-group-item list-group-item-dark">
+            <!-- ↓ Add Bootstrap list-group-item class and light background color ↓ -->
+            <span class="list-group-item bg-light">
               <xsl:value-of select="$title"/>
             </span>
             <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
