@@ -8,7 +8,7 @@
  */
 @media (min-width: 768px) {
     .bs-sidebar-nav {
-        top: 9rem;
         height: calc(100vh - 11rem);
+        top: 9rem;
     }
 }
