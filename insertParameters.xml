@@ -39,7 +39,7 @@
     expression="${bootstrap.css.topic.title}"
     if:set="bootstrap.css.topic.title"
   />
-   <param
+  <param
     name="BOOTSTRAP_CSS_SECTION_TITLE"
     expression="${bootstrap.css.section.title}"
     if:set="bootstrap.css.section.title"
