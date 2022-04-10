@@ -29,12 +29,20 @@
       <a class="carousel-control-prev" role="button" data-bs-slide="prev">
         <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
         <span class="carousel-control-prev-icon" aria-hidden="true"/>
-        <span class="visually-hidden">Previous</span>
+        <span class="visually-hidden">
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Previous'"/>
+          </xsl:call-template>
+        </span>
       </a>
       <a class="carousel-control-next" role="button" data-bs-slide="next">
         <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
         <span class="carousel-control-next-icon" aria-hidden="true"/>
-        <span class="visually-hidden">Next</span>
+        <span class="visually-hidden">
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Next'"/>
+          </xsl:call-template>
+        </span>
       </a>
     </div>
   </xsl:template>

@@ -12,12 +12,13 @@
 <topic id="figures">
   <title>Figures</title>
   <abstract>
-    <shortdesc>Documentation and examples for displaying related images and text with the figure component in Bootstrap.</shortdesc>
-    <p>Anytime you need to display a piece of content—like an image with an optional caption, consider
-     using a DITA <xmlelement>fig</xmlelement> element. Bootstrap CSS classes <xmlatt>class="figure"</xmlatt>,
-     <xmlatt>class="figure-img"</xmlatt>, and <xmlatt>class="figure-caption"</xmlatt> are
-     automatically included to the output to provide some baseline styles for the HTML5 <xmlelement>figure</xmlelement> and <xmlelement>figcaption</xmlelement> elements.
-    </p>
+    <shortdesc>Documentation and examples for displaying related images and text with the figure component in
+      Bootstrap.</shortdesc>
+    <p>Anytime you need to display a piece of content—like an image with an optional caption, consider using a DITA
+        <xmlelement>fig</xmlelement> element. Bootstrap CSS classes <xmlatt>class="figure"</xmlatt>,
+        <xmlatt>class="figure-img"</xmlatt>, and <xmlatt>class="figure-caption"</xmlatt> are automatically included to
+      the output to provide some baseline styles for the HTML5 <xmlelement>figure</xmlelement> and
+        <xmlelement>figcaption</xmlelement> elements. </p>
   </abstract>
   <prolog>
     <metadata>
@@ -47,9 +48,10 @@
 &lt;/fig&gt;</codeblock>
     <section>
       <title>Aligning text</title>
-      <p>The figure’s caption can be aligned using the Bootstrap <xref href="./utilities.dita#colors" format="dita">text utilities</xref>.</p>
+      <p>The figure’s caption can be aligned using the Bootstrap
+        <xref href="./utilities.dita#colors" format="dita">text utilities</xref>.</p>
     </section>
-     <bodydiv outputclass="bd-example" deliveryTarget="html">
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
       <fig>
         <title outputclass="text-end">A caption for the image.</title>
         <image scope="external" href="https://picsum.photos/1200/600?b"/>
@@ -60,9 +62,10 @@
   &lt;image href="..."/&gt;
 &lt;/fig&gt;</codeblock>
 
-  <section>
+    <section>
       <title>Adding borders</title>
-      <p>Use the DITA <xmlatt>frame</xmlatt> attribute to add <xref href="./utilities.dita#borders" format="dita">borders</xref> to a <xmlelement>fig</xmlelement>.</p>
+      <p>Use the DITA <xmlatt>frame</xmlatt> attribute to add
+        <xref href="./utilities.dita#borders" format="dita">borders</xref> to a <xmlelement>fig</xmlelement>.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <fig frame="all">
