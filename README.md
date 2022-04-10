@@ -156,6 +156,7 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.accordion` – common utility classes for Bootstrap accordion components
 - `bootstrap.css.accessibility.nav`– common Bootstrap utility classes for accessibility navigation
 - `bootstrap.css.accessibility.link` – common Bootstrap utility classes for accessibility links
+- `bootstrap.css.pagination`– common utility classes for Bootstrap pagination components
 - `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
 - `bootstrap.css.figure.caption` – common utility classes for DITA `<title>` elements within `<fig>` elements
 - `bootstrap.css.figure.image` – common utility classes for DITA `<image>` elements within `<fig>` elements

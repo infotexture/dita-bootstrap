@@ -114,4 +114,9 @@
     expression="${bootstrap.css.dd}"
     if:set="bootstrap.css.dd"
   />
+  <param
+    name="BOOTSTRAP_CSS_PAGINATION"
+    expression="${bootstrap.css.pagination}"
+    if:set="bootstrap.css.pagination"
+  />
 </dummy>
