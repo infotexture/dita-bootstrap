@@ -52,7 +52,7 @@
         <cite class="cite">Bootstrap 5 docs</cite> by Twitter, Inc. and the Bootstrap Authors, and used under
       <a class="xref" href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="external noopener">CC BY 3.0.</a></p>
   </div>
-    <section class="section"><h2 class="title text-dark">Installing</h2>
+    <section class="section"><h2 class="title h4 text-secondary">Installing</h2>
       
       <p class="p">Use the <span class="keyword cmdname">dita</span> command to add this plug-in to your DITA Open Toolkit installation:</p>
       <p class="p">DITA-OT 3.5 and newer:</p>
@@ -65,14 +65,14 @@
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span> https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
 <span class="keyword cmdname">dita</span> <span class="keyword parmname">--install</span> https://github.com/infotexture/dita-bootstrap/archive/master.zip</code></pre>
     </section>
-    <section class="section"><h2 class="title text-dark">Using</h2>
+    <section class="section"><h2 class="title h4 text-secondary">Using</h2>
       
       <p class="p">Specify the <span class="keyword option">html5-bootstrap</span> format when building output with the <span class="keyword cmdname">dita</span>
         command:</p>
       <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span>path/to/your.ditamap <span class="keyword parmname">--format</span><span class="ph token operator">=</span>html5-bootstrap</code></pre>
     </section>
 
-    <section class="section"><h2 class="title text-dark">Customizing headers and footers</h2>
+    <section class="section"><h2 class="title h4 text-secondary">Customizing headers and footers</h2>
       
       
       
@@ -97,7 +97,7 @@
      <span class="keyword parmname">--args.ftr</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your-footer.xml</span></code></pre>
     </section>
 
-    <section class="section"><h2 class="title text-dark">Navigation menu</h2>
+    <section class="section"><h2 class="title h4 text-secondary">Navigation menu</h2>
       
       
       
@@ -155,7 +155,7 @@
       </figure>
 
     </section>
-    <section class="section"><h2 class="title text-dark">Custom CSS</h2>
+    <section class="section"><h2 class="title h4 text-secondary">Custom CSS</h2>
       
       
       
@@ -178,7 +178,8 @@
       <p class="p">For more extensive customizations, you may want to fork this repository and create a new plug-in of your own.
       </p>
     </section>
-    <section class="section"><h2 class="title text-dark">Common Bootstrap utility classes</h2>
+    <section class="section"><h2 class="title h4 text-secondary">Common Bootstrap utility classes</h2>
+      
       
       
       
@@ -211,8 +212,11 @@
           <span class="keyword parmname">--bootstrap.css.codeblock</span> – common Bootstrap utility classes for DITA
             <code class="keyword markupname xmlelement">&lt;codeblock&gt;</code> elements</li>
         <li class="li">
-          <span class="keyword parmname">--bootstrap.css.header</span> – common Bootstrap utility classes for DITA
-            <code class="keyword markupname xmlelement">&lt;title&gt;</code> elements</li>
+          <span class="keyword parmname">--bootstrap.css.topic.title</span> – common Bootstrap utility classes for DITA
+            <code class="keyword markupname xmlelement">&lt;title&gt;</code> elements within <code class="keyword markupname xmlelement">&lt;topic&gt;</code> elements</li>
+        <li class="li">
+          <span class="keyword parmname">--bootstrap.css.section.title</span> – common Bootstrap utility classes for DITA
+            <code class="keyword markupname xmlelement">&lt;title&gt;</code> elements within <code class="keyword markupname xmlelement">&lt;section&gt;</code> elements</li>
         <li class="li">
           <span class="keyword parmname">--bootstrap.css.figure</span> – common Bootstrap utility classes for DITA
             <code class="keyword markupname xmlelement">&lt;fig&gt;</code> elements </li>
@@ -267,7 +271,7 @@
           links</li>
       </ul>
     </section>
-    <section class="section"><h2 class="title text-dark">Opt-In elements</h2>
+    <section class="section"><h2 class="title h4 text-secondary">Opt-In elements</h2>
       
       
       
