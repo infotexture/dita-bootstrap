@@ -1,4 +1,5 @@
 # This file specifies files that Prettier should not format
 
 backups
+cfg/common/vars/strings.xml
 out

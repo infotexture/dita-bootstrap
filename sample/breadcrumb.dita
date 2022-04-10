@@ -11,7 +11,8 @@
    file for applicable licenses.-->
 <topic id="breadcrumb">
   <title>Breadcrumb</title>
-  <shortdesc>Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.</shortdesc>
+  <shortdesc>Indicate the current page’s location within a navigational hierarchy that automatically adds separators via
+    CSS.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
@@ -25,7 +26,8 @@
     <image scalefit="yes" href="./src/breadcrumb.png"/>
     <section>
       <title>Adding breadcrumbs</title>
-      <p>Breadcrumbs are not included by default. You can add a breadcrumb component to each page by setting the parameter <parmname>--args.breadcrumbs</parmname>=<option>yes</option>
+      <p>Breadcrumbs are not included by default. You can add a breadcrumb component to each page by setting the
+        parameter <parmname>--args.breadcrumbs</parmname>=<option>yes</option>
       </p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
@@ -34,10 +36,10 @@
     </section>
     <section>
       <title>Dividers</title>
-      <p>Dividers are automatically added via CSS. They can be changed by setting the parameter <parmname>--bootstrap.breadcrumb.divider</parmname>.
-      </p>
+      <p>Dividers are automatically added via CSS. They can be changed by setting the parameter
+          <parmname>--bootstrap.breadcrumb.divider</parmname>. </p>
       <image scalefit="yes" href="./src/breadcrumb-divider.png"/>
-     <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
   <parmname>--format</parmname>=<option>html5-bootstrap</option> \
   <parmname>--args.breadcrumbs</parmname>=<option>yes</option> \

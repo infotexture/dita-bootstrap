@@ -11,9 +11,8 @@
    file for applicable licenses.-->
 <topic id="tooltips">
   <title>Tooltips</title>
-  <shortdesc>Documentation and examples for adding custom Bootstrap tooltips
-    with CSS and JavaScript using CSS3 for animations and <codeph>data-bs-attributes</codeph>
-    for local title storage.</shortdesc>
+  <shortdesc>Documentation and examples for adding custom Bootstrap tooltips with CSS and JavaScript using CSS3 for
+    animations and <codeph>data-bs-attributes</codeph> for local title storage.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
@@ -30,35 +29,19 @@
   <body outputclass="language-markup">
     <section>
       <title>Overview</title>
-
-      <p>
-        Things to know when using the tooltip plugin:
-      </p>
+      <p>Things to know when using the tooltip plugin: </p>
       <ul>
-        <li>
-          Tooltips rely on the 3rd party library <xref scope="external" href="https://popper.js.org/">Popper</xref> for positioning.
-        </li>
-        <li>
-          Tooltips are opt-in for performance reasons, so <b>you must initialize them yourself</b> by setting <parmname>--popovers.include</parmname>=<option>yes</option>.
-        </li>
-        <li>
-          Tooltips with a zero-length <xmlelement>desc</xmlelement> element are never displayed.
-        </li>
-        <li>
-          Triggering tooltips on hidden elements will not work.
-        </li>
-        <li>
-          Tooltips for <xmlatt>outputclass="disabled"</xmlatt> elements must be triggered on a wrapper element.
-        </li>
-        <li>
-          Tooltips must be hidden before their corresponding elements have been removed from the DOM.
-        </li>
-        <li>
-          Tooltips can be triggered thanks to an element inside a shadow DOM.
-        </li>
+        <li>Tooltips rely on the third-party library
+          <xref href="https://popper.js.org" format="html" scope="external">Popper</xref> for positioning.</li>
+        <li>Tooltips are opt-in for performance reasons, so <b>you must initialize them yourself</b> by setting
+            <parmname>--popovers.include</parmname>=<option>yes</option>.</li>
+        <li>Tooltips with a zero-length <xmlelement>desc</xmlelement> element are never displayed.</li>
+        <li>Triggering tooltips on hidden elements will not work.</li>
+        <li>Tooltips for <xmlatt>outputclass="disabled"</xmlatt> elements must be triggered on a wrapper element.</li>
+        <li>Tooltips must be hidden before their corresponding elements have been removed from the DOM.</li>
+        <li>Tooltips can be triggered thanks to an element inside a shadow DOM.</li>
       </ul>
     </section>
-
 
     <section deliveryTarget="html">
       <title>Examples</title>
@@ -66,43 +49,29 @@
     </section>
 
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-
-      <p>
-        Placeholder text to demonstrate some <xref href="#" outputclass="tooltip-top">inline links <desc>Default tooltip</desc></xref>
-        with tooltips. This is now just filler, no killer. Content placed here just to mimic the presence of
+      <p>Placeholder text to demonstrate some
+        <xref href="#" outputclass="tooltip-top">inline links <desc>Default tooltip</desc></xref> with tooltips. This is
+        now just filler, no killer. Content placed here just to mimic the presence of
         <xref href="#" outputclass="tooltip-top">real text<desc>Another tooltip</desc></xref>. And all that just to give
         you an idea of how tooltips would look when used in real-world situations. So hopefully you've now seen how
-        <xref href="#" outputclass="tooltip-top">these tooltips on links<desc>Another one here too</desc></xref> can work
-        in practice, once you use them on <xref href="#" outputclass="tooltip-top">your own<desc>The last tip!</desc></xref>
-        site or project.
-      </p>
+        <xref href="#" outputclass="tooltip-top">these tooltips on links<desc>Another one here too</desc></xref> can
+        work in practice, once you use them on
+        <xref href="#" outputclass="tooltip-top">your own<desc>The last tip!</desc></xref> site or project.</p>
     </bodydiv>
 
-    <p>
-        To enable tooltips, add <xmlatt>output-class="tooltip-*"</xmlatt> to the enclosing <xmlelement>xref</xmlelement>.
-        The direction of the tooltip is appended to the <xmlatt>output-class</xmlatt>.
-    </p>
-    <p>
-        Hover over the buttons below to see the four tooltips directions: <codeph>top</codeph>, <codeph>right</codeph>, <codeph>bottom</codeph>, and
-        <codeph>left</codeph>. Directions are mirrored when using Bootstrap in RTL.
-    </p>
+    <p>To enable tooltips, add <xmlatt>output-class="tooltip-*"</xmlatt> to the enclosing
+      <xmlelement>xref</xmlelement>. The direction of the tooltip is appended to the <xmlatt>output-class</xmlatt>.</p>
+    <p>Hover over the buttons below to see the four tooltips directions: <codeph>top</codeph>, <codeph>right</codeph>,
+        <codeph>bottom</codeph>, and <codeph>left</codeph>. Directions are mirrored when using Bootstrap in RTL.</p>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <xref href="#" outputclass="btn-secondary tooltip-top">
-        <desc>Tooltip on top</desc>
-        Tooltip on top
-      </xref>
+        <desc>Tooltip on top</desc> Tooltip on top </xref>
       <xref href="#" outputclass="btn-secondary tooltip-right">
-        <desc>Tooltip on right</desc>
-        Tooltip on right
-      </xref>
+        <desc>Tooltip on right</desc> Tooltip on right </xref>
       <xref href="#" outputclass="btn-secondary tooltip-bottom">
-        <desc>Tooltip on bottom</desc>
-        Tooltip on bottom
-      </xref>
+        <desc>Tooltip on bottom</desc> Tooltip on bottom </xref>
       <xref href="#" outputclass="btn-secondary tooltip-left">
-        <desc>Tooltip on left</desc>
-        Tooltip on left
-      </xref>
+        <desc>Tooltip on left</desc> Tooltip on left </xref>
       <codeblock>&lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
   &lt;desc&gt;Tooltip on top&lt;/desc&gt;
   Tooltip on top
@@ -119,13 +88,12 @@
   &lt;desc&gt;Tooltip on left&lt;/desc&gt;
   Tooltip on left
 &lt;/xref&gt;</codeblock>
-      <p>
-        Custom HTML can be added to tooltips using additional DITA elements within the <xmlelement>desc</xmlelement>
+      <p>Custom HTML can be added to tooltips using additional DITA elements within the <xmlelement>desc</xmlelement>
       </p>
       <xref href="#" outputclass="btn-secondary tooltip-top">
-        <desc><b>Tooltip</b> <u>with</u> <b>DITA</b> elements</desc>
-        Tooltip with embedded DITA
-      </xref>
+        <desc><b>Tooltip</b>
+          <u>with</u>
+          <b>DITA</b> elements</desc> Tooltip with embedded DITA </xref>
     </bodydiv>
     <codeblock>&lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
   &lt;desc&gt;&lt;b&gt;Tooltip&lt;/b&gt; &lt;u&gt;with&amp;lt;/u&gt; &lt;b&gt;DITA&lt;/b&gt; elements&lt;/desc&gt;
@@ -133,4 +101,3 @@
 &lt;/xref&gt;</codeblock>
   </body>
 </topic>
-

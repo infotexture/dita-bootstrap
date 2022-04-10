@@ -28,6 +28,12 @@
       }
     },
     {
+      "files": "strings-*.xml",
+      "options": {
+        "printWidth": 100
+      }
+    },
+    {
       "files": "*.xsl",
       "options": {
         "parser": "xml"

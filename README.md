@@ -93,10 +93,12 @@ The plug-in extends the standard HTML5 table of contents (ToC) [navigation param
 
 By default, the plug-in uses the `partial` option to include the current topic in the ToC along with its parents, siblings and children. As with the default HTML5 plug-in, the `full` option can also be used to generate a complete ToC for the entire map, or `none` to disable the table of contents entirely.
 
-As of version 5.3, the plug-in provides two new options to style the table of contents navigation with the Bootstrap [list group][7] component.
+As of version 5.3.1, the plug-in provides four new options to style the table of contents navigation with the Bootstrap [list group][7] component and [nav][7] component.
 
 - `list-group-full` – Styled full ToC within a Bootstrap list group
 - `list-group-partial` – Partial ToC with the current topic, parents, siblings, and children in a list group
+- `nav-pill-full` – Styled full ToC using Bootstrap nav-pills
+- `nav-pill-partial` – Partial ToC with the current topic, parents, siblings, and children using Bootstrap nav-pills
 
 To use these options, pass the desired value to the `dita` command via the `--nav-toc` parameter:
 
@@ -108,6 +110,17 @@ dita --input=path/to/your.ditamap \
 
 For an example of `list-group-full` styling, see the output at
 [infotexture.github.io/dita-bootstrap][8].
+
+Additionally, the first level navigation menu can be switched to a horizontal Bootstrap menu bar to reduce the depth of the ToC
+
+To use this option, add the `--menubar-toc.include=yes` parameter to the `dita` command
+
+```console
+dita --input=path/to/your.ditamap \
+  --format=html5-bootstrap \
+  --nav-toc=list-group-partial  \
+  --menubar-toc.include=yes
+```
 
 ### Custom CSS
 
@@ -141,14 +154,15 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.tabs` – common utility classes for Bootstrap tabbed dialog components
 - `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabbed dialog components
 - `bootstrap.css.accordion` – common utility classes for Bootstrap accordion components
+- `bootstrap.css.accessibility.nav`– common Bootstrap utility classes for accessibility navigation
+- `bootstrap.css.accessibility.link` – common Bootstrap utility classes for accessibility links
 - `bootstrap.css.pagination`– common utility classes for Bootstrap pagination components
 - `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
 - `bootstrap.css.figure.caption` – common utility classes for DITA `<title>` elements within `<fig>` elements
 - `bootstrap.css.figure.image` – common utility classes for DITA `<image>` elements within `<fig>` elements
-- `bootstrap.css.dl`  – common utility classes for DITA `<dl>` elements
-- `bootstrap.css.dt`  – common utility classes for DITA `<dt>` elements
-- `bootstrap.css.dd`  – common utility classes for DITA `<dd>` elements
-
+- `bootstrap.css.dl` – common utility classes for DITA `<dl>` elements
+- `bootstrap.css.dt` – common utility classes for DITA `<dt>` elements
+- `bootstrap.css.dd` – common utility classes for DITA `<dd>` elements
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
 
@@ -158,7 +172,11 @@ For performance reasons, Bootstrap icons, popovers and tooltips are disabled by 
 
 - `icons.include` – enable Bootstrap icons
 - `popovers.include` – enable Bootstrap popover components and tooltip components
+
+Breadcrumbs and menu bars can be added using the following parameters
+
 - `args.breadcrumbs` – add Bootstrap breadcrumb components
+- `menubar-toc.include` – add a Bootstrap menubar
 
 ## Feedback
 

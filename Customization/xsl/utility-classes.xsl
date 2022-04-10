@@ -19,6 +19,8 @@
   <xsl:param name="BOOTSTRAP_CSS_TABS" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'me-3'"/>
   <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACCESSIBILITY_NAV" select="'bg-light'"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACCESSIBILITY_LINK" select="'btn btn-outline-primary btn-sm'"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE" select="' w-100 mw-100 p-3 '"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_CAPTION" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_IMAGE" select="'img-fluid border rounded'"/>
@@ -179,18 +181,18 @@
       <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'alert-')]">
         <xsl:text>alert-link</xsl:text>
       </xsl:when>
-      <xsl:when test="contains(@class, ' topic/li ') and ancestor::ul[contains(@outputclass, 'list-group')]">
+      <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])">
         <xsl:text>list-group-item</xsl:text>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'pagination-')">
-        <xsl:text>pagination</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class, ' topic/li ') and ancestor::*[contains(@outputclass, 'pagination')]">
-        <xsl:text>page-item</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]">
-        <xsl:text>page-link</xsl:text>
-      </xsl:when>
+         <xsl:text>pagination</xsl:text>
+       </xsl:when>
+       <xsl:when test="contains(@class, ' topic/li ') and ancestor::*[contains(@outputclass, 'pagination')]">
+         <xsl:text>page-item</xsl:text>
+       </xsl:when>
+       <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]">
+         <xsl:text>page-link</xsl:text>
+       </xsl:when>
     </xsl:choose>
     <xsl:if test="@scalefit='yes'">
       <xsl:text> img-fluid</xsl:text>
