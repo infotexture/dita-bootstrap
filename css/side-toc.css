@@ -65,7 +65,7 @@
   .bs-sidebar-nav {
     display: block !important;
     height: calc(100vh - 7rem);
-    margin-left: 0.25rem;
+    margin-left: 2rem;
     overflow-y: auto;
     padding-left: 0.25rem;
     position: -webkit-sticky;
