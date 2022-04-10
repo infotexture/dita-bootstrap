@@ -11,6 +11,7 @@ A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with 
   - [Navigation menu](#navigation-menu)
   - [Custom CSS](#custom-css)
   - [Common Bootstrap utility classes](#common-bootstrap-utility-classes)
+  - [Opt-In elements](#opt-in-elements)
 - [Feedback](#feedback)
 - [License](#license)
 
