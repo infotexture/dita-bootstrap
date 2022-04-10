@@ -36,7 +36,7 @@
       </p>
       <ul>
         <li>
-          Tooltips rely on the 3rd party library <xref scope="external" href="https://popper.js.org/">Popper</xref> for positioning.
+          Tooltips rely on the third-party library <xref href="https://popper.js.org" format="html" scope="external">Popper</xref> for positioning.
         </li>
         <li>
           Tooltips are opt-in for performance reasons, so <b>you must initialize them yourself</b> by setting <parmname>--popovers.include</parmname>=<option>yes</option>.
