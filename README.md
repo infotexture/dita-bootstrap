@@ -156,15 +156,15 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.dd` – common utility classes for DITA `<dd>` elements
 - `bootstrap.css.dl` – common utility classes for DITA `<dl>` elements
 - `bootstrap.css.dt` – common utility classes for DITA `<dt>` elements
-- `bootstrap.css.figure.caption` – common utility classes for DITA `<title>` elements within `<fig>` elements
-- `bootstrap.css.figure.image` – common utility classes for DITA `<image>` elements within `<fig>` elements
 - `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
+- `bootstrap.css.figure.caption` – common utility classes for DITA figure titles
+- `bootstrap.css.figure.image` – common utility classes for images within DITA`<fig>` elements
 - `bootstrap.css.pagination`– common utility classes for Bootstrap pagination components
-- `bootstrap.css.section.title` – common Bootstrap utility classes for DITA `<title>` elements within `<section>` elements
+- `bootstrap.css.section.title` – common Bootstrap utility classes for DITA `<section>` titles
 - `bootstrap.css.shortdesc` – common Bootstrap utility classes for DITA `<shortdesc>` elements
-- `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabbed dialog components
-- `bootstrap.css.tabs` – common utility classes for Bootstrap tabbed dialog components
-- `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<title>` elements within `<topic>` elements
+- `bootstrap.css.tabs` – common utility classes for Bootstrap horizontal tab components
+- `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabs
+- `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<topic>` titles
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
 
