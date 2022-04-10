@@ -146,25 +146,25 @@ For more extensive customizations, you may want to [fork][11] this repository an
 
 The HTML output for the following DITA elements can be annotated with common Bootstrap utility classes for borders, background, text, spacing, etc. using additional command line parameters:
 
-- `bootstrap.css.shortdesc` – common Bootstrap utility classes for DITA `<shortdesc>` elements
-- `bootstrap.css.codeblock` – common Bootstrap utility classes for DITA `<codeblock>` elements
-- `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<title>` elements within `<topic>` elements
-- `bootstrap.css.section.title` – common Bootstrap utility classes for DITA `<title>` elements within `<section>` elements
-- `bootstrap.css.card` – common utility classes for Bootstrap card components
-- `bootstrap.css.carousel` – common utility classes for Bootstrap carousel components
-- `bootstrap.css.carousel.caption` – common utility classes for Bootstrap carousel captions
-- `bootstrap.css.tabs` – common utility classes for Bootstrap tabbed dialog components
-- `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabbed dialog components
-- `bootstrap.css.accordion` – common utility classes for Bootstrap accordion components
-- `bootstrap.css.accessibility.nav`– common Bootstrap utility classes for accessibility navigation
 - `bootstrap.css.accessibility.link` – common Bootstrap utility classes for accessibility links
-- `bootstrap.css.pagination`– common utility classes for Bootstrap pagination components
-- `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
-- `bootstrap.css.figure.caption` – common utility classes for DITA `<title>` elements within `<fig>` elements
-- `bootstrap.css.figure.image` – common utility classes for DITA `<image>` elements within `<fig>` elements
+- `bootstrap.css.accessibility.nav`– common Bootstrap utility classes for accessibility navigation
+- `bootstrap.css.accordion` – common utility classes for Bootstrap accordion components
+- `bootstrap.css.card` – common utility classes for Bootstrap card components
+- `bootstrap.css.carousel.caption` – common utility classes for Bootstrap carousel captions
+- `bootstrap.css.carousel` – common utility classes for Bootstrap carousel components
+- `bootstrap.css.codeblock` – common Bootstrap utility classes for DITA `<codeblock>` elements
+- `bootstrap.css.dd` – common utility classes for DITA `<dd>` elements
 - `bootstrap.css.dl` – common utility classes for DITA `<dl>` elements
 - `bootstrap.css.dt` – common utility classes for DITA `<dt>` elements
-- `bootstrap.css.dd` – common utility classes for DITA `<dd>` elements
+- `bootstrap.css.figure.caption` – common utility classes for DITA `<title>` elements within `<fig>` elements
+- `bootstrap.css.figure.image` – common utility classes for DITA `<image>` elements within `<fig>` elements
+- `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
+- `bootstrap.css.pagination`– common utility classes for Bootstrap pagination components
+- `bootstrap.css.section.title` – common Bootstrap utility classes for DITA `<title>` elements within `<section>` elements
+- `bootstrap.css.shortdesc` – common Bootstrap utility classes for DITA `<shortdesc>` elements
+- `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabbed dialog components
+- `bootstrap.css.tabs` – common utility classes for Bootstrap tabbed dialog components
+- `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<title>` elements within `<topic>` elements
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
 
