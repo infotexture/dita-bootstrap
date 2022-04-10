@@ -65,8 +65,8 @@ The default header file `includes/bs-navbar-default.hdr.xml` uses the Bootstrap 
 To change the color to a dark (black) background, replace the primary background color class `bg-primary` on the first line with the dark variant `bg-dark`:
 
 ```diff
-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
-+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
++ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 ```
 
 You can edit a copy of this file to adjust the content of the global navigation. To override the global navigation with your own header, pass a custom header file to the `dita` command via the `--args.hdr` parameter:
