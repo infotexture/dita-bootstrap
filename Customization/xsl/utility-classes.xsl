@@ -184,15 +184,18 @@
       <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])">
         <xsl:text>list-group-item</xsl:text>
       </xsl:when>
+      <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])">
+        <xsl:text>list-inline-item</xsl:text>
+      </xsl:when>
       <xsl:when test="contains(@outputclass, 'pagination-')">
-         <xsl:text>pagination</xsl:text>
-       </xsl:when>
-       <xsl:when test="contains(@class, ' topic/li ') and ancestor::*[contains(@outputclass, 'pagination')]">
-         <xsl:text>page-item</xsl:text>
-       </xsl:when>
-       <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]">
-         <xsl:text>page-link</xsl:text>
-       </xsl:when>
+        <xsl:text>pagination</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/li ') and ancestor::*[contains(@outputclass, 'pagination')]">
+        <xsl:text>page-item</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]">
+        <xsl:text>page-link</xsl:text>
+      </xsl:when>
     </xsl:choose>
     <xsl:if test="@scalefit='yes'">
       <xsl:text> img-fluid</xsl:text>
