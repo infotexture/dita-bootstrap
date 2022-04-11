@@ -124,4 +124,9 @@
     expression="${bootstrap.css.pagination}"
     if:set="bootstrap.css.pagination"
   />
+   <param
+    name="BOOTSTRAP_CSS_ACTIVE_NAV_PARENT"
+    expression="${bootstrap.css.nav.parent}"
+    if:set="bootstrap.css.nav.parent"
+  />
 </dummy>

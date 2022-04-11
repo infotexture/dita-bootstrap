@@ -177,6 +177,11 @@
       type="string"
       desc="Bootstrap classes for pagination components"
     />
+    <param
+      name="bootstrap.css.nav.parent"
+      type="string"
+      desc="Bootstrap classes for ancestors of active navbar elements"
+    />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>

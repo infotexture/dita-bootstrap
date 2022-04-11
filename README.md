@@ -165,6 +165,7 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.tabs` – common utility classes for Bootstrap horizontal tab components
 - `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabs
 - `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<topic>` titles
+- `bootstrap.css.nav.parent` - common utility classes for ancestors of active nav-pill elements
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
 
