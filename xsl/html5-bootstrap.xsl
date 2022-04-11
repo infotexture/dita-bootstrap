@@ -98,6 +98,10 @@
           <xsl:if test="$nav-toc = 'none'">
             <xsl:text> sticky-top</xsl:text>
           </xsl:if>
+          <!-- ↓ Ensure that menubar has background color if present -->
+          <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
+            <xsl:text> bg-light</xsl:text>
+          </xsl:if>
         </xsl:attribute>
 
         <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
