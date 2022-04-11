@@ -11,4 +11,10 @@
     height: calc(100vh - 11rem);
     top: 9rem;
   }
+  .bs-header {
+    position: -webkit-sticky;
+    position: sticky;
+    background-color: var(--bs-light);
+    top: 0;
+  }
 }
