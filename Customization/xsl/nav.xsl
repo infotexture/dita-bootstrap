@@ -15,6 +15,7 @@
   <xsl:param name="nav-toc" as="xs:string?"/>
   <xsl:param name="FILEDIR" as="xs:string?"/>
   <xsl:param name="FILENAME" as="xs:string?"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACTIVE_NAV_PARENT" select="'active'"/>
   <xsl:param name="input.map.url" as="xs:string?"/>
 
   <xsl:variable name="input.map" as="document-node()?">
@@ -30,7 +31,7 @@
       <xsl:otherwise>
         <xsl:for-each select="descendant::*">
           <xsl:if test=". is $current-topicref">
-            <xsl:value-of select="' active'"/>
+            <xsl:value-of select="concat(' ', $BOOTSTRAP_CSS_ACTIVE_NAV_PARENT)"/>
           </xsl:if>
         </xsl:for-each>
       </xsl:otherwise>
