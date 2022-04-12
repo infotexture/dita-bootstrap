@@ -254,35 +254,17 @@
         etc. using additional command line parameters:</p>
       <ul>
         <li>
-          <parmname>--bootstrap.css.shortdesc</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>shortdesc</xmlelement> elements</li>
+          <parmname>--bootstrap.css.accessibility.link</parmname> – common Bootstrap utility classes for accessibility
+          links
+        </li>
         <li>
-          <parmname>--bootstrap.css.codeblock</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>codeblock</xmlelement> elements</li>
+          <parmname>--bootstrap.css.accessibility.nav</parmname> – common Bootstrap utility classes for accessibility
+          navigation
+        </li>
         <li>
-          <parmname>--bootstrap.css.topic.title</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>title</xmlelement> elements within <xmlelement>topic</xmlelement> elements</li>
-        <li>
-          <parmname>--bootstrap.css.section.title</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>title</xmlelement> elements within <xmlelement>section</xmlelement> elements</li>
-        <li>
-          <parmname>--bootstrap.css.figure</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>fig</xmlelement> elements </li>
-        <li>
-          <parmname>--bootstrap.css.figure.caption</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>title</xmlelement> elements within <xmlelement>fig</xmlelement> elements </li>
-        <li>
-          <parmname>--bootstrap.css.figure.image</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>image</xmlelement> elements within <xmlelement>fig</xmlelement> elements </li>
-        <li>
-          <parmname>--bootstrap.css.dl</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>dl</xmlelement> definition list elements </li>
-        <li>
-          <parmname>--bootstrap.css.dt</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>dt</xmlelement> definition term elements </li>
-        <li>
-          <parmname>--bootstrap.css.dd</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>dd</xmlelement> definition description elements </li>
+          <parmname>--bootstrap.css.accordion</parmname> – common utility classes for Bootstrap
+          <xref href="./accordion.dita" format="dita">accordion components</xref>
+        </li>
         <li>
           <parmname>--bootstrap.css.card</parmname> – common utility classes for Bootstrap
           <xref href="./card.dita" format="dita">card components</xref>
@@ -296,6 +278,50 @@
           <xref href="./carousel.dita" format="dita">carousel captions</xref>
         </li>
         <li>
+          <parmname>--bootstrap.css.codeblock</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>codeblock</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.dd</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>dd</xmlelement> definition description elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.dl</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>dl</xmlelement> definition list elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.dt</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>dt</xmlelement> definition term elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.figure</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.figure.caption</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>title</xmlelement> elements within <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.figure.image</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>image</xmlelement> elements within <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.nav.parent</parmname> – common Bootstrap utility classes for ancestors of active
+          nav-pill elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.pagination</parmname> – common utility classes for Bootstrap
+          <xref href="./pagination.dita" format="dita">pagination components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.section.title</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>title</xmlelement> elements within <xmlelement>section</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.shortdesc</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>shortdesc</xmlelement> elements
+        </li>
+        <li>
           <parmname>--bootstrap.css.tabs</parmname> – common utility classes for Bootstrap
           <xref href="./tabs.dita" format="dita">tabbed dialog components</xref>
         </li>
@@ -304,28 +330,16 @@
           <xref href="./tabs.dita" format="dita">vertical tabbed dialog components</xref>
         </li>
         <li>
-          <parmname>--bootstrap.css.accordion</parmname> – common utility classes for Bootstrap
-          <xref href="./accordion.dita" format="dita">accordion components</xref>
+          <parmname>--bootstrap.css.topic.title</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>title</xmlelement> elements within <xmlelement>topic</xmlelement> elements
         </li>
-        <li>
-          <parmname>--bootstrap.css.pagination</parmname> – common utility classes for Bootstrap
-          <xref href="./pagination.dita" format="dita">pagination components</xref>
-        </li>
-        <li>
-          <parmname>--bootstrap.css.accessibility.nav</parmname> – common Bootstrap utility classes for accessibility
-          navigation</li>
-        <li>
-          <parmname>--bootstrap.css.accessibility.link</parmname> – common Bootstrap utility classes for accessibility
-          links</li>
-        <li>
-          <parmname>--bootstrap.css.nav.parent</parmname> – common Bootstrap utility classes for ancestors of active nav-pill elements</li>
       </ul>
     </section>
     <section>
       <title>Opt-In elements</title>
+      <indexterm><parmname>--args.breadcrumbs</parmname></indexterm>
       <indexterm><parmname>--icons.include</parmname></indexterm>
       <indexterm><parmname>--popovers.include</parmname></indexterm>
-      <indexterm><parmname>--args.breadcrumbs</parmname></indexterm>
       <p>For performance reasons, Bootstrap
         <xref href="./icons.dita" format="dita">icons</xref>,
         <xref href="./popovers.dita" format="dita">popovers</xref> and
@@ -340,7 +354,7 @@
           <xref href="./popovers.dita" format="dita">popover components</xref> and
           <xref href="./tooltips.dita" format="dita">tooltip components</xref></li>
       </ul>
-      <p> Breadcrumbs and menu bars can be added using the following parameters: </p>
+      <p>Breadcrumbs and menu bars can be added using the following parameters:</p>
       <ul>
         <li>
           <parmname>--args.breadcrumbs</parmname> – enable Bootstrap
