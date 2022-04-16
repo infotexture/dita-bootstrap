@@ -108,15 +108,20 @@
         with its parents, siblings and children. As with the default HTML5 plug-in, the <codeph>full</codeph> option can
         also be used to generate a complete ToC for the entire map, or <codeph>none</codeph> to disable the table of
         contents entirely.</p>
-      <p>As of version 5.3.1, the plug-in provides four new options to style the table of contents navigation with the
+      <p>As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with the
         Bootstrap
         <xref href="https://getbootstrap.com/docs/5.1/components/list-group/" format="html" scope="external">list
-          group</xref> component and
+          group</xref> component,
         <xref
           href="https://getbootstrap.com/docs/5.1/components/navs-tabs/#pills"
           format="html"
           scope="external"
-        >nav-pills</xref>
+        >nav-pills</xref> and
+         <xref
+          href="https://getbootstrap.com/docs/5.1/components/collapse/"
+          format="html"
+          scope="external"
+        >collapsible</xref> menus.
       </p>
       <ul>
         <li>
@@ -129,6 +134,8 @@
         <li>
           <codeph>nav-pill-partial</codeph> – Partial ToC with the current topic, parents, siblings, and children using
           Bootstrap nav-pills </li>
+        <li>
+          <codeph>collapsible</codeph> – Styled full ToC using collapsible list elements </li>
       </ul>
       <p>To use these options, pass the desired value to the <cmdname>dita</cmdname> command via the
           <parmname>--nav-toc</parmname> parameter:</p>
@@ -171,6 +178,12 @@
           <fig>
             <title><codeph>list-group-partial</codeph> – Styled partial ToC within a list group</title>
             <image href="./src/list-group-partial.png"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
+            <title><codeph>collapsible</codeph> – Styled full ToC with collapsible elements</title>
+            <image href="./src/collapsible.png"/>
           </fig>
         </li>
       </ol>

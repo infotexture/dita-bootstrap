@@ -28,10 +28,28 @@
       <xsl:when test=". is $current-topicref">
         <xsl:value-of select="' active'"/>
       </xsl:when>
+      <xsl:when test="$nav-toc = ('collapsible')">
+      </xsl:when>
       <xsl:otherwise>
         <xsl:for-each select="descendant::*">
           <xsl:if test=". is $current-topicref">
             <xsl:value-of select="concat(' ', $BOOTSTRAP_CSS_ACTIVE_NAV_PARENT)"/>
+          </xsl:if>
+        </xsl:for-each>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- A collapsed list is shown if it is currently selected -->
+  <xsl:template name="get-show-menu">
+    <xsl:choose>
+      <xsl:when test=". is $current-topicref">
+        <xsl:value-of select="'show'"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:for-each select="descendant::*">
+          <xsl:if test=". is $current-topicref">
+            <xsl:value-of select="'show'"/>
           </xsl:if>
         </xsl:for-each>
       </xsl:otherwise>
@@ -89,7 +107,7 @@
     </div>
   </xsl:template>
 
-  <!-- Override to add Bootstrap list-group and nav-pill classes -->
+  <!-- Override to add Bootstrap list-group, nav-pill and collapse classes -->
   <xsl:template match="*" mode="gen-user-sidetoc">
     <xsl:choose>
       <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
@@ -168,7 +186,15 @@
           </nav>
         </nav>
       </xsl:when>
-
+      <xsl:when test="$nav-toc = ('collapsible')">
+        <nav class="flex-column bd-links">
+          <ul class="list-unstyled mb-0 py-3 pt-md-1">
+            <xsl:apply-templates select="$input.map" mode="collapsible-toc">
+              <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+            </xsl:apply-templates>
+          </ul>
+        </nav>
+      </xsl:when>
       <xsl:otherwise>
         <xsl:next-match/>
       </xsl:otherwise>
@@ -177,6 +203,8 @@
 
   <!-- list-group sidebar toc processing to add Bootstrap list-group menu -->
   <!-- https://getbootstrap.com/docs/5.1/components/list-group/ -->
+
+  <!-- partial list-group sidebar toc processing -->
   <xsl:template match="*[contains(@class, ' map/map ')]" mode="list-group-toc-pull">
     <xsl:param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
     <xsl:param name="children" select="()" as="element()*"/>
@@ -184,6 +212,7 @@
     <xsl:copy-of select="$children"/>
   </xsl:template>
 
+  <!-- partial list-group sidebar toc processing -->
   <xsl:template match="*" mode="list-group-toc-pull" priority="-10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:param name="children" select="()" as="element()*"/>
@@ -194,6 +223,7 @@
     </xsl:apply-templates>
   </xsl:template>
 
+  <!-- full list-group sidebar toc processing -->
   <xsl:template match="*" mode="list-group-toc" priority="-10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="list-group-toc">
@@ -203,6 +233,8 @@
 
   <!-- nav-pill sidebar toc processing to add Bootstrap nav-pills menu -->
   <!-- https://getbootstrap.com/docs/5.1/components/navs-tabs/ -->
+
+  <!-- partial nav-pill sidebar toc processing -->
   <xsl:template match="*[contains(@class, ' map/map ')]" mode="nav-pill-toc-pull">
     <xsl:param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
     <xsl:param name="children" select="()" as="element()*"/>
@@ -210,6 +242,7 @@
     <xsl:copy-of select="$children"/>
   </xsl:template>
 
+  <!-- partial nav-pill sidebar toc processing -->
   <xsl:template match="*" mode="nav-pill-toc-pull" priority="-10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:param name="children" select="()" as="element()*"/>
@@ -220,6 +253,7 @@
     </xsl:apply-templates>
   </xsl:template>
 
+  <!-- full nav-pill sidebar toc processing -->
   <xsl:template match="*" mode="nav-pill-toc" priority="-10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="nav-pill-toc">
@@ -227,25 +261,17 @@
     </xsl:apply-templates>
   </xsl:template>
 
-  <!-- nav-pill menubar-toc submenu toc processing - a navbar with dropdowns -->
-  <!-- https://getbootstrap.com/docs/5.1/components/dropdowns/ -->
-  <xsl:template match="*[contains(@class, ' map/map ')]" mode="menubar-toc-pull">
-    <xsl:param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-    <xsl:param name="children" select="()" as="element()*"/>
-    <xsl:param name="parent" select="parent::*" as="element()?"/>
-    <xsl:copy-of select="$children"/>
-  </xsl:template>
-
-  <xsl:template match="*" mode="menubar-toc-pull" priority="-10">
+  <!-- collapsible sidebar toc processing to add Bootstrap collapsing menu classes -->
+  <!-- https://getbootstrap.com/docs/5.1/components/collapse/ -->
+  <xsl:template match="*" mode="collapsible-toc" priority="-10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
-    <xsl:param name="children" select="()" as="element()*"/>
-    <xsl:param name="parent" select="parent::*" as="element()?"/>
-    <xsl:apply-templates select="$parent" mode="menubar-toc-pull">
+    <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="collapsible-toc">
       <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
-      <xsl:with-param name="children" select="$children"/>
     </xsl:apply-templates>
   </xsl:template>
 
+  <!-- nav-pill menubar-toc submenu toc processing - a navbar with dropdowns -->
+  <!-- https://getbootstrap.com/docs/5.1/components/dropdowns/ -->
   <xsl:template match="*" mode="menubar-toc" priority="-10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="menubar-toc">
@@ -501,6 +527,102 @@
         </xsl:if>
       </xsl:when>
     </xsl:choose>
+  </xsl:template>
+
+  <!-- collapsible-toc mode to add Bootstrap collapsing menu classes to a sidebar -->
+  <xsl:template
+    match="*[contains(@class, ' map/topicref ')]
+                        [not(@toc = 'no')]
+                        [not(@processing-role = 'resource-only')]"
+    mode="collapsible-toc"
+    priority="10"
+  >
+    <xsl:param name="pathFromMaplist" as="xs:string"/>
+    <xsl:param
+      name="children"
+      select="*[contains(@class, ' map/topicref ')]"
+      as="element()*"
+    />
+    <xsl:variable name="title">
+      <xsl:apply-templates select="." mode="get-navtitle"/>
+    </xsl:variable>
+
+    <xsl:variable name="active-class">
+      <xsl:call-template name="get-active-class"/>
+    </xsl:variable>
+    <xsl:variable name="show-menu">
+      <xsl:call-template name="get-show-menu"/>
+    </xsl:variable>
+    <li>
+      <xsl:choose>
+        <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($show-menu = 'show')">
+          <!-- no-op - if a menubar-toc is present, the nav-bar is reduced to current decendents only -->
+        </xsl:when>
+        <xsl:when test="normalize-space($title)">
+          <xsl:variable name="id" select="dita-ot:generate-html-id(.)"/>
+          <xsl:choose>
+            <xsl:when test="normalize-space(@href)">
+              <xsl:if test="exists($children)">
+                <!-- ↓ Add Toggle without text ↓ -->
+                <button data-bs-toggle="collapse">
+                  <xsl:attribute name="class">
+                    <xsl:text>btn d-inline-flex align-items-center rounded</xsl:text>
+                    <xsl:if test="$show-menu='show'">
+                      <xsl:text> active</xsl:text>
+                    </xsl:if>
+                  </xsl:attribute>
+                  <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
+                  <xsl:if test="$show-menu='show'">
+                      <xsl:attribute name="aria-expanded" select="'true'"/>
+                      <xsl:attribute name="aria-current" select="'true'"/>
+                  </xsl:if>
+                </button>
+              </xsl:if>
+              <!-- ↓ Add Bootstrap classes to topic link ↓ -->
+              <a>
+                <xsl:call-template name="nav-attributes">
+                  <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
+                  <xsl:with-param name="class">
+                    <xsl:text>d-inline-flex align-items-center rounded</xsl:text>
+                    <xsl:value-of select="$active-class"/>
+                  </xsl:with-param>
+                </xsl:call-template>
+                <xsl:value-of select="$title"/>
+              </a>
+            </xsl:when>
+            <xsl:otherwise>
+              <!-- ↓ Add Toggle with title text ↓ -->
+              <button data-bs-toggle="collapse">
+                <xsl:attribute name="class">
+                  <xsl:text>btn d-inline-flex align-items-center rounded</xsl:text>
+                  <xsl:if test="$show-menu='show'">
+                    <xsl:text> active</xsl:text>
+                  </xsl:if>
+                </xsl:attribute>
+                <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
+                <xsl:if test="$show-menu='show'">
+                    <xsl:attribute name="aria-expanded" select="'true'"/>
+                    <xsl:attribute name="aria-current" select="'true'"/>
+                </xsl:if>
+                 <span class="ms-3"/>
+                <xsl:value-of select="$title"/>
+              </button>
+            </xsl:otherwise>
+          </xsl:choose>
+          <xsl:if test="exists($children)">
+            <div>
+              <xsl:attribute name="id" select="concat('menu-collapse-',$id)"/>
+              <xsl:attribute name="class" select="concat('collapse ', $show-menu)"/>
+              <ul class="list-unstyled fw-normal pb-1">
+                <xsl:apply-templates select="$children" mode="#current">
+                  <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
+                </xsl:apply-templates>
+              </ul>
+            </div>
+          </xsl:if>
+        </xsl:when>
+      </xsl:choose>
+    </li>
   </xsl:template>
 
   <!-- menubar-toc mode to add Bootstrap nav-link classes to a menubar-toc - a submenu as part of the header -->

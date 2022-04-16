@@ -94,12 +94,14 @@ The plug-in extends the standard HTML5 table of contents (ToC) [navigation param
 
 By default, the plug-in uses the `partial` option to include the current topic in the ToC along with its parents, siblings and children. As with the default HTML5 plug-in, the `full` option can also be used to generate a complete ToC for the entire map, or `none` to disable the table of contents entirely.
 
-As of version 5.3.1, the plug-in provides four new options to style the table of contents navigation with the Bootstrap [list group][7] component and [nav][7] component.
+As of version 5.3.1, the plug-in provides six new options to style the table of contents navigation with the Bootstrap [list group][7] component , [nav][16] component
+and [collapsible][17] menus
 
 - `list-group-full` – Styled full ToC within a Bootstrap list group
 - `list-group-partial` – Partial ToC with the current topic, parents, siblings, and children in a list group
 - `nav-pill-full` – Styled full ToC using Bootstrap nav-pills
 - `nav-pill-partial` – Partial ToC with the current topic, parents, siblings, and children using Bootstrap nav-pills
+- `collapsible` – Styled full ToC with collapsible list elements
 
 To use these options, pass the desired value to the `dita` command via the `--nav-toc` parameter:
 
@@ -213,3 +215,5 @@ Twitter, Inc. and the Bootstrap Authors, and used under CC BY 3.0.
 [13]: https://twitter.com/infotexture
 [14]: https://github.com/infotexture/dita-bootstrap/issues/new
 [15]: https://help.github.com/articles/using-pull-requests/
+[16]: https://getbootstrap.com/docs/5.1/components/navs-tabs/#pills
+[17]: https://getbootstrap.com/docs/5.1/components/collapse/
