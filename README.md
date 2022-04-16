@@ -94,7 +94,7 @@ The plug-in extends the standard HTML5 table of contents (ToC) [navigation param
 
 By default, the plug-in uses the `partial` option to include the current topic in the ToC along with its parents, siblings and children. As with the default HTML5 plug-in, the `full` option can also be used to generate a complete ToC for the entire map, or `none` to disable the table of contents entirely.
 
-As of version 5.3.1, the plug-in provides six new options to style the table of contents navigation with the Bootstrap [list group][7] component , [nav][16] component
+As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with the Bootstrap [list group][7] component , [nav][16] component
 and [collapsible][17] menus
 
 - `list-group-full` – Styled full ToC within a Bootstrap list group
