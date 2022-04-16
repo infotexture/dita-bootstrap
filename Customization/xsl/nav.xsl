@@ -566,7 +566,7 @@
                 <!-- ↓ Add Toggle without text ↓ -->
                 <button data-bs-toggle="collapse">
                   <xsl:attribute name="class">
-                    <xsl:text>btn d-inline-flex align-items-center rounded</xsl:text>
+                    <xsl:text>btn d-inline-flex align-items-center rounded pe-0</xsl:text>
                     <xsl:if test="$show-menu='show'">
                       <xsl:text> active</xsl:text>
                     </xsl:if>
@@ -583,7 +583,15 @@
                 <xsl:call-template name="nav-attributes">
                   <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                   <xsl:with-param name="class">
-                    <xsl:text>d-inline-flex align-items-center rounded</xsl:text>
+                    <xsl:text>d-inline-flex align-items-center rounded </xsl:text>
+                    <xsl:choose>
+                      <xsl:when test="exists($children)">
+                        <xsl:text>ps-0</xsl:text>
+                      </xsl:when>
+                      <xsl:otherwise>
+                        <xsl:text>ps-3</xsl:text>
+                      </xsl:otherwise>
+                    </xsl:choose>
                     <xsl:value-of select="$active-class"/>
                   </xsl:with-param>
                 </xsl:call-template>
@@ -604,7 +612,6 @@
                     <xsl:attribute name="aria-expanded" select="'true'"/>
                     <xsl:attribute name="aria-current" select="'true'"/>
                 </xsl:if>
-                 <span class="ms-3"/>
                 <xsl:value-of select="$title"/>
               </button>
             </xsl:otherwise>
@@ -613,7 +620,7 @@
             <div>
               <xsl:attribute name="id" select="concat('menu-collapse-',$id)"/>
               <xsl:attribute name="class" select="concat('collapse ', $show-menu)"/>
-              <ul class="list-unstyled fw-normal pb-1">
+              <ul class="list-unstyled fw-normal">
                 <xsl:apply-templates select="$children" mode="#current">
                   <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                 </xsl:apply-templates>
