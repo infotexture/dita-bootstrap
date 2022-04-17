@@ -187,7 +187,7 @@
         </nav>
       </xsl:when>
       <xsl:when test="$nav-toc = ('collapsible')">
-        <nav class="flex-column bd-links">
+        <nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links">
           <ul class="list-unstyled mb-0 py-3 pt-md-1">
             <xsl:apply-templates select="$input.map" mode="collapsible-toc">
               <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
@@ -562,11 +562,54 @@
           <xsl:variable name="id" select="dita-ot:generate-html-id(.)"/>
           <xsl:choose>
             <xsl:when test="normalize-space(@href)">
-              <xsl:if test="exists($children)">
-                <!-- ↓ Add Toggle without text ↓ -->
+              <div>
+                <xsl:attribute name="class" select="'d-flex flex-row'"/>
+                <xsl:if test="exists($children)">
+                  <xsl:attribute name="id" select="concat('menu-collapse-trigger-',$id)"/>
+                  <!-- ↓ Add Toggle without text ↓ -->
+                  <button data-bs-toggle="collapse">
+                    <xsl:attribute name="class">
+                      <xsl:text>btn d-inline-flex align-items-center pe-0</xsl:text>
+                      <xsl:if test="$show-menu='show'">
+                        <xsl:text> active</xsl:text>
+                      </xsl:if>
+                    </xsl:attribute>
+                    <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
+                    <xsl:if test="$show-menu='show'">
+                        <xsl:attribute name="aria-expanded" select="'true'"/>
+                        <xsl:attribute name="aria-current" select="'true'"/>
+                    </xsl:if>
+                    <xsl:attribute name="aria-labelledby" select="concat('menu-collapse-trigger-',$id)"/>
+                    <xsl:attribute name="aria-controls" select="concat('menu-collapse-',$id)"/>
+                  </button>
+                </xsl:if>
+                <!-- ↓ Add Bootstrap classes to topic link ↓ -->
+                <a>
+                  <xsl:call-template name="nav-attributes">
+                    <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
+                    <xsl:with-param name="class">
+                      <xsl:text>link-primary d-inline-flex align-items-center flex-shrink-1 </xsl:text>
+                      <xsl:choose>
+                        <xsl:when test="exists($children)">
+                          <xsl:text>ps-0</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <xsl:text>ps-3</xsl:text>
+                        </xsl:otherwise>
+                      </xsl:choose>
+                      <xsl:value-of select="$active-class"/>
+                    </xsl:with-param>
+                  </xsl:call-template>
+                  <xsl:value-of select="$title"/>
+                </a>
+              </div>
+            </xsl:when>
+            <xsl:otherwise>
+              <!-- ↓ Add Toggle with title text ↓ -->
+              <div class ="d-flex flex-row">
                 <button data-bs-toggle="collapse">
                   <xsl:attribute name="class">
-                    <xsl:text>btn d-inline-flex align-items-center rounded pe-0</xsl:text>
+                    <xsl:text>btn d-inline-flex align-items-center pe-0</xsl:text>
                     <xsl:if test="$show-menu='show'">
                       <xsl:text> active</xsl:text>
                     </xsl:if>
@@ -577,43 +620,21 @@
                       <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
                 </button>
-              </xsl:if>
-              <!-- ↓ Add Bootstrap classes to topic link ↓ -->
-              <a>
-                <xsl:call-template name="nav-attributes">
-                  <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
-                  <xsl:with-param name="class">
-                    <xsl:text>d-inline-flex align-items-center rounded </xsl:text>
-                    <xsl:choose>
-                      <xsl:when test="exists($children)">
-                        <xsl:text>ps-0</xsl:text>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <xsl:text>ps-3</xsl:text>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                    <xsl:value-of select="$active-class"/>
-                  </xsl:with-param>
-                </xsl:call-template>
-                <xsl:value-of select="$title"/>
-              </a>
-            </xsl:when>
-            <xsl:otherwise>
-              <!-- ↓ Add Toggle with title text ↓ -->
-              <button data-bs-toggle="collapse">
-                <xsl:attribute name="class">
-                  <xsl:text>btn d-inline-flex align-items-center rounded</xsl:text>
+                <span data-bs-toggle="collapse">
+                  <xsl:attribute name="class">
+                    <xsl:text>link-primary d-inline-flex align-items-center flex-shrink-1 ps0</xsl:text>
+                    <xsl:if test="$show-menu='show'">
+                      <xsl:text> active</xsl:text>
+                    </xsl:if>
+                  </xsl:attribute>
+                  <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
                   <xsl:if test="$show-menu='show'">
-                    <xsl:text> active</xsl:text>
+                      <xsl:attribute name="aria-expanded" select="'true'"/>
+                      <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
-                </xsl:attribute>
-                <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
-                <xsl:if test="$show-menu='show'">
-                    <xsl:attribute name="aria-expanded" select="'true'"/>
-                    <xsl:attribute name="aria-current" select="'true'"/>
-                </xsl:if>
-                <xsl:value-of select="$title"/>
-              </button>
+                  <xsl:value-of select="$title"/>
+                </span>
+              </div>
             </xsl:otherwise>
           </xsl:choose>
           <xsl:if test="exists($children)">
