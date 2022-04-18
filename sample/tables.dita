@@ -209,5 +209,166 @@
     <codeblock>&lt;table outputclass="table-striped"&gt;
   ...etc
 &lt;/table&gt;</codeblock>
+    <section>
+      <title>Bordered tables</title>
+      <p>Add <xmlatt>frame="all"</xmlatt> for borders on all sides of the table and cells.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table frame="all">
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <codeblock>&lt;table frame="all"&gt;
+  ...etc
+&lt;/table&gt;</codeblock>
+    <section>
+      <title>Tables without borders</title>
+      <p>Add <xmlatt>frame="none"</xmlatt> for a table without borders.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table frame="none">
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <codeblock>&lt;table frame="none"&gt;
+  ...etc
+&lt;/table&gt;</codeblock>
+    <section>
+      <title>Table head</title>
+      <p>Similar to tables and dark tables, use the modifier <xmlatt>outputclass="table-light"</xmlatt> or <xmlatt>outputclass="table-dark"</xmlatt> to make <xmlelement>thead</xmlelement> elements appear light or dark gray.</p>
+    </section>
+
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table>
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead outputclass="table-light">
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <codeblock>&lt;table&gt;
+  &lt;tgroup&gt;
+    &lt;thead outputclass="table-light"&gt;
+      ...etc
+    &lt;/thead&gt;
+  &lt;tgroup&gt;
+&lt;/table&gt;</codeblock>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table>
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead outputclass="table-dark">
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <codeblock>&lt;table&gt;
+  &lt;tgroup&gt;
+    &lt;thead outputclass="table-dark"&gt;
+      ...etc
+    &lt;/thead&gt;
+  &lt;/tgroup&gt;
+&lt;/table&gt;</codeblock>
   </body>
 </topic>

@@ -230,8 +230,10 @@
       <indexterm><parmname>--bootstrap.css.card</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel.caption</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.table</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs.vertical</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.thead</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.accordion</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.accessibility.nav</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.accessibility.link</parmname></indexterm>
@@ -322,12 +324,20 @@
             <xmlelement>shortdesc</xmlelement> elements
         </li>
         <li>
+          <parmname>--bootstrap.css.table</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>table</xmlelement> elements
+        </li>
+        <li>
           <parmname>--bootstrap.css.tabs</parmname> – common utility classes for Bootstrap
           <xref href="./tabs.dita" format="dita">tabbed dialog components</xref>
         </li>
         <li>
           <parmname>--bootstrap.css.tabs.vertical</parmname> – common utility classes for Bootstrap
           <xref href="./tabs.dita" format="dita">vertical tabbed dialog components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.thead</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>thead</xmlelement> elements
         </li>
         <li>
           <parmname>--bootstrap.css.topic.title</parmname> – common Bootstrap utility classes for DITA

@@ -163,8 +163,10 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.pagination`– common utility classes for Bootstrap pagination components
 - `bootstrap.css.section.title` – common Bootstrap utility classes for DITA `<section>` titles
 - `bootstrap.css.shortdesc` – common Bootstrap utility classes for DITA `<shortdesc>` elements
+- `bootstrap.css.table` - common utility classes for DITA `<table>` elements
 - `bootstrap.css.tabs` – common utility classes for Bootstrap horizontal tab components
 - `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabs
+- `bootstrap.css.thead` - common utility classes for DITA `<thead>` elements
 - `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<topic>` titles
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
