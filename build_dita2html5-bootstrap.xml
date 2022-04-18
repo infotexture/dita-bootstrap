@@ -66,6 +66,26 @@
       message="${line.separator}${dita-bootstrap.menubar-toc}"
       file="${extend.css.file}"
     />
+
+    <!-- Add Bootstrap collapsible css if collapsible.include=yes -->
+    <condition
+      property="dita-bootstrap.collapsible.css.file"
+      value="${dita-bootstrap.css.dir}/collapsible-toc.css"
+    >
+       <equals arg1="${nav-toc}" arg2="collapsible"/>
+    </condition>
+
+    <loadfile
+      if:set="dita-bootstrap.collapsible.css.file"
+      property="dita-bootstrap.collapsible"
+      srcFile="${dita-bootstrap.collapsible.css.file}"
+    />
+    <echo
+      if:set="dita-bootstrap.collapsible.css.file"
+      append="true"
+      message="${line.separator}${dita-bootstrap.collapsible}"
+      file="${extend.css.file}"
+    />
   </target>
 
   <target name="dita2html5-bootstrap.init">
