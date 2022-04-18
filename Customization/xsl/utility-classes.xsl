@@ -29,10 +29,26 @@
   <xsl:param name="BOOTSTRAP_CSS_DT" select="'col-sm-3 text-truncate '"/>
   <xsl:param name="BOOTSTRAP_CSS_DD" select="'col-sm-9 '"/>
   <xsl:param name="BOOTSTRAP_CSS_PAGINATION" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_TABLE" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_TABLE_HEAD" select="''"/>
 
   <!-- Add a Bootstrap CSS border to codeblocks -->
   <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_CODEBLOCK"/>
+  </xsl:template>
+
+  <!-- Add a Bootstrap CSS border to tables -->
+  <xsl:template match="*[contains(@class, ' topic/table ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_TABLE"/>
+    <xsl:choose>
+      <xsl:when test="@frame = 'all'"> table-bordered</xsl:when>
+      <xsl:when test="@frame = 'none'"> table-borderless</xsl:when>
+      <xsl:otherwise/>
+    </xsl:choose>
+  </xsl:template>
+  <!-- Enhance the default Bootstrap CSS text color of the table headers -->
+  <xsl:template match="*[contains(@class, ' topic/thead ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_TABLE_HEAD"/>
   </xsl:template>
 
   <!-- Enhance the short desc with a Bootstrap CSS lead class -->
