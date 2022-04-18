@@ -11,8 +11,8 @@
    file for applicable licenses.-->
 <topic id="collapse">
   <title>Collapse</title>
-  <shortdesc>Toggle the visibility of content across your project with a few classes and
-    Bootstrap’s JavaScript plugin.</shortdesc>
+  <shortdesc>Toggle the visibility of content across your project with a few classes and Bootstrap’s JavaScript
+    plugin.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
@@ -29,7 +29,10 @@
   <body outputclass="language-markup">
     <section>
       <title>How it works</title>
-      <p>The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers that are mapped to specific elements you toggle. Collapsing an element will animate the height from its current value to 0. Given how CSS handles animations, you cannot use padding on a .collapse element. Instead, use the class as an independent wrapping element.</p>
+      <p>The collapse JavaScript plugin is used to show and hide content. Buttons or anchors are used as triggers that
+        are mapped to specific elements you toggle. Collapsing an element will animate the height from its current value
+        to 0. Given how CSS handles animations, you cannot use padding on a .collapse element. Instead, use the class as
+        an independent wrapping element.</p>
     </section>
     <section>
       <title>Example</title>
@@ -43,7 +46,8 @@
       </p>
       <bodydiv outputclass="collapse" id="collapse1">
         <div outputclass="card card-body">
-          <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.</p>
+          <p>Some placeholder content for the collapse component. This panel is hidden by default but revealed when the
+            user activates the relevant trigger.</p>
         </div>
       </bodydiv>
     </bodydiv>
@@ -59,15 +63,18 @@
 &lt;/bodydiv&gt;</codeblock>
     <section>
       <title>Horizontal</title>
-      <p>The collapse plugin also supports horizontal collapsing. Add <xmlatt>outputclass="collapse-horizontal"</xmlatt> to transition the width instead of height and set an <xmlatt>otherprops="style(width: ...)</xmlatt> on the immediate child <xmlelement>div</xmlelement> element.</p>
+      <p>The collapse plugin also supports horizontal collapsing. Add <xmlatt>outputclass="collapse-horizontal"</xmlatt>
+        to transition the width instead of height and set an <xmlatt>otherprops="style(width: ...)</xmlatt> on the
+        immediate child <xmlelement>div</xmlelement> element.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-     <p>
+      <p>
         <xref outputclass="btn-primary" props="collapse-toggle" href="#collapse2">Toggle Width Collapse</xref>
       </p>
       <bodydiv outputclass="collapse-horizontal" id="collapse2" otherprops="style(min-height: 120px;)">
         <div outputclass="card card-body" otherprops="style(width: 300px;)">
-          <p>Some placeholder content for the collapse component. This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.</p>
+          <p>Some placeholder content for the collapse component. This is some placeholder content for a horizontal
+            collapse. It's hidden by default and shown when triggered.</p>
         </div>
       </bodydiv>
     </bodydiv>
