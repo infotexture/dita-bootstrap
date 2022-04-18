@@ -289,7 +289,9 @@
 &lt;/table&gt;</codeblock>
     <section>
       <title>Table head</title>
-      <p>Similar to tables and dark tables, use the modifier <xmlatt>outputclass="table-light"</xmlatt> or <xmlatt>outputclass="table-dark"</xmlatt> to make <xmlelement>thead</xmlelement> elements appear light or dark gray.</p>
+      <p>Similar to tables and dark tables, use the modifier <xmlatt>outputclass="table-light"</xmlatt> or
+          <xmlatt>outputclass="table-dark"</xmlatt> to make <xmlelement>thead</xmlelement> elements appear light or dark
+        gray.</p>
     </section>
 
     <bodydiv outputclass="bd-example" deliveryTarget="html">
