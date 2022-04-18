@@ -109,11 +109,12 @@
         with its parents, siblings and children. As with the default HTML5 plug-in, the <code class="ph codeph language-bash">full</code> option can
         also be used to generate a complete ToC for the entire map, or <code class="ph codeph language-bash">none</code> to disable the table of
         contents entirely.</p>
-      <p class="p">As of version 5.3.1, the plug-in provides four new options to style the table of contents navigation with the
+      <p class="p">As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with the
         Bootstrap
         <a class="xref" href="https://getbootstrap.com/docs/5.1/components/list-group/" target="_blank" rel="external noopener">list
-          group</a> component and
-        <a class="xref" href="https://getbootstrap.com/docs/5.1/components/navs-tabs/#pills" target="_blank" rel="external noopener">nav-pills</a>
+          group</a> component,
+        <a class="xref" href="https://getbootstrap.com/docs/5.1/components/navs-tabs/#pills" target="_blank" rel="external noopener">nav-pills</a> and
+         <a class="xref" href="https://getbootstrap.com/docs/5.1/components/collapse/" target="_blank" rel="external noopener">collapsible</a> menus.
       </p>
       <ul class="ul">
         <li class="li">
@@ -126,6 +127,8 @@
         <li class="li">
           <code class="ph codeph language-bash">nav-pill-partial</code> – Partial ToC with the current topic, parents, siblings, and children using
           Bootstrap nav-pills </li>
+        <li class="li">
+          <code class="ph codeph language-bash">collapsible</code> – Styled full ToC using collapsible list elements </li>
       </ul>
       <p class="p">To use these options, pass the desired value to the <span class="keyword cmdname">dita</span> command via the
           <span class="keyword parmname">--nav-toc</span> parameter:</p>
@@ -139,6 +142,7 @@
         <div class="carousel-item"><img class="image figure-img img-fluid border roundedd-block w-100" src="src/nav-pill-partial.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">nav-pill-partial – Styled partial ToC using nav-pills</p></div></div>
         <div class="carousel-item"><img class="image figure-img img-fluid border roundedd-block w-100" src="src/list-group-full.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">list-group-full – Styled full ToC within a list group</p></div></div>
         <div class="carousel-item"><img class="image figure-img img-fluid border roundedd-block w-100" src="src/list-group-partial.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">list-group-partial – Styled partial ToC within a list group</p></div></div>
+        <div class="carousel-item"><img class="image figure-img img-fluid border roundedd-block w-100" src="src/collapsible.png"><div class="carousel-caption d-none d-md-block"><p class="title text-white bg-dark">collapsible – Styled full ToC with collapsible elements</p></div></div>
       </div><a class="carousel-control-prev" role="button" data-bs-slide="prev" data-bs-target="#carousel_index__ol__1"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" role="button" data-bs-slide="next" data-bs-target="#carousel_index__ol__1"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></a></div>
       <div role="alert" class="note alert alert-primary"><span class="note__title">Note:</span> For an example of <code class="ph codeph language-bash">list-group-full</code> styling, see the output at
         <a class="xref alert-link" href="https://infotexture.github.io/dita-bootstrap/" target="_blank" rel="external noopener">infotexture.github.io/dita-bootstrap</a>. </div>
