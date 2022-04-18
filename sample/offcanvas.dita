@@ -46,7 +46,7 @@
     <section>
       <title>Offcanvas components</title>
       <p>Below is an offcanvas example that is displayed when the button is clicked. Add
-          <codeph>props="offcanvas-toggle"</codeph> to an <xmlelement>xref</xmlelement> element to associate a button to
+          <xmlatt>props="offcanvas-toggle"</xmlatt> to an <xmlelement>xref</xmlelement> element to associate a button to
         an offcanvas</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">

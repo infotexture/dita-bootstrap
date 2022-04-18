@@ -40,6 +40,7 @@
     <topicref navtitle="Button Group" format="dita" type="topic" href="button-group.dita"/>
     <topicref navtitle="Card" format="dita" type="topic" href="card.dita"/>
     <topicref navtitle="Carousel" format="dita" type="topic" href="carousel.dita"/>
+    <topicref navtitle="Collapse" format="dita" type="topic" href="collapse.dita"/>
     <topicref navtitle="List Group" format="dita" type="topic" href="list-group.dita"/>
     <topicref navtitle="Offcanvas" format="dita" type="topic" href="offcanvas.dita"/>
     <topicref navtitle="Pagination" format="dita" type="topic" href="pagination.dita"/>

@@ -151,6 +151,9 @@
       <xsl:when test="contains(@outputclass, 'btn-')">
         <xsl:text>btn</xsl:text>
       </xsl:when>
+      <xsl:when test="contains(@outputclass, 'collapse-')">
+        <xsl:text>collapse</xsl:text>
+      </xsl:when>
       <xsl:when test="contains(@class, ' topic/ph ') and contains(@outputclass, 'bg-')">
         <xsl:text>badge</xsl:text>
       </xsl:when>
