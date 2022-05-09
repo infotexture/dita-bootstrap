@@ -111,7 +111,7 @@ dita --input=path/to/your.ditamap \
      --nav-toc=list-group-partial
 ```
 
-For an example of `list-group-full` styling, see the output at [infotexture.github.io/dita-bootstrap][8].
+For an example of `collapsible` styling, see the output at [infotexture.github.io/dita-bootstrap][8].
 
 Additionally, the first-level navigation menu can be switched to a horizontal Bootstrap menu bar to reduce the depth of the ToC.
 
