@@ -12,16 +12,43 @@
 >
   <xsl:param name="BOOTSTRAP_CSS_SHORTDESC" select="'text-muted lead'"/>
   <xsl:param name="BOOTSTRAP_CSS_CODEBLOCK" select="'border rounded'"/>
-  <xsl:param name="BOOTSTRAP_CSS_HEADER" select="'text-dark'"/>
+  <xsl:param name="BOOTSTRAP_CSS_TOPIC_TITLE" select="'text-dark'"/>
+  <xsl:param name="BOOTSTRAP_CSS_SECTION_TITLE" select="'h4 text-secondary'"/>
   <xsl:param name="BOOTSTRAP_CSS_CARD" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_CAROUSEL" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_CAPTION" select="'text-white bg-dark'"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'me-3'"/>
   <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACCESSIBILITY_NAV" select="'bg-light'"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACCESSIBILITY_LINK" select="'btn btn-outline-primary btn-sm'"/>
+  <xsl:param name="BOOTSTRAP_CSS_FIGURE" select="' w-100 mw-100 p-3 '"/>
+  <xsl:param name="BOOTSTRAP_CSS_FIGURE_CAPTION" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_FIGURE_IMAGE" select="'img-fluid border rounded'"/>
+  <xsl:param name="BOOTSTRAP_CSS_DL" select="'row'"/>
+  <xsl:param name="BOOTSTRAP_CSS_DT" select="'col-sm-3 text-truncate '"/>
+  <xsl:param name="BOOTSTRAP_CSS_DD" select="'col-sm-9 '"/>
+  <xsl:param name="BOOTSTRAP_CSS_PAGINATION" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_TABLE" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_TABLE_HEAD" select="''"/>
+
   <!-- Add a Bootstrap CSS border to codeblocks -->
   <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_CODEBLOCK"/>
+  </xsl:template>
+
+  <!-- Add a Bootstrap CSS border to tables -->
+  <xsl:template match="*[contains(@class, ' topic/table ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_TABLE"/>
+    <xsl:choose>
+      <xsl:when test="@frame = 'all'"> table-bordered</xsl:when>
+      <xsl:when test="@frame = 'none'"> table-borderless</xsl:when>
+      <xsl:otherwise/>
+    </xsl:choose>
+  </xsl:template>
+  <!-- Enhance the default Bootstrap CSS text color of the table headers -->
+  <xsl:template match="*[contains(@class, ' topic/thead ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_TABLE_HEAD"/>
   </xsl:template>
 
   <!-- Enhance the short desc with a Bootstrap CSS lead class -->
@@ -30,8 +57,12 @@
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS text color of the headers -->
-  <xsl:template match="*[contains(@class, ' topic/title ')]" mode="get-output-class">
-    <xsl:value-of select="$BOOTSTRAP_CSS_HEADER"/>
+  <xsl:template match="*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_TOPIC_TITLE"/>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' topic/section ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class">
+    <xsl:value-of select="$BOOTSTRAP_CSS_SECTION_TITLE"/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of cards -->
@@ -93,6 +124,31 @@
     <xsl:value-of select="BOOTSTRAP_CSS_ACCORDION"/>
   </xsl:template>
 
+  <!-- Change the default Bootstrap CSS text color of the figure captions -->
+  <xsl:template match="*[contains(@class, ' topic/figcaption ')]" mode="get-output-class">
+    <xsl:text>figure-caption </xsl:text>
+    <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE_CAPTION"/>
+  </xsl:template>
+
+  <!-- Change the default Bootstrap CSS classes of pagination -->
+  <xsl:template
+    match="*[(contains(@class, ' topic/ol ') or contains(@class, ' topic/ul ')) and contains(@outputclass, 'pagination')]"
+    mode="get-output-class"
+  >
+    <xsl:value-of select="$BOOTSTRAP_CSS_PAGINATION"/>
+  </xsl:template>
+
+  <xsl:template
+    match="*[contains(@class,' topic/section ') and contains(@outputclass, 'pagination')]/*[(contains(@class, ' topic/ol ') or contains(@class, ' topic/ul '))]"
+    mode="get-output-class"
+  >
+    <xsl:if test="ancestor::*[contains(@outputclass, 'pagination-')]">
+      <xsl:text>pagination </xsl:text>
+    </xsl:if>
+    <xsl:value-of select="ancestor::*[contains(@outputclass, 'pagination')][1]/@outputclass"/>
+    <xsl:value-of select="concat(' ', $BOOTSTRAP_CSS_PAGINATION)"/>
+  </xsl:template>
+
   <!-- Add additional Bootstrap CSS classes based on outputclass -->
   <xsl:template name="bootstrap-class">
     <xsl:choose>
@@ -111,11 +167,34 @@
       <xsl:when test="contains(@outputclass, 'btn-')">
         <xsl:text>btn</xsl:text>
       </xsl:when>
+      <xsl:when test="contains(@outputclass, 'collapse-')">
+        <xsl:text>collapse</xsl:text>
+      </xsl:when>
       <xsl:when test="contains(@class, ' topic/ph ') and contains(@outputclass, 'bg-')">
         <xsl:text>badge</xsl:text>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'alert-')">
         <xsl:text>alert</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/fig ')">
+        <xsl:text> figure </xsl:text>
+        <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE"/>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/lq ')">
+        <xsl:text> blockquote </xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/dl ')">
+        <xsl:value-of select="$BOOTSTRAP_CSS_DL"/>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/dt ')">
+        <xsl:value-of select="$BOOTSTRAP_CSS_DT"/>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/dd ')">
+        <xsl:value-of select="$BOOTSTRAP_CSS_DD"/>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/image ') and ancestor::*[contains(@class, ' topic/fig ')]">
+        <xsl:text> figure-img </xsl:text>
+        <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE_IMAGE"/>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'carousel-')">
         <xsl:text>carousel</xsl:text>
@@ -126,8 +205,20 @@
       <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'alert-')]">
         <xsl:text>alert-link</xsl:text>
       </xsl:when>
-      <xsl:when test="contains(@class, ' topic/li ') and ancestor::ul[contains(@outputclass, 'list-group')]">
+      <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])">
         <xsl:text>list-group-item</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])">
+        <xsl:text>list-inline-item</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@outputclass, 'pagination-')">
+        <xsl:text>pagination</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/li ') and ancestor::*[contains(@outputclass, 'pagination')]">
+        <xsl:text>page-item</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]">
+        <xsl:text>page-link</xsl:text>
       </xsl:when>
     </xsl:choose>
     <xsl:if test="@scalefit='yes'">

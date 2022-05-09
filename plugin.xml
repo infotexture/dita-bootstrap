@@ -3,7 +3,7 @@
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
 <plugin id="net.infotexture.dita-bootstrap">
-  <feature extension="package.version" value="5.3"/>
+  <feature extension="package.version" value="5.3.1"/>
   <require plugin="org.dita.html5"/>
   <require plugin="fox.jason.extend.css"/>
   <transtype
@@ -12,14 +12,42 @@
     desc="HTML5 with Bootstrap style"
   >
     <param
+      name="args.breadcrumbs"
+      desc="Specifies whether to generate breadcrumb links."
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
+      name="bootstrap.breadcrumb.divider"
+      type="string"
+      desc="Divider for bootstrap breadcrumbs"
+    />
+    <param
       name="nav-toc"
       type="enum"
       desc="Specifies whether to generate a navigation TOC in topic pages."
     >
       <val
-        desc="Bootstrap styled partial TOC that shows the current topic"
+        desc="Bootstrap styled partial TOC using a list-group that expands the current topic's descendents"
       >list-group-partial</val>
-      <val desc="Bootstrap styled full TOC">list-group-full</val>
+      <val
+        desc="Bootstrap styled full TOC using a list-group"
+      >list-group-full</val>
+      <val
+        desc="Bootstrap styled scrollspy menu using a list-group"
+      >list-group-scrollspy</val>
+      <val
+        desc="Bootstrap styled partial TOC using indented nav-pills that expands the current topic's descendents"
+      >nav-pill-partial</val>
+      <val
+        desc="Bootstrap styled full ToC using indented nav-pills"
+      >nav-pill-full</val>
+      <val
+        desc="Bootstrap styled scrollspy menu using indented nav-pills"
+      >nav-pill-scrollspy</val>
+      <val desc="Bootstrap styled collapsible menu">collapsible</val>
     </param>
     <param
       name="icons.cdn.path"
@@ -29,6 +57,22 @@
     <param
       name="icons.include"
       desc="Specifies whether include an icon fonts stylesheet in the header"
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
+      name="menubar-toc.include"
+      desc="Specifies whether to include a menu bar at the top of the page"
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
+      name="popovers.include"
+      desc="Specifies whether to enable popovers and tooltips"
       type="enum"
     >
       <val>yes</val>
@@ -45,9 +89,14 @@
       desc="Common Bootstrap classes for DITA &lt;codeblock&gt; elements"
     />
     <param
-      name="bootstrap.css.header"
+      name="bootstrap.css.topic.title"
       type="string"
-      desc="Common Bootstrap classes for DITA &lt;title&gt; elements"
+      desc="Common Bootstrap classes for DITA &lt;title&gt; elements within &lt;topic&gt; elements"
+    />
+    <param
+      name="bootstrap.css.section.title"
+      type="string"
+      desc="Common Bootstrap classes for DITA &lt;title&gt; elements within &lt;section&gt; elements"
     />
     <param
       name="bootstrap.css.card"
@@ -84,6 +133,66 @@
       type="string"
       desc="Bootstrap classes for flush accordion components"
     />
+    <param
+      name="bootstrap.css.accessibility.nav"
+      type="string"
+      desc="Bootstrap classes for accessibility navigation"
+    />
+    <param
+      name="bootstrap.css.accessibility.link"
+      type="string"
+      desc="Bootstrap classes for accessibility links"
+    />
+    <param
+      name="bootstrap.css.figure"
+      type="string"
+      desc="Bootstrap classes for figures"
+    />
+    <param
+      name="bootstrap.css.figure.caption"
+      type="string"
+      desc="Bootstrap classes for figure captions"
+    />
+    <param
+      name="bootstrap.css.figure.image"
+      type="string"
+      desc="Bootstrap classes for figure images"
+    />
+    <param
+      name="bootstrap.css.dl"
+      type="string"
+      desc="Bootstrap classes for definition lists"
+    />
+    <param
+      name="bootstrap.css.dt"
+      type="string"
+      desc="Bootstrap classes for definition list terms"
+    />
+    <param
+      name="bootstrap.css.dd"
+      type="string"
+      desc="Bootstrap classes for definition list descriptions"
+    />
+    <param
+      name="bootstrap.css.pagination"
+      type="string"
+      desc="Bootstrap classes for pagination components"
+    />
+    <param
+      name="bootstrap.css.nav.parent"
+      type="string"
+      desc="Bootstrap classes for ancestors of active navbar elements"
+    />
+    <param
+      name="bootstrap.css.table"
+      type="string"
+      desc="Bootstrap classes for tables"
+    />
+    <param
+      name="bootstrap.css.thead"
+      type="string"
+      desc="Bootstrap classes for table headers"
+    />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
@@ -92,4 +201,5 @@
     file="insertParameters.xml"
   />
   <feature extension="dita.conductor.html5.param" file="insertParameters.xml"/>
+  <feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
 </plugin>

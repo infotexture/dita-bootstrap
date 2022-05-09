@@ -15,13 +15,17 @@
       <param name="args.css" value="theme.css"/>
       <param name="args.csspath" value="css"/>
       <param name="args.cssroot" path="."/>
+      <param name="args.favicon" value="favicon.svg"/>
+      <param name="args.faviconpath" value="favicon"/>
+      <param name="args.faviconroot" path="."/>
       <param name="args.hdr" href="header.xml"/>
       <param name="args.ftr" href="footer.xml"/>
       <param name="html5.toc.generate" value="no"/>
       <param name="args.rellinks" value="none"/>
-      <param name="nav-toc" value="list-group-full"/>
+      <param name="nav-toc" value="collapsible"/>
       <param name="processing-mode" value="strict"/>
       <param name="icons.include" value="yes"/>
+      <param name="popovers.include" value="yes"/>
     </publication>
   </deliverable>
 </project>

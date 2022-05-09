@@ -2,30 +2,32 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.0 documentation (found at https://getbootstrap.com/docs/5.0), however DITA
+   5.1 documentation (found at https://getbootstrap.com/docs/5.1), however DITA
    markup is used throughout the examples describing how to implement these
-   components correctly using outputclass. -->
+   components correctly using outputclass.
+
+   This work, is a derivative of "Bootstrap 5.1 docs" by Twitter, Inc.
+   and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
+   file for applicable licenses.-->
 <topic id="index">
   <title>DITA Bootstrap</title>
   <abstract>
     <shortdesc>A plug-in for
-      <xref
-        href="http://www.dita-ot.org"
-        format="html"
-        scope="external"
-      >DITA Open Toolkit</xref> that extends the default HTML5
-      output with a
-      <xref href="https://getbootstrap.com/docs/5.0" format="html" scope="external">Bootstrap 5.0</xref> template and
+      <xref href="http://www.dita-ot.org" format="html" scope="external">DITA Open Toolkit</xref> that extends the
+      default HTML5 output with a
+      <xref href="https://getbootstrap.com/docs/5.1" format="html" scope="external">Bootstrap 5.1</xref> template and
       components.</shortdesc>
     <p>Where necessary, the texts describing the usage of each component have been copied directly from the
-      <xref href="https://getbootstrap.com/docs/5.0" format="html" scope="external">official Bootstrap 5.0
+      <xref href="https://getbootstrap.com/docs/5.1" format="html" scope="external">official Bootstrap 5.1
         documentation</xref>, however DITA markup is used throughout the examples describing how to implement these
-      components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute.</p>
+      components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute. This text is therefore a derivative of
+        <cite>Bootstrap 5 docs</cite> by Twitter, Inc. and the Bootstrap Authors, and used under
+      <xref href="https://creativecommons.org/licenses/by/3.0/" format="html" scope="external">CC BY 3.0.</xref></p>
   </abstract>
   <prolog>
     <metadata>
       <keywords>
-        <indexterm>Bootstrap 5.0</indexterm>
+        <indexterm>Bootstrap 5.1</indexterm>
         <indexterm>DITA</indexterm>
         <indexterm>installing</indexterm>
       </keywords>
@@ -49,8 +51,8 @@
     </section>
     <section>
       <title>Using</title>
-      <p>Specify the <option>html5-bootstrap</option> format when building output with the <cmdname
-        >dita</cmdname> command:</p>
+      <p>Specify the <option>html5-bootstrap</option> format when building output with the <cmdname>dita</cmdname>
+        command:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
     </section>
@@ -61,12 +63,9 @@
       <indexterm><parmname>--args.ftr</parmname></indexterm>
       <p>The plug-in includes a default static navigation menu with a project name and global link placeholders.</p>
       <p>The default header file <filepath>includes/bs-navbar-default.hdr.xml</filepath> uses the Bootstrap primary
-        (blue) background color for the 
-        <xref
-          href="https://getbootstrap.com/docs/5.0/examples/navbars/"
-          format="html"
-          scope="external"
-        >navbar component</xref>.</p>
+        (blue) background color for the
+        <xref href="https://getbootstrap.com/docs/5.1/examples/navbars/" format="html" scope="external">navbar
+          component</xref>.</p>
       <p>You can edit a copy of this file to adjust the content of the global navigation. To override the global
         navigation with your own header, pass a custom header file to the <cmdname>dita</cmdname> command via the
           <parmname>--args.hdr</parmname> parameter:</p>
@@ -85,8 +84,8 @@
           href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-footer-example.xml"
           format="html"
           scope="external"
-        >footer file</xref>. To add a footer to the generated output, pass a custom footer file to the <cmdname
-        >dita</cmdname> command via the <parmname>--args.ftr</parmname> parameter:</p>
+        >footer file</xref>. To add a footer to the generated output, pass a custom
+        footer file to the <cmdname>dita</cmdname> command via the <parmname>--args.ftr</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
@@ -96,35 +95,47 @@
     <section>
       <title>Navigation menu</title>
       <indexterm><parmname>--nav-toc</parmname></indexterm>
+      <indexterm><parmname>--menubar-toc.include</parmname></indexterm>
       <p>The plug-in extends the standard HTML5 table of contents (ToC)
         <xref
           href="https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc"
           format="html"
           scope="external"
         >navigation parameter</xref>
-        <parmname
-        >--nav-toc</parmname> to add styled list groups to the navigation menu. (The navigation is rendered as a
-        sidebar in desktop browsers and above the content on smaller devices.)</p>
-      <p>By default, the plug-in uses the <codeph>partial</codeph> option to include the current topic in the ToC 
-        along with its parents, siblings and children. As with the default HTML5 plug-in, the <codeph>full</codeph> 
-        option can also be used to generate a complete ToC for the entire map, or <codeph>none</codeph> to disable 
-        the table of contents entirely.</p>
-      <p>As of version 5.3, the plug-in provides two new options to style the table of contents navigation with the 
+        <parmname>--nav-toc</parmname> to add styled list groups to the navigation menu. (The navigation is rendered as
+        a sidebar in desktop browsers and above the content on smaller devices.)</p>
+      <p>By default, the plug-in uses the <codeph>partial</codeph> option to include the current topic in the ToC along
+        with its parents, siblings and children. As with the default HTML5 plug-in, the <codeph>full</codeph> option can
+        also be used to generate a complete ToC for the entire map, or <codeph>none</codeph> to disable the table of
+        contents entirely.</p>
+      <p>As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with the
         Bootstrap
+        <xref href="https://getbootstrap.com/docs/5.1/components/list-group/" format="html" scope="external">list
+          group</xref> component,
         <xref
-          href="https://getbootstrap.com/docs/5.0/components/list-group/"
+          href="https://getbootstrap.com/docs/5.1/components/navs-tabs/#pills"
           format="html"
           scope="external"
-        >list group</xref> component.
+        >nav-pills</xref> and
+         <xref
+          href="https://getbootstrap.com/docs/5.1/components/collapse/"
+          format="html"
+          scope="external"
+        >collapsible</xref> menus.
       </p>
       <ul>
         <li>
-          <codeph>list-group-full</codeph> – Styled full ToC within a Bootstrap list group
-        </li>
+          <codeph>list-group-full</codeph> – Styled full ToC within a Bootstrap list group </li>
         <li>
           <codeph>list-group-partial</codeph> – Partial ToC with the current topic, parents, siblings, and children in a
-          list group
-        </li>
+          list group </li>
+        <li>
+          <codeph>nav-pill-full</codeph> – Styled full ToC using Bootstrap nav-pills </li>
+        <li>
+          <codeph>nav-pill-partial</codeph> – Partial ToC with the current topic, parents, siblings, and children using
+          Bootstrap nav-pills </li>
+        <li>
+          <codeph>collapsible</codeph> – Styled full ToC using collapsible list elements </li>
       </ul>
       <p>To use these options, pass the desired value to the <cmdname>dita</cmdname> command via the
           <parmname>--nav-toc</parmname> parameter:</p>
@@ -147,6 +158,18 @@
         </li>
         <li>
           <fig>
+            <title><codeph>nav-pill-full</codeph> – Styled full ToC using nav-pills</title>
+            <image href="./src/nav-pill-full.png"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
+            <title><codeph>nav-pill-partial</codeph> – Styled partial ToC using nav-pills</title>
+            <image href="./src/nav-pill-partial.png"/>
+          </fig>
+        </li>
+        <li>
+          <fig>
             <title><codeph>list-group-full</codeph> – Styled full ToC within a list group</title>
             <image href="./src/list-group-full.png"/>
           </fig>
@@ -157,14 +180,31 @@
             <image href="./src/list-group-partial.png"/>
           </fig>
         </li>
+        <li>
+          <fig>
+            <title><codeph>collapsible</codeph> – Styled full ToC with collapsible elements</title>
+            <image href="./src/collapsible.png"/>
+          </fig>
+        </li>
       </ol>
-      <note outputclass="alert-primary">For an example of <codeph>list-group-full</codeph> styling, see the output at
+      <note outputclass="alert-primary">For an example of <codeph>collapsible</codeph> styling, see the output at
         <xref
           href="https://infotexture.github.io/dita-bootstrap/"
           format="html"
           scope="external"
-        >infotexture.github.io/dita-bootstrap</xref>.
-      </note>
+        >infotexture.github.io/dita-bootstrap</xref>. </note>
+      <p>Additionally, the first-level navigation menu can be switched to a horizontal Bootstrap navbar to reduce the
+        depth of the ToC. To use this option, add the <parmname>--menubar-toc.include</parmname>=<option
+        >yes</option> parameter to the
+          <cmdname>dita</cmdname> command:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+  <parmname>--nav-toc</parmname>=<option>list-group-partial</option>  \
+  <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
+      <fig>
+        <image scalefit="yes" href="./src/menubar-toc.png"/>
+      </fig>
     </section>
     <section>
       <title>Custom CSS</title>
@@ -173,27 +213,24 @@
       <indexterm><parmname>--args.csspath</parmname></indexterm>
       <indexterm><parmname>--args.cssroot</parmname></indexterm>
       <p>Bootstrap themes can be generated via
-        <xref
-          href="https://themestr.app/theme"
-          format="html"
-          scope="external"
-        >Themestr.app</xref>. The plug-in includes a sample placeholder for
+        <xref href="https://themestr.app/theme" format="html" scope="external">Themestr.app</xref>. The plug-in includes
+        a sample placeholder for
         <xref
           href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css"
           format="html"
           scope="external"
-        >custom CSS</xref> styles. You can edit the <filepath
-        >css/custom.css</filepath> file to replace the theme, or add style rules of your own.</p>
-      <p>To override the default Bootstrap theme, pass a custom CSS file like this to the <cmdname
-        >dita</cmdname> command via the <parmname>--args.css</parmname> parameter:</p>
+        >custom CSS</xref> styles. You can edit the <filepath>css/custom.css</filepath> file to
+        replace the theme, or add style rules of your own.</p>
+      <p>To override the default Bootstrap theme, pass a custom CSS file like this to the <cmdname>dita</cmdname>
+        command via the <parmname>--args.css</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
-     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-     <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
-     <parmname>--args.css</parmname>=&lt;name-of-css&gt;.css \
-     <parmname>--args.copycss</parmname>=<option>yes</option> \
-     <parmname>--args.csspath</parmname>=<option>css</option>
-     <parmname>--args.cssroot</parmname>=<filepath>path/to/your/theme</filepath></codeblock>
+  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+  <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
+  <parmname>--args.css</parmname>=&lt;name-of-css&gt;.css \
+  <parmname>--args.copycss</parmname>=<option>yes</option> \
+  <parmname>--args.csspath</parmname>=<option>css</option>
+  <parmname>--args.cssroot</parmname>=<filepath>path/to/your/theme</filepath></codeblock>
       <p>For more extensive customizations, you may want to fork this repository and create a new plug-in of your own.
       </p>
     </section>
@@ -201,36 +238,48 @@
       <title>Common Bootstrap utility classes</title>
       <indexterm><parmname>--bootstrap.css.shortdesc</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.codeblock</parmname></indexterm>
-      <indexterm><parmname>--bootstrap.css.header</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.topic.title</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.section.title</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.card</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel.caption</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.table</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs.vertical</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.thead</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.accordion</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.accessibility.nav</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.accessibility.link</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.figure</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.figure.caption</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.figure.image</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.dl</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.dt</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.dd</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.nav.parent</parmname></indexterm>
       <p>The HTML output for the following DITA elements can be annotated with common Bootstrap utility classes for
-        <xref href="https://getbootstrap.com/docs/5.0/utilities/borders" format="html" scope="external">borders</xref>,
+        <xref href="https://getbootstrap.com/docs/5.1/utilities/borders" format="html" scope="external">borders</xref>,
         <xref
-          href="https://getbootstrap.com/docs/5.0/utilities/background"
+          href="https://getbootstrap.com/docs/5.1/utilities/background"
           format="html"
           scope="external"
         >background</xref>,
-        <xref href="https://getbootstrap.com/docs/5.0/utilities/text" format="html" scope="external">text</xref>,
-        <xref
-          href="https://getbootstrap.com/docs/5.0/utilities/spacing"
-          format="html"
-          scope="external"
-        >spacing</xref>, etc. using additional command line parameters:</p>
+        <xref href="https://getbootstrap.com/docs/5.1/utilities/text" format="html" scope="external">text</xref>,
+        <xref href="https://getbootstrap.com/docs/5.1/utilities/spacing" format="html" scope="external">spacing</xref>,
+        etc. using additional command line parameters:</p>
       <ul>
         <li>
-          <parmname>--bootstrap.css.shortdesc</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>shortdesc</xmlelement> elements</li>
+          <parmname>--bootstrap.css.accessibility.link</parmname> – common Bootstrap utility classes for accessibility
+          links
+        </li>
         <li>
-          <parmname>--bootstrap.css.codeblock</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>codeblock</xmlelement> elements</li>
+          <parmname>--bootstrap.css.accessibility.nav</parmname> – common Bootstrap utility classes for accessibility
+          navigation
+        </li>
         <li>
-          <parmname>--bootstrap.css.header</parmname> – common Bootstrap utility classes for DITA
-            <xmlelement>title</xmlelement> elements</li>
+          <parmname>--bootstrap.css.accordion</parmname> – common utility classes for Bootstrap
+          <xref href="./accordion.dita" format="dita">accordion components</xref>
+        </li>
         <li>
           <parmname>--bootstrap.css.card</parmname> – common utility classes for Bootstrap
           <xref href="./card.dita" format="dita">card components</xref>
@@ -244,6 +293,54 @@
           <xref href="./carousel.dita" format="dita">carousel captions</xref>
         </li>
         <li>
+          <parmname>--bootstrap.css.codeblock</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>codeblock</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.dd</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>dd</xmlelement> definition description elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.dl</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>dl</xmlelement> definition list elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.dt</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>dt</xmlelement> definition term elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.figure</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.figure.caption</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>title</xmlelement> elements within <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.figure.image</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>image</xmlelement> elements within <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.nav.parent</parmname> – common Bootstrap utility classes for ancestors of active
+          nav-pill elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.pagination</parmname> – common utility classes for Bootstrap
+          <xref href="./pagination.dita" format="dita">pagination components</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.section.title</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>title</xmlelement> elements within <xmlelement>section</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.shortdesc</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>shortdesc</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.table</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>table</xmlelement> elements
+        </li>
+        <li>
           <parmname>--bootstrap.css.tabs</parmname> – common utility classes for Bootstrap
           <xref href="./tabs.dita" format="dita">tabbed dialog components</xref>
         </li>
@@ -252,9 +349,41 @@
           <xref href="./tabs.dita" format="dita">vertical tabbed dialog components</xref>
         </li>
         <li>
-          <parmname>--bootstrap.css.accordion</parmname> – common utility classes for Bootstrap
-          <xref href="./accordion.dita" format="dita">accordion components</xref>
+          <parmname>--bootstrap.css.thead</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>thead</xmlelement> elements
         </li>
+        <li>
+          <parmname>--bootstrap.css.topic.title</parmname> – common Bootstrap utility classes for DITA
+            <xmlelement>title</xmlelement> elements within <xmlelement>topic</xmlelement> elements
+        </li>
+      </ul>
+    </section>
+    <section>
+      <title>Opt-In elements</title>
+      <indexterm><parmname>--args.breadcrumbs</parmname></indexterm>
+      <indexterm><parmname>--icons.include</parmname></indexterm>
+      <indexterm><parmname>--popovers.include</parmname></indexterm>
+      <p>For performance reasons, Bootstrap
+        <xref href="./icons.dita" format="dita">icons</xref>,
+        <xref href="./popovers.dita" format="dita">popovers</xref> and
+        <xref href="./tooltips.dita" format="dita">tooltips</xref> are disabled by default, they can be enabled by using
+        the following command line parameters:</p>
+      <ul>
+        <li>
+          <parmname>--icons.include</parmname> – enable Bootstrap
+          <xref href="./icons.dita" format="dita">icons</xref></li>
+        <li>
+          <parmname>--popovers.include</parmname> – enable Bootstrap
+          <xref href="./popovers.dita" format="dita">popover components</xref> and
+          <xref href="./tooltips.dita" format="dita">tooltip components</xref></li>
+      </ul>
+      <p>Breadcrumbs and menu bars can be added using the following parameters:</p>
+      <ul>
+        <li>
+          <parmname>--args.breadcrumbs</parmname> – enable Bootstrap
+          <xref href="./breadcrumb.dita" format="dita">breadcrumb components</xref></li>
+        <li>
+          <parmname>--menubar-toc.include</parmname> – add a Bootstrap menubar</li>
       </ul>
     </section>
   </body>

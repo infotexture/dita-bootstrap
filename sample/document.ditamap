@@ -23,8 +23,10 @@
     <topicmeta>
       <navtitle>Content</navtitle>
     </topicmeta>
+    <topicref navtitle="Typography" format="dita" type="topic" href="typography.dita"/>
     <topicref navtitle="Images" format="dita" type="topic" href="images.dita"/>
     <topicref navtitle="Tables" format="dita" type="topic" href="tables.dita"/>
+    <topicref navtitle="Figures" format="dita" type="topic" href="figures.dita"/>
   </chapter>
   <chapter>
     <topicmeta>
@@ -33,13 +35,19 @@
     <topicref navtitle="Accordion" format="dita" type="topic" href="accordion.dita"/>
     <topicref navtitle="Alerts" format="dita" type="topic" href="alerts.dita"/>
     <topicref navtitle="Badges" format="dita" type="topic" href="badge.dita"/>
+    <topicref navtitle="Breadcrumb" format="dita" type="topic" href="breadcrumb.dita"/>
     <topicref navtitle="Buttons" format="dita" type="topic" href="buttons.dita"/>
     <topicref navtitle="Button Group" format="dita" type="topic" href="button-group.dita"/>
     <topicref navtitle="Card" format="dita" type="topic" href="card.dita"/>
     <topicref navtitle="Carousel" format="dita" type="topic" href="carousel.dita"/>
+    <topicref navtitle="Collapse" format="dita" type="topic" href="collapse.dita"/>
     <topicref navtitle="List Group" format="dita" type="topic" href="list-group.dita"/>
     <topicref navtitle="Offcanvas" format="dita" type="topic" href="offcanvas.dita"/>
+    <topicref navtitle="Pagination" format="dita" type="topic" href="pagination.dita"/>
+    <topicref navtitle="Popovers" format="dita" type="topic" href="popovers.dita"/>
+    <topicref navtitle="Scrollspy" format="dita" type="topic" href="scrollspy.dita"/>
     <topicref navtitle="Tabs" format="dita" type="topic" href="tabs.dita"/>
+    <topicref navtitle="Tooltips" format="dita" type="topic" href="tooltips.dita"/>
   </chapter>
   <chapter>
     <topicmeta>

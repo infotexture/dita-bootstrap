@@ -1,5 +1,20 @@
 <dummy xmlns:if="ant:if" xmlns:unless="ant:unless">
   <param
+    name="BREADCRUMBS"
+    expression="${args.breadcrumbs}"
+    if:set="args.breadcrumbs"
+  />
+  <param
+    name="BREADCRUMB_DIVIDER"
+    expression="${bootstrap.breadcrumb.divider}"
+    if:set="bootstrap.breadcrumb.divider"
+  />
+  <param
+    name="BOOTSTRAP_POPOVERS_INCLUDE"
+    expression="${popovers.include}"
+    if:set="popovers.include"
+  />
+  <param
     name="BOOTSTRAP_ICONS_CDN"
     expression="${icons.cdn.path}"
     if:set="icons.cdn.path"
@@ -20,9 +35,14 @@
     if:set="bootstrap.css.codeblock"
   />
   <param
-    name="BOOTSTRAP_CSS_HEADER"
-    expression="${bootstrap.css.header}"
-    if:set="bootstrap.css.header"
+    name="BOOTSTRAP_CSS_TOPIC_TITLE"
+    expression="${bootstrap.css.topic.title}"
+    if:set="bootstrap.css.topic.title"
+  />
+  <param
+    name="BOOTSTRAP_CSS_SECTION_TITLE"
+    expression="${bootstrap.css.section.title}"
+    if:set="bootstrap.css.section.title"
   />
   <param
     name="BOOTSTRAP_CSS_CARD"
@@ -53,5 +73,70 @@
     name="BOOTSTRAP_CSS_ACCORDION"
     expression="${bootstrap.css.accordion}"
     if:set="bootstrap.css.accordion"
+  />
+  <param
+    name="BOOTSTRAP_MENUBAR_TOC"
+    expression="${menubar-toc.include}"
+    if:set="menubar-toc.include"
+  />
+  <param
+    name="BOOTSTRAP_CSS_ACCESSIBILITY_NAV"
+    expression="${bootstrap.css.accessibility.nav}"
+    if:set="bootstrap.css.accessibility.nav"
+  />
+  <param
+    name="BOOTSTRAP_CSS_ACCESSIBILITY_LINK"
+    expression="${bootstrap.css.accessibility.link}"
+    if:set="bootstrap.css.accessibility.link"
+  />
+  <param
+    name="BOOTSTRAP_CSS_FIGURE"
+    expression="${bootstrap.css.figure}"
+    if:set="bootstrap.css.figure"
+  />
+  <param
+    name="BOOTSTRAP_CSS_FIGURE_CAPTION"
+    expression="${bootstrap.css.figure.caption}"
+    if:set="bootstrap.css.figure.caption"
+  />
+  <param
+    name="BOOTSTRAP_CSS_FIGURE_IMAGE"
+    expression="${bootstrap.css.figure.image}"
+    if:set="bootstrap.css.figure.image"
+  />
+  <param
+    name="BOOTSTRAP_CSS_DL"
+    expression="${bootstrap.css.dl}"
+    if:set="bootstrap.css.dl"
+  />
+  <param
+    name="BOOTSTRAP_CSS_DT"
+    expression="${bootstrap.css.dt}"
+    if:set="bootstrap.css.dt"
+  />
+  <param
+    name="BOOTSTRAP_CSS_DD"
+    expression="${bootstrap.css.dd}"
+    if:set="bootstrap.css.dd"
+  />
+  <param
+    name="BOOTSTRAP_CSS_PAGINATION"
+    expression="${bootstrap.css.pagination}"
+    if:set="bootstrap.css.pagination"
+  />
+  <param
+    name="BOOTSTRAP_CSS_ACTIVE_NAV_PARENT"
+    expression="${bootstrap.css.nav.parent}"
+    if:set="bootstrap.css.nav.parent"
+  />
+  <param
+    name="BOOTSTRAP_CSS_TABLE"
+    expression="${bootstrap.css.table}"
+    if:set="bootstrap.css.table"
+  />
+  <param
+    name="BOOTSTRAP_CSS_TABLE_HEAD"
+    expression="${bootstrap.css.thead}"
+    if:set="bootstrap.css.thead"
   />
 </dummy>
