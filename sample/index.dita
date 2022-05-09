@@ -187,16 +187,16 @@
           </fig>
         </li>
       </ol>
-      <note outputclass="alert-primary">For an example of <codeph>list-group-full</codeph> styling, see the output at
+      <note outputclass="alert-primary">For an example of <codeph>collapsible</codeph> styling, see the output at
         <xref
           href="https://infotexture.github.io/dita-bootstrap/"
           format="html"
           scope="external"
         >infotexture.github.io/dita-bootstrap</xref>. </note>
-      <p>Additionally, the first level navigation menu can be switched to a horizontal Bootstrap navbar to reduce the
-        depth of the ToC</p>
-      <p>To use this option, add the <parmname>--menubar-toc.include</parmname>=<option>yes</option> parameter to the
-          <cmdname>dita</cmdname> command.</p>
+      <p>Additionally, the first-level navigation menu can be switched to a horizontal Bootstrap navbar to reduce the
+        depth of the ToC. To use this option, add the <parmname>--menubar-toc.include</parmname>=<option
+        >yes</option> parameter to the
+          <cmdname>dita</cmdname> command:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
   <parmname>--format</parmname>=<option>html5-bootstrap</option> \

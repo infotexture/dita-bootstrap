@@ -111,12 +111,11 @@ dita --input=path/to/your.ditamap \
      --nav-toc=list-group-partial
 ```
 
-For an example of `list-group-full` styling, see the output at
-[infotexture.github.io/dita-bootstrap][8].
+For an example of `collapsible` styling, see the output at [infotexture.github.io/dita-bootstrap][8].
 
-Additionally, the first level navigation menu can be switched to a horizontal Bootstrap menu bar to reduce the depth of the ToC
+Additionally, the first-level navigation menu can be switched to a horizontal Bootstrap menu bar to reduce the depth of the ToC.
 
-To use this option, add the `--menubar-toc.include=yes` parameter to the `dita` command
+To use this option, add the `--menubar-toc.include=yes` parameter to the `dita` command:
 
 ```console
 dita --input=path/to/your.ditamap \
@@ -129,7 +128,7 @@ dita --input=path/to/your.ditamap \
 
 Bootstrap themes can be generated via [Themestr.app][9]. The plug-in includes a sample placeholder for [custom CSS][10] styles. You can edit the `css/custom.css` file to replace the theme, or add style rules of your own.
 
-To override the default Bootstrap theme, pass a custom CSS file like this to the `dita` command via the `--args.css` parameter:
+To override the default theme, pass a custom CSS file to the `dita` command via the `--args.css` parameter:
 
 ```console
 dita --input=path/to/your.ditamap --format=html5-bootstrap \
@@ -149,7 +148,7 @@ For more extensive customizations, you may want to [fork][11] this repository an
 The HTML output for the following DITA elements can be annotated with common Bootstrap utility classes for borders, background, text, spacing, etc. using additional command line parameters:
 
 - `bootstrap.css.accessibility.link` – common Bootstrap utility classes for accessibility links
-- `bootstrap.css.accessibility.nav`– common Bootstrap utility classes for accessibility navigation
+- `bootstrap.css.accessibility.nav` – common Bootstrap utility classes for accessibility navigation
 - `bootstrap.css.accordion` – common utility classes for Bootstrap accordion components
 - `bootstrap.css.card` – common utility classes for Bootstrap card components
 - `bootstrap.css.carousel` – common utility classes for Bootstrap carousel components
@@ -161,14 +160,14 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
 - `bootstrap.css.figure.caption` – common utility classes for DITA figure titles
 - `bootstrap.css.figure.image` – common utility classes for images within DITA`<fig>` elements
-- `bootstrap.css.nav.parent` - common utility classes for ancestors of active nav-pill elements
-- `bootstrap.css.pagination`– common utility classes for Bootstrap pagination components
+- `bootstrap.css.nav.parent` – common utility classes for ancestors of active nav-pill elements
+- `bootstrap.css.pagination` – common utility classes for Bootstrap pagination components
 - `bootstrap.css.section.title` – common Bootstrap utility classes for DITA `<section>` titles
-- `bootstrap.css.shortdesc` – common Bootstrap utility classes for DITA `<shortdesc>` elements
-- `bootstrap.css.table` - common utility classes for DITA `<table>` elements
+- `bootstrap.css.shortdesc` – common Bootstrap utility classes for DITA`<shortdesc>` elements
+- `bootstrap.css.table` – common utility classes for DITA `<table>` elements
 - `bootstrap.css.tabs` – common utility classes for Bootstrap horizontal tab components
 - `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabs
-- `bootstrap.css.thead` - common utility classes for DITA `<thead>` elements
+- `bootstrap.css.thead` – common utility classes for DITA `<thead>` elements
 - `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<topic>` titles
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
@@ -198,9 +197,7 @@ Breadcrumbs and menu bars can be added using the following parameters
 
 [Apache 2.0](LICENSE) © 2017–2022 Roger W. Fienhold Sheen
 
-Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.1 documentation][2], however
-DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`. The text is therefore a derivative of "Bootstrap 5.1 docs" by
-Twitter, Inc. and the Bootstrap Authors, and used under CC BY 3.0.
+Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.1 documentation][2], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`. The text is therefore a derivative of "Bootstrap 5.1 docs" by Twitter, Inc. and the Bootstrap Authors, and used under CC BY 3.0.
 
 [1]: http://www.dita-ot.org
 [2]: https://getbootstrap.com/docs/5.1
