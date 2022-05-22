@@ -361,7 +361,9 @@
     </xsl:variable>
 
     <xsl:choose>
-      <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($active-class = ' active')">
+      <xsl:when
+        test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($active-class = ' active')"
+      >
         <!-- no-op - if a menubar-toc is present, the list-group is reduced to current decendents only -->
       </xsl:when>
       <xsl:when test="normalize-space($title)">
@@ -493,7 +495,9 @@
 
 
     <xsl:choose>
-      <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($active-class = ' active')">
+      <xsl:when
+        test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($active-class = ' active')"
+      >
         <!-- no-op - if a menubar-toc is present, the nav-bar is reduced to current decendents only -->
       </xsl:when>
       <xsl:when test="normalize-space($title)">
@@ -538,11 +542,7 @@
     priority="10"
   >
     <xsl:param name="pathFromMaplist" as="xs:string"/>
-    <xsl:param
-      name="children"
-      select="*[contains(@class, ' map/topicref ')]"
-      as="element()*"
-    />
+    <xsl:param name="children" select="*[contains(@class, ' map/topicref ')]" as="element()*"/>
     <xsl:variable name="title">
       <xsl:apply-templates select="." mode="get-navtitle"/>
     </xsl:variable>
@@ -582,7 +582,14 @@
                     <xsl:attribute name="aria-labelledby" select="concat('menu-collapse-trigger-',$id)"/>
                     <xsl:attribute name="aria-controls" select="concat('menu-collapse-',$id)"/>
                     <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
-                      <path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/>
+                      <path
+                        fill='none'
+                        stroke='currentColor'
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M5 14l6-6-6-6'
+                      />
                     </svg>
                   </button>
                 </xsl:if>
@@ -609,7 +616,7 @@
             </xsl:when>
             <xsl:otherwise>
               <!-- ↓ Add Toggle with title text ↓ -->
-              <div class ="d-flex flex-row">
+              <div class="d-flex flex-row">
                 <button data-bs-toggle="collapse">
                   <xsl:attribute name="class">
                     <xsl:text>btn d-inline-flex align-items-center pe-0</xsl:text>
@@ -623,7 +630,14 @@
                       <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
                   <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
-                      <path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/>
+                      <path
+                      fill='none'
+                      stroke='currentColor'
+                      stroke-linecap='round'
+                      stroke-linejoin='round'
+                      stroke-width='2'
+                      d='M5 14l6-6-6-6'
+                    />
                   </svg>
                 </button>
                 <span data-bs-toggle="collapse">

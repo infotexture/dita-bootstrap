@@ -8,7 +8,7 @@
   --dita-violet: #663399;
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --dita-prussian-blue: #abc1e4;
   --dita-violet: #9774cc;
 }
@@ -19,7 +19,7 @@
     --dita-violet: #9774cc;
   }
 
-  [data-theme="light"] {
+  [data-theme='light'] {
     --dita-prussian-blue: #1d365d;
     --dita-violet: #663399;
   }
@@ -31,9 +31,9 @@
 .xmlatt,
 .xmlelement,
 .xmlnsname,
-.xmlpi    {
-  color: var( --dita-violet);
-  font-family: var( --bs-font-monospace)
+.xmlpi {
+  color: var(--dita-violet);
+  font-family: var(--bs-font-monospace);
 }
 
 .cmdname,

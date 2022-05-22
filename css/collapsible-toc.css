@@ -37,7 +37,7 @@
 .bd-links a {
   padding: 0.1875rem 0.5rem;
   margin-top: 0.125rem;
-  color:  rgba(var(--bs-body-color-rgb),.75) !important;
+  color: rgba(var(--bs-body-color-rgb), 0.75) !important;
   text-decoration: none;
 }
 
@@ -58,15 +58,14 @@
 }
 
 .bd-links svg {
-  color:  rgba(var(--bs-body-color-rgb),.75);
+  color: rgba(var(--bs-body-color-rgb), 0.75);
 }
 
 .bd-links .btn[aria-expanded='true'] svg {
   transform: rotate(90deg);
 }
 
-.bd-links .active
- {
+.bd-links .active {
   font-weight: 600;
   color: var(--bs-body-color);
 }
