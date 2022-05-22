@@ -42,6 +42,14 @@
           <a class="nav-link" href="#">Link Three</a>
         </li>
       </ul>
+      <!--
+        This is a dark/light color theme toggler
+
+        It requires JavaScript to function. To include the necessary script
+        generate the HTML using the dita command and add the parameter:
+
+        dark.mode.include=yes
+      -->
       <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">
           <a
@@ -49,7 +57,7 @@
             class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center show"
             id="bd-theme"
             data-bs-toggle="dropdown"
-            aria-expanded="true"
+            aria-expanded="false"
             data-bs-display="static"
           >
             <svg
@@ -70,7 +78,7 @@
             <span class="d-lg-none ms-2">Toggle theme</span>
           </a>
           <ul
-            class="dropdown-menu dropdown-menu-end bd-theme-toggles show"
+            class="dropdown-menu dropdown-menu-end"
             aria-labelledby="bd-theme"
             style="--bs-dropdown-min-width: 6rem;"
             data-bs-popper="static"
