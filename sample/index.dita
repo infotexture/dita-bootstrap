@@ -199,9 +199,9 @@
           <cmdname>dita</cmdname> command:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
-  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-  <parmname>--nav-toc</parmname>=<option>list-group-partial</option>  \
-  <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--nav-toc</parmname>=<option>list-group-partial</option> \
+     <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
       <fig>
         <image scalefit="yes" href="./src/menubar-toc.png"/>
       </fig>
@@ -225,12 +225,12 @@
         command via the <parmname>--args.css</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
-  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-  <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
-  <parmname>--args.css</parmname>=&lt;name-of-css&gt;.css \
-  <parmname>--args.copycss</parmname>=<option>yes</option> \
-  <parmname>--args.csspath</parmname>=<option>css</option>
-  <parmname>--args.cssroot</parmname>=<filepath>path/to/your/theme</filepath></codeblock>
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
+     <parmname>--args.css</parmname>=&lt;name-of-css&gt;.css \
+     <parmname>--args.copycss</parmname>=<option>yes</option> \
+     <parmname>--args.csspath</parmname>=<option>css</option>
+     <parmname>--args.cssroot</parmname>=<filepath>path/to/your/theme</filepath></codeblock>
       <p>For more extensive customizations, you may want to fork this repository and create a new plug-in of your own.
       </p>
     </section>

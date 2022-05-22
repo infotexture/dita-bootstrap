@@ -57,9 +57,9 @@
           <parmname>--nav-toc</parmname>=<option>nav-pill-scrollspy</option> to the <cmdname>dita</cmdname> command.</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
-  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-  <parmname>--nav-toc</parmname>=<option>nav-pill-scrollspy</option>  \
-  <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--nav-toc</parmname>=<option>nav-pill-scrollspy</option> \
+     <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
     </section>
     <section>
       <title>Example with list-group</title>
@@ -89,9 +89,9 @@
         command.</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
-  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-  <parmname>--nav-toc</parmname>=<option>list-group-scrollspy</option>  \
-  <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--nav-toc</parmname>=<option>list-group-scrollspy</option> \
+     <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
     </section>
   </body>
 </topic>
