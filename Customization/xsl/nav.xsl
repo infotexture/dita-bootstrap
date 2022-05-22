@@ -581,6 +581,9 @@
                     </xsl:if>
                     <xsl:attribute name="aria-labelledby" select="concat('menu-collapse-trigger-',$id)"/>
                     <xsl:attribute name="aria-controls" select="concat('menu-collapse-',$id)"/>
+                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
+                      <path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/>
+                    </svg>
                   </button>
                 </xsl:if>
                 <!-- ↓ Add Bootstrap classes to topic link ↓ -->
@@ -591,7 +594,7 @@
                       <xsl:text>link-primary d-inline-flex align-items-center flex-shrink-1 </xsl:text>
                       <xsl:choose>
                         <xsl:when test="exists($children)">
-                          <xsl:text>ps-0</xsl:text>
+                          <xsl:text>ps-1</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                           <xsl:text>ps-3</xsl:text>
@@ -619,10 +622,13 @@
                       <xsl:attribute name="aria-expanded" select="'true'"/>
                       <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
+                  <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
+                      <path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/>
+                  </svg>
                 </button>
                 <span data-bs-toggle="collapse">
                   <xsl:attribute name="class">
-                    <xsl:text>link-primary d-inline-flex align-items-center flex-shrink-1 ps0</xsl:text>
+                    <xsl:text>link-primary d-inline-flex align-items-center flex-shrink-1 ps-2</xsl:text>
                     <xsl:if test="$show-menu='show'">
                       <xsl:text> active</xsl:text>
                     </xsl:if>

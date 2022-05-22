@@ -10,6 +10,11 @@
     if:set="bootstrap.breadcrumb.divider"
   />
   <param
+    name="BOOTSTRAP_DARK_MODE_INCLUDE"
+    expression="${dark.mode.include}"
+    if:set="dark.mode.include"
+  />
+  <param
     name="BOOTSTRAP_POPOVERS_INCLUDE"
     expression="${popovers.include}"
     if:set="popovers.include"

@@ -12,8 +12,8 @@
 >
   <xsl:param name="BOOTSTRAP_CSS_SHORTDESC" select="'text-muted lead'"/>
   <xsl:param name="BOOTSTRAP_CSS_CODEBLOCK" select="'border rounded'"/>
-  <xsl:param name="BOOTSTRAP_CSS_TOPIC_TITLE" select="'text-dark'"/>
-  <xsl:param name="BOOTSTRAP_CSS_SECTION_TITLE" select="'h4 text-secondary'"/>
+  <xsl:param name="BOOTSTRAP_CSS_TOPIC_TITLE" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_SECTION_TITLE" select="'h4'"/>
   <xsl:param name="BOOTSTRAP_CSS_CARD" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_CAROUSEL" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_CAPTION" select="'text-white bg-dark'"/>

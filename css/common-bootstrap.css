@@ -3,6 +3,39 @@
  *  See the accompanying LICENSE file for applicable licenses.
  */
 
+:root {
+  --dita-prussian-blue: #1d365d;
+  --dita-violet: #663399;
+}
+
+[data-theme="dark"] {
+  --dita-prussian-blue: #abc1e4;
+  --dita-violet: #9774cc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dita-prussian-blue: #abc1e4;
+    --dita-violet: #9774cc;
+  }
+
+  [data-theme="light"] {
+    --dita-prussian-blue: #1d365d;
+    --dita-violet: #663399;
+  }
+}
+
+.numcharref,
+.parameterentity,
+.textentity,
+.xmlatt,
+.xmlelement,
+.xmlnsname,
+.xmlpi    {
+  color: var( --dita-violet);
+  font-family: var( --bs-font-monospace)
+}
+
 .cmdname,
 .codeph,
 .filepath,
@@ -14,7 +47,7 @@
 
 .cmdname,
 .parmname {
-  color: #1d365d;
+  color: var(--dita-prussian-blue);
   font-weight: bold;
 }
 
