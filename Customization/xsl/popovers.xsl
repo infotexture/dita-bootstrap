@@ -11,9 +11,8 @@
   version="2.0"
   exclude-result-prefixes="xs xhtml dita-ot"
 >
-  <!-- Customization to add Bootstrap Tooltips Component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/tooltips/ -->
-
+  <!-- Customization to add Bootstrap Popover component -->
+  <!-- https://getbootstrap.com/docs/5.1/components/popovers/ -->
 
    <xsl:template match="*" mode="add-bootstrap-popover">
     <xsl:attribute name="data-bs-toggle">
