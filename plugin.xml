@@ -78,7 +78,7 @@
       <val>yes</val>
       <val default="true">no</val>
     </param>
-     <param
+    <param
       name="dark.mode.include"
       desc="Specifies whether to enable dark mode toggling"
       type="enum"
