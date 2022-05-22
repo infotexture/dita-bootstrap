@@ -581,7 +581,7 @@
                     </xsl:if>
                     <xsl:attribute name="aria-labelledby" select="concat('menu-collapse-trigger-',$id)"/>
                     <xsl:attribute name="aria-controls" select="concat('menu-collapse-',$id)"/>
-                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
+                    <svg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 16 16'>
                       <path
                         fill='none'
                         stroke='currentColor'
@@ -629,7 +629,7 @@
                       <xsl:attribute name="aria-expanded" select="'true'"/>
                       <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
-                  <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
+                  <svg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 16 16'>
                       <path
                       fill='none'
                       stroke='currentColor'
