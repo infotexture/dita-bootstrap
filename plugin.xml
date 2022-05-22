@@ -210,4 +210,8 @@
   />
   <feature extension="dita.conductor.html5.param" file="insertParameters.xml"/>
   <feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
+  <feature
+    extension="depend.preprocess.copy-html.pre"
+    value="bootstrap.scripts.copy"
+  />
 </plugin>

@@ -116,83 +116,22 @@
         <xsl:call-template name="gen-user-sidetoc"/>
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
       </div>
-
+      <xsl:variable name="relpath">
+        <xsl:choose>
+          <xsl:when test="$FILEDIR='.'">
+            <xsl:text>.</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select=" replace($FILEDIR,'[^/]+','..')"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
       <xsl:if test="$BOOTSTRAP_POPOVERS_INCLUDE = 'yes'">
-        <script language="javascript">//
-          <![CDATA[
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-              return new bootstrap.Tooltip(tooltipTriggerEl)
-            })
-
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-              return new bootstrap.Popover(popoverTriggerEl)
-            })
-         // ]]>
-        </script>
+        <script language="javascript" src="{$relpath}/js/popovers.js"/>
       </xsl:if>
-
       <xsl:if test="$BOOTSTRAP_DARK_MODE_INCLUDE = 'yes'">
-        <script language="javascript">//
-          <![CDATA[
-            (() => {
-             'use strict'
-
-             const root = document.documentElement
-             const activeTheme = localStorage.getItem('theme');
-
-             const checkSystemTheme = function () {
-                // if OS dark mode is set, and there's no stored theme, set the theme to dark (but don't store it)
-                if (window.matchMedia('(prefers-color-scheme: dark)').matches && !activeTheme) {
-                  document.documentElement.setAttribute('data-theme', 'dark')
-                } else {
-                  // otherwise, set the theme to the default (light)
-                  document.documentElement.removeAttribute('data-theme')
-                }
-              }
-
-             const setTheme = function (theme) {
-                document.querySelectorAll('[data-theme-value]').forEach(element => {
-                  element.classList.remove('active')
-                })
-
-                const btnToActive = document.querySelector(`[data-theme-value="${theme}"]`)
-                btnToActive.classList.add('active')
-              }
-
-              document.querySelectorAll('[data-theme-value]')
-                .forEach(toggle => {
-                  toggle.addEventListener('click', () => {
-                    const theme = toggle.getAttribute('data-theme-value');
-                    setTheme(theme);
-
-                    if (theme === 'auto') {
-                        root.removeAttribute('data-theme')
-                        localStorage.removeItem('theme')
-                        checkSystemTheme()
-                      } else {
-                        root.setAttribute('data-theme', theme)
-                        localStorage.setItem('theme', theme)
-                      }
-                  });
-              });
-
-              if (activeTheme) {
-                root.setAttribute('data-theme', activeTheme)
-                setTheme(activeTheme)
-              } else {
-                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-                  checkSystemTheme()
-                })
-                checkSystemTheme()
-              }
-            })()
-         // ]]>
-        </script>
+        <script language="javascript" src="{$relpath}/js/dark-mode.js"/>
       </xsl:if>
-
-
 
       <!-- ↑ End customization -->
       <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
@@ -202,7 +141,10 @@
   <!-- Hidden accessibility buttons for screen readers and keyboard navigation-->
   <xsl:template name="gen-skip-to-main">
      <div>
-        <xsl:attribute name="class" select="concat('visually-hidden-focusable overflow-hidden p-2 ', $BOOTSTRAP_CSS_ACCESSIBILITY_NAV)"/>
+        <xsl:attribute
+        name="class"
+        select="concat('visually-hidden-focusable overflow-hidden p-2 ', $BOOTSTRAP_CSS_ACCESSIBILITY_NAV)"
+      />
 
         <div class="container-xl">
           <a>
@@ -216,7 +158,10 @@
             <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
               <!-- "skip to docs" link refers to the menubar -->
               <a href="#bs-menubar-nav">
-                <xsl:attribute name="class" select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
+                <xsl:attribute
+                name="class"
+                select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
+              />
                 <xsl:call-template name="getVariable">
                   <xsl:with-param name="id" select="'Skip to docs navigation'"/>
                 </xsl:call-template>
@@ -224,7 +169,10 @@
               <!-- sidebar holds a topic nav, not a document nav -->
               <xsl:if test="$nav-toc = ('nav-pill-scrollspy', 'list-group-scrollspy')">
                 <a href="#bs-sidebar-nav">
-                  <xsl:attribute name="class" select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
+                  <xsl:attribute
+                  name="class"
+                  select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
+                />
                   <xsl:call-template name="getVariable">
                     <xsl:with-param name="id" select="'Skip to topic navigation'"/>
                   </xsl:call-template>
@@ -237,7 +185,10 @@
             <xsl:when test="$nav-toc = ('nav-pill-scrollspy', 'list-group-scrollspy')">
               <!-- sidebar holds a topic nav, not a document nav -->
               <a href="#bs-sidebar-nav">
-                <xsl:attribute name="class" select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
+                <xsl:attribute
+                name="class"
+                select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
+              />
                 <xsl:call-template name="getVariable">
                   <xsl:with-param name="id" select="'Skip to topic navigation'"/>
                 </xsl:call-template>
@@ -246,7 +197,10 @@
             <xsl:otherwise>
               <!-- Add a "skip to docs" link to the sidebar -->
               <a href="#bs-sidebar-nav">
-                <xsl:attribute name="class" select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
+                <xsl:attribute
+                name="class"
+                select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
+              />
                 <xsl:call-template name="getVariable">
                   <xsl:with-param name="id" select="'Skip to docs navigation'"/>
                 </xsl:call-template>
