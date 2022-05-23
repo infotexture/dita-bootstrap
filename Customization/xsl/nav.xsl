@@ -598,7 +598,7 @@
                   <xsl:call-template name="nav-attributes">
                     <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                     <xsl:with-param name="class">
-                      <xsl:text>link-primary d-inline-flex align-items-center flex-shrink-1 </xsl:text>
+                      <xsl:text>d-inline-flex align-items-center flex-shrink-1 </xsl:text>
                       <xsl:choose>
                         <xsl:when test="exists($children)">
                           <xsl:text>ps-1</xsl:text>
@@ -642,7 +642,7 @@
                 </button>
                 <span data-bs-toggle="collapse">
                   <xsl:attribute name="class">
-                    <xsl:text>link-primary d-inline-flex align-items-center flex-shrink-1 ps-1</xsl:text>
+                    <xsl:text>d-inline-flex align-items-center flex-shrink-1 ps-1</xsl:text>
                     <xsl:if test="$show-menu='show'">
                       <xsl:text> active</xsl:text>
                     </xsl:if>

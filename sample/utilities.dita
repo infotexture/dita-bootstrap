@@ -68,7 +68,7 @@ int main()
     return 0;
 } </codeblock>
       <p/>
-      <lines outputclass="bg-light" frame="topbot">Shall I compare thee to a summer's day?
+      <lines outputclass="bg-light p-3 border rounded" frame="topbot">Shall I compare thee to a summer's day?
 Thou art more lovely and more temperate:
 Rough winds do shake the darling buds of May,
 and summer's lease hath all too short a date:
@@ -76,7 +76,7 @@ and summer's lease hath all too short a date:
       <p/>
     </bodydiv>
     <codeblock>&lt;codeblock frame="sides"&gt;...&lt;/codeblock&gt;
-&lt;lines frame="topbot" outputclass="bg-light"&gt;...&lt;/lines&gt;</codeblock>
+&lt;lines frame="topbot" outputclass="bg-light p-3 border rounded"&gt;...&lt;/lines&gt;</codeblock>
     <section id="colors">
       <title>Colors</title>
       <p>Colorize text with color utilities</p>
