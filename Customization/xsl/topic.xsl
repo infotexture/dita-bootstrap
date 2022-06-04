@@ -160,7 +160,10 @@
 
   <!-- Customization to add Bootstrap Figure Content -->
   <!-- https://getbootstrap.com/docs/5.1/content/figures/ -->
-  <xsl:template match="*[contains(@class, ' topic/fig ')]" name="topic.fig">
+  <xsl:template
+    match="*[contains(@class, ' topic/fig ') and not(contains(@class,' pr-d/syntaxdiagram '))]"
+    name="topic.fig"
+  >
     <xsl:variable name="default-fig-class">
       <xsl:apply-templates select="." mode="dita2html:get-default-fig-class"/>
     </xsl:variable>
@@ -334,7 +337,9 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="*[contains(@class, ' topic/ph ') and contains(@otherprops, 'title(')  and (contains(@outputclass, 'initialism') or contains(@outputclass, 'abbreviation'))]">
+  <xsl:template
+    match="*[contains(@class, ' topic/ph ') and contains(@otherprops, 'title(')  and (contains(@outputclass, 'initialism') or contains(@outputclass, 'abbreviation'))]"
+  >
     <abbr>
       <xsl:attribute name="title">
         <xsl:analyze-string select="@otherprops" regex="[a-z]*\([^\)]*\)">
