@@ -187,7 +187,15 @@
         </nav>
       </xsl:when>
       <xsl:when test="$nav-toc = ('collapsible')">
+        <xsl:variable name="direction" as="xs:boolean">
+          <xsl:call-template name="bidi-area">
+            <xsl:with-param name="parentlang" select="$defaultLanguage"/>
+          </xsl:call-template>
+        </xsl:variable>
         <nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links">
+          <xsl:if test="$direction">
+            <xsl:attribute name="dir">rtl</xsl:attribute>
+          </xsl:if>
           <ul class="list-unstyled mb-0 py-3 pt-md-1">
             <xsl:apply-templates select="$input.map" mode="collapsible-toc">
               <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
@@ -361,7 +369,9 @@
     </xsl:variable>
 
     <xsl:choose>
-      <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($active-class = ' active')">
+      <xsl:when
+        test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($active-class = ' active')"
+      >
         <!-- no-op - if a menubar-toc is present, the list-group is reduced to current decendents only -->
       </xsl:when>
       <xsl:when test="normalize-space($title)">
@@ -493,7 +503,9 @@
 
 
     <xsl:choose>
-      <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($active-class = ' active')">
+      <xsl:when
+        test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($active-class = ' active')"
+      >
         <!-- no-op - if a menubar-toc is present, the nav-bar is reduced to current decendents only -->
       </xsl:when>
       <xsl:when test="normalize-space($title)">
@@ -538,11 +550,7 @@
     priority="10"
   >
     <xsl:param name="pathFromMaplist" as="xs:string"/>
-    <xsl:param
-      name="children"
-      select="*[contains(@class, ' map/topicref ')]"
-      as="element()*"
-    />
+    <xsl:param name="children" select="*[contains(@class, ' map/topicref ')]" as="element()*"/>
     <xsl:variable name="title">
       <xsl:apply-templates select="." mode="get-navtitle"/>
     </xsl:variable>
@@ -583,6 +591,16 @@
                     </xsl:if>
                     <xsl:attribute name="aria-labelledby" select="concat('menu-collapse-trigger-',$id)"/>
                     <xsl:attribute name="aria-controls" select="concat('menu-collapse-',$id)"/>
+                    <svg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 16 16'>
+                      <path
+                        fill='none'
+                        stroke='currentColor'
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M5 14l6-6-6-6'
+                      />
+                    </svg>
                   </button>
                 </xsl:if>
                 <!-- ↓ Add Bootstrap classes to topic link ↓ -->
@@ -590,10 +608,10 @@
                   <xsl:call-template name="nav-attributes">
                     <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                     <xsl:with-param name="class">
-                      <xsl:text>link-primary d-inline-flex align-items-center flex-shrink-1 </xsl:text>
+                      <xsl:text>d-inline-flex align-items-center flex-shrink-1 </xsl:text>
                       <xsl:choose>
                         <xsl:when test="exists($children)">
-                          <xsl:text>ps-0</xsl:text>
+                          <xsl:text>ps-1</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                           <xsl:text>ps-3</xsl:text>
@@ -608,7 +626,7 @@
             </xsl:when>
             <xsl:otherwise>
               <!-- ↓ Add Toggle with title text ↓ -->
-              <div class ="d-flex flex-row">
+              <div class="d-flex flex-row">
                 <button data-bs-toggle="collapse">
                   <xsl:attribute name="class">
                     <xsl:text>btn d-inline-flex align-items-center pe-0</xsl:text>
@@ -621,10 +639,20 @@
                       <xsl:attribute name="aria-expanded" select="'true'"/>
                       <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
+                  <svg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 16 16'>
+                      <path
+                      fill='none'
+                      stroke='currentColor'
+                      stroke-linecap='round'
+                      stroke-linejoin='round'
+                      stroke-width='2'
+                      d='M5 14l6-6-6-6'
+                    />
+                  </svg>
                 </button>
                 <span data-bs-toggle="collapse">
                   <xsl:attribute name="class">
-                    <xsl:text>link-primary d-inline-flex align-items-center flex-shrink-1 ps0</xsl:text>
+                    <xsl:text>d-inline-flex align-items-center flex-shrink-1 ps-1</xsl:text>
                     <xsl:if test="$show-menu='show'">
                       <xsl:text> active</xsl:text>
                     </xsl:if>
@@ -643,7 +671,7 @@
             <div>
               <xsl:attribute name="id" select="concat('menu-collapse-',$id)"/>
               <xsl:attribute name="class" select="concat('collapse ', $show-menu)"/>
-              <ul class="list-unstyled fw-normal">
+              <ul class="list-unstyled fw-normal ps-4">
                 <xsl:apply-templates select="$children" mode="#current">
                   <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                 </xsl:apply-templates>
