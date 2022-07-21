@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Collapse Component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/collapse/ -->
+  <!-- https://getbootstrap.com/docs/5.2/components/collapse/ -->
 
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'collapse-horizontal')]">
     <xsl:variable name="id" select="dita-ot:generate-html-id(.)"/>

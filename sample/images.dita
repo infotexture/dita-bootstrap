@@ -2,11 +2,11 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.1 documentation (found at https://getbootstrap.com/docs/5.1), however DITA
+   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.1 docs" by Twitter, Inc.
+   This work, is a derivative of "Bootstrap 5.2 docs" by Twitter, Inc.
    and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
    file for applicable licenses.-->
 <topic id="images">
@@ -39,7 +39,7 @@
     <section>
       <title>Image thumbnails</title>
       <p>In addition to Bootstrap’s
-        <xref href="https://getbootstrap.com/docs/5.1/utilities/borders/" format="html" scope="external">border-radius
+        <xref href="https://getbootstrap.com/docs/5.2/utilities/borders/" format="html" scope="external">border-radius
           utilities</xref>, you can set <xmlatt>outputclass</xmlatt> to <codeph>img-thumbnail</codeph> to give an image
         a rounded 1px border appearance.</p>
     </section>

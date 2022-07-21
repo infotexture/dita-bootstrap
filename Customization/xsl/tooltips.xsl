@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Tooltips component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/tooltips/ -->
+  <!-- https://getbootstrap.com/docs/5.2/components/tooltips/ -->
 
   <xsl:template match="*" mode="add-bootstrap-tooltip">
     <xsl:attribute name="data-bs-toggle">
