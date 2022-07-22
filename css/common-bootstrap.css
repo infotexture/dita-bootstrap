@@ -5,7 +5,6 @@
 
 :root {
   --dita-prussian-blue: #1d365d;
-  --dita-violet: #663399;
   --dita-maroon: #800000;
 }
 
@@ -18,13 +17,11 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --dita-prussian-blue: #6a91cf;
-    --dita-violet: #9774cc;
     --dita-maroon: #ff7676;
   }
 
   [data-theme='light'] {
     --dita-prussian-blue: #1d365d;
-    --dita-violet: #663399;
     --dita-maroon: #800000;
   }
 }
@@ -40,7 +37,7 @@
 .xmlelement,
 .xmlnsname,
 .xmlpi {
-  color: var(--dita-violet);
+  color: var(--bs-purple);
   font-family: var(--bs-font-monospace);
 }
 
@@ -49,7 +46,7 @@
 .filepath,
 .option,
 .parmname {
-  color: var(--bs-gray);
+  color: var(--bs-code-color);
   font-family: var(--bs-font-monospace);
 }
 
@@ -60,11 +57,11 @@
 }
 
 .boolean {
-  color: var(--bs-success);
+  color: var(--bs-green);
 }
 
 .state {
-  color: var(--bs-danger);
+  color: var(--bs-red);
 }
 
 .navbar-brand > svg {
