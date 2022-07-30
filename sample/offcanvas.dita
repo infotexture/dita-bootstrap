@@ -70,11 +70,13 @@
       <p>There’s no default placement for offcanvas components, so you must add one of the modifier outputclasses
         below</p>
       <ul>
-        <li>Setting <xmlatt>outputclass</xmlatt> to <codeph>offcanvas-start</codeph> places offcanvas on the left of the
+        <li>Setting <xmlatt>outputclass="offcanvas-start"</xmlatt> places offcanvas on the left of the
           viewport (shown above)</li>
-        <li>Setting <xmlatt>outputclass</xmlatt> to <codeph>offcanvas-end</codeph> places offcanvas on the right of the
+        <li>Setting <xmlatt>outputclass="offcanvas-end"</xmlatt> places offcanvas on the right of the
           viewport</li>
-        <li>Setting <xmlatt>outputclass</xmlatt> to <codeph>offcanvas-bottom</codeph> places offcanvas on the bottom of
+        <li>Setting <xmlatt>outputclass="offcanvas-bottom"</xmlatt> places offcanvas on the bottom of
+          the viewport</li>
+        <li>Setting <xmlatt>outputclass="offcanvas-top"</xmlatt> places offcanvas on the top of
           the viewport</li>
       </ul>
     </section>
@@ -98,5 +100,38 @@
     <codeblock>&lt;section outputclass="offcanvas-bottom"&gt;
   ...etc
 &lt;section&gt;</codeblock>
+    <section>
+      <title>Responsive</title>
+      <p>Responsive offcanvas outputclasses hide content outside the viewport from a specified breakpoint and down. Above that breakpoint, the contents within will behave as usual. For example, <xmlatt>outputclass="offcanvas-lg"</xmlatt> hides content in an offcanvas below the <codeph>lg</codeph> breakpoint, but shows the content above the <codeph>lg</codeph> breakpoint.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <note outputclass="alert-info d-none d-lg-block">Resize your browser to show the responsive offcanvas toggle.</note>
+      <xref outputclass="btn-primary d-lg-none" props="offcanvas-toggle" href="#offcanvas4">Toggle offcanvas</xref>
+      <section outputclass="offcanvas-lg" id="offcanvas4">
+        <title>Offcanvas</title>
+        <p>This is content within an <xmlatt>outputclass="offcanvas-lg"</xmlatt>.</p>
+      </section>
+    </bodydiv>
+    <p>Responsive offcanvas classes are available across for each breakpoint.</p>
+    <ul>
+      <li><xmlatt>outputclass="offcanvas"</xmlatt></li>
+      <li><xmlatt>outputclass="offcanvas-sm"</xmlatt></li>
+      <li><xmlatt>outputclass="offcanvas-md"</xmlatt></li>
+      <li><xmlatt>outputclass="offcanvas-lg"</xmlatt></li>
+      <li><xmlatt>outputclass="offcanvas-xl"</xmlatt></li>
+      <li><xmlatt>outputclass="offcanvas-xxl"</xmlatt></li>
+    </ul>
+    <codeblock>&lt;note outputclass="alert-info d-none d-lg-block"&gt;
+  Resize your browser to show the responsive offcanvas toggle.
+&lt;/note&gt;
+&lt;xref outputclass="btn-primary d-lg-none" props="offcanvas-toggle" href="#offcanvas4"&gt;
+  Toggle offcanvas
+&lt;/xref&gt;
+&lt;section outputclass="offcanvas-lg" id="offcanvas4"&gt;
+  &lt;title&gt;Offcanvas&lt;/title&gt;
+  &lt;p&gt;
+    This is content within an &lt;xmlatt&gt;outputclass="offcanvas-lg"&lt;/xmlatt&gt;.
+  &lt;/p&gt;
+&lt;/section&gt;</codeblock>
   </body>
 </topic>
