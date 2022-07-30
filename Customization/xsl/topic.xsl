@@ -12,10 +12,18 @@
   exclude-result-prefixes="xs dita-ot dita2html"
 >
 
+  <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
+
   <!-- Define a newline character -->
   <xsl:variable name="newline">
 <xsl:text>
 </xsl:text>
+  </xsl:variable>
+
+  <xsl:variable name="BIDIRECTIONAL_DOCUMENT">
+   <xsl:call-template name="bidi-area">
+      <xsl:with-param name="parentlang" select="$defaultLanguage"/>
+    </xsl:call-template>
   </xsl:variable>
 
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
@@ -60,6 +68,21 @@
       <xsl:value-of select="$default-output-class"/>
     </xsl:variable>
     <xsl:call-template name="bootstrap-role"/>
+    <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+    <!-- ↓ Ensure code is rendered LTR in RTL documents ↑ -->
+    <xsl:if test="$BIDIRECTIONAL_DOCUMENT and not(@dir)">
+      <xsl:choose>
+        <xsl:when  test="contains(@class,' pr-d/')">
+         <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+        <xsl:when  test="contains(@class,' sw-d/')">
+         <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+        <xsl:when  test="contains(@class,' xml-d/')">
+         <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:if>
     <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
     <xsl:apply-templates select="@xml:lang"/>
     <xsl:apply-templates select="@dir"/>
