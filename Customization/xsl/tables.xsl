@@ -14,7 +14,17 @@
   <!--override row processing - remove DITA row CSS class -->
   <xsl:template match="*[contains(@class, ' topic/row ')]" name="topic.row">
     <tr>
-      <xsl:attribute name="class" select="@outputclass"/>
+      <xsl:choose>
+        <xsl:when test="@valign">
+          <xsl:attribute name="class">
+            <xsl:value-of select="concat('align-', @valign)"/>
+            <xsl:value-of select="concat(' ', @outputclass)"/>
+          </xsl:attribute>
+        </xsl:when>
+        <xsl:when test="@outputclass">
+          <xsl:attribute name="class" select="@outputclass"/>
+        </xsl:when>
+      </xsl:choose>
       <xsl:apply-templates select="@xml:lang"/>
       <xsl:apply-templates select="@dir"/>
       <xsl:apply-templates
@@ -73,6 +83,10 @@
         "/>
       </caption>
     </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class, ' topic/entry ')]/@valign" mode="css-class">
+    <xsl:value-of select="concat('align-', .)"/>
   </xsl:template>
 
 </xsl:stylesheet>

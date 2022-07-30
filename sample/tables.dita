@@ -406,6 +406,79 @@
   ...etc
 &lt;/table&gt;</codeblock>
     <section>
+      <title>Vertical alignment</title>
+      <p>Table cells of <xmlelement>thead</xmlelement> are always vertical aligned to the bottom. Table cells in <xmlelement>tbody</xmlelement> inherit their alignment from <xmlelement>table</xmlelement> and are aligned to the top by default. Use the <xmlatt>valign</xmlatt> attribute to re-align where needed.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <table outputclass="align-middle">
+        <tgroup cols="4">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <colspec colname="COLSPEC2"/>
+          <colspec colname="COLSPEC3"/>
+          <thead>
+            <row>
+              <entry colname="COLSPEC0" valign="top">Heading 1</entry>
+              <entry colname="COLSPEC1" valign="bottom">Heading 2</entry>
+              <entry colname="COLSPEC2" valign="middle">Heading 3</entry>
+              <entry colname="COLSPEC3">Heading 4 - here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the headers</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry>This cell inherits <xmlatt>outputclass="align-middle"</xmlatt> from the table</entry>
+              <entry>This cell inherits <xmlatt>outputclass="align-middle"</xmlatt> from the table</entry>
+              <entry>This cell inherits <xmlatt>outputclass="align-middle"</xmlatt> from the table</entry>
+              <entry>This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</entry>
+            </row>
+            <row valign="bottom">
+              <entry>This cell inherits <xmlatt>valign="bottom"</xmlatt> from the table row</entry>
+              <entry>This cell inherits <xmlatt>valign="bottom"</xmlatt> from the table row</entry>
+              <entry>This cell inherits <xmlatt>valign="bottom"</xmlatt> from the table row</entry>
+              <entry>This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</entry>
+            </row>
+            <row>
+              <entry>This cell inherits <xmlatt>outputclass="align-middle"</xmlatt> from the table</entry>
+              <entry>This cell inherits <xmlatt>outputclass="align-middle"</xmlatt> from the table</entry>
+              <entry valign="top">This cell is aligned to the top.</entry>
+              <entry>This here is some placeholder text, intended to take up quite a bit of vertical space, to demonstrate how the vertical alignment works in the preceding cells.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </bodydiv>
+    <codeblock>&lt;table outputclass="align-middle"&gt;
+  &lt;tgroup cols="4"&gt;
+    &lt;colspec colname="COLSPEC0"/&gt;
+    &lt;colspec colname="COLSPEC1"/&gt;
+    &lt;colspec colname="COLSPEC2"/&gt;
+    &lt;colspec colname="COLSPEC3"/&gt;
+    &lt;thead&gt;
+      &lt;row&gt;
+        &lt;entry colname="COLSPEC0" valign="top"&gt;...&lt;/entry&gt;
+        &lt;entry colname="COLSPEC1" valign="bottom"&gt;...&lt;/entry&gt;
+        &lt;entry colname="COLSPEC2" valign="middle"&gt;...&lt;/entry&gt;
+        &lt;entry colname="COLSPEC3" valign="middle"&gt;...&lt;/entry&gt;
+      &lt;/row&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;row&gt;
+        ...
+      &lt;/row&gt;
+      &lt;row valign="bottom"&gt;
+        ...
+      &lt;/row&gt;
+      &lt;row&gt;
+        &lt;entry&gt;...&lt;/entry&gt;
+        &lt;entry&gt;...&lt;/entry&gt;
+        &lt;entry valign="top"&gt;...&lt;/entry&gt;
+        &lt;entry&gt;...&lt;/entry&gt;
+      &lt;/row&gt;
+    &lt;/tbody&gt;
+  &lt;/tgroup&gt;
+&lt;/table&gt;</codeblock>
+    <section>
       <title>Table head</title>
       <p>Similar to tables and dark tables, use the modifier <xmlatt>outputclass="table-light"</xmlatt> or
           <xmlatt>outputclass="table-dark"</xmlatt> to make <xmlelement>thead</xmlelement> elements appear light or dark
