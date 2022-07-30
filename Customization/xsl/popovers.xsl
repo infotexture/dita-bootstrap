@@ -34,9 +34,16 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:attribute>
-    <xsl:attribute name="title">
-      <xsl:value-of select="*[contains(@class, ' topic/data ')][1]/*[contains(@class, ' topic/title ')][1]"/>
-    </xsl:attribute>
+    <xsl:if test="*[contains(@class, ' topic/data ') and contains(@name, 'title')][1]">
+      <xsl:attribute name="title">
+        <xsl:value-of select="*[contains(@class, ' topic/data ') and contains(@name, 'title')][1]"/>
+      </xsl:attribute>
+    </xsl:if>
+    <xsl:if test="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]">
+      <xsl:attribute name="data-bs-custom-class">
+        <xsl:value-of select="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]"/>
+      </xsl:attribute>
+    </xsl:if>
     <xsl:attribute name="data-bs-content">
       <xsl:value-of select="*[contains(@class, ' topic/desc ')][1]"/>
     </xsl:attribute>

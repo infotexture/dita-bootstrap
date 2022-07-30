@@ -53,15 +53,11 @@
 
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <xref href="#" outputclass="btn-lg btn-danger popover-top">
-        <data>
-          <title>Popover title</title>
-        </data>
+        <data name="title">Popover title</data>
         <desc>And here's some amazing content. It's very engaging. Right?</desc> Click to toggle popover </xref>
     </bodydiv>
     <codeblock> &lt;xref href="#" outputclass="btn-lg btn-danger popover-top"&gt;
-  &lt;data&gt;
-    &lt;title&gt;Popover title&lt;/title&gt;
-  &lt;/data&gt;
+  &lt;data name="title">&gt;Popover title&lt;/data&gt;
   &lt;desc&gt;And here's some amazing content. It's very engaging. Right?&lt;/desc&gt;
   Click to toggle popover
 &lt;/xref&gt;</codeblock>
@@ -98,6 +94,32 @@
 &lt;xref href="#" outputclass="btn-secondary popover-left"&gt;
   &lt;desc&gt;Left popover&lt;/desc&gt;
   Popover on left
+&lt;/xref&gt;</codeblock>
+    <section>
+      <title>Custom popovers</title>
+      <p>You can customize the appearance of popovers using CSS variables.
+        We set a custom class with <codeph>&lt;data name="class"&gt;custom-popover&lt;data&gt;</codeph> to scope our custom
+        appearance and use it to override some of the local CSS variables.</p>
+      <codeblock outputclass="language-css">.custom-popover {
+  --bs-popover-max-width: 200px;
+  --bs-popover-border-color: var(--bs-primary);
+  --bs-popover-header-bg: var(--bs-primary);
+  --bs-popover-header-color: var(--bs-white);
+  --bs-popover-body-padding-x: 1rem;
+  --bs-popover-body-padding-y: .5rem;
+}</codeblock>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+        <xref href="#" outputclass="btn-lg btn-danger popover-top">
+          <data name="title">Popover title</data>
+          <data name="class">custom-popover</data>
+          <desc>And here's some amazing content. It's very engaging. Right?</desc>Custom popover</xref>
+    </bodydiv>
+    <codeblock>&lt;xref href="#" outputclass="btn-lg btn-danger popover-top"&gt;
+  &lt;data name="title"&gt;Popover title&lt;/data&gt;
+  &lt;data name="class"&gt;custom-popover&lt;/data&gt;
+  &lt;desc&gt;And here's some amazing content. It's very engaging. Right?&lt;/desc&gt;
+  Custom popover
 &lt;/xref&gt;</codeblock>
   </body>
 </topic>

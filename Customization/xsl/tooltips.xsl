@@ -34,6 +34,11 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:attribute>
+    <xsl:if test="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]">
+      <xsl:attribute name="data-bs-custom-class">
+        <xsl:value-of select="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]"/>
+      </xsl:attribute>
+    </xsl:if>
     <xsl:choose>
       <xsl:when test="*[contains(@class, ' topic/desc ')]/*">
         <xsl:attribute name="data-bs-html">
