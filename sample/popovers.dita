@@ -98,7 +98,8 @@
     <section>
       <title>Custom popovers</title>
       <p>You can customize the appearance of popovers using CSS variables.
-        We set a custom class with <codeph>&lt;data name="class"&gt;custom-popover&lt;data&gt;</codeph> to scope our custom
+        We set a custom class with <codeph
+        >&lt;data name="class"&gt;custom-popover&lt;data&gt;</codeph> to scope our custom
         appearance and use it to override some of the local CSS variables.</p>
       <codeblock outputclass="language-css">.custom-popover {
   --bs-popover-max-width: 200px;

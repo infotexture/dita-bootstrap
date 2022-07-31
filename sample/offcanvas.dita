@@ -102,10 +102,15 @@
 &lt;section&gt;</codeblock>
     <section>
       <title>Responsive</title>
-      <p>Responsive offcanvas outputclasses hide content outside the viewport from a specified breakpoint and down. Above that breakpoint, the contents within will behave as usual. For example, <xmlatt>outputclass="offcanvas-lg"</xmlatt> hides content in an offcanvas below the <codeph>lg</codeph> breakpoint, but shows the content above the <codeph>lg</codeph> breakpoint.</p>
+      <p
+      >Responsive offcanvas outputclasses hide content outside the viewport from a specified breakpoint and down. Above that breakpoint, the contents within will behave as usual. For example, <xmlatt
+        >outputclass="offcanvas-lg"</xmlatt> hides content in an offcanvas below the <codeph
+        >lg</codeph> breakpoint, but shows the content above the <codeph>lg</codeph> breakpoint.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <note outputclass="alert-info d-none d-lg-block">Resize your browser to show the responsive offcanvas toggle.</note>
+      <note
+        outputclass="alert-info d-none d-lg-block"
+      >Resize your browser to show the responsive offcanvas toggle.</note>
       <xref outputclass="btn-primary d-lg-none" props="offcanvas-toggle" href="#offcanvas4">Toggle offcanvas</xref>
       <section outputclass="offcanvas-lg" id="offcanvas4">
         <title>Offcanvas</title>

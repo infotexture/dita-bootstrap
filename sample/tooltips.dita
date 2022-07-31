@@ -101,7 +101,8 @@
 &lt;/xref&gt;</codeblock>
     <section>
       <title>Custom tooltips</title>
-      <p>You can customize the appearance of tooltips using CSS variables. We set a custom class with <codeph>&lt;data name="class"&gt;custom-tooltip&lt;data&gt;</codeph>  to scope our custom appearance and use it to override a local CSS variable.</p>
+      <p>You can customize the appearance of tooltips using CSS variables. We set a custom class with <codeph
+        >&lt;data name="class"&gt;custom-tooltip&lt;data&gt;</codeph>  to scope our custom appearance and use it to override a local CSS variable.</p>
     </section>
     <codeblock outputclass="language-css">.custom-tooltip {
   --bs-tooltip-bg: var(--bs-primary);
