@@ -22,6 +22,7 @@
     <echo
       append="true"
       message="${line.separator}${dita-bootstrap.css}"
+      if:set="dita-bootstrap.css.add"
       file="${extend.css.file}"
     />
 
@@ -44,11 +45,13 @@
     <echo
       append="true"
       message="${line.separator}${dita-bootstrap.side-toc}"
+      if:set="dita-bootstrap.css.add"
       file="${extend.css.file}"
     />
 
     <!-- Add Bootstrap menubar-toc css if menubar-toc.include=yes -->
     <condition
+      if:set="dita-bootstrap.css.add"
       property="dita-bootstrap.menubar-toc.css.file"
       value="${dita-bootstrap.css.dir}/menubar-toc.css"
     >
@@ -69,6 +72,7 @@
 
     <!-- Add Bootstrap collapsible css if collapsible.include=yes -->
     <condition
+      if:set="dita-bootstrap.css.add"
       property="dita-bootstrap.collapsible.css.file"
       value="${dita-bootstrap.css.dir}/collapsible-toc.css"
     >
@@ -112,5 +116,6 @@
     <property name="args.csspath" value="css"/>
     <property name="menubar-toc.include" value="no"/>
     <property name="popovers.include" value="no"/>
+    <property property="dita-bootstrap.css.add" value="yes"/>
   </target>
 </project>
