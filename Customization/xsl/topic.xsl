@@ -70,7 +70,7 @@
     <xsl:call-template name="bootstrap-role"/>
     <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
     <!-- ↓ Ensure code is rendered LTR in RTL documents ↑ -->
-    <xsl:if test="$BIDIRECTIONAL_DOCUMENT and not(@dir)">
+    <xsl:if test="$BIDIRECTIONAL_DOCUMENT='true' and not(@dir)">
       <xsl:choose>
         <xsl:when  test="contains(@class,' pr-d/')">
          <xsl:attribute name="dir">auto</xsl:attribute>
