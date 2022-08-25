@@ -46,18 +46,27 @@
 
     <div>
       <!-- ↓ Add Bootstrap CSS frame processing ↑ -->
-      <xsl:if test="@frame = 'sides'">
-        <xsl:attribute name="class" select="'border-start border-end p-3'"/>
-      </xsl:if>
-      <xsl:if test="@frame = 'top'">
-        <xsl:attribute name="class" select="'border-top p-3'"/>
-      </xsl:if>
-      <xsl:if test="@frame = 'bottom'">
-        <xsl:attribute name="class" select="'border-bottom p-3'"/>
-      </xsl:if>
-      <xsl:if test="@frame = 'topbot'">
-        <xsl:attribute name="class" select="'border-top border-bottom p-3'"/>
-      </xsl:if>
+      <xsl:choose>
+        <xsl:when test="@frame = 'sides'">
+          <xsl:attribute name="class" select="'border-start border-end pt-3 ps-3 pe-3'"/>
+        </xsl:when>
+        <xsl:when test="@frame = 'top'">
+          <xsl:attribute name="class" select="'border-top pt-3'"/>
+        </xsl:when>
+        <xsl:when test="@frame = 'bottom'">
+          <xsl:attribute name="class" select="'border-bottom pt-3 ps-3 pe-3'"/>
+        </xsl:when>
+        <xsl:when test="@frame = 'topbot'">
+          <xsl:attribute name="class" select="'border-top border-bottom pt-3 ps-3 pe-3'"/>
+        </xsl:when>
+        <xsl:when test="@frame = 'all'">
+          <xsl:attribute name="class" select="'border pt-3 ps-3 pe-3'"/>
+        </xsl:when>
+        <xsl:when test="@frame = 'none'">
+          <xsl:attribute name="class" select="'border-0 pt-3 ps-3 pe-3'"/>
+        </xsl:when>
+      </xsl:choose>
+
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <table>
         <!-- ↓ Add Bootstrap CSS class processing ↑ -->
@@ -87,6 +96,21 @@
 
   <xsl:template match="*[contains(@class, ' topic/entry ')]/@valign" mode="css-class">
     <xsl:value-of select="concat('align-', .)"/>
+  </xsl:template>
+
+  <xsl:template match="@colsep" mode="css-class">
+      <xsl:if test=".='0' and not(../@rowsep='0')">
+        <xsl:value-of select="'border-start-0 border-end-0'"/>
+      </xsl:if>
+      <xsl:if test=".='1' and not(../@rowsep='1')">
+        <xsl:value-of select="'border-start border-end'"/>
+      </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="@rowsep" mode="css-class">
+      <xsl:if test=".='0' and not(../@colsep='0')">
+        <xsl:value-of select="'border-top-0 border-bottom-0'"/>
+      </xsl:if>
   </xsl:template>
 
 </xsl:stylesheet>

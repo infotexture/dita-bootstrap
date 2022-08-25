@@ -252,10 +252,10 @@
 &lt;/table&gt;</codeblock>
     <section>
       <title>Bordered tables</title>
-      <p>Add <xmlatt>frame="all"</xmlatt> for borders on all sides of the table and cells.</p>
+      <p>Add <xmlatt>rowsep="1"</xmlatt> and <xmlatt>colsep="1"</xmlatt> for borders on all sides of the table and cells.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <table frame="all">
+      <table rowsep="1" colsep="1">
         <tgroup cols="2">
           <colspec colname="COLSPEC0"/>
           <colspec colname="COLSPEC1"/>
@@ -286,15 +286,15 @@
         </tgroup>
       </table>
     </bodydiv>
-    <codeblock>&lt;table frame="all"&gt;
+    <codeblock>&lt;table rowsep="1" colsep="1"&gt;
   ...etc
 &lt;/table&gt;</codeblock>
     <section>
       <title>Tables without borders</title>
-      <p>Add <xmlatt>frame="none"</xmlatt> for a table without borders.</p>
+      <p>Add <xmlatt>rowsep="0"</xmlatt> and <xmlatt>colsep="0"</xmlatt> for a table without borders.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <table frame="none">
+      <table rowsep="0" colsep="0">
         <tgroup cols="2">
           <colspec colname="COLSPEC0"/>
           <colspec colname="COLSPEC1"/>
@@ -325,7 +325,7 @@
         </tgroup>
       </table>
     </bodydiv>
-    <codeblock>&lt;table frame="none"&gt;
+    <codeblock>&lt;table rowsep="0" colsep="0"&gt;
   ...etc
 &lt;/table&gt;</codeblock>
     <section>
