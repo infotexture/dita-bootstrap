@@ -252,7 +252,8 @@
 &lt;/table&gt;</codeblock>
     <section>
       <title>Bordered tables</title>
-      <p>Add <xmlatt>rowsep="1"</xmlatt> and <xmlatt>colsep="1"</xmlatt> for borders on all sides of the table and cells.</p>
+      <p>Add <xmlatt>rowsep="1"</xmlatt> and <xmlatt
+        >colsep="1"</xmlatt> for borders on all sides of the table and cells.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <table rowsep="1" colsep="1">
