@@ -311,7 +311,9 @@
       <xsl:when test="@type='notice'">
         <i class="pe-2 bi bi-info-circle-fill"/>
       </xsl:when>
-      <!--xsl:when test="@type='note'"/-->
+      <xsl:when test="@type='note'">
+        <i class="pe-2 bi bi-pencil"/>
+      </xsl:when>
       <!--xsl:when test="@type='other'"/-->
     </xsl:choose>
   </xsl:template>
