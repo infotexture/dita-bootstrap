@@ -558,6 +558,8 @@
         <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($show-menu = 'show')">
           <!-- no-op - if a menubar-toc is present, the nav-bar is reduced to current decendents only -->
         </xsl:when>
+        <xsl:when test="not(.)">
+        </xsl:when>
         <xsl:when test="normalize-space($title)">
           <xsl:variable name="id" select="dita-ot:generate-html-id(.)"/>
           <xsl:choose>
