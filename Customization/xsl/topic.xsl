@@ -159,7 +159,7 @@
   </xsl:template>
 
   <!-- Customization to add Bootstrap Figure Content -->
-  <!-- https://getbootstrap.com/docs/5.1/content/figures/ -->
+  <!-- https://getbootstrap.com/docs/5.2/content/figures/ -->
   <xsl:template
     match="*[contains(@class, ' topic/fig ') and not(contains(@class,' pr-d/syntaxdiagram '))]"
     name="topic.fig"
