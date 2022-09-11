@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Offcanvas Component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/offcanvas/ -->
+  <!-- https://getbootstrap.com/docs/5.2/components/offcanvas/ -->
 
   <xsl:template match="*[contains(@class,' topic/section ') and contains(@outputclass, 'offcanvas-')]">
     <xsl:param name="headLevel">
@@ -47,8 +47,8 @@
 
   <!-- Override to connect an offcanvas to a button -->
   <xsl:template match="*[contains(@class,' topic/xref ') and contains(@props, 'offcanvas-toggle')]">
-    <xsl:variable name="href" select="replace(@href, '#', '')"/>
-    <xsl:variable name="id" select="dita-ot:generate-html-id(../*[@id=$href])"/>
+    <xsl:variable name="href" select="substring-after(@href, '#')"/>
+    <xsl:variable name="id" select="if(//*[@id=$href]) then dita-ot:generate-html-id(//*[@id=$href]) else generate-id(//*[@id=$href])"/>
 
     <a data-bs-toggle="offcanvas">
       <xsl:call-template name="commonattributes"/>
