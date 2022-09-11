@@ -9,7 +9,18 @@
 .filepath,
 .option,
 .parmname {
-  color: var(--bs-gray);
+  color: var(--bs-code-color);
+  font-family: var(--bs-font-monospace);
+}
+
+.numcharref,
+.parameterentity,
+.textentity,
+.xmlatt,
+.xmlelement,
+.xmlnsname,
+.xmlpi {
+  color: var(--bs-purple);
   font-family: var(--bs-font-monospace);
 }
 
@@ -20,11 +31,11 @@
 }
 
 .boolean {
-  color: var(--bs-success);
+  color: var(--bs-green);
 }
 
 .state {
-  color: var(--bs-danger);
+  color: var(--bs-red);
 }
 
 .navbar-brand > svg {
