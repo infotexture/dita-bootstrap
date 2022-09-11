@@ -41,8 +41,8 @@
   <xsl:template match="*[contains(@class, ' topic/table ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_TABLE"/>
     <xsl:choose>
-      <xsl:when test="@frame = 'all'"> table-bordered</xsl:when>
-      <xsl:when test="@frame = 'none'"> table-borderless</xsl:when>
+      <xsl:when test="@colsep='1' and @rowsep='1'"> table-bordered</xsl:when>
+      <xsl:when test="@colsep='0' and @rowsep='0'"> table-borderless</xsl:when>
       <xsl:otherwise/>
     </xsl:choose>
   </xsl:template>
@@ -311,7 +311,9 @@
       <xsl:when test="@type='notice'">
         <i class="pe-2 bi bi-info-circle-fill"/>
       </xsl:when>
-      <!--xsl:when test="@type='note'"/-->
+      <xsl:when test="@type='note'">
+        <i class="pe-2 bi bi-pencil"/>
+      </xsl:when>
       <!--xsl:when test="@type='other'"/-->
     </xsl:choose>
   </xsl:template>

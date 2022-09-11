@@ -2,11 +2,11 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.1 documentation (found at https://getbootstrap.com/docs/5.1), however DITA
+   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.1 docs" by Twitter, Inc.
+   This work, is a derivative of "Bootstrap 5.2 docs" by Twitter, Inc.
    and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
    file for applicable licenses.-->
 <topic id="tooltips">
@@ -98,6 +98,26 @@
     <codeblock>&lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
   &lt;desc&gt;&lt;b&gt;Tooltip&lt;/b&gt; &lt;u&gt;with&amp;lt;/u&gt; &lt;b&gt;DITA&lt;/b&gt; elements&lt;/desc&gt;
   Tooltip with embedded DITA
+&lt;/xref&gt;</codeblock>
+    <section>
+      <title>Custom tooltips</title>
+      <p>You can customize the appearance of tooltips using CSS variables. We set a custom class with <codeph
+        >&lt;data name="class"&gt;custom-tooltip&lt;data&gt;</codeph>  to scope our custom appearance and use it to override a local CSS variable.</p>
+    </section>
+    <codeblock outputclass="language-css">.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+}</codeblock>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <xref href="#" outputclass="btn-secondary tooltip-top">
+        <data name="class">custom-tooltip</data>
+        <desc>This top tooltip is themed via CSS variables.</desc>
+        Custom tooltip
+      </xref>
+    </bodydiv>
+    <codeblock>&lt;xref href="#" outputclass="btn-secondary tooltip-top"&gt;
+  &lt;data name="class"&gt;custom-tooltip&lt;/data&gt;
+  &lt;desc&gt;This top tooltip is themed via CSS variables.&lt;/desc&gt;
+  Custom tooltip
 &lt;/xref&gt;</codeblock>
   </body>
 </topic>

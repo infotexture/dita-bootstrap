@@ -2,11 +2,11 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.1 documentation (found at https://getbootstrap.com/docs/5.1), however DITA
+   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.1 docs" by Twitter, Inc.
+   This work, is a derivative of "Bootstrap 5.2 docs" by Twitter, Inc.
    and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
    file for applicable licenses.-->
 <topic id="badges">
@@ -43,29 +43,28 @@
 &lt;p&gt;Example Text &lt;ph outputclass="bg-secondary"&gt;New&lt;/ph&gt;&lt;/p&gt;</codeblock>
     <section>
       <title>Background colors</title>
-      <p>Use Bootstrap’s background utility classes to quickly change the appearance of a badge. Please note that when
-        using Bootstrap’s default CSS classes using the DITA <xmlatt>outputclass</xmlatt> attribute with the value
-          <codeph>bg-light</codeph>, you’ll likely need a text color utility attribute on <xmlatt>outputclass</xmlatt>
-        like <codeph>text-dark</codeph> as well for proper styling. This is because background utilities do not set
-        anything but background-color.</p>
+      <p>Set a background-color with contrasting foreground color with Bootstrap’s <codeph
+        >text-bg-{color}</codeph> helpers. Previously it was required to manually pair your choice of <xmlatt
+        >outputclass</xmlatt> <codeph>text-{color}</codeph> and <codeph
+        >bg-{color}</codeph> utilities for styling, which you still may use if you prefer.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <ph outputclass="bg-primary">Primary</ph>
-      <ph outputclass="bg-secondary">Secondary</ph>
-      <ph outputclass="bg-success">Success</ph>
-      <ph outputclass="bg-danger">Danger</ph>
-      <ph outputclass="bg-warning text-dark">Warning</ph>
-      <ph outputclass="bg-info text-dark">Info</ph>
-      <ph outputclass="bg-light text-dark">Light</ph>
-      <ph outputclass="bg-dark">Dark</ph>
+      <ph outputclass="text-bg-primary">Primary</ph>
+      <ph outputclass="text-bg-secondary">Secondary</ph>
+      <ph outputclass="text-bg-success">Success</ph>
+      <ph outputclass="text-bg-danger">Danger</ph>
+      <ph outputclass="text-bg-warning">Warning</ph>
+      <ph outputclass="text-bg-info">Info</ph>
+      <ph outputclass="text-bg-light">Light</ph>
+      <ph outputclass="text-bg-dark">Dark</ph>
     </bodydiv>
-    <codeblock>&lt;ph outputclass="bg-primary"&gt;Primary&lt;/ph&gt;
-&lt;ph outputclass="bg-secondary"&gt;Secondary&lt;/ph&gt;
-&lt;ph outputclass="bg-success"&gt;Success&lt;/ph&gt;
-&lt;ph outputclass="bg-danger"&gt;Danger&lt;/ph&gt;
-&lt;ph outputclass="bg-warning text-dark"&gt;Warning&lt;/ph&gt;
-&lt;ph outputclass="bg-info text-dark"&gt;Info&lt;/ph&gt;
-&lt;ph outputclass="bg-light text-dark"&gt;Light&lt;/ph&gt;
-&lt;ph outputclass="bg-dark"&gt;Dark&lt;/ph&gt;</codeblock>
+    <codeblock>&lt;ph outputclass="text-bg-primary"&gt;Primary&lt;/ph&gt;
+&lt;ph outputclass="text-bg-secondary"&gt;Secondary&lt;/ph&gt;
+&lt;ph outputclass="text-bg-success"&gt;Success&lt;/ph&gt;
+&lt;ph outputclass="text-bg-danger"&gt;Danger&lt;/ph&gt;
+&lt;ph outputclass="text-bg-warning"&gt;Warning&lt;/ph&gt;
+&lt;ph outputclass="text-bg-info"&gt;Info&lt;/ph&gt;
+&lt;ph outputclass="text-bg-light"&gt;Light&lt;/ph&gt;
+&lt;ph outputclass="text-bg-dark"&gt;Dark&lt;/ph&gt;</codeblock>
   </body>
 </topic>
