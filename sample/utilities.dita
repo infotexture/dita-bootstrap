@@ -107,7 +107,7 @@ and summer's lease hath all too short a date:
       <p/>
     </bodydiv>
     <codeblock>&lt;codeblock frame="sides"&gt;...&lt;/codeblock&gt;
-&lt;lines frame="topbot" outputclass="bg-light p-3 border rounded"&gt;...&lt;/lines&gt;</codeblock>
+&lt;lines frame="topbot" outputclass="bg-light p-3 border rounded"&gt;...&lt;/lines&gt;
 &lt;table frame="all"&gt;...&lt;/table&gt;</codeblock>
     <section id="colors">
       <title>Colors</title>
