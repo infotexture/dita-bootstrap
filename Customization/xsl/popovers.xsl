@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Popover component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/popovers/ -->
+  <!-- https://getbootstrap.com/docs/5.2/components/popovers/ -->
 
   <xsl:template match="*" mode="add-bootstrap-popover">
     <xsl:attribute name="data-bs-toggle">
@@ -34,9 +34,16 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:attribute>
-    <xsl:attribute name="title">
-      <xsl:value-of select="*[contains(@class, ' topic/data ')][1]/*[contains(@class, ' topic/title ')][1]"/>
-    </xsl:attribute>
+    <xsl:if test="*[contains(@class, ' topic/data ') and contains(@name, 'title')][1]">
+      <xsl:attribute name="title">
+        <xsl:value-of select="*[contains(@class, ' topic/data ') and contains(@name, 'title')][1]"/>
+      </xsl:attribute>
+    </xsl:if>
+    <xsl:if test="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]">
+      <xsl:attribute name="data-bs-custom-class">
+        <xsl:value-of select="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]"/>
+      </xsl:attribute>
+    </xsl:if>
     <xsl:attribute name="data-bs-content">
       <xsl:value-of select="*[contains(@class, ' topic/desc ')][1]"/>
     </xsl:attribute>

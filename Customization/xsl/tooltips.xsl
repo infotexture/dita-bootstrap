@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Tooltips component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/tooltips/ -->
+  <!-- https://getbootstrap.com/docs/5.2/components/tooltips/ -->
 
   <xsl:template match="*" mode="add-bootstrap-tooltip">
     <xsl:attribute name="data-bs-toggle">
@@ -34,6 +34,11 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:attribute>
+    <xsl:if test="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]">
+      <xsl:attribute name="data-bs-custom-class">
+        <xsl:value-of select="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]"/>
+      </xsl:attribute>
+    </xsl:if>
     <xsl:choose>
       <xsl:when test="*[contains(@class, ' topic/desc ')]/*">
         <xsl:attribute name="data-bs-html">

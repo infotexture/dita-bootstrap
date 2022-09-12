@@ -12,7 +12,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
   <!-- Customization to add Bootstrap Card Component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/card/ -->
+  <!-- https://getbootstrap.com/docs/5.2/components/card/ -->
 
   <xsl:template match="*[contains(@class,' topic/section ') and contains(@outputclass, 'card')]">
     <div>

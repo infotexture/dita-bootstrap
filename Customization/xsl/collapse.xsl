@@ -12,10 +12,10 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Collapse Component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/collapse/ -->
+  <!-- https://getbootstrap.com/docs/5.2/components/collapse/ -->
 
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'collapse-horizontal')]">
-    <xsl:variable name="id" select="dita-ot:generate-html-id(.)"/>
+    <xsl:variable name="id" select="if(@id) then dita-ot:generate-html-id(.) else generate-id(.)"/>
     <div>
       <xsl:if test="contains(@otherprops, 'style(')">
         <xsl:attribute name="style">
@@ -68,8 +68,8 @@
 
   <!-- Override to connect an collapsed element to a button -->
   <xsl:template match="*[contains(@class,' topic/xref ') and contains(@props, 'collapse-toggle')]">
-    <xsl:variable name="href" select="replace(@href, '#', '')"/>
-    <xsl:variable name="id" select="dita-ot:generate-html-id(//*[@id=$href])"/>
+    <xsl:variable name="href" select="substring-after(@href, '#')"/>
+    <xsl:variable name="id" select="if(//*[@id=$href]) then dita-ot:generate-html-id(//*[@id=$href]) else generate-id(//*[@id=$href])"/>
 
     <a data-bs-toggle="collapse">
       <xsl:call-template name="commonattributes"/>
