@@ -69,29 +69,29 @@
         <xsl:value-of select="$pathFromMaplist"/>
       </xsl:if>
       <xsl:choose>
-          <xsl:when
+        <xsl:when
           test="@copy-to and not(contains(@chunk, 'to-content')) and
                             (not(@format) or @format = 'dita' or @format = 'ditamap') "
         >
-            <xsl:call-template name="replace-extension">
-              <xsl:with-param name="filename" select="@copy-to"/>
-              <xsl:with-param name="extension" select="$OUTEXT"/>
-            </xsl:call-template>
-            <xsl:if test="not(contains(@copy-to, '#')) and contains(@href, '#')">
-              <xsl:value-of select="concat('#', substring-after(@href, '#'))"/>
-            </xsl:if>
-          </xsl:when>
-          <xsl:when test="not(@scope = 'external') and (not(@format) or @format = 'dita' or @format = 'ditamap')">
-            <xsl:call-template name="replace-extension">
-              <xsl:with-param name="filename" select="@href"/>
-              <xsl:with-param name="extension" select="$OUTEXT"/>
-            </xsl:call-template>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:value-of select="@href"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:attribute>
+          <xsl:call-template name="replace-extension">
+            <xsl:with-param name="filename" select="@copy-to"/>
+            <xsl:with-param name="extension" select="$OUTEXT"/>
+          </xsl:call-template>
+          <xsl:if test="not(contains(@copy-to, '#')) and contains(@href, '#')">
+            <xsl:value-of select="concat('#', substring-after(@href, '#'))"/>
+          </xsl:if>
+        </xsl:when>
+        <xsl:when test="not(@scope = 'external') and (not(@format) or @format = 'dita' or @format = 'ditamap')">
+          <xsl:call-template name="replace-extension">
+            <xsl:with-param name="filename" select="@href"/>
+            <xsl:with-param name="extension" select="$OUTEXT"/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="@href"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:attribute>
   </xsl:template>
 
   <!-- Generate a menubar-toc - a menubar as part of the static header -->
@@ -120,7 +120,7 @@
                 <xsl:apply-templates select="$current-topicref" mode="list-group-toc-pull">
                   <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
                   <xsl:with-param name="children" as="element()*">
-                      <xsl:apply-templates
+                    <xsl:apply-templates
                       select="$current-topicref/*[contains(@class, ' map/topicref ')]"
                       mode="list-group-toc"
                     >
@@ -158,7 +158,7 @@
                 <xsl:apply-templates select="$current-topicref" mode="nav-pill-toc-pull">
                   <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
                   <xsl:with-param name="children" as="element()*">
-                      <xsl:apply-templates
+                    <xsl:apply-templates
                       select="$current-topicref/*[contains(@class, ' map/topicref ')]"
                       mode="nav-pill-toc"
                     >
@@ -411,9 +411,7 @@
         </xsl:if>
       </xsl:when>
     </xsl:choose>
-
   </xsl:template>
-
 
   <!-- nav-pill-toc-pull mode to add Bootstrap nav-link classes to a sidebar -->
   <xsl:template
@@ -450,7 +448,7 @@
                     <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                     <xsl:with-param name="class">
                       <xsl:text>my-1 nav-link</xsl:text>
-                       <xsl:value-of select="$active-class"/>
+                      <xsl:value-of select="$active-class"/>
                     </xsl:with-param>
                   </xsl:call-template>
                   <xsl:value-of select="$title"/>
@@ -500,7 +498,6 @@
     <xsl:variable name="active-class">
       <xsl:call-template name="get-active-class"/>
     </xsl:variable>
-
 
     <xsl:choose>
       <xsl:when
@@ -586,8 +583,8 @@
                     </xsl:attribute>
                     <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
                     <xsl:if test="$show-menu='show'">
-                        <xsl:attribute name="aria-expanded" select="'true'"/>
-                        <xsl:attribute name="aria-current" select="'true'"/>
+                      <xsl:attribute name="aria-expanded" select="'true'"/>
+                      <xsl:attribute name="aria-current" select="'true'"/>
                     </xsl:if>
                     <xsl:attribute name="aria-labelledby" select="concat('menu-collapse-trigger-',$id)"/>
                     <xsl:attribute name="aria-controls" select="concat('menu-collapse-',$id)"/>
@@ -636,11 +633,11 @@
                   </xsl:attribute>
                   <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
                   <xsl:if test="$show-menu='show'">
-                      <xsl:attribute name="aria-expanded" select="'true'"/>
-                      <xsl:attribute name="aria-current" select="'true'"/>
+                    <xsl:attribute name="aria-expanded" select="'true'"/>
+                    <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
                   <svg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 16 16'>
-                      <path
+                    <path
                       fill='none'
                       stroke='currentColor'
                       stroke-linecap='round'
@@ -659,8 +656,8 @@
                   </xsl:attribute>
                   <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
                   <xsl:if test="$show-menu='show'">
-                      <xsl:attribute name="aria-expanded" select="'true'"/>
-                      <xsl:attribute name="aria-current" select="'true'"/>
+                    <xsl:attribute name="aria-expanded" select="'true'"/>
+                    <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
                   <xsl:value-of select="$title"/>
                 </span>

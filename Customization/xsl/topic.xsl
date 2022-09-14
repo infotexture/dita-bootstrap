@@ -21,7 +21,7 @@
   </xsl:variable>
 
   <xsl:variable name="BIDIRECTIONAL_DOCUMENT">
-   <xsl:call-template name="bidi-area">
+    <xsl:call-template name="bidi-area">
       <xsl:with-param name="parentlang" select="$defaultLanguage"/>
     </xsl:call-template>
   </xsl:variable>
@@ -57,8 +57,6 @@
     </main>
   </xsl:template>
 
-
-
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template name="commonattributes">
     <xsl:param name="default-output-class"/>
@@ -68,18 +66,17 @@
       <xsl:value-of select="$default-output-class"/>
     </xsl:variable>
     <xsl:call-template name="bootstrap-role"/>
-    <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-    <!-- ↓ Ensure code is rendered LTR in RTL documents ↑ -->
+    <!-- ↓ Ensure code is rendered LTR in RTL documents ↓ -->
     <xsl:if test="$BIDIRECTIONAL_DOCUMENT='true' and not(@dir)">
       <xsl:choose>
-        <xsl:when  test="contains(@class,' pr-d/')">
-         <xsl:attribute name="dir">auto</xsl:attribute>
+        <xsl:when test="contains(@class,' pr-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
         </xsl:when>
-        <xsl:when  test="contains(@class,' sw-d/')">
-         <xsl:attribute name="dir">auto</xsl:attribute>
+        <xsl:when test="contains(@class,' sw-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
         </xsl:when>
-        <xsl:when  test="contains(@class,' xml-d/')">
-         <xsl:attribute name="dir">auto</xsl:attribute>
+        <xsl:when test="contains(@class,' xml-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
         </xsl:when>
       </xsl:choose>
     </xsl:if>
@@ -209,8 +206,6 @@
     <xsl:value-of select="$newline"/>
   </xsl:template>
 
-
-
   <!-- Figure caption -->
   <xsl:template name="place-fig-lbl">
     <xsl:param name="stringName"/>
@@ -230,13 +225,13 @@
           <xsl:variable name="fig-caption-class">
             <xsl:choose>
               <xsl:when test="*[contains(@class, ' topic/lq ')]">
-                  <xsl:value-of select="concat('blockquote-footer ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
+                <xsl:value-of select="concat('blockquote-footer ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:value-of select="concat('figure-caption ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
               </xsl:otherwise>
             </xsl:choose>
-         </xsl:variable>
+          </xsl:variable>
           <xsl:apply-templates select="." mode="set-output-class">
             <xsl:with-param
               name="default"
@@ -245,7 +240,7 @@
           </xsl:apply-templates>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <span class="fig--title-label">
-              <xsl:choose>
+            <xsl:choose>
               <!-- Blockquote - figure -->
               <xsl:when test="*[contains(@class, ' topic/lq ')]">
               </xsl:when>
@@ -292,7 +287,6 @@
     </xsl:choose>
   </xsl:template>
 
-
   <!-- Customization to add Bootstrap Borders to Codeblock elements-->
   <!-- https://getbootstrap.com/docs/5.2/utilities/borders/ -->
   <xsl:template match="*[contains(@class, ' topic/pre ') and @frame]">
@@ -318,7 +312,6 @@
       </pre>
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
     </figure>
-
   </xsl:template>
 
   <!-- Customization to add Bootstrap Borders to Lines elements-->
