@@ -12,6 +12,7 @@
       <navtitle>Getting Started</navtitle>
     </topicmeta>
     <topicref navtitle="Introduction" format="dita" href="index.dita"/>
+    <topicref navtitle="RTL" format="dita" href="rtl.dita"/>
   </chapter>
   <chapter>
     <topicmeta>

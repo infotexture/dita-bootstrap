@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<!-- Within the sample documentation, where necessary, the texts describing the
+   usage of each component have been copied directly from the official Bootstrap
+   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
+   markup is used throughout the examples describing how to implement these
+   components correctly using outputclass.
+
+   This work, is a derivative of "Bootstrap 5.2 docs" by Twitter, Inc.
+   and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
+   file for applicable licenses.-->
+<topic id="rtl">
+  <title>RTL</title>
+  <shortdesc>Learn how to enable support for right-to-left text in Bootstrap across layout, components, and utilities.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>RTL</indexterm>
+        <indexterm><parmname>--bidi.include</parmname></indexterm>
+        <indexterm><parmname>--defaultLanguage</parmname></indexterm>
+        <indexterm><xmlatt>xml:lang</xmlatt></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
+  <body outputclass="language-markup">
+    <section>
+      <title>RTL CSS</title>
+      <p>
+        By default the Bootstrap plugin loads standard LTR CSS. To enable RTL support, DITA-OT must load the RTL version of Bootstrap CSS. This is done automatically if the <parmname>--defaultLanguage</parmname> is set to an RTL language.
+        Alternatively you can deliberately select RTL support using the <parmname>--bidi.include</parmname> parameter:
+      </p>
+      <codeblock dir="ltr" outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--bidi.include</parmname>=<option>yes</option></codeblock>
+    </section>
+    <section>
+      <title>LTR and RTL at the same time</title>
+      <p>Setting the <xmlatt>xml:lang</xmlatt> attribute to an RTL language on the first <xmlelement>topic</xmlelement> will cause the whole layout (such as headers and nav bars) to be recalculated as RTL across the page.</p>
+      <codeblock dir="ltr" outputclass="language-xml">&lt;topic id="..." xml:lang="ar"&gt;</codeblock>
+      <p>If it is necessary to maintain the default LTR menu layout, set the <xmlatt>xml:lang</xmlatt> attribute and <xmlatt>dir</xmlatt> attribute
+      onto the <xmlelement>body</xmlelement> instead.</p>
+      <codeblock dir="ltr" outputclass="language-xml">&lt;topic id="..."&gt;
+  &lt;title xml:lang="ar" dir="rtl"&gt;لقب&lt;/title&gt;
+  &lt;body xml:lang="ar" dir="rtl"&gt;
+    ...</codeblock>
+      <p>Additionally, within any <xmlelement>topic</xmlelement>, setting the <xmlatt>dir</xmlatt> attribute onto any DITA element thereafter will cause the layout to be recalculated for enclosed block only.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <bodydiv outputclass="row" dir="rtl">
+        <bodydiv outputclass="col">
+          <section outputclass="card w-50" xml:lang="ar">
+            <title outputclass="h5">عنوان البطاقة</title>
+            <image outputclass="card-img-top" scope="external" href="https://picsum.photos/400/200?a"/>
+            <p>بعض الأمثلة السريعة للنص الذي سيتم بناؤه على عنوان البطاقة وتشكيل الجزء الأكبر من محتوى البطاقة.</p>
+            <xref outputclass="btn-primary" href="#">اذهب لمكان ما</xref>
+          </section>
+        </bodydiv>
+      </bodydiv>
+    </bodydiv>
+    <codeblock>&lt;bodydiv outputclass="row" dir="rtl"&gt;
+  &lt;bodydiv outputclass="col"&gt;
+    &lt;section outputclass="card w-50" xml:lang="ar"&gt;
+      &lt;title outputclass="h5"&gt;عنوان البطاقة&lt;/title&gt;
+      &lt;image outputclass="card-img-top" href="..." /&gt;
+      &lt;p&gt;بعض الأمثلة السريعة للنص الذي سيتم بناؤه على عنوان البطاقة وتشكيل الجزء الأكبر من محتوى البطاقة.&lt;/p&gt;
+      &lt;xref outputclass="btn-primary" href="#"&gt;اذهب لمكان ما&lt;/xref&gt;
+    &lt;/section&gt;
+  &lt;/bodydiv&gt;
+&lt;/bodydiv&gt;</codeblock>
+  </body>
+</topic>

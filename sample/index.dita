@@ -376,6 +376,9 @@
           <parmname>--popovers.include</parmname> – enable Bootstrap
           <xref href="./popovers.dita" format="dita">popover components</xref> and
           <xref href="./tooltips.dita" format="dita">tooltip components</xref></li>
+        <li>
+          <parmname>--bidi.include</parmname> – whether to include support for
+          <xref href="./rtl.dita" format="dita">RTL languages</xref></li>
       </ul>
       <p>Breadcrumbs and menu bars can be added using the following parameters:</p>
       <ul>
