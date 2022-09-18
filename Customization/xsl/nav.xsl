@@ -187,17 +187,14 @@
         </nav>
       </xsl:when>
       <xsl:when test="$nav-toc = ('collapsible')">
-        <xsl:variable name="childlang">
-          <xsl:apply-templates select="/*" mode="get-first-topic-lang"/>
-        </xsl:variable>
-        <xsl:variable name="direction">
+        <!--xsl:variable name="direction">
           <xsl:apply-templates select="." mode="get-render-direction">
-            <xsl:with-param name="lang" select="$childlang"/>
+            <xsl:with-param name="lang" select="$defaultLanguage"/>
           </xsl:apply-templates>
-        </xsl:variable>
+        </xsl:variable-->
         <nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links">
           <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
-            <xsl:attribute name="direction" select="$direction"/>
+            <xsl:attribute name="direction" select="$defaultDirection"/>
           </xsl:if>
           <ul class="list-unstyled mb-0 py-3 pt-md-1">
             <xsl:apply-templates select="$input.map" mode="collapsible-toc">

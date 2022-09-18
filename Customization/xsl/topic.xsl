@@ -15,26 +15,45 @@
   <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
   <xsl:param name="BIDIRECTIONAL_DOCUMENT"  select="'no'" as="xs:string"/>
 
+  <xsl:variable name="defaultDirection">
+    <xsl:apply-templates select="." mode="get-render-direction">
+      <xsl:with-param name="lang" select="$defaultLanguage"/>
+    </xsl:apply-templates>
+  </xsl:variable>
+
+
   <!-- Define a newline character -->
   <xsl:variable name="newline">
 <xsl:text>
 </xsl:text>
   </xsl:variable>
 
+  <xsl:template name="chapter-setup">
+  <html>
+    <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'no'">
+      <xsl:call-template name="setTopicLanguage"/>
+    </xsl:if>
+    <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+      <xsl:attribute name="dir" select="$defaultDirection"/>
+      <xsl:attribute name="lang" select="$defaultLanguage"/>
+    </xsl:if>
+    <xsl:call-template name="chapterHead"/>
+    <xsl:call-template name="chapterBody"/>
+  </html>
+  </xsl:template>
+
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
-       <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
-        <xsl:variable name="childlang">
-          <xsl:apply-templates select="/*" mode="get-first-topic-lang"/>
-        </xsl:variable>
-        <xsl:variable name="direction">
-          <xsl:apply-templates select="." mode="get-render-direction">
-            <xsl:with-param name="lang" select="$childlang"/>
-          </xsl:apply-templates>
-        </xsl:variable>
-        <xsl:attribute name="direction" select="$direction"/>
-      </xsl:if>
       <article xsl:use-attribute-sets="article">
+         <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+          <xsl:variable name="direction">
+            <xsl:apply-templates select="." mode="get-render-direction">
+              <xsl:with-param name="lang" select="dita-ot:get-current-language(.)"/>
+            </xsl:apply-templates>
+          </xsl:variable>
+          <xsl:attribute name="dir" select="$direction"/>
+          <xsl:attribute name="lang" select="dita-ot:get-current-language(.)"/>
+        </xsl:if>
         <xsl:attribute name="aria-labelledby">
           <xsl:apply-templates
             select="*[contains(@class,' topic/title ')] |

@@ -38,18 +38,12 @@
     </section>
     <section>
       <title>LTR and RTL at the same time</title>
-      <p>Setting the <xmlatt>xml:lang</xmlatt> attribute to an RTL language on the first <xmlelement
-        >topic</xmlelement> will cause the whole layout (such as headers and nav bars) to be recalculated as RTL across the page.</p>
+      <p>The overall layout is always defined by the <parmname>--defaultLanguage</parmname> parameter. Set the
+      <xmlelement
+        >topic xml:lang=".."</xmlelement> to an RTL language to cause the article to be rendered as RTL across the page.</p>
       <codeblock dir="ltr" outputclass="language-xml">&lt;topic id="..." xml:lang="ar"&gt;</codeblock>
-      <p>If it is necessary to maintain the default LTR menu layout, set the <xmlatt
-        >xml:lang</xmlatt> attribute and <xmlatt>dir</xmlatt> attribute
-      onto the <xmlelement>body</xmlelement> instead.</p>
-      <codeblock dir="ltr" outputclass="language-xml">&lt;topic id="..."&gt;
-  &lt;title xml:lang="ar" dir="rtl"&gt;لقب&lt;/title&gt;
-  &lt;body xml:lang="ar" dir="rtl"&gt;
-    ...</codeblock>
       <p>Additionally, within any <xmlelement>topic</xmlelement>, setting the <xmlatt
-        >dir</xmlatt> attribute onto any DITA element thereafter will cause the layout to be recalculated for enclosed block only.</p>
+        >dir</xmlatt> attribute onto any DITA element thereafter will cause the layout to be recalculated for the enclosed block only.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row" dir="rtl">
