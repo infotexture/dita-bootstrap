@@ -13,7 +13,7 @@
 >
 
   <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
-  <xsl:param name="BIDIRECTIONAL_DOCUMENT"  select="'no'" as="xs:string"/>
+  <xsl:param name="BIDIRECTIONAL_DOCUMENT" select="'no'" as="xs:string"/>
 
   <xsl:variable name="defaultDirection">
     <xsl:apply-templates select="." mode="get-render-direction">
