@@ -11,7 +11,8 @@
    file for applicable licenses.-->
 <topic id="rtl">
   <title>RTL</title>
-  <shortdesc>Learn how to enable support for right-to-left text in Bootstrap across layout, components, and utilities.</shortdesc>
+  <shortdesc
+  >Learn how to enable support for right-to-left text in Bootstrap across layout, components, and utilities.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
@@ -26,7 +27,8 @@
     <section>
       <title>RTL CSS</title>
       <p>
-        By default the Bootstrap plugin loads standard LTR CSS. To enable RTL support, DITA-OT must load the RTL version of Bootstrap CSS. This is done automatically if the <parmname>--defaultLanguage</parmname> is set to an RTL language.
+        By default the Bootstrap plugin loads standard LTR CSS. To enable RTL support, DITA-OT must load the RTL version of Bootstrap CSS. This is done automatically if the <parmname
+        >--defaultLanguage</parmname> is set to an RTL language.
         Alternatively you can deliberately select RTL support using the <parmname>--bidi.include</parmname> parameter:
       </p>
       <codeblock dir="ltr" outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
@@ -36,15 +38,18 @@
     </section>
     <section>
       <title>LTR and RTL at the same time</title>
-      <p>Setting the <xmlatt>xml:lang</xmlatt> attribute to an RTL language on the first <xmlelement>topic</xmlelement> will cause the whole layout (such as headers and nav bars) to be recalculated as RTL across the page.</p>
+      <p>Setting the <xmlatt>xml:lang</xmlatt> attribute to an RTL language on the first <xmlelement
+        >topic</xmlelement> will cause the whole layout (such as headers and nav bars) to be recalculated as RTL across the page.</p>
       <codeblock dir="ltr" outputclass="language-xml">&lt;topic id="..." xml:lang="ar"&gt;</codeblock>
-      <p>If it is necessary to maintain the default LTR menu layout, set the <xmlatt>xml:lang</xmlatt> attribute and <xmlatt>dir</xmlatt> attribute
+      <p>If it is necessary to maintain the default LTR menu layout, set the <xmlatt
+        >xml:lang</xmlatt> attribute and <xmlatt>dir</xmlatt> attribute
       onto the <xmlelement>body</xmlelement> instead.</p>
       <codeblock dir="ltr" outputclass="language-xml">&lt;topic id="..."&gt;
   &lt;title xml:lang="ar" dir="rtl"&gt;لقب&lt;/title&gt;
   &lt;body xml:lang="ar" dir="rtl"&gt;
     ...</codeblock>
-      <p>Additionally, within any <xmlelement>topic</xmlelement>, setting the <xmlatt>dir</xmlatt> attribute onto any DITA element thereafter will cause the layout to be recalculated for enclosed block only.</p>
+      <p>Additionally, within any <xmlelement>topic</xmlelement>, setting the <xmlatt
+        >dir</xmlatt> attribute onto any DITA element thereafter will cause the layout to be recalculated for enclosed block only.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row" dir="rtl">

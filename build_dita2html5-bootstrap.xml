@@ -124,11 +124,7 @@
       Load alternate Bootstrap CSS for RTL languages such as Arabic,
       Farsi, Urdu etc. Load standrd Bootstrap CSS for LTR languages like English
     -->
-    <condition
-      property="bidi.include"
-      value="yes"
-      else="no"
-    >
+    <condition property="bidi.include" value="yes" else="no">
       <matches
         string="${default.language}"
         pattern="((ar|arc|bcc|bqi|ckb|dv|fa|glk|he|lrc|mzn|pnb|ps|sd|ug|ur|yi)(\-|$))"
