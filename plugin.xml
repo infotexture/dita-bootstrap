@@ -56,7 +56,7 @@
     />
     <param
       name="bidi.include"
-      desc="Specifies whether include bidirectional css"
+      desc="Specifies whether to include bidirectional CSS"
       type="enum"
     >
       <val>yes</val>
