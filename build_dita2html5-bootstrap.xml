@@ -122,7 +122,7 @@
     <property name="dita-bootstrap.css.add" value="yes"/>
     <!--
       Load alternate Bootstrap CSS for RTL languages such as Arabic,
-      Farsi, Urdu etc. Load standrd Bootstrap CSS for LTR languages like English
+      Farsi, Urdu etc. Load standard Bootstrap CSS for LTR languages like English
     -->
     <condition property="bidi.include" value="yes" else="no">
       <matches
