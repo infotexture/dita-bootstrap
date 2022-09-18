@@ -22,6 +22,7 @@
     <echo
       append="true"
       message="${line.separator}${dita-bootstrap.css}"
+      if:set="dita-bootstrap.css.add"
       file="${extend.css.file}"
     />
 
@@ -47,11 +48,13 @@
     <echo
       append="true"
       message="${line.separator}${dita-bootstrap.side-toc}"
+      if:set="dita-bootstrap.css.add"
       file="${extend.css.file}"
     />
 
     <!-- Append Bootstrap menubar-toc CSS if menubar-toc.include=yes -->
     <condition
+      if:set="dita-bootstrap.css.add"
       property="dita-bootstrap.menubar-toc.css.file"
       value="${dita-bootstrap.css.dir}/menubar-toc.css"
     >
@@ -72,6 +75,7 @@
 
     <!-- Append Bootstrap collapsible CSS if collapsible.include=yes -->
     <condition
+      if:set="dita-bootstrap.css.add"
       property="dita-bootstrap.collapsible.css.file"
       value="${dita-bootstrap.css.dir}/collapsible-toc.css"
     >
@@ -115,6 +119,7 @@
     <property name="menubar-toc.include" value="no"/>
     <property name="nav-toc" value="partial"/>
     <property name="popovers.include" value="no"/>
+    <property name="dita-bootstrap.css.add" value="yes"/>
     <!--
       Load alternate Bootstrap CSS for RTL languages such as Arabic,
       Farsi, Urdu etc. Load standrd Bootstrap CSS for LTR languages like English
