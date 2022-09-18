@@ -64,7 +64,7 @@
     </param>
     <param
       name="icons.include"
-      desc="Specifies whether include an icon fonts stylesheet in the header"
+      desc="Specifies whether to include an icon fonts stylesheet in the header"
       type="enum"
     >
       <val>yes</val>
