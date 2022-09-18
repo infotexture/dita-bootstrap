@@ -55,6 +55,14 @@
       desc="Specifies the URL for a icon fonts stylesheet CDN"
     />
     <param
+      name="bidi.include"
+      desc="Specifies whether include bidirectional css"
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
       name="icons.include"
       desc="Specifies whether include an icon fonts stylesheet in the header"
       type="enum"

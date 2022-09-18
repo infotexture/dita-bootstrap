@@ -102,24 +102,6 @@
       name="icons.cdn.path"
       location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.icons.hdf.xml"
     />
-    <!--
-      Load alternate Bootstrap CSS for RTL languages such as Arabic,
-      Farsi, Urdu etc.
-    -->
-    <condition
-      property="args.hdf"
-      value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.rtl.xml"
-    >
-      <matches
-        string="${default.language}"
-        pattern="((ar|arc|bcc|bqi|ckb|dv|fa|glk|he|lrc|mzn|pnb|ps|sd|ug|ur|yi)(\-|$))"
-      />
-    </condition>
-    <!-- Load standard Bootstrap CSS for LTR languages such as English -->
-    <property
-      name="args.hdf"
-      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"
-    />
     <!-- Entrypoint for XSL transforms -->
     <property
       name="args.xsl"
@@ -133,5 +115,26 @@
     <property name="menubar-toc.include" value="no"/>
     <property name="nav-toc" value="partial"/>
     <property name="popovers.include" value="no"/>
+    <!--
+      Load alternate Bootstrap CSS for RTL languages such as Arabic,
+      Farsi, Urdu etc. Load standrd Bootstrap CSS for LTR languages like English
+    -->
+    <condition
+      property="bidi.include"
+      value="yes"
+      else="no"
+    >
+      <matches
+        string="${default.language}"
+        pattern="((ar|arc|bcc|bqi|ckb|dv|fa|glk|he|lrc|mzn|pnb|ps|sd|ug|ur|yi)(\-|$))"
+      />
+    </condition>
+    <condition
+      property="args.hdf"
+      value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.rtl.xml"
+      else="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"
+    >
+      <equals arg1="${bidi.include}" arg2="yes"/>
+    </condition>
   </target>
 </project>

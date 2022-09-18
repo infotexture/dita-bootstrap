@@ -13,6 +13,7 @@
 >
 
   <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
+  <xsl:param name="BIDIRECTIONAL_DOCUMENT"  select="'no'" as="xs:string"/>
 
   <!-- Define a newline character -->
   <xsl:variable name="newline">
@@ -20,14 +21,19 @@
 </xsl:text>
   </xsl:variable>
 
-  <xsl:variable name="BIDIRECTIONAL_DOCUMENT">
-    <xsl:call-template name="bidi-area">
-      <xsl:with-param name="parentlang" select="$defaultLanguage"/>
-    </xsl:call-template>
-  </xsl:variable>
-
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
+       <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+        <xsl:variable name="childlang">
+          <xsl:apply-templates select="/*" mode="get-first-topic-lang"/>
+        </xsl:variable>
+        <xsl:variable name="direction">
+          <xsl:apply-templates select="." mode="get-render-direction">
+            <xsl:with-param name="lang" select="$childlang"/>
+          </xsl:apply-templates>
+        </xsl:variable>
+        <xsl:attribute name="direction" select="$direction"/>
+      </xsl:if>
       <article xsl:use-attribute-sets="article">
         <xsl:attribute name="aria-labelledby">
           <xsl:apply-templates
