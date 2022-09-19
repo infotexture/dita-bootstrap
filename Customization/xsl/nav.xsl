@@ -11,7 +11,6 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot ditamsg"
 >
-
   <xsl:param name="nav-toc" as="xs:string?"/>
   <xsl:param name="FILEDIR" as="xs:string?"/>
   <xsl:param name="FILENAME" as="xs:string?"/>
@@ -745,5 +744,4 @@
       </xsl:when>
     </xsl:choose>
   </xsl:template>
-
 </xsl:stylesheet>

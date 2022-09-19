@@ -99,18 +99,17 @@
   </xsl:template>
 
   <xsl:template match="@colsep" mode="css-class">
-      <xsl:if test=".='0' and not(../@rowsep='0')">
-        <xsl:value-of select="'border-start-0 border-end-0'"/>
-      </xsl:if>
-      <xsl:if test=".='1' and not(../@rowsep='1')">
-        <xsl:value-of select="'border-start border-end'"/>
-      </xsl:if>
+    <xsl:if test=".='0' and not(../@rowsep='0')">
+      <xsl:value-of select="'border-start-0 border-end-0'"/>
+    </xsl:if>
+    <xsl:if test=".='1' and not(../@rowsep='1')">
+      <xsl:value-of select="'border-start border-end'"/>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="@rowsep" mode="css-class">
-      <xsl:if test=".='0' and not(../@colsep='0')">
-        <xsl:value-of select="'border-top-0 border-bottom-0'"/>
-      </xsl:if>
+    <xsl:if test=".='0' and not(../@colsep='0')">
+      <xsl:value-of select="'border-top-0 border-bottom-0'"/>
+    </xsl:if>
   </xsl:template>
-
 </xsl:stylesheet>

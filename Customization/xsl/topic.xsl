@@ -402,5 +402,4 @@
       <xsl:apply-templates/>
     </abbr>
   </xsl:template>
-
 </xsl:stylesheet>

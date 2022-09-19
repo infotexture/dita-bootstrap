@@ -65,7 +65,6 @@
     </div>
   </xsl:template>
 
-
   <!-- Override to connect an collapsed element to a button -->
   <xsl:template match="*[contains(@class,' topic/xref ') and contains(@props, 'collapse-toggle')]">
     <xsl:variable name="href" select="substring-after(@href, '#')"/>
