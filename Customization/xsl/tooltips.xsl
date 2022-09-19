@@ -101,7 +101,7 @@
     <xsl:choose>
       <xsl:when test="@href and normalize-space(@href)">
         <a>
-          <!-- ↓ Add Bootstrap class attributes template ↑ -->
+          <!-- ↓ Add Bootstrap class attributes template ↓ -->
           <xsl:apply-templates select="." mode="add-bootstrap-tooltip"/>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <xsl:call-template name="commonattributes"/>
@@ -140,7 +140,7 @@
       <xsl:otherwise>
         <span>
           <xsl:call-template name="commonattributes"/>
-          <!-- ↓ Add Bootstrap class attributes template ↑ -->
+          <!-- ↓ Add Bootstrap class attributes template ↓ -->
           <xsl:apply-templates select="." mode="add-bootstrap-tooltip"/>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <xsl:apply-templates

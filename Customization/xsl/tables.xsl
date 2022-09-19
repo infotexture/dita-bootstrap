@@ -45,7 +45,7 @@
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
 
     <div>
-      <!-- ↓ Add Bootstrap CSS frame processing ↑ -->
+      <!-- ↓ Add Bootstrap CSS frame processing ↓ -->
       <xsl:choose>
         <xsl:when test="@frame = 'sides'">
           <xsl:attribute name="class" select="'border-start border-end pt-3 ps-3 pe-3'"/>
@@ -69,7 +69,7 @@
 
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <table>
-        <!-- ↓ Add Bootstrap CSS class processing ↑ -->
+        <!-- ↓ Add Bootstrap CSS class processing ↓ -->
         <xsl:call-template name="commonattributes"/>
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:call-template name="setid"/>

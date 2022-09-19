@@ -63,7 +63,7 @@
         </xsl:attribute>
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
 
-        <!-- ↓ Add Bootstrap breadcrumb ↑ -->
+        <!-- ↓ Add Bootstrap breadcrumb ↓ -->
         <xsl:if test="$BREADCRUMBS = 'yes'">
           <xsl:apply-templates select="$current-topicref" mode="gen-user-breadcrumb"/>
         </xsl:if>
@@ -85,7 +85,7 @@
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template name="commonattributes">
     <xsl:param name="default-output-class"/>
-    <!-- ↓ Add Bootstrap class attributes template ↑ -->
+    <!-- ↓ Add Bootstrap class attributes template ↓ -->
     <xsl:variable name="bootstrap-class">
       <xsl:call-template name="bootstrap-class"/>
       <xsl:value-of select="$default-output-class"/>
@@ -110,7 +110,7 @@
     <xsl:apply-templates select="@dir"/>
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/@style" mode="add-ditaval-style"/>
     <xsl:choose>
-      <!-- ↓ Remove DITA-OT styling from titles since Bootstrap does this ↑ -->
+      <!-- ↓ Remove DITA-OT styling from titles since Bootstrap does this ↓ -->
       <xsl:when test="starts-with($default-output-class , 'topictitle')">
         <xsl:apply-templates select="." mode="set-output-class">
           <xsl:with-param name="default" select="replace($bootstrap-class, 'topictitle\d+', '')"/>
@@ -166,7 +166,7 @@
         <xsl:with-param name="id" select="concat(upper-case(substring($type, 1, 1)), substring($type, 2))"/>
       </xsl:call-template>
     </xsl:param>
-    <!-- ↓ Add Bootstrap class attributes template ↑ -->
+    <!-- ↓ Add Bootstrap class attributes template ↓ -->
     <xsl:variable name="bootstrap-class">
       <xsl:if test="not(contains(@outputclass, 'alert-'))">
         <xsl:call-template name="bootstrap-note"/>
@@ -182,7 +182,7 @@
       <!-- Normal flags go before the generated title; revision flags only go on the content. -->
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/prop" mode="ditaval-outputflag"/>
       <span class="note__title">
-        <!-- ↓ Add Bootstrap icon ↑ -->
+        <!-- ↓ Add Bootstrap icon ↓ -->
         <xsl:if test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">
           <xsl:call-template name="bootstrap-icon"/>
         </xsl:if>
@@ -226,7 +226,7 @@
       <xsl:apply-templates
         select="node() except *[contains(@class, ' topic/title ') or contains(@class, ' topic/desc ')]"
       />
-      <!-- ↓ Move Figure title below image ↑ -->
+      <!-- ↓ Move Figure title below image ↓ -->
       <xsl:call-template name="place-fig-lbl"/>
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
     </figure>

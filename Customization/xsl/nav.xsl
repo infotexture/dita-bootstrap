@@ -111,7 +111,7 @@
     <xsl:choose>
       <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
         <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↑ -->
+          <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↓ -->
           <div class="list-group me-3">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
             <xsl:choose>
@@ -149,7 +149,7 @@
 
       <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
         <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↑ -->
+          <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
           <nav class="nav nav-pills flex-column navbar-light bg-light">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
             <xsl:choose>
@@ -172,14 +172,14 @@
                 </xsl:apply-templates>
               </xsl:when>
             </xsl:choose>
-          <!-- ↓ Close <div> element from Bootstrap list-group ↑ -->
+          <!-- ↓ Close Bootstrap <nav> element -->
           </nav>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         </nav>
       </xsl:when>
       <xsl:when test="$nav-toc = ('nav-pill-scrollspy')">
         <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↑ -->
+          <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
           <nav class="nav nav-pills flex-column navbar-light bg-light" id="bs-scrollspy">
             <xsl:apply-templates mode="scrollspy"/>
           </nav>
