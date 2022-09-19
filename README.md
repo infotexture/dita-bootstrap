@@ -177,6 +177,7 @@ For performance reasons, Bootstrap icons, popovers and tooltips are disabled by 
 
 - `icons.include` – enable Bootstrap icons
 - `popovers.include` – enable Bootstrap popover components and tooltip components
+- `bidi.include` - whether to include support for RTL languages
 
 Breadcrumbs and menu bars can be added using the following parameters
 

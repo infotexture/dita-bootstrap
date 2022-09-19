@@ -12,15 +12,48 @@
   exclude-result-prefixes="xs dita-ot dita2html"
 >
 
+  <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
+  <xsl:param name="BIDIRECTIONAL_DOCUMENT" select="'no'" as="xs:string"/>
+
+  <xsl:variable name="defaultDirection">
+    <xsl:apply-templates select="." mode="get-render-direction">
+      <xsl:with-param name="lang" select="$defaultLanguage"/>
+    </xsl:apply-templates>
+  </xsl:variable>
+
+
   <!-- Define a newline character -->
   <xsl:variable name="newline">
 <xsl:text>
 </xsl:text>
   </xsl:variable>
 
+  <xsl:template name="chapter-setup">
+  <html>
+    <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'no'">
+      <xsl:call-template name="setTopicLanguage"/>
+    </xsl:if>
+    <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+      <xsl:attribute name="dir" select="$defaultDirection"/>
+      <xsl:attribute name="lang" select="$defaultLanguage"/>
+    </xsl:if>
+    <xsl:call-template name="chapterHead"/>
+    <xsl:call-template name="chapterBody"/>
+  </html>
+  </xsl:template>
+
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
       <article xsl:use-attribute-sets="article">
+         <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+          <xsl:variable name="direction">
+            <xsl:apply-templates select="." mode="get-render-direction">
+              <xsl:with-param name="lang" select="dita-ot:get-current-language(.)"/>
+            </xsl:apply-templates>
+          </xsl:variable>
+          <xsl:attribute name="dir" select="$direction"/>
+          <xsl:attribute name="lang" select="dita-ot:get-current-language(.)"/>
+        </xsl:if>
         <xsl:attribute name="aria-labelledby">
           <xsl:apply-templates
             select="*[contains(@class,' topic/title ')] |
@@ -49,8 +82,6 @@
     </main>
   </xsl:template>
 
-
-
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template name="commonattributes">
     <xsl:param name="default-output-class"/>
@@ -60,6 +91,20 @@
       <xsl:value-of select="$default-output-class"/>
     </xsl:variable>
     <xsl:call-template name="bootstrap-role"/>
+    <!-- ↓ Ensure code is rendered LTR in RTL documents ↓ -->
+    <xsl:if test="$BIDIRECTIONAL_DOCUMENT='true' and not(@dir)">
+      <xsl:choose>
+        <xsl:when test="contains(@class,' pr-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="contains(@class,' sw-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="contains(@class,' xml-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:if>
     <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
     <xsl:apply-templates select="@xml:lang"/>
     <xsl:apply-templates select="@dir"/>
@@ -189,8 +234,6 @@
     <xsl:value-of select="$newline"/>
   </xsl:template>
 
-
-
   <!-- Figure caption -->
   <xsl:template name="place-fig-lbl">
     <xsl:param name="stringName"/>
@@ -210,13 +253,13 @@
           <xsl:variable name="fig-caption-class">
             <xsl:choose>
               <xsl:when test="*[contains(@class, ' topic/lq ')]">
-                  <xsl:value-of select="concat('blockquote-footer ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
+                <xsl:value-of select="concat('blockquote-footer ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
               </xsl:when>
               <xsl:otherwise>
                 <xsl:value-of select="concat('figure-caption ', $BOOTSTRAP_CSS_FIGURE_CAPTION)"/>
               </xsl:otherwise>
             </xsl:choose>
-         </xsl:variable>
+          </xsl:variable>
           <xsl:apply-templates select="." mode="set-output-class">
             <xsl:with-param
               name="default"
@@ -225,7 +268,7 @@
           </xsl:apply-templates>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <span class="fig--title-label">
-              <xsl:choose>
+            <xsl:choose>
               <!-- Blockquote - figure -->
               <xsl:when test="*[contains(@class, ' topic/lq ')]">
               </xsl:when>
@@ -272,7 +315,6 @@
     </xsl:choose>
   </xsl:template>
 
-
   <!-- Customization to add Bootstrap Borders to Codeblock elements-->
   <!-- https://getbootstrap.com/docs/5.2/utilities/borders/ -->
   <xsl:template match="*[contains(@class, ' topic/pre ') and @frame]">
@@ -298,7 +340,6 @@
       </pre>
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
     </figure>
-
   </xsl:template>
 
   <!-- Customization to add Bootstrap Borders to Lines elements-->

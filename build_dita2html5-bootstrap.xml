@@ -14,7 +14,7 @@
       value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/css/"
     />
 
-    <!-- Common Bootstrap overrides for DITA-OT css -->
+    <!-- Add Common CSS where Bootstrap variables override DITA-OT defaults -->
     <loadfile
       property="dita-bootstrap.css"
       srcFile="${dita-bootstrap.css.dir}/common-bootstrap.css"
@@ -26,7 +26,10 @@
       file="${extend.css.file}"
     />
 
-    <!-- Add Bootstrap side-toc css unless nav-toc=none -->
+    <!--
+      Append side-toc CSS for the sidebar if present,
+      Otherwise append none-toc CSS if nav-toc=none.
+    -->
     <condition
       property="dita-bootstrap.side-toc.css.file"
       value="${dita-bootstrap.css.dir}/none-toc.css"
@@ -49,7 +52,7 @@
       file="${extend.css.file}"
     />
 
-    <!-- Add Bootstrap menubar-toc css if menubar-toc.include=yes -->
+    <!-- Append Bootstrap menubar-toc CSS if menubar-toc.include=yes -->
     <condition
       if:set="dita-bootstrap.css.add"
       property="dita-bootstrap.menubar-toc.css.file"
@@ -70,7 +73,7 @@
       file="${extend.css.file}"
     />
 
-    <!-- Add Bootstrap collapsible css if collapsible.include=yes -->
+    <!-- Append Bootstrap collapsible CSS if collapsible.include=yes -->
     <condition
       if:set="dita-bootstrap.css.add"
       property="dita-bootstrap.collapsible.css.file"
@@ -93,29 +96,46 @@
   </target>
 
   <target name="dita2html5-bootstrap.init">
-    <property
-      name="icons.cdn.path"
-      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.icons.hdf.xml"
-    />
-    <property name="icons.include" value="no"/>
-    <property
-      name="args.hdf"
-      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"
-    />
+    <!-- Location of page header template with hard-coded links -->
     <property
       name="args.hdr"
       location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bs-navbar-default.hdr.xml"
     />
+    <!-- Location of bootstrap icons if required -->
+    <property
+      name="icons.cdn.path"
+      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.icons.hdf.xml"
+    />
+    <!-- Entrypoint for XSL transforms -->
     <property
       name="args.xsl"
       location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"
     />
+    <!-- Default parameter values -->
     <property name="args.html5.toc" value="toc"/>
-    <property name="nav-toc" value="partial"/>
     <property name="args.copycss" value="yes"/>
     <property name="args.csspath" value="css"/>
+    <property name="icons.include" value="no"/>
     <property name="menubar-toc.include" value="no"/>
+    <property name="nav-toc" value="partial"/>
     <property name="popovers.include" value="no"/>
     <property name="dita-bootstrap.css.add" value="yes"/>
+    <!--
+      Load alternate Bootstrap CSS for RTL languages such as Arabic,
+      Farsi, Urdu etc. Load standard Bootstrap CSS for LTR languages like English
+    -->
+    <condition property="bidi.include" value="yes" else="no">
+      <matches
+        string="${default.language}"
+        pattern="((ar|arc|bcc|bqi|ckb|dv|fa|glk|he|lrc|mzn|pnb|ps|sd|ug|ur|yi)(\-|$))"
+      />
+    </condition>
+    <condition
+      property="args.hdf"
+      value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.rtl.xml"
+      else="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"
+    >
+      <equals arg1="${bidi.include}" arg2="yes"/>
+    </condition>
   </target>
 </project>
