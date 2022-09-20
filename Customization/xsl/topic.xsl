@@ -21,15 +21,17 @@
     </xsl:apply-templates>
   </xsl:variable>
 
-
   <!-- Define a newline character -->
   <xsl:variable name="newline">
 <xsl:text>
 </xsl:text>
   </xsl:variable>
 
+  <!-- Customized templates from `org.dita.html5/xsl/topic.xsl` -->
+
   <xsl:template name="chapter-setup">
   <html>
+    <!-- ↓ Add check for bi-directional content ↓ -->
     <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'no'">
       <xsl:call-template name="setTopicLanguage"/>
     </xsl:if>
@@ -37,6 +39,7 @@
       <xsl:attribute name="dir" select="$defaultDirection"/>
       <xsl:attribute name="lang" select="$defaultLanguage"/>
     </xsl:if>
+    <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
     <xsl:call-template name="chapterHead"/>
     <xsl:call-template name="chapterBody"/>
   </html>
@@ -45,7 +48,8 @@
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
       <article xsl:use-attribute-sets="article">
-         <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+        <!-- ↓ Add check for bi-directional content ↓ -->
+        <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
           <xsl:variable name="direction">
             <xsl:apply-templates select="." mode="get-render-direction">
               <xsl:with-param name="lang" select="dita-ot:get-current-language(.)"/>
@@ -54,19 +58,17 @@
           <xsl:attribute name="dir" select="$direction"/>
           <xsl:attribute name="lang" select="dita-ot:get-current-language(.)"/>
         </xsl:if>
+        <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:attribute name="aria-labelledby">
           <xsl:apply-templates select="*[contains(@class,' topic/title ')] |
                                        self::dita/*[1]/*[contains(@class,' topic/title ')]" mode="return-aria-label-id"/>
         </xsl:attribute>
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
-
         <!-- ↓ Add Bootstrap breadcrumb ↓ -->
         <xsl:if test="$BREADCRUMBS = 'yes'">
           <xsl:apply-templates select="$current-topicref" mode="gen-user-breadcrumb"/>
         </xsl:if>
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-
-
         <xsl:apply-templates/> <!-- this will include all things within topic; therefore, -->
                                <!-- title content will appear here by fall-through -->
                                <!-- followed by prolog (but no fall-through is permitted for it) -->
