@@ -84,6 +84,22 @@
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template name="commonattributes">
     <xsl:param name="default-output-class"/>
+
+    <!-- TODO: Recent DITA-OT versions move this logic to mode="commonattributes".
+               Refactor to use mode here to. -->
+
+    <!-- ↓ DITA-OT mode changes ↓  -->
+    <!--
+    <xsl:apply-templates select="." mode="commonattributes">
+      <xsl:with-param name="default-output-class" select="tokenize(normalize-space($default-output-class), '\s+')"/>
+    </xsl:apply-templates>
+  </xsl:template>
+
+  <xsl:template match="@* | node()" mode="commonattributes">
+    <xsl:param name="default-output-class" as="xs:string*"/>
+    -->
+    <!-- ↑ End DITA-OT mode changes ↑ -->
+
     <!-- ↓ Add Bootstrap class attributes template ↓ -->
     <xsl:variable name="bootstrap-class">
       <xsl:call-template name="bootstrap-class"/>
@@ -108,8 +124,8 @@
     <xsl:apply-templates select="@xml:lang"/>
     <xsl:apply-templates select="@dir"/>
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/@style" mode="add-ditaval-style"/>
+    <!-- ↓ Remove DITA-OT styling from titles since Bootstrap does this ↓ -->
     <xsl:choose>
-      <!-- ↓ Remove DITA-OT styling from titles since Bootstrap does this ↓ -->
       <xsl:when test="starts-with($default-output-class , 'topictitle')">
         <xsl:apply-templates select="." mode="set-output-class">
           <xsl:with-param name="default" select="replace($bootstrap-class, 'topictitle\d+', '')"/>
@@ -138,17 +154,19 @@
             </xsl:analyze-string>
           </xsl:for-each>
         </xsl:variable>
-        <xsl:for-each
-          select="@props |  @audience | @platform | @product | @otherprops | @deliveryTarget |  @*[local-name() = $specializations]"
-        >
+        <xsl:for-each select="@props |
+                              @audience |
+                              @platform |
+                              @product |
+                              @otherprops |
+                              @deliveryTarget |
+                              @*[local-name() = $specializations]">
           <xsl:attribute name="data-{name()}" select="."/>
         </xsl:for-each>
       </xsl:when>
       <xsl:when test="exists($passthrough-attrs)">
         <xsl:for-each select="@*">
-          <xsl:if
-            test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]"
-          >
+          <xsl:if test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]">
             <xsl:attribute name="data-{name()}" select="."/>
           </xsl:if>
         </xsl:for-each>
@@ -192,10 +210,7 @@
         </xsl:call-template>
       </span>
       <xsl:text> </xsl:text>
-      <xsl:apply-templates
-        select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop"
-        mode="ditaval-outputflag"
-      />
+      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop" mode="ditaval-outputflag"/>
       <xsl:apply-templates/>
       <!-- Normal end flags and revision end flags both go out after the content. -->
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
@@ -237,10 +252,7 @@
   <xsl:template name="place-fig-lbl">
     <xsl:param name="stringName"/>
     <!-- Number of fig/title's including this one -->
-    <xsl:variable
-      name="fig-count-actual"
-      select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"
-    />
+    <xsl:variable name="fig-count-actual" select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"/>
     <xsl:variable name="ancestorlang">
       <xsl:call-template name="getLowerCaseLang"/>
     </xsl:variable>
@@ -248,7 +260,7 @@
       <!-- title -or- title & desc -->
       <xsl:when test="*[contains(@class, ' topic/title ')]">
         <figcaption>
-          <!-- ↑ Start customization · Add Bootstrap class ↓ -->
+          <!-- ↓ Add Bootstrap figure caption class ↓ -->
           <xsl:variable name="fig-caption-class">
             <xsl:choose>
               <xsl:when test="*[contains(@class, ' topic/lq ')]">
