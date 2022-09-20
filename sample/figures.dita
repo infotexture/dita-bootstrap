@@ -49,7 +49,7 @@
     <section>
       <title>Aligning text</title>
       <p>The figure’s caption can be aligned using the Bootstrap
-        <xref href="./utilities.dita#colors" format="dita">text utilities</xref>.</p>
+        <xref href="./utilities.dita#utilities/colors" format="dita">text utilities</xref>.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <fig>
@@ -65,7 +65,7 @@
     <section>
       <title>Adding borders</title>
       <p>Use the DITA <xmlatt>frame</xmlatt> attribute to add
-        <xref href="./utilities.dita#borders" format="dita">borders</xref> to a <xmlelement>fig</xmlelement>.</p>
+        <xref href="./utilities.dita#utilities/borders" format="dita">borders</xref> to a <xmlelement>fig</xmlelement>.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <fig frame="all">
