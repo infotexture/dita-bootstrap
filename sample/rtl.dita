@@ -30,7 +30,8 @@
         languages, DITA-OT must load the RTL version of the Bootstrap CSS. This is done automatically if the
           <parmname>--defaultLanguage</parmname> is set to an RTL language. Alternatively, you can manually enable RTL
         support using the <parmname>--bidi.include</parmname> parameter: </p>
-      <codeblock dir="ltr" outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+      <codeblock dir="ltr" outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--bidi.include</parmname>=<option>yes</option></codeblock>
     </section>
