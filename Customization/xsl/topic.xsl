@@ -55,11 +55,8 @@
           <xsl:attribute name="lang" select="dita-ot:get-current-language(.)"/>
         </xsl:if>
         <xsl:attribute name="aria-labelledby">
-          <xsl:apply-templates
-            select="*[contains(@class,' topic/title ')] |
-                                       self::dita/*[1]/*[contains(@class,' topic/title ')]"
-            mode="return-aria-label-id"
-          />
+          <xsl:apply-templates select="*[contains(@class,' topic/title ')] |
+                                       self::dita/*[1]/*[contains(@class,' topic/title ')]" mode="return-aria-label-id"/>
         </xsl:attribute>
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
 
