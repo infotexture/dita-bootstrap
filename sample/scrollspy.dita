@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.1 documentation (found at https://getbootstrap.com/docs/5.1), however DITA
+   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass. -->
 <topic id="scrollspy">
@@ -57,9 +57,9 @@
           <parmname>--nav-toc</parmname>=<option>nav-pill-scrollspy</option> to the <cmdname>dita</cmdname> command.</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
-  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-  <parmname>--nav-toc</parmname>=<option>nav-pill-scrollspy</option>  \
-  <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--nav-toc</parmname>=<option>nav-pill-scrollspy</option> \
+     <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
     </section>
     <section>
       <title>Example with list-group</title>
@@ -89,9 +89,9 @@
         command.</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
-  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-  <parmname>--nav-toc</parmname>=<option>list-group-scrollspy</option>  \
-  <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--nav-toc</parmname>=<option>list-group-scrollspy</option> \
+     <parmname>--menubar-toc.include</parmname>=<option>yes</option></codeblock>
     </section>
   </body>
 </topic>

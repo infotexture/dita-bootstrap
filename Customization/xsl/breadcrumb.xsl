@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs dita-ot ditamsg"
 >
   <!-- Override to add Bootstrap breadcrumb component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/breadcrumb/ -->
+  <!-- https://getbootstrap.com/docs/5.2/components/breadcrumb/ -->
 
   <!-- Whether include a bootstrap breadcrumb component on each page.  values are 'yes' or 'no' -->
   <xsl:param name="BREADCRUMBS" select="'no'"/>
@@ -21,10 +21,9 @@
 
   <!-- Add Bootstrap breadcrumb -->
   <xsl:template match="*" mode="gen-user-breadcrumb">
-
     <nav aria-label="breadcrumb">
       <xsl:if test="not($BREADCRUMB_DIVIDER = '/')">
-         <xsl:attribute name="style">
+        <xsl:attribute name="style">
           <xsl:text>--bs-breadcrumb-divider: '</xsl:text>
           <xsl:value-of select="$BREADCRUMB_DIVIDER"/>
           <xsl:text>';</xsl:text>
@@ -94,6 +93,4 @@
       </ol>
     </nav>
   </xsl:template>
-
-
 </xsl:stylesheet>

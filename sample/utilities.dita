@@ -2,15 +2,15 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.1 documentation (found at https://getbootstrap.com/docs/5.1), however DITA
+   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.1 docs" by Twitter, Inc.
+   This work, is a derivative of "Bootstrap 5.2 docs" by Twitter, Inc.
    and the Bootstrap Authors, and used under CC BY 3.0.
 
     -->
-<topic id="cards">
+<topic id="utilities">
   <title>Borders, Color and Background</title>
   <shortdesc>Use border utilities to quickly style the border and border-radius of an element and convey meaning through
       <codeph>color</codeph> and <codeph>background-color</codeph> with a handful of color utility classes.</shortdesc>
@@ -29,8 +29,8 @@
   </prolog>
   <body outputclass="language-markup">
 
-    <section id="border">
-      <title>Border</title>
+    <section id="borders">
+      <title>Borders</title>
       <p>Use border utilities to add or remove an element’s borders. Choose from all borders or one at a time.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
@@ -74,9 +74,41 @@ Rough winds do shake the darling buds of May,
 and summer's lease hath all too short a date:
 ...</lines>
       <p/>
+      <table frame="all">
+        <tgroup cols="2">
+          <colspec colname="COLSPEC0"/>
+          <colspec colname="COLSPEC1"/>
+          <thead outputclass="table-dark">
+            <row>
+              <entry colname="COLSPEC0" valign="top">Animal</entry>
+              <entry colname="COLSPEC1" valign="top">Gestation</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Elephant (African and Asian)</entry>
+              <entry>19-22 months</entry>
+            </row>
+            <row>
+              <entry>Giraffe</entry>
+              <entry>15 months</entry>
+            </row>
+            <row>
+              <entry>Rhinoceros</entry>
+              <entry>14-16 months</entry>
+            </row>
+            <row>
+              <entry>Hippopotamus</entry>
+              <entry>7 1/2 months</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      <p/>
     </bodydiv>
     <codeblock>&lt;codeblock frame="sides"&gt;...&lt;/codeblock&gt;
-&lt;lines frame="topbot" outputclass="bg-light"&gt;...&lt;/lines&gt;</codeblock>
+&lt;lines frame="topbot" outputclass="bg-light"&gt;...&lt;/lines&gt;
+&lt;table frame="all"&gt;...&lt;/table&gt;</codeblock>
     <section id="colors">
       <title>Colors</title>
       <p>Colorize text with color utilities</p>

@@ -12,12 +12,11 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Scrollspy Component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/scrollspy/ -->
+  <!-- https://getbootstrap.com/docs/5.2/components/scrollspy/ -->
 
   <xsl:template match="*" mode="scrollspy-href">
     <xsl:call-template name="scrollspy-href"/>
   </xsl:template>
-
 
   <xsl:template name="scrollspy-href">
     <xsl:attribute name="href">
@@ -37,7 +36,6 @@
     </xsl:attribute>
   </xsl:template>
 
-
   <xsl:template match="*[contains(@class, ' topic/topic ')]" mode="scrollspy">
     <xsl:choose>
       <xsl:when test="$nav-toc = ('list-group-scrollspy')">
@@ -50,7 +48,6 @@
       </xsl:when>
     </xsl:choose>
   </xsl:template>
-
 
   <xsl:template match="*[contains(@class, ' topic/title ')]" mode="scrollspy">
     <xsl:choose>
@@ -70,5 +67,4 @@
   </xsl:template>
 
   <xsl:template match="*" mode="scrollspy"/>
-
 </xsl:stylesheet>

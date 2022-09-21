@@ -12,7 +12,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
   <!-- Customization to add Bootstrap Pagination Component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/pagination/ -->
+  <!-- https://getbootstrap.com/docs/5.2/components/pagination/ -->
 
   <xsl:template
     match="*[ (contains(@class, ' topic/ol ') or contains(@class, ' topic/ul ')) and contains(@outputclass, 'pagination')]"
@@ -32,5 +32,4 @@
       <xsl:apply-templates select="*[(contains(@class, ' topic/ol ') or contains(@class, ' topic/ul '))]" />
     </nav>
   </xsl:template>
-
 </xsl:stylesheet>

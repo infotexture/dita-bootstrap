@@ -11,11 +11,10 @@
   version="2.0"
   exclude-result-prefixes="xs xhtml dita-ot"
 >
-  <!-- Customization to add Bootstrap Tooltips Component -->
-  <!-- https://getbootstrap.com/docs/5.1/components/tooltips/ -->
+  <!-- Customization to add Bootstrap Tooltips component -->
+  <!-- https://getbootstrap.com/docs/5.2/components/tooltips/ -->
 
-
-   <xsl:template match="*" mode="add-bootstrap-tooltip">
+  <xsl:template match="*" mode="add-bootstrap-tooltip">
     <xsl:attribute name="data-bs-toggle">
       <xsl:text>tooltip</xsl:text>
     </xsl:attribute>
@@ -35,7 +34,11 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:attribute>
-
+    <xsl:if test="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]">
+      <xsl:attribute name="data-bs-custom-class">
+        <xsl:value-of select="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]"/>
+      </xsl:attribute>
+    </xsl:if>
     <xsl:choose>
       <xsl:when test="*[contains(@class, ' topic/desc ')]/*">
         <xsl:attribute name="data-bs-html">
@@ -51,48 +54,46 @@
     </xsl:choose>
   </xsl:template>
 
-
   <xsl:template match="*[contains(@class, ' topic/desc ')]" mode="tooltipdesc">
-     <xsl:variable name="htmlAsString">
-       <xsl:variable name="htmlContent">
+    <xsl:variable name="htmlAsString">
+      <xsl:variable name="htmlContent">
         <xsl:copy>
-           <xsl:apply-templates/>
+          <xsl:apply-templates/>
         </xsl:copy>
-       </xsl:variable>
-       <xsl:apply-templates select="$htmlContent" mode="serialize"/>
-     </xsl:variable>
-     <xsl:value-of select="substring($htmlAsString, 7, string-length($htmlAsString) - 13)"/>
+      </xsl:variable>
+      <xsl:apply-templates select="$htmlContent" mode="serialize"/>
+    </xsl:variable>
+    <xsl:value-of select="substring($htmlAsString, 7, string-length($htmlAsString) - 13)"/>
   </xsl:template>
-
 
   <xsl:template match="*" mode="serialize">
     <xsl:text>&lt;</xsl:text>
     <xsl:value-of select="name()"/>
     <xsl:apply-templates select="@*" mode="serialize"/>
     <xsl:choose>
-        <xsl:when test="node()">
-            <xsl:text>&gt;</xsl:text>
-            <xsl:apply-templates mode="serialize"/>
-            <xsl:text>&lt;/</xsl:text>
-            <xsl:value-of select="name()"/>
-            <xsl:text>&gt;</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:text> /&gt;</xsl:text>
-        </xsl:otherwise>
+      <xsl:when test="node()">
+        <xsl:text>&gt;</xsl:text>
+        <xsl:apply-templates mode="serialize"/>
+        <xsl:text>&lt;/</xsl:text>
+        <xsl:value-of select="name()"/>
+        <xsl:text>&gt;</xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text> /&gt;</xsl:text>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
   <xsl:template match="@*" mode="serialize">
-      <xsl:text> </xsl:text>
-      <xsl:value-of select="name()"/>
-      <xsl:text>="</xsl:text>
-      <xsl:value-of select="."/>
-      <xsl:text>"</xsl:text>
+    <xsl:text> </xsl:text>
+    <xsl:value-of select="name()"/>
+    <xsl:text>="</xsl:text>
+    <xsl:value-of select="."/>
+    <xsl:text>"</xsl:text>
   </xsl:template>
 
   <xsl:template match="text()" mode="serialize">
-      <xsl:value-of select="."/>
+    <xsl:value-of select="."/>
   </xsl:template>
 
   <!--template for xref-->
@@ -100,7 +101,7 @@
     <xsl:choose>
       <xsl:when test="@href and normalize-space(@href)">
         <a>
-          <!-- ↓ Add Bootstrap class attributes template ↑ -->
+          <!-- ↓ Add Bootstrap class attributes template ↓ -->
           <xsl:apply-templates select="." mode="add-bootstrap-tooltip"/>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <xsl:call-template name="commonattributes"/>
@@ -139,7 +140,7 @@
       <xsl:otherwise>
         <span>
           <xsl:call-template name="commonattributes"/>
-          <!-- ↓ Add Bootstrap class attributes template ↑ -->
+          <!-- ↓ Add Bootstrap class attributes template ↓ -->
           <xsl:apply-templates select="." mode="add-bootstrap-tooltip"/>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
           <xsl:apply-templates

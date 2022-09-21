@@ -3,7 +3,7 @@
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
 <plugin id="net.infotexture.dita-bootstrap">
-  <feature extension="package.version" value="5.3.1"/>
+  <feature extension="package.version" value="5.3.2"/>
   <require plugin="org.dita.html5"/>
   <require plugin="fox.jason.extend.css"/>
   <transtype
@@ -55,8 +55,16 @@
       desc="Specifies the URL for a icon fonts stylesheet CDN"
     />
     <param
+      name="bidi.include"
+      desc="Specifies whether to include bidirectional CSS"
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
       name="icons.include"
-      desc="Specifies whether include an icon fonts stylesheet in the header"
+      desc="Specifies whether to include an icon fonts stylesheet in the header"
       type="enum"
     >
       <val>yes</val>

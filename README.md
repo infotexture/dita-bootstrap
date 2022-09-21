@@ -94,8 +94,7 @@ The plug-in extends the standard HTML5 table of contents (ToC) [navigation param
 
 By default, the plug-in uses the `partial` option to include the current topic in the ToC along with its parents, siblings and children. As with the default HTML5 plug-in, the `full` option can also be used to generate a complete ToC for the entire map, or `none` to disable the table of contents entirely.
 
-As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with the Bootstrap [list group][7] component , [nav][16] component
-and [collapsible][17] menus
+As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with the Bootstrap [list group][7] component , [nav][16] component and [collapsible][17] menus:
 
 - `list-group-full` – Styled full ToC within a Bootstrap list group
 - `list-group-partial` – Partial ToC with the current topic, parents, siblings, and children in a list group
@@ -178,6 +177,7 @@ For performance reasons, Bootstrap icons, popovers and tooltips are disabled by 
 
 - `icons.include` – enable Bootstrap icons
 - `popovers.include` – enable Bootstrap popover components and tooltip components
+- `bidi.include` - whether to include support for RTL languages
 
 Breadcrumbs and menu bars can be added using the following parameters
 
@@ -197,15 +197,15 @@ Breadcrumbs and menu bars can be added using the following parameters
 
 [Apache 2.0](LICENSE) © 2017–2022 Roger W. Fienhold Sheen
 
-Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.1 documentation][2], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`. The text is therefore a derivative of "Bootstrap 5.1 docs" by Twitter, Inc. and the Bootstrap Authors, and used under CC BY 3.0.
+Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.2 documentation][2], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`. The text is therefore a derivative of "Bootstrap 5.2 docs" by Twitter, Inc. and the Bootstrap Authors, and used under CC BY 3.0.
 
 [1]: http://www.dita-ot.org
-[2]: https://getbootstrap.com/docs/5.1
-[3]: https://getbootstrap.com/docs/5.1/examples/navbars/
+[2]: https://getbootstrap.com/docs/5.2
+[3]: https://getbootstrap.com/docs/5.2/examples/navbars/
 [4]: ./includes/bs-navbar-light.hdr.xml
 [5]: ./includes/bs-footer-example.xml
 [6]: https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc
-[7]: https://getbootstrap.com/docs/5.1/components/list-group/
+[7]: https://getbootstrap.com/docs/5.2/components/list-group/
 [8]: https://infotexture.github.io/dita-bootstrap
 [9]: https://themestr.app/theme
 [10]: ./css/custom.css
@@ -214,5 +214,5 @@ Within the sample documentation, where necessary, the texts describing the usage
 [13]: https://twitter.com/infotexture
 [14]: https://github.com/infotexture/dita-bootstrap/issues/new
 [15]: https://help.github.com/articles/using-pull-requests/
-[16]: https://getbootstrap.com/docs/5.1/components/navs-tabs/#pills
-[17]: https://getbootstrap.com/docs/5.1/components/collapse/
+[16]: https://getbootstrap.com/docs/5.2/components/navs-tabs/#pills
+[17]: https://getbootstrap.com/docs/5.2/components/collapse/
