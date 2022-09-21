@@ -10,7 +10,7 @@
    and the Bootstrap Authors, and used under CC BY 3.0.
 
     -->
-<topic id="cards">
+<topic id="utilities">
   <title>Borders, Color and Background</title>
   <shortdesc>Use border utilities to quickly style the border and border-radius of an element and convey meaning through
       <codeph>color</codeph> and <codeph>background-color</codeph> with a handful of color utility classes.</shortdesc>
@@ -29,8 +29,8 @@
   </prolog>
   <body outputclass="language-markup">
 
-    <section id="border">
-      <title>Border</title>
+    <section id="borders">
+      <title>Borders</title>
       <p>Use border utilities to add or remove an element’s borders. Choose from all borders or one at a time.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">

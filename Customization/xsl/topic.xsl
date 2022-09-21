@@ -21,15 +21,34 @@
     </xsl:apply-templates>
   </xsl:variable>
 
-
   <!-- Define a newline character -->
   <xsl:variable name="newline">
 <xsl:text>
 </xsl:text>
   </xsl:variable>
 
+  <xsl:template name="bidi-auto-code">
+    <!-- ↓ Ensure code is rendered LTR in RTL documents ↓ -->
+    <xsl:if test="$BIDIRECTIONAL_DOCUMENT='yes' and not(@dir)">
+      <xsl:choose>
+        <xsl:when test="contains(@class,' pr-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="contains(@class,' sw-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="contains(@class,' xml-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
+
+  <!-- Customized templates from `org.dita.html5/xsl/topic.xsl` -->
+
   <xsl:template name="chapter-setup">
   <html>
+    <!-- ↓ Add check for bi-directional content ↓ -->
     <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'no'">
       <xsl:call-template name="setTopicLanguage"/>
     </xsl:if>
@@ -37,6 +56,7 @@
       <xsl:attribute name="dir" select="$defaultDirection"/>
       <xsl:attribute name="lang" select="$defaultLanguage"/>
     </xsl:if>
+    <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
     <xsl:call-template name="chapterHead"/>
     <xsl:call-template name="chapterBody"/>
   </html>
@@ -45,7 +65,8 @@
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
       <article xsl:use-attribute-sets="article">
-         <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+        <!-- ↓ Add check for bi-directional content ↓ -->
+        <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
           <xsl:variable name="direction">
             <xsl:apply-templates select="." mode="get-render-direction">
               <xsl:with-param name="lang" select="dita-ot:get-current-language(.)"/>
@@ -54,22 +75,17 @@
           <xsl:attribute name="dir" select="$direction"/>
           <xsl:attribute name="lang" select="dita-ot:get-current-language(.)"/>
         </xsl:if>
+        <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:attribute name="aria-labelledby">
-          <xsl:apply-templates
-            select="*[contains(@class,' topic/title ')] |
-                                       self::dita/*[1]/*[contains(@class,' topic/title ')]"
-            mode="return-aria-label-id"
-          />
+          <xsl:apply-templates select="*[contains(@class,' topic/title ')] |
+                                       self::dita/*[1]/*[contains(@class,' topic/title ')]" mode="return-aria-label-id"/>
         </xsl:attribute>
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
-
-        <!-- ↓ Add Bootstrap breadcrumb ↑ -->
+        <!-- ↓ Add Bootstrap breadcrumb ↓ -->
         <xsl:if test="$BREADCRUMBS = 'yes'">
           <xsl:apply-templates select="$current-topicref" mode="gen-user-breadcrumb"/>
         </xsl:if>
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-
-
         <xsl:apply-templates/> <!-- this will include all things within topic; therefore, -->
                                <!-- title content will appear here by fall-through -->
                                <!-- followed by prolog (but no fall-through is permitted for it) -->
@@ -83,40 +99,28 @@
   </xsl:template>
 
   <!-- Override to add Bootstrap classes and roles -->
-  <xsl:template name="commonattributes">
-    <xsl:param name="default-output-class"/>
-    <!-- ↓ Add Bootstrap class attributes template ↑ -->
+  <xsl:template match="@* | node()" mode="commonattributes">
+    <xsl:param name="default-output-class" as="xs:string*"/>
+    <xsl:apply-templates select="@xml:lang"/>
+    <xsl:apply-templates select="@dir"/>
+    <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/@style" mode="add-ditaval-style"/>
+     <!-- ↓ Add Bootstrap role template ↓ -->
+    <xsl:call-template name="bootstrap-role"/>
+     <!-- ↓ Set Bidi to auto for code ↓ -->
+    <xsl:call-template name="bidi-auto-code"/>
+    <!-- ↓ Add Bootstrap class attributes template ↓ -->
     <xsl:variable name="bootstrap-class">
       <xsl:call-template name="bootstrap-class"/>
       <xsl:value-of select="$default-output-class"/>
     </xsl:variable>
-    <xsl:call-template name="bootstrap-role"/>
-    <!-- ↓ Ensure code is rendered LTR in RTL documents ↓ -->
-    <xsl:if test="$BIDIRECTIONAL_DOCUMENT='true' and not(@dir)">
-      <xsl:choose>
-        <xsl:when test="contains(@class,' pr-d/')">
-          <xsl:attribute name="dir">auto</xsl:attribute>
-        </xsl:when>
-        <xsl:when test="contains(@class,' sw-d/')">
-          <xsl:attribute name="dir">auto</xsl:attribute>
-        </xsl:when>
-        <xsl:when test="contains(@class,' xml-d/')">
-          <xsl:attribute name="dir">auto</xsl:attribute>
-        </xsl:when>
-      </xsl:choose>
-    </xsl:if>
-    <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-    <xsl:apply-templates select="@xml:lang"/>
-    <xsl:apply-templates select="@dir"/>
-    <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/@style" mode="add-ditaval-style"/>
+    <!-- ↓ Remove DITA-OT styling from titles since Bootstrap does this ↓ -->
     <xsl:choose>
-      <!-- ↓ Remove DITA-OT styling from titles since Bootstrap does this ↑ -->
-      <xsl:when test="starts-with($default-output-class , 'topictitle')">
+      <xsl:when test="starts-with($default-output-class[1] , 'topictitle')">
         <xsl:apply-templates select="." mode="set-output-class">
           <xsl:with-param name="default" select="replace($bootstrap-class, 'topictitle\d+', '')"/>
         </xsl:apply-templates>
       </xsl:when>
-      <xsl:when test="starts-with($default-output-class , 'sectiontitle')">
+      <xsl:when test="starts-with($default-output-class[1] , 'sectiontitle')">
         <xsl:apply-templates select="." mode="set-output-class">
           <xsl:with-param name="default" select="replace($bootstrap-class, 'sectiontitle', '')"/>
         </xsl:apply-templates>
@@ -139,17 +143,19 @@
             </xsl:analyze-string>
           </xsl:for-each>
         </xsl:variable>
-        <xsl:for-each
-          select="@props |  @audience | @platform | @product | @otherprops | @deliveryTarget |  @*[local-name() = $specializations]"
-        >
+        <xsl:for-each select="@props |
+                              @audience |
+                              @platform |
+                              @product |
+                              @otherprops |
+                              @deliveryTarget |
+                              @*[local-name() = $specializations]">
           <xsl:attribute name="data-{name()}" select="."/>
         </xsl:for-each>
       </xsl:when>
       <xsl:when test="exists($passthrough-attrs)">
         <xsl:for-each select="@*">
-          <xsl:if
-            test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]"
-          >
+          <xsl:if test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]">
             <xsl:attribute name="data-{name()}" select="."/>
           </xsl:if>
         </xsl:for-each>
@@ -166,7 +172,7 @@
         <xsl:with-param name="id" select="concat(upper-case(substring($type, 1, 1)), substring($type, 2))"/>
       </xsl:call-template>
     </xsl:param>
-    <!-- ↓ Add Bootstrap class attributes template ↑ -->
+    <!-- ↓ Add Bootstrap class attributes template ↓ -->
     <xsl:variable name="bootstrap-class">
       <xsl:if test="not(contains(@outputclass, 'alert-'))">
         <xsl:call-template name="bootstrap-note"/>
@@ -182,7 +188,7 @@
       <!-- Normal flags go before the generated title; revision flags only go on the content. -->
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/prop" mode="ditaval-outputflag"/>
       <span class="note__title">
-        <!-- ↓ Add Bootstrap icon ↑ -->
+        <!-- ↓ Add Bootstrap icon ↓ -->
         <xsl:if test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">
           <xsl:call-template name="bootstrap-icon"/>
         </xsl:if>
@@ -193,10 +199,7 @@
         </xsl:call-template>
       </span>
       <xsl:text> </xsl:text>
-      <xsl:apply-templates
-        select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop"
-        mode="ditaval-outputflag"
-      />
+      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop" mode="ditaval-outputflag"/>
       <xsl:apply-templates/>
       <!-- Normal end flags and revision end flags both go out after the content. -->
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
@@ -226,7 +229,7 @@
       <xsl:apply-templates
         select="node() except *[contains(@class, ' topic/title ') or contains(@class, ' topic/desc ')]"
       />
-      <!-- ↓ Move Figure title below image ↑ -->
+      <!-- ↓ Move Figure title below image ↓ -->
       <xsl:call-template name="place-fig-lbl"/>
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
     </figure>
@@ -238,10 +241,7 @@
   <xsl:template name="place-fig-lbl">
     <xsl:param name="stringName"/>
     <!-- Number of fig/title's including this one -->
-    <xsl:variable
-      name="fig-count-actual"
-      select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"
-    />
+    <xsl:variable name="fig-count-actual" select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"/>
     <xsl:variable name="ancestorlang">
       <xsl:call-template name="getLowerCaseLang"/>
     </xsl:variable>
@@ -249,7 +249,7 @@
       <!-- title -or- title & desc -->
       <xsl:when test="*[contains(@class, ' topic/title ')]">
         <figcaption>
-          <!-- ↑ Start customization · Add Bootstrap class ↓ -->
+          <!-- ↓ Add Bootstrap figure caption class ↓ -->
           <xsl:variable name="fig-caption-class">
             <xsl:choose>
               <xsl:when test="*[contains(@class, ' topic/lq ')]">
@@ -402,5 +402,4 @@
       <xsl:apply-templates/>
     </abbr>
   </xsl:template>
-
 </xsl:stylesheet>

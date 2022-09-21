@@ -137,62 +137,76 @@
 
   <!-- Hidden accessibility buttons for screen readers and keyboard navigation-->
   <xsl:template name="gen-skip-to-main">
-     <div>
-        <xsl:attribute name="class" select="concat('visually-hidden-focusable overflow-hidden p-2 ', $BOOTSTRAP_CSS_ACCESSIBILITY_NAV)"/>
+    <div>
+      <xsl:attribute
+        name="class"
+        select="concat('visually-hidden-focusable overflow-hidden p-2 ', $BOOTSTRAP_CSS_ACCESSIBILITY_NAV)"
+      />
 
-        <div class="container-xl">
-          <a>
-            <xsl:attribute name="class" select="concat('d-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
-            <xsl:apply-templates mode="scrollspy-href" select="*[contains(@class, ' topic/title ')][1]"/>
-            <xsl:call-template name="getVariable">
-              <xsl:with-param name="id" select="'Skip to main content'"/>
-            </xsl:call-template>
-          </a>
-          <xsl:choose>
-            <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
-              <!-- "skip to docs" link refers to the menubar -->
-              <a href="#bs-menubar-nav">
-                <xsl:attribute name="class" select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
-                <xsl:call-template name="getVariable">
-                  <xsl:with-param name="id" select="'Skip to docs navigation'"/>
-                </xsl:call-template>
-              </a>
-              <!-- sidebar holds a topic nav, not a document nav -->
-              <xsl:if test="$nav-toc = ('nav-pill-scrollspy', 'list-group-scrollspy')">
-                <a href="#bs-sidebar-nav">
-                  <xsl:attribute name="class" select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
-                  <xsl:call-template name="getVariable">
-                    <xsl:with-param name="id" select="'Skip to topic navigation'"/>
-                  </xsl:call-template>
-                </a>
-              </xsl:if>
-            </xsl:when>
-            <xsl:when test="$nav-toc = 'none'">
-              <!-- do not add a "skip to docs" link -->
-            </xsl:when>
-            <xsl:when test="$nav-toc = ('nav-pill-scrollspy', 'list-group-scrollspy')">
-              <!-- sidebar holds a topic nav, not a document nav -->
+      <div class="container-xl">
+        <a>
+          <xsl:attribute name="class" select="concat('d-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
+          <xsl:apply-templates mode="scrollspy-href" select="*[contains(@class, ' topic/title ')][1]"/>
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Skip to main content'"/>
+          </xsl:call-template>
+        </a>
+        <xsl:choose>
+          <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
+            <!-- "skip to docs" link refers to the menubar -->
+            <a href="#bs-menubar-nav">
+              <xsl:attribute
+                name="class"
+                select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
+              />
+              <xsl:call-template name="getVariable">
+                <xsl:with-param name="id" select="'Skip to docs navigation'"/>
+              </xsl:call-template>
+            </a>
+            <!-- sidebar holds a topic nav, not a document nav -->
+            <xsl:if test="$nav-toc = ('nav-pill-scrollspy', 'list-group-scrollspy')">
               <a href="#bs-sidebar-nav">
-                <xsl:attribute name="class" select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
+                <xsl:attribute
+                  name="class"
+                  select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
+                />
                 <xsl:call-template name="getVariable">
                   <xsl:with-param name="id" select="'Skip to topic navigation'"/>
                 </xsl:call-template>
               </a>
-            </xsl:when>
-            <xsl:otherwise>
-              <!-- Add a "skip to docs" link to the sidebar -->
-              <a href="#bs-sidebar-nav">
-                <xsl:attribute name="class" select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
-                <xsl:call-template name="getVariable">
-                  <xsl:with-param name="id" select="'Skip to docs navigation'"/>
-                </xsl:call-template>
-              </a>
-            </xsl:otherwise>
-          </xsl:choose>
-        </div>
+            </xsl:if>
+          </xsl:when>
+          <xsl:when test="$nav-toc = 'none'">
+            <!-- do not add a "skip to docs" link -->
+          </xsl:when>
+          <xsl:when test="$nav-toc = ('nav-pill-scrollspy', 'list-group-scrollspy')">
+            <!-- sidebar holds a topic nav, not a document nav -->
+            <a href="#bs-sidebar-nav">
+              <xsl:attribute
+                name="class"
+                select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
+              />
+              <xsl:call-template name="getVariable">
+                <xsl:with-param name="id" select="'Skip to topic navigation'"/>
+              </xsl:call-template>
+            </a>
+          </xsl:when>
+          <xsl:otherwise>
+            <!-- Add a "skip to docs" link to the sidebar -->
+            <a href="#bs-sidebar-nav">
+              <xsl:attribute
+                name="class"
+                select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
+              />
+              <xsl:call-template name="getVariable">
+                <xsl:with-param name="id" select="'Skip to docs navigation'"/>
+              </xsl:call-template>
+            </a>
+          </xsl:otherwise>
+        </xsl:choose>
       </div>
+    </div>
   </xsl:template>
-
 
   <!-- Override to add scrollspy -->
   <xsl:template match="*" mode="addAttributesToBody">
@@ -222,5 +236,4 @@
     <xsl:attribute name="role">navigation</xsl:attribute>
     <xsl:attribute name="id">bs-menubar-nav</xsl:attribute>
   </xsl:attribute-set>
-
 </xsl:stylesheet>
