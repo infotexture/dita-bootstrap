@@ -8,7 +8,7 @@
   --dita-maroon: #800000;
 }
 
-[data-theme='dark'] {
+[data-bs-theme='dark'] {
   --dita-prussian-blue: #6a91cf;
   --dita-violet: #9774cc;
   --dita-maroon: #ff7676;
@@ -20,7 +20,7 @@
     --dita-maroon: #ff7676;
   }
 
-  [data-theme='light'] {
+  [data-bs-theme='light'] {
     --dita-prussian-blue: #1d365d;
     --dita-maroon: #800000;
   }

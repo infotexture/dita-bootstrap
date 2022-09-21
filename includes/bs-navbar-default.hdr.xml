@@ -87,7 +87,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-theme-value="light"
+                data-bs-theme-value="light"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +108,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-theme-value="dark"
+                data-bs-theme-value="dark"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +132,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-theme-value="auto"
+                data-bs-theme-value="auto"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
