@@ -33,7 +33,7 @@
       </keywords>
     </metadata>
   </prolog>
-  <body outputclass="language-bash">
+  <body>
     <section>
       <title>Installing</title>
       <p>Use the <cmdname>dita</cmdname> command to add this plug-in to your DITA Open Toolkit installation:</p>
@@ -104,9 +104,9 @@
         >navigation parameter</xref>
         <parmname>--nav-toc</parmname> to add styled list groups to the navigation menu. (The navigation is rendered as
         a sidebar in desktop browsers and above the content on smaller devices.)</p>
-      <p>By default, the plug-in uses the <codeph>partial</codeph> option to include the current topic in the ToC along
-        with its parents, siblings and children. As with the default HTML5 plug-in, the <codeph>full</codeph> option can
-        also be used to generate a complete ToC for the entire map, or <codeph>none</codeph> to disable the table of
+      <p>By default, the plug-in uses the <option>partial</option> option to include the current topic in the ToC along
+        with its parents, siblings and children. As with the default HTML5 plug-in, the <option>full</option> option can
+        also be used to generate a complete ToC for the entire map, or <option>none</option> to disable the table of
         contents entirely.</p>
       <p>As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with the
         Bootstrap
@@ -125,17 +125,17 @@
       </p>
       <ul>
         <li>
-          <codeph>list-group-full</codeph> – Styled full ToC within a Bootstrap list group </li>
+          <option>list-group-full</option> – Styled full ToC within a Bootstrap list group </li>
         <li>
-          <codeph>list-group-partial</codeph> – Partial ToC with the current topic, parents, siblings, and children in a
+          <option>list-group-partial</option> – Partial ToC with the current topic, parents, siblings, and children in a
           list group </li>
         <li>
-          <codeph>nav-pill-full</codeph> – Styled full ToC using Bootstrap nav-pills </li>
+          <option>nav-pill-full</option> – Styled full ToC using Bootstrap nav-pills </li>
         <li>
-          <codeph>nav-pill-partial</codeph> – Partial ToC with the current topic, parents, siblings, and children using
+          <option>nav-pill-partial</option> – Partial ToC with the current topic, parents, siblings, and children using
           Bootstrap nav-pills </li>
         <li>
-          <codeph>collapsible</codeph> – Styled full ToC using collapsible list elements </li>
+          <option>collapsible</option> – Styled full ToC using collapsible list elements </li>
       </ul>
       <p>To use these options, pass the desired value to the <cmdname>dita</cmdname> command via the
           <parmname>--nav-toc</parmname> parameter:</p>
@@ -146,48 +146,48 @@
       <ol outputclass="carousel carousel-dark border">
         <li>
           <fig>
-            <title><codeph>full</codeph> – Unstyled full TOC</title>
+            <title><option>full</option> – Unstyled full TOC</title>
             <image href="./src/full.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><codeph>partial</codeph> – Unstyled partial TOC</title>
+            <title><option>partial</option> – Unstyled partial TOC</title>
             <image href="./src/partial.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><codeph>nav-pill-full</codeph> – Styled full ToC using nav-pills</title>
+            <title><option>nav-pill-full</option> – Styled full ToC using nav-pills</title>
             <image href="./src/nav-pill-full.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><codeph>nav-pill-partial</codeph> – Styled partial ToC using nav-pills</title>
+            <title><option>nav-pill-partial</option> – Styled partial ToC using nav-pills</title>
             <image href="./src/nav-pill-partial.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><codeph>list-group-full</codeph> – Styled full ToC within a list group</title>
+            <title><option>list-group-full</option> – Styled full ToC within a list group</title>
             <image href="./src/list-group-full.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><codeph>list-group-partial</codeph> – Styled partial ToC within a list group</title>
+            <title><option>list-group-partial</option> – Styled partial ToC within a list group</title>
             <image href="./src/list-group-partial.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><codeph>collapsible</codeph> – Styled full ToC with collapsible elements</title>
+            <title><option>collapsible</option> – Styled full ToC with collapsible elements</title>
             <image href="./src/collapsible.png"/>
           </fig>
         </li>
       </ol>
-      <note outputclass="alert-primary">For an example of <codeph>collapsible</codeph> styling, see the output at
+      <note outputclass="alert-primary">For an example of <option>collapsible</option> styling, see the output at
         <xref
           href="https://infotexture.github.io/dita-bootstrap/"
           format="html"
@@ -376,6 +376,9 @@
           <parmname>--popovers.include</parmname> – enable Bootstrap
           <xref href="./popovers.dita" format="dita">popover components</xref> and
           <xref href="./tooltips.dita" format="dita">tooltip components</xref></li>
+        <li>
+          <parmname>--bidi.include</parmname> – whether to include support for
+          <xref href="./rtl.dita" format="dita">RTL languages</xref></li>
       </ul>
       <p>Breadcrumbs and menu bars can be added using the following parameters:</p>
       <ul>

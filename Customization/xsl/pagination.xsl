@@ -32,5 +32,4 @@
       <xsl:apply-templates select="*[(contains(@class, ' topic/ol ') or contains(@class, ' topic/ul '))]" />
     </nav>
   </xsl:template>
-
 </xsl:stylesheet>

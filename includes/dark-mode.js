@@ -1,51 +1,68 @@
 (() => {
-  'use strict';
+  'use strict'
 
-  const root = document.documentElement;
-  const activeTheme = localStorage.getItem('theme');
+  const storedTheme = localStorage.getItem('theme')
 
-  const checkSystemTheme = function () {
-    // if OS dark mode is set, and there's no stored theme, set the theme to dark (but don't store it)
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches && !activeTheme) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    } else {
-      // otherwise, set the theme to the default (light)
-      document.documentElement.removeAttribute('data-theme');
+  const getPreferredTheme = () => {
+    if (storedTheme) {
+      return storedTheme
     }
-  };
+
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  }
 
   const setTheme = function (theme) {
-    document.querySelectorAll('[data-theme-value]').forEach(element => {
-      element.classList.remove('active');
-    });
-
-    const btnToActive = document.querySelector(`[data-theme-value="${theme}"]`);
-    btnToActive.classList.add('active');
-  };
-
-  document.querySelectorAll('[data-theme-value]').forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const theme = toggle.getAttribute('data-theme-value');
-      setTheme(theme);
-
-      if (theme === 'auto') {
-        root.removeAttribute('data-theme');
-        localStorage.removeItem('theme');
-        checkSystemTheme();
-      } else {
-        root.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-      }
-    });
-  });
-
-  if (activeTheme) {
-    root.setAttribute('data-theme', activeTheme);
-    setTheme(activeTheme);
-  } else {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-      checkSystemTheme();
-    });
-    checkSystemTheme();
+    if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-bs-theme', 'dark')
+    } else {
+      document.documentElement.setAttribute('data-bs-theme', theme)
+    }
   }
-})();
+
+  setTheme(getPreferredTheme())
+
+  const showActiveTheme = theme => {
+    const activeThemeIcon = document.querySelector('.theme-icon-active use')
+    const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+    try {
+      const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
+
+      document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+        element.classList.remove('active')
+      })
+
+      btnToActive.classList.add('active')
+      if (activeThemeIcon !== null) {
+        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+      }
+    } catch {
+      // Using different theme names. Not just dark and light.
+    }
+  }
+
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (storedTheme !== 'light' || storedTheme !== 'dark') {
+      setTheme(getPreferredTheme())
+    }
+  })
+
+  window.addEventListener('load', () => {
+    showActiveTheme(getPreferredTheme())
+
+    document.querySelectorAll('[data-bs-theme-value]')
+      .forEach(toggle => {
+        toggle.addEventListener('click', () => {
+          const theme = toggle.getAttribute('data-bs-theme-value')
+          localStorage.setItem('theme', theme)
+          setTheme(theme)
+          showActiveTheme(theme)
+
+          // After changing the theme, hide offcanvas
+          const oc = document.querySelector('[aria-modal][class*=show][class*=offcanvas-]')
+          if (oc !== null) {
+            bootstrap.Offcanvas.getInstance(oc).hide()
+          }
+        })
+      })
+  })
+})()

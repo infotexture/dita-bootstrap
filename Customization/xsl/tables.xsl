@@ -45,7 +45,7 @@
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
 
     <div>
-      <!-- ↓ Add Bootstrap CSS frame processing ↑ -->
+      <!-- ↓ Add Bootstrap CSS frame processing ↓ -->
       <xsl:choose>
         <xsl:when test="@frame = 'sides'">
           <xsl:attribute name="class" select="'border-start border-end pt-3 ps-3 pe-3'"/>
@@ -69,7 +69,7 @@
 
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <table>
-        <!-- ↓ Add Bootstrap CSS class processing ↑ -->
+        <!-- ↓ Add Bootstrap CSS class processing ↓ -->
         <xsl:call-template name="commonattributes"/>
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:call-template name="setid"/>
@@ -99,18 +99,17 @@
   </xsl:template>
 
   <xsl:template match="@colsep" mode="css-class">
-      <xsl:if test=".='0' and not(../@rowsep='0')">
-        <xsl:value-of select="'border-start-0 border-end-0'"/>
-      </xsl:if>
-      <xsl:if test=".='1' and not(../@rowsep='1')">
-        <xsl:value-of select="'border-start border-end'"/>
-      </xsl:if>
+    <xsl:if test=".='0' and not(../@rowsep='0')">
+      <xsl:value-of select="'border-start-0 border-end-0'"/>
+    </xsl:if>
+    <xsl:if test=".='1' and not(../@rowsep='1')">
+      <xsl:value-of select="'border-start border-end'"/>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template match="@rowsep" mode="css-class">
-      <xsl:if test=".='0' and not(../@colsep='0')">
-        <xsl:value-of select="'border-top-0 border-bottom-0'"/>
-      </xsl:if>
+    <xsl:if test=".='0' and not(../@colsep='0')">
+      <xsl:value-of select="'border-top-0 border-bottom-0'"/>
+    </xsl:if>
   </xsl:template>
-
 </xsl:stylesheet>

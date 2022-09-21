@@ -57,10 +57,6 @@
   font-size: 0.875em;
 }
 
-.bd-links ul {
-  margin-left: 1.25rem;
-}
-
 .bd-links .btn {
   padding-top: 0.25rem;
   font-weight: 600;
@@ -72,6 +68,10 @@
 
 .bd-links svg:hover {
   color: var(--bs-link-hover-color);
+}
+
+[dir='rtl'] .bd-links svg {
+  transform: rotate(180deg);
 }
 
 .bd-links .btn[aria-expanded='true'] svg {

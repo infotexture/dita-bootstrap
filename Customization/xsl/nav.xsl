@@ -11,7 +11,6 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot ditamsg"
 >
-
   <xsl:param name="nav-toc" as="xs:string?"/>
   <xsl:param name="FILEDIR" as="xs:string?"/>
   <xsl:param name="FILENAME" as="xs:string?"/>
@@ -69,29 +68,29 @@
         <xsl:value-of select="$pathFromMaplist"/>
       </xsl:if>
       <xsl:choose>
-          <xsl:when
+        <xsl:when
           test="@copy-to and not(contains(@chunk, 'to-content')) and
                             (not(@format) or @format = 'dita' or @format = 'ditamap') "
         >
-            <xsl:call-template name="replace-extension">
-              <xsl:with-param name="filename" select="@copy-to"/>
-              <xsl:with-param name="extension" select="$OUTEXT"/>
-            </xsl:call-template>
-            <xsl:if test="not(contains(@copy-to, '#')) and contains(@href, '#')">
-              <xsl:value-of select="concat('#', substring-after(@href, '#'))"/>
-            </xsl:if>
-          </xsl:when>
-          <xsl:when test="not(@scope = 'external') and (not(@format) or @format = 'dita' or @format = 'ditamap')">
-            <xsl:call-template name="replace-extension">
-              <xsl:with-param name="filename" select="@href"/>
-              <xsl:with-param name="extension" select="$OUTEXT"/>
-            </xsl:call-template>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:value-of select="@href"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:attribute>
+          <xsl:call-template name="replace-extension">
+            <xsl:with-param name="filename" select="@copy-to"/>
+            <xsl:with-param name="extension" select="$OUTEXT"/>
+          </xsl:call-template>
+          <xsl:if test="not(contains(@copy-to, '#')) and contains(@href, '#')">
+            <xsl:value-of select="concat('#', substring-after(@href, '#'))"/>
+          </xsl:if>
+        </xsl:when>
+        <xsl:when test="not(@scope = 'external') and (not(@format) or @format = 'dita' or @format = 'ditamap')">
+          <xsl:call-template name="replace-extension">
+            <xsl:with-param name="filename" select="@href"/>
+            <xsl:with-param name="extension" select="$OUTEXT"/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="@href"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:attribute>
   </xsl:template>
 
   <!-- Generate a menubar-toc - a menubar as part of the static header -->
@@ -112,7 +111,7 @@
     <xsl:choose>
       <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
         <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↑ -->
+          <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↓ -->
           <div class="list-group me-3">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
             <xsl:choose>
@@ -120,7 +119,7 @@
                 <xsl:apply-templates select="$current-topicref" mode="list-group-toc-pull">
                   <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
                   <xsl:with-param name="children" as="element()*">
-                      <xsl:apply-templates
+                    <xsl:apply-templates
                       select="$current-topicref/*[contains(@class, ' map/topicref ')]"
                       mode="list-group-toc"
                     >
@@ -150,7 +149,7 @@
 
       <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
         <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↑ -->
+          <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
           <nav class="nav nav-pills flex-column navbar-light bg-light">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
             <xsl:choose>
@@ -158,7 +157,7 @@
                 <xsl:apply-templates select="$current-topicref" mode="nav-pill-toc-pull">
                   <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
                   <xsl:with-param name="children" as="element()*">
-                      <xsl:apply-templates
+                    <xsl:apply-templates
                       select="$current-topicref/*[contains(@class, ' map/topicref ')]"
                       mode="nav-pill-toc"
                     >
@@ -173,21 +172,29 @@
                 </xsl:apply-templates>
               </xsl:when>
             </xsl:choose>
-          <!-- ↓ Close <div> element from Bootstrap list-group ↑ -->
+          <!-- ↓ Close Bootstrap <nav> element -->
           </nav>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         </nav>
       </xsl:when>
       <xsl:when test="$nav-toc = ('nav-pill-scrollspy')">
         <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↑ -->
+          <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
           <nav class="nav nav-pills flex-column navbar-light bg-light" id="bs-scrollspy">
             <xsl:apply-templates mode="scrollspy"/>
           </nav>
         </nav>
       </xsl:when>
       <xsl:when test="$nav-toc = ('collapsible')">
+        <!--xsl:variable name="direction">
+          <xsl:apply-templates select="." mode="get-render-direction">
+            <xsl:with-param name="lang" select="$defaultLanguage"/>
+          </xsl:apply-templates>
+        </xsl:variable-->
         <nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links">
+          <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+            <xsl:attribute name="direction" select="$defaultDirection"/>
+          </xsl:if>
           <ul class="list-unstyled mb-0 py-3 pt-md-1">
             <xsl:apply-templates select="$input.map" mode="collapsible-toc">
               <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
@@ -403,9 +410,7 @@
         </xsl:if>
       </xsl:when>
     </xsl:choose>
-
   </xsl:template>
-
 
   <!-- nav-pill-toc-pull mode to add Bootstrap nav-link classes to a sidebar -->
   <xsl:template
@@ -442,7 +447,7 @@
                     <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                     <xsl:with-param name="class">
                       <xsl:text>my-1 nav-link</xsl:text>
-                       <xsl:value-of select="$active-class"/>
+                      <xsl:value-of select="$active-class"/>
                     </xsl:with-param>
                   </xsl:call-template>
                   <xsl:value-of select="$title"/>
@@ -492,7 +497,6 @@
     <xsl:variable name="active-class">
       <xsl:call-template name="get-active-class"/>
     </xsl:variable>
-
 
     <xsl:choose>
       <xsl:when
@@ -578,8 +582,8 @@
                     </xsl:attribute>
                     <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
                     <xsl:if test="$show-menu='show'">
-                        <xsl:attribute name="aria-expanded" select="'true'"/>
-                        <xsl:attribute name="aria-current" select="'true'"/>
+                      <xsl:attribute name="aria-expanded" select="'true'"/>
+                      <xsl:attribute name="aria-current" select="'true'"/>
                     </xsl:if>
                     <xsl:attribute name="aria-labelledby" select="concat('menu-collapse-trigger-',$id)"/>
                     <xsl:attribute name="aria-controls" select="concat('menu-collapse-',$id)"/>
@@ -628,11 +632,11 @@
                   </xsl:attribute>
                   <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
                   <xsl:if test="$show-menu='show'">
-                      <xsl:attribute name="aria-expanded" select="'true'"/>
-                      <xsl:attribute name="aria-current" select="'true'"/>
+                    <xsl:attribute name="aria-expanded" select="'true'"/>
+                    <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
                   <svg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 16 16'>
-                      <path
+                    <path
                       fill='none'
                       stroke='currentColor'
                       stroke-linecap='round'
@@ -651,8 +655,8 @@
                   </xsl:attribute>
                   <xsl:attribute name="data-bs-target" select="concat('#menu-collapse-',$id)"/>
                   <xsl:if test="$show-menu='show'">
-                      <xsl:attribute name="aria-expanded" select="'true'"/>
-                      <xsl:attribute name="aria-current" select="'true'"/>
+                    <xsl:attribute name="aria-expanded" select="'true'"/>
+                    <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
                   <xsl:value-of select="$title"/>
                 </span>
@@ -663,7 +667,7 @@
             <div>
               <xsl:attribute name="id" select="concat('menu-collapse-',$id)"/>
               <xsl:attribute name="class" select="concat('collapse ', $show-menu)"/>
-              <ul class="list-unstyled fw-normal">
+              <ul class="list-unstyled fw-normal ps-4">
                 <xsl:apply-templates select="$children" mode="#current">
                   <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                 </xsl:apply-templates>
@@ -740,5 +744,4 @@
       </xsl:when>
     </xsl:choose>
   </xsl:template>
-
 </xsl:stylesheet>
