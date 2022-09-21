@@ -27,6 +27,23 @@
 </xsl:text>
   </xsl:variable>
 
+  <xsl:template name="bidi-auto-code">
+    <!-- ↓ Ensure code is rendered LTR in RTL documents ↓ -->
+    <xsl:if test="$BIDIRECTIONAL_DOCUMENT='yes' and not(@dir)">
+      <xsl:choose>
+        <xsl:when test="contains(@class,' pr-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="contains(@class,' sw-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+        <xsl:when test="contains(@class,' xml-d/')">
+          <xsl:attribute name="dir">auto</xsl:attribute>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
+
   <!-- Customized templates from `org.dita.html5/xsl/topic.xsl` -->
 
   <xsl:template name="chapter-setup">
@@ -82,56 +99,28 @@
   </xsl:template>
 
   <!-- Override to add Bootstrap classes and roles -->
-  <xsl:template name="commonattributes">
-    <xsl:param name="default-output-class"/>
-
-    <!-- TODO: Recent DITA-OT versions move this logic to mode="commonattributes".
-               Refactor to use mode here to. -->
-
-    <!-- ↓ DITA-OT mode changes ↓  -->
-    <!--
-    <xsl:apply-templates select="." mode="commonattributes">
-      <xsl:with-param name="default-output-class" select="tokenize(normalize-space($default-output-class), '\s+')"/>
-    </xsl:apply-templates>
-  </xsl:template>
-
   <xsl:template match="@* | node()" mode="commonattributes">
     <xsl:param name="default-output-class" as="xs:string*"/>
-    -->
-    <!-- ↑ End DITA-OT mode changes ↑ -->
-
+    <xsl:apply-templates select="@xml:lang"/>
+    <xsl:apply-templates select="@dir"/>
+    <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/@style" mode="add-ditaval-style"/>
+     <!-- ↓ Add Bootstrap role template ↓ -->
+    <xsl:call-template name="bootstrap-role"/>
+     <!-- ↓ Set Bidi to auto for code ↓ -->
+    <xsl:call-template name="bidi-auto-code"/>
     <!-- ↓ Add Bootstrap class attributes template ↓ -->
     <xsl:variable name="bootstrap-class">
       <xsl:call-template name="bootstrap-class"/>
       <xsl:value-of select="$default-output-class"/>
     </xsl:variable>
-    <xsl:call-template name="bootstrap-role"/>
-    <!-- ↓ Ensure code is rendered LTR in RTL documents ↓ -->
-    <xsl:if test="$BIDIRECTIONAL_DOCUMENT='true' and not(@dir)">
-      <xsl:choose>
-        <xsl:when test="contains(@class,' pr-d/')">
-          <xsl:attribute name="dir">auto</xsl:attribute>
-        </xsl:when>
-        <xsl:when test="contains(@class,' sw-d/')">
-          <xsl:attribute name="dir">auto</xsl:attribute>
-        </xsl:when>
-        <xsl:when test="contains(@class,' xml-d/')">
-          <xsl:attribute name="dir">auto</xsl:attribute>
-        </xsl:when>
-      </xsl:choose>
-    </xsl:if>
-    <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-    <xsl:apply-templates select="@xml:lang"/>
-    <xsl:apply-templates select="@dir"/>
-    <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/@style" mode="add-ditaval-style"/>
     <!-- ↓ Remove DITA-OT styling from titles since Bootstrap does this ↓ -->
     <xsl:choose>
-      <xsl:when test="starts-with($default-output-class , 'topictitle')">
+      <xsl:when test="starts-with($default-output-class[1] , 'topictitle')">
         <xsl:apply-templates select="." mode="set-output-class">
           <xsl:with-param name="default" select="replace($bootstrap-class, 'topictitle\d+', '')"/>
         </xsl:apply-templates>
       </xsl:when>
-      <xsl:when test="starts-with($default-output-class , 'sectiontitle')">
+      <xsl:when test="starts-with($default-output-class[1] , 'sectiontitle')">
         <xsl:apply-templates select="." mode="set-output-class">
           <xsl:with-param name="default" select="replace($bootstrap-class, 'sectiontitle', '')"/>
         </xsl:apply-templates>
