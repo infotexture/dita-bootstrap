@@ -78,6 +78,11 @@
   transform: rotate(90deg);
 }
 
+.bd-links .btn:focus {
+  outline: 2px solid;
+  outline-color: var(--bs-link-hover-color);
+}
+
 .bd-links .active {
   font-weight: 600;
   color: var(--bs-body-color);
