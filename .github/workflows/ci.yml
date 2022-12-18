@@ -23,8 +23,9 @@ jobs:
           plugins: |
             fox.jason.extend.css
             https://github.com/infotexture/dita-bootstrap/archive/develop.zip
-            fox.jason.prismjs
+            https://github.com/jason-fox/fox.jason.prismjs/archive/master.zip
             fox.jason.favicon
+            https://github.com/jason-fox/fox.jason.open-graph/archive/master.zip
           project: .github/dita-ot/html.xml
       - name: Deploy HTML 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
