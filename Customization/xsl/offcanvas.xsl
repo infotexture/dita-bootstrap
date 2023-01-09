@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Offcanvas Component -->
-  <!-- https://getbootstrap.com/docs/5.2/components/offcanvas/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/offcanvas/ -->
 
   <xsl:template match="*[contains(@class,' topic/section ') and contains(@outputclass, 'offcanvas-')]">
     <xsl:param name="headLevel">

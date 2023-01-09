@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
+   5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass. -->
 <topic id="typography">
@@ -47,10 +47,10 @@
         heading text from Bootstrap 3.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <p outputclass="h3">Fancy display heading <ph outputclass="small text-muted">with faded secondary text</ph></p>
+      <p outputclass="h3">Fancy display heading <ph outputclass="small text-body-secondary">with faded secondary text</ph></p>
     </bodydiv>
     <codeblock
-    >&lt;title&gt;Fancy display heading &lt;ph outputclass="small text-muted"&gt;with faded secondary text&lt;/ph&gt;&lt;/title&gt;</codeblock>
+    >&lt;title&gt;Fancy display heading &lt;ph outputclass="small text-body-secondary"&gt;with faded secondary text&lt;/ph&gt;&lt;/title&gt;</codeblock>
     <section>
       <title>Display headings</title>
       <p>Traditional heading elements are designed to work best in the meat of your page content. When you need a

@@ -10,7 +10,7 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot"
 >
-  <xsl:param name="BOOTSTRAP_CSS_SHORTDESC" select="'text-muted lead'"/>
+  <xsl:param name="BOOTSTRAP_CSS_SHORTDESC" select="'text-body-secondary lead'"/>
   <xsl:param name="BOOTSTRAP_CSS_CODEBLOCK" select="'border rounded'"/>
   <xsl:param name="BOOTSTRAP_CSS_TOPIC_TITLE" select="'text-dark'"/>
   <xsl:param name="BOOTSTRAP_CSS_SECTION_TITLE" select="'h4 text-secondary'"/>

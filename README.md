@@ -195,17 +195,17 @@ Breadcrumbs and menu bars can be added using the following parameters
 
 ## License
 
-[Apache 2.0](LICENSE) © 2017–2022 Roger W. Fienhold Sheen
+[Apache 2.0](LICENSE) © 2017–2023 Roger W. Fienhold Sheen
 
-Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.2 documentation][2], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`. The text is therefore a derivative of "Bootstrap 5.2 docs" by Twitter, Inc. and the Bootstrap Authors, and used under CC BY 3.0.
+Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.3 documentation][2], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`. The text is therefore a derivative of "Bootstrap 5.3 docs" by Twitter, Inc. and the Bootstrap Authors, and used under CC BY 3.0.
 
 [1]: http://www.dita-ot.org
-[2]: https://getbootstrap.com/docs/5.2
-[3]: https://getbootstrap.com/docs/5.2/examples/navbars/
+[2]: https://getbootstrap.com/docs/5.3
+[3]: https://getbootstrap.com/docs/5.3/examples/navbars/
 [4]: ./includes/bs-navbar-light.hdr.xml
 [5]: ./includes/bs-footer-example.xml
 [6]: https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc
-[7]: https://getbootstrap.com/docs/5.2/components/list-group/
+[7]: https://getbootstrap.com/docs/5.3/components/list-group/
 [8]: https://infotexture.github.io/dita-bootstrap
 [9]: https://themestr.app/theme
 [10]: ./css/custom.css
@@ -214,5 +214,5 @@ Within the sample documentation, where necessary, the texts describing the usage
 [13]: https://twitter.com/infotexture
 [14]: https://github.com/infotexture/dita-bootstrap/issues/new
 [15]: https://help.github.com/articles/using-pull-requests/
-[16]: https://getbootstrap.com/docs/5.2/components/navs-tabs/#pills
-[17]: https://getbootstrap.com/docs/5.2/components/collapse/
+[16]: https://getbootstrap.com/docs/5.3/components/navs-tabs/#pills
+[17]: https://getbootstrap.com/docs/5.3/components/collapse/
