@@ -177,53 +177,53 @@ and summer's lease hath all too short a date:
         <xmlatt>outputclass</xmlatt> utilities.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <section class="p-3 mb-2 bg-primary text-white">.bg-primary</section>
-      <section class="p-3 mb-2 bg-primary-subtle text-emphasis-primary">.bg-primary-subtle</section>
-      <section class="p-3 mb-2 bg-secondary text-white">.bg-secondary</section>
-      <section class="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary">.bg-secondary-subtle</section>
-      <section class="p-3 mb-2 bg-success text-white">.bg-success</section>
-      <section class="p-3 mb-2 bg-success-subtle text-emphasis-success">.bg-success-subtle</section>
-      <section class="p-3 mb-2 bg-danger text-white">.bg-danger</section>
-      <section class="p-3 mb-2 bg-danger-subtle text-emphasis-danger">.bg-danger-subtle</section>
-      <section class="p-3 mb-2 bg-warning text-dark">.bg-warning</section>
-      <section class="p-3 mb-2 bg-warning-subtle text-emphasis-warning">.bg-warning-subtle</section>
-      <section class="p-3 mb-2 bg-info text-dark">.bg-info</section>
-      <section class="p-3 mb-2 bg-info-subtle text-emphasis-info">.bg-info-subtle</section>
-      <section class="p-3 mb-2 bg-light text-dark">.bg-light</section>
-      <section class="p-3 mb-2 bg-light-subtle text-emphasis-light">.bg-light-subtle</section>
-      <section class="p-3 mb-2 bg-dark text-white">.bg-dark</section>
-      <section class="p-3 mb-2 bg-dark-subtle text-emphasis-dark">.bg-dark-subtle</section>
-      <p class="p-3 mb-2 bg-body-secondary">.bg-body-secondary</p>
-      <p class="p-3 mb-2 bg-body-tertiary">.bg-body-tertiary</p>
+      <section outputclass="p-3 mb-2 bg-primary text-white">.bg-primary</section>
+      <section outputclass="p-3 mb-2 bg-primary-subtle text-emphasis-primary">.bg-primary-subtle</section>
+      <section outputclass="p-3 mb-2 bg-secondary text-white">.bg-secondary</section>
+      <section outputclass="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary">.bg-secondary-subtle</section>
+      <section outputclass="p-3 mb-2 bg-success text-white">.bg-success</section>
+      <section outputclass="p-3 mb-2 bg-success-subtle text-emphasis-success">.bg-success-subtle</section>
+      <section outputclass="p-3 mb-2 bg-danger text-white">.bg-danger</section>
+      <section outputclass="p-3 mb-2 bg-danger-subtle text-emphasis-danger">.bg-danger-subtle</section>
+      <section outputclass="p-3 mb-2 bg-warning text-dark">.bg-warning</section>
+      <section outputclass="p-3 mb-2 bg-warning-subtle text-emphasis-warning">.bg-warning-subtle</section>
+      <section outputclass="p-3 mb-2 bg-info text-dark">.bg-info</section>
+      <section outputclass="p-3 mb-2 bg-info-subtle text-emphasis-info">.bg-info-subtle</section>
+      <section outputclass="p-3 mb-2 bg-light text-dark">.bg-light</section>
+      <section outputclass="p-3 mb-2 bg-light-subtle text-emphasis-light">.bg-light-subtle</section>
+      <section outputclass="p-3 mb-2 bg-dark text-white">.bg-dark</section>
+      <section outputclass="p-3 mb-2 bg-dark-subtle text-emphasis-dark">.bg-dark-subtle</section>
+      <section outputclass="p-3 mb-2 bg-body-secondary">.bg-body-secondary</section>
+      <section outputclass="p-3 mb-2 bg-body-tertiary">.bg-body-tertiary</section>
 
-      <section class="p-3 mb-2 bg-body text-body">.bg-body</section>
-      <section class="p-3 mb-2 bg-black text-white">.bg-black</section>
-      <section class="p-3 mb-2 bg-white text-dark">.bg-white</section>
-      <section class="p-3 mb-2 bg-transparent text-body">.bg-transparent</section>
+      <section outputclass="p-3 mb-2 bg-body text-body">.bg-body</section>
+      <section outputclass="p-3 mb-2 bg-black text-white">.bg-black</section>
+      <section outputclass="p-3 mb-2 bg-white text-dark">.bg-white</section>
+      <section outputclass="p-3 mb-2 bg-transparent text-body">.bg-transparent</section>
     </bodydiv>
-    <codeblock>&lt;section class="p-3 mb-2 bg-primary text-white"&gt;.bg-primary&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-primary-subtle text-emphasis-primary"&gt;.bg-primary-subtle&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-secondary text-white"&gt;.bg-secondary&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary"&gt;.bg-secondary-subtle&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-success text-white"&gt;.bg-success&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-success-subtle text-emphasis-success"&gt;.bg-success-subtle&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-danger text-white"&gt;.bg-danger&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-danger-subtle text-emphasis-danger"&gt;.bg-danger-subtle&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-warning text-dark"&gt;.bg-warning&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-warning-subtle text-emphasis-warning"&gt;.bg-warning-subtle&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-info text-dark"&gt;.bg-info&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-info-subtle text-emphasis-info"&gt;.bg-info-subtle&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-light text-dark"&gt;.bg-light&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-light-subtle text-emphasis-light"&gt;.bg-light-subtle&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-dark text-white"&gt;.bg-dark&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-dark-subtle text-emphasis-dark"&gt;.bg-dark-subtle&lt;/section&gt;
-&lt;p class="p-3 mb-2 bg-body-secondary"&gt;.bg-body-secondary&lt;/p&gt;
-&lt;p class="p-3 mb-2 bg-body-tertiary"&gt;.bg-body-tertiary&lt;/p&gt;
+    <codeblock>&lt;section outputclass="p-3 mb-2 bg-primary text-white"&gt;.bg-primary&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-primary-subtle text-emphasis-primary"&gt;.bg-primary-subtle&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-secondary text-white"&gt;.bg-secondary&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary"&gt;.bg-secondary-subtle&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-success text-white"&gt;.bg-success&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-success-subtle text-emphasis-success"&gt;.bg-success-subtle&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-danger text-white"&gt;.bg-danger&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-danger-subtle text-emphasis-danger"&gt;.bg-danger-subtle&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-warning text-dark"&gt;.bg-warning&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-warning-subtle text-emphasis-warning"&gt;.bg-warning-subtle&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-info text-dark"&gt;.bg-info&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-info-subtle text-emphasis-info"&gt;.bg-info-subtle&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-light text-dark"&gt;.bg-light&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-light-subtle text-emphasis-light"&gt;.bg-light-subtle&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-dark text-white"&gt;.bg-dark&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-dark-subtle text-emphasis-dark"&gt;.bg-dark-subtle&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-body-secondary"&gt;.bg-body-secondary&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-body-tertiary"&gt;.bg-body-tertiary&lt;/section&gt;
 
-&lt;section class="p-3 mb-2 bg-body text-body"&gt;.bg-body&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-black text-white"&gt;.bg-black&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-white text-dark"&gt;.bg-white&lt;/section&gt;
-&lt;section class="p-3 mb-2 bg-transparent text-body"&gt;.bg-transparent&lt;/section&gt;</codeblock>
+&lt;section outputclass="p-3 mb-2 bg-body text-body"&gt;.bg-body&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-black text-white"&gt;.bg-black&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-white text-dark"&gt;.bg-white&lt;/section&gt;
+&lt;section outputclass="p-3 mb-2 bg-transparent text-body"&gt;.bg-transparent&lt;/section&gt;</codeblock>
     <section>
       <title>Styling DITA elements</title>
       <p>Apply consistent Bootstrap utility classes across DITA elements by amending
