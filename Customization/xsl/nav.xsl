@@ -209,7 +209,7 @@
   </xsl:template>
 
   <!-- list-group sidebar toc processing to add Bootstrap list-group menu -->
-  <!-- https://getbootstrap.com/docs/5.2/components/list-group/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/list-group/ -->
 
   <!-- partial list-group sidebar toc processing -->
   <xsl:template match="*[contains(@class, ' map/map ')]" mode="list-group-toc-pull">
@@ -239,7 +239,7 @@
   </xsl:template>
 
   <!-- nav-pill sidebar toc processing to add Bootstrap nav-pills menu -->
-  <!-- https://getbootstrap.com/docs/5.2/components/navs-tabs/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/navs-tabs/ -->
 
   <!-- partial nav-pill sidebar toc processing -->
   <xsl:template match="*[contains(@class, ' map/map ')]" mode="nav-pill-toc-pull">
@@ -269,7 +269,7 @@
   </xsl:template>
 
   <!-- collapsible sidebar toc processing to add Bootstrap collapsing menu classes -->
-  <!-- https://getbootstrap.com/docs/5.2/components/collapse/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/collapse/ -->
   <xsl:template match="*" mode="collapsible-toc" priority="-10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="collapsible-toc">
@@ -278,7 +278,7 @@
   </xsl:template>
 
   <!-- nav-pill menubar-toc submenu toc processing - a navbar with dropdowns -->
-  <!-- https://getbootstrap.com/docs/5.2/components/dropdowns/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/dropdowns/ -->
   <xsl:template match="*" mode="menubar-toc" priority="-10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="menubar-toc">

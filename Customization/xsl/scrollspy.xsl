@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Scrollspy Component -->
-  <!-- https://getbootstrap.com/docs/5.2/components/scrollspy/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/scrollspy/ -->
 
   <xsl:template match="*" mode="scrollspy-href">
     <xsl:call-template name="scrollspy-href"/>
