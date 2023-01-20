@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Accordion Component -->
-  <!-- https://getbootstrap.com/docs/5.2/components/accordion/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/accordion/ -->
 
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'accordion')]">
     <div>
