@@ -379,6 +379,12 @@
         <li>
           <parmname>--bidi.include</parmname> – whether to include support for
           <xref href="./rtl.dita" format="dita">RTL languages</xref></li>
+        <li>
+          <parmname>--dark.mode.include</parmname> – whether to include support for a
+          <xref
+            href="https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode"
+            format="dita"
+          >Dark Mode</xref> toggler</li>
       </ul>
       <p>Breadcrumbs and menu bars can be added using the following parameters:</p>
       <ul>

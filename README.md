@@ -178,6 +178,7 @@ For performance reasons, Bootstrap icons, popovers and tooltips are disabled by 
 - `icons.include` – enable Bootstrap icons
 - `popovers.include` – enable Bootstrap popover components and tooltip components
 - `bidi.include` - whether to include support for RTL languages
+- `dark.mode.include` - whether to include support for a [dark mode][18] toggler
 
 Breadcrumbs and menu bars can be added using the following parameters
 
@@ -216,3 +217,4 @@ Within the sample documentation, where necessary, the texts describing the usage
 [15]: https://help.github.com/articles/using-pull-requests/
 [16]: https://getbootstrap.com/docs/5.3/components/navs-tabs/#pills
 [17]: https://getbootstrap.com/docs/5.3/components/collapse/
+[18]: https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
