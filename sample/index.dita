@@ -383,7 +383,7 @@
           <parmname>--dark.mode.include</parmname> – whether to include support for a
           <xref
             href="https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode"
-            format="dita"
+            format="html"
             scope="external"
           >Dark Mode</xref> toggler</li>
       </ul>
