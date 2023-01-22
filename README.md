@@ -173,7 +173,7 @@ You can add your own XSLT customizations by creating a new plug-in that extends 
 
 ### Optional elements
 
-Bootstrap icons, popovers and tooltips are enabled by default, but for performance reasons they can be disabled by setting the following command line parameters to `no`:
+Bootstrap icons, popovers, tooltips and the dark-mode toggler are enabled by default, but for performance reasons they can be disabled by setting the following command line parameters to `no`:
 
 - `icons.include` – enable Bootstrap icons
 - `popovers.include` – enable Bootstrap popover components and tooltip components
@@ -183,7 +183,7 @@ Additionally, opt-in breadcrumbs and menu bars can be added using the following 
 
 - `args.breadcrumbs` – add Bootstrap breadcrumb components
 - `menubar-toc.include` – add a Bootstrap menubar
-- `bidi.include` - whether to include support for RTL languages
+- `bidi.include` - whether to force included support for RTL languages
 
 ## Feedback
 
