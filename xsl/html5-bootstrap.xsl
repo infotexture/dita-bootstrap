@@ -132,7 +132,7 @@
         <script language="javascript" src="{$relpath}/js/popovers.js"/>
       </xsl:if>
       <xsl:if test="$BOOTSTRAP_DARK_MODE_INCLUDE = 'yes'">
-        <script language="javascript" src="{$relpath}/js/dark-mode.js"/>
+        <script language="javascript" src="{$relpath}/js/dark-mode-toggler.js"/>
       </xsl:if>
       <!-- ↑ End customization -->
       <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>

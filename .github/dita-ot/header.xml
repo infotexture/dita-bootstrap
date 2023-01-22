@@ -59,11 +59,7 @@
       </ul>
       <!--
         This is a dark/light color theme toggler
-
-        It requires JavaScript to function. To include the necessary script
-        generate the HTML using the dita command and add the parameter:
-
-        dark.mode.include=yes
+        It requires JavaScript to function.
       -->
       <ul class="navbar-nav ms-auto">
         <li class="nav-item dropdown">

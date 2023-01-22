@@ -119,7 +119,7 @@
     <copy todir="${dita.output.dir}/js">
       <fileset
         dir="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes"
-        includes="dark-mode.js"
+        includes="dark-mode-toggler.js"
       />
     </copy>
   </target>
@@ -149,7 +149,7 @@
     <property name="menubar-toc.include" value="no"/>
     <property name="nav-toc" value="partial"/>
     <property name="popovers.include" value="no"/>
-    <property name="dark.mode.include" value="no"/>
+    <property name="dark.mode.include" value="yes"/>
     <property name="dita-bootstrap.css.add" value="yes"/>
     <!--
       Load alternate Bootstrap CSS for RTL languages such as Arabic,
