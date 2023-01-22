@@ -359,15 +359,14 @@
       </ul>
     </section>
     <section>
-      <title>Opt-In elements</title>
+      <title>Optional Elements</title>
       <indexterm><parmname>--args.breadcrumbs</parmname></indexterm>
       <indexterm><parmname>--icons.include</parmname></indexterm>
       <indexterm><parmname>--popovers.include</parmname></indexterm>
-      <p>For performance reasons, Bootstrap
-        <xref href="./icons.dita" format="dita">icons</xref>,
+      <indexterm><parmname>--dark.mode.include</parmname></indexterm>
+      <p> Bootstrap <xref href="./icons.dita" format="dita">icons</xref>,
         <xref href="./popovers.dita" format="dita">popovers</xref> and
-        <xref href="./tooltips.dita" format="dita">tooltips</xref> are disabled by default, they can be enabled by using
-        the following command line parameters:</p>
+        <xref href="./tooltips.dita" format="dita">tooltips</xref> are enabled by default, but for performance reasons they can be disabled by setting the following command line parameters to <option>no</option></p>
       <ul>
         <li>
           <parmname>--icons.include</parmname> – enable Bootstrap
@@ -377,9 +376,6 @@
           <xref href="./popovers.dita" format="dita">popover components</xref> and
           <xref href="./tooltips.dita" format="dita">tooltip components</xref></li>
         <li>
-          <parmname>--bidi.include</parmname> – whether to include support for
-          <xref href="./rtl.dita" format="dita">RTL languages</xref></li>
-        <li>
           <parmname>--dark.mode.include</parmname> – whether to include support for a
           <xref
             href="https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode"
@@ -387,13 +383,16 @@
             scope="external"
           >Dark Mode</xref> toggler</li>
       </ul>
-      <p>Breadcrumbs and menu bars can be added using the following parameters:</p>
+      <p>Opt-in breadcrumbs and menu bars can be added using the following parameters:</p>
       <ul>
         <li>
           <parmname>--args.breadcrumbs</parmname> – enable Bootstrap
           <xref href="./breadcrumb.dita" format="dita">breadcrumb components</xref></li>
         <li>
           <parmname>--menubar-toc.include</parmname> – add a Bootstrap menubar</li>
+        <li>
+          <parmname>--bidi.include</parmname> – whether to include support for
+          <xref href="./rtl.dita" format="dita">RTL languages</xref></li>
       </ul>
     </section>
   </body>

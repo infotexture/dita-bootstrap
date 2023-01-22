@@ -59,8 +59,8 @@
       desc="Specifies whether to include bidirectional CSS"
       type="enum"
     >
-      <val>yes</val>
-      <val default="true">no</val>
+      <val default="true">yes</val>
+      <val>no</val>
     </param>
     <param
       name="icons.include"
@@ -83,8 +83,8 @@
       desc="Specifies whether to enable popovers and tooltips"
       type="enum"
     >
-      <val>yes</val>
-      <val default="true">no</val>
+      <val default="true">yes</val>
+      <val>no</val>
     </param>
     <param
       name="dark.mode.include"

@@ -12,13 +12,13 @@
        (file name and extension only - no path). -->
   <xsl:param name="BOOTSTRAP_ICONS_CDN"/>
   <!-- Whether to include bootstrap icons.  values are 'yes' or 'no' -->
-  <xsl:param name="BOOTSTRAP_ICONS_INCLUDE" select="'no'"/>
+  <xsl:param name="BOOTSTRAP_ICONS_INCLUDE" select="'yes'"/>
   <!-- Whether include a subheader menu bar.  values are 'yes' or 'no' -->
   <xsl:param name="BOOTSTRAP_MENUBAR_TOC" select="'no'"/>
   <!-- Whether to include bootstrap popovers.  values are 'yes' or 'no' -->
-  <xsl:param name="BOOTSTRAP_DARK_MODE_INCLUDE" select="'no'"/>
+  <xsl:param name="BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE" select="'yes'"/>
   <!-- Whether to include dark mode toggling.  values are 'yes' or 'no' -->
-  <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'no'"/>
+  <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'yes'"/>
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
@@ -131,7 +131,7 @@
       <xsl:if test="$BOOTSTRAP_POPOVERS_INCLUDE = 'yes'">
         <script language="javascript" src="{$relpath}/js/popovers.js"/>
       </xsl:if>
-      <xsl:if test="$BOOTSTRAP_DARK_MODE_INCLUDE = 'yes'">
+      <xsl:if test="$BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE = 'yes'">
         <script language="javascript" src="{$relpath}/js/dark-mode-toggler.js"/>
       </xsl:if>
       <!-- ↑ End customization -->

@@ -35,14 +35,15 @@
       <ul>
         <li>Popovers rely on the third-party library
           <xref href="https://popper.js.org" format="html" scope="external">Popper</xref> for positioning.</li>
-        <li>Popovers are opt-in for performance reasons, so <b>you must initialize them yourself</b> by setting
-            <parmname>--popovers.include</parmname>=<option>yes</option>
-        </li>
         <li>Popovers with a zero-length <xmlelement>desc</xmlelement> element are never displayed.</li>
         <li>Triggering popovers on hidden elements will not work.</li>
         <li>Popovers for <xmlatt>outputclass="disabled"</xmlatt> elements must be triggered on a wrapper element.</li>
         <li>Popovers must be hidden before their corresponding elements have been removed from the DOM.</li>
         <li>Popovers can be triggered thanks to an element inside a shadow DOM.</li>
+        <li>Popovers are include by default, but for performance reasons, <b
+          >you may exclude them yourself</b> by setting
+            <parmname>--popovers.include</parmname>=<option>no</option>
+        </li>
       </ul>
     </section>
 
