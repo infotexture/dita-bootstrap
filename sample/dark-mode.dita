@@ -20,7 +20,7 @@
       <title>Example</title>
       <p>To add a color mode toggler to the menu bar, add a series of <xmlelement
         >button</xmlelement> elements with the attributes <xmlatt>data-bs-theme="light"</xmlatt> or <xmlatt
-        >data-bs-theme="dark"</xmlatt> as shown</p>
+        >data-bs-theme="dark"</xmlatt> as shown here.</p>
       <codeblock>&lt;ul class="navbar-nav ms-auto"&gt;
   &lt;li class="nav-item dropdown"&gt;
     &lt;a href="#" class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center show"
@@ -36,12 +36,12 @@
       &lt;/li&gt;
       &lt;li&gt;
         &lt;button type="button" class="dropdown-item d-flex align-items-center"
-          data-bs-theme-value="dark"&gt;Dark
+          data-bs-theme-value="dark"&gt; Dark
         &lt;/button&gt;
       &lt;/li&gt;
       &lt;li&gt;
         &lt;button type="button" class="dropdown-item d-flex align-items-center"
-          data-bs-theme-value="auto" &gt;Auto
+          data-bs-theme-value="auto"&gt; Auto
         &lt;/button&gt;
       &lt;/li&gt;
     &lt;/ul&gt;

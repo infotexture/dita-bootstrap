@@ -65,7 +65,7 @@
       <p>The default header file <filepath>includes/bs-navbar-default.hdr.xml</filepath> uses the Bootstrap primary
         (blue) background color for the
         <xref href="https://getbootstrap.com/docs/5.3/examples/navbars/" format="html" scope="external">navbar
-          component</xref>.</p>
+          component</xref>, and provides a theme menu to toggle <xref href="./dark-mode.dita">dark mode</xref>.</p>
       <p>You can edit a copy of this file to adjust the content of the global navigation. To override the global
         navigation with your own header, pass a custom header file to the <cmdname>dita</cmdname> command via the
           <parmname>--args.hdr</parmname> parameter:</p>
