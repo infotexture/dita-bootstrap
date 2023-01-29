@@ -15,8 +15,9 @@
   --dita-maroon: #ff7676;
 }
 
-.bs-toggler-dark, .bs-toggler-light {
-   display: none;
+.bs-toggler-dark,
+.bs-toggler-light {
+  display: none;
 }
 
 [data-bs-theme='light'] .bs-toggler-light {
@@ -31,7 +32,6 @@
 [data-bs-theme='dark'] .bs-toggler-auto {
   display: none;
 }
-
 
 @media (prefers-color-scheme: dark) {
   :root {
