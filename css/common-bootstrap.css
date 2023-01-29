@@ -15,6 +15,24 @@
   --dita-maroon: #ff7676;
 }
 
+.bs-toggler-dark, .bs-toggler-light {
+   display: none;
+}
+
+[data-bs-theme='light'] .bs-toggler-light {
+  display: inherit;
+}
+[data-bs-theme='light'] .bs-toggler-auto {
+  display: none;
+}
+[data-bs-theme='dark'] .bs-toggler-dark {
+  display: inherit;
+}
+[data-bs-theme='dark'] .bs-toggler-auto {
+  display: none;
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --dita-prussian-blue: #6a91cf;
