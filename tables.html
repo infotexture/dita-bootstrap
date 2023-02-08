@@ -33,14 +33,52 @@
           <a class="nav-link" href="https://getbootstrap.com/docs/5.3">Bootstrap Docs</a>
         </li>
       </ul>
+      <!--
+        This is a dark/light color theme toggler
+        It requires JavaScript to function.
+      -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center show" id="bd-theme" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            <span class="bs-toggler-light">
+              <i class="bi bi-brightness-high-fill"></i>
+            </span>
+            <span class="bs-toggler-dark"><i class="bi bi-moon-stars-fill"></i></span>
+            <span class="bs-toggler-auto"><i class="bi bi-circle-half"></i>
+          </span>
+
+            <span class="d-lg-none ms-2">Toggle theme</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme" style="--bs-dropdown-min-width: 6rem;" data-bs-popper="static">
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                <i class="bi bi-brightness-high-fill"></i>
+                <span class="ms-2"> Light </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                <i class="bi bi-moon-stars-fill"></i>
+                <span class="ms-2"> Dark </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                <i class="bi bi-circle-half"></i>
+                <span class="ms-2"> Auto </span>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
-</nav></header></div><div class="bs-container" id="content"><nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links"><ul class="list-unstyled mb-0 py-3 pt-md-1"><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d18600e11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d18600e11">Getting Started</span></div><div id="menu-collapse-d18600e11" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="index.html">DITA Bootstrap</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d18600e32"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d18600e32">Layout</span></div><div id="menu-collapse-d18600e32" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="grid.html">Grid System</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="rtl.html">Right-to-Left Languages</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0 active" data-bs-target="#menu-collapse-d18600e61" aria-expanded="true" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1 active" data-bs-target="#menu-collapse-d18600e61" aria-expanded="true" aria-current="true">Content</span></div><div id="menu-collapse-d18600e61" class="collapse show"><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="typography.html">Typography</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="images.html">Images</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3 active" href="tables.html">Tables</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="figures.html">Figures</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d18600e106"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d18600e106">Components</span></div><div id="menu-collapse-d18600e106" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="accordion.html">Accordion</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="alerts.html">Alerts</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="badge.html">Badges</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="breadcrumb.html">Breadcrumb</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="buttons.html">Buttons</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="button-group.html">Button Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="card.html">Cards</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="carousel.html">Carousel</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="collapse.html">Collapse</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="list-group.html">List Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="offcanvas.html">Offcanvas</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="pagination.html">Pagination</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="popovers.html">Popovers</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="scrollspy.html">Scrollspy</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tabs.html">Tabbed Dialogs</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tooltips.html">Tooltips</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d18600e276"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d18600e276">Utilities</span></div><div id="menu-collapse-d18600e276" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="utilities.html">Borders, Color and Background</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d18600e297"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d18600e297">Extend</span></div><div id="menu-collapse-d18600e297" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="icons.html">Icons</a></div></li></ul></div></li></ul></nav><main role="main" class="container bs-main"><article role="article" aria-labelledby="ariaid-title1">
-  <h1 class="title text-dark" id="ariaid-title1">Tables</h1>
+</nav></header></div><div class="bs-container" id="content"><nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links"><ul class="list-unstyled mb-0 py-3 pt-md-1"><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d18686e11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d18686e11">Getting Started</span></div><div id="menu-collapse-d18686e11" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="index.html">DITA Bootstrap</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d18686e32"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d18686e32">Layout</span></div><div id="menu-collapse-d18686e32" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="grid.html">Grid System</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="rtl.html">Right-to-Left Languages</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0 active" data-bs-target="#menu-collapse-d18686e61" aria-expanded="true" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1 active" data-bs-target="#menu-collapse-d18686e61" aria-expanded="true" aria-current="true">Content</span></div><div id="menu-collapse-d18686e61" class="collapse show"><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="typography.html">Typography</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="images.html">Images</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3 active" href="tables.html">Tables</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="figures.html">Figures</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d18686e106"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d18686e106">Components</span></div><div id="menu-collapse-d18686e106" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="accordion.html">Accordion</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="alerts.html">Alerts</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="badge.html">Badges</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="breadcrumb.html">Breadcrumb</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="buttons.html">Buttons</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="button-group.html">Button Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="card.html">Cards</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="carousel.html">Carousel</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="collapse.html">Collapse</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="list-group.html">List Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="offcanvas.html">Offcanvas</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="pagination.html">Pagination</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="popovers.html">Popovers</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="scrollspy.html">Scrollspy</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tabs.html">Tabbed Dialogs</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tooltips.html">Tooltips</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d18686e276"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d18686e276">Utilities</span></div><div id="menu-collapse-d18686e276" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="utilities.html">Borders, Color and Background</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d18686e297"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d18686e297">Extend</span></div><div id="menu-collapse-d18686e297" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="icons.html">Icons</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="dark-mode.html">Dark Mode</a></div></li></ul></div></li></ul></nav><main role="main" class="container bs-main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title" id="ariaid-title1">Tables</h1>
   
   
   <div class="body language-markup"><p class="shortdesc text-body-secondary lead">Documentation and examples for styling DITA tables with Bootstrap classes.</p>
-    <section class="section"><h2 class="title h4 text-secondary">Overview</h2>
+    <section class="section"><h2 class="title h4">Overview</h2>
       
       <p class="p">Due to the widespread use of <code class="keyword markupname xmlelement">&lt;table&gt;</code> elements across third-party widgets like calendars
         and date pickers, Bootstrap’s tables are opt-in. Extend with optional modifier outputclasses or custom styles.
@@ -77,7 +115,7 @@
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span><span class="ph token punctuation">&gt;</span></span>
   ...etc
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
-    <section class="section"><h2 class="title h4 text-secondary">Variants</h2>
+    <section class="section"><h2 class="title h4">Variants</h2>
       
       <p class="p">Use contextual classes to color tables, table rows or individual cells.</p>
     </section>
@@ -168,7 +206,7 @@
   <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>entry</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-light<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>td</span><span class="ph token punctuation">&gt;</span></span>
   <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>entry</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-dark<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>...<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>td</span><span class="ph token punctuation">&gt;</span></span>
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>row</span><span class="ph token punctuation">&gt;</span></span></code></pre>
-    <section class="section"><h2 class="title h4 text-secondary">Striped rows</h2>
+    <section class="section"><h2 class="title h4">Striped rows</h2>
       
       <p class="p">Use <code class="keyword markupname xmlatt">@outputclass</code> and add <code class="ph codeph language-markup">table-striped</code> to add zebra-striping to any table row
         within the <code class="keyword markupname xmlelement">&lt;tbody&gt;</code>.</p>
@@ -201,7 +239,7 @@
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-striped<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
   ...etc
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
-    <section class="section"><h2 class="title h4 text-secondary">Striped columns</h2>
+    <section class="section"><h2 class="title h4">Striped columns</h2>
       
       <p class="p">Use <code class="keyword markupname xmlatt">@outputclass</code> and add <code class="ph codeph language-markup">table-striped-columns</code> to add zebra-striping to any table row
         within the <code class="keyword markupname xmlelement">&lt;tbody&gt;</code>.</p>
@@ -234,7 +272,7 @@
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-striped-columns<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
   ...etc
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
-    <section class="section"><h2 class="title h4 text-secondary">Bordered tables</h2>
+    <section class="section"><h2 class="title h4">Bordered tables</h2>
       
       <p class="p">Add <code class="keyword markupname xmlatt">@rowsep="1"</code> and <code class="keyword markupname xmlatt">@colsep="1"</code> for borders on all sides of the table and cells.</p>
     </section>
@@ -266,7 +304,7 @@
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">rowsep</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>1<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">colsep</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>1<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
   ...etc
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
-    <section class="section"><h2 class="title h4 text-secondary">Tables without borders</h2>
+    <section class="section"><h2 class="title h4">Tables without borders</h2>
       
       <p class="p">Add <code class="keyword markupname xmlatt">@rowsep="0"</code> and <code class="keyword markupname xmlatt">@colsep="0"</code> for a table without borders.</p>
     </section>
@@ -298,7 +336,7 @@
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">rowsep</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>0<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">colsep</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>0<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
   ...etc
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
-    <section class="section"><h2 class="title h4 text-secondary">Small Tables</h2>
+    <section class="section"><h2 class="title h4">Small Tables</h2>
       
       <p class="p">Add <code class="keyword markupname xmlatt">@outputclass="table-sm"</code> make any table more compact by cutting all cell <code class="ph codeph language-markup">padding</code> in half.</p>
     </section>
@@ -330,7 +368,7 @@
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-sm<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
   ...etc
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
-    <section class="section"><h2 class="title h4 text-secondary">Table group dividers</h2>
+    <section class="section"><h2 class="title h4">Table group dividers</h2>
       
       <p class="p">Add a thicker border, darker between table groups—<code class="keyword markupname xmlelement">&lt;thead&gt;</code> and <code class="keyword markupname xmlelement">&lt;tbody&gt;</code>, with <code class="keyword markupname xmlatt">@outputclass="table-group-divider"</code>.</p>
     </section>
@@ -362,7 +400,7 @@
     <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>table</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>table-group-divider<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
   ...etc
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
-    <section class="section"><h2 class="title h4 text-secondary">Vertical alignment</h2>
+    <section class="section"><h2 class="title h4">Vertical alignment</h2>
       
       <p class="p">Table cells of <code class="keyword markupname xmlelement">&lt;thead&gt;</code> are always vertical aligned to the bottom. Table cells in <code class="keyword markupname xmlelement">&lt;tbody&gt;</code> inherit their alignment from <code class="keyword markupname xmlelement">&lt;table&gt;</code> and are aligned to the top by default. Use the <code class="keyword markupname xmlatt">@valign</code> attribute to re-align where needed.</p>
     </section>
@@ -425,7 +463,7 @@
     <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tbody</span><span class="ph token punctuation">&gt;</span></span>
   <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tgroup</span><span class="ph token punctuation">&gt;</span></span>
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
-    <section class="section"><h2 class="title h4 text-secondary">Table head</h2>
+    <section class="section"><h2 class="title h4">Table head</h2>
       
       <p class="p">Similar to tables and dark tables, use the modifier <code class="keyword markupname xmlatt">@outputclass="table-light"</code> or
           <code class="keyword markupname xmlatt">@outputclass="table-dark"</code> to make <code class="keyword markupname xmlelement">&lt;thead&gt;</code> elements appear light or dark
@@ -496,19 +534,7 @@
   <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>tgroup</span><span class="ph token punctuation">&gt;</span></span>
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>table</span><span class="ph token punctuation">&gt;</span></span></code></pre>
   </div>
-</article></main></div><script language="javascript">//
-          
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-              return new bootstrap.Tooltip(tooltipTriggerEl)
-            })
-
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-              return new bootstrap.Popover(popoverTriggerEl)
-            })
-         // 
-        </script><footer role="contentinfo"><!-- Footer --><div class="container text-center">
+</article></main></div><script language="javascript" src="./js/popovers.js"></script><script language="javascript" src="./js/dark-mode-toggler.js"></script><footer role="contentinfo"><!-- Footer --><div class="container text-center">
   <div class="row">
     <div class="col">
       <!-- Social media -->
@@ -522,7 +548,7 @@
       </p>
       <p class="p-3">
         <small>
-          © 2017–2022
+          © 2017–2023
           <a class="text-dark" href="https://infotexture.net/">infotexture</a>
         </small>
       </p>

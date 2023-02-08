@@ -33,46 +33,63 @@
           <a class="nav-link" href="https://getbootstrap.com/docs/5.3">Bootstrap Docs</a>
         </li>
       </ul>
+      <!--
+        This is a dark/light color theme toggler
+        It requires JavaScript to function.
+      -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center show" id="bd-theme" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            <span class="bs-toggler-light">
+              <i class="bi bi-brightness-high-fill"></i>
+            </span>
+            <span class="bs-toggler-dark"><i class="bi bi-moon-stars-fill"></i></span>
+            <span class="bs-toggler-auto"><i class="bi bi-circle-half"></i>
+          </span>
+
+            <span class="d-lg-none ms-2">Toggle theme</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme" style="--bs-dropdown-min-width: 6rem;" data-bs-popper="static">
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                <i class="bi bi-brightness-high-fill"></i>
+                <span class="ms-2"> Light </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                <i class="bi bi-moon-stars-fill"></i>
+                <span class="ms-2"> Dark </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                <i class="bi bi-circle-half"></i>
+                <span class="ms-2"> Auto </span>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
-</nav></header></div><div class="bs-container" id="content"><nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links"><ul class="list-unstyled mb-0 py-3 pt-md-1"><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d15771e11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d15771e11">Getting Started</span></div><div id="menu-collapse-d15771e11" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="index.html">DITA Bootstrap</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d15771e32"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d15771e32">Layout</span></div><div id="menu-collapse-d15771e32" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="grid.html">Grid System</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="rtl.html">Right-to-Left Languages</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d15771e61"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d15771e61">Content</span></div><div id="menu-collapse-d15771e61" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="typography.html">Typography</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="images.html">Images</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tables.html">Tables</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="figures.html">Figures</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d15771e106"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d15771e106">Components</span></div><div id="menu-collapse-d15771e106" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="accordion.html">Accordion</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="alerts.html">Alerts</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="badge.html">Badges</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="breadcrumb.html">Breadcrumb</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="buttons.html">Buttons</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="button-group.html">Button Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="card.html">Cards</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="carousel.html">Carousel</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="collapse.html">Collapse</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="list-group.html">List Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="offcanvas.html">Offcanvas</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="pagination.html">Pagination</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="popovers.html">Popovers</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="scrollspy.html">Scrollspy</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tabs.html">Tabbed Dialogs</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tooltips.html">Tooltips</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d15771e276"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d15771e276">Utilities</span></div><div id="menu-collapse-d15771e276" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="utilities.html">Borders, Color and Background</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0 active" data-bs-target="#menu-collapse-d15771e297" aria-expanded="true" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1 active" data-bs-target="#menu-collapse-d15771e297" aria-expanded="true" aria-current="true">Extend</span></div><div id="menu-collapse-d15771e297" class="collapse show"><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3 active" href="icons.html">Icons</a></div></li></ul></div></li></ul></nav><main role="main" class="container bs-main"><article role="article" aria-labelledby="ariaid-title1">
-  <h1 class="title text-dark" id="ariaid-title1">Icons</h1>
+</nav></header></div><div class="bs-container" id="content"><nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links"><ul class="list-unstyled mb-0 py-3 pt-md-1"><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d15841e11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d15841e11">Getting Started</span></div><div id="menu-collapse-d15841e11" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="index.html">DITA Bootstrap</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d15841e32"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d15841e32">Layout</span></div><div id="menu-collapse-d15841e32" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="grid.html">Grid System</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="rtl.html">Right-to-Left Languages</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d15841e61"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d15841e61">Content</span></div><div id="menu-collapse-d15841e61" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="typography.html">Typography</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="images.html">Images</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tables.html">Tables</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="figures.html">Figures</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d15841e106"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d15841e106">Components</span></div><div id="menu-collapse-d15841e106" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="accordion.html">Accordion</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="alerts.html">Alerts</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="badge.html">Badges</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="breadcrumb.html">Breadcrumb</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="buttons.html">Buttons</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="button-group.html">Button Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="card.html">Cards</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="carousel.html">Carousel</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="collapse.html">Collapse</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="list-group.html">List Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="offcanvas.html">Offcanvas</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="pagination.html">Pagination</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="popovers.html">Popovers</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="scrollspy.html">Scrollspy</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tabs.html">Tabbed Dialogs</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tooltips.html">Tooltips</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d15841e276"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d15841e276">Utilities</span></div><div id="menu-collapse-d15841e276" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="utilities.html">Borders, Color and Background</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0 active" data-bs-target="#menu-collapse-d15841e297" aria-expanded="true" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1 active" data-bs-target="#menu-collapse-d15841e297" aria-expanded="true" aria-current="true">Extend</span></div><div id="menu-collapse-d15841e297" class="collapse show"><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3 active" href="icons.html">Icons</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="dark-mode.html">Dark Mode</a></div></li></ul></div></li></ul></nav><main role="main" class="container bs-main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title" id="ariaid-title1">Icons</h1>
   
   <div class="body language-markup"><p class="shortdesc text-body-secondary lead">When enabled, DITA Bootstrap includes Bootstrap Icons by default. Additional icon libraries such as
     <a class="xref" href="https://fontawesome.com/" target="_blank" rel="external noopener">Font Awesome</a>
     <a class="xref" href="https://feathericons.com/" target="_blank" rel="external noopener">Feather</a> and
     <a class="xref" href="https://octicons.github.com/" target="_blank" rel="external noopener">Octicons</a> can also be added using
     command line parameters.</p>
-    <section class="section"><h2 class="title h4 text-secondary">Bootstrap Icons</h2>
+    <section class="section"><h2 class="title h4">Bootstrap Icons</h2>
       
       <p class="p">
         <a class="xref" href="https://icons.getbootstrap.com/" target="_blank" rel="external noopener">Bootstrap Icons</a> is a growing
         library of SVG icons that are designed by @mdo and maintained by the Bootstrap Team. They are open source and
-        licensed under MIT, just like Bootstrap so the icon set is freely available to everyone.</p>
+        licensed under MIT, just like Bootstrap so the icon set is freely available to everyone. A <code class="keyword markupname xmlelement">&lt;Link&gt;</code> to the default Bootstrap Icons CDN set is included by default. </p>
     </section>
-    <section class="section"><h2 class="title h4 text-secondary">Installing icons</h2>
-      
-      
-      
-      <p class="p">A <code class="keyword markupname xmlelement">&lt;Link&gt;</code> to the default Bootstrap Icons CDN set is not included by default. If you need
-        any icons you can include them by setting the <span class="keyword parmname">--icons.include</span>=<span class="keyword option">yes</span>
-      </p>
-      <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
-     <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
-     <span class="keyword parmname">--icons.include</span><span class="ph token operator">=</span><span class="keyword option"><span class="ph token function">yes</span></span></code></pre>
-      <p class="p">Other icon sets such as
-        <a class="xref" href="https://fontawesome.com/" target="_blank" rel="external noopener">Font Awesome</a>
-        <a class="xref" href="https://feathericons.com/" target="_blank" rel="external noopener">Feather</a> and
-        <a class="xref" href="https://octicons.github.com/" target="_blank" rel="external noopener">Octicons</a> are available. To use
-        an alternative set of icons, modify the
-        <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bootstrap.icons.hdf.xml" target="_blank" rel="external noopener">sample header</a> or specify the path of the Icons CDN file using the
-          <span class="keyword parmname">--icons.cdn.path</span> parameter.</p>
-      <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
-     <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
-     <span class="keyword parmname">--icons.include</span><span class="ph token operator">=</span><span class="keyword option"><span class="ph token function">yes</span></span> <span class="ph token punctuation">\</span>
-     <span class="keyword parmname">--icons.cdn.path</span><span class="ph token operator">=</span><span class="ph filepath">path/to/icon-cdn-header.xml</span></code></pre>
-    </section>
-    <section class="section"><h2 class="title h4 text-secondary">Example</h2>
+
+    <section class="section"><h2 class="title h4">Example</h2>
       
       <p class="p">Icon fonts with classes for every icon are included in Bootstrap Icons. Include the icon web fonts in your page
         via CSS, then reference the class names as needed in your DITA (e.g., <code class="keyword markupname xmlelement">&lt;i
@@ -115,20 +132,33 @@
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>xref</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>btn-primary btn-floating m-1<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">href</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>#<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
   <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>i</span> <span class="ph token attr-name">outputclass</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>bi-share-fill<span class="ph token punctuation">"</span></span><span class="ph token punctuation">/&gt;</span></span>
 <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>xref</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+     <section class="section"><h2 class="title h4">Installing other icons</h2>
+      
+      <p class="p">Other icon sets such as
+        <a class="xref" href="https://fontawesome.com/" target="_blank" rel="external noopener">Font Awesome</a>
+        <a class="xref" href="https://feathericons.com/" target="_blank" rel="external noopener">Feather</a> and
+        <a class="xref" href="https://octicons.github.com/" target="_blank" rel="external noopener">Octicons</a> are available. To use
+        an alternative set of icons, modify the
+        <a class="xref" href="https://github.com/infotexture/dita-bootstrap/blob/master/includes/bootstrap.icons.hdf.xml" target="_blank" rel="external noopener">sample header</a> or specify the path of the Icons CDN file using the
+          <span class="keyword parmname">--icons.cdn.path</span> parameter.</p>
+      <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--icons.include</span><span class="ph token operator">=</span><span class="keyword option"><span class="ph token function">yes</span></span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--icons.cdn.path</span><span class="ph token operator">=</span><span class="ph filepath">path/to/icon-cdn-header.xml</span></code></pre>
+    </section>
+    <section class="section"><h2 class="title h4">Excluding icons</h2>
+      
+      
+      
+      <p class="p">For performance reasons, if you don't need
+        any icons you can exclude them by setting the <span class="keyword parmname">--icons.include</span>=<span class="keyword option">no</span>
+      </p>
+      <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--icons.include</span><span class="ph token operator">=</span><span class="keyword option">no</span></code></pre>
+   </section>
   </div>
-</article></main></div><script language="javascript">//
-          
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-              return new bootstrap.Tooltip(tooltipTriggerEl)
-            })
-
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-              return new bootstrap.Popover(popoverTriggerEl)
-            })
-         // 
-        </script><footer role="contentinfo"><!-- Footer --><div class="container text-center">
+</article></main></div><script language="javascript" src="./js/popovers.js"></script><script language="javascript" src="./js/dark-mode-toggler.js"></script><footer role="contentinfo"><!-- Footer --><div class="container text-center">
   <div class="row">
     <div class="col">
       <!-- Social media -->
@@ -142,7 +172,7 @@
       </p>
       <p class="p-3">
         <small>
-          © 2017–2022
+          © 2017–2023
           <a class="text-dark" href="https://infotexture.net/">infotexture</a>
         </small>
       </p>
