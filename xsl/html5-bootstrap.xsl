@@ -12,11 +12,13 @@
        (file name and extension only - no path). -->
   <xsl:param name="BOOTSTRAP_ICONS_CDN"/>
   <!-- Whether to include bootstrap icons.  values are 'yes' or 'no' -->
-  <xsl:param name="BOOTSTRAP_ICONS_INCLUDE" select="'no'"/>
+  <xsl:param name="BOOTSTRAP_ICONS_INCLUDE" select="'yes'"/>
   <!-- Whether include a subheader menu bar.  values are 'yes' or 'no' -->
   <xsl:param name="BOOTSTRAP_MENUBAR_TOC" select="'no'"/>
   <!-- Whether to include bootstrap popovers.  values are 'yes' or 'no' -->
-  <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'no'"/>
+  <xsl:param name="BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE" select="'yes'"/>
+  <!-- Whether to include dark mode toggling.  values are 'yes' or 'no' -->
+  <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'yes'"/>
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
@@ -115,20 +117,22 @@
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
       </div>
 
-      <xsl:if test="$BOOTSTRAP_POPOVERS_INCLUDE = 'yes'">
-        <script language="javascript">//
-          <![CDATA[
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-              return new bootstrap.Tooltip(tooltipTriggerEl)
-            })
+      <xsl:variable name="relpath">
+        <xsl:choose>
+          <xsl:when test="$FILEDIR='.'">
+            <xsl:text>.</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select=" replace($FILEDIR,'[^/]+','..')"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
 
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-              return new bootstrap.Popover(popoverTriggerEl)
-            })
-         // ]]>
-        </script>
+      <xsl:if test="$BOOTSTRAP_POPOVERS_INCLUDE = 'yes'">
+        <script language="javascript" src="{$relpath}/js/popovers.js"/>
+      </xsl:if>
+      <xsl:if test="$BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE = 'yes'">
+        <script language="javascript" src="{$relpath}/js/dark-mode-toggler.js"/>
       </xsl:if>
       <!-- ↑ End customization -->
       <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>

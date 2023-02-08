@@ -61,6 +61,7 @@
       <navtitle>Extend</navtitle>
     </topicmeta>
     <topicref navtitle="Icons" format="dita" type="topic" href="icons.dita"/>
+    <topicref navtitle="Dark Mode" format="dita" type="topic" href="dark-mode.dita"/>
   </chapter>
   <backmatter deliveryTarget="pdf">
     <booklists>

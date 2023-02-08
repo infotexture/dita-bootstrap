@@ -171,18 +171,19 @@ The HTML output for the following DITA elements can be annotated with common Boo
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
 
-### Opt-In elements
+### Optional elements
 
-For performance reasons, Bootstrap icons, popovers and tooltips are disabled by default, they can be enabled by using the following command line parameters:
+Bootstrap icons, popovers, tooltips and the dark-mode toggler are enabled by default, but for performance reasons they can be disabled by setting the following command line parameters to `no`:
 
 - `icons.include` – enable Bootstrap icons
 - `popovers.include` – enable Bootstrap popover components and tooltip components
-- `bidi.include` - whether to include support for RTL languages
+- `dark.mode.include` - whether to include support for a [dark mode][18] toggler
 
-Breadcrumbs and menu bars can be added using the following parameters
+Additionally, opt-in breadcrumbs and menu bars can be added using the following parameters
 
 - `args.breadcrumbs` – add Bootstrap breadcrumb components
 - `menubar-toc.include` – add a Bootstrap menubar
+- `bidi.include` - whether to force included support for RTL languages
 
 ## Feedback
 
@@ -216,3 +217,4 @@ Within the sample documentation, where necessary, the texts describing the usage
 [15]: https://help.github.com/articles/using-pull-requests/
 [16]: https://getbootstrap.com/docs/5.3/components/navs-tabs/#pills
 [17]: https://getbootstrap.com/docs/5.3/components/collapse/
+[18]: https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode

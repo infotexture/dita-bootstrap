@@ -33,13 +33,14 @@
       <ul>
         <li>Tooltips rely on the third-party library
           <xref href="https://popper.js.org" format="html" scope="external">Popper</xref> for positioning.</li>
-        <li>Tooltips are opt-in for performance reasons, so <b>you must initialize them yourself</b> by setting
-            <parmname>--popovers.include</parmname>=<option>yes</option>.</li>
         <li>Tooltips with a zero-length <xmlelement>desc</xmlelement> element are never displayed.</li>
         <li>Triggering tooltips on hidden elements will not work.</li>
         <li>Tooltips for <xmlatt>outputclass="disabled"</xmlatt> elements must be triggered on a wrapper element.</li>
         <li>Tooltips must be hidden before their corresponding elements have been removed from the DOM.</li>
         <li>Tooltips can be triggered thanks to an element inside a shadow DOM.</li>
+        <li>Tooltips are included by default, but for performance reasons, <b
+          >you may exclude them yourself</b> by setting
+            <parmname>--popovers.include</parmname>=<option>no</option>.</li>
       </ul>
     </section>
 

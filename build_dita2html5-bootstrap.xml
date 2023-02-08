@@ -8,6 +8,13 @@
              dita2html5"
   />
 
+  <target
+    name="bootstrap.scripts.copy"
+    depends="bootstrap.scripts.popover,
+             bootstrap.scripts.dark.mode"
+  />
+
+
   <target name="dita-bootstrap.css.copy" description="Copy CSS files">
     <property
       name="dita-bootstrap.css.dir"
@@ -95,6 +102,29 @@
     />
   </target>
 
+  <target name="bootstrap.scripts.popover" if="bootstrap.copy.popover">
+    <!-- Add initialization script for popovers and tooltips -->
+    <mkdir dir="${dita.output.dir}/js"/>
+    <copy todir="${dita.output.dir}/js">
+      <fileset
+        dir="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes"
+        includes="popovers.js"
+      />
+    </copy>
+  </target>
+
+  <target name="bootstrap.scripts.dark.mode" if="bootstrap.copy.dark.mode">
+    <!-- Add dark mode initialization script -->
+    <mkdir dir="${dita.output.dir}/js"/>
+    <copy todir="${dita.output.dir}/js">
+      <fileset
+        dir="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes"
+        includes="dark-mode-toggler.js"
+      />
+    </copy>
+  </target>
+
+
   <target name="dita2html5-bootstrap.init">
     <!-- Location of page header template with hard-coded links -->
     <property
@@ -115,10 +145,11 @@
     <property name="args.html5.toc" value="toc"/>
     <property name="args.copycss" value="yes"/>
     <property name="args.csspath" value="css"/>
-    <property name="icons.include" value="no"/>
+    <property name="icons.include" value="yes"/>
     <property name="menubar-toc.include" value="no"/>
     <property name="nav-toc" value="partial"/>
-    <property name="popovers.include" value="no"/>
+    <property name="popovers.include" value="yes"/>
+    <property name="dark.mode.include" value="yes"/>
     <property name="dita-bootstrap.css.add" value="yes"/>
     <!--
       Load alternate Bootstrap CSS for RTL languages such as Arabic,
@@ -136,6 +167,14 @@
       else="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.hdf.xml"
     >
       <equals arg1="${bidi.include}" arg2="yes"/>
+    </condition>
+
+    <!-- Add included javascript functions if required -->
+    <condition property="bootstrap.copy.popover">
+      <equals arg1="${popovers.include}" arg2="yes"/>
+    </condition>
+    <condition property="bootstrap.copy.dark.mode">
+      <equals arg1="${dark.mode.include}" arg2="yes"/>
     </condition>
   </target>
 </project>

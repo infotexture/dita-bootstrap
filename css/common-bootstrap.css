@@ -3,13 +3,52 @@
  *  See the accompanying LICENSE file for applicable licenses.
  */
 
-.cmdname,
-.codeph,
-.filepath,
-.option,
-.parmname {
-  color: var(--bs-code-color);
-  font-family: var(--bs-font-monospace);
+:root {
+  --dita-prussian-blue: #1d365d;
+  --dita-maroon: #800000;
+  --dita-violet: var(--bs-purple);
+}
+
+[data-bs-theme='dark'] {
+  --dita-prussian-blue: #6a91cf;
+  --dita-violet: #cc99cd;
+  --dita-maroon: #ff7676;
+}
+
+.bs-toggler-dark,
+.bs-toggler-light {
+  display: none;
+}
+
+[data-bs-theme='light'] .bs-toggler-light {
+  display: inherit;
+}
+[data-bs-theme='light'] .bs-toggler-auto {
+  display: none;
+}
+[data-bs-theme='dark'] .bs-toggler-dark {
+  display: inherit;
+}
+[data-bs-theme='dark'] .bs-toggler-auto {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dita-prussian-blue: #6a91cf;
+    --dita-violet: #cc99cd;
+    --dita-maroon: #ff7676;
+  }
+
+  [data-bs-theme='light'] {
+    --dita-prussian-blue: #1d365d;
+    --dita-maroon: #800000;
+    --dita-violet: var(--bs-purple);
+  }
+}
+
+.syntaxdiagram {
+  color: var(--dita-maroon);
 }
 
 .numcharref,
@@ -19,13 +58,22 @@
 .xmlelement,
 .xmlnsname,
 .xmlpi {
-  color: var(--bs-purple);
+  color: var(--dita-violet);
+  font-family: var(--bs-font-monospace);
+}
+
+.cmdname,
+.codeph,
+.filepath,
+.option,
+.parmname {
+  color: var(--bs-code-color);
   font-family: var(--bs-font-monospace);
 }
 
 .cmdname,
 .parmname {
-  color: #1d365d;
+  color: var(--dita-prussian-blue);
   font-weight: bold;
 }
 

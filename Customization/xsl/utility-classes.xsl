@@ -12,11 +12,11 @@
 >
   <xsl:param name="BOOTSTRAP_CSS_SHORTDESC" select="'text-body-secondary lead'"/>
   <xsl:param name="BOOTSTRAP_CSS_CODEBLOCK" select="'border rounded'"/>
-  <xsl:param name="BOOTSTRAP_CSS_TOPIC_TITLE" select="'text-dark'"/>
-  <xsl:param name="BOOTSTRAP_CSS_SECTION_TITLE" select="'h4 text-secondary'"/>
+  <xsl:param name="BOOTSTRAP_CSS_TOPIC_TITLE" select="''"/>
+  <xsl:param name="BOOTSTRAP_CSS_SECTION_TITLE" select="'h4'"/>
   <xsl:param name="BOOTSTRAP_CSS_CARD" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_CAROUSEL" select="''"/>
-  <xsl:param name="BOOTSTRAP_CSS_CAPTION" select="'text-white bg-dark'"/>
+  <xsl:param name="BOOTSTRAP_CSS_CAPTION" select="'bg-secondary-subtle text-body-secondary'"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'me-3'"/>
   <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="''"/>

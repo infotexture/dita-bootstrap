@@ -42,6 +42,70 @@
           <a class="nav-link" href="#">Link Three</a>
         </li>
       </ul>
+      <!--
+        This is a dark/light color theme toggler
+        It requires JavaScript to function.
+      -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item dropdown">
+          <a
+            href="#"
+            class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center show"
+            id="bd-theme"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-display="static"
+          >
+            <span class="bs-toggler-light">
+              <i class="bi bi-brightness-high-fill"/>
+            </span>
+            <span class="bs-toggler-dark"><i
+                class="bi bi-moon-stars-fill"
+              /></span>
+            <span class="bs-toggler-auto"><i class="bi bi-circle-half"/>
+          </span>
+
+            <span class="d-lg-none ms-2">Toggle theme</span>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="bd-theme"
+            style="--bs-dropdown-min-width: 6rem;"
+            data-bs-popper="static"
+          >
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-theme-value="light"
+              >
+                <i class="bi bi-brightness-high-fill"/>
+                <span class="ms-2"> Light </span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-theme-value="dark"
+              >
+                <i class="bi bi-moon-stars-fill"/>
+                <span class="ms-2"> Dark </span>
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-theme-value="auto"
+              >
+                <i class="bi bi-circle-half"/>
+                <span class="ms-2"> Auto </span>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
