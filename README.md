@@ -11,7 +11,7 @@ A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with 
   - [Navigation menu](#navigation-menu)
   - [Custom CSS](#custom-css)
   - [Common Bootstrap utility classes](#common-bootstrap-utility-classes)
-  - [Opt-In elements](#opt-in-elements)
+  - [Optional elements](#optional-elements)
 - [Feedback](#feedback)
 - [License](#license)
 
@@ -94,7 +94,7 @@ The plug-in extends the standard HTML5 table of contents (ToC) [navigation param
 
 By default, the plug-in uses the `partial` option to include the current topic in the ToC along with its parents, siblings and children. As with the default HTML5 plug-in, the `full` option can also be used to generate a complete ToC for the entire map, or `none` to disable the table of contents entirely.
 
-As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with the Bootstrap [list group][7] component , [nav][16] component and [collapsible][17] menus:
+As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with either the Bootstrap [list group][7] component, [nav-pills][16], or [collapsible][17] menus:
 
 - `list-group-full` – Styled full ToC within a Bootstrap list group
 - `list-group-partial` – Partial ToC with the current topic, parents, siblings, and children in a list group

@@ -108,15 +108,15 @@
         with its parents, siblings and children. As with the default HTML5 plug-in, the <option>full</option> option can
         also be used to generate a complete ToC for the entire map, or <option>none</option> to disable the table of
         contents entirely.</p>
-      <p>As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with the
-        Bootstrap
+      <p>As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with
+        either the Bootstrap
         <xref href="https://getbootstrap.com/docs/5.3/components/list-group/" format="html" scope="external">list
           group</xref> component,
         <xref
           href="https://getbootstrap.com/docs/5.3/components/navs-tabs/#pills"
           format="html"
           scope="external"
-        >nav-pills</xref> and
+        >nav-pills</xref>, or
          <xref
           href="https://getbootstrap.com/docs/5.3/components/collapse/"
           format="html"
