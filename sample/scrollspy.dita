@@ -28,7 +28,7 @@
     </note>
     <section>
       <title>Example with nested nav</title>
-      <p>Bootstrap's Scrollspy works with nested <codeph>.navs</codeph>. If a nested <codeph>.nav</codeph> is <codeph>
+      <p>Bootstrap’s Scrollspy works with nested <codeph>.navs</codeph>. If a nested <codeph>.nav</codeph> is <codeph>
           .active</codeph>, its parents will also be <codeph>.active</codeph>. An animation of an example ToC navbar is
         shown below.</p>
       <fig>
@@ -63,7 +63,7 @@
     </section>
     <section>
       <title>Example with list-group</title>
-      <p>Bootstrap's Scrollspy component also works with
+      <p>Bootstrap’s Scrollspy component also works with
         <xref href="./list-group.dita" format="dita">list-groups</xref>. An animation of an example ToC menu is shown
         below.</p>
       <fig>

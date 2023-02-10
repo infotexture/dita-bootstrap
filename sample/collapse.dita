@@ -74,7 +74,7 @@
       <bodydiv outputclass="collapse-horizontal" id="collapse2" otherprops="style(min-height: 120px;)">
         <div outputclass="card card-body" otherprops="style(width: 300px;)">
           <p>Some placeholder content for the collapse component. This is some placeholder content for a horizontal
-            collapse. It's hidden by default and shown when triggered.</p>
+            collapse. It’s hidden by default and shown when triggered.</p>
         </div>
       </bodydiv>
     </bodydiv>
@@ -83,7 +83,7 @@
 &lt;/p&gt;
 &lt;bodydiv outputclass="collapse-horizontal" id="collapse2" otherprops="style(min-height: 120px;)"&gt;
   &lt;div outputclass="card card-body" otherprops="style(width: 300px;)"&gt;
-    &lt;p&gt;This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.&lt;/p&gt;
+    &lt;p&gt;This is some placeholder content for a horizontal collapse. It’s hidden by default and shown when triggered.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/bodydiv&gt;</codeblock>
   </body>

@@ -55,11 +55,11 @@
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <xref href="#" outputclass="btn-lg btn-danger popover-top">
         <data name="title">Popover title</data>
-        <desc>And here's some amazing content. It's very engaging. Right?</desc> Click to toggle popover </xref>
+        <desc>And here’s some amazing content. It’s very engaging. Right?</desc> Click to toggle popover </xref>
     </bodydiv>
     <codeblock> &lt;xref href="#" outputclass="btn-lg btn-danger popover-top"&gt;
   &lt;data name="title">&gt;Popover title&lt;/data&gt;
-  &lt;desc&gt;And here's some amazing content. It's very engaging. Right?&lt;/desc&gt;
+  &lt;desc&gt;And here’s some amazing content. It’s very engaging. Right?&lt;/desc&gt;
   Click to toggle popover
 &lt;/xref&gt;</codeblock>
 
@@ -115,12 +115,12 @@
         <xref href="#" outputclass="btn-lg btn-danger popover-top">
           <data name="title">Popover title</data>
           <data name="class">custom-popover</data>
-          <desc>And here's some amazing content. It's very engaging. Right?</desc>Custom popover</xref>
+          <desc>And here’s some amazing content. It’s very engaging. Right?</desc>Custom popover</xref>
     </bodydiv>
     <codeblock>&lt;xref href="#" outputclass="btn-lg btn-danger popover-top"&gt;
   &lt;data name="title"&gt;Popover title&lt;/data&gt;
   &lt;data name="class"&gt;custom-popover&lt;/data&gt;
-  &lt;desc&gt;And here's some amazing content. It's very engaging. Right?&lt;/desc&gt;
+  &lt;desc&gt;And here’s some amazing content. It’s very engaging. Right?&lt;/desc&gt;
   Custom popover
 &lt;/xref&gt;</codeblock>
   </body>

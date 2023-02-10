@@ -107,7 +107,7 @@
 &lt;p&gt;&lt;i&gt;This line rendered as italicized text.&lt;/i&gt;&lt;/p&gt;</codeblock>
     <section>
       <title>Text utilities</title>
-      <p>Change text alignment, transform, style, weight, line-height, decoration and color with Bootstrap's
+      <p>Change text alignment, transform, style, weight, line-height, decoration and color with Bootstrap’s
         <xref href="./utilities.dita" format="dita">text and color utilities</xref>.</p>
     </section>
 
@@ -213,7 +213,7 @@
       <ul outputclass="list-unstyled">
         <li>This is a list.</li>
         <li>It appears completely unstyled.</li>
-        <li>Structurally, it's still a list.</li>
+        <li>Structurally, it’s still a list.</li>
         <li>However, this style <b>only applies to immediate child elements</b>.</li>
         <li>Nested lists:
           <ul>
@@ -228,7 +228,7 @@
     <codeblock>&lt;ul outputclass="list-unstyled"&gt;
   &lt;li&gt;This is a list.&lt;/li&gt;
   &lt;li&gt;It appears completely unstyled.&lt;/li&gt;
-  &lt;li&gt;Structurally, it's still a list.&lt;/li&gt;
+  &lt;li&gt;Structurally, it’s still a list.&lt;/li&gt;
   &lt;li&gt;However, this style &lt;b&gt;only applies to immediate child elements&lt;/b&gt;.&lt;/li&gt;
   &lt;li&gt;Nested lists:
     &lt;ul&gt;
@@ -259,7 +259,7 @@
 &lt;/ul></codeblock>
     <section>
       <title outputclass="h3">Description list alignment</title>
-      <p>Terms and descriptions align horizontally using Bootstrap's grid system of predefined classes. For longer
+      <p>Terms and descriptions align horizontally using Bootstrap’s grid system of predefined classes. For longer
         terms, text is truncated with an ellipsis.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">

@@ -68,10 +68,10 @@ int main()
     return 0;
 } </codeblock>
       <p/>
-      <lines outputclass="bg-secondary-subtle p-3 border rounded" frame="topbot">Shall I compare thee to a summer's day?
+      <lines outputclass="bg-secondary-subtle p-3 border rounded" frame="topbot">Shall I compare thee to a summer’s day?
 Thou art more lovely and more temperate:
 Rough winds do shake the darling buds of May,
-and summer's lease hath all too short a date:
+and summer’s lease hath all too short a date:
 ...</lines>
       <p/>
       <table frame="all">
