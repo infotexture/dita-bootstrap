@@ -118,9 +118,9 @@ To use this option, add the `--menubar-toc.include=yes` parameter to the `dita` 
 
 ```console
 dita --input=path/to/your.ditamap \
-  --format=html5-bootstrap \
-  --nav-toc=list-group-partial  \
-  --menubar-toc.include=yes
+     --format=html5-bootstrap \
+     --nav-toc=list-group-partial  \
+     --menubar-toc.include=yes
 ```
 
 ### Custom CSS
@@ -130,7 +130,8 @@ Bootstrap themes can be generated via [Themestr.app][9]. The plug-in includes a 
 To override the default theme, pass a custom CSS file to the `dita` command via the `--args.css` parameter:
 
 ```console
-dita --input=path/to/your.ditamap --format=html5-bootstrap \
+dita --input=path/to/your.ditamap \
+     --format=html5-bootstrap \
      --args.hdr=path/to/your-header.xml \
      --args.css=<name-of-css>.css \
      --args.copycss=yes \
