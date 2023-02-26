@@ -229,7 +229,7 @@
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
      <parmname>--args.css</parmname>=&lt;name-of-css&gt;.css \
      <parmname>--args.copycss</parmname>=<option>yes</option> \
-     <parmname>--args.csspath</parmname>=<option>css</option>
+     <parmname>--args.csspath</parmname>=<option>css</option> \
      <parmname>--args.cssroot</parmname>=<filepath>path/to/your/theme</filepath></codeblock>
       <p>For more extensive customizations, you may want to fork this repository and create a new plug-in of your own.
       </p>
