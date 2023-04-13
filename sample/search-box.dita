@@ -53,17 +53,6 @@
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >install</parmname> net.infotexture.dita-bootstrap.lunr</codeblock>
     </section>
-    <section>
-      <title>Using</title>
-      <p>To run, use the <option>html5-bootstrap</option> transform and add the <parmname
-        >--lunr.search</parmname> and add <parmname>--args.hdr</parmname> parameters with the <cmdname>dita</cmdname>
-        command:</p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> \
-  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-  <parmname>--input</parmname>=path/to/your.ditamap \
-  <parmname>--lunr.search</parmname>=WEBSITE_URL \
-  <parmname>--args.hdr</parmname>=path/to/your-header.xml</codeblock>
-    </section>
 
     <section id="installing-node.js">
         <title>Installing Node.js</title>
@@ -78,6 +67,18 @@
           scope="external"
         >Install Page</xref>.
         </p>
+    </section>
+
+    <section>
+      <title>Using</title>
+      <p>To run, use the <option>html5-bootstrap</option> transform and add the <parmname
+        >--lunr.search</parmname> and add <parmname>--args.hdr</parmname> parameters with the <cmdname>dita</cmdname>
+        command:</p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> \
+  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+  <parmname>--input</parmname>=path/to/your.ditamap \
+  <parmname>--lunr.search</parmname>=WEBSITE_URL \
+  <parmname>--args.hdr</parmname>=path/to/your-header.xml</codeblock>
     </section>
 
     <section>
