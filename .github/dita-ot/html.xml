@@ -31,6 +31,10 @@
         name="open-graph.url"
         value="https://infotexture.github.io/dita-bootstrap"
       />
+      <param
+        name="lunr.search"
+        value="https://infotexture.github.io/dita-bootstrap"
+      />
       <param name="twitter.site" value="@infotexture"/>
     </publication>
   </deliverable>
