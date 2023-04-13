@@ -37,18 +37,28 @@
     <section>
       <title>Installing</title>
       <p>Use the <cmdname>dita</cmdname> command to add this plug-in to your DITA Open Toolkit installation:</p>
-      <p>DITA-OT 3.5 and newer:</p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>install</parmname> fox.jason.extend.css
-<cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap</codeblock>
-      <p>DITA-OT 3.3 and newer:</p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--install</parmname> fox.jason.extend.css
-<cmdname>dita</cmdname> <parmname>--install</parmname> net.infotexture.dita-bootstrap</codeblock>
-      <p>DITA-OT 3.2 and older:</p>
-      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
-        >--install</parmname> https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
-<cmdname>dita</cmdname> <parmname
-        >--install</parmname> https://github.com/infotexture/dita-bootstrap/archive/master.zip</codeblock>
     </section>
+    <bodydiv outputclass="nav-tabs">
+      <section>
+        <title>DITA-OT 3.5 and newer:</title>
+          <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
+          >install</parmname> fox.jason.extend.css
+<cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap</codeblock>
+      </section>
+      <section>
+        <title>DITA-OT 3.3 and newer:</title>
+          <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
+          >--install</parmname> fox.jason.extend.css
+<cmdname>dita</cmdname> <parmname>--install</parmname> net.infotexture.dita-bootstrap</codeblock>
+      </section>
+      <section>
+        <title>DITA-OT 3.2 and older:</title>
+        <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
+          >--install</parmname> https://github.com/jason-fox/fox.jason.extend.css/archive/master.zip
+<cmdname>dita</cmdname> <parmname
+          >--install</parmname> https://github.com/infotexture/dita-bootstrap/archive/master.zip</codeblock>
+      </section>
+    </bodydiv>
     <section>
       <title>Using</title>
       <p>Specify the <option>html5-bootstrap</option> format when building output with the <cmdname>dita</cmdname>
@@ -56,7 +66,6 @@
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >--input</parmname>=path/to/your.ditamap <parmname>--format</parmname>=html5-bootstrap</codeblock>
     </section>
-
     <section>
       <title>Customizing headers and footers</title>
       <indexterm><parmname>--args.hdr</parmname></indexterm>
