@@ -11,8 +11,7 @@
    file for applicable licenses.-->
 <topic id="search-box">
   <title>Search Box</title>
-  <shortdesc>Add a full-text search function to your menu bar by installing a
-      dependent plug-in</shortdesc>
+  <shortdesc>Add a full-text search function to your menu bar by installing another plug-in.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
@@ -32,24 +31,23 @@
 
     <section>
       <title>Adding a search function</title>
-      <p>Search boxes are not included by default. You must first install a dependent plugin
+      <p>Search boxes are not included by default. You must first install another plug-in
         which indexes the full DITA text. Since multiple search engines exist, search is
         always initialised by a separate dependent DITA-OT plug-in.
       </p>
 
-       <p>The DITA-OT Bootstrap <term
-        >Lunr Search Box</term> is a dependent DITA-OT plugin which has been created using the <xref
+       <p>The <term>DITA Bootstrap Lunr Search</term> is a DITA-OT plug-in which has been created using the <xref
           href="https://lunrjs.com/"
           format="html"
           scope="external"
-        >Lunr.js</xref> library, it may be used directly or as a template for extending
+        >Lunr.js</xref> library. It may be used directly or as a template for extending
        search to other search engines.</p>
     </section>
 
     <section>
-      <title>Installing the <term>Lunr Search Box</term> plug-in</title>
-      <p>Use the <cmdname>dita</cmdname> command to add the <term
-        >Lunr Search Box</term> plug-in to your DITA Open Toolkit installation:</p>
+      <title>Installing the <term>DITA Bootstrap Lunr Search</term> plug-in</title>
+      <p>Use the <cmdname>dita</cmdname> command to add the <term>DITA Bootstrap Lunr Search</term>
+       plug-in to your DITA Open Toolkit installation:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
         >install</parmname> net.infotexture.dita-bootstrap.lunr</codeblock>
     </section>
@@ -57,22 +55,26 @@
     <section id="installing-node.js">
         <title>Installing Node.js</title>
         <p>
-          <xref href="https://nodejs.org/" format="html" scope="external">Node.js</xref>
-          is a JavaScript runtime built on Chrome's V8 JavaScript engine. The DITA-OT Bootstrap Lunr Search plugin uses Node.js to generate the Lunr.js search index. Node.js must therefore be present on a user's machine for the index to be generated successfully.
+          The <term>DITA Bootstrap Lunr Search</term> plug-in uses the <xref
+          href="https://nodejs.org/"
+          format="html"
+          scope="external"
+        >Node.js</xref> JavaScript runtime to generate the Lunr.js search index.
+        Node.js must therefore be present for the index to be generated successfully.
         </p>
         <p>
-           To download a copy follow the instructions on the <xref
+           To download and install a copy, follow the instructions for your operating system on the <xref
           href="https://nodejs.org/en/download/"
           format="html"
           scope="external"
-        >Install Page</xref>.
+        >download page</xref>.
         </p>
     </section>
 
     <section>
       <title>Using</title>
-      <p>To run, use the <option>html5-bootstrap</option> transform and add the <parmname
-        >--lunr.search</parmname> and add <parmname>--args.hdr</parmname> parameters with the <cmdname>dita</cmdname>
+      <p>To run, use the <option>html5-bootstrap</option> transformation and pass the <parmname
+        >--lunr.search</parmname> and <parmname>--args.hdr</parmname> parameters to the <cmdname>dita</cmdname>
         command:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> \
   <parmname>--format</parmname>=<option>html5-bootstrap</option> \
@@ -95,7 +97,7 @@
     &lt;/form&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</codeblock>
-    <p>The DITA-OT Bootstrap <term>Lunr Search Box</term> plug-in includes a sample search box in its
+    <p>The <term>DITA Bootstrap Lunr Search</term> plug-in includes a sample search box in its
         <xref
           href="https://github.com/infotexture/dita-bootstrap.lunr/blob/master/includes/bs-navbar-lunr.hdr.xml"
           format="html"
