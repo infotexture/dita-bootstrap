@@ -1,0 +1,175 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="copyright" content="(C) Copyright 2023"><meta name="generator" content="DITA-OT"><meta name="description" content="Add a full-text search function to your menu bar by installing another plug-in."><meta name="keywords" content="Search Box, Nav Bar, Lunr.js, Node.js, --args.hdr, --lunr.search"><meta property="og:type" content="website"><meta property="og:url" content="https://infotexture.github.io/dita-bootstrap/search-box.html"><meta property="og:title" content="Search Box"><meta property="og:description" content="Add a full-text search function to your menu bar by installing another plug-in."><meta property="og:image" content="https://infotexture.github.io/dita-bootstrap/open-graph.svg"><meta name="twitter:title" content="Search Box"><meta name="twitter:description" content="Add a full-text search function to your menu bar by installing another plug-in."><meta property="twitter:url" content="https://infotexture.github.io/dita-bootstrap/search-box.html"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://infotexture.github.io/dita-bootstrap/open-graph.svg"><title>Search Box</title><script src="./js/lunr-client.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><link rel="shortcut icon" href="./favicon/favicon.svg">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/commonltr.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="./css/common-extended.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" integrity="sha384-xeJqLiuOvjUBq3iGOjvSQSIlwrpqjSHXpduPd6rQpuiM3f5/ijby8pCsnbu5S81n" crossorigin="anonymous"></head><body id="search-box"><div class="visually-hidden-focusable overflow-hidden p-2 bg-light"><div class="container-xl"><a class="d-inline-flex m-1 btn btn-outline-primary btn-sm" href="#ariaid-title1">Skip to main content</a><a href="#bs-sidebar-nav" class="d-none d-md-inline-flex m-1 btn btn-outline-primary btn-sm">Skip to docs navigation</a></div></div><div class="bs-header"><header role="banner"><nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+  <div class="container">
+    <a class="navbar-brand" href="https://infotexture.github.io/dita-bootstrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bootstrap" viewBox="0 0 16 16">
+        <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"/>
+        <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"/>
+      </svg>
+      DITA Bootstrap
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.dita-ot.org/plugins#!net.infotexture.dita-bootstrap">Plugin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/infotexture/dita-bootstrap/releases">Releases</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/infotexture/dita-bootstrap">Source</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://getbootstrap.com/docs/5.3">Bootstrap Docs</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <!--
+          This is a lunr.js search box
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item d-flex align-items-center">
+          <span class="nav-link py-2 pe-2"><i class="bi bi-search"></i></span>
+          <form class="bd-search position-relative me-auto" onsubmit="return search(this);">
+          <input type="search" class="form-control ds-input" id="search-input" placeholder="Search docs..." aria-label="Search docs for..." dir="auto" style="position: relative; vertical-align: top;">
+          </form>
+        </li>
+        <!--
+          This is a dark/light color theme toggler
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center show" id="bd-theme" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            <span class="bs-toggler-light">
+              <i class="bi bi-brightness-high-fill"></i>
+            </span>
+            <span class="bs-toggler-dark"><i class="bi bi-moon-stars-fill"></i></span>
+            <span class="bs-toggler-auto"><i class="bi bi-circle-half"></i>
+          </span>
+
+            <span class="d-lg-none ms-2">Toggle theme</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme" style="--bs-dropdown-min-width: 6rem;" data-bs-popper="static">
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                <i class="bi bi-brightness-high-fill"></i>
+                <span class="ms-2"> Light </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                <i class="bi bi-moon-stars-fill"></i>
+                <span class="ms-2"> Dark </span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                <i class="bi bi-circle-half"></i>
+                <span class="ms-2"> Auto </span>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav></header></div><div class="bs-container" id="content"><nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links"><ul class="list-unstyled mb-0 py-3 pt-md-1"><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d27076e11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d27076e11">Getting Started</span></div><div id="menu-collapse-d27076e11" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="index.html">DITA Bootstrap</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d27076e32"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d27076e32">Layout</span></div><div id="menu-collapse-d27076e32" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="grid.html">Grid System</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="rtl.html">Right-to-Left Languages</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d27076e61"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d27076e61">Content</span></div><div id="menu-collapse-d27076e61" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="typography.html">Typography</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="images.html">Images</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tables.html">Tables</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="figures.html">Figures</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d27076e106"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d27076e106">Components</span></div><div id="menu-collapse-d27076e106" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="accordion.html">Accordion</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="alerts.html">Alerts</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="badge.html">Badges</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="breadcrumb.html">Breadcrumb</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="buttons.html">Buttons</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="button-group.html">Button Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="card.html">Cards</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="carousel.html">Carousel</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="collapse.html">Collapse</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="list-group.html">List Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="offcanvas.html">Offcanvas</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="pagination.html">Pagination</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="popovers.html">Popovers</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="scrollspy.html">Scrollspy</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tabs.html">Tabbed Dialogs</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tooltips.html">Tooltips</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d27076e276"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d27076e276">Utilities</span></div><div id="menu-collapse-d27076e276" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="utilities.html">Borders, Color and Background</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0 active" data-bs-target="#menu-collapse-d27076e297" aria-expanded="true" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1 active" data-bs-target="#menu-collapse-d27076e297" aria-expanded="true" aria-current="true">Extend</span></div><div id="menu-collapse-d27076e297" class="collapse show"><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="icons.html">Icons</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="dark-mode.html">Dark Mode</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3 active" href="search-box.html">Search Box</a></div></li></ul></div></li></ul></nav><main role="main" class="container bs-main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title" id="ariaid-title1">Search Box</h1>
+  
+  
+  <div class="body language-markup"><p class="shortdesc text-body-secondary lead">Add a full-text search function to your menu bar by installing another plug-in.</p>
+    <figure class="fig figure w-100 mw-100 p-3">
+      <img class="image figure-img img-fluid border rounded img-fluid" src="src/search-box.png">
+    </figure>
+
+
+    <section class="section"><h2 class="title h4">Adding a search function</h2>
+      
+      <p class="p">Search boxes are not included by default. You must first install another plug-in
+        which indexes the full DITA text. Since multiple search engines exist, search is
+        always initialised by a separate dependent DITA-OT plug-in.
+      </p>
+
+       <p class="p">The <dfn class="term">DITA Bootstrap Lunr Search</dfn> is a DITA-OT plug-in which has been created using the <a class="xref" href="https://lunrjs.com/" target="_blank" rel="external noopener">Lunr.js</a> library. It may be used directly or as a template for extending
+       search to other search engines.</p>
+    </section>
+
+    <section class="section"><h2 class="title h4">Installing the <dfn class="term">DITA Bootstrap Lunr Search</dfn> plug-in</h2>
+      
+      <p class="p">Use the <span class="keyword cmdname">dita</span> command to add the <dfn class="term">DITA Bootstrap Lunr Search</dfn>
+       plug-in to your DITA Open Toolkit installation:</p>
+      <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname"><span class="ph token function">install</span></span> net.infotexture.dita-bootstrap.lunr</code></pre>
+    </section>
+
+    <section class="section" id="search-box__installing-node.js"><h2 class="title h4">Installing Node.js</h2>
+        
+        <p class="p">
+          The <dfn class="term">DITA Bootstrap Lunr Search</dfn> plug-in uses the <a class="xref" href="https://nodejs.org/" target="_blank" rel="external noopener">Node.js</a> JavaScript runtime to generate the Lunr.js search index.
+        Node.js must therefore be present for the index to be generated successfully.
+        </p>
+        <p class="p">
+           To download and install a copy, follow the instructions for your operating system on the <a class="xref" href="https://nodejs.org/en/download/" target="_blank" rel="external noopener">download page</a>.
+        </p>
+    </section>
+
+    <section class="section"><h2 class="title h4">Using</h2>
+      
+      <p class="p">To run, use the <span class="keyword option">html5-bootstrap</span> transformation and pass the <span class="keyword parmname">--lunr.search</span> and <span class="keyword parmname">--args.hdr</span> parameters to the <span class="keyword cmdname">dita</span>
+        command:</p>
+      <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="ph token punctuation">\</span>
+  <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
+  <span class="keyword parmname">--input</span><span class="ph token operator">=</span>path/to/your.ditamap <span class="ph token punctuation">\</span>
+  <span class="keyword parmname">--lunr.search</span><span class="ph token operator">=</span>WEBSITE_URL <span class="ph token punctuation">\</span>
+  <span class="keyword parmname">--args.hdr</span><span class="ph token operator">=</span>path/to/your-header.xml</code></pre>
+    </section>
+
+    <section class="section"><h2 class="title h4">Example Header Nav Bar</h2>
+      
+      <p class="p">To add a search box to the menu bar, add a <code class="keyword markupname xmlelement">&lt;form&gt;</code> element
+      with an <code class="keyword markupname xmlelement">&lt;input id="search-input"&gt;</code> as shown here.</p>
+      <pre class="pre codeblock border rounded language-markup"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>ul</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>navbar-nav ms-auto<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>li</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>nav-item d-flex align-items-center<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>span</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>nav-link py-2 pe-2<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>i</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>bi bi-search<span class="ph token punctuation">"</span></span><span class="ph token punctuation">/&gt;</span></span><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>span</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>form</span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>bd-search position-relative me-auto<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">onsubmit</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>return search(this);<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+      <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>input</span> <span class="ph token attr-name">id</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>search-input<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">type</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>search<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">dir</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>auto<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">class</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>form-control ds-input<span class="ph token punctuation">"</span></span>
+        <span class="ph token attr-name">placeholder</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>Search docs...<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">aria-label</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>Search docs for...<span class="ph token punctuation">"</span></span><span class="ph token style-attr language-css"><span class="ph token attr-name">
+        <span class="ph token attr-name">style</span></span><span class="ph token punctuation">="</span><span class="ph token attr-value"><span class="ph token property">position</span><span class="ph token punctuation">:</span> relative<span class="ph token punctuation">;</span> <span class="ph token property">vertical-align</span><span class="ph token punctuation">:</span> top<span class="ph token punctuation">;</span></span><span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>form</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>li</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>ul</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+    <p class="p">The <dfn class="term">DITA Bootstrap Lunr Search</dfn> plug-in includes a sample search box in its
+        <a class="xref" href="https://github.com/infotexture/dita-bootstrap.lunr/blob/master/includes/bs-navbar-lunr.hdr.xml" target="_blank" rel="external noopener">header navbar</a>.</p>
+    </section>
+  </div>
+</article></main></div><script language="javascript" src="./js/popovers.js"></script><script language="javascript" src="./js/dark-mode-toggler.js"></script><footer role="contentinfo"><!-- Footer --><div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <!-- Social media -->
+      <p class="text-center p-3">
+        <!-- GitHub -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/infotexture/dita-bootstrap" role="button"><i class="bi bi-github"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/infotexture/" role="button"><i class="bi bi-linkedin"></i></a>
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/infotexture" role="button"><i class="bi bi-twitter"></i></a>
+      </p>
+      <p class="p-3">
+        <small>
+          © 2017–2023
+          <a class="text-dark" href="https://infotexture.net/">infotexture</a>
+        </small>
+      </p>
+    </div>
+  </div>
+</div><!-- Footer --></footer></body></html>
