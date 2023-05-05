@@ -62,6 +62,7 @@
     </topicmeta>
     <topicref navtitle="Icons" format="dita" type="topic" href="icons.dita"/>
     <topicref navtitle="Dark Mode" format="dita" type="topic" href="dark-mode.dita"/>
+    <topicref navtitle="Search Box" format="dita" type="topic" href="search-box.dita"/>
   </chapter>
   <backmatter deliveryTarget="pdf">
     <booklists>
