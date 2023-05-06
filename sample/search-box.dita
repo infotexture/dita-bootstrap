@@ -20,7 +20,6 @@
         <indexterm>Lunr.js</indexterm>
         <indexterm>Node.js</indexterm>
         <indexterm><parmname>--args.hdr</parmname></indexterm>
-        <indexterm><parmname>--lunr.search</parmname></indexterm>
       </keywords>
     </metadata>
   </prolog>
@@ -74,12 +73,11 @@
     <section>
       <title>Using</title>
       <p>To run, use the <option>html5-bootstrap</option> transformation and pass the <parmname
-        >--lunr.search</parmname> and <parmname>--args.hdr</parmname> parameters to the <cmdname>dita</cmdname>
+        >--args.hdr</parmname> parameter to the <cmdname>dita</cmdname>
         command:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> \
   <parmname>--format</parmname>=<option>html5-bootstrap</option> \
   <parmname>--input</parmname>=path/to/your.ditamap \
-  <parmname>--lunr.search</parmname>=WEBSITE_URL \
   <parmname>--args.hdr</parmname>=path/to/your-header.xml</codeblock>
     </section>
 
