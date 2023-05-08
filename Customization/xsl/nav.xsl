@@ -56,14 +56,20 @@
   </xsl:template>
 
   <xsl:template name="nav-icon">
-      <xsl:if test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]">
+      <xsl:if
+      test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]"
+    >
         <i>
           <xsl:attribute name="class">
             <xsl:text>me-2 </xsl:text>
-            <xsl:value-of select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]/@content"/>
+            <xsl:value-of
+            select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]/@content"
+          />
           </xsl:attribute>
           <xsl:attribute name="style">
-             <xsl:value-of select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon-style')]/@content"/>
+             <xsl:value-of
+            select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon-style')]/@content"
+          />
           </xsl:attribute>
         </i>
       </xsl:if>
