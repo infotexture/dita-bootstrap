@@ -220,10 +220,21 @@
       <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]">
         <xsl:text>page-link</xsl:text>
       </xsl:when>
+      <xsl:when test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">
+        <xsl:choose>
+          <xsl:when test="contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')">
+            <xsl:text>bi</xsl:text>
+          </xsl:when>
+          <xsl:when test="contains(@class, ' topic/xref ') and .//*[contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')]">
+            <xsl:text>icon-link</xsl:text>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:when>
     </xsl:choose>
     <xsl:if test="@scalefit='yes'">
       <xsl:text> img-fluid</xsl:text>
     </xsl:if>
+
   </xsl:template>
 
   <!-- Add additional Bootstrap CSS classes and roles to <note> elements -->

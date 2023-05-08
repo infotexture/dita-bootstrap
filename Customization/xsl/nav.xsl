@@ -55,6 +55,20 @@
     </xsl:choose>
   </xsl:template>
 
+  <xsl:template name="nav-icon">
+      <xsl:if test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]">
+        <i>
+          <xsl:attribute name="class">
+            <xsl:text>me-2 </xsl:text>
+            <xsl:value-of select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]/@content"/>
+          </xsl:attribute>
+          <xsl:attribute name="style">
+             <xsl:value-of select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon-style')]/@content"/>
+          </xsl:attribute>
+        </i>
+      </xsl:if>
+  </xsl:template>
+
   <!-- Add bootstrap classes and href to a link -->
   <xsl:template name="nav-attributes">
     <xsl:param name="class" as="xs:string"/>
@@ -321,10 +335,12 @@
                       </xsl:if>
                     </xsl:with-param>
                   </xsl:call-template>
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </a>
               </xsl:when>
               <!--xsl:otherwise>
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </xsl:otherwise-->
             </xsl:choose>
@@ -390,12 +406,14 @@
                   </xsl:if>
                 </xsl:with-param>
               </xsl:call-template>
+              <xsl:call-template name="nav-icon"/>
               <xsl:value-of select="$title"/>
             </a>
           </xsl:when>
           <xsl:otherwise>
             <!-- ↓ Add Bootstrap list-group-item class and light background color ↓ -->
             <span class="list-group-item bg-light">
+              <xsl:call-template name="nav-icon"/>
               <xsl:value-of select="$title"/>
             </span>
             <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
@@ -450,10 +468,12 @@
                       <xsl:value-of select="$active-class"/>
                     </xsl:with-param>
                   </xsl:call-template>
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </a>
               </xsl:when>
               <!--xsl:otherwise>
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </xsl:otherwise-->
             </xsl:choose>
@@ -516,12 +536,14 @@
                   <xsl:value-of select="$active-class"/>
                 </xsl:with-param>
               </xsl:call-template>
+              <xsl:call-template name="nav-icon"/>
               <xsl:value-of select="$title"/>
             </a>
           </xsl:when>
           <xsl:otherwise>
             <!-- ↓ Add Bootstrap nav-brand class ↓ -->
             <span class="my-1 ps-3 navbar-brand">
+              <xsl:call-template name="nav-icon"/>
               <xsl:value-of select="$title"/>
             </span>
           </xsl:otherwise>
@@ -616,6 +638,7 @@
                       <xsl:value-of select="$active-class"/>
                     </xsl:with-param>
                   </xsl:call-template>
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </a>
               </div>
@@ -658,6 +681,8 @@
                     <xsl:attribute name="aria-expanded" select="'true'"/>
                     <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
+
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </span>
               </div>
@@ -703,6 +728,7 @@
                   <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                   <xsl:with-param name="class" select="'nav-link'"/>
                 </xsl:call-template>
+                <xsl:call-template name="nav-icon"/>
                 <xsl:value-of select="$title"/>
               </a>
             </li>
@@ -718,6 +744,7 @@
                 aria-expanded="false"
                 aria-haspopup="true"
               >
+                <xsl:call-template name="nav-icon"/>
                 <xsl:value-of select="$title"/>
               </a>
               <ul class="dropdown-menu" role="menu">
@@ -732,6 +759,7 @@
                         <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                         <xsl:with-param name="class" select="'dropdown-item'"/>
                       </xsl:call-template>
+                      <xsl:call-template name="nav-icon"/>
                       <xsl:value-of select="$title"/>
                     </a>
                   </li>

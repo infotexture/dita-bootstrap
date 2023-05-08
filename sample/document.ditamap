@@ -10,12 +10,16 @@
   <chapter>
     <topicmeta>
       <navtitle>Getting Started</navtitle>
+      <othermeta name="icon" content="bi-book-half"/>
+      <othermeta name="icon-style" content="color: var(--bs-indigo)"/>
     </topicmeta>
     <topicref navtitle="Introduction" format="dita" href="index.dita"/>
   </chapter>
   <chapter>
     <topicmeta>
       <navtitle>Layout</navtitle>
+      <othermeta name="icon" content="bi-grid-fill"/>
+      <othermeta name="icon-style" content="color: var(--bs-teal)"/>
     </topicmeta>
     <topicref navtitle="Grid" format="dita" type="topic" href="grid.dita"/>
     <topicref navtitle="Right-to-Left Languages" format="dita" href="rtl.dita" locktitle="yes"/>
@@ -23,6 +27,8 @@
   <chapter>
     <topicmeta>
       <navtitle>Content</navtitle>
+      <othermeta name="icon" content="bi-file-earmark-richtext"/>
+      <othermeta name="icon-style" content="color: var(--bs-gray)"/>
     </topicmeta>
     <topicref navtitle="Typography" format="dita" type="topic" href="typography.dita"/>
     <topicref navtitle="Images" format="dita" type="topic" href="images.dita"/>
@@ -32,6 +38,8 @@
   <chapter>
     <topicmeta>
       <navtitle>Components</navtitle>
+      <othermeta name="icon" content="bi-menu-button-wide-fill"/>
+      <othermeta name="icon-style" content="color: var(--bs-cyan)"/>
     </topicmeta>
     <topicref navtitle="Accordion" format="dita" type="topic" href="accordion.dita"/>
     <topicref navtitle="Alerts" format="dita" type="topic" href="alerts.dita"/>
@@ -53,16 +61,32 @@
   <chapter>
     <topicmeta>
       <navtitle>Utilities</navtitle>
+      <othermeta name="icon" content="bi-braces-asterisk"/>
+      <othermeta name="icon-style" content="color: var(--bs-pink)"/>
     </topicmeta>
     <topicref navtitle="Colors &amp; etc." format="dita" type="topic" href="utilities.dita"/>
   </chapter>
   <chapter>
     <topicmeta>
       <navtitle>Extend</navtitle>
+      <othermeta name="icon" content="bi-tools"/>
+      <othermeta name="icon-style" content="color: var(--bs-blue)"/>
     </topicmeta>
-    <topicref navtitle="Icons" format="dita" type="topic" href="icons.dita"/>
-    <topicref navtitle="Dark Mode" format="dita" type="topic" href="dark-mode.dita"/>
-    <topicref navtitle="Search Box" format="dita" type="topic" href="search-box.dita"/>
+    <topicref navtitle="Icons" format="dita" type="topic" href="icons.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-images"/>
+      </topicmeta>
+    </topicref>
+    <topicref navtitle="Dark Mode" format="dita" type="topic" href="dark-mode.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-moon-stars"/>
+      </topicmeta>
+    </topicref>
+    <topicref navtitle="Search Box" format="dita" type="topic" href="search-box.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-search"/>
+      </topicmeta>
+    </topicref>
   </chapter>
   <backmatter deliveryTarget="pdf">
     <booklists>
