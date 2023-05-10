@@ -42,6 +42,81 @@
     </bodydiv>
     <codeblock>&lt;i outputclass="bi-alarm"/&gt;
 &lt;i outputclass="bi-alarm" otherprops="style(font-size: 2rem; color: cornflowerblue;)"/&gt;</codeblock>
+  <p>Icons placed within an <xmlelement>xref</xmlelement> element are colorized appropriately:</p>
+  <bodydiv outputclass="bd-example" deliveryTarget="html">
+    <p>
+      <xref href="#" outputclass="link-primary">
+        <i outputclass="bi-link"/> Primary link
+      </xref>
+    </p>
+    <p>
+      <xref href="#" outputclass="link-secondary">
+        <i outputclass="bi-link"/> Secondary link
+      </xref>
+    </p>
+    <p>
+      <xref href="#" outputclass="link-success">
+        <i outputclass="bi-link"/> Success link
+      </xref>
+    </p>
+    <p>
+      <xref href="#" outputclass="link-danger">
+        <i outputclass="bi-link"/> Danger link
+      </xref>
+    </p>
+    <p>
+      <xref href="#" outputclass="link-warning">
+        <i outputclass="bi-link"/> Warning link
+      </xref>
+    </p>
+    <p>
+      <xref href="#" outputclass="link-info">
+        <i outputclass="bi-link"/> Info link
+      </xref>
+    </p>
+    <p>
+      <xref href="#" outputclass="link-light">
+        <i outputclass="bi-link"/> Light link
+      </xref>
+    </p>
+    <p>
+      <xref href="#" outputclass="link-dark">
+        <i outputclass="bi-link"/> Dark link
+      </xref>
+    </p>
+    <p>
+      <xref href="#" outputclass="link-body-emphasis">
+        <i outputclass="bi-link"/> Emphasis link
+      </xref>
+    </p>
+  </bodydiv>
+  <codeblock>&lt;xref outputclass="link-primary" href="#"&gt;
+  &lt;i outputclass="bi-link"/&gt; Primary link
+&lt;/xref&gt;
+&lt;xref outputclass="link-secondary" href="#"&gt;
+  &lt;i outputclass="bi-link"/&gt; Secondary link
+&lt;/xref&gt;
+&lt;xref outputclass="link-success" href="#"&gt;
+  &lt;i outputclass="bi-link"/&gt; Success link
+&lt;/xref&gt;
+&lt;xref outputclass="link-danger" href="#"&gt;
+  &lt;i outputclass="bi-link"/&gt; Danger link
+&lt;/xref&gt;
+&lt;xref outputclass="link-warning" href="#"&gt;
+  &lt;i outputclass="bi-link"/&gt; Warning link
+&lt;/xref&gt;
+&lt;xref outputclass="link-info" href="#"&gt;
+  &lt;i outputclass="bi-link"/&gt; Info link
+&lt;/xref&gt;
+&lt;xref outputclass="link-light" href="#"&gt;
+  &lt;i outputclass="bi-link"/&gt; Light link
+&lt;/xref&gt;
+&lt;xref outputclass="link-dark" href="#"&gt;
+  &lt;i outputclass="bi-link"/&gt; Dark link
+&lt;/xref&gt;
+&lt;xref outputclass="link-body-emphasis" href="#"&gt;
+  &lt;i outputclass="bi-link"/&gt; Emphasis link
+&lt;/xref&gt;</codeblock>
     <p>Icons can also be placed within buttons as shown:</p>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <xref outputclass="btn-primary btn-floating m-1" href="#"><i outputclass="bi-arrow-down-square-fill"/></xref>
@@ -69,7 +144,33 @@
 &lt;xref outputclass="btn-primary btn-floating m-1" href="#"&gt;
   &lt;i outputclass="bi-share-fill"/&gt;
 &lt;/xref&gt;</codeblock>
-     <section>
+    <p>Icons can also be used within <xmlelement>chapter</xmlelement> headings,
+      and <xmlelement>topicref</xmlelement> elements by adding
+      <xmlelement>othermeta name="icon"</xmlelement>  and
+      <xmlelement>othermeta name="icon-style"</xmlelement> elements.
+    </p>
+    <fig>
+      <title>Collapsible ToC with icon elements</title>
+      <image scalefit="yes" href="./src/icons-collapsible.png"/>
+    </fig>
+    <fig>
+      <title>Icons elements within a menu bar</title>
+      <image scalefit="yes" href="./src/icons-menubar.png"/>
+    </fig>
+    <codeblock>&lt;chapter&gt;
+  &lt;topicmeta&gt;
+    &lt;navtitle&gt;Extend&lt;/navtitle&gt;
+    &lt;othermeta name="icon" content="bi-tools"/&gt;
+    &lt;othermeta name="icon-style" content="color: var(--bs-blue)"/&gt;
+  &lt;/topicmeta&gt;
+  &lt;topicref navtitle="Icons" format="dita" type="topic" href="icons.dita"&gt;
+    &lt;topicmeta&gt;
+      &lt;othermeta name="icon" content="bi-images"/&gt;
+    &lt;/topicmeta&gt;
+  &lt;/topicref&gt;
+  ...
+&lt;/chapter&gt;</codeblock>
+    <section>
       <title>Installing other icons</title>
       <p>Other icon sets such as
         <xref href="https://fontawesome.com/" format="html" scope="external">Font Awesome</xref>
