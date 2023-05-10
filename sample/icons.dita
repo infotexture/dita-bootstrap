@@ -150,11 +150,11 @@
       <xmlelement>othermeta name="icon-style"</xmlelement> elements.
     </p>
     <fig>
-       <title>Collapsible ToC with icon elements</title>
+      <title>Collapsible ToC with icon elements</title>
       <image scalefit="yes" href="./src/icons-collapsible.png"/>
     </fig>
     <fig>
-       <title>Icons elements within a menu bar</title>
+      <title>Icons elements within a menu bar</title>
       <image scalefit="yes" href="./src/icons-menubar.png"/>
     </fig>
     <codeblock>&lt;chapter&gt;
@@ -170,7 +170,7 @@
   &lt;/topicref&gt;
   ...
 &lt;/chapter&gt;</codeblock>
-     <section>
+    <section>
       <title>Installing other icons</title>
       <p>Other icon sets such as
         <xref href="https://fontawesome.com/" format="html" scope="external">Font Awesome</xref>
