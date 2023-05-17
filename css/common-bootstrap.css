@@ -23,12 +23,15 @@
 [data-bs-theme='light'] .bs-toggler-light {
   display: inherit;
 }
+
 [data-bs-theme='light'] .bs-toggler-auto {
   display: none;
 }
+
 [data-bs-theme='dark'] .bs-toggler-dark {
   display: inherit;
 }
+
 [data-bs-theme='dark'] .bs-toggler-auto {
   display: none;
 }
