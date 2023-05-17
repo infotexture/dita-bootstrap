@@ -105,10 +105,10 @@
   z-index: 1020;
 }
 
-[type=search] {
+[type='search'] {
   background: var(--bs-nav-link-hover-color);
 }
 
-[type=search]::placeholder {
+[type='search']::placeholder {
   color: #6a91cf !important;
 }
