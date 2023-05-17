@@ -104,3 +104,11 @@
 .bs-header {
   z-index: 1020;
 }
+
+[type=search] {
+  background: var(--bs-nav-link-hover-color);
+}
+
+[type=search]::placeholder {
+  color: #6a91cf !important;
+}
