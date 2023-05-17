@@ -36,14 +36,16 @@ function parseLunrResults(results) {
     const title = item["t"];
     const preview = item["d"];
     const link = item["l"];
-    const result =
-      '<p><span class="h3"><a href="' +
-      BASE_URL +
-      link +
-      '">' +
-      title +
-      "</a></span></p>" +
-      preview;
+    const result = `<div class="card mb-3">
+      <a class="link stretched-link link-underline link-underline-opacity-0" href="${BASE_URL + link}">
+          <h2 class="h3 title card-header text-body-emphasis">${title}</h5>
+      </a>
+      <div class="card-body">
+        <div class="card-text">
+          ${preview}
+        </div>
+      </div>
+    </div>`;
     html.push(result);
   }
   if (html.length) {
