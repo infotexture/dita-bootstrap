@@ -10,21 +10,27 @@
           style="background-color: #333333"
           href="#!"
           role="button"
-        ><i class="bi bi-github"/></a>
+        >
+          <i class="bi bi-github"/>
+        </a>
         <!-- Linkedin -->
         <a
           class="btn btn-primary btn-floating m-1"
           style="background-color: #0082ca"
           href="#!"
           role="button"
-        ><i class="bi bi-linkedin"/></a>
+        >
+          <i class="bi bi-linkedin"/>
+        </a>
         <!-- Twitter -->
         <a
           class="btn btn-primary btn-floating m-1"
           style="background-color: #55acee"
           href="#!"
           role="button"
-        ><i class="bi bi-twitter"/></a>
+        >
+          <i class="bi bi-twitter"/>
+        </a>
       </p>
       <p class="p-3">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
@@ -33,9 +39,7 @@
         aliquam sequi voluptate quas.
       </p>
       <p class="p-3">
-        <small>
-          © 2023
-        </small>
+        <small>© 2023</small>
       </p>
     </div>
   </div>

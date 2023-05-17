@@ -14,7 +14,6 @@
              bootstrap.scripts.dark.mode"
   />
 
-
   <target name="dita-bootstrap.css.copy" description="Copy CSS files">
     <property
       name="dita-bootstrap.css.dir"
@@ -86,7 +85,7 @@
       property="dita-bootstrap.collapsible.css.file"
       value="${dita-bootstrap.css.dir}/collapsible-toc.css"
     >
-       <equals arg1="${nav-toc}" arg2="collapsible"/>
+      <equals arg1="${nav-toc}" arg2="collapsible"/>
     </condition>
 
     <loadfile
@@ -123,7 +122,6 @@
       />
     </copy>
   </target>
-
 
   <target name="dita2html5-bootstrap.init">
     <!-- Location of page header template with hard-coded links -->
