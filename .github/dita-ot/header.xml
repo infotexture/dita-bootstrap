@@ -73,8 +73,8 @@
               type="search"
               class="form-control ds-input"
               id="search-input"
-              placeholder="Search docs..."
-              aria-label="Search docs for..."
+              placeholder="Search…"
+              aria-label="Search for…"
               dir="auto"
               style="position: relative; vertical-align: top;"
             />
