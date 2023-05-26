@@ -93,7 +93,7 @@
     <section>
       <title>Notes</title>
       <p>DITA <xmlelement>note</xmlelement> elements are displayed as alerts according to the <xmlatt>type</xmlatt>
-        attribute. With the execption <xmlatt>type="othertype"</xmlatt>, an icon is added if <xmlatt
+        attribute. With the exception <xmlatt>type="othertype"</xmlatt>, an icon is added if <xmlatt
         >type</xmlatt> is present.</p>
     </section>
     <div outputclass="bd-example" deliveryTarget="html">
