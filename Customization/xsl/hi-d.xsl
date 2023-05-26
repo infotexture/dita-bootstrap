@@ -14,22 +14,7 @@
     <em>
       <xsl:call-template name="commonattributes"/>
       <xsl:call-template name="setidaname"/>
-      <xsl:attribute name="style">
-        <!--xsl:value-of select="replace(, ')', '')"/-->
-        <xsl:analyze-string select="@otherprops" regex="[a-z]*\([^\)]*\)">
-          <xsl:matching-substring>
-            <xsl:variable name="var">
-              <xsl:value-of select="."/>
-            </xsl:variable>
-            <xsl:variable name="attr">
-              <xsl:value-of select="substring-before($var, '(')"/>
-            </xsl:variable>
-            <xsl:attribute name="{$attr}">
-              <xsl:value-of select="substring-before(substring-after($var, '('),')')"/>
-            </xsl:attribute>
-          </xsl:matching-substring>
-        </xsl:analyze-string>
-      </xsl:attribute>
+      <xsl:call-template name="otherprops-attributes"/>
       <xsl:apply-templates/>
     </em>
   </xsl:template>

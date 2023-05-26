@@ -286,46 +286,86 @@
     </xsl:choose>
   </xsl:template>
 
+  <!-- Add style to a bootstrap element based on otherprops -->
+  <xsl:template name="otherprops-attributes">
+    <xsl:analyze-string select="@otherprops" regex="[a-z]*\([^\)]*\)">
+      <xsl:matching-substring>
+        <xsl:variable name="var">
+          <xsl:value-of select="."/>
+        </xsl:variable>
+        <xsl:variable name="attr">
+          <xsl:value-of select="substring-before($var, '(')"/>
+        </xsl:variable>
+        <xsl:choose>
+          <xsl:when test="$attr='icon'">
+            <xsl:attribute name="class" select="concat('pe-2 ', substring-before(substring-after($var, '('),')'))"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:attribute name="{$attr}" select="substring-before(substring-after($var, '('),')')"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:matching-substring>
+    </xsl:analyze-string>
+  </xsl:template>
+
   <!-- Add icons to <note> elements -->
   <xsl:template name="bootstrap-icon">
+    <xsl:variable name="icon">
+      <xsl:choose>
+        <xsl:when test="@type='tip'">
+          <xsl:text>bi bi-lightbulb</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='fastpath'">
+          <xsl:text>bi bi-shield-check</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='remember'">
+          <xsl:text>bi bi-clipboard-check</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='restriction'">
+          <xsl:text>bi bi-slash-circle</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='important'">
+          <xsl:text>bi bi-exclamation-circle-fill</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='attention'">
+          <xsl:text>bi bi-exclamation-triangle</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='caution'">
+          <xsl:text>bi bi-exclamation-triangle</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='warning'">
+          <xsl:text>bi bi-exclamation-triangle</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='trouble'">
+          <xsl:text>bi bi-exclamation-triangle</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='danger'">
+          <xsl:text>bi bi-exclamation-triangle</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='notice'">
+          <xsl:text>bi bi-info-circle-fill</xsl:text>
+        </xsl:when>
+        <xsl:when test="@type='note'">
+          <xsl:text>bi bi-pencil</xsl:text>
+        </xsl:when>
+        <!--xsl:when test="@type='other'"/-->
+      </xsl:choose>
+    </xsl:variable>
+
     <xsl:choose>
-      <xsl:when test="@type='tip'">
-        <i class="pe-2 bi bi-lightbulb"/>
+      <xsl:when test="contains(@otherprops, 'icon(')">
+         <xsl:element name="i">
+          <xsl:call-template name="otherprops-attributes"/>
+        </xsl:element>
       </xsl:when>
-      <xsl:when test="@type='fastpath'">
-        <i class="pe-2 bi bi-shield-check"/>
+      <xsl:when test="$icon != ''">
+        <xsl:element name="i">
+          <xsl:attribute name="class" select="concat('pe-2 ', $icon)"/>
+          <xsl:if test="contains(@otherprops, 'style(')">
+            <xsl:call-template name="otherprops-attributes"/>
+          </xsl:if>
+        </xsl:element>
       </xsl:when>
-      <xsl:when test="@type='remember'">
-        <i class="pe-2 bi bi-clipboard-check"/>
-      </xsl:when>
-      <xsl:when test="@type='restriction'">
-        <i class="pe-2 bi bi-slash-circle"/>
-      </xsl:when>
-      <xsl:when test="@type='important'">
-        <i class="pe-2 bi bi-exclamation-circle-fill"/>
-      </xsl:when>
-      <xsl:when test="@type='attention'">
-        <i class="pe-2 bi bi-exclamation-triangle"/>
-      </xsl:when>
-      <xsl:when test="@type='caution'">
-        <i class="pe-2 bi bi-exclamation-triangle"/>
-      </xsl:when>
-      <xsl:when test="@type='warning'">
-        <i class="pe-2 bi bi-exclamation-triangle"/>
-      </xsl:when>
-      <xsl:when test="@type='trouble'">
-        <i class="pe-2 bi bi-exclamation-triangle"/>
-      </xsl:when>
-      <xsl:when test="@type='danger'">
-        <i class="pe-2 bi bi-exclamation-triangle"/>
-      </xsl:when>
-      <xsl:when test="@type='notice'">
-        <i class="pe-2 bi bi-info-circle-fill"/>
-      </xsl:when>
-      <xsl:when test="@type='note'">
-        <i class="pe-2 bi bi-pencil"/>
-      </xsl:when>
-      <!--xsl:when test="@type='other'"/-->
     </xsl:choose>
   </xsl:template>
 
