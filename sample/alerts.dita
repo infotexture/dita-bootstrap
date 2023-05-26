@@ -93,7 +93,8 @@
     <section>
       <title>Notes</title>
       <p>DITA <xmlelement>note</xmlelement> elements are displayed as alerts according to the <xmlatt>type</xmlatt>
-        attribute. With the execption <xmlatt>type="othertype"</xmlatt>, an icon is added if <xmlatt>type</xmlatt> is present.</p>
+        attribute. With the execption <xmlatt>type="othertype"</xmlatt>, an icon is added if <xmlatt
+        >type</xmlatt> is present.</p>
     </section>
     <div outputclass="bd-example" deliveryTarget="html">
       <note type="note">This is just a note.</note>
@@ -130,12 +131,18 @@
 &lt;note type="note" outputclass="alert-secondary"&gt;This is a secondary note.&lt;/note&gt;
 &lt;note type="note" outputclass="alert-light"&gt;This is light note.&lt;/note&gt;
 &lt;note type="note" outputclass="alert-dark"&gt;This is dark note.&lt;/note&gt;</codeblock>
-    <p>Use an additional <xmlatt>otherprops</xmlatt> to alter the default icon, use CSS font-size and color to change the icon appearance.</p>
+    <p>Use an additional <xmlatt
+      >otherprops</xmlatt> to alter the default icon, use CSS font-size and color to change the icon appearance.</p>
     <div outputclass="bd-example" deliveryTarget="html">
       <note otherprops="icon(bi-search)" type="other" othertype="Search">This note has a search icon.</note>
-      <note otherprops="icon(bi bi-emoji-smile), style(font-size: 2rem; color: cornflowerblue;)" type="note" othertype="Another note">This note uses a styled smile emoji.</note>
+      <note
+        otherprops="icon(bi bi-emoji-smile), style(font-size: 2rem; color: cornflowerblue;)"
+        type="note"
+        othertype="Another note"
+      >This note uses a styled smile emoji.</note>
     </div>
-    <codeblock>&lt;note otherprops="icon(bi-search)" type="other" othertype="Search"&gt;This note has a search icon.&lt;/note&gt;
+    <codeblock
+    >&lt;note otherprops="icon(bi-search)" type="other" othertype="Search"&gt;This note has a search icon.&lt;/note&gt;
 &lt;note otherprops="icon(bi-emoji-smile), style(font-size: 2rem; color: cornflowerblue;)" type="note" othertype="Another note"&gt;This note uses a styled smile emoji.&lt;/note&gt;</codeblock>
   </body>
 </topic>
