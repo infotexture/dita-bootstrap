@@ -381,7 +381,8 @@
       <indexterm><parmname>--bootstrap.icon.trouble</parmname></indexterm>
       <indexterm><parmname>--bootstrap.icon.danger</parmname></indexterm>
       <indexterm><parmname>--bootstrap.icon.notice</parmname></indexterm>
-      <p>The Bootstrap default icons used for DITA <xmlelement>note</xmlelement> elements can be overridden using additional command line parameters:</p>
+      <p>The Bootstrap default icons used for DITA <xmlelement
+        >note</xmlelement> elements can be overridden using additional command line parameters:</p>
       <ul>
         <li>
           <parmname>--bootstrap.icon.note</parmname> – icon for standard notes
