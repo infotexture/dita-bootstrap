@@ -29,24 +29,12 @@
       type="enum"
       desc="Specifies whether to generate a navigation TOC in topic pages."
     >
-      <val desc="Bootstrap styled partial TOC with descendents in a list-group">
-        list-group-partial
-      </val>
-      <val desc="Bootstrap styled full TOC using a list-group">
-        list-group-full
-      </val>
-      <val desc="Bootstrap styled scrollspy menu using a list-group">
-        list-group-scrollspy
-      </val>
-      <val desc="Bootstrap styled partial TOC with descendents in nav-pills">
-        nav-pill-partial
-      </val>
-      <val desc="Bootstrap styled full ToC using indented nav-pills">
-        nav-pill-full
-      </val>
-      <val desc="Bootstrap styled scrollspy menu using indented nav-pills">
-        nav-pill-scrollspy
-      </val>
+      <val desc="Bootstrap styled partial TOC with descendents in a list-group">list-group-partial</val>
+      <val desc="Bootstrap styled full TOC using a list-group">list-group-full</val>
+      <val desc="Bootstrap styled scrollspy menu using a list-group">list-group-scrollspy</val>
+      <val desc="Bootstrap styled partial TOC with descendents in nav-pills">nav-pill-partial</val>
+      <val desc="Bootstrap styled full ToC using indented nav-pills">nav-pill-full</val>
+      <val desc="Bootstrap styled scrollspy menu using indented nav-pills">nav-pill-scrollspy</val>
       <val desc="Bootstrap styled collapsible menu">collapsible</val>
     </param>
     <param
