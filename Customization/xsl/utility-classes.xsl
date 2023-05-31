@@ -26,8 +26,8 @@
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_CAPTION" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_IMAGE" select="'img-fluid border rounded'"/>
   <xsl:param name="BOOTSTRAP_CSS_DL" select="'row'"/>
-  <xsl:param name="BOOTSTRAP_CSS_DT" select="'col-sm-3 text-truncate '"/>
-  <xsl:param name="BOOTSTRAP_CSS_DD" select="'col-sm-9 '"/>
+  <xsl:param name="BOOTSTRAP_CSS_DT" select="'text-truncate '"/>
+  <xsl:param name="BOOTSTRAP_CSS_DD" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_PAGINATION" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABLE" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABLE_HEAD" select="''"/>
@@ -57,11 +57,17 @@
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS text color of the headers -->
-  <xsl:template match="*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class">
+  <xsl:template
+    match="*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/title ')]"
+    mode="get-output-class"
+  >
     <xsl:value-of select="$BOOTSTRAP_CSS_TOPIC_TITLE"/>
   </xsl:template>
 
-  <xsl:template match="*[contains(@class, ' topic/section ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class">
+  <xsl:template
+    match="*[contains(@class, ' topic/section ')]/*[contains(@class, ' topic/title ')]"
+    mode="get-output-class"
+  >
     <xsl:value-of select="$BOOTSTRAP_CSS_SECTION_TITLE"/>
   </xsl:template>
 
@@ -187,9 +193,44 @@
         <xsl:value-of select="$BOOTSTRAP_CSS_DL"/>
       </xsl:when>
       <xsl:when test="contains(@class, ' topic/dt ')">
+        <xsl:variable name="terms" select="count(../*[contains(@class, ' topic/dt ')])"/>
+        <xsl:choose>
+          <xsl:when test="$terms=1">
+            <xsl:text>col-sm-3 </xsl:text>
+          </xsl:when>
+          <xsl:when test="$terms=2">
+            <xsl:text>col-sm-2 </xsl:text>
+          </xsl:when>
+          <xsl:when test="$terms=3">
+            <xsl:text>col-sm-2 </xsl:text>
+          </xsl:when>
+           <xsl:when test="$terms=4">
+            <xsl:text>col-sm-1 </xsl:text>
+          </xsl:when>
+        </xsl:choose>
         <xsl:value-of select="$BOOTSTRAP_CSS_DT"/>
       </xsl:when>
       <xsl:when test="contains(@class, ' topic/dd ')">
+        <xsl:variable name="terms" select="count(../*[contains(@class, ' topic/dt ')])"/>
+        <xsl:variable name="is-first-dd" select="empty(preceding-sibling::*[contains(@class, ' topic/dd ')])"/>
+
+        <xsl:choose>
+          <xsl:when test="not($is-first-dd)">
+            <xsl:text>col-sm-12 </xsl:text>
+          </xsl:when>
+          <xsl:when test="$terms=1">
+            <xsl:text>col-sm-9 </xsl:text>
+          </xsl:when>
+          <xsl:when test="$terms=2">
+            <xsl:text>col-sm-8 </xsl:text>
+          </xsl:when>
+          <xsl:when test="$terms=3">
+            <xsl:text>col-sm-6 </xsl:text>
+          </xsl:when>
+          <xsl:when test="$terms=4">
+            <xsl:text>col-sm-8 </xsl:text>
+          </xsl:when>
+        </xsl:choose>
         <xsl:value-of select="$BOOTSTRAP_CSS_DD"/>
       </xsl:when>
       <xsl:when test="contains(@class, ' topic/image ') and ancestor::*[contains(@class, ' topic/fig ')]">
@@ -205,10 +246,14 @@
       <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'alert-')]">
         <xsl:text>alert-link</xsl:text>
       </xsl:when>
-      <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])">
+      <xsl:when
+        test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])"
+      >
         <xsl:text>list-group-item</xsl:text>
       </xsl:when>
-      <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])">
+      <xsl:when
+        test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])"
+      >
         <xsl:text>list-inline-item</xsl:text>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'pagination-')">
@@ -225,7 +270,9 @@
           <xsl:when test="contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')">
             <xsl:text>bi</xsl:text>
           </xsl:when>
-          <xsl:when test="contains(@class, ' topic/xref ') and .//*[contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')]">
+          <xsl:when
+            test="contains(@class, ' topic/xref ') and .//*[contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')]"
+          >
             <xsl:text>icon-link</xsl:text>
           </xsl:when>
         </xsl:choose>
