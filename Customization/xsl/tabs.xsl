@@ -85,7 +85,7 @@
         </xsl:attribute>
         <xsl:attribute name="aria-selected" select="$index=0"/>
         <xsl:attribute name="aria-controls" select="$title"/>
-        <xsl:value-of select="$title"/>
+        <xsl:apply-templates/>
       </button>
     </li>
   </xsl:template>
@@ -106,7 +106,7 @@
       </xsl:attribute>
       <xsl:attribute name="aria-selected" select="$index=0"/>
       <xsl:attribute name="aria-controls" select="$title"/>
-      <xsl:value-of select="$title"/>
+      <xsl:apply-templates/>
     </button>
   </xsl:template>
 
