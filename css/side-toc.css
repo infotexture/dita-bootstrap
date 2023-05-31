@@ -54,14 +54,14 @@
     min-width: 100%;
   }
   .bs-sidebar {
-    position:-webkit-sticky;
+    position: -webkit-sticky;
     position: sticky;
     top: 5rem;
     display: block !important;
     height: calc(100vh - 6rem);
-    padding-left: .25rem;
-    margin-left: -.25rem;
-    overflow-y: auto
+    padding-left: 0.25rem;
+    margin-left: -0.25rem;
+    overflow-y: auto;
   }
 }
 
@@ -77,6 +77,6 @@
     min-width: 100%;
   }
   .bs-sidebar .offcanvas-lg {
-    border-right-color:var(--bs-border-color);
+    border-right-color: var(--bs-border-color);
   }
 }
