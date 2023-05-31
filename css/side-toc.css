@@ -58,6 +58,7 @@
   }
   .codeblock {
     max-width: calc(100vw - 11rem);
+    min-width: 100%;
   }
 }
 
