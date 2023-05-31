@@ -269,7 +269,9 @@
         <xsl:call-template name="sidebar-content"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:call-template name="offcanvas-sidebar"/>
+        <div class="bs-sidebar">
+          <xsl:call-template name="offcanvas-sidebar"/>
+        </div>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>

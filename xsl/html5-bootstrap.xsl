@@ -230,7 +230,6 @@
   </xsl:attribute-set>
 
   <xsl:attribute-set name="toc">
-    <xsl:attribute name="class">bs-sidebar</xsl:attribute>
     <xsl:attribute name="role">navigation</xsl:attribute>
     <xsl:attribute name="id">bs-sidebar-nav</xsl:attribute>
   </xsl:attribute-set>
