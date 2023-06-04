@@ -95,12 +95,8 @@
     >
       <val default="true">none</val>
       <val>list</val>
-      <val
-        desc="Scrollspy menu using a list-group"
-      >list-group</val>
-      <val
-        desc="Scrollspy menu using indented nav-pills"
-      >nav-pill</val>
+      <val desc="Scrollspy menu using a list-group">list-group</val>
+      <val desc="Scrollspy menu using indented nav-pills">nav-pill</val>
     </param>
     <param
       name="bootstrap.css.shortdesc"

@@ -23,8 +23,8 @@
 }
 
 .bs-content {
-    grid-area: content;
-    min-width: 1px;
+  grid-area: content;
+  min-width: 1px;
 }
 
 .bs-header {
