@@ -64,7 +64,7 @@
 
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
-      <article xsl:use-attribute-sets="article">
+      <article role="article" class="bs-content">
         <!-- ↓ Add check for bi-directional content ↓ -->
         <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
           <xsl:variable name="direction">
@@ -95,7 +95,15 @@
         <xsl:call-template name="gen-endnotes"/>    <!-- include footnote-endnotes -->
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
       </article>
+      <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
+        <xsl:if test="count(*[contains(@class, ' topic/topic ')])&gt;0">
+          <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+            <xsl:call-template name="scrollspy-content"/>
+          </div>
+        </xsl:if>
+      </xsl:if>
     </main>
+
   </xsl:template>
 
   <!-- Override to add Bootstrap classes and roles -->

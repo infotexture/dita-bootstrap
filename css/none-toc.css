@@ -6,26 +6,9 @@
 /*! These values define the relative width of the
  * main content window compared with the sidebar-nav
  */
-@media (min-width: 768px) {
-  .bs-main {
-    width: 768px;
-  }
-}
-
-@media (min-width: 992px) {
-  .bs-main {
-    width: 992px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .bs-main {
-    width: 1200px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .bs-main {
-    width: 1400px;
-  }
+.bs-container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas: 'main';
+  grid-template-columns: 1fr;
 }

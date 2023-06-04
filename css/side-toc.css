@@ -6,78 +6,82 @@
 /*! These values define the relative width of the
  *  main content window compared with the sidebar-nav
  */
+
+.bs-container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-areas: 'sidebar main';
+  grid-template-columns: 1fr 5fr;
+}
+
+.bs-sidebar {
+  grid-area: sidebar;
+}
+
+.bs-main {
+  grid-area: main;
+}
+
+.bs-content {
+    grid-area: content;
+    min-width: 1px;
+}
+
+.bs-header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+@media (max-width: 991.98px) {
+  .bs-main {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+}
+
 @media (min-width: 768px) {
-  .bs-container {
+  .bs-main {
     display: grid;
-    gap: 1.5rem;
-    grid-template-areas: 'sidebar main';
-    grid-template-columns: 1fr 3fr;
-    width: 768px;
-  }
-}
-
-@media (min-width: 992px) {
-  .bs-container {
-    width: 992px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .bs-container {
-    width: 1200px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .bs-container {
-    width: 1400px;
-  }
-}
-
-/*! These values define the relative width of the
- *  main content window compared with the sidebar-nav
- */
-@media (min-width: 768px) {
-  .bs-main {
-    width: 576px;
+    grid-template-areas: 'content';
+    grid-template-rows: auto auto 1fr;
+    gap: inherit;
   }
 }
 
 @media (min-width: 992px) {
   .bs-main {
-    width: 744px;
+    grid-template-areas: 'content';
+    grid-template-rows: auto 1fr;
   }
-}
-
-@media (min-width: 1200px) {
-  .bs-main {
-    width: 900px;
+  .codeblock {
+    max-width: calc(80vw - 2rem);
+    min-width: 100%;
   }
-}
-
-@media (min-width: 1400px) {
-  .bs-main {
-    width: 1050px;
-  }
-}
-
-@media (min-width: 768px) {
-  .bs-sidebar-nav {
-    display: block !important;
-    height: calc(100vh - 7rem);
-    margin-left: 2rem;
-    overflow-y: auto;
-    padding-left: 0.25rem;
+  .bs-sidebar {
     position: -webkit-sticky;
     position: sticky;
     top: 5rem;
+    display: block !important;
+    height: calc(100vh - 6rem);
+    padding-left: 0.25rem;
+    margin-left: -0.25rem;
+    overflow-y: auto;
   }
 }
 
-@media (min-width: 768px) {
-  .bs-header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+@media (max-width: 991.98px) {
+  .bd-navbar .bd-navbar-toggle {
+    width: 4.25rem;
+  }
+  .bs-container {
+    grid-template-columns: 0fr 1fr;
+  }
+  .codeblock {
+    max-width: calc(100vw - 11rem);
+    min-width: 100%;
+  }
+  .bs-sidebar .offcanvas-lg {
+    border-right-color: var(--bs-border-color);
   }
 }

@@ -126,8 +126,42 @@
     </div>
   </xsl:template>
 
-  <!-- Override to add Bootstrap list-group, nav-pill and collapse classes -->
-  <xsl:template match="*" mode="gen-user-sidetoc">
+  <xsl:template name="offcanvas-sidebar">
+    <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel" aria-modal="true" role="dialog">
+      <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">
+          <xsl:choose>
+            <xsl:when test="$input.map//*[contains(@class,' topic/title ')][1]">
+              <xsl:for-each select="$input.map//*[contains(@class,' topic/title ')][1]">
+                <xsl:if test="position() = 1">
+                  <xsl:value-of select="."/>
+                </xsl:if>
+              </xsl:for-each>
+            </xsl:when>
+            <xsl:when test="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
+              <xsl:for-each select="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
+                <xsl:if test="position() = 1">
+                  <xsl:value-of select="."/>
+                </xsl:if>
+              </xsl:for-each>
+            </xsl:when>
+            <xsl:when test="//*[contains(@class, ' map/map ')]/@title">
+              <xsl:value-of select="//*[contains(@class, ' map/map ')]/@title"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:value-of select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"/>
+            </xsl:otherwise>
+          </xsl:choose>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button>
+      </div>
+      <div class="offcanvas-body">
+        <xsl:call-template name="sidebar-content"/>
+      </div>
+    </div>
+  </xsl:template>
+
+  <xsl:template name="sidebar-content">
     <xsl:choose>
       <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
         <nav xsl:use-attribute-sets="toc">
@@ -159,18 +193,12 @@
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         </nav>
       </xsl:when>
-      <xsl:when test="$nav-toc = ('list-group-scrollspy')">
-        <nav xsl:use-attribute-sets="toc">
-          <div class="list-group me-3" id="bs-scrollspy">
-            <xsl:apply-templates mode="scrollspy"/>
-          </div>
-        </nav>
-      </xsl:when>
+
 
       <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
         <nav xsl:use-attribute-sets="toc">
           <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
-          <nav class="nav nav-pills flex-column navbar-light bg-light">
+          <nav class="nav nav-pills flex-column navbar-light bg-body-tertiary">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
             <xsl:choose>
               <xsl:when test="$nav-toc = 'nav-pill-partial'">
@@ -197,14 +225,6 @@
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         </nav>
       </xsl:when>
-      <xsl:when test="$nav-toc = ('nav-pill-scrollspy')">
-        <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
-          <nav class="nav nav-pills flex-column navbar-light bg-light" id="bs-scrollspy">
-            <xsl:apply-templates mode="scrollspy"/>
-          </nav>
-        </nav>
-      </xsl:when>
       <xsl:when test="$nav-toc = ('collapsible')">
         <!--xsl:variable name="direction">
           <xsl:apply-templates select="." mode="get-render-direction">
@@ -224,6 +244,20 @@
       </xsl:when>
       <xsl:otherwise>
         <xsl:next-match/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- Override to add Bootstrap list-group, nav-pill and collapse classes -->
+  <xsl:template match="*" mode="gen-user-sidetoc">
+    <xsl:choose>
+      <xsl:when test="$nav-toc = 'none'">
+        <xsl:call-template name="sidebar-content"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <div class="bs-sidebar">
+          <xsl:call-template name="offcanvas-sidebar"/>
+        </div>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -405,7 +439,7 @@
                 <xsl:with-param name="class">
                   <xsl:text>list-group-item list-group-item-action</xsl:text>
                   <xsl:if test="parent::* is $current-topicref">
-                    <xsl:text> bg-light</xsl:text>
+                    <xsl:text> bg-body-tertiary</xsl:text>
                   </xsl:if>
                   <xsl:if test=". is $current-topicref">
                     <xsl:text> active</xsl:text>
@@ -418,7 +452,7 @@
           </xsl:when>
           <xsl:otherwise>
             <!-- ↓ Add Bootstrap list-group-item class and light background color ↓ -->
-            <span class="list-group-item bg-light">
+            <span class="list-group-item bg-body-tertiary">
               <xsl:call-template name="nav-icon"/>
               <xsl:value-of select="$title"/>
             </span>
