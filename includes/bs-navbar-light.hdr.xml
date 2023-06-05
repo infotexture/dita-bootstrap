@@ -1,5 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
+    <!-- This shows the menu on mobile -->
+    <div class="bd-navbar-toggle">
+      <button
+        class="navbar-toggler p-2"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#bdSidebar"
+        aria-controls="bdSidebar"
+        aria-label="Toggle docs navigation"
+      >
+        <i class="bi bi-list"/>
+      </button>
+    </div>
     <a class="navbar-brand" href="/">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +32,7 @@
       DITA Bootstrap
     </a>
     <button
-      class="navbar-toggler"
+      class="navbar-toggler py-2 px-2"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent"
@@ -27,7 +40,7 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"/>
+      <i class="bi bi-three-dots"/>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
