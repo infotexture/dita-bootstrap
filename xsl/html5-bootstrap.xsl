@@ -103,7 +103,7 @@
           </xsl:if>
           <!-- ↓ Ensure that menubar has background color if present -->
           <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
-            <xsl:text> bg-light</xsl:text>
+            <xsl:text> bg-body-tertiary</xsl:text>
           </xsl:if>
         </xsl:attribute>
 
@@ -112,7 +112,7 @@
           <xsl:apply-templates select="." mode="gen-user-toptoc"/>
         </xsl:if>
       </div>
-      <div class="bs-container" id="content">
+      <div class="bs-container container-xxl bd-gutter mt-3 my-md-4" id="content">
         <xsl:call-template name="gen-user-sidetoc"/>
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
       </div>
@@ -225,18 +225,17 @@
     Overrides to add CSS classes to use a CSS Grid for the navigation layout
   -->
   <xsl:attribute-set name="main">
-    <xsl:attribute name="class">container bs-main</xsl:attribute>
+    <xsl:attribute name="class">bs-main</xsl:attribute>
     <xsl:attribute name="role">main</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="toc">
-    <xsl:attribute name="class">bs-sidebar-nav</xsl:attribute>
     <xsl:attribute name="role">navigation</xsl:attribute>
     <xsl:attribute name="id">bs-sidebar-nav</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="menubar-toc">
-    <xsl:attribute name="class">navbar navbar-light bg-light px-3</xsl:attribute>
+    <xsl:attribute name="class">navbar bg-body-tertiary px-3</xsl:attribute>
     <xsl:attribute name="role">navigation</xsl:attribute>
     <xsl:attribute name="id">bs-menubar-nav</xsl:attribute>
   </xsl:attribute-set>

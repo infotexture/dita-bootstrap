@@ -103,7 +103,7 @@
     <div class="carousel-caption d-none d-md-block">
       <p>
         <xsl:call-template name="commonattributes"/>
-        <xsl:value-of select="."/>
+        <xsl:apply-templates/>
       </p>
     </div>
   </xsl:template>
