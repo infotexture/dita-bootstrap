@@ -209,6 +209,66 @@
       type="string"
       desc="Bootstrap classes for table headers"
     />
+    <param
+      name="bootstrap.icon.note"
+      type="string"
+      desc="Bootstrap icon for standard notes"
+    />
+    <param
+      name="bootstrap.icon.attention"
+      type="string"
+      desc="Bootstrap icon for attention notes"
+    />
+    <param
+      name="bootstrap.icon.caution"
+      type="string"
+      desc="Bootstrap icon for caution notes"
+    />
+    <param
+      name="bootstrap.icon.danger"
+      type="string"
+      desc="Bootstrap icon for danger notes"
+    />
+    <param
+      name="bootstrap.icon.fastpath"
+      type="string"
+      desc="Bootstrap icon for fastpath notes"
+    />
+    <param
+      name="bootstrap.icon.important"
+      type="string"
+      desc="Bootstrap icon for important notes"
+    />
+    <param
+      name="bootstrap.icon.notice"
+      type="string"
+      desc="Bootstrap icon for notice notes"
+    />
+    <param
+      name="bootstrap.icon.remember"
+      type="string"
+      desc="Bootstrap icon for remember notes"
+    />
+    <param
+      name="bootstrap.icon.restriction"
+      type="string"
+      desc="Bootstrap icon for restriction notes"
+    />
+    <param
+      name="bootstrap.icon.tip"
+      type="string"
+      desc="Bootstrap icon for tips"
+    />
+    <param
+      name="bootstrap.icon.trouble"
+      type="string"
+      desc="Bootstrap icon for trouble notes"
+    />
+    <param
+      name="bootstrap.icon.warning"
+      type="string"
+      desc="Bootstrap icon for warning notes"
+    />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
