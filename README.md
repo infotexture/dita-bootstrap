@@ -172,6 +172,23 @@ The HTML output for the following DITA elements can be annotated with common Boo
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
 
+### Bootstrap Icons for DITA `<note>` elements
+
+The default Bootstrap icons used for DITA `<note>` Elements can be overridden using additional command line parameters:
+
+- `bootstrap.icon.note` – icon for standard notes
+- `bootstrap.icon.tip` – icon for tips
+- `bootstrap.icon.fastpath` – icon for fastpath notes
+- `bootstrap.icon.remember` – icon for remember notes
+- `bootstrap.icon.restriction` – icon for restriction notes
+- `bootstrap.icon.important` – icon for important notes
+- `bootstrap.icon.attention` – icon for attention notes
+- `bootstrap.icon.caution` – icon for caution notes
+- `bootstrap.icon.warning` – icon for warning notes
+- `bootstrap.icon.trouble` – icon for trouble notes
+- `bootstrap.icon.danger` – icon for danger notes
+- `bootstrap.icon.notice` – icon for notice notes
+
 ### Optional elements
 
 Bootstrap icons, popovers, tooltips and the dark-mode toggler are enabled by default, but for performance reasons they can be disabled by setting the following command line parameters to `no`:

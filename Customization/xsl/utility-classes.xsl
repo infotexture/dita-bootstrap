@@ -20,7 +20,7 @@
   <xsl:param name="BOOTSTRAP_CSS_TABS" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'me-3'"/>
   <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="''"/>
-  <xsl:param name="BOOTSTRAP_CSS_ACCESSIBILITY_NAV" select="'bg-light'"/>
+  <xsl:param name="BOOTSTRAP_CSS_ACCESSIBILITY_NAV" select="'bg-body-tertiary'"/>
   <xsl:param name="BOOTSTRAP_CSS_ACCESSIBILITY_LINK" select="'btn btn-outline-primary btn-sm'"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE" select="' w-100 mw-100 p-3 '"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_CAPTION" select="''"/>
@@ -31,6 +31,19 @@
   <xsl:param name="BOOTSTRAP_CSS_PAGINATION" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABLE" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABLE_HEAD" select="''"/>
+
+  <xsl:param name="BOOTSTRAP_ICON_TIP" select="'bi bi-lightbulb'"/>
+  <xsl:param name="BOOTSTRAP_ICON_FASTPATH" select="'bi bi-shield-check'"/>
+  <xsl:param name="BOOTSTRAP_ICON_REMEMBER" select="'bi bi-clipboard-check'"/>
+  <xsl:param name="BOOTSTRAP_ICON_RESTRICTION" select="'bi bi-slash-circle'"/>
+  <xsl:param name="BOOTSTRAP_ICON_IMPORTANT" select="'bi bi-exclamation-circle-fill'"/>
+  <xsl:param name="BOOTSTRAP_ICON_ATTENTION" select="'bi bi-exclamation-triangle'"/>
+  <xsl:param name="BOOTSTRAP_ICON_CAUTION" select="'bi bi-exclamation-triangle'"/>
+  <xsl:param name="BOOTSTRAP_ICON_WARNING" select="'bi bi-exclamation-triangle'"/>
+  <xsl:param name="BOOTSTRAP_ICON_TROUBLE" select="'bi bi-exclamation-triangle'"/>
+  <xsl:param name="BOOTSTRAP_ICON_DANGER" select="'bi bi-exclamation-triangle'"/>
+  <xsl:param name="BOOTSTRAP_ICON_NOTICE" select="'bi bi-info-circle-fill'"/>
+  <xsl:param name="BOOTSTRAP_ICON_NOTE" select="'bi bi-pencil'"/>
 
   <!-- Add a Bootstrap CSS border to codeblocks -->
   <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">
@@ -57,11 +70,17 @@
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS text color of the headers -->
-  <xsl:template match="*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class">
+  <xsl:template
+    match="*[contains(@class, ' topic/topic ')]/*[contains(@class, ' topic/title ')]"
+    mode="get-output-class"
+  >
     <xsl:value-of select="$BOOTSTRAP_CSS_TOPIC_TITLE"/>
   </xsl:template>
 
-  <xsl:template match="*[contains(@class, ' topic/section ')]/*[contains(@class, ' topic/title ')]" mode="get-output-class">
+  <xsl:template
+    match="*[contains(@class, ' topic/section ')]/*[contains(@class, ' topic/title ')]"
+    mode="get-output-class"
+  >
     <xsl:value-of select="$BOOTSTRAP_CSS_SECTION_TITLE"/>
   </xsl:template>
 
@@ -205,10 +224,14 @@
       <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'alert-')]">
         <xsl:text>alert-link</xsl:text>
       </xsl:when>
-      <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])">
+      <xsl:when
+        test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])"
+      >
         <xsl:text>list-group-item</xsl:text>
       </xsl:when>
-      <xsl:when test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])">
+      <xsl:when
+        test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])"
+      >
         <xsl:text>list-inline-item</xsl:text>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'pagination-')">
@@ -225,7 +248,9 @@
           <xsl:when test="contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')">
             <xsl:text>bi</xsl:text>
           </xsl:when>
-          <xsl:when test="contains(@class, ' topic/xref ') and .//*[contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')]">
+          <xsl:when
+            test="contains(@class, ' topic/xref ') and .//*[contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')]"
+          >
             <xsl:text>icon-link</xsl:text>
           </xsl:when>
         </xsl:choose>
@@ -286,46 +311,86 @@
     </xsl:choose>
   </xsl:template>
 
+  <!-- Add style to a bootstrap element based on otherprops -->
+  <xsl:template name="otherprops-attributes">
+    <xsl:analyze-string select="@otherprops" regex="[a-z]*\([^\)]*\)">
+      <xsl:matching-substring>
+        <xsl:variable name="var">
+          <xsl:value-of select="."/>
+        </xsl:variable>
+        <xsl:variable name="attr">
+          <xsl:value-of select="substring-before($var, '(')"/>
+        </xsl:variable>
+        <xsl:choose>
+          <xsl:when test="$attr='icon'">
+            <xsl:attribute name="class" select="concat('pe-2 ', substring-before(substring-after($var, '('),')'))"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:attribute name="{$attr}" select="substring-before(substring-after($var, '('),')')"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:matching-substring>
+    </xsl:analyze-string>
+  </xsl:template>
+
   <!-- Add icons to <note> elements -->
   <xsl:template name="bootstrap-icon">
+    <xsl:variable name="icon">
+      <xsl:choose>
+        <xsl:when test="@type='tip'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_TIP"/>
+        </xsl:when>
+        <xsl:when test="@type='fastpath'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_FASTPATH"/>
+        </xsl:when>
+        <xsl:when test="@type='remember'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_REMEMBER"/>
+        </xsl:when>
+        <xsl:when test="@type='restriction'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_RESTRICTION"/>
+        </xsl:when>
+        <xsl:when test="@type='important'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_IMPORTANT"/>
+        </xsl:when>
+        <xsl:when test="@type='attention'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_ATTENTION"/>
+        </xsl:when>
+        <xsl:when test="@type='caution'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_CAUTION"/>
+        </xsl:when>
+        <xsl:when test="@type='warning'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_WARNING"/>
+        </xsl:when>
+        <xsl:when test="@type='trouble'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_TROUBLE"/>
+        </xsl:when>
+        <xsl:when test="@type='danger'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_DANGER"/>
+        </xsl:when>
+        <xsl:when test="@type='notice'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_NOTICE"/>
+        </xsl:when>
+        <xsl:when test="@type='note'">
+          <xsl:value-of select="$BOOTSTRAP_ICON_NOTE"/>
+        </xsl:when>
+        <!--xsl:when test="@type='other'"/-->
+      </xsl:choose>
+    </xsl:variable>
+
     <xsl:choose>
-      <xsl:when test="@type='tip'">
-        <i class="pe-2 bi bi-lightbulb"/>
+      <xsl:when test="contains(@otherprops, 'icon(')">
+         <xsl:element name="i">
+          <xsl:call-template name="otherprops-attributes"/>
+        </xsl:element>
       </xsl:when>
-      <xsl:when test="@type='fastpath'">
-        <i class="pe-2 bi bi-shield-check"/>
+      <xsl:when test="$icon != ''">
+        <xsl:element name="i">
+          <xsl:attribute name="class" select="concat('pe-2 ', $icon)"/>
+          <xsl:if test="contains(@otherprops, 'style(')">
+            <xsl:call-template name="otherprops-attributes"/>
+          </xsl:if>
+        </xsl:element>
       </xsl:when>
-      <xsl:when test="@type='remember'">
-        <i class="pe-2 bi bi-clipboard-check"/>
-      </xsl:when>
-      <xsl:when test="@type='restriction'">
-        <i class="pe-2 bi bi-slash-circle"/>
-      </xsl:when>
-      <xsl:when test="@type='important'">
-        <i class="pe-2 bi bi-exclamation-circle-fill"/>
-      </xsl:when>
-      <xsl:when test="@type='attention'">
-        <i class="pe-2 bi bi-exclamation-triangle"/>
-      </xsl:when>
-      <xsl:when test="@type='caution'">
-        <i class="pe-2 bi bi-exclamation-triangle"/>
-      </xsl:when>
-      <xsl:when test="@type='warning'">
-        <i class="pe-2 bi bi-exclamation-triangle"/>
-      </xsl:when>
-      <xsl:when test="@type='trouble'">
-        <i class="pe-2 bi bi-exclamation-triangle"/>
-      </xsl:when>
-      <xsl:when test="@type='danger'">
-        <i class="pe-2 bi bi-exclamation-triangle"/>
-      </xsl:when>
-      <xsl:when test="@type='notice'">
-        <i class="pe-2 bi bi-info-circle-fill"/>
-      </xsl:when>
-      <xsl:when test="@type='note'">
-        <i class="pe-2 bi bi-pencil"/>
-      </xsl:when>
-      <!--xsl:when test="@type='other'"/-->
     </xsl:choose>
   </xsl:template>
 

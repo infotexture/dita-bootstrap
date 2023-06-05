@@ -368,6 +368,61 @@
       </ul>
     </section>
     <section>
+      <title>Bootstrap Icons for DITA <xmlelement>note</xmlelement> Elements</title>
+      <indexterm><parmname>--bootstrap.icon.note</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.attention</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.caution</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.danger</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.fastpath</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.important</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.notice</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.remember</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.restriction</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.tip</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.trouble</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.icon.warning</parmname></indexterm>
+      <p>The Bootstrap default icons used for DITA <xmlelement
+        >note</xmlelement> elements can be overridden using additional command line parameters:</p>
+      <ul>
+        <li>
+          <parmname>--bootstrap.icon.note</parmname> – icon for standard notes
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.attention</parmname> – icon for attention notes
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.caution</parmname> – icon for caution notes
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.danger</parmname> – icon for danger notes
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.fastpath</parmname> – icon for fastpath notes
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.important</parmname> – icon for important notes
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.notice</parmname> – icon for notice notes
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.remember</parmname> – icon for remember notes
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.restriction</parmname> – icon for restriction notes
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.tip</parmname> – icon for tips
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.trouble</parmname> – icon for trouble notes
+        </li>
+        <li>
+          <parmname>--bootstrap.icon.warning</parmname> – icon for warning notes
+        </li>
+      </ul>
+    </section>
+    <section>
       <title>Optional Elements</title>
       <indexterm><parmname>--args.breadcrumbs</parmname></indexterm>
       <indexterm><parmname>--icons.include</parmname></indexterm>
