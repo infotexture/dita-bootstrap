@@ -196,16 +196,16 @@
         <xsl:variable name="terms" select="count(../*[contains(@class, ' topic/dt ')])"/>
         <xsl:choose>
           <xsl:when test="$terms=1">
-            <xsl:text>col-sm-3 </xsl:text>
+            <xsl:text>col-lg-3 </xsl:text>
           </xsl:when>
           <xsl:when test="$terms=2">
-            <xsl:text>col-sm-2 </xsl:text>
+            <xsl:text>col-lg-3 </xsl:text>
           </xsl:when>
           <xsl:when test="$terms=3">
-            <xsl:text>col-sm-2 </xsl:text>
+            <xsl:text>col-lg-3 </xsl:text>
           </xsl:when>
            <xsl:when test="$terms=4">
-            <xsl:text>col-sm-1 </xsl:text>
+            <xsl:text>col-lg-2 </xsl:text>
           </xsl:when>
         </xsl:choose>
         <xsl:value-of select="$BOOTSTRAP_CSS_DT"/>
@@ -216,19 +216,19 @@
 
         <xsl:choose>
           <xsl:when test="not($is-first-dd)">
-            <xsl:text>col-sm-12 </xsl:text>
+            <xsl:text>col-lg-12 </xsl:text>
           </xsl:when>
           <xsl:when test="$terms=1">
-            <xsl:text>col-sm-9 </xsl:text>
+            <xsl:text>col-lg-9 </xsl:text>
           </xsl:when>
           <xsl:when test="$terms=2">
-            <xsl:text>col-sm-8 </xsl:text>
+            <xsl:text>col-lg-6 </xsl:text>
           </xsl:when>
           <xsl:when test="$terms=3">
-            <xsl:text>col-sm-6 </xsl:text>
+            <xsl:text>col-lg-3 </xsl:text>
           </xsl:when>
           <xsl:when test="$terms=4">
-            <xsl:text>col-sm-8 </xsl:text>
+            <xsl:text>col-lg-2 </xsl:text>
           </xsl:when>
         </xsl:choose>
         <xsl:value-of select="$BOOTSTRAP_CSS_DD"/>
