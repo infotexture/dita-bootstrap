@@ -1,8 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
-     <!--
-        This shows the menu on mobile
-      -->
+    <!-- This shows the menu on mobile -->
     <div class="bd-navbar-toggle">
       <button
         class="navbar-toggler p-2"
@@ -15,7 +13,6 @@
         <i class="bi bi-list"/>
       </button>
     </div>
-
     <a class="navbar-brand" href="/">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -57,11 +54,11 @@
           <a class="nav-link" href="#">Link Three</a>
         </li>
       </ul>
-      <!--
-        This is a dark/light color theme toggler
-        It requires JavaScript to function.
-      -->
       <ul class="navbar-nav ms-auto">
+        <!--
+          This is a dark/light color theme toggler.
+          It requires JavaScript to function.
+        -->
         <li class="nav-item dropdown">
           <a
             href="#"
@@ -80,7 +77,6 @@
             <span class="bs-toggler-auto">
               <i class="bi bi-circle-half"/>
             </span>
-
             <span class="d-lg-none ms-2">Toggle theme</span>
           </a>
           <ul

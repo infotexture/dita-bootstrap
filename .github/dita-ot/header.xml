@@ -1,9 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
   <div class="container">
-    <!--
-        This shows the menu on mobile
-    -->
+    <!-- This shows the menu on mobile -->
     <div class="bd-navbar-toggle">
       <button
         class="navbar-toggler p-2"
@@ -16,7 +13,6 @@
         <i class="bi bi-list"/>
       </button>
     </div>
-
     <a class="navbar-brand" href="https://infotexture.github.io/dita-bootstrap">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -112,12 +108,12 @@
             <span class="bs-toggler-light">
               <i class="bi bi-brightness-high-fill"/>
             </span>
-            <span class="bs-toggler-dark"><i
-                class="bi bi-moon-stars-fill"
-              /></span>
-            <span class="bs-toggler-auto"><i class="bi bi-circle-half"/>
-          </span>
-
+            <span class="bs-toggler-dark">
+              <i class="bi bi-moon-stars-fill"/>
+            </span>
+            <span class="bs-toggler-auto">
+              <i class="bi bi-circle-half"/>
+            </span>
             <span class="d-lg-none ms-2">Toggle theme</span>
           </a>
           <ul
@@ -133,7 +129,7 @@
                 data-bs-theme-value="light"
               >
                 <i class="bi bi-brightness-high-fill"/>
-                <span class="ms-2"> Light </span>
+                <span class="ms-2">Light</span>
               </button>
             </li>
             <li>
@@ -143,7 +139,7 @@
                 data-bs-theme-value="dark"
               >
                 <i class="bi bi-moon-stars-fill"/>
-                <span class="ms-2"> Dark </span>
+                <span class="ms-2">Dark</span>
               </button>
             </li>
             <li>
@@ -153,7 +149,7 @@
                 data-bs-theme-value="auto"
               >
                 <i class="bi bi-circle-half"/>
-                <span class="ms-2"> Auto </span>
+                <span class="ms-2">Auto</span>
               </button>
             </li>
           </ul>
