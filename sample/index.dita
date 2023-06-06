@@ -368,7 +368,7 @@
       </ul>
     </section>
     <section>
-      <title>Bootstrap Icons for DITA <xmlelement>note</xmlelement> Elements</title>
+      <title>Bootstrap icons for DITA notes</title>
       <indexterm><parmname>--bootstrap.icon.note</parmname></indexterm>
       <indexterm><parmname>--bootstrap.icon.attention</parmname></indexterm>
       <indexterm><parmname>--bootstrap.icon.caution</parmname></indexterm>
@@ -381,7 +381,7 @@
       <indexterm><parmname>--bootstrap.icon.tip</parmname></indexterm>
       <indexterm><parmname>--bootstrap.icon.trouble</parmname></indexterm>
       <indexterm><parmname>--bootstrap.icon.warning</parmname></indexterm>
-      <p>The Bootstrap default icons used for DITA <xmlelement
+      <p>The default Bootstrap icons used for DITA <xmlelement
         >note</xmlelement> elements can be overridden using additional command line parameters:</p>
       <ul>
         <li>
@@ -423,18 +423,18 @@
       </ul>
     </section>
     <section>
-      <title>Optional Elements</title>
+      <title>Optional elements</title>
       <indexterm><parmname>--args.breadcrumbs</parmname></indexterm>
       <indexterm><parmname>--icons.include</parmname></indexterm>
       <indexterm><parmname>--popovers.include</parmname></indexterm>
       <indexterm><parmname>--dark.mode.include</parmname></indexterm>
-      <p> Bootstrap <xref href="./icons.dita" format="dita">icons</xref>,
+      <p>Bootstrap <xref href="./icons.dita" format="dita">icons</xref>,
         <xref href="./popovers.dita" format="dita">popovers</xref>,
         <xref href="./tooltips.dita" format="dita">tooltips</xref> and the <xref
           href="./dark-mode.dita"
           format="dita"
-        >dark mode toggler</xref> are enabled by default, but for performance reasons they can be disabled by setting the following command line parameters to <option
-        >no</option></p>
+        >dark mode toggler</xref> are enabled by default, but for performance reasons they can be disabled by setting
+        the following command line parameters to <option>no</option>:</p>
       <ul>
         <li>
           <parmname>--icons.include</parmname> – enable Bootstrap
