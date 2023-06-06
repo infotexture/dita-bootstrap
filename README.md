@@ -202,6 +202,7 @@ Additionally, opt-in breadcrumbs and menu bars can be added using the following 
 
 - `args.breadcrumbs` – add Bootstrap breadcrumb components
 - `menubar-toc.include` – add a Bootstrap menubar
+- `scrollspy.include` – add a Bootstrap [scrollspy][19] navigator
 - `bidi.include` - whether to force included support for RTL languages
 
 ## Feedback
@@ -237,3 +238,4 @@ Within the sample documentation, where necessary, the texts describing the usage
 [16]: https://getbootstrap.com/docs/5.3/components/navs-tabs/#pills
 [17]: https://getbootstrap.com/docs/5.3/components/collapse/
 [18]: https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
+[19]: https://getbootstrap.com/docs/5.3/components/scrollspy/
