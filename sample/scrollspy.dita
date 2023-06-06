@@ -85,17 +85,16 @@
      <parmname>--nav-toc</parmname>=<option>list-group-partial</option> \
      <parmname>--scrollspy-toc</parmname>=<option>list-group</option></codeblock>
     </section>
-     <section>
+    <section>
       <title>Example with collapse</title>
-       <p>Bootstrap’s Scrollspy also works with a series of simple <xmlelement>li</xmlelement>. list elements.</p>
-
+      <p>Bootstrap’s Scrollspy also works with a series of simple <xmlelement>li</xmlelement> list elements.</p>
       <p>To use this option, embed the subtopics and add the parameters
           <parmname>--scrollspy-toc</parmname>=<option>list</option> and
-          <parmname>--nav-toc</parmname>=<option>collapse</option> to the <cmdname>dita</cmdname> command.</p>
+          <parmname>--nav-toc</parmname>=<option>collapsible</option> to the <cmdname>dita</cmdname> command.</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-     <parmname>--nav-toc</parmname>=<option>collapse</option> \
+     <parmname>--nav-toc</parmname>=<option>collapsible</option> \
      <parmname>--scrollspy-toc</parmname>=<option>list</option></codeblock>
     </section>
   </body>
