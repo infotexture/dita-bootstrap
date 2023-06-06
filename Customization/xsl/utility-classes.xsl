@@ -26,8 +26,8 @@
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_CAPTION" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_FIGURE_IMAGE" select="'img-fluid border rounded'"/>
   <xsl:param name="BOOTSTRAP_CSS_DL" select="'row'"/>
-  <xsl:param name="BOOTSTRAP_CSS_DT" select="'col-sm-3 text-truncate '"/>
-  <xsl:param name="BOOTSTRAP_CSS_DD" select="'col-sm-9 '"/>
+  <xsl:param name="BOOTSTRAP_CSS_DT" select="'text-truncate '"/>
+  <xsl:param name="BOOTSTRAP_CSS_DD" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_PAGINATION" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABLE" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABLE_HEAD" select="''"/>
@@ -206,9 +206,15 @@
         <xsl:value-of select="$BOOTSTRAP_CSS_DL"/>
       </xsl:when>
       <xsl:when test="contains(@class, ' topic/dt ')">
+        <xsl:if test="empty(@outputclass)">
+          <xsl:call-template name="bootstrap-dt"/>
+        </xsl:if>
         <xsl:value-of select="$BOOTSTRAP_CSS_DT"/>
       </xsl:when>
       <xsl:when test="contains(@class, ' topic/dd ')">
+        <xsl:if test="empty(@outputclass)">
+          <xsl:call-template name="bootstrap-dd"/>
+        </xsl:if>
         <xsl:value-of select="$BOOTSTRAP_CSS_DD"/>
       </xsl:when>
       <xsl:when test="contains(@class, ' topic/image ') and ancestor::*[contains(@class, ' topic/fig ')]">
@@ -260,6 +266,48 @@
       <xsl:text> img-fluid</xsl:text>
     </xsl:if>
 
+  </xsl:template>
+
+  <!-- Add additional Bootstrap CSS classes and roles to <dd> elements -->
+  <xsl:template name="bootstrap-dd">
+     <xsl:variable name="terms" select="count(../*[contains(@class, ' topic/dt ')])"/>
+    <xsl:variable name="is-first-dd" select="empty(preceding-sibling::*[contains(@class, ' topic/dd ')])"/>
+    <xsl:choose>
+      <xsl:when test="not($is-first-dd)">
+        <xsl:text>col-lg-12  </xsl:text>
+      </xsl:when>
+      <xsl:when test="$terms=1">
+        <xsl:text>col-lg-9 </xsl:text>
+      </xsl:when>
+      <xsl:when test="$terms=2">
+        <xsl:text>col-lg-6 </xsl:text>
+      </xsl:when>
+      <xsl:when test="$terms=3">
+        <xsl:text>col-lg-3 </xsl:text>
+      </xsl:when>
+      <xsl:when test="$terms=4">
+        <xsl:text>col-lg-2 </xsl:text>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- Add additional Bootstrap CSS classes and roles to <dt> elements -->
+  <xsl:template name="bootstrap-dt">
+    <xsl:variable name="terms" select="count(../*[contains(@class, ' topic/dt ')])"/>
+    <xsl:choose>
+      <xsl:when test="$terms=1">
+        <xsl:text>col-lg-3 </xsl:text>
+      </xsl:when>
+      <xsl:when test="$terms=2">
+        <xsl:text>col-lg-3 </xsl:text>
+      </xsl:when>
+      <xsl:when test="$terms=3">
+        <xsl:text>col-lg-3 </xsl:text>
+      </xsl:when>
+       <xsl:when test="$terms=4">
+        <xsl:text>col-lg-2 </xsl:text>
+      </xsl:when>
+    </xsl:choose>
   </xsl:template>
 
   <!-- Add additional Bootstrap CSS classes and roles to <note> elements -->
