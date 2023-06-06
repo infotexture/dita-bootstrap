@@ -81,20 +81,20 @@
       <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('list-group')">
         <a class="list-group-item list-group-item-action">
           <xsl:call-template name="scrollspy-href"/>
-          <xsl:apply-templates mode="scrollspy"/>
+          <xsl:apply-templates/>
         </a>
       </xsl:when>
       <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('nav-pill')">
         <a class="my-1 nav-link">
           <xsl:call-template name="scrollspy-href"/>
-          <xsl:apply-templates mode="scrollspy"/>
+          <xsl:apply-templates/>
         </a>
       </xsl:when>
       <xsl:otherwise>
         <li>
           <a>
             <xsl:call-template name="scrollspy-href"/>
-            <xsl:apply-templates mode="scrollspy"/>
+            <xsl:apply-templates/>
           </a>
         </li>
       </xsl:otherwise>
