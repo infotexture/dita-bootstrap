@@ -31,8 +31,8 @@
   />
   <param
     name="BOOTSTRAP_SCROLLSPY_TOC"
-    expression="${scrollspy.toc}"
-    if:set="scrollspy.toc"
+    expression="${scrollspy-toc}"
+    if:set="scrollspy-toc"
   />
   <param
     name="BOOTSTRAP_CSS_SHORTDESC"

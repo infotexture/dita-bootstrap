@@ -89,7 +89,7 @@
       <val>no</val>
     </param>
     <param
-      name="scrollspy.toc"
+      name="scrollspy-toc"
       desc="Specifies whether to include a scrollspy menu"
       type="enum"
     >

@@ -45,13 +45,13 @@
   &lt;/topic&gt;
 &lt;/topic&gt;</codeblock>
       <p>To use this option, embed the subtopics and add the parameters
-          <parmname>--scrollspy-toc.include</parmname>=<option>nav-pill</option> and
+          <parmname>--scrollspy-toc</parmname>=<option>nav-pill</option> and
           <parmname>--nav-toc</parmname>=<option>nav-pill</option> to the <cmdname>dita</cmdname> command.</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--nav-toc</parmname>=<option>nav-pill-partial</option> \
-     <parmname>--scrollspy-toc.include</parmname>=<option>nav-pill</option></codeblock>
+     <parmname>--scrollspy-toc</parmname>=<option>nav-pill</option></codeblock>
     </section>
     <section>
       <title>Example with list-group</title>
@@ -76,27 +76,27 @@
   &lt;/topic&gt;
 &lt;/topic&gt;</codeblock>
       <p>To use this option, embed the subtopics and add the parameters
-          <parmname>--menubar-toc.include</parmname>=<option>list-group</option> and
+          <parmname>--scrollspy-toc</parmname>=<option>list-group</option> and
           <parmname>--nav-toc</parmname>=<option>list-group</option> to the <cmdname>dita</cmdname>
         command.</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--nav-toc</parmname>=<option>list-group</option> \
-     <parmname>--scrollspy-toc.include</parmname>=<option>list-group</option></codeblock>
+     <parmname>--scrollspy-toc</parmname>=<option>list-group</option></codeblock>
     </section>
      <section>
       <title>Example with collapse</title>
        <p>Bootstrap’s Scrollspy also works with a series of simple <xmlelement>li</xmlelement>. list elements.</p>
 
       <p>To use this option, embed the subtopics and add the parameters
-          <parmname>--scrollspy-toc.include</parmname>=<option>list</option> and
+          <parmname>--scrollspy-toc</parmname>=<option>list</option> and
           <parmname>--nav-toc</parmname>=<option>collapse</option> to the <cmdname>dita</cmdname> command.</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--nav-toc</parmname>=<option>collapse</option> \
-     <parmname>--scrollspy-toc.include</parmname>=<option>list</option></codeblock>
+     <parmname>--scrollspy-toc</parmname>=<option>list</option></codeblock>
     </section>
   </body>
 </topic>
