@@ -6,6 +6,7 @@
   .bs-main {
     grid-template-areas: 'content';
   }
+
   .bs-scrollspy {
     display: none;
   }
@@ -16,10 +17,11 @@
     grid-template-areas: 'content scrollspy';
     grid-template-columns: 4fr 1fr;
   }
+
   .bs-scrollspy {
     position: -webkit-sticky;
     position: sticky;
-    top: 5rem;
+    top: 5.25rem;
     right: 0;
     z-index: 2;
     height: calc(100vh - 6rem);
@@ -63,11 +65,16 @@
   font: inherit;
 }
 
+.nested0 {
+  scroll-margin-top: 5rem;
+}
+
+.nested1,
 article h1,
 article h2,
 article h3,
 article h4,
 article [tabindex='0'] {
-  scroll-margin-top: 7rem;
+  scroll-margin-top: 5.25rem;
   scroll-margin-bottom: 100px;
 }

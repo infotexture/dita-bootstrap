@@ -54,10 +54,12 @@
     grid-template-areas: 'content';
     grid-template-rows: auto 1fr;
   }
+
   .codeblock {
     max-width: calc(80vw - 2rem);
     min-width: 100%;
   }
+
   .bs-sidebar {
     position: -webkit-sticky;
     position: sticky;
@@ -74,13 +76,16 @@
   .bd-navbar .bd-navbar-toggle {
     width: 4.25rem;
   }
+
   .bs-container {
     grid-template-columns: 0fr 1fr;
   }
+
   .codeblock {
     max-width: calc(100vw - 11rem);
     min-width: 100%;
   }
+
   .bs-sidebar .offcanvas-lg {
     border-right-color: var(--bs-border-color);
   }
