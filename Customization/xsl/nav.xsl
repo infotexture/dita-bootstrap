@@ -193,13 +193,7 @@
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         </nav>
       </xsl:when>
-      <xsl:when test="$nav-toc = ('list-group-scrollspy')">
-        <nav xsl:use-attribute-sets="toc">
-          <div class="list-group me-3" id="bs-scrollspy">
-            <xsl:apply-templates mode="scrollspy"/>
-          </div>
-        </nav>
-      </xsl:when>
+
 
       <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
         <nav xsl:use-attribute-sets="toc">
@@ -229,14 +223,6 @@
           <!-- ↓ Close Bootstrap <nav> element -->
           </nav>
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-        </nav>
-      </xsl:when>
-      <xsl:when test="$nav-toc = ('nav-pill-scrollspy')">
-        <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
-          <nav class="nav nav-pills flex-column navbar-light bg-body-tertiary" id="bs-scrollspy">
-            <xsl:apply-templates mode="scrollspy"/>
-          </nav>
         </nav>
       </xsl:when>
       <xsl:when test="$nav-toc = ('collapsible')">

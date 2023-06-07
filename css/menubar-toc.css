@@ -11,4 +11,17 @@
     height: calc(100vh - 13rem);
     top: 9rem;
   }
+  .bs-scrollspy {
+    top: 9rem;
+    height: calc(100vh - 13rem);
+  }
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article [tabindex='0'] {
+  scroll-margin-top: 9rem;
+  scroll-margin-bottom: 100px;
 }

@@ -459,6 +459,11 @@
         <li>
           <parmname>--menubar-toc.include</parmname> – add a Bootstrap menubar</li>
         <li>
+          <parmname>--scrollspy-toc</parmname> – add a Bootstrap <xref
+            href="./scrollspy.dita"
+            format="dita"
+          >scrollspy</xref> navigator</li>
+        <li>
           <parmname>--bidi.include</parmname> – whether to force included support for
           <xref href="./rtl.dita" format="dita">RTL languages</xref></li>
       </ul>

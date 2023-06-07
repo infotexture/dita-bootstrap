@@ -19,6 +19,8 @@
   <xsl:param name="BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE" select="'yes'"/>
   <!-- Whether to include dark mode toggling.  values are 'yes' or 'no' -->
   <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'yes'"/>
+<!-- Whether to include a scrollspy Toc -->
+  <xsl:param name="BOOTSTRAP_SCROLLSPY_TOC" select="'none'"/>
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
@@ -167,33 +169,9 @@
                 <xsl:with-param name="id" select="'Skip to docs navigation'"/>
               </xsl:call-template>
             </a>
-            <!-- sidebar holds a topic nav, not a document nav -->
-            <xsl:if test="$nav-toc = ('nav-pill-scrollspy', 'list-group-scrollspy')">
-              <a href="#bs-sidebar-nav">
-                <xsl:attribute
-                  name="class"
-                  select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
-                />
-                <xsl:call-template name="getVariable">
-                  <xsl:with-param name="id" select="'Skip to topic navigation'"/>
-                </xsl:call-template>
-              </a>
-            </xsl:if>
           </xsl:when>
           <xsl:when test="$nav-toc = 'none'">
             <!-- do not add a "skip to docs" link -->
-          </xsl:when>
-          <xsl:when test="$nav-toc = ('nav-pill-scrollspy', 'list-group-scrollspy')">
-            <!-- sidebar holds a topic nav, not a document nav -->
-            <a href="#bs-sidebar-nav">
-              <xsl:attribute
-                name="class"
-                select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
-              />
-              <xsl:call-template name="getVariable">
-                <xsl:with-param name="id" select="'Skip to topic navigation'"/>
-              </xsl:call-template>
-            </a>
           </xsl:when>
           <xsl:otherwise>
             <!-- Add a "skip to docs" link to the sidebar -->
@@ -214,10 +192,9 @@
 
   <!-- Override to add scrollspy -->
   <xsl:template match="*" mode="addAttributesToBody">
-    <xsl:if test="$nav-toc = ('list-group-scrollspy', 'nav-pill-scrollspy')">
+    <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
       <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
       <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
-      <xsl:attribute name="data-bs-offset">10</xsl:attribute>
     </xsl:if>
   </xsl:template>
 

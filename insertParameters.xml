@@ -30,6 +30,11 @@
     if:set="icons.include"
   />
   <param
+    name="BOOTSTRAP_SCROLLSPY_TOC"
+    expression="${scrollspy-toc}"
+    if:set="scrollspy-toc"
+  />
+  <param
     name="BOOTSTRAP_CSS_SHORTDESC"
     expression="${bootstrap.css.shortdesc}"
     if:set="bootstrap.css.shortdesc"

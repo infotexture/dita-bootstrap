@@ -58,6 +58,29 @@
       file="${extend.css.file}"
     />
 
+    <!-- Append Bootstrap scrollspy CSS if scrollspy.toc is set -->
+    <condition
+      if:set="dita-bootstrap.css.add"
+      property="dita-bootstrap.scrollspy.css.file"
+      value="${dita-bootstrap.css.dir}/scrollspy-toc.css"
+    >
+      <not>
+        <equals arg1="${scrollspy.toc}" arg2="none"/>
+      </not>
+    </condition>
+
+    <loadfile
+      if:set="dita-bootstrap.scrollspy.css.file"
+      property="dita-bootstrap.scrollspy"
+      srcFile="${dita-bootstrap.scrollspy.css.file}"
+    />
+    <echo
+      if:set="dita-bootstrap.scrollspy.css.file"
+      append="true"
+      message="${line.separator}${dita-bootstrap.scrollspy}"
+      file="${extend.css.file}"
+    />
+
     <!-- Append Bootstrap menubar-toc CSS if menubar-toc.include=yes -->
     <condition
       if:set="dita-bootstrap.css.add"
@@ -79,7 +102,8 @@
       file="${extend.css.file}"
     />
 
-    <!-- Append Bootstrap collapsible CSS if collapsible.include=yes -->
+
+    <!-- Append Bootstrap collapsible CSS if toc is collapsible -->
     <condition
       if:set="dita-bootstrap.css.add"
       property="dita-bootstrap.collapsible.css.file"
@@ -145,6 +169,7 @@
     <property name="args.csspath" value="css"/>
     <property name="icons.include" value="yes"/>
     <property name="menubar-toc.include" value="no"/>
+    <property name="scrollspy.toc" value="no"/>
     <property name="nav-toc" value="partial"/>
     <property name="popovers.include" value="yes"/>
     <property name="dark.mode.include" value="yes"/>
