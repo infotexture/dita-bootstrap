@@ -127,7 +127,7 @@
   display: grid;
   gap: 1.5rem;
   grid-template-areas: 'sidebar main';
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 5fr;
 }
 
 .bs-sidebar {
@@ -136,6 +136,11 @@
 
 .bs-main {
   grid-area: main;
+}
+
+.bs-content {
+  grid-area: content;
+  min-width: 1px;
 }
 
 .bs-header {
@@ -154,7 +159,7 @@
 @media (min-width: 768px) {
   .bs-main {
     display: grid;
-    grid-template-areas: 'intro' 'toc' 'content';
+    grid-template-areas: 'content';
     grid-template-rows: auto auto 1fr;
     gap: inherit;
   }
@@ -162,13 +167,15 @@
 
 @media (min-width: 992px) {
   .bs-main {
-    grid-template-areas: 'intro   toc' 'content toc';
+    grid-template-areas: 'content';
     grid-template-rows: auto 1fr;
   }
+
   .codeblock {
     max-width: calc(80vw - 2rem);
     min-width: 100%;
   }
+
   .bs-sidebar {
     position: -webkit-sticky;
     position: sticky;
@@ -185,16 +192,100 @@
   .bd-navbar .bd-navbar-toggle {
     width: 4.25rem;
   }
+
   .bs-container {
     grid-template-columns: 0fr 1fr;
   }
+
   .codeblock {
     max-width: calc(100vw - 11rem);
     min-width: 100%;
   }
+
   .bs-sidebar .offcanvas-lg {
     border-right-color: var(--bs-border-color);
   }
+}
+
+.bs-scrollspy {
+  grid-area: scrollspy;
+}
+
+@media (max-width: 991.98px) {
+  .bs-main {
+    grid-template-areas: 'content';
+  }
+
+  .bs-scrollspy {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .bs-main {
+    grid-template-areas: 'content scrollspy';
+    grid-template-columns: 4fr 1fr;
+  }
+
+  .bs-scrollspy {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5.25rem;
+    right: 0;
+    z-index: 2;
+    height: calc(100vh - 6rem);
+    overflow-y: auto;
+  }
+}
+
+.bs-scrollspy nav {
+  font-size: 0.875rem;
+}
+
+.bs-scrollspy nav ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.bs-scrollspy nav ul ul {
+  padding-left: 1rem;
+}
+
+.bs-scrollspy nav a {
+  display: block;
+  padding: 0.125rem 0 0.125rem 0.75rem;
+  color: var(--bs-body-color);
+  text-decoration: none;
+  border-left: 0.125rem solid transparent;
+}
+
+.bs-scrollspy nav a:hover,
+.bs-scrollspy nav a.active {
+  color: var(--bs-link-hover-color);
+  border-left-color: var(--bs-primary);
+}
+
+.bs-scrollspy nav a.active {
+  font-weight: 500;
+}
+
+.bs-scrollspy nav a code {
+  font: inherit;
+}
+
+.nested0 {
+  scroll-margin-top: 5rem;
+}
+
+.nested1,
+article h1,
+article h2,
+article h3,
+article h4,
+article [tabindex='0'] {
+  scroll-margin-top: 5.25rem;
+  scroll-margin-bottom: 100px;
 }
 
 /*!
