@@ -23,11 +23,17 @@
       </xsl:when>
        <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('nav-pill')">
         <nav class="nav nav-pills flex-column navbar-light bg-body-tertiary" id="bs-scrollspy">
+          <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+            <xsl:attribute name="dir" select="'rtl'"/>
+          </xsl:if>
           <xsl:apply-templates mode="scrollspy"/>
         </nav>
       </xsl:when>
       <xsl:otherwise>
         <nav>
+          <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+            <xsl:attribute name="dir" select="'rtl'"/>
+          </xsl:if>
           <ul>
             <xsl:apply-templates mode="scrollspy"/>
           </ul>
@@ -85,14 +91,14 @@
         </a>
       </xsl:when>
       <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('nav-pill')">
-        <a class="my-1 nav-link">
+        <a class="my-1 ps-2 nav-link">
           <xsl:call-template name="scrollspy-href"/>
           <xsl:apply-templates/>
         </a>
       </xsl:when>
       <xsl:otherwise>
         <li>
-          <a>
+          <a class="ps-2">
             <xsl:call-template name="scrollspy-href"/>
             <xsl:apply-templates/>
           </a>
