@@ -58,14 +58,14 @@
       file="${extend.css.file}"
     />
 
-    <!-- Append Bootstrap scrollspy CSS if scrollspy.toc is set -->
+    <!-- Append Bootstrap scrollspy CSS if scrollspy-toc is set -->
     <condition
       if:set="dita-bootstrap.css.add"
       property="dita-bootstrap.scrollspy.css.file"
       value="${dita-bootstrap.css.dir}/scrollspy-toc.css"
     >
       <not>
-        <equals arg1="${scrollspy.toc}" arg2="none"/>
+        <equals arg1="${scrollspy-toc}" arg2="none"/>
       </not>
     </condition>
 
@@ -169,11 +169,12 @@
     <property name="args.csspath" value="css"/>
     <property name="icons.include" value="yes"/>
     <property name="menubar-toc.include" value="no"/>
-    <property name="scrollspy.toc" value="none"/>
+    <property name="scrollspy-toc" value="none"/>
     <property name="nav-toc" value="partial"/>
     <property name="popovers.include" value="yes"/>
     <property name="dark.mode.include" value="yes"/>
     <property name="dita-bootstrap.css.add" value="yes"/>
+
     <!--
       Load alternate Bootstrap CSS for RTL languages such as Arabic,
       Farsi, Urdu etc. Load standard Bootstrap CSS for LTR languages like English
