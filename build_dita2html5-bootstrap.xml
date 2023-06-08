@@ -169,7 +169,7 @@
     <property name="args.csspath" value="css"/>
     <property name="icons.include" value="yes"/>
     <property name="menubar-toc.include" value="no"/>
-    <property name="scrollspy.toc" value="no"/>
+    <property name="scrollspy.toc" value="none"/>
     <property name="nav-toc" value="partial"/>
     <property name="popovers.include" value="yes"/>
     <property name="dark.mode.include" value="yes"/>
