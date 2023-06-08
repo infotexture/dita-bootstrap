@@ -202,7 +202,7 @@
     Overrides to add CSS classes to use a CSS Grid for the navigation layout
   -->
   <xsl:attribute-set name="main">
-    <xsl:attribute name="class">bs-main</xsl:attribute>
+    <xsl:attribute name="class">bs-main me-3</xsl:attribute>
     <xsl:attribute name="role">main</xsl:attribute>
   </xsl:attribute-set>
 
