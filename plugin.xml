@@ -286,4 +286,8 @@
     extension="depend.preprocess.copy-html.pre"
     value="bootstrap.scripts.copy"
   />
+  <!-- Offers an additional extension point for dependent plug-ins -->
+  <extension-point id="bootstrap.process.pre" name="Custom Bootstrap pre-processing"/>
+  <!-- Add a template file to enable overrides to use extension points -->
+  <template file="build_dita2html5-bootstrap_template.xml"/>
 </plugin>

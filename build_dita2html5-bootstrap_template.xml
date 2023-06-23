@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
-<project xmlns:if="ant:if">
+<project xmlns:if="ant:if" xmlns:dita="http://dita-ot.sourceforge.net">
   <target
     name="dita2html5-bootstrap"
     depends="dita2html5-bootstrap.init,
@@ -147,7 +147,9 @@
     </copy>
   </target>
 
-  <target name="dita2html5-bootstrap.init">
+  <target name="dita2html5-bootstrap.init"
+    dita:depends="{bootstrap.process.pre}"
+    dita:extension="depends org.dita.dost.platform.InsertDependsAction">
     <!-- Location of page header template with hard-coded links -->
     <property
       name="args.hdr"
