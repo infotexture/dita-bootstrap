@@ -147,9 +147,11 @@
     </copy>
   </target>
 
-  <target name="dita2html5-bootstrap.init"
+  <target
+    name="dita2html5-bootstrap.init"
     dita:depends="{bootstrap.process.pre}"
-    dita:extension="depends org.dita.dost.platform.InsertDependsAction">
+    dita:extension="depends org.dita.dost.platform.InsertDependsAction"
+  >
     <!-- Location of page header template with hard-coded links -->
     <property
       name="args.hdr"
