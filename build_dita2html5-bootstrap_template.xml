@@ -4,8 +4,9 @@
 <project xmlns:if="ant:if" xmlns:dita="http://dita-ot.sourceforge.net">
   <target
     name="dita2html5-bootstrap"
-    depends="dita2html5-bootstrap.init,
-             dita2html5"
+    dita:depends="{bootstrap.process.pre},dita2html5-bootstrap.init,
+             dita2html5,{bootstrap.process.post}"
+    dita:extension="depends org.dita.dost.platform.InsertDependsAction"
   />
 
   <target
@@ -147,11 +148,7 @@
     </copy>
   </target>
 
-  <target
-    name="dita2html5-bootstrap.init"
-    dita:depends="{bootstrap.process.pre}"
-    dita:extension="depends org.dita.dost.platform.InsertDependsAction"
-  >
+  <target name="dita2html5-bootstrap.init">
     <!-- Location of page header template with hard-coded links -->
     <property
       name="args.hdr"
