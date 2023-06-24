@@ -124,16 +124,29 @@ dita --input=path/to/your.ditamap \
      --menubar-toc.include=yes
 ```
 
-### Custom CSS
+### Bootswatch Themes
 
-Bootstrap themes can be generated via [Themestr.app][9]. The plug-in includes a sample placeholder for [custom CSS][10] styles. You can edit the `css/custom.css` file to replace the theme, or add style rules of your own.
-
-To override the default theme, pass a custom CSS file to the `dita` command via the `--args.css` parameter:
+Alternate Bootstrap themes can be downloaded directly from [Bootswatch][20].
+To override the default theme, pass a Bootswatch theme name to the `dita` command via the `--bootstrap.theme` parameter:
 
 ```console
 dita --input=path/to/your.ditamap \
      --format=html5-bootstrap \
      --args.hdr=path/to/your-header.xml \
+     --bootstrap.theme=<theme-name>
+```
+
+### Custom CSS
+
+Additional Bootstrap themes can be generated via [Themestr.app][9]. The plug-in includes a sample placeholder for [custom CSS][10] styles. You can edit the `css/custom.css` file to replace the theme, or add style rules of your own.
+
+To override the default theme, pass a custom CSS file to the `dita` command via the `--args.css` parameter, should the default bootstrap CSS is no be longer required, set `--bootstrap.theme=none` as shown:
+
+```console
+dita --input=path/to/your.ditamap \
+     --format=html5-bootstrap \
+     --args.hdr=path/to/your-header.xml \
+     --bootstrap.theme=none \
      --args.css=<name-of-css>.css \
      --args.copycss=yes \
      --args.csspath=css \
@@ -239,3 +252,4 @@ Within the sample documentation, where necessary, the texts describing the usage
 [17]: https://getbootstrap.com/docs/5.3/components/collapse/
 [18]: https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
 [19]: https://getbootstrap.com/docs/5.3/components/scrollspy/
+[20]: https://bootswatch.com/

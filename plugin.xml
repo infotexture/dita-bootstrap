@@ -273,6 +273,39 @@
       type="string"
       desc="Bootstrap icon for warning notes"
     />
+
+    <param
+      name="bootstrap.theme"
+      desc="Defines a specific custom bootstrap theme to use"
+      type="enum"
+    >
+      <val>cerulean</val>
+      <val>cosmo</val>
+      <val>cyborg</val>
+      <val>darkly</val>
+      <val>flatly</val>
+      <val>journal</val>
+      <val>litera</val>
+      <val>lumen</val>
+      <val>lux</val>
+      <val>materia</val>
+      <val>minty</val>
+      <val>morph</val>
+      <val>none</val>
+      <val>pulse</val>
+      <val>quartz</val>
+      <val>sandstone</val>
+      <val>simplex</val>
+      <val>sketchy</val>
+      <val>slate</val>
+      <val>solar</val>
+      <val>spacelab</val>
+      <val>superhero</val>
+      <val>united</val>
+      <val>vapor</val>
+      <val>yeti</val>
+      <val>zephyr</val>
+    </param>
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
@@ -295,6 +328,9 @@
     id="bootstrap.process.post"
     name="Custom Bootstrap post-processing"
   />
+
+  <feature extension="bootstrap.process.pre" value="bootstrap.theme.init"/>
+  <feature extension="bootstrap.process.post" value="bootstrap.theme.cleanup"/>
   <!-- Add a template file to enable overrides to use extension points -->
   <template file="build_dita2html5-bootstrap_template.xml"/>
 </plugin>
