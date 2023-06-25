@@ -138,9 +138,25 @@ dita --input=path/to/your.ditamap \
 
 ### Custom CSS
 
-Additional Bootstrap themes can be generated via [Themestr.app][9]. The plug-in includes a sample placeholder for [custom CSS][10] styles. You can edit the `css/custom.css` file to replace the theme, or add style rules of your own.
+To customize the color scheme, a Node.js tool to generate a new `theme.css`
+from SASS based on the default Bootstrap theme (or any of the Bootswatch themes) can be
+found [here](#21). To run the tool, follow the instructions found within
+`sass/override.scss` file and run:
 
-To override the default theme, pass a custom CSS file to the `dita` command via the `--args.css` parameter, should the default bootstrap CSS is no be longer required, set `--bootstrap.theme=none` as shown:
+```console
+npm install
+npm run sass
+```
+
+A new generated CSS theme will be found at `sass/theme.css`.
+
+Additional Bootstrap themes can also be generated via [Themestr.app][9]. The plug-in
+includes a sample placeholder for [custom CSS][10] styles. You can edit the
+`css/custom.css` file to replace the theme, or add style rules of your own.
+
+To override the default theme, pass a custom CSS file to the `dita` command via the
+`--args.css` parameter, should the default bootstrap CSS is no be longer required,
+set `--bootstrap.theme=none` as shown:
 
 ```console
 dita --input=path/to/your.ditamap \
@@ -253,3 +269,4 @@ Within the sample documentation, where necessary, the texts describing the usage
 [18]: https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
 [19]: https://getbootstrap.com/docs/5.3/components/scrollspy/
 [20]: https://bootswatch.com/
+[21]: ./sass

@@ -67,3 +67,7 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/linux,macos,windows
 
 build_dita2html5-bootstrap.xml
+sass/theme.css
+sass/theme.css.map
+sass/node_modules
+sass.package-lock.json
