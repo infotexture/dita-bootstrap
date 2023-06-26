@@ -32,4 +32,4 @@
 css/** linguist-vendored
 sample/** linguist-documentation
 
-build_dita2html5-bootstrap.xml linguist-language=Ant-Build-System
+build_dita2html5-bootstrap_template.xml linguist-language=Ant-Build-System
