@@ -70,4 +70,4 @@ build_dita2html5-bootstrap.xml
 sass/theme.css
 sass/theme.css.map
 sass/node_modules
-sass.package-lock.json
+sass/package-lock.json
