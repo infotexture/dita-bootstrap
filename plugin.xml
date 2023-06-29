@@ -328,6 +328,10 @@
     id="bootstrap.process.post"
     name="Custom Bootstrap post-processing"
   />
+  <extension-point
+    id="bootstrap.theme.pre"
+    name="Custom Bootstrap theme pre-processing"
+  />
 
   <feature extension="bootstrap.process.pre" value="bootstrap.theme.init"/>
   <feature extension="bootstrap.process.post" value="bootstrap.theme.cleanup"/>

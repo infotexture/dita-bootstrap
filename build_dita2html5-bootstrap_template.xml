@@ -203,12 +203,17 @@
     </condition>
   </target>
 
-  <target name="bootstrap.theme.cleanup" if:set="bootstrap.theme">
+  <target name="bootstrap.theme.cleanup" if="bootstrap.theme">
      <!-- Clean up if using a custom theme -->
      <delete file="${bootstrap.theme.file}"/>
   </target>
 
-  <target name="bootstrap.theme.init" if:set="bootstrap.theme">
+  <target
+    name="bootstrap.theme.init"
+    if="bootstrap.theme"
+    dita:depends="{bootstrap.theme.pre}"
+    dita:extension="depends org.dita.dost.platform.InsertDependsAction"
+  >
     <!-- Generate a custom theme based on a hdr template -->
     <property
       name="bootstrap.theme.file"
