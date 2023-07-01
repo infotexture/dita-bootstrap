@@ -236,37 +236,10 @@
       <indexterm><parmname>--args.csspath</parmname></indexterm>
       <indexterm><parmname>--args.cssroot</parmname></indexterm>
       <indexterm><parmname>--bootstrap.theme</parmname></indexterm>
-      <note type="tip">
-        <p>
-          To customize the color scheme, a <term>Node.js</term> tool to generate a new <filepath
-          >theme.css</filepath> from SASS based on the default Bootstrap theme (or any of the Bootswatch themes) can be found
-          <xref
-            href="https://github.com/infotexture/dita-bootstrap/blob/master/sass"
-            format="html"
-            scope="external"
-          >here</xref>. To run the tool, follow the instructions found within <filepath
-          >sass/override.scss</filepath> file and run:</p>
-          <codeblock outputclass="language-bash"><cmdname>npm</cmdname> install
-npm run sass</codeblock>
-        <p>A new generated CSS theme will be found at <filepath>sass/theme.css</filepath>.
-        </p>
-        <p>Additional Bootstrap themes can also be generated via
-          <xref
-            href="https://themestr.app/theme"
-            format="html"
-            scope="external"
-          >Themestr.app</xref>. The plug-in includes
-          a sample placeholder for
-          <xref
-            href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css"
-            format="html"
-            scope="external"
-          >custom CSS</xref> styles. You can edit the <filepath>css/custom.css</filepath> file to
-          replace the theme, or add style rules of your own.</p>
-      </note>
-      <p>To override the default Bootstrap theme, pass a custom CSS file like this to the <cmdname>dita</cmdname>
-        command via the <parmname>--args.css</parmname> parameter,
-        should the default bootstrap CSS is no be longer required, set
+      <p>
+        To supplement the chosen theme, pass a custom CSS file to the <cmdname>dita</cmdname>
+        command via the <parmname>--args.css</parmname> parameter, for a complete override of
+        the theme CSS where the default bootstrap CSS is no longer required, set
         <parmname>--bootstrap.theme</parmname>=<option>none</option> as shown:
       </p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
@@ -278,7 +251,12 @@ npm run sass</codeblock>
      <parmname>--args.copycss</parmname>=<option>yes</option> \
      <parmname>--args.csspath</parmname>=<option>css</option> \
      <parmname>--args.cssroot</parmname>=<filepath>path/to/your/theme</filepath></codeblock>
-      <p>For more extensive customizations, you may want to fork this repository and create a new plug-in of your own.
+      <p>For more extensive SASS customizations, you may want to install the
+        <xref
+          href="https://github.com/infotexture/dita-bootstrap.sass"
+          format="html"
+          scope="external"
+        >dita-bootstrap.sass</xref>  plug-in.
       </p>
     </section>
     <section>

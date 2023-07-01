@@ -138,25 +138,9 @@ dita --input=path/to/your.ditamap \
 
 ### Custom CSS
 
-To customize the color scheme, a Node.js tool to generate a new `theme.css`
-from SASS based on the default Bootstrap theme (or any of the Bootswatch themes) can be
-found [here](#21). To run the tool, follow the instructions found within
-`sass/override.scss` file and run:
-
-```console
-npm install
-npm run sass
-```
-
-A new generated CSS theme will be found at `sass/theme.css`.
-
-Additional Bootstrap themes can also be generated via [Themestr.app][9]. The plug-in
-includes a sample placeholder for [custom CSS][10] styles. You can edit the
-`css/custom.css` file to replace the theme, or add style rules of your own.
-
-To override the default theme, pass a custom CSS file to the `dita` command via the
-`--args.css` parameter, should the default bootstrap CSS is no be longer required,
-set `--bootstrap.theme=none` as shown:
+To supplement the chosen theme, pass a custom CSS file to the `dita` command via the
+`--args.css` parameter, for a complete override of the theme CSS where the default bootstrap
+CSS is no longer required, set `--bootstrap.theme=none` as shown:
 
 ```console
 dita --input=path/to/your.ditamap \
@@ -171,7 +155,7 @@ dita --input=path/to/your.ditamap \
 
 ![Sample DITA Bootstrap output](images/custom-bootstrap.png)
 
-For more extensive customizations, you may want to [fork][11] this repository and create a new plug-in of your own.
+For more extensive SASS customizations, you may want to install the [dita-bootstrap.sass][11] plug-in.
 
 ### Common Bootstrap utility classes
 
@@ -259,7 +243,7 @@ Within the sample documentation, where necessary, the texts describing the usage
 [8]: https://infotexture.github.io/dita-bootstrap
 [9]: https://themestr.app/theme
 [10]: ./css/custom.css
-[11]: https://help.github.com/articles/fork-a-repo/
+[11]: https://github.com/infotexture/dita-bootstrap.sass
 [12]: ./xsl/html5-bootstrap-template.xsl
 [13]: https://twitter.com/infotexture
 [14]: https://github.com/infotexture/dita-bootstrap/issues/new
