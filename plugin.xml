@@ -334,7 +334,6 @@
   />
 
   <feature extension="bootstrap.process.pre" value="bootstrap.theme.init"/>
-  <feature extension="bootstrap.process.post" value="bootstrap.theme.cleanup"/>
   <!-- Add a template file to enable overrides to use extension points -->
   <template file="build_dita2html5-bootstrap_template.xml"/>
 </plugin>
