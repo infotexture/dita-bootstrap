@@ -139,9 +139,7 @@ dita --input=path/to/your.ditamap \
 
 ### Custom CSS
 
-To supplement the chosen theme, pass a custom CSS file to the `dita` command via the
-`--args.css` parameter, for a complete override of the theme CSS where the default bootstrap
-CSS is no longer required, set `--bootstrap.theme=none` as shown:
+To supplement the chosen theme, pass a custom CSS file to the `dita` command via the `--args.css` parameter. For a complete override of the theme CSS where the default Bootstrap CSS is no longer required, set `--bootstrap.theme=none`:
 
 ```console
 dita --input=path/to/your.ditamap \

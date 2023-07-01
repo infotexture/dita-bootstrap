@@ -238,9 +238,9 @@
       <indexterm><parmname>--bootstrap.theme</parmname></indexterm>
       <p>
         To supplement the chosen theme, pass a custom CSS file to the <cmdname>dita</cmdname>
-        command via the <parmname>--args.css</parmname> parameter, for a complete override of
-        the theme CSS where the default bootstrap CSS is no longer required, set
-        <parmname>--bootstrap.theme</parmname>=<option>none</option> as shown:
+        command via the <parmname>--args.css</parmname> parameter. For a complete override of
+        the theme CSS where the default Bootstrap CSS is no longer required, set
+        <parmname>--bootstrap.theme</parmname>=<option>none</option>:
       </p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
