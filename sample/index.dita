@@ -216,31 +216,47 @@
       </fig>
     </section>
     <section>
+      <title>Bootswatch Themes</title>
+      <indexterm><parmname>--bootstrap.theme</parmname></indexterm>
+      <p>Alternate Bootstrap themes can be downloaded directly from
+        <xref href="https://bootswatch.com/" format="html" scope="external">Bootswatch</xref>.
+        To override the default theme, pass a Bootswatch theme name to the <cmdname
+        >dita</cmdname> command via the <parmname>--bootstrap.theme</parmname> parameter:
+      </p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+     <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
+     <parmname>--bootstrap.theme</parmname>=<option>&lt;theme-name&gt;</option></codeblock>
+    </section>
+    <section>
       <title>Custom CSS</title>
       <indexterm><parmname>--args.css</parmname></indexterm>
       <indexterm><parmname>--args.copycss</parmname></indexterm>
       <indexterm><parmname>--args.csspath</parmname></indexterm>
       <indexterm><parmname>--args.cssroot</parmname></indexterm>
-      <p>Bootstrap themes can be generated via
-        <xref href="https://themestr.app/theme" format="html" scope="external">Themestr.app</xref>. The plug-in includes
-        a sample placeholder for
-        <xref
-          href="https://github.com/infotexture/dita-bootstrap/blob/master/css/custom.css"
-          format="html"
-          scope="external"
-        >custom CSS</xref> styles. You can edit the <filepath>css/custom.css</filepath> file to
-        replace the theme, or add style rules of your own.</p>
-      <p>To override the default Bootstrap theme, pass a custom CSS file like this to the <cmdname>dita</cmdname>
-        command via the <parmname>--args.css</parmname> parameter:</p>
+      <indexterm><parmname>--bootstrap.theme</parmname></indexterm>
+      <p>
+        To supplement the chosen theme, pass a custom CSS file to the <cmdname>dita</cmdname>
+        command via the <parmname>--args.css</parmname> parameter. For a complete override of
+        the theme CSS where the default Bootstrap CSS is no longer required, set
+        <parmname>--bootstrap.theme</parmname>=<option>none</option>:
+      </p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+     <parmname>--bootstrap.theme</parmname>=<option>none</option> \
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
      <parmname>--args.css</parmname>=&lt;name-of-css&gt;.css \
      <parmname>--args.copycss</parmname>=<option>yes</option> \
      <parmname>--args.csspath</parmname>=<option>css</option> \
      <parmname>--args.cssroot</parmname>=<filepath>path/to/your/theme</filepath></codeblock>
-      <p>For more extensive customizations, you may want to fork this repository and create a new plug-in of your own.
+      <p>For more extensive Sass customizations, you may want to install the
+        <xref
+          href="https://github.com/infotexture/dita-bootstrap.sass"
+          format="html"
+          scope="external"
+        >dita-bootstrap.sass</xref>  plug-in.
       </p>
     </section>
     <section>

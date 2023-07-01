@@ -202,4 +202,39 @@
       <equals arg1="${dark.mode.include}" arg2="yes"/>
     </condition>
   </target>
+
+  <target
+    name="bootstrap.theme.init"
+    if="bootstrap.theme"
+    dita:depends="{bootstrap.theme.pre}"
+    dita:extension="depends org.dita.dost.platform.InsertDependsAction"
+  >
+    <!-- Generate a custom theme based on a hdr template -->
+    <tempfile
+      property="bootstrap.theme.file"
+      suffix=".xml"
+      deleteonexit="true"
+      destdir="${java.io.tmpdir}"
+    />
+    <condition
+      property="bootstrap.template.file"
+      value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/script-only.hdf.xml"
+      else="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/theme.hdf.xml"
+    >
+      <equals arg1="${bootstrap.theme}" arg2="none"/>
+    </condition>
+
+    <copy
+      file="${bootstrap.template.file}"
+      toFile="${bootstrap.theme.file}"
+      overwrite="true"
+    />
+
+    <replace
+      file="${bootstrap.theme.file}"
+      token="@@theme@@"
+      value="${bootstrap.theme}"
+    />
+    <property name="args.hdf" value="${bootstrap.theme.file}"/>
+  </target>
 </project>
