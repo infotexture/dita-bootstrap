@@ -126,7 +126,7 @@ dita --input=path/to/your.ditamap \
 
 ### Bootswatch Themes
 
-Alternate Bootstrap themes can be downloaded directly from [Bootswatch][20].
+Alternate Bootstrap themes can be downloaded directly from [Bootswatch][9].
 To override the default theme, pass a Bootswatch theme name to the `dita` command via the `--bootstrap.theme` parameter:
 
 ```console
@@ -155,7 +155,7 @@ dita --input=path/to/your.ditamap \
 
 ![Sample DITA Bootstrap output](images/custom-bootstrap.png)
 
-For more extensive SASS customizations, you may want to install the [dita-bootstrap.sass][11] plug-in.
+For more extensive SASS customizations, you may want to install the [dita-bootstrap.sass][10] plug-in.
 
 ### Common Bootstrap utility classes
 
@@ -184,7 +184,7 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.thead` – common utility classes for DITA `<thead>` elements
 - `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<topic>` titles
 
-You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][12] is included within this repository.
+You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][11] is included within this repository.
 
 ### Bootstrap icons for DITA notes
 
@@ -209,23 +209,23 @@ Bootstrap icons, popovers, tooltips and the dark-mode toggler are enabled by def
 
 - `icons.include` – enable Bootstrap icons
 - `popovers.include` – enable Bootstrap popover components and tooltip components
-- `dark.mode.include` - whether to include support for a [dark mode][18] toggler
+- `dark.mode.include` - whether to include support for a [dark mode][17] toggler
 
 Additionally, opt-in breadcrumbs and menu bars can be added using the following parameters
 
 - `args.breadcrumbs` – add Bootstrap breadcrumb components
 - `menubar-toc.include` – add a Bootstrap menubar
-- `scrollspy-toc` – add a Bootstrap [scrollspy][19] navigator
+- `scrollspy-toc` – add a Bootstrap [scrollspy][18] navigator
 - `bidi.include` - whether to force included support for RTL languages
 
 ## Feedback
 
-- If you find this useful and build something of your own on top of it, [let me know][13].
+- If you find this useful and build something of your own on top of it, [let me know][12].
 
-- If you find a bug or would like to suggest a change, [create an issue][14].  
+- If you find a bug or would like to suggest a change, [create an issue][13].
   _(If it’s a bug, provide steps to recreate the issue.)_
 
-- If you know how to fix it yourself, [submit a pull request][15] with the proposed changes.
+- If you know how to fix it yourself, [submit a pull request][14] with the proposed changes.
 
 ## License
 
@@ -241,16 +241,13 @@ Within the sample documentation, where necessary, the texts describing the usage
 [6]: https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc
 [7]: https://getbootstrap.com/docs/5.3/components/list-group/
 [8]: https://infotexture.github.io/dita-bootstrap
-[9]: https://themestr.app/theme
-[10]: ./css/custom.css
-[11]: https://github.com/infotexture/dita-bootstrap.sass
-[12]: ./xsl/html5-bootstrap-template.xsl
-[13]: https://twitter.com/infotexture
-[14]: https://github.com/infotexture/dita-bootstrap/issues/new
-[15]: https://help.github.com/articles/using-pull-requests/
-[16]: https://getbootstrap.com/docs/5.3/components/navs-tabs/#pills
-[17]: https://getbootstrap.com/docs/5.3/components/collapse/
-[18]: https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
-[19]: https://getbootstrap.com/docs/5.3/components/scrollspy/
-[20]: https://bootswatch.com/
-[21]: ./sass
+[9]: https://bootswatch.com/
+[10]: https://github.com/infotexture/dita-bootstrap.sass
+[11]: ./xsl/html5-bootstrap-template.xsl
+[12]: https://twitter.com/infotexture
+[13]: https://github.com/infotexture/dita-bootstrap/issues/new
+[14]: https://help.github.com/articles/using-pull-requests/
+[15]: https://getbootstrap.com/docs/5.3/components/navs-tabs/#pills
+[16]: https://getbootstrap.com/docs/5.3/components/collapse/
+[17]: https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
+[18]: https://getbootstrap.com/docs/5.3/components/scrollspy/
