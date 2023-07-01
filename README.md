@@ -9,6 +9,7 @@ A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with 
 - [Customizing](#customizing)
   - [Headers and footers](#headers-and-footers)
   - [Navigation menu](#navigation-menu)
+  - [Bootswatch themes](#bootswatch-themes)
   - [Custom CSS](#custom-css)
   - [Common Bootstrap utility classes](#common-bootstrap-utility-classes)
   - [Bootstrap icons for DITA notes](#bootstrap-icons-for-dita-notes)
@@ -124,7 +125,7 @@ dita --input=path/to/your.ditamap \
      --menubar-toc.include=yes
 ```
 
-### Bootswatch Themes
+### Bootswatch themes
 
 Alternate Bootstrap themes can be downloaded directly from [Bootswatch][9].
 To override the default theme, pass a Bootswatch theme name to the `dita` command via the `--bootstrap.theme` parameter:
