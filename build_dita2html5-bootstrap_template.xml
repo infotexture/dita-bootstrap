@@ -210,7 +210,12 @@
     dita:extension="depends org.dita.dost.platform.InsertDependsAction"
   >
     <!-- Generate a custom theme based on a hdr template -->
-    <tempfile property="bootstrap.theme.file" suffix=".xml" deleteonexit="true"  destdir="${java.io.tmpdir}"/>
+    <tempfile
+      property="bootstrap.theme.file"
+      suffix=".xml"
+      deleteonexit="true"
+      destdir="${java.io.tmpdir}"
+    />
     <condition
       property="bootstrap.template.file"
       value="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/script-only.hdf.xml"
