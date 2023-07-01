@@ -155,7 +155,7 @@ dita --input=path/to/your.ditamap \
 
 ![Sample DITA Bootstrap output](images/custom-bootstrap.png)
 
-For more extensive SASS customizations, you may want to install the [dita-bootstrap.sass][10] plug-in.
+For more extensive Sass customizations, you may want to install the [dita-bootstrap.sass][10] plug-in.
 
 ### Common Bootstrap utility classes
 
