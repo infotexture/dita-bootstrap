@@ -105,8 +105,7 @@
 
           <fig>
             <title>Sample build file: <filepath>process_offline.xml</filepath></title>
-            <codeblock outputclass="language-xml">
-&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+            <codeblock outputclass="language-xml">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project
   name="dita.plugin.net.infotexture.dita-bootstrap.sass"
   xmlns:if="ant:if"
