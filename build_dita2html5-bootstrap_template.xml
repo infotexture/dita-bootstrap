@@ -4,7 +4,7 @@
 <project xmlns:if="ant:if" xmlns:dita="http://dita-ot.sourceforge.net">
   <target
     name="dita2html5-bootstrap"
-    dita:depends="{bootstrap.process.pre},dita2html5-bootstrap.init,
+    dita:depends="{bootstrap.process.pre},bootstrap.theme.init,dita2html5-bootstrap.init,
              dita2html5,{bootstrap.process.post}"
     dita:extension="depends org.dita.dost.platform.InsertDependsAction"
   />
@@ -206,8 +206,6 @@
   <target
     name="bootstrap.theme.init"
     if="bootstrap.theme"
-    dita:depends="{bootstrap.theme.pre}"
-    dita:extension="depends org.dita.dost.platform.InsertDependsAction"
   >
     <!-- Generate a custom theme based on a hdr template -->
     <tempfile
