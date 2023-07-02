@@ -203,10 +203,7 @@
     </condition>
   </target>
 
-  <target
-    name="bootstrap.theme.init"
-    if="bootstrap.theme"
-  >
+  <target name="bootstrap.theme.init" if="bootstrap.theme">
     <!-- Generate a custom theme based on a hdr template -->
     <tempfile
       property="bootstrap.theme.file"
