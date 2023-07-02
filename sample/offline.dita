@@ -71,7 +71,7 @@
 
           <fig>
             <title>Sample <filepath>offline-bootstrap-js.xml</filepath> file</title>
-            <codeblock outputclass="language-javascript">&lt;div&gt;
+            <codeblock outputclass="language-xml">&lt;div&gt;
   &lt;script&gt;
 //&lt;![CDATA[
   ... Place the entirety of bootstrap.bundle.min.js JavaScript here
