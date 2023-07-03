@@ -110,7 +110,7 @@
   name="dita.plugin.net.infotexture.dita-bootstrap.sass"
   xmlns:if="ant:if"
   xmlns:unless="ant:unless"&gt;
-  &lt;target name="bootstrap.sass" if="offline.mode"&gt;
+  &lt;target name="bootstrap.offline" if="offline.mode"&gt;
     &lt;macrodef name="offline-theme"&gt;
       &lt;sequential&gt;
         &lt;property name="args.copycss" value="yes" /&gt;
