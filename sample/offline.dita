@@ -107,7 +107,7 @@
             <title>Sample build file: <filepath>process_offline.xml</filepath></title>
             <codeblock outputclass="language-xml">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
 &lt;project
-  name="dita.plugin.net.infotexture.dita-bootstrap.sass"
+  name="dita.plugin.com.example.bootstrap-offline"
   xmlns:if="ant:if"
   xmlns:unless="ant:unless"&gt;
   &lt;target name="bootstrap.offline" if="offline.mode"&gt;
