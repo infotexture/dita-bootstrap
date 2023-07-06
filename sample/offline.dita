@@ -128,7 +128,8 @@
     &lt;/condition&gt;
 
     &lt;offline-theme unless:set="offline.mode.no" /&gt;
-&lt;/target&gt;</codeblock>
+  &lt;/target&gt;
+&lt;/project&gt;</codeblock>
           </fig>
       </li>
     </ol>
