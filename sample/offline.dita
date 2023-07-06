@@ -112,9 +112,9 @@
         &lt;property name="args.csspath" value="css" /&gt;
         &lt;property name="args.css" value="offline-bootstrap.css" /&gt;
         &lt;property name="args.cssroot"
-          value="${dita.plugin.com.example.bootstrap-offline}/include" /&gt;
+          value="${dita.plugin.com.example.bootstrap-offline.dir}/include" /&gt;
         &lt;property name="args.hdf"
-          value="${dita.plugin.com.example.bootstrap-offline}/include/offline-bootstrap-js.xml" /&gt;
+          value="${dita.plugin.com.example.bootstrap-offline.dir}/include/offline-bootstrap-js.xml" /&gt;
       &lt;/sequential&gt;
     &lt;/macrodef&gt;
 
