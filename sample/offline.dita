@@ -147,7 +147,8 @@
           <parmname>--install</parmname> to install the plug-in.</li>
         <li>Build output with the <option>html5-bootstrap</option> type to verify that the output is available offline
           as intended.
-          <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
+          <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+            >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--offline.mode</parmname>=<option>yes</option></codeblock>
         </li>
