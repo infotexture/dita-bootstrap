@@ -11,8 +11,8 @@
    file for applicable licenses.-->
 <topic id="offline">
   <title>Offline Mode</title>
-  <shortdesc
-  >Offer content creators the opportunity to generate and view draft HTML in the Bootstrap style when not connected to the Internet through creating a custom DITA-OT plugin.</shortdesc>
+  <shortdesc>Offer content creators the opportunity to generate and view draft HTML in the Bootstrap style when not
+    connected to the Internet through creating a custom DITA-OT plugin.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
@@ -22,26 +22,24 @@
   </prolog>
   <body outputclass="language-markup">
     <p>This scenario walks through the process of creating a simple plug-in
-      (<codeph>com.example.bootstrap.offline</codeph>) that bundles all the necessary
-      Bootstrap JavaScript and CSS <b>locally</b> into the generated HTML output.</p>
-    <p>This could be used to allow writers to view an incomplete draft of the DITA content
-      whilst maintaining Bootstrap interactivity and look-and-feel.</p>
-    <note>This offline approach deliberately avoids the use of online CDNs and minimises the
-      opportunity for browsers to cache files, and therefore is not recommended for
-      production of documents placed online.</note>
+        (<codeph>com.example.bootstrap.offline</codeph>) that bundles all the necessary Bootstrap JavaScript and CSS
+        <b>locally</b> into the generated HTML output.</p>
+    <p>This could be used to allow writers to view an incomplete draft of the DITA content whilst maintaining Bootstrap
+      interactivity and look-and-feel.</p>
+    <note>This offline approach deliberately avoids the use of online CDNs and minimises the opportunity for browsers to
+      cache files, and therefore is not recommended for production of documents placed online.</note>
 
     <section>
       <title>Procedure</title>
-    <ol>
-      <li>
-        <p>In the <filepath>plugins</filepath> directory, create a directory named
-        <filepath>com.example.bootstrap-offine</filepath>.</p>
-      </li>
-      <li>
-        <p>In the new <filepath>com.example.bootstrap-offline</filepath> directory, create a plug-in configuration file
-            (<filepath>plugin.xml</filepath>) that uses the
-            <option>bootstrap.process.pre</option> extension point.</p>
-
+      <ol>
+        <li>
+          <p>In the <filepath>plugins</filepath> directory, create a directory named
+              <filepath>com.example.bootstrap-offine</filepath>.</p>
+        </li>
+        <li>
+          <p>In the new <filepath>com.example.bootstrap-offline</filepath> directory, create a plug-in configuration
+            file (<filepath>plugin.xml</filepath>) that uses the <option>bootstrap.process.pre</option> extension
+            point.</p>
           <fig>
             <title>Sample <filepath>plugin.xml</filepath> file</title>
             <codeblock outputclass="language-xml">&lt;plugin id="com.example.bootstrap-offline" version="1.0.0"&gt;
@@ -57,18 +55,17 @@
   &lt;/transtype&gt;
 &lt;/plugin&gt;</codeblock>
           </fig>
-          <note>This plug-in will extend the default HTML5 Bootstrap transformation, so the <xmlelement
-            >require</xmlelement>
-            element explicitly defines <filepath>net.infotexture.dita-bootstrap</filepath> as a dependency.</note>
-      </li>
-      <li>
-        <p>In the <filepath>com.example.bootstrap-offline</filepath> directory, create a subdirectory named
-            <filepath>include</filepath>.</p>
-      </li>
-      <li>
-        <p>In the new <filepath>include</filepath> subdirectory, create a file named
-            <filepath>offline-bootstrap-js.xml</filepath> containing the minified Bootstrap JavaScript code.</p>
-
+          <note>This plug-in will extend the default HTML5 Bootstrap transformation, so the
+              <xmlelement>require</xmlelement> element explicitly defines
+              <filepath>net.infotexture.dita-bootstrap</filepath> as a dependency.</note>
+        </li>
+        <li>
+          <p>In the <filepath>com.example.bootstrap-offline</filepath> directory, create a subdirectory named
+              <filepath>include</filepath>.</p>
+        </li>
+        <li>
+          <p>In the new <filepath>include</filepath> subdirectory, create a file named
+              <filepath>offline-bootstrap-js.xml</filepath> containing the minified Bootstrap JavaScript code.</p>
           <fig>
             <title>Sample <filepath>offline-bootstrap-js.xml</filepath> file</title>
             <codeblock outputclass="language-xml">&lt;div&gt;
@@ -81,11 +78,10 @@
           </fig>
           <p>The division wrapper will be discarded when generating HTML files, and the contents will be inserted into
             the <xmlelement>header</xmlelement> element of each page.</p>
-      </li>
-      <li>
-        <p>In the new <filepath>include</filepath> subdirectory, create a file named
-            <filepath>offline-bootstrap.css</filepath> containing the minified Bootstrap CSS.</p>
-
+        </li>
+        <li>
+          <p>In the new <filepath>include</filepath> subdirectory, create a file named
+              <filepath>offline-bootstrap.css</filepath> containing the minified Bootstrap CSS.</p>
           <fig>
             <title>Sample <filepath>offline-bootstrap.css</filepath> file</title>
             <codeblock outputclass="language-css">@charset "UTF-8";
@@ -96,13 +92,12 @@
  */
 ... Place entirety of the bootstrap.min.css stylesheet here</codeblock>
           </fig>
-      </li>
+        </li>
 
-      <li>
-        <p>In the <filepath>com.example.bootstrap-offline</filepath> root directory, add an Ant script
-            (<filepath>process_offline.xml</filepath>) to predefine various parameters prior to calling the <option
-            >html5-bootstrap</option> transform</p>
-
+        <li>
+          <p>In the <filepath>com.example.bootstrap-offline</filepath> root directory, add an Ant script
+              (<filepath>process_offline.xml</filepath>) to predefine various parameters prior to calling the
+              <option>html5-bootstrap</option> transform</p>
           <fig>
             <title>Sample build file: <filepath>process_offline.xml</filepath></title>
             <codeblock outputclass="language-xml">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
@@ -131,8 +126,8 @@
   &lt;/target&gt;
 &lt;/project&gt;</codeblock>
           </fig>
-      </li>
-    </ol>
+        </li>
+      </ol>
     </section>
     <section>
       <title>Results</title>
@@ -148,11 +143,11 @@
     <section>
       <title>What to do next</title>
       <ol>
-        <li>Run <cmdname>dita</cmdname> <parmname>--install</parmname> to install the plug-in.</li>
-        <li>Build output with the <option
-          >html5-bootstrap</option> type to verify that the output is available offline as intended.
-           <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
-            >path/to/your.ditamap</filepath> \
+        <li>Run <cmdname>dita</cmdname>
+          <parmname>--install</parmname> to install the plug-in.</li>
+        <li>Build output with the <option>html5-bootstrap</option> type to verify that the output is available offline
+          as intended.
+          <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath>path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option>
      <parmname>--offline.mode</parmname>=<option>yes</option></codeblock>
         </li>
