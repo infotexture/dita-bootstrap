@@ -45,7 +45,7 @@
             <codeblock outputclass="language-xml">&lt;plugin id="com.example.bootstrap-offline" version="1.0.0"&gt;
   &lt;require plugin="net.infotexture.dita-bootstrap" /&gt;
   &lt;feature extension="ant.import" file="process_offline.xml" /&gt;
-  &lt;feature extension="bootstrap.process.pre" value="offline-bootstrap" /&gt;
+  &lt;feature extension="bootstrap.process.pre" value="bootstrap.offline" /&gt;
 
   &lt;transtype name="html5-bootstrap" extends="html5"&gt;
     &lt;param name="offline.mode" type="enum"&gt;
