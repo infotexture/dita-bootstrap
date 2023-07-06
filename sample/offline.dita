@@ -141,8 +141,8 @@
 ├── include
 │   ├── offline-bootstrap-js.xml
 │   └── offline-bootstrap.css
-├── process_offline.xml
-└── plugin.xml</codeblock>
+├── plugin.xml
+└── process_offline.xml</codeblock>
     </section>
 
     <section>
