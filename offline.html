@@ -1,0 +1,258 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="copyright" content="(C) Copyright 2023"><meta name="generator" content="DITA-OT"><meta name="description" content="Offer content creators the opportunity to generate and view draft HTML in the Bootstrap style when not connected to the Internet through creating a custom DITA-OT plugin."><meta name="keywords" content="Offline"><meta name="icon" content="bi-wifi-off"><meta property="og:type" content="website"><meta property="og:url" content="https://infotexture.github.io/dita-bootstrap/offline.html"><meta property="og:title" content="Offline Mode"><meta property="og:description" content="Offer content creators the opportunity to generate and view draft HTML in the Bootstrap style when not connected to the Internet through creating a custom DITA"><meta property="og:image" content="https://infotexture.github.io/dita-bootstrap/open-graph.svg"><meta name="twitter:title" content="Offline Mode"><meta name="twitter:description" content="Offer content creators the opportunity to generate and view draft HTML in the Bootstrap style when not connected to the Internet through creating a custom DITA"><meta property="twitter:url" content="https://infotexture.github.io/dita-bootstrap/offline.html"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://infotexture.github.io/dita-bootstrap/open-graph.svg"><title>Offline Mode</title><script src="./js/lunr-client.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><link rel="shortcut icon" href="./favicon/favicon.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="css/commonltr.css">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
+<link rel="stylesheet" type="text/css" href="./css/common-extended.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" integrity="sha384-Ay26V7L8bsJTsX9Sxclnvsn+hkdiwRnrjZJXqKmkIDobPgIIWBOVguEcQQLDuhfN" crossorigin="anonymous"></head><body id="offline"><div class="visually-hidden-focusable overflow-hidden p-2 bg-body-tertiary"><div class="container-xl"><a class="d-inline-flex m-1 btn btn-outline-primary btn-sm" href="#ariaid-title1">Skip to main content</a><a href="#bs-sidebar-nav" class="d-none d-md-inline-flex m-1 btn btn-outline-primary btn-sm">Skip to docs navigation</a></div></div><div class="bs-header"><header role="banner"><nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <!-- This shows the menu on mobile -->
+    <div class="bd-navbar-toggle">
+      <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar" aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+    <a class="navbar-brand" href="https://infotexture.github.io/dita-bootstrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bootstrap" viewBox="0 0 16 16">
+        <path d="M5.062 12h3.475c1.804 0 2.888-.908 2.888-2.396 0-1.102-.761-1.916-1.904-2.034v-.1c.832-.14 1.482-.93 1.482-1.816 0-1.3-.955-2.11-2.542-2.11H5.062V12zm1.313-4.875V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762V8.162h1.822c1.236 0 1.887.463 1.887 1.348 0 .896-.627 1.377-1.811 1.377H6.375z"/>
+        <path d="M0 4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4zm4-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3H4z"/>
+      </svg>
+      DITA Bootstrap
+    </a>
+    <button class="navbar-toggler py-2 px-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-three-dots"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.dita-ot.org/plugins#!net.infotexture.dita-bootstrap">Plugin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/infotexture/dita-bootstrap/releases">Releases</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/infotexture/dita-bootstrap">Source</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://getbootstrap.com/docs/5.3">Bootstrap Docs</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <!--
+          This is a lunr.js search box
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item d-flex align-items-center">
+          <span class="nav-link py-2 pe-2"><i class="bi bi-search"></i></span>
+          <form class="bd-search position-relative me-auto" onsubmit="return search(this);">
+          <input type="search" class="form-control ds-input" id="search-input" placeholder="Search…" aria-label="Search for…" dir="auto" style="position: relative; vertical-align: top;">
+          </form>
+        </li>
+        <!--
+          This is a dark/light color theme toggler
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+            <span class="bs-toggler-light">
+              <i class="bi bi-brightness-high-fill"></i>
+            </span>
+            <span class="bs-toggler-dark">
+              <i class="bi bi-moon-stars-fill"></i>
+            </span>
+            <span class="bs-toggler-auto">
+              <i class="bi bi-circle-half"></i>
+            </span>
+            <span class="d-lg-none ms-2">Toggle theme</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme" style="--bs-dropdown-min-width: 6rem;" data-bs-popper="static">
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+                <i class="bi bi-brightness-high-fill"></i>
+                <span class="ms-2">Light</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+                <i class="bi bi-moon-stars-fill"></i>
+                <span class="ms-2">Dark</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto">
+                <i class="bi bi-circle-half"></i>
+                <span class="ms-2">Auto</span>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav></header></div><div class="bs-container container-xxl bd-gutter mt-3 my-md-4" id="content"><div class="bs-sidebar"><div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel" aria-modal="true" role="dialog"><div class="offcanvas-header border-bottom"><h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">DITA Bootstrap</h5><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button></div><div class="offcanvas-body"><nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links"><ul class="list-unstyled mb-0 py-3 pt-md-1"><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d44479e11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d44479e11"><i class="me-2 bi-book-half" style="color: var(--bs-indigo)"></i>Getting Started</span></div><div id="menu-collapse-d44479e11" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="index.html">DITA Bootstrap</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d44479e34"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d44479e34"><i class="me-2 bi-grid-fill" style="color: var(--bs-teal)"></i>Layout</span></div><div id="menu-collapse-d44479e34" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="grid.html">Grid System</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="rtl.html">Right-to-Left Languages</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d44479e65"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d44479e65"><i class="me-2 bi-file-earmark-richtext" style="color: var(--bs-gray)"></i>Content</span></div><div id="menu-collapse-d44479e65" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="typography.html">Typography</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="images.html">Images</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tables.html">Tables</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="figures.html">Figures</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d44479e112"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d44479e112"><i class="me-2 bi-menu-button-wide-fill" style="color: var(--bs-cyan)"></i>Components</span></div><div id="menu-collapse-d44479e112" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="accordion.html">Accordion</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="alerts.html">Alerts</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="badge.html">Badges</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="breadcrumb.html">Breadcrumb</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="buttons.html">Buttons</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="button-group.html">Button Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="card.html">Cards</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="carousel.html">Carousel</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="collapse.html">Collapse</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="list-group.html">List Group</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="offcanvas.html">Offcanvas</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="pagination.html">Pagination</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="popovers.html">Popovers</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="scrollspy.html">Scrollspy</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tabs.html">Tabbed Dialogs</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="tooltips.html">Tooltips</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0" data-bs-target="#menu-collapse-d44479e284"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1" data-bs-target="#menu-collapse-d44479e284"><i class="me-2 bi-braces-asterisk" style="color: var(--bs-pink)"></i>Utilities</span></div><div id="menu-collapse-d44479e284" class="collapse "><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="utilities.html">Borders, Color and Background</a></div></li></ul></div></li><li><div class="d-flex flex-row"><button data-bs-toggle="collapse" class="btn d-inline-flex align-items-center pe-0 active" data-bs-target="#menu-collapse-d44479e307" aria-expanded="true" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 14l6-6-6-6"/></svg></button><span data-bs-toggle="collapse" class="d-inline-flex align-items-center flex-shrink-1 ps-1 active" data-bs-target="#menu-collapse-d44479e307" aria-expanded="true" aria-current="true"><i class="me-2 bi-tools" style="color: var(--bs-blue)"></i>Extend</span></div><div id="menu-collapse-d44479e307" class="collapse show"><ul class="list-unstyled fw-normal ps-4"><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="icons.html"><i class="me-2 bi-images" style=""></i>Icons</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="dark-mode.html"><i class="me-2 bi-moon-stars" style=""></i>Dark Mode</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3" href="search-box.html"><i class="me-2 bi-search" style=""></i>Search Box</a></div></li><li><div class="d-flex flex-row"><a class="d-inline-flex align-items-center flex-shrink-1 ps-3 active" href="offline.html"><i class="me-2 bi-wifi-off" style=""></i>Offline Mode</a></div></li></ul></div></li></ul></nav></div></div></div><main role="main" class="bs-main me-3"><article role="article" class="bs-content" aria-labelledby="ariaid-title1">
+  <h1 class="title" id="ariaid-title1">Offline Mode</h1>
+  
+  
+  <div class="body language-markup"><p class="shortdesc text-body-secondary lead">Offer content creators the opportunity to generate and view draft HTML in the Bootstrap style when not
+    connected to the Internet through creating a custom DITA-OT plugin.</p>
+    <p class="p">This scenario walks through the process of creating a simple plug-in
+        (<code class="ph codeph language-markup">com.example.bootstrap.offline</code>) that bundles all the necessary Bootstrap JavaScript and CSS
+        <strong class="ph b">locally</strong> into the generated HTML output.</p>
+    <p class="p">This could be used to allow writers to view an incomplete draft of the DITA content whilst maintaining Bootstrap
+      interactivity and look-and-feel.</p>
+    <div role="alert" class="note alert alert-info"><span class="note__title">Note:</span> This offline approach deliberately avoids the use of online CDNs and minimises the opportunity for browsers to
+      cache files, and therefore is not recommended for production of documents placed online.</div>
+
+    <section class="section"><h2 class="title h4">Procedure</h2>
+      
+      <ol class="ol">
+        <li class="li">
+          <p class="p">In the <span class="ph filepath">plugins</span> directory, create a directory named
+              <span class="ph filepath">com.example.bootstrap-offine</span>.</p>
+        </li>
+        <li class="li">
+          <p class="p">In the new <span class="ph filepath">com.example.bootstrap-offline</span> directory, create a plug-in configuration
+            file (<span class="ph filepath">plugin.xml</span>) that uses the <span class="keyword option">bootstrap.process.pre</span> extension
+            point.</p>
+          <figure class="fig figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock border rounded language-xml"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>plugin</span> <span class="ph token attr-name">id</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>com.example.bootstrap-offline<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">version</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>1.0.0<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>require</span> <span class="ph token attr-name">plugin</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>net.infotexture.dita-bootstrap<span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>feature</span> <span class="ph token attr-name">extension</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>ant.import<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">file</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>process_offline.xml<span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>feature</span> <span class="ph token attr-name">extension</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>bootstrap.process.pre<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">value</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>bootstrap.offline<span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>transtype</span> <span class="ph token attr-name">name</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>html5-bootstrap<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">extends</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>html5<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>param</span> <span class="ph token attr-name">name</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offline.mode<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">type</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>enum<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+      <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>val</span><span class="ph token punctuation">&gt;</span></span>yes<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>val</span><span class="ph token punctuation">&gt;</span></span>
+      <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>val</span> <span class="ph token attr-name">default</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>true<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>no<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>val</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>param</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>transtype</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>plugin</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+          <figcaption class="fig figure-caption"><span class="fig--title-label">Figure 1. </span>Sample <span class="ph filepath">plugin.xml</span> file</figcaption></figure>
+
+          <div role="alert" class="note alert alert-info"><span class="note__title">Note:</span> This plug-in will extend the default HTML5 Bootstrap transformation, so the
+              <code class="keyword markupname xmlelement">&lt;require&gt;</code> element explicitly defines
+              <span class="ph filepath">net.infotexture.dita-bootstrap</span> as a dependency.</div>
+        </li>
+        <li class="li">
+          <p class="p">In the <span class="ph filepath">com.example.bootstrap-offline</span> directory, create a subdirectory named
+              <span class="ph filepath">include</span>.</p>
+        </li>
+        <li class="li">
+          <p class="p">In the new <span class="ph filepath">include</span> subdirectory, create a file named
+              <span class="ph filepath">offline-bootstrap-js.xml</span> containing the minified Bootstrap JavaScript code.</p>
+          <figure class="fig figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock border rounded language-xml"><code><span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>div</span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>script</span><span class="ph token punctuation">&gt;</span></span>
+//&lt;![CDATA[
+  ... Place the entirety of bootstrap.bundle.min.js JavaScript here
+//]​]&gt;
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>script</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>div</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+          <figcaption class="fig figure-caption"><span class="fig--title-label">Figure 2. </span>Sample <span class="ph filepath">offline-bootstrap-js.xml</span> file</figcaption></figure>
+
+          <p class="p">The division wrapper will be discarded when generating HTML files, and the contents will be inserted into
+            the <code class="keyword markupname xmlelement">&lt;header&gt;</code> element of each page.</p>
+        </li>
+        <li class="li">
+          <p class="p">In the new <span class="ph filepath">include</span> subdirectory, create a file named
+              <span class="ph filepath">offline-bootstrap.css</span> containing the minified Bootstrap CSS.</p>
+          <figure class="fig figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock border rounded language-css"><code><span class="ph token atrule"><span class="ph token rule">@charset</span> <span class="ph token string">"UTF-8"</span><span class="ph token punctuation">;</span></span>
+<span class="ph token comment">/*!
+ * Bootstrap  v5.3.0 (https://getbootstrap.com/)
+ * Copyright 2011-2023 The Bootstrap Authors
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */</span>
+... Place entirety of the bootstrap.min.css stylesheet here</code></pre>
+          <figcaption class="fig figure-caption"><span class="fig--title-label">Figure 3. </span>Sample <span class="ph filepath">offline-bootstrap.css</span> file</figcaption></figure>
+
+        </li>
+
+        <li class="li">
+          <p class="p">In the <span class="ph filepath">com.example.bootstrap-offline</span> root directory, add an Ant script
+              (<span class="ph filepath">process_offline.xml</span>) to predefine various parameters prior to calling the
+              <span class="keyword option">html5-bootstrap</span> transform</p>
+          <figure class="fig figure w-100 mw-100 p-3">
+            
+            <pre class="pre codeblock border rounded language-xml"><code><span class="ph token prolog">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>project</span>
+  <span class="ph token attr-name">name</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>dita.plugin.com.example.bootstrap-offline<span class="ph token punctuation">"</span></span>
+  <span class="ph token attr-name"><span class="ph token namespace">xmlns:</span>if</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>ant:if<span class="ph token punctuation">"</span></span>
+  <span class="ph token attr-name"><span class="ph token namespace">xmlns:</span>unless</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>ant:unless<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>target</span> <span class="ph token attr-name">name</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>bootstrap.offline<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">if</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offline.mode<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>macrodef</span> <span class="ph token attr-name">name</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offline-theme<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+      <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>sequential</span><span class="ph token punctuation">&gt;</span></span>
+        <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>property</span> <span class="ph token attr-name">name</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>args.copycss<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">value</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>yes<span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+        <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>property</span> <span class="ph token attr-name">name</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>args.csspath<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">value</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>css<span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+        <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>property</span> <span class="ph token attr-name">name</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>args.css<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">value</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offline-bootstrap.css<span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+        <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>property</span> <span class="ph token attr-name">name</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>args.cssroot<span class="ph token punctuation">"</span></span>
+          <span class="ph token attr-name">value</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>${dita.plugin.com.example.bootstrap-offline.dir}/include<span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+        <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>property</span> <span class="ph token attr-name">name</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>args.hdf<span class="ph token punctuation">"</span></span>
+          <span class="ph token attr-name">value</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>${dita.plugin.com.example.bootstrap-offline.dir}/include/offline-bootstrap-js.xml<span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+      <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>sequential</span><span class="ph token punctuation">&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>macrodef</span><span class="ph token punctuation">&gt;</span></span>
+
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>condition</span> <span class="ph token attr-name">property</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offline.mode.no<span class="ph token punctuation">"</span></span><span class="ph token punctuation">&gt;</span></span>
+      <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>equals</span> <span class="ph token attr-name">arg1</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>${offline.mode}<span class="ph token punctuation">"</span></span> <span class="ph token attr-name">arg2</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>no<span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>condition</span><span class="ph token punctuation">&gt;</span></span>
+
+    <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;</span>offline-theme</span> <span class="ph token attr-name"><span class="ph token namespace">unless:</span>set</span><span class="ph token attr-value"><span class="ph token punctuation">=</span><span class="ph token punctuation">"</span>offline.mode.no<span class="ph token punctuation">"</span></span> <span class="ph token punctuation">/&gt;</span></span>
+  <span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>target</span><span class="ph token punctuation">&gt;</span></span>
+<span class="ph token tag"><span class="ph token tag"><span class="ph token punctuation">&lt;/</span>project</span><span class="ph token punctuation">&gt;</span></span></code></pre>
+          <figcaption class="fig figure-caption"><span class="fig--title-label">Figure 4. </span>Sample build file: <span class="ph filepath">process_offline.xml</span></figcaption></figure>
+
+        </li>
+      </ol>
+    </section>
+    <section class="section"><h2 class="title h4">Results</h2>
+      
+      <p class="p">The plug-in directory has the following layout and files:</p>
+      <pre class="pre codeblock border rounded language-bash"><code>com.example.bootstrap-offline
+├── include
+│   ├── offline-bootstrap-js.xml
+│   └── offline-bootstrap.css
+├── plugin.xml
+└── process_offline.xml</code></pre>
+    </section>
+
+    <section class="section"><h2 class="title h4">What to do next</h2>
+      
+      <ol class="ol">
+        <li class="li">Run <span class="keyword cmdname">dita</span>
+          <span class="keyword parmname">--install</span> to install the plug-in.</li>
+        <li class="li">Build output with the <span class="keyword option">html5-bootstrap</span> type to verify that the output is available offline
+          as intended.
+          <pre class="pre codeblock border rounded language-bash"><code><span class="keyword cmdname">dita</span> <span class="keyword parmname">--input</span><span class="ph token operator">=</span><span class="ph filepath">path/to/your.ditamap</span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--format</span><span class="ph token operator">=</span><span class="keyword option">html5-bootstrap</span> <span class="ph token punctuation">\</span>
+     <span class="keyword parmname">--offline.mode</span><span class="ph token operator">=</span><span class="keyword option"><span class="ph token function">yes</span></span></code></pre>
+        </li>
+        <li class="li">Refine the styles in your <span class="ph filepath">offline-bootstrap.css</span> file as necessary.</li>
+      </ol>
+    </section>
+  </div>
+</article></main></div><script language="javascript" src="./js/popovers.js"></script><script language="javascript" src="./js/dark-mode-toggler.js"></script><footer role="contentinfo"><!-- Footer --><div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <!-- Social media -->
+      <p class="text-center p-3">
+        <!-- GitHub -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="https://github.com/infotexture/dita-bootstrap" role="button"><i class="bi bi-github"></i></a>
+        <!-- Linkedin -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="https://www.linkedin.com/in/infotexture/" role="button"><i class="bi bi-linkedin"></i></a>
+        <!-- Twitter -->
+        <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="https://twitter.com/infotexture" role="button"><i class="bi bi-twitter"></i></a>
+      </p>
+      <p class="p-3">
+        <small>
+          © 2017–2023
+          <a class="text-dark" href="https://infotexture.net/">infotexture</a>
+        </small>
+      </p>
+    </div>
+  </div>
+</div><!-- Footer --></footer></body></html>
