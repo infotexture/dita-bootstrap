@@ -87,6 +87,11 @@
         <othermeta name="icon" content="bi-search"/>
       </topicmeta>
     </topicref>
+    <topicref navtitle="Offline Mode" format="dita" type="topic" href="offline.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-wifi-off"/>
+      </topicmeta>
+    </topicref>
   </chapter>
   <backmatter deliveryTarget="pdf">
     <booklists>
