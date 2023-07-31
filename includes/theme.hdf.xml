@@ -1,6 +1,6 @@
 <div>
   <link
-    href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.1/dist/@@theme@@/bootstrap.min.css"
+    href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.1/dist/@@theme@@"
     rel="stylesheet"
   />
   <script
