@@ -17,7 +17,8 @@
   }
 }
 
-.nested0 {
+.nested0,
+article h1 {
   scroll-margin-top: 11.25rem;
 }
 
