@@ -205,6 +205,14 @@
 
   <target name="bootstrap.theme.init" if="bootstrap.theme">
     <!-- Generate a custom theme based on a hdr template -->
+
+    <condition property="bootstrap.rtl" value=".rtl." else=".">
+      <matches
+        string="${default.language}"
+        pattern="((ar|arc|bcc|bqi|ckb|dv|fa|glk|he|lrc|mzn|pnb|ps|sd|ug|ur|yi)(\-|$))"
+      />
+    </condition>
+
     <tempfile
       property="bootstrap.theme.file"
       suffix=".xml"
@@ -228,7 +236,7 @@
     <replace
       file="${bootstrap.theme.file}"
       token="@@theme@@"
-      value="${bootstrap.theme}"
+      value="${bootstrap.theme}/bootstrap${bootstrap.rtl}min.css "
     />
     <property name="args.hdf" value="${bootstrap.theme.file}"/>
   </target>
