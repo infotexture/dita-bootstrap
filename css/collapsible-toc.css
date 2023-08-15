@@ -74,7 +74,7 @@
 .bs-sidebar .btn {
   padding-left: 12px;
   padding-right: inherit;
-  padding-bottom: 0px
+  padding-bottom: 0px;
 }
 
 [dir='rtl'] .bs-sidebar .btn {
