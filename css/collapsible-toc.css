@@ -72,11 +72,14 @@
 }
 
 .bs-sidebar .btn {
-  padding-left: 12px; padding-right: inherit;
+  padding-left: 12px;
+  padding-right: inherit;
+  padding-bottom: 0px
 }
 
 [dir='rtl'] .bs-sidebar .btn {
-  padding-left: inherit; padding-right: 12px;
+  padding-left: inherit;
+  padding-right: 12px;
 }
 
 [dir='rtl'] .bd-links svg {
