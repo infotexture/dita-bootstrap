@@ -91,6 +91,14 @@
   }
 }
 
+.nested0 {
+  margin-top: 0
+}
+
+.nested1 {
+  margin-top: 1em
+}
+
 .nested0,
 article h1 {
   scroll-margin-top: 7.25rem;
