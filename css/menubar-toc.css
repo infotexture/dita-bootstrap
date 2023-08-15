@@ -17,7 +17,12 @@
   }
 }
 
-article h1,
+.nested0,
+article h1 {
+  scroll-margin-top: 11.25rem;
+}
+
+.nested1,
 article h2,
 article h3,
 article h4,
