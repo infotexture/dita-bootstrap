@@ -60,26 +60,34 @@
 
 .bd-links .btn {
   padding-top: 0.25rem;
+  padding-bottom: 0rem;
   font-weight: 600;
   background-color: transparent;
   border: 0;
   box-shadow: none;
   color: var(--bs-body-color);
+  padding-left: 0.25rem !important;
 }
 
 .bd-links svg:hover {
   color: var(--bs-link-hover-color);
 }
 
-.bs-sidebar .btn {
-  padding-left: 12px;
-  padding-right: inherit;
-  padding-bottom: 0px;
+.bd-links .ps-2 {
+  padding-left: 0.5rem !important;
 }
 
-[dir='rtl'] .bs-sidebar .btn {
-  padding-left: inherit;
-  padding-right: 12px;
+.bd-links .ps-3 {
+  padding-left: 0.75rem !important;
+}
+
+.bd-links .ps-4 {
+  padding-left: 1rem !important;
+}
+
+[dir='rtl'] .bd-links .btn {
+  padding-left: 0rem !important;
+  padding-right: 0.25rem !important;
 }
 
 [dir='rtl'] .bd-links svg {
