@@ -69,6 +69,11 @@
   padding-left: 0.25rem !important;
 }
 
+[dir='rtl'] .bd-links .btn {
+  padding-left: 0rem !important;
+  padding-right: 0.25rem !important;
+}
+
 .bd-links svg:hover {
   color: var(--bs-link-hover-color);
 }
@@ -77,17 +82,27 @@
   padding-left: 0.5rem !important;
 }
 
+[dir='rtl'] .bd-links .ps-2 {
+  padding-left: 0rem !important;
+  padding-right: 0.5rem !important;
+}
+
 .bd-links .ps-3 {
   padding-left: 0.75rem !important;
+}
+
+[dir='rtl'] .bd-links .ps-3 {
+  padding-left: 0rem !important;
+  padding-right: 0.75rem !important;
 }
 
 .bd-links .ps-4 {
   padding-left: 1rem !important;
 }
 
-[dir='rtl'] .bd-links .btn {
+[dir='rtl'] .bd-links .ps-4 {
   padding-left: 0rem !important;
-  padding-right: 0.25rem !important;
+  padding-right: 1rem !important;
 }
 
 [dir='rtl'] .bd-links svg {
