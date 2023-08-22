@@ -166,7 +166,7 @@
       <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
         <nav xsl:use-attribute-sets="toc">
           <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↓ -->
-          <div class="navbar d-none d-lg-block">
+          <div class="navbar border-0 d-none d-lg-block">
           </div>
           <div class="list-group me-3">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
@@ -199,7 +199,7 @@
 
       <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
         <nav xsl:use-attribute-sets="toc">
-          <div class="navbar d-none d-lg-block">
+          <div class="navbar border-0 d-none d-lg-block">
           </div>
           <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
           <nav class="nav nav-pills flex-column navbar-light bg-body-tertiary">
@@ -239,7 +239,7 @@
           <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
             <xsl:attribute name="direction" select="$defaultDirection"/>
           </xsl:if>
-          <div class="navbar d-none d-lg-block">
+          <div class="navbar border-0 d-none d-lg-block">
           </div>
           <ul class="list-unstyled mb-0 py-3 pt-md-1">
             <xsl:apply-templates select="$input.map" mode="collapsible-toc">
