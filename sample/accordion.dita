@@ -111,18 +111,21 @@
         <section id="accordion4">
           <title>Accordion Item #1</title>
           <p>
-            Placeholder content for this accordion, which is intended to demonstrate <xmlatt>outputclass="accordion-flush"</xmlatt>.
+            Placeholder content for this accordion, which is intended to demonstrate <xmlatt
+            >outputclass="accordion-flush"</xmlatt>.
             This is the first item's accordion body.</p>
         </section>
         <section id="accordion5">
           <title>Accordion Item #2</title>
-          <p>Placeholder content for this accordion, which is intended to demonstrate <xmlatt>outputclass="accordion-flush"</xmlatt>.
+          <p>Placeholder content for this accordion, which is intended to demonstrate <xmlatt
+            >outputclass="accordion-flush"</xmlatt>.
           This is the second item's accordion body. Let's imagine this being filled with some actual content.</p>
         </section>
         <section id="accordion6">
           <title>Accordion Item #3</title>
           <p>
-            Placeholder content for this accordion, which is intended to demonstrate <xmlatt>outputclass="accordion-flush"</xmlatt>.
+            Placeholder content for this accordion, which is intended to demonstrate <xmlatt
+            >outputclass="accordion-flush"</xmlatt>.
             This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space
             to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</p>
         </section>
@@ -134,7 +137,8 @@
 
     <section>
       <title>Always open</title>
-      <p>Set <xmlelement>bodydiv outputclass="accordion" props="stay-open"</xmlelement> to make accordion items stay open when another item is opened.</p>
+      <p>Set <xmlelement
+        >bodydiv outputclass="accordion" props="stay-open"</xmlelement> to make accordion items stay open when another item is opened.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="accordion" props="stay-open">
