@@ -32,7 +32,7 @@
       DITA Bootstrap
     </a>
     <button
-      class="navbar-toggler py-2 px-2"
+      class="navbar-toggler p-2"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent"
@@ -62,7 +62,7 @@
         <li class="nav-item dropdown">
           <a
             href="#"
-            class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
+            class="nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
             id="bd-theme"
             data-bs-toggle="dropdown"
             aria-expanded="false"
