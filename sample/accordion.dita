@@ -20,6 +20,7 @@
         <indexterm>CSS
           <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
+        <indexterm><xmlelement>props</xmlelement></indexterm>
         <indexterm><xmlelement>bodydiv</xmlelement></indexterm>
       </keywords>
     </metadata>
@@ -32,8 +33,8 @@
           href="https://getbootstrap.com/docs/5.3/components/collapse/"
           format="html"
           scope="external"
-        >collapse</xref> internally to make it collapsible. To render an accordion that’s expanded, add the class
-          <codeph>open</codeph> in addition to <codeph>accordion</codeph> to the <xmlatt>outputclass</xmlatt>.</p>
+        >collapse</xref> internally to make it collapsible. To render an accordion that’s expanded, add
+        <xmlatt>props="expand"</xmlatt> to expand the relevant <xmlelement>section</xmlelement> .</p>
     </section>
     <section>
       <title>Example</title>
@@ -41,10 +42,10 @@
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="accordion">
-        <section id="accordion1">
+        <section id="accordion1" props="expand">
           <title>Accordion Item #1</title>
           <p>
-            <b>This is the first item’s accordion body.</b> It is hidden by default, until the collapse plugin adds the
+            <b>This is the first item’s accordion body.</b> It is shown by default, until the collapse plugin adds the
             appropriate classes that we use to style each element. These classes control the overall appearance, as well
             as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
             Bootstrap’s default variables.</p>
@@ -68,28 +69,40 @@
       </bodydiv>
     </bodydiv>
     <codeblock>&lt;bodydiv outputclass="accordion"&gt;
-  &lt;section id="accordion1"&gt;
+  &lt;section id="accordion1" props="expand"&gt;
     &lt;title&gt;Accordion Item #1&lt;/title&gt;
     &lt;p&gt;
-      &lt;b&gt;This is the first item’s accordion body.&lt;/b&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding Bootstrap’s default variables.
+      &lt;b&gt;This is the first item’s accordion body.&lt;/b&gt; It is shown by default,
+        until the collapse plugin adds the appropriate classes that we use to style each element.
+        These classes control the overall appearance, as well as the showing and hiding via CSS
+        transitions. You can modify any of this with custom CSS or overriding Bootstrap’s default
+        variables.
     &lt;/p&gt;
   &lt;/section&gt;
   &lt;section id="accordion2"&gt;
     &lt;title&gt;Accordion Item #2&lt;/title&gt;
     &lt;p&gt;
-      &lt;b&gt;This is the second item’s accordion body.&lt;/b&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding Bootstrap’s default variables.
+      &lt;b&gt;This is the second item’s accordion body.&lt;/b&gt; It is hidden by default,
+        until the collapse plugin adds the appropriate classes that we use to style each element.
+        These classes control the overall appearance, as well as the showing and hiding via CSS
+        transitions. You can modify any of this with custom CSS or overriding Bootstrap’s default
+        variables.
     &lt;/p&gt;
   &lt;/section&gt;
   &lt;section id="accordion3"&gt;
     &lt;title&gt;Accordion Item #3&lt;/title&gt;
     &lt;p&gt;
-      &lt;b&gt;This is the third item’s accordion body.&lt;/b&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding Bootstrap’s default variables.
+      &lt;b&gt;This is the third item’s accordion body.&lt;/b&gt; It is hidden by default,
+        until the collapse plugin adds the appropriate classes that we use to style each element.
+        These classes control the overall appearance, as well as the showing and hiding via CSS
+        transitions. You can modify any of this with custom CSS or overriding Bootstrap’s default
+        variables.
     &lt;/p&gt;
   &lt;/section&gt;
 &lt;/bodydiv&gt;</codeblock>
     <section>
       <title>Flush</title>
-      <p>Add the class <codeph>accordion-flush</codeph> to <xmlatt>outputclass</xmlatt> to remove the default
+      <p>Add <xmlatt>outputclass="accordion-flush"</xmlatt> to remove the default
         background-color, some borders, and some rounded corners to render accordions edge-to-edge with their parent
         container.</p>
     </section>
@@ -98,12 +111,42 @@
         <section id="accordion4">
           <title>Accordion Item #1</title>
           <p>
-            <b>This is the first item’s accordion body.</b> It is hidden by default, until the collapse plugin adds the
+            Placeholder content for this accordion, which is intended to demonstrate <xmlatt>outputclass="accordion-flush"</xmlatt>.
+            This is the first item's accordion body.</p>
+        </section>
+        <section id="accordion5">
+          <title>Accordion Item #2</title>
+          <p>Placeholder content for this accordion, which is intended to demonstrate <xmlatt>outputclass="accordion-flush"</xmlatt>.
+          This is the second item's accordion body. Let's imagine this being filled with some actual content.</p>
+        </section>
+        <section id="accordion6">
+          <title>Accordion Item #3</title>
+          <p>
+            Placeholder content for this accordion, which is intended to demonstrate <xmlatt>outputclass="accordion-flush"</xmlatt>.
+            This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space
+            to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</p>
+        </section>
+      </bodydiv>
+    </bodydiv>
+    <codeblock>&lt;bodydiv outputclass="accordion-flush"&gt;
+  ...etc
+&lt;bodydiv&gt;</codeblock>
+
+    <section>
+      <title>Always open</title>
+      <p>Set <xmlelement>bodydiv outputclass="accordion" props="stay-open"</xmlelement> to make accordion items stay open when another item is opened.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <bodydiv outputclass="accordion" props="stay-open">
+        <section id="accordion7" props="expand">
+          <title>Accordion Item #1</title>
+          <p>
+            <b>This is the first item’s accordion body.</b> It is shown by default, until the collapse plugin adds the
             appropriate classes that we use to style each element. These classes control the overall appearance, as well
             as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
             Bootstrap’s default variables.</p>
         </section>
-        <section id="accordion5">
+        <section id="accordion8">
           <title>Accordion Item #2</title>
           <p>
             <b>This is the second item’s accordion body.</b> It is hidden by default, until the collapse plugin adds the
@@ -111,7 +154,7 @@
             as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding
             Bootstrap’s default variables.</p>
         </section>
-        <section id="accordion6">
+        <section id="accordion9">
           <title>Accordion Item #3</title>
           <p>
             <b>This is the third item’s accordion body.</b> It is hidden by default, until the collapse plugin adds the
@@ -121,7 +164,7 @@
         </section>
       </bodydiv>
     </bodydiv>
-    <codeblock>&lt;bodydiv outputclass="accordion-flush"&gt;
+    <codeblock>&lt;bodydiv outputclass="accordion" props="stay-open"&gt;
   ...etc
 &lt;bodydiv&gt;</codeblock>
   </body>
