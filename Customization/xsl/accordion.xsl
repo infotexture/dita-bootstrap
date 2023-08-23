@@ -22,19 +22,6 @@
     </div>
   </xsl:template>
 
-  <!--xsl:template name="expand-accordion-head">
-    <xsl:attribute
-        name="aria-expanded"
-        select="(count(preceding-sibling::*[contains(@class, ' topic/section ')]) = 0)"
-    />
-    <xsl:attribute name="class">
-      <xsl:text>accordion-button</xsl:text>
-      <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/section ')]) > 0">
-        <xsl:text> collapsed</xsl:text>
-      </xsl:if>
-    </xsl:attribute>
-  </xsl:template-->
-
   <xsl:template name="expand-accordion-head">
     <xsl:attribute
         name="aria-expanded"
@@ -51,15 +38,6 @@
       </xsl:choose>
     </xsl:attribute>
   </xsl:template>
-
-  <!--xsl:template name="expand-accordion-body">
-     <xsl:attribute name="class">
-          <xsl:text>accordion-collapse collapse</xsl:text>
-          <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/section ')]) = 0">
-            <xsl:text> show</xsl:text>
-          </xsl:if>
-      </xsl:attribute>
-  </xsl:template-->
 
   <xsl:template name="expand-accordion-body">
      <xsl:attribute name="class">
