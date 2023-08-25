@@ -55,9 +55,23 @@
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <fig>
-        <image outputclass="img-thumbnail bs-toggler-auto" scope="external" href="https://picsum.photos/id/730/300/200"/>
-        <image outputclass="img-thumbnail bs-toggler-light" scope="external" href="https://picsum.photos/id/730/300/200" deliveryTarget="html"/>
-        <image outputclass="img-thumbnail bs-toggler-dark" scope="external" href="https://picsum.photos/id/724/300/200" deliveryTarget="html"/>
+        <image
+          outputclass="img-thumbnail bs-toggler-auto"
+          scope="external"
+          href="https://picsum.photos/id/730/300/200"
+        />
+        <image
+          outputclass="img-thumbnail bs-toggler-light"
+          scope="external"
+          href="https://picsum.photos/id/730/300/200"
+          deliveryTarget="html"
+        />
+        <image
+          outputclass="img-thumbnail bs-toggler-dark"
+          scope="external"
+          href="https://picsum.photos/id/724/300/200"
+          deliveryTarget="html"
+        />
       </fig>
     </bodydiv>
     <codeblock> &lt;fig&gt;
