@@ -19,6 +19,7 @@
         <indexterm>CSS
           <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
+        <indexterm><xmlatt>otherprops</xmlatt></indexterm>
         <indexterm><xmlelement>ol</xmlelement></indexterm>
         <indexterm><xmlelement>fig</xmlelement></indexterm>
         <indexterm><xmlelement>image</xmlelement></indexterm>
