@@ -14,6 +14,8 @@
   <!-- Customization to add Bootstrap Carousel Component -->
   <!-- https://getbootstrap.com/docs/5.3/components/carousel/ -->
 
+  <xsl:param name="BOOTSTRAP_CSS_CAROUSEL_INDICATORS" select="'border border-secondary bg-primary'"/>
+
   <xsl:template
     match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]"
   >
@@ -38,10 +40,15 @@
         <div class="carousel-indicators">
           <xsl:for-each select="*[contains(@class, ' topic/li ')]">
             <button type="button">
+              <xsl:attribute name="class">
+                <xsl:value-of select="$BOOTSTRAP_CSS_CAROUSEL_INDICATORS"/>
                 <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
-                   <xsl:attribute name="class" select="'active'"/>
-                   <xsl:attribute name="aria-current" select="'true'"/>
+                   <xsl:text> active</xsl:text>
                 </xsl:if>
+              </xsl:attribute>
+              <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
+                <xsl:attribute name="aria-current" select="'true'"/>
+              </xsl:if>
               <xsl:attribute name="data-bs-target" select="concat('#', $id)"/>
               <xsl:attribute
                 name="data-bs-slide-to"
@@ -51,7 +58,7 @@
         </xsl:for-each>
         </div>
       </xsl:if>
-      <div class="carousel-inner">
+      <div class="carousel-inner pb-2">
         <xsl:apply-templates mode="carousel"/>
       </div>
       <a class="carousel-control-prev" role="button" data-bs-slide="prev">
@@ -78,12 +85,14 @@
   <!-- Carousel Items, Slides only -->
   <xsl:template match="*[contains(@class,' topic/li ')]" mode="carousel">
     <div>
-      <xsl:attribute name="class">
-        <xsl:text>carousel-item</xsl:text>
-        <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
-          <xsl:text> active</xsl:text>
-        </xsl:if>
-      </xsl:attribute>
+      <xsl:call-template name="commonattributes">
+        <xsl:with-param name="default-output-class">
+            <xsl:text>carousel-item</xsl:text>
+            <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
+              <xsl:text> active</xsl:text>
+            </xsl:if>
+        </xsl:with-param>
+      </xsl:call-template>
       <xsl:if test="contains(@otherprops, 'interval(')">
          <xsl:call-template name="otherprops-interval"/>
       </xsl:if>

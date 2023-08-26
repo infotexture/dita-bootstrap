@@ -152,7 +152,7 @@
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--nav-toc</parmname>=<option>list-group-partial</option></codeblock>
-      <ol outputclass="carousel carousel-dark border">
+      <ol outputclass="carousel border p-4" otherprops="indicators(true)">
         <li>
           <fig>
             <title><option>full</option> – Unstyled full TOC</title>
@@ -229,7 +229,7 @@
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
      <parmname>--bootstrap.theme</parmname>=<option>&lt;theme-name&gt;</option></codeblock>
 
-     <ol outputclass="carousel carousel-dark border p-4" deliveryTarget="html">
+     <ol outputclass="carousel border p-4" deliveryTarget="html" otherprops="indicators(true)">
         <li>
           <div>
             <div outputclass="col-4">
@@ -631,6 +631,7 @@
       <indexterm><parmname>--bootstrap.css.card</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel.caption</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.carousel.indicators</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.table</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs.vertical</parmname></indexterm>
@@ -679,6 +680,10 @@
         <li>
           <parmname>--bootstrap.css.carousel.caption</parmname> – common utility classes for Bootstrap
           <xref href="./carousel.dita" format="dita">carousel captions</xref>
+        </li>
+        <li>
+          <parmname>--bootstrap.css.carousel.indicators</parmname> – common utility classes for Bootstrap
+          <xref href="./carousel.dita" format="dita">carousel indicators</xref>
         </li>
         <li>
           <parmname>--bootstrap.css.codeblock</parmname> – common Bootstrap utility classes for DITA

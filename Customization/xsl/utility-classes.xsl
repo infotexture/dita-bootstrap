@@ -16,7 +16,10 @@
   <xsl:param name="BOOTSTRAP_CSS_SECTION_TITLE" select="'h4'"/>
   <xsl:param name="BOOTSTRAP_CSS_CARD" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_CAROUSEL" select="''"/>
-  <xsl:param name="BOOTSTRAP_CSS_CAPTION" select="'bg-secondary-subtle text-body-secondary'"/>
+  <xsl:param
+    name="BOOTSTRAP_CSS_CAPTION"
+    select="'border rounded border-secondary bg-primary-subtle text-body-secondary'"
+  />
   <xsl:param name="BOOTSTRAP_CSS_TABS" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'me-3'"/>
   <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="''"/>
@@ -265,7 +268,7 @@
     <xsl:if test="@scalefit='yes'">
       <xsl:text> img-fluid</xsl:text>
     </xsl:if>
-
+    <xsl:text> </xsl:text>
   </xsl:template>
 
   <!-- Add additional Bootstrap CSS classes and roles to <dd> elements -->

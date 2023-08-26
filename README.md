@@ -166,6 +166,7 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.card` – common utility classes for Bootstrap card components
 - `bootstrap.css.carousel` – common utility classes for Bootstrap carousel components
 - `bootstrap.css.carousel.caption` – common utility classes for Bootstrap carousel captions
+- `bootstrap.css.carousel.indicators` – common utility classes for Bootstrap carousel indicators
 - `bootstrap.css.codeblock` – common Bootstrap utility classes for DITA `<codeblock>` elements
 - `bootstrap.css.dd` – common utility classes for DITA `<dd>` elements
 - `bootstrap.css.dl` – common utility classes for DITA `<dl>` elements
