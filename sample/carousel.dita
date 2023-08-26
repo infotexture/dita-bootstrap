@@ -430,7 +430,7 @@ And, kept unused, the user so destroys it.
         </li>
       </ol>
     </bodydiv>
-    <codeblock>&lt;ol outputclass="carousel&gt;
+    <codeblock>&lt;ol outputclass="carousel"&gt;
   &lt;li otherprops="interval(2000)"&gt;
     &lt;image href="..." /&gt;
   &lt;/li&gt;
