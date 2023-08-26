@@ -58,7 +58,7 @@
         </xsl:for-each>
         </div>
       </xsl:if>
-      <div class="carousel-inner pb-2">
+      <div class="carousel-inner pb-1">
         <xsl:apply-templates mode="carousel"/>
       </div>
       <a class="carousel-control-prev" role="button" data-bs-slide="prev">
