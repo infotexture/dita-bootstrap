@@ -345,5 +345,130 @@ And, kept unused, the user so destroys it.
     &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
+    <section>
+      <title>Crossfade</title>
+      <p> Add <xmlatt
+        >outputclass="carousel-fade"</xmlatt> to your carousel to animate slides with a fade transition instead of a slide. Depending on your carousel content (e.g., text only slides),  , you may want to add <xmlelement
+        >div outputclass="bg-body"</xmlelement> or some custom CSS to the carousel items for proper crossfading.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ol outputclass="carousel-fade">
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?a"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?b"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?c"/>
+        </li>
+      </ol>
+    </bodydiv>
+    <codeblock>&lt;ol outputclass="carousel-fade"&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</codeblock>
+    <section>
+      <title>Autoplaying carousels</title>
+      <p>Carousels autoplay on page load by default. . Autoplaying carousels automatically
+        pause while hovered with the mouse. In browsers that support the Page Visibility
+        API, the carousel will stop cycling when the webpage is not visible to the user (
+        such as when the browser tab is inactive, or when the browser window is minimized).
+      </p>
+      <p>
+        When <xmlatt>otherprops="autoplay(false)"</xmlatt> is set the carousel won’t
+        automatically start to cycle on page load. Instead, it will only start after the
+        first user interaction.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ol outputclass="carousel" otherprops="autoplay(false)">
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?c"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?d"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?e"/>
+        </li>
+      </ol>
+    </bodydiv>
+    <codeblock>&lt;ol outputclass="carousel" otherprops="autoplay(false)"&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</codeblock>
+    <section>
+      <title>Individual carousel item interval</title>
+      <p>Add <xmlatt
+        >otherprops="interval(1000)"</xmlatt> to a carousel item to change the amount of time to delay between automatically cycling to the next item.
+      </p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ol outputclass="carousel">
+        <li otherprops="interval(2000)">
+          <image scope="external" href="https://picsum.photos/1200/600?c"/>
+        </li>
+        <li otherprops="interval(1000)">
+          <image scope="external" href="https://picsum.photos/1200/600?d"/>
+        </li>
+        <li otherprops="interval(3000)">
+          <image scope="external" href="https://picsum.photos/1200/600?e"/>
+        </li>
+      </ol>
+    </bodydiv>
+    <codeblock>&lt;ol outputclass="carousel&gt;
+  &lt;li otherprops="interval(2000)"&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li otherprops="interval(1000)"&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li otherprops="interval(3000)"&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</codeblock>
+    <section>
+      <title>Disable touch swiping</title>
+      <p>Carousels support swiping left/right on touchscreen devices to move between slides.
+        Add <xmlatt>otherprops="touch(false)"</xmlatt> disable this option.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ol outputclass="carousel" otherprops="touch(false)">
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?c"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?d"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?e"/>
+        </li>
+      </ol>
+    </bodydiv>
+    <codeblock>&lt;ol outputclass="carousel" otherprops="touch(false)"&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</codeblock>
   </body>
 </topic>

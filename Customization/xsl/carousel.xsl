@@ -20,7 +20,18 @@
     <xsl:variable name="id">
       <xsl:value-of select="concat('carousel_' ,dita-ot:generate-html-id(.))"/>
     </xsl:variable>
-    <div data-bs-ride="carousel">
+    <div>
+      <xsl:choose>
+        <xsl:when test="contains(@otherprops, 'autoplay(false)')">
+          <xsl:attribute name="data-bs-ride" select="'true'"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:attribute name="data-bs-ride" select="'carousel'"/>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:if test="contains(@otherprops, 'touch(false)')">
+        <xsl:attribute name="data-bs-touch" select="'false'"/>
+      </xsl:if>
       <xsl:attribute name="id" select="$id"/>
       <xsl:call-template name="commonattributes"/>
       <div class="carousel-inner">
@@ -56,6 +67,9 @@
           <xsl:text> active</xsl:text>
         </xsl:if>
       </xsl:attribute>
+      <xsl:if test="contains(@otherprops, 'interval(')">
+         <xsl:call-template name="otherprops-interval"/>
+      </xsl:if>
       <div class="container">
         <div class="row">
           <xsl:apply-templates select="*[contains(@class,' topic/fig ')]" mode="carousel"/>
@@ -63,7 +77,10 @@
         </div>
         <xsl:apply-templates select="*[contains(@class,' topic/div ')]" mode="carousel"/>
       </div>
-      <xsl:apply-templates select="*[contains(@class,' topic/fig ')]/*[contains(@class, ' topic/title ')]" mode="carousel"/>
+      <xsl:apply-templates
+        select="*[contains(@class,' topic/fig ')]/*[contains(@class, ' topic/title ')]"
+        mode="carousel"
+      />
     </div>
   </xsl:template>
 
@@ -140,5 +157,23 @@
     <div class="row">
       <xsl:apply-templates/>
     </div>
+  </xsl:template>
+
+  <xsl:template name="otherprops-interval">
+    <xsl:analyze-string select="@otherprops" regex="[a-z]*\([^\)]*\)">
+      <xsl:matching-substring>
+        <xsl:variable name="var">
+          <xsl:value-of select="."/>
+        </xsl:variable>
+        <xsl:variable name="attr">
+          <xsl:value-of select="substring-before($var, '(')"/>
+        </xsl:variable>
+        <xsl:choose>
+          <xsl:when test="$attr='interval'">
+            <xsl:attribute name="data-bs-interval" select="substring-before(substring-after($var, '('),')')"/>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:matching-substring>
+    </xsl:analyze-string>
   </xsl:template>
 </xsl:stylesheet>
