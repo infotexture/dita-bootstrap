@@ -49,25 +49,25 @@
     <codeblock>&lt;image outputclass="img-thumbnail" href="..." /&gt;</codeblock>
     <section>
       <title>Separate Images for Dark and Light mode</title>
-      <p>Use the <xmlatt>outputclass="bs-toggler-auto"</xmlatt>, <xmlatt>outputclass="bs-toggler-light"</xmlatt>,
-        and <xmlatt>outputclass="bs-toggler-dark"</xmlatt> attributes on <xmlelement>image</xmlelement> elements
+      <p>Use the <xmlatt>outputclass="d-auto"</xmlatt>, <xmlatt>outputclass="d-light"</xmlatt>,
+        and <xmlatt>outputclass="d-dark"</xmlatt> attributes on <xmlelement>image</xmlelement> elements
         to display different images when in <xref href="./dark-mode.dita">dark mode</xref>.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <fig>
         <image
-          outputclass="img-thumbnail bs-toggler-auto"
+          outputclass="img-thumbnail d-auto"
           scope="external"
           href="https://picsum.photos/id/730/300/200"
         />
         <image
-          outputclass="img-thumbnail bs-toggler-light"
+          outputclass="img-thumbnail d-light"
           scope="external"
           href="https://picsum.photos/id/730/300/200"
           deliveryTarget="html"
         />
         <image
-          outputclass="img-thumbnail bs-toggler-dark"
+          outputclass="img-thumbnail d-dark"
           scope="external"
           href="https://picsum.photos/id/724/300/200"
           deliveryTarget="html"
@@ -75,9 +75,9 @@
       </fig>
     </bodydiv>
     <codeblock> &lt;fig&gt;
-  &lt;image outputclass="img-thumbnail bs-toggler-auto" href="..."/&gt;
-  &lt;image outputclass="img-thumbnail bs-toggler-light" href="..." deliveryTarget="html"/&gt;
-  &lt;image outputclass="img-thumbnail bs-toggler-dark" href="..." deliveryTarget="html"/&gt;
+  &lt;image outputclass="img-thumbnail d-auto" href="..."/&gt;
+  &lt;image outputclass="img-thumbnail d-light" href="..." deliveryTarget="html"/&gt;
+  &lt;image outputclass="img-thumbnail d-dark" href="..." deliveryTarget="html"/&gt;
 &lt;/fig&gt;
     </codeblock>
   </body>

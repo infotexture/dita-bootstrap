@@ -15,24 +15,24 @@
   --dita-maroon: #ff7676;
 }
 
-.bs-toggler-dark,
-.bs-toggler-light {
+.d-dark,
+.d-light {
   display: none;
 }
 
-[data-bs-theme='light'] .bs-toggler-light {
+[data-bs-theme='light'] .d-light {
   display: inherit;
 }
 
-[data-bs-theme='light'] .bs-toggler-auto {
+[data-bs-theme='light'] .d-auto {
   display: none;
 }
 
-[data-bs-theme='dark'] .bs-toggler-dark {
+[data-bs-theme='dark'] .d-dark {
   display: inherit;
 }
 
-[data-bs-theme='dark'] .bs-toggler-auto {
+[data-bs-theme='dark'] .d-auto {
   display: none;
 }
 
