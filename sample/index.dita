@@ -228,6 +228,323 @@
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
      <parmname>--bootstrap.theme</parmname>=<option>&lt;theme-name&gt;</option></codeblock>
+
+    <ol outputclass="carousel carousel-dark border p-4">
+         <li>
+          <fig>
+            <image scope="external" href="https://bootswatch.com/cerulean/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/cosmo/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/cyborg/thumbnail.png"/>
+          </fig>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/cerulean/"
+                  format="html"
+                  scope="external"
+                ><option>cerulean</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/cosmo/"
+                  format="html"
+                  scope="external"
+                ><option>cosmo</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/cyborg/"
+                  format="html"
+                  scope="external"
+                ><option>cyborg</option></xref>
+              </p>
+            </div>
+          </div>
+        </li>
+         <li>
+          <fig>
+            <image scope="external" href="https://bootswatch.com/darkly/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/flatly/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/journal/thumbnail.png"/>
+          </fig>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+             <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/darkly/"
+                  format="html"
+                  scope="external"
+                ><option>darkly</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/flatly/"
+                  format="html"
+                  scope="external"
+                ><option>flatly</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/journal/"
+                  format="html"
+                  scope="external"
+                ><option>journal</option></xref>
+              </p>
+            </div>
+          </div>
+        </li>
+         <li>
+          <fig>
+            <image scope="external" href="https://bootswatch.com/litera/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/lumen/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/lux/thumbnail.png"/>
+          </fig>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/litera/"
+                  format="html"
+                  scope="external"
+                ><option>litera</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+              <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/lumen/"
+                  format="html"
+                  scope="external"
+                ><option>lumen</option></xref>
+            </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+              <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/lux/"
+                  format="html"
+                  scope="external"
+                ><option>lux</option></xref>
+              </p>
+            </div>
+          </div>
+        </li>
+         <li>
+          <fig>
+
+            <image scope="external" href="https://bootswatch.com/materia/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/minty/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/morph/thumbnail.png"/>
+          </fig>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/materia/"
+                  format="html"
+                  scope="external"
+                ><option>materia</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/minty/"
+                  format="html"
+                  scope="external"
+                ><option>minty</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/morph/"
+                  format="html"
+                  scope="external"
+                ><option>morph</option></xref>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <fig>
+            <image scope="external" href="https://bootswatch.com/pulse/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/quartz/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/sandstone/thumbnail.png"/>
+          </fig>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/pulse/"
+                  format="html"
+                  scope="external"
+                ><option>pulse</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/quartz/"
+                  format="html"
+                  scope="external"
+                ><option>quartz</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/sandstone/"
+                  format="html"
+                  scope="external"
+                ><option>sandstone</option></xref>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <fig>
+            <image scope="external" href="https://bootswatch.com/simplex/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/sketchy/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/slate/thumbnail.png"/>
+          </fig>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/simplex/"
+                  format="html"
+                  scope="external"
+                ><option>simplex</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/sketchy/"
+                  format="html"
+                  scope="external"
+                ><option>sketchy</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/slate/"
+                  format="html"
+                  scope="external"
+                ><option>slate</option></xref>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <fig>
+            <image scope="external" href="https://bootswatch.com/solar/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/spacelab/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/superhero/thumbnail.png"/>
+          </fig>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/solar/"
+                  format="html"
+                  scope="external"
+                ><option>solar</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/spacelab/"
+                  format="html"
+                  scope="external"
+                ><option>spacelab</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/superhero/"
+                  format="html"
+                  scope="external"
+                ><option>superhero</option></xref>
+              </p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <fig>
+
+            <image scope="external" href="https://bootswatch.com/united/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/vapor/thumbnail.png"/>
+            <image scope="external" href="https://bootswatch.com/yeti/thumbnail.png"/>
+          </fig>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+              <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/united/"
+                  format="html"
+                  scope="external"
+                ><option>united</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+             <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/vapor/"
+                  format="html"
+                  scope="external"
+                ><option>vapor</option></xref>
+              </p>
+            </div>
+            <div outputclass="col-4">
+               <p outputclass="text-center">
+                <xref
+                  outputclass="btn-outline-secondary"
+                  href="https://bootswatch.com/yeti/"
+                  format="html"
+                  scope="external"
+                ><option>yeti</option></xref>
+              </p>
+            </div>
+          </div>
+        </li>
+      </ol>
     </section>
     <section>
       <title>Custom CSS</title>

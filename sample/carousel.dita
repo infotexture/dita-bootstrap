@@ -45,13 +45,13 @@
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel">
         <li>
-          <image scope="external" href="https://picsum.photos/200/100?c"/>
+          <image scope="external" href="https://picsum.photos/1200/600?c"/>
         </li>
         <li>
-          <image scope="external" href="https://picsum.photos/200/100?d"/>
+          <image scope="external" href="https://picsum.photos/1200/600?d"/>
         </li>
         <li>
-          <image scope="external" href="https://picsum.photos/200/100?e"/>
+          <image scope="external" href="https://picsum.photos/1200/600?e"/>
         </li>
       </ol>
     </bodydiv>
@@ -75,19 +75,19 @@
         <li>
           <fig>
             <title>The First Slide</title>
-            <image scope="external" href="https://picsum.photos/200/100?g"/>
+            <image scope="external" href="https://picsum.photos/1200/600?g"/>
           </fig>
         </li>
         <li>
           <fig>
             <title>The Second Slide</title>
-            <image scope="external" href="https://picsum.photos/200/100?h"/>
+            <image scope="external" href="https://picsum.photos/1200/600?h"/>
           </fig>
         </li>
         <li>
           <fig>
             <title>The Third Slide</title>
-            <image scope="external" href="https://picsum.photos/200/100?i"/>
+            <image scope="external" href="https://picsum.photos/1200/600?i"/>
           </fig>
         </li>
       </ol>
@@ -110,6 +110,157 @@
       &lt;title&gt;The Third Slide&lt;/title&gt;
       &lt;image href="..." /&gt;
     &lt;/fig&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</codeblock>
+
+ <section>
+      <title>Multiple slides side-by-side</title>
+      <p>Add multiple <xmlelement>image</xmlelement> elements within each <xmlelement>li</xmlelement> </p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ol outputclass="carousel">
+        <li>
+          <image scope="external" href="https://picsum.photos/400/200?a"/>
+          <image scope="external" href="https://picsum.photos/400/200?b"/>
+          <image scope="external" href="https://picsum.photos/400/200?c"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/400/200?d"/>
+          <image scope="external" href="https://picsum.photos/400/200?e"/>
+          <image scope="external" href="https://picsum.photos/400/200?f"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/400/200?g"/>
+          <image scope="external" href="https://picsum.photos/400/200?h"/>
+          <image scope="external" href="https://picsum.photos/400/200?i"/>
+        </li>
+      </ol>
+    </bodydiv>
+    <codeblock>&lt;ol outputclass="carousel"&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</codeblock>
+
+
+
+ <section>
+      <title>Multiple slides with titles</title>
+      <p>Add multiple <xmlelement>image</xmlelement> elements within each <xmlelement
+        >li</xmlelement> and include a <xmlelement>div</xmlelement> element for title texts.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ol outputclass="carousel">
+        <li>
+          <image scope="external" href="https://picsum.photos/400/200?j"/>
+          <image scope="external" href="https://picsum.photos/400/200?k"/>
+          <image scope="external" href="https://picsum.photos/400/200?l"/>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+              <p outputclass="text-center">First Image</p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">Second Image</p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">Third Image</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/400/200?m"/>
+          <image scope="external" href="https://picsum.photos/400/200?n"/>
+          <image scope="external" href="https://picsum.photos/400/200?o"/>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+              <p outputclass="text-center">Fourth Image</p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">Fifth Image</p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">Sixth Image</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/400/200?p"/>
+          <image scope="external" href="https://picsum.photos/400/200?q"/>
+          <image scope="external" href="https://picsum.photos/400/200?r"/>
+          <div deliveryTarget="html">
+            <div outputclass="col-4">
+              <p outputclass="text-center">Seventh Image</p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">Eighth Image</p>
+            </div>
+            <div outputclass="col-4">
+              <p outputclass="text-center">Ninth Image</p>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </bodydiv>
+    <codeblock>&lt;ol outputclass="carousel"&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+    &lt;div deliveryTarget="html"&gt;
+      &lt;div outputclass="col-4"&gt;
+        &lt;p outputclass="text-center"&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div outputclass="col-4"&gt;
+        &lt;p outputclass="text-center"&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div outputclass="col-4"&gt;
+        &lt;p outputclass="text-center"&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+    &lt;div deliveryTarget="html"&gt;
+      &lt;div outputclass="col-4"&gt;
+        &lt;p outputclass="text-center"&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div outputclass="col-4"&gt;
+        &lt;p outputclass="text-center"&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div outputclass="col-4"&gt;
+        &lt;p outputclass="text-center"&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+    &lt;image href="..." /&gt;
+    &lt;div deliveryTarget="html"&gt;
+      &lt;div outputclass="col-4"&gt;
+        &lt;p outputclass="text-center"&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div outputclass="col-4"&gt;
+        &lt;p outputclass="text-center"&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div outputclass="col-4"&gt;
+        &lt;p outputclass="text-center"&gt;...&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
   </body>

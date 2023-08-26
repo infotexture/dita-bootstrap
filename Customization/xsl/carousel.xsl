@@ -56,18 +56,45 @@
           <xsl:text> active</xsl:text>
         </xsl:if>
       </xsl:attribute>
-      <xsl:apply-templates select="*" mode="carousel"/>
+      <div class="container">
+        <div class="row">
+          <xsl:apply-templates select="*[contains(@class,' topic/fig ')]" mode="carousel"/>
+          <xsl:apply-templates select="*[contains(@class,' topic/image ')]" mode="carousel"/>
+        </div>
+        <xsl:apply-templates select="*[contains(@class,' topic/div ')]" mode="carousel"/>
+      </div>
+      <xsl:apply-templates select="*[contains(@class,' topic/fig ')]/*[contains(@class, ' topic/title ')]" mode="carousel"/>
     </div>
   </xsl:template>
 
   <!-- Carousel Items Slides with Captions -->
   <xsl:template match="*[contains(@class,' topic/fig ')]" mode="carousel">
     <xsl:apply-templates select="*[contains(@class,' topic/image ')]" mode="carousel"/>
-    <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="carousel"/>
+
   </xsl:template>
 
   <xsl:template match="*[contains(@class,' topic/image ')]" mode="carousel">
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
+    <xsl:variable name="images" select="count(../*[contains(@class, ' topic/image ')])"/>
+    <xsl:variable name="imageWidth">
+      <xsl:choose>
+        <xsl:when test="$images=1">
+          <xsl:text>col-12</xsl:text>
+        </xsl:when>
+        <xsl:when test="$images=2">
+           <xsl:text>col-6</xsl:text>
+        </xsl:when>
+        <xsl:when test="$images=3">
+          <xsl:text>col-4</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text>col-3</xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <div>
+       <xsl:attribute name="class" select="$imageWidth"/>
     <img>
       <xsl:call-template name="commonattributes">
         <xsl:with-param name="default-output-class" select="'d-block w-100'"/>
@@ -95,6 +122,7 @@
         </xsl:when>
       </xsl:choose>
     </img>
+    </div>
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
   </xsl:template>
 
@@ -105,6 +133,12 @@
         <xsl:call-template name="commonattributes"/>
         <xsl:apply-templates/>
       </p>
+    </div>
+  </xsl:template>
+
+  <xsl:template match="*[contains(@class,' topic/div ')]" mode="carousel">
+    <div class="row">
+      <xsl:apply-templates/>
     </div>
   </xsl:template>
 </xsl:stylesheet>
