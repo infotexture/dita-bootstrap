@@ -55,11 +55,7 @@
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <fig>
-        <image
-          outputclass="img-thumbnail d-auto"
-          scope="external"
-          href="https://picsum.photos/id/730/300/200"
-        />
+        <image outputclass="img-thumbnail d-auto" scope="external" href="https://picsum.photos/id/730/300/200"/>
         <image
           outputclass="img-thumbnail d-light"
           scope="external"
