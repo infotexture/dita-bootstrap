@@ -34,6 +34,23 @@
       </xsl:if>
       <xsl:attribute name="id" select="$id"/>
       <xsl:call-template name="commonattributes"/>
+      <xsl:if test="contains(@otherprops, 'indicators(true)')">
+        <div class="carousel-indicators">
+          <xsl:for-each select="*[contains(@class, ' topic/li ')]">
+            <button type="button">
+                <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
+                   <xsl:attribute name="class" select="'active'"/>
+                   <xsl:attribute name="aria-current" select="'true'"/>
+                </xsl:if>
+              <xsl:attribute name="data-bs-target" select="concat('#', $id)"/>
+              <xsl:attribute
+                name="data-bs-slide-to"
+                select="count(preceding-sibling::*[contains(@class, ' topic/li ')])"
+              />
+            </button>
+        </xsl:for-each>
+        </div>
+      </xsl:if>
       <div class="carousel-inner">
         <xsl:apply-templates mode="carousel"/>
       </div>

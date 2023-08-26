@@ -45,17 +45,47 @@
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel">
         <li>
+          <image scope="external" href="https://picsum.photos/1200/600?a"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?b"/>
+        </li>
+        <li>
           <image scope="external" href="https://picsum.photos/1200/600?c"/>
         </li>
+      </ol>
+    </bodydiv>
+    <codeblock>&lt;ol outputclass="carousel"&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;image href="..." /&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</codeblock>
+    <section>
+      <title>Indicators</title>
+      <p> Set <xmlatt>otherprops="indicators(true)"</xmlatt> to add indicators to
+      the carousel, alongside the previous/next controls. The indicators let users
+      jump directly to a particular slide.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ol outputclass="carousel" otherprops="indicators(true)">
         <li>
           <image scope="external" href="https://picsum.photos/1200/600?d"/>
         </li>
         <li>
           <image scope="external" href="https://picsum.photos/1200/600?e"/>
         </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?f"/>
+        </li>
       </ol>
     </bodydiv>
-    <codeblock>&lt;ol outputclass="carousel"&gt;
+    <codeblock>&lt;ol outputclass="carousel" otherprops="indicators(true)"&gt;
   &lt;li&gt;
     &lt;image href="..." /&gt;
   &lt;/li&gt;
@@ -390,13 +420,13 @@ And, kept unused, the user so destroys it.
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel" otherprops="autoplay(false)">
         <li>
-          <image scope="external" href="https://picsum.photos/1200/600?c"/>
-        </li>
-        <li>
           <image scope="external" href="https://picsum.photos/1200/600?d"/>
         </li>
         <li>
           <image scope="external" href="https://picsum.photos/1200/600?e"/>
+        </li>
+        <li>
+          <image scope="external" href="https://picsum.photos/1200/600?f"/>
         </li>
       </ol>
     </bodydiv>
@@ -420,13 +450,13 @@ And, kept unused, the user so destroys it.
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel">
         <li otherprops="interval(2000)">
-          <image scope="external" href="https://picsum.photos/1200/600?c"/>
+          <image scope="external" href="https://picsum.photos/1200/600?g"/>
         </li>
         <li otherprops="interval(1000)">
-          <image scope="external" href="https://picsum.photos/1200/600?d"/>
+          <image scope="external" href="https://picsum.photos/1200/600?h"/>
         </li>
         <li otherprops="interval(3000)">
-          <image scope="external" href="https://picsum.photos/1200/600?e"/>
+          <image scope="external" href="https://picsum.photos/1200/600?i"/>
         </li>
       </ol>
     </bodydiv>
@@ -449,13 +479,13 @@ And, kept unused, the user so destroys it.
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel" otherprops="touch(false)">
         <li>
-          <image scope="external" href="https://picsum.photos/1200/600?c"/>
+          <image scope="external" href="https://picsum.photos/1200/600?j"/>
         </li>
         <li>
-          <image scope="external" href="https://picsum.photos/1200/600?d"/>
+          <image scope="external" href="https://picsum.photos/1200/600?k"/>
         </li>
         <li>
-          <image scope="external" href="https://picsum.photos/1200/600?e"/>
+          <image scope="external" href="https://picsum.photos/1200/600?l"/>
         </li>
       </ol>
     </bodydiv>
