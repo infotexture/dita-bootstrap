@@ -112,10 +112,94 @@
     &lt;/fig&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
+ <section>
+      <title>With non-image elements</title>
+      <p>Place additional DITA elements within a <xmlelement>div</xmlelement> element
+      to add them within a carousel. Additional structure and spacing can be added by
+      settting the <xmlatt>outputclass="col-*"</xmlatt> attribute.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ol outputclass="carousel">
+        <li>
+          <div>
+            <div outputclass="col-1"/>
+            <div outputclass="col-10">
+            <lines outputclass="bg-secondary-subtle p-3 border rounded">Is it for fear to wet a widow’s eye
+That thou consum’st thyself in single life?
+Ah, if thou issueless shalt hap to die,
+The world will wail thee like a makeless wife;
+            </lines>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div outputclass="col-1"/>
+            <div outputclass="col-10">
+            <lines outputclass="bg-secondary-subtle p-3 border rounded">The world will be thy widow and still weep
+That thou no form of thee hast left behind,
+When every private widow well may keep,
+By children’s eyes, her husband’s shape in mind.
+            </lines>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div outputclass="col-1"/>
+            <div outputclass="col-10">
+            <lines outputclass="bg-secondary-subtle p-3 border rounded">Look what an unthrift in the world doth spend
+Shifts but his place, for still the world enjoys it;
+But beauty’s waste hath in the world an end,
+And, kept unused, the user so destroys it.
+            </lines>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <div outputclass="col-1"/>
+            <div outputclass="col-10">
+            <lines outputclass="bg-secondary-subtle p-3 border rounded"> No love toward others in that bosom sits
+ That on himself such murd’rous shame commits.
+
+            <b>Sonnet 9 - William Shakespeare</b>
+            </lines>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </bodydiv>
+    <codeblock>&lt;ol outputclass="carousel"&gt;
+  &lt;li&gt;
+    &lt;div&gt;
+      &lt;div outputclass="col-1"/&gt;
+      &lt;div outputclass="col-10"&gt;
+      ...
+      &lt;div&gt;
+    &lt;div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div&gt;
+      &lt;div outputclass="col-1"/&gt;
+      &lt;div outputclass="col-10"&gt;
+      ...
+      &lt;div&gt;
+    &lt;div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div&gt;
+      &lt;div outputclass="col-1"/&gt;
+      &lt;div outputclass="col-10"&gt;
+      ...
+      &lt;div&gt;
+    &lt;div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</codeblock>
 
  <section>
       <title>Multiple slides side-by-side</title>
-      <p>Add multiple <xmlelement>image</xmlelement> elements within each <xmlelement>li</xmlelement> </p>
+      <p>Add multiple <xmlelement>image</xmlelement> elements within each <xmlelement>li</xmlelement></p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel">
@@ -154,9 +238,7 @@
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
 
-
-
- <section>
+  <section>
       <title>Multiple slides with titles</title>
       <p>Add multiple <xmlelement>image</xmlelement> elements within each <xmlelement
         >li</xmlelement> and include a <xmlelement>div</xmlelement> element for title texts.</p>
