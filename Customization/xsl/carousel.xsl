@@ -63,7 +63,9 @@
       </div>
       <a class="carousel-control-prev" role="button" data-bs-slide="prev">
         <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
-        <span class="carousel-control-prev-icon" aria-hidden="true"/>
+        <xsl:call-template name="color-control">
+          <xsl:with-param name="icon" select="'carousel-control-prev-icon'"/>
+        </xsl:call-template>
         <span class="visually-hidden">
           <xsl:call-template name="getVariable">
             <xsl:with-param name="id" select="'Previous'"/>
@@ -72,7 +74,9 @@
       </a>
       <a class="carousel-control-next" role="button" data-bs-slide="next">
         <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
-        <span class="carousel-control-next-icon" aria-hidden="true"/>
+        <xsl:call-template name="color-control">
+          <xsl:with-param name="icon" select="'carousel-control-next-icon'"/>
+        </xsl:call-template>
         <span class="visually-hidden">
           <xsl:call-template name="getVariable">
             <xsl:with-param name="id" select="'Next'"/>
@@ -113,7 +117,18 @@
   <!-- Carousel Items Slides with Captions -->
   <xsl:template match="*[contains(@class,' topic/fig ')]" mode="carousel">
     <xsl:apply-templates select="*[contains(@class,' topic/image ')]" mode="carousel"/>
+  </xsl:template>
 
+  <xsl:template name="color-control">
+    <xsl:param name="icon"/>
+    <xsl:choose>
+      <xsl:when test="contains(@outputclass, 'carousel-fade')"/>
+      <xsl:otherwise>
+        <span aria-hidden="true">
+            <xsl:attribute name="class" select="concat($icon, ' ', $BOOTSTRAP_CSS_CAROUSEL_INDICATORS)"/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="*[contains(@class,' topic/image ')]" mode="carousel">
