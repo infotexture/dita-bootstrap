@@ -100,12 +100,15 @@
       <xsl:if test="contains(@otherprops, 'interval(')">
          <xsl:call-template name="otherprops-interval"/>
       </xsl:if>
-      <div class="container">
+      <div class="container mx-0">
         <div class="row">
           <xsl:apply-templates select="*[contains(@class,' topic/fig ')]" mode="carousel"/>
           <xsl:apply-templates select="*[contains(@class,' topic/image ')]" mode="carousel"/>
         </div>
         <xsl:apply-templates select="*[contains(@class,' topic/div ')]" mode="carousel"/>
+        <xsl:if test="../../*[contains(@otherprops, 'indicators(true)')]">
+          <div class="row py-3"></div>
+        </xsl:if>
       </div>
       <xsl:apply-templates
         select="*[contains(@class,' topic/fig ')]/*[contains(@class, ' topic/title ')]"

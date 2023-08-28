@@ -152,7 +152,7 @@
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--nav-toc</parmname>=<option>list-group-partial</option></codeblock>
-      <ol outputclass="carousel border p-4" otherprops="indicators(true)">
+      <ol outputclass="carousel pt-2" otherprops="indicators(true)">
         <li>
           <fig>
             <title><option>full</option> – Unstyled full TOC</title>
@@ -229,7 +229,7 @@
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
      <parmname>--bootstrap.theme</parmname>=<option>&lt;theme-name&gt;</option></codeblock>
 
-     <ol outputclass="carousel border p-4" deliveryTarget="html" otherprops="indicators(true)">
+     <ol outputclass="carousel pt-2" deliveryTarget="html" otherprops="indicators(true)">
         <li>
           <div>
             <div outputclass="col-4">
