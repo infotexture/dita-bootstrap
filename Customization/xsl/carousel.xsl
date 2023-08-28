@@ -14,7 +14,7 @@
   <!-- Customization to add Bootstrap Carousel Component -->
   <!-- https://getbootstrap.com/docs/5.3/components/carousel/ -->
 
-  <xsl:param name="BOOTSTRAP_CSS_CAROUSEL_INDICATORS" select="'border border-secondary bg-primary'"/>
+  <xsl:param name="BOOTSTRAP_CSS_CAROUSEL_INDICATORS" select="'border border-secondary bg-primary rounded'"/>
 
   <xsl:template
     match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]"
