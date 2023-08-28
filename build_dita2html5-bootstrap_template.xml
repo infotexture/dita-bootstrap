@@ -231,5 +231,6 @@
       value="${bootstrap.theme}"
     />
     <property name="args.hdf" value="${bootstrap.theme.file}"/>
+    <property file="${dita.plugin.net.infotexture.dita-bootstrap.dir}/cfg/${bootstrap.theme}.properties"/>
   </target>
 </project>
