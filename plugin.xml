@@ -73,6 +73,14 @@
       <val default="true">no</val>
     </param>
     <param
+      name="toc-spacer.include"
+      desc="Specifies whether to include a spacer within the side menu"
+      type="enum"
+    >
+      <val>yes</val>
+      <val default="true">no</val>
+    </param>
+    <param
       name="popovers.include"
       desc="Specifies whether to enable popovers and tooltips"
       type="enum"

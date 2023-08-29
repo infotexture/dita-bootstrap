@@ -219,6 +219,18 @@
       <equals arg1="${bootstrap.theme}" arg2="none"/>
     </condition>
 
+    <condition property="toc-spacer.include" value="yes">
+      <or>
+        <equals arg1="${bootstrap.theme}" arg2="darkly"/>
+        <equals arg1="${bootstrap.theme}" arg2="flatly"/>
+        <equals arg1="${bootstrap.theme}" arg2="lux"/>
+        <equals arg1="${bootstrap.theme}" arg2="materia"/>
+        <equals arg1="${bootstrap.theme}" arg2="pulse"/>
+        <equals arg1="${bootstrap.theme}" arg2="quartz"/>
+        <equals arg1="${bootstrap.theme}" arg2="sketchy"/>
+      </or>
+    </condition>
+
     <copy
       file="${bootstrap.template.file}"
       toFile="${bootstrap.theme.file}"

@@ -15,6 +15,7 @@
   <xsl:param name="FILEDIR" as="xs:string?"/>
   <xsl:param name="FILENAME" as="xs:string?"/>
   <xsl:param name="BOOTSTRAP_CSS_ACTIVE_NAV_PARENT" select="'active'"/>
+  <xsl:param name="TOC_SPACER_INCLUDE" select="'no'"/>
   <xsl:param name="input.map.url" as="xs:string?"/>
 
   <xsl:variable name="input.map" as="document-node()?">
@@ -166,8 +167,10 @@
       <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
         <nav xsl:use-attribute-sets="toc">
           <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↓ -->
-          <div class="navbar border-0 d-none d-lg-block">
-          </div>
+          <xsl:if test="$TOC_SPACER_INCLUDE = 'yes'">
+            <div class="navbar border-0 d-none d-lg-block shadow-none">
+            </div>
+          </xsl:if>
           <div class="list-group me-3">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
             <xsl:choose>
@@ -199,8 +202,10 @@
 
       <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
         <nav xsl:use-attribute-sets="toc">
-          <div class="navbar border-0 d-none d-lg-block">
-          </div>
+          <xsl:if test="$TOC_SPACER_INCLUDE = 'yes'">
+            <div class="navbar border-0 d-none d-lg-block shadow-none">
+            </div>
+          </xsl:if>
           <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
           <nav class="nav nav-pills flex-column navbar-light bg-body-tertiary">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
@@ -239,8 +244,10 @@
           <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
             <xsl:attribute name="direction" select="$defaultDirection"/>
           </xsl:if>
-          <div class="navbar border-0 d-none d-lg-block">
-          </div>
+          <xsl:if test="$TOC_SPACER_INCLUDE = 'yes'">
+            <div class="navbar border-0 d-none d-lg-block shadow-none">
+            </div>
+          </xsl:if>
           <ul class="list-unstyled mb-0 py-3 pt-md-1">
             <xsl:apply-templates select="$input.map" mode="collapsible-toc">
               <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
