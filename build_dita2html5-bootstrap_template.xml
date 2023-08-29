@@ -155,9 +155,9 @@
       location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bs-navbar-default.hdr.xml"
     />
     <!-- Location of bootstrap icons if required -->
-    <property
-      name="icons.cdn.path"
-      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.icons.hdf.xml"
+    <makeurl
+      property="icons.cdn.path"
+      file="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.icons.hdf.xml"
     />
     <!-- Entrypoint for XSL transforms -->
     <property
