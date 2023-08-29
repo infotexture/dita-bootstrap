@@ -48,6 +48,7 @@
   <!-- Add a Bootstrap CSS border to codeblocks -->
   <xsl:template match="*[contains(@class, ' topic/pre ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_CODEBLOCK"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Add a Bootstrap CSS border to tables -->
@@ -58,15 +59,18 @@
       <xsl:when test="@colsep='0' and @rowsep='0'"> table-borderless</xsl:when>
       <xsl:otherwise/>
     </xsl:choose>
+    <xsl:next-match/>
   </xsl:template>
   <!-- Enhance the default Bootstrap CSS text color of the table headers -->
   <xsl:template match="*[contains(@class, ' topic/thead ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_TABLE_HEAD"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Enhance the short desc with a Bootstrap CSS lead class -->
   <xsl:template match="*[contains(@class, ' topic/shortdesc ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_SHORTDESC"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS text color of the headers -->
@@ -75,6 +79,7 @@
     mode="get-output-class"
   >
     <xsl:value-of select="$BOOTSTRAP_CSS_TOPIC_TITLE"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <xsl:template
@@ -82,6 +87,7 @@
     mode="get-output-class"
   >
     <xsl:value-of select="$BOOTSTRAP_CSS_SECTION_TITLE"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of cards -->
@@ -90,6 +96,7 @@
     mode="get-output-class"
   >
     <xsl:value-of select="$BOOTSTRAP_CSS_CARD"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of carousel -->
@@ -99,6 +106,7 @@
   >
     <xsl:text>slide </xsl:text>
     <xsl:value-of select="$BOOTSTRAP_CSS_CAROUSEL"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Amend the text and background of Figure Captions -->
@@ -108,6 +116,7 @@
     priority="5"
   >
     <xsl:value-of select="$BOOTSTRAP_CSS_CAPTION"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of tabs -->
@@ -117,6 +126,7 @@
   >
     <xsl:text>nav </xsl:text>
     <xsl:value-of select="$BOOTSTRAP_CSS_TABS"/>
+    <xsl:next-match/>
   </xsl:template>
   <!-- Change the default Bootstrap CSS classes of tab pills -->
   <xsl:template
@@ -133,6 +143,7 @@
         <xsl:value-of select="$BOOTSTRAP_CSS_TABS"/>
       </xsl:otherwise>
     </xsl:choose>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of accordion -->
@@ -141,12 +152,14 @@
     mode="get-output-class"
   >
     <xsl:value-of select="BOOTSTRAP_CSS_ACCORDION"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS text color of the figure captions -->
   <xsl:template match="*[contains(@class, ' topic/figcaption ')]" mode="get-output-class">
     <xsl:text>figure-caption </xsl:text>
     <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE_CAPTION"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of pagination -->
@@ -155,6 +168,7 @@
     mode="get-output-class"
   >
     <xsl:value-of select="$BOOTSTRAP_CSS_PAGINATION"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <xsl:template
@@ -166,6 +180,7 @@
     </xsl:if>
     <xsl:value-of select="ancestor::*[contains(@outputclass, 'pagination')][1]/@outputclass"/>
     <xsl:value-of select="concat(' ', $BOOTSTRAP_CSS_PAGINATION)"/>
+    <xsl:next-match/>
   </xsl:template>
 
   <!-- Add additional Bootstrap CSS classes based on outputclass -->
