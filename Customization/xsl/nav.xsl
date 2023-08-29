@@ -15,7 +15,7 @@
   <xsl:param name="FILEDIR" as="xs:string?"/>
   <xsl:param name="FILENAME" as="xs:string?"/>
   <xsl:param name="BOOTSTRAP_CSS_ACTIVE_NAV_PARENT" select="'active'"/>
-  <xsl:param name="TOC_SPACER_INCLUDE" select="'no'"/>
+  <xsl:param name="TOC_SPACER_PADDING" select="'0'"/>
   <xsl:param name="input.map.url" as="xs:string?"/>
 
   <xsl:variable name="input.map" as="document-node()?">
@@ -162,15 +162,22 @@
     </div>
   </xsl:template>
 
+  <xsl:template name="toc-spacer">
+    <xsl:if test="not($TOC_SPACER_PADDING = '0')">
+      <div>
+        <xsl:attribute name="class">
+          <xsl:value-of select="concat('border-0 d-none d-lg-block shadow-none py-', $TOC_SPACER_PADDING)"/>
+        </xsl:attribute>
+      </div>
+    </xsl:if>
+  </xsl:template>
+
   <xsl:template name="sidebar-content">
     <xsl:choose>
       <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
         <nav xsl:use-attribute-sets="toc">
           <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↓ -->
-          <xsl:if test="$TOC_SPACER_INCLUDE = 'yes'">
-            <div class="navbar border-0 d-none d-lg-block shadow-none">
-            </div>
-          </xsl:if>
+          <xsl:call-template name="toc-spacer"/>
           <div class="list-group me-3">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
             <xsl:choose>
@@ -202,10 +209,7 @@
 
       <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
         <nav xsl:use-attribute-sets="toc">
-          <xsl:if test="$TOC_SPACER_INCLUDE = 'yes'">
-            <div class="navbar border-0 d-none d-lg-block shadow-none">
-            </div>
-          </xsl:if>
+          <xsl:call-template name="toc-spacer"/>
           <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
           <nav class="nav nav-pills flex-column navbar-light bg-body-tertiary">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
@@ -244,10 +248,7 @@
           <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
             <xsl:attribute name="direction" select="$defaultDirection"/>
           </xsl:if>
-          <xsl:if test="$TOC_SPACER_INCLUDE = 'yes'">
-            <div class="navbar border-0 d-none d-lg-block shadow-none">
-            </div>
-          </xsl:if>
+          <xsl:call-template name="toc-spacer"/>
           <ul class="list-unstyled mb-0 py-3 pt-md-1">
             <xsl:apply-templates select="$input.map" mode="collapsible-toc">
               <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>

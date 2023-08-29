@@ -155,9 +155,9 @@
     if:set="bidi.include"
   />
   <param
-    name="TOC_SPACER_INCLUDE"
-    expression="${toc-spacer.include}"
-    if:set="toc-spacer.include"
+    name="TOC_SPACER_PADDING"
+    expression="${toc-spacer.padding}"
+    if:set="toc-spacer.padding"
   />
   <param
     name="BOOTSTRAP_ICON_TIP"

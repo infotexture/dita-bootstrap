@@ -446,7 +446,7 @@
       <indexterm><parmname>--dark.mode.include</parmname></indexterm>
       <indexterm><parmname>--menubar-toc.include</parmname></indexterm>
       <indexterm><parmname>--bidi.include</parmname></indexterm>
-      <indexterm><parmname>--toc-spacer.include</parmname></indexterm>
+      <indexterm><parmname>--toc-spacer.padding</parmname></indexterm>
       <p>Bootstrap <xref href="./icons.dita" format="dita">icons</xref>,
         <xref href="./popovers.dita" format="dita">popovers</xref>,
         <xref href="./tooltips.dita" format="dita">tooltips</xref> and the <xref
@@ -486,7 +486,8 @@
           <parmname>--bidi.include</parmname> – whether to force included support for
           <xref href="./rtl.dita" format="dita">RTL languages</xref></li>
         <li>
-          <parmname>--toc-spacer.include</parmname> – whether to include an additional spacer within the side navigation</li>
+          <parmname
+          >--toc-spacer.padding</parmname> – specifies the size of a spacer padding to add within the side menu</li>
       </ul>
     </section>
   </body>
