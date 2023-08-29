@@ -104,13 +104,13 @@
             aria-expanded="false"
             data-bs-display="static"
           >
-            <span class="bs-toggler-light">
+            <span class="d-light">
               <i class="bi bi-brightness-high-fill"/>
             </span>
-            <span class="bs-toggler-dark">
+            <span class="d-dark">
               <i class="bi bi-moon-stars-fill"/>
             </span>
-            <span class="bs-toggler-auto">
+            <span class="d-auto">
               <i class="bi bi-circle-half"/>
             </span>
             <span class="d-lg-none ms-2">Toggle theme</span>
