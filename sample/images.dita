@@ -48,7 +48,7 @@
     </bodydiv>
     <codeblock>&lt;image outputclass="img-thumbnail" href="..." /&gt;</codeblock>
     <section>
-      <title>Separate Images for Dark and Light mode</title>
+      <title>Separate images for dark and light mode</title>
       <p>Use the <xmlatt>outputclass="d-auto"</xmlatt>, <xmlatt>outputclass="d-light"</xmlatt>,
         and <xmlatt>outputclass="d-dark"</xmlatt> attributes on <xmlelement>image</xmlelement> elements
         to display different images when in <xref href="./dark-mode.dita">dark mode</xref>.</p>
