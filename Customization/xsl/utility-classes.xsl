@@ -11,7 +11,7 @@
   exclude-result-prefixes="xs dita-ot"
 >
   <xsl:param name="BOOTSTRAP_CSS_SHORTDESC" select="'text-body-secondary lead'"/>
-  <xsl:param name="BOOTSTRAP_CSS_CODEBLOCK" select="'border rounded'"/>
+  <xsl:param name="BOOTSTRAP_CSS_CODEBLOCK" select="'alert alert-secondary'"/>
   <xsl:param name="BOOTSTRAP_CSS_TOPIC_TITLE" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_SECTION_TITLE" select="'h4'"/>
   <xsl:param name="BOOTSTRAP_CSS_CARD" select="''"/>
