@@ -155,7 +155,7 @@
           <div>
             <div outputclass="col-1"/>
             <div outputclass="col-10">
-            <lines outputclass="bg-secondary-subtle p-3 border rounded">Is it for fear to wet a widow’s eye
+            <lines outputclass="alert-secondary">Is it for fear to wet a widow’s eye
 That thou consum’st thyself in single life?
 Ah, if thou issueless shalt hap to die,
 The world will wail thee like a makeless wife;
@@ -167,7 +167,7 @@ The world will wail thee like a makeless wife;
           <div>
             <div outputclass="col-1"/>
             <div outputclass="col-10">
-            <lines outputclass="bg-secondary-subtle p-3 border rounded">The world will be thy widow and still weep
+            <lines outputclass="alert-secondary">The world will be thy widow and still weep
 That thou no form of thee hast left behind,
 When every private widow well may keep,
 By children’s eyes, her husband’s shape in mind.
@@ -179,7 +179,7 @@ By children’s eyes, her husband’s shape in mind.
           <div>
             <div outputclass="col-1"/>
             <div outputclass="col-10">
-            <lines outputclass="bg-secondary-subtle p-3 border rounded">Look what an unthrift in the world doth spend
+            <lines outputclass="alert-secondary">Look what an unthrift in the world doth spend
 Shifts but his place, for still the world enjoys it;
 But beauty’s waste hath in the world an end,
 And, kept unused, the user so destroys it.
@@ -191,7 +191,7 @@ And, kept unused, the user so destroys it.
           <div>
             <div outputclass="col-1"/>
             <div outputclass="col-10">
-            <lines outputclass="bg-secondary-subtle p-3 border rounded"> No love toward others in that bosom sits
+            <lines outputclass="alert-secondary"> No love toward others in that bosom sits
  That on himself such murd’rous shame commits.
 
             <b>Sonnet 9 - William Shakespeare</b>
