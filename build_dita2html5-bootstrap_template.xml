@@ -219,7 +219,7 @@
       <equals arg1="${bootstrap.theme}" arg2="none"/>
     </condition>
 
-    <condition property="toc-spacer.include" value="1">
+    <condition property="toc-spacer.padding" value="1">
       <or>
         <equals arg1="${bootstrap.theme}" arg2="darkly"/>
         <equals arg1="${bootstrap.theme}" arg2="flatly"/>
@@ -229,7 +229,7 @@
         <equals arg1="${bootstrap.theme}" arg2="sketchy"/>
       </or>
     </condition>
-     <condition property="toc-spacer.include" value="3">
+     <condition property="toc-spacer.padding" value="3">
       <or>
         <equals arg1="${bootstrap.theme}" arg2="lux"/>
       </or>

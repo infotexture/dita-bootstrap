@@ -162,22 +162,11 @@
     </div>
   </xsl:template>
 
-  <xsl:template name="toc-spacer">
-    <xsl:if test="not($TOC_SPACER_PADDING = '0')">
-      <div>
-        <xsl:attribute name="class">
-          <xsl:value-of select="concat('border-0 d-none d-lg-block shadow-none py-', $TOC_SPACER_PADDING)"/>
-        </xsl:attribute>
-      </div>
-    </xsl:if>
-  </xsl:template>
-
   <xsl:template name="sidebar-content">
     <xsl:choose>
       <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
         <nav xsl:use-attribute-sets="toc">
           <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↓ -->
-          <xsl:call-template name="toc-spacer"/>
           <div class="list-group me-3">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
             <xsl:choose>
@@ -209,7 +198,6 @@
 
       <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
         <nav xsl:use-attribute-sets="toc">
-          <xsl:call-template name="toc-spacer"/>
           <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
           <nav class="nav nav-pills flex-column navbar-light bg-body-tertiary">
           <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
@@ -248,7 +236,6 @@
           <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
             <xsl:attribute name="direction" select="$defaultDirection"/>
           </xsl:if>
-          <xsl:call-template name="toc-spacer"/>
           <ul class="list-unstyled mb-0 py-3 pt-md-1">
             <xsl:apply-templates select="$input.map" mode="collapsible-toc">
               <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
@@ -269,7 +256,17 @@
         <xsl:call-template name="sidebar-content"/>
       </xsl:when>
       <xsl:otherwise>
-        <div class="bs-sidebar">
+        <div>
+          <xsl:attribute name="class">
+          <xsl:choose>
+            <xsl:when test="not($TOC_SPACER_PADDING = '0')">
+                <xsl:value-of select="concat('bs-sidebar py-', $TOC_SPACER_PADDING)"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:text>bs-sidebar</xsl:text>
+            </xsl:otherwise>
+          </xsl:choose>
+          </xsl:attribute>
           <xsl:call-template name="offcanvas-sidebar"/>
         </div>
       </xsl:otherwise>
