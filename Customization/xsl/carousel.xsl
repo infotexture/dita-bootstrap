@@ -14,7 +14,7 @@
   <!-- Customization to add Bootstrap Carousel Component -->
   <!-- https://getbootstrap.com/docs/5.3/components/carousel/ -->
 
-  <xsl:param name="BOOTSTRAP_CSS_CAROUSEL_INDICATORS" select="'border border-secondary bg-primary rounded'"/>
+  <xsl:param name="BOOTSTRAP_CSS_CAROUSEL_INDICATORS" select="'btn btn-primary bg-primary btn-sm'"/>
 
   <xsl:template
     match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]"
@@ -127,8 +127,10 @@
     <xsl:choose>
       <xsl:when test="contains(@outputclass, 'carousel-fade')"/>
       <xsl:otherwise>
-        <span aria-hidden="true">
-            <xsl:attribute name="class" select="concat($icon, ' ', $BOOTSTRAP_CSS_CAROUSEL_INDICATORS)"/>
+        <span class="btn btn-primary btn-sm p-0">
+          <span aria-hidden="true">
+              <xsl:attribute name="class" select="concat($icon, ' align-middle')"/>
+          </span>
         </span>
       </xsl:otherwise>
     </xsl:choose>
