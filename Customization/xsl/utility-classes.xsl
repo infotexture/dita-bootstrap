@@ -16,7 +16,7 @@
   <xsl:param name="BOOTSTRAP_CSS_SECTION_TITLE" select="'h4'"/>
   <xsl:param name="BOOTSTRAP_CSS_CARD" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_CAROUSEL" select="''"/>
-  <xsl:param name="BOOTSTRAP_CSS_CAPTION" select="'bg-secondary-subtle text-body-secondary'"/>
+  <xsl:param name="BOOTSTRAP_CSS_CAPTION" select="'alert alert-secondary p-1'"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS" select="''"/>
   <xsl:param name="BOOTSTRAP_CSS_TABS_VERTICAL" select="'me-3'"/>
   <xsl:param name="BOOTSTRAP_CSS_ACCORDION" select="''"/>
