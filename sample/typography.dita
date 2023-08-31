@@ -16,6 +16,7 @@
         <indexterm>CSS
           <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
+        <indexterm><xmlatt>otherprops</xmlatt></indexterm>
         <indexterm><xmlelement>title</xmlelement></indexterm>
       </keywords>
     </metadata>

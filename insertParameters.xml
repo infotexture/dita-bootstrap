@@ -65,6 +65,11 @@
     if:set="bootstrap.css.carousel"
   />
   <param
+    name="BOOTSTRAP_CSS_CAROUSEL_INDICATORS"
+    expression="${bootstrap.css.carousel.indicators}"
+    if:set="bootstrap.css.carousel.indicators"
+  />
+  <param
     name="BOOTSTRAP_CSS_CAPTION"
     expression="${bootstrap.css.carousel.caption}"
     if:set="bootstrap.css.carousel.caption"

@@ -23,6 +23,7 @@
         <indexterm><xmlelement>bodydiv</xmlelement></indexterm>
         <indexterm><xmlelement>xref</xmlelement></indexterm>
         <indexterm><xmlatt>props</xmlatt></indexterm>
+        <indexterm><xmlatt>otherprops</xmlatt></indexterm>
       </keywords>
     </metadata>
   </prolog>

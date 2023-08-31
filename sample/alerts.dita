@@ -20,6 +20,7 @@
         <indexterm>CSS
           <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
+        <indexterm><xmlatt>otherprops</xmlatt></indexterm>
         <indexterm><xmlelement>note</xmlelement></indexterm>
         <indexterm><xmlelement>section</xmlelement></indexterm>
       </keywords>

@@ -146,6 +146,11 @@
       desc="Bootstrap classes for carousel captions"
     />
     <param
+      name="bootstrap.css.carousel.indicators"
+      type="string"
+      desc="Bootstrap classes for carousel indicators"
+    />
+    <param
       name="bootstrap.css.tabs"
       type="string"
       desc="Bootstrap classes for tabbed dialog components"

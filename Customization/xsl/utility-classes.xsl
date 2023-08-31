@@ -280,7 +280,7 @@
     <xsl:if test="@scalefit='yes'">
       <xsl:text> img-fluid</xsl:text>
     </xsl:if>
-
+    <xsl:text> </xsl:text>
   </xsl:template>
 
   <!-- Add additional Bootstrap CSS classes and roles to <dd> elements -->
