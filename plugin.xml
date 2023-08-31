@@ -74,7 +74,7 @@
     </param>
     <param
       name="toc-spacer.padding"
-      desc="Specifies the size of a spacer padding to add within the side menu"
+      desc="Specifies the vertical padding to add to the side menu"
       type="enum"
     >
       <val default="true">0</val>

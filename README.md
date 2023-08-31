@@ -215,9 +215,8 @@ Additionally, opt-in breadcrumbs and menu bars can be added using the following 
 - `args.breadcrumbs` – add Bootstrap breadcrumb components
 - `menubar-toc.include` – add a Bootstrap menubar
 - `scrollspy-toc` – add a Bootstrap [scrollspy][18] navigator
-- `bidi.include` - whether to force included support for RTL languages
-- `toc-spacer.padding` -  specifies the size of a spacer padding to add within the side menu
-
+- `bidi.include` – whether to force included support for RTL languages
+- `toc-spacer.padding` – specifies the vertical padding to add to the side menu
 
 ## Feedback
 

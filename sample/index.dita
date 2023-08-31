@@ -486,8 +486,7 @@
           <parmname>--bidi.include</parmname> – whether to force included support for
           <xref href="./rtl.dita" format="dita">RTL languages</xref></li>
         <li>
-          <parmname
-          >--toc-spacer.padding</parmname> – specifies the size of a spacer padding to add within the side menu</li>
+          <parmname>--toc-spacer.padding</parmname> – specifies the vertical padding to add to the side menu</li>
       </ul>
     </section>
   </body>
