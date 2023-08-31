@@ -36,7 +36,7 @@ function parseLunrResults(results) {
     const title = item["t"];
     const preview = item["d"];
     const link = item["l"];
-    const result = `<div class="card mb-3">
+    const result = `<div class="card mb-3" onclick="closeSearch(this);">
       <a class="link stretched-link link-underline link-underline-opacity-0" href="${BASE_URL + link}">
           <h2 class="h3 title card-header text-body-emphasis">${title}</h5>
       </a>
