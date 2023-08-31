@@ -69,9 +69,8 @@
 &lt;/ol&gt;</codeblock>
     <section>
       <title>Indicators</title>
-      <p> Set <xmlatt>otherprops="indicators(true)"</xmlatt> to add indicators to
-      the carousel, alongside the previous/next controls. The indicators let users
-      jump directly to a particular slide.</p>
+      <p> Set <xmlatt>otherprops="indicators(true)"</xmlatt> to add indicators to the carousel, alongside the
+        previous/next controls. The indicators let users jump directly to a particular slide.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel" otherprops="indicators(true)">
@@ -143,11 +142,11 @@
     &lt;/fig&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
- <section>
+    <section>
       <title>With non-image elements</title>
-      <p>Place additional DITA elements within a <xmlelement>div</xmlelement> element
-      to add them within a carousel. Additional structure and spacing can be added by
-      settting the <xmlatt>outputclass="col-*"</xmlatt> attribute.</p>
+      <p>Place additional DITA elements within a <xmlelement>div</xmlelement> element to add them within a carousel.
+        Additional structure and spacing can be added by settting the <xmlatt>outputclass="col-*"</xmlatt>
+        attribute.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel">
@@ -155,11 +154,10 @@
           <div>
             <div outputclass="col-1"/>
             <div outputclass="col-10">
-            <lines outputclass="alert-secondary">Is it for fear to wet a widow’s eye
+              <lines outputclass="alert-secondary">Is it for fear to wet a widow’s eye
 That thou consum’st thyself in single life?
 Ah, if thou issueless shalt hap to die,
-The world will wail thee like a makeless wife;
-            </lines>
+The world will wail thee like a makeless wife;</lines>
             </div>
           </div>
         </li>
@@ -167,11 +165,10 @@ The world will wail thee like a makeless wife;
           <div>
             <div outputclass="col-1"/>
             <div outputclass="col-10">
-            <lines outputclass="alert-secondary">The world will be thy widow and still weep
+              <lines outputclass="alert-secondary">The world will be thy widow and still weep
 That thou no form of thee hast left behind,
 When every private widow well may keep,
-By children’s eyes, her husband’s shape in mind.
-            </lines>
+By children’s eyes, her husband’s shape in mind.</lines>
             </div>
           </div>
         </li>
@@ -179,11 +176,10 @@ By children’s eyes, her husband’s shape in mind.
           <div>
             <div outputclass="col-1"/>
             <div outputclass="col-10">
-            <lines outputclass="alert-secondary">Look what an unthrift in the world doth spend
+              <lines outputclass="alert-secondary">Look what an unthrift in the world doth spend
 Shifts but his place, for still the world enjoys it;
 But beauty’s waste hath in the world an end,
-And, kept unused, the user so destroys it.
-            </lines>
+And, kept unused, the user so destroys it.</lines>
             </div>
           </div>
         </li>
@@ -191,11 +187,10 @@ And, kept unused, the user so destroys it.
           <div>
             <div outputclass="col-1"/>
             <div outputclass="col-10">
-            <lines outputclass="alert-secondary"> No love toward others in that bosom sits
+              <lines outputclass="alert-secondary"> No love toward others in that bosom sits
  That on himself such murd’rous shame commits.
 
-            <b>Sonnet 9 - William Shakespeare</b>
-            </lines>
+            <b>Sonnet 9 - William Shakespeare</b></lines>
             </div>
           </div>
         </li>
@@ -228,7 +223,7 @@ And, kept unused, the user so destroys it.
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
 
- <section>
+    <section>
       <title>Multiple slides side-by-side</title>
       <p>Add multiple <xmlelement>image</xmlelement> elements within each <xmlelement>li</xmlelement></p>
     </section>
@@ -269,10 +264,10 @@ And, kept unused, the user so destroys it.
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
 
-  <section>
+    <section>
       <title>Multiple slides with titles</title>
-      <p>Add multiple <xmlelement>image</xmlelement> elements within each <xmlelement
-        >li</xmlelement> and include a <xmlelement>div</xmlelement> element for title texts.</p>
+      <p>Add multiple <xmlelement>image</xmlelement> elements within each <xmlelement>li</xmlelement> and include a
+          <xmlelement>div</xmlelement> element for title texts.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel">
@@ -378,9 +373,10 @@ And, kept unused, the user so destroys it.
 &lt;/ol&gt;</codeblock>
     <section>
       <title>Crossfade</title>
-      <p> Add <xmlatt
-        >outputclass="carousel-fade"</xmlatt> to your carousel to animate slides with a fade transition instead of a slide. Depending on your carousel content (e.g., text only slides),  , you may want to add <xmlelement
-        >div outputclass="bg-body"</xmlelement> or some custom CSS to the carousel items for proper crossfading.</p>
+      <p> Add <xmlatt>outputclass="carousel-fade"</xmlatt> to your carousel to animate slides with a fade transition
+        instead of a slide. Depending on your carousel content (e.g., text only slides), you may want to add
+          <xmlelement>div outputclass="bg-body"</xmlelement> or some custom CSS to the carousel items for proper
+        crossfading.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel-fade">
@@ -408,15 +404,11 @@ And, kept unused, the user so destroys it.
 &lt;/ol&gt;</codeblock>
     <section>
       <title>Autoplaying carousels</title>
-      <p>Carousels autoplay on page load by default. . Autoplaying carousels automatically
-        pause while hovered with the mouse. In browsers that support the Page Visibility
-        API, the carousel will stop cycling when the webpage is not visible to the user (
-        such as when the browser tab is inactive, or when the browser window is minimized).
-      </p>
-      <p>
-        When <xmlatt>otherprops="autoplay(false)"</xmlatt> is set the carousel won’t
-        automatically start to cycle on page load. Instead, it will only start after the
-        first user interaction.</p>
+      <p>Carousels autoplay on page load by default. Autoplaying carousels automatically pause while hovered with the
+        mouse. In browsers that support the Page Visibility API, the carousel will stop cycling when the webpage is not
+        visible to the user ( such as when the browser tab is inactive, or when the browser window is minimized). </p>
+      <p>When <xmlatt>otherprops="autoplay(false)"</xmlatt> is set, the carousel won’t automatically start to cycle on
+        page load. Instead, it will only start after the first user interaction.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel" otherprops="autoplay(false)">
@@ -444,9 +436,8 @@ And, kept unused, the user so destroys it.
 &lt;/ol&gt;</codeblock>
     <section>
       <title>Individual carousel item interval</title>
-      <p>Add <xmlatt
-        >otherprops="interval(1000)"</xmlatt> to a carousel item to change the amount of time to delay between automatically cycling to the next item.
-      </p>
+      <p>Add <xmlatt>otherprops="interval(1000)"</xmlatt> to a carousel item to change the amount of time to delay
+        between automatically cycling to the next item.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel">
@@ -474,8 +465,8 @@ And, kept unused, the user so destroys it.
 &lt;/ol&gt;</codeblock>
     <section>
       <title>Disable touch swiping</title>
-      <p>Carousels support swiping left/right on touchscreen devices to move between slides.
-        Add <xmlatt>otherprops="touch(false)"</xmlatt> to disable this option.</p>
+      <p>Carousels support swiping left/right on touchscreen devices to move between slides. Add
+          <xmlatt>otherprops="touch(false)"</xmlatt> to disable this option.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel" otherprops="touch(false)">
