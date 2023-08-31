@@ -227,6 +227,22 @@
       <equals arg1="${bootstrap.theme}" arg2="none"/>
     </condition>
 
+    <condition property="toc-spacer.padding" value="1">
+      <or>
+        <equals arg1="${bootstrap.theme}" arg2="darkly"/>
+        <equals arg1="${bootstrap.theme}" arg2="flatly"/>
+        <equals arg1="${bootstrap.theme}" arg2="materia"/>
+        <equals arg1="${bootstrap.theme}" arg2="pulse"/>
+        <equals arg1="${bootstrap.theme}" arg2="quartz"/>
+        <equals arg1="${bootstrap.theme}" arg2="sketchy"/>
+      </or>
+    </condition>
+     <condition property="toc-spacer.padding" value="3">
+      <or>
+        <equals arg1="${bootstrap.theme}" arg2="lux"/>
+      </or>
+    </condition>
+
     <copy
       file="${bootstrap.template.file}"
       toFile="${bootstrap.theme.file}"
@@ -239,5 +255,8 @@
       value="${bootstrap.theme}/bootstrap${bootstrap.rtl}min.css "
     />
     <property name="args.hdf" value="${bootstrap.theme.file}"/>
+    <property
+      file="${dita.plugin.net.infotexture.dita-bootstrap.dir}/cfg/${bootstrap.theme}.properties"
+    />
   </target>
 </project>

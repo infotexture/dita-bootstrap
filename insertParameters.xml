@@ -155,6 +155,11 @@
     if:set="bidi.include"
   />
   <param
+    name="TOC_SPACER_PADDING"
+    expression="${toc-spacer.padding}"
+    if:set="toc-spacer.padding"
+  />
+  <param
     name="BOOTSTRAP_ICON_TIP"
     expression="${bootstrap.icon.tip}"
     if:set="bootstrap.icon.tip"

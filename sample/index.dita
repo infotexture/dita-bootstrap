@@ -444,6 +444,9 @@
       <indexterm><parmname>--icons.include</parmname></indexterm>
       <indexterm><parmname>--popovers.include</parmname></indexterm>
       <indexterm><parmname>--dark.mode.include</parmname></indexterm>
+      <indexterm><parmname>--menubar-toc.include</parmname></indexterm>
+      <indexterm><parmname>--bidi.include</parmname></indexterm>
+      <indexterm><parmname>--toc-spacer.padding</parmname></indexterm>
       <p>Bootstrap <xref href="./icons.dita" format="dita">icons</xref>,
         <xref href="./popovers.dita" format="dita">popovers</xref>,
         <xref href="./tooltips.dita" format="dita">tooltips</xref> and the <xref
@@ -482,6 +485,8 @@
         <li>
           <parmname>--bidi.include</parmname> – whether to force included support for
           <xref href="./rtl.dita" format="dita">RTL languages</xref></li>
+        <li>
+          <parmname>--toc-spacer.padding</parmname> – specifies the vertical padding to add to the side menu</li>
       </ul>
     </section>
   </body>

@@ -73,6 +73,18 @@
       <val default="true">no</val>
     </param>
     <param
+      name="toc-spacer.padding"
+      desc="Specifies the vertical padding to add to the side menu"
+      type="enum"
+    >
+      <val default="true">0</val>
+      <val>1</val>
+      <val>2</val>
+      <val>3</val>
+      <val>4</val>
+      <val>5</val>
+    </param>
+    <param
       name="popovers.include"
       desc="Specifies whether to enable popovers and tooltips"
       type="enum"

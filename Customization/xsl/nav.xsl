@@ -15,6 +15,7 @@
   <xsl:param name="FILEDIR" as="xs:string?"/>
   <xsl:param name="FILENAME" as="xs:string?"/>
   <xsl:param name="BOOTSTRAP_CSS_ACTIVE_NAV_PARENT" select="'active'"/>
+  <xsl:param name="TOC_SPACER_PADDING" select="'0'"/>
   <xsl:param name="input.map.url" as="xs:string?"/>
 
   <xsl:variable name="input.map" as="document-node()?">
@@ -255,7 +256,17 @@
         <xsl:call-template name="sidebar-content"/>
       </xsl:when>
       <xsl:otherwise>
-        <div class="bs-sidebar">
+        <div>
+          <xsl:attribute name="class">
+          <xsl:choose>
+            <xsl:when test="not($TOC_SPACER_PADDING = '0')">
+                <xsl:value-of select="concat('bs-sidebar py-', $TOC_SPACER_PADDING)"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:text>bs-sidebar</xsl:text>
+            </xsl:otherwise>
+          </xsl:choose>
+          </xsl:attribute>
           <xsl:call-template name="offcanvas-sidebar"/>
         </div>
       </xsl:otherwise>
