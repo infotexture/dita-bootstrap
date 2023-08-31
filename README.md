@@ -7,10 +7,10 @@ A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with 
 - [Installing](#installing)
 - [Using](#using)
 - [Customizing](#customizing)
-  - [Headers and footers](#headers-and-footers)
-  - [Navigation menu](#navigation-menu)
   - [Bootswatch themes](#bootswatch-themes)
   - [Custom CSS](#custom-css)
+  - [Headers and footers](#headers-and-footers)
+  - [Navigation menu](#navigation-menu)
   - [Common Bootstrap utility classes](#common-bootstrap-utility-classes)
   - [Bootstrap icons for DITA notes](#bootstrap-icons-for-dita-notes)
   - [Optional elements](#optional-elements)
@@ -58,6 +58,37 @@ dita --input=path/to/your.ditamap \
 ```
 
 ## Customizing
+
+### Bootswatch themes
+
+Alternate Bootstrap themes can be downloaded directly from [Bootswatch][9].
+To override the default theme, pass a Bootswatch theme name to the `dita` command via the `--bootstrap.theme` parameter:
+
+```console
+dita --input=path/to/your.ditamap \
+     --format=html5-bootstrap \
+     --args.hdr=path/to/your-header.xml \
+     --bootstrap.theme=<theme-name>
+```
+
+### Custom CSS
+
+To supplement the chosen theme, pass a custom CSS file to the `dita` command via the `--args.css` parameter. For a complete override of the theme CSS where the default Bootstrap CSS is no longer required, set `--bootstrap.theme=none`:
+
+```console
+dita --input=path/to/your.ditamap \
+     --format=html5-bootstrap \
+     --args.hdr=path/to/your-header.xml \
+     --bootstrap.theme=none \
+     --args.css=<name-of-css>.css \
+     --args.copycss=yes \
+     --args.csspath=css \
+     --args.cssroot=path/to/your/theme
+```
+
+![Sample DITA Bootstrap output](images/custom-bootstrap.png)
+
+For more extensive Sass customizations, you may want to install the [dita-bootstrap.sass][10] plug-in.
 
 ### Headers and footers
 
@@ -124,37 +155,6 @@ dita --input=path/to/your.ditamap \
      --nav-toc=list-group-partial  \
      --menubar-toc.include=yes
 ```
-
-### Bootswatch themes
-
-Alternate Bootstrap themes can be downloaded directly from [Bootswatch][9].
-To override the default theme, pass a Bootswatch theme name to the `dita` command via the `--bootstrap.theme` parameter:
-
-```console
-dita --input=path/to/your.ditamap \
-     --format=html5-bootstrap \
-     --args.hdr=path/to/your-header.xml \
-     --bootstrap.theme=<theme-name>
-```
-
-### Custom CSS
-
-To supplement the chosen theme, pass a custom CSS file to the `dita` command via the `--args.css` parameter. For a complete override of the theme CSS where the default Bootstrap CSS is no longer required, set `--bootstrap.theme=none`:
-
-```console
-dita --input=path/to/your.ditamap \
-     --format=html5-bootstrap \
-     --args.hdr=path/to/your-header.xml \
-     --bootstrap.theme=none \
-     --args.css=<name-of-css>.css \
-     --args.copycss=yes \
-     --args.csspath=css \
-     --args.cssroot=path/to/your/theme
-```
-
-![Sample DITA Bootstrap output](images/custom-bootstrap.png)
-
-For more extensive Sass customizations, you may want to install the [dita-bootstrap.sass][10] plug-in.
 
 ### Common Bootstrap utility classes
 
