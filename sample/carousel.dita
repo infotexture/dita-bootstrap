@@ -475,7 +475,7 @@ And, kept unused, the user so destroys it.
     <section>
       <title>Disable touch swiping</title>
       <p>Carousels support swiping left/right on touchscreen devices to move between slides.
-        Add <xmlatt>otherprops="touch(false)"</xmlatt> disable this option.</p>
+        Add <xmlatt>otherprops="touch(false)"</xmlatt> to disable this option.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ol outputclass="carousel" otherprops="touch(false)">
