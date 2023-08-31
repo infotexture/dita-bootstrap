@@ -25,11 +25,11 @@
   <xsl:template name="expand-accordion-head">
     <xsl:attribute
         name="aria-expanded"
-        select="@props='expand'"
+        select="contains(@outputclass,'show')"
     />
     <xsl:attribute name="class">
       <xsl:choose>
-        <xsl:when test="@props='expand'">
+        <xsl:when test="contains(@outputclass,'show')">
           <xsl:text>accordion-button</xsl:text>
         </xsl:when>
         <xsl:otherwise>
@@ -42,7 +42,7 @@
   <xsl:template name="expand-accordion-body">
      <xsl:attribute name="class">
           <xsl:text>accordion-collapse collapse</xsl:text>
-          <xsl:if test="@props='expand'">
+          <xsl:if test="contains(@outputclass,'show')">
             <xsl:text> show</xsl:text>
           </xsl:if>
       </xsl:attribute>
@@ -77,7 +77,7 @@
         <xsl:attribute name="id" select="concat('collapse_' ,$id)"/>
         <xsl:attribute name="aria-labelledby" select="concat('heading_' ,$id)"/>
         <xsl:choose>
-          <xsl:when test="../@props='stay-open'"/>
+          <xsl:when test="contains(../@outputclass,'accordion-open')"/>
           <xsl:otherwise>
             <xsl:attribute name="data-bs-parent" select="concat('#', $parent)"/>
           </xsl:otherwise>

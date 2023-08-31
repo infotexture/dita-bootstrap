@@ -20,7 +20,6 @@
         <indexterm>CSS
           <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
-        <indexterm><xmlelement>props</xmlelement></indexterm>
         <indexterm><xmlelement>bodydiv</xmlelement></indexterm>
       </keywords>
     </metadata>
@@ -34,7 +33,7 @@
           format="html"
           scope="external"
         >collapse</xref> internally to make it collapsible. To render an accordion that’s expanded, add
-        <xmlatt>props="expand"</xmlatt> to expand the relevant <xmlelement>section</xmlelement> .</p>
+        <xmlatt>outputclass="show"</xmlatt> to expand the relevant <xmlelement>section</xmlelement> .</p>
     </section>
     <section>
       <title>Example</title>
@@ -42,7 +41,7 @@
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="accordion">
-        <section id="accordion1" props="expand">
+        <section id="accordion1" outputclass="show">
           <title>Accordion Item #1</title>
           <p>
             <b>This is the first item’s accordion body.</b> It is shown by default, until the collapse plugin adds the
@@ -69,7 +68,7 @@
       </bodydiv>
     </bodydiv>
     <codeblock>&lt;bodydiv outputclass="accordion"&gt;
-  &lt;section id="accordion1" props="expand"&gt;
+  &lt;section id="accordion1" outputclass="show"&gt;
     &lt;title&gt;Accordion Item #1&lt;/title&gt;
     &lt;p&gt;
       &lt;b&gt;This is the first item’s accordion body.&lt;/b&gt; It is shown by default,
@@ -138,11 +137,11 @@
     <section>
       <title>Always open</title>
       <p>Set <xmlelement
-        >bodydiv outputclass="accordion" props="stay-open"</xmlelement> to make accordion items stay open when another item is opened.</p>
+        >bodydiv outputclass="accordion-open"</xmlelement> to make accordion items stay open when another item is opened.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <bodydiv outputclass="accordion" props="stay-open">
-        <section id="accordion7" props="expand">
+      <bodydiv outputclass="accordion-open">
+        <section id="accordion7" outputclass="show">
           <title>Accordion Item #1</title>
           <p>
             <b>This is the first item’s accordion body.</b> It is shown by default, until the collapse plugin adds the
@@ -168,7 +167,7 @@
         </section>
       </bodydiv>
     </bodydiv>
-    <codeblock>&lt;bodydiv outputclass="accordion" props="stay-open"&gt;
+    <codeblock>&lt;bodydiv outputclass="accordion-open"&gt;
   ...etc
 &lt;bodydiv&gt;</codeblock>
   </body>

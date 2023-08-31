@@ -195,7 +195,7 @@
       <xsl:when test="contains(@outputclass, 'btn-toolbar')">
         <xsl:text/>
       </xsl:when>
-      <xsl:when test="contains(@outputclass, 'accordion-flush')">
+      <xsl:when test="contains(@outputclass, 'accordion-')">
         <xsl:text>accordion</xsl:text>
       </xsl:when>
       <xsl:when test="contains(@outputclass, 'btn-')">
