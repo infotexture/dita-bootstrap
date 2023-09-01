@@ -711,12 +711,12 @@
             <xmlelement>title</xmlelement> elements within <xmlelement>fig</xmlelement> elements
         </li>
         <li>
-          <parmname>--bootstrap.css.footer</parmname> – common utility classes for the HTML
-            <xmlelement>footer</xmlelement> element
-        </li>
-        <li>
           <parmname>--bootstrap.css.figure.image</parmname> – common Bootstrap utility classes for DITA
             <xmlelement>image</xmlelement> elements within <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.footer</parmname> – common utility classes for the HTML
+            <xmlelement>footer</xmlelement> element
         </li>
         <li>
           <parmname>--bootstrap.css.nav.parent</parmname> – common Bootstrap utility classes for ancestors of active
