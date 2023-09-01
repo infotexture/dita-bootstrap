@@ -78,8 +78,11 @@
         </xsl:if>
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:attribute name="aria-labelledby">
-          <xsl:apply-templates select="*[contains(@class,' topic/title ')] |
-                                       self::dita/*[1]/*[contains(@class,' topic/title ')]" mode="return-aria-label-id"/>
+          <xsl:apply-templates
+            select="*[contains(@class,' topic/title ')] |
+                                       self::dita/*[1]/*[contains(@class,' topic/title ')]"
+            mode="return-aria-label-id"
+          />
         </xsl:attribute>
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
         <!-- ↓ Add Bootstrap breadcrumb ↓ -->
@@ -152,19 +155,23 @@
             </xsl:analyze-string>
           </xsl:for-each>
         </xsl:variable>
-        <xsl:for-each select="@props |
+        <xsl:for-each
+          select="@props |
                               @audience |
                               @platform |
                               @product |
                               @otherprops |
                               @deliveryTarget |
-                              @*[local-name() = $specializations]">
+                              @*[local-name() = $specializations]"
+        >
           <xsl:attribute name="data-{name()}" select="."/>
         </xsl:for-each>
       </xsl:when>
       <xsl:when test="exists($passthrough-attrs)">
         <xsl:for-each select="@*">
-          <xsl:if test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]">
+          <xsl:if
+            test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]"
+          >
             <xsl:attribute name="data-{name()}" select="."/>
           </xsl:if>
         </xsl:for-each>
@@ -208,7 +215,10 @@
         </xsl:call-template>
       </span>
       <xsl:text> </xsl:text>
-      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop" mode="ditaval-outputflag"/>
+      <xsl:apply-templates
+        select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop"
+        mode="ditaval-outputflag"
+      />
       <xsl:apply-templates/>
       <!-- Normal end flags and revision end flags both go out after the content. -->
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
@@ -250,7 +260,10 @@
   <xsl:template name="place-fig-lbl">
     <xsl:param name="stringName"/>
     <!-- Number of fig/title's including this one -->
-    <xsl:variable name="fig-count-actual" select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"/>
+    <xsl:variable
+      name="fig-count-actual"
+      select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"
+    />
     <xsl:variable name="ancestorlang">
       <xsl:call-template name="getLowerCaseLang"/>
     </xsl:variable>

@@ -5,27 +5,15 @@
       <!-- Social media -->
       <p class="text-center p-3">
         <!-- GitHub -->
-        <a
-          class="btn btn-primary m-1"
-          href="#!"
-          role="button"
-        >
+        <a class="btn btn-primary m-1" href="#!" role="button">
           <i class="bi bi-github"/>
         </a>
         <!-- Linkedin -->
-        <a
-          class="btn btn-primary m-1"
-          href="#!"
-          role="button"
-        >
+        <a class="btn btn-primary m-1" href="#!" role="button">
           <i class="bi bi-linkedin"/>
         </a>
         <!-- Twitter -->
-        <a
-          class="btn btn-primary m-1"
-          href="#!"
-          role="button"
-        >
+        <a class="btn btn-primary m-1" href="#!" role="button">
           <i class="bi bi-twitter"/>
         </a>
       </p>
