@@ -82,7 +82,7 @@
           >
           <input
               type="search"
-              class="form-control ds-input"
+              class="form-control ds-input alert-alert-secondary"
               id="search-input"
               placeholder="Search…"
               aria-label="Search for…"
