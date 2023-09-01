@@ -435,6 +435,9 @@
         <!-- ↓ Add Bootstrap CSS ↓ -->
         <xsl:attribute name="class">
           <xsl:value-of select="$BOOTSTRAP_CSS_FOOTER"/>
+          <xsl:if test="not($TOC_SPACER_PADDING = '0')">
+            <xsl:value-of select="concat(' py-', $TOC_SPACER_PADDING)"/>
+          </xsl:if>
         </xsl:attribute>
         <xsl:sequence select="$footer-content"/>
          <!-- ↓ Add Bootstrap CSS ↓ -->
