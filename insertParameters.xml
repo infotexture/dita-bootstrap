@@ -75,6 +75,11 @@
     if:set="bootstrap.css.carousel.caption"
   />
   <param
+    name="BOOTSTRAP_CSS_FOOTER"
+    expression="${bootstrap.css.footer}"
+    if:set="bootstrap.css.footer"
+  />
+  <param
     name="BOOTSTRAP_CSS_TABS"
     expression="${bootstrap.css.tabs}"
     if:set="bootstrap.css.tabs"

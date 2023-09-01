@@ -174,6 +174,7 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
 - `bootstrap.css.figure.caption` – common utility classes for DITA figure titles
 - `bootstrap.css.figure.image` – common utility classes for images within DITA`<fig>` elements
+- `bootstrap.css.footer` – common utility classes for the HTML `<footer>` element
 - `bootstrap.css.nav.parent` – common utility classes for ancestors of active nav-pill elements
 - `bootstrap.css.pagination` – common utility classes for Bootstrap pagination components
 - `bootstrap.css.section.title` – common Bootstrap utility classes for DITA `<section>` titles
@@ -211,7 +212,7 @@ Bootstrap icons, popovers, tooltips and the dark-mode toggler are enabled by def
 - `popovers.include` – enable Bootstrap popover components and tooltip components
 - `dark.mode.include` - whether to include support for a [dark mode][17] toggler
 
-Additionally, opt-in breadcrumbs and menu bars can be added using the following parameters
+Additionally, opt-in breadcrumbs and menu bars and other modifiers can be added using the following parameters
 
 - `args.breadcrumbs` – add Bootstrap breadcrumb components
 - `menubar-toc.include` – add a Bootstrap menubar

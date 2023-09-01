@@ -14,6 +14,7 @@
 
   <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
   <xsl:param name="BIDIRECTIONAL_DOCUMENT" select="'no'" as="xs:string"/>
+  <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'mt-3 border-top bg-primary-subtle'"/>
 
   <xsl:variable name="defaultDirection">
     <xsl:apply-templates select="." mode="get-render-direction">
@@ -409,5 +410,22 @@
       <xsl:call-template name="setidaname"/>
       <xsl:apply-templates/>
     </abbr>
+  </xsl:template>
+
+  <xsl:template match="*" mode="addFooterToHtmlBodyElement">
+    <xsl:variable name="footer-content" as="node()*">
+      <xsl:call-template name="gen-user-footer"/> <!-- include user's XSL running footer here -->
+      <xsl:call-template name="processFTR"/>      <!-- Include XHTML footer, if specified -->
+    </xsl:variable>
+    <xsl:if test="exists($footer-content)">
+      <footer xsl:use-attribute-sets="footer">
+        <!-- ↓ Add Bootstrap CSS ↓ -->
+        <xsl:attribute name="class">
+          <xsl:value-of select="$BOOTSTRAP_CSS_FOOTER"/>
+        </xsl:attribute>
+        <xsl:sequence select="$footer-content"/>
+         <!-- ↓ Add Bootstrap CSS ↓ -->
+      </footer>
+    </xsl:if>
   </xsl:template>
 </xsl:stylesheet>

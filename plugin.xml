@@ -151,6 +151,11 @@
       desc="Bootstrap classes for carousel indicators"
     />
     <param
+      name="bootstrap.css.footer"
+      type="string"
+      desc="Bootstrap classes for footers"
+    />
+    <param
       name="bootstrap.css.tabs"
       type="string"
       desc="Bootstrap classes for tabbed dialog components"

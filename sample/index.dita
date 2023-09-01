@@ -632,6 +632,7 @@
       <indexterm><parmname>--bootstrap.css.carousel</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel.caption</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel.indicators</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.footer</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.table</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs.vertical</parmname></indexterm>
@@ -708,6 +709,10 @@
         <li>
           <parmname>--bootstrap.css.figure.caption</parmname> – common Bootstrap utility classes for DITA
             <xmlelement>title</xmlelement> elements within <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.footer</parmname> – common utility classes for the HTML
+            <xmlelement>footer</xmlelement> element
         </li>
         <li>
           <parmname>--bootstrap.css.figure.image</parmname> – common Bootstrap utility classes for DITA
@@ -838,7 +843,7 @@
             scope="external"
           >dark mode</xref> toggler</li>
       </ul>
-      <p>Opt-in breadcrumbs and menu bars can be added using the following parameters:</p>
+      <p>Opt-in breadcrumbs and menu bars and other modifiers can be added using the following parameters:</p>
       <ul>
         <li>
           <parmname>--args.breadcrumbs</parmname> – enable Bootstrap

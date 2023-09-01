@@ -6,8 +6,7 @@
       <p class="text-center p-3">
         <!-- GitHub -->
         <a
-          class="btn btn-primary btn-floating m-1"
-          style="background-color: #333333"
+          class="btn btn-primary m-1"
           href="#!"
           role="button"
         >
@@ -15,8 +14,7 @@
         </a>
         <!-- Linkedin -->
         <a
-          class="btn btn-primary btn-floating m-1"
-          style="background-color: #0082ca"
+          class="btn btn-primary m-1"
           href="#!"
           role="button"
         >
@@ -24,8 +22,7 @@
         </a>
         <!-- Twitter -->
         <a
-          class="btn btn-primary btn-floating m-1"
-          style="background-color: #55acee"
+          class="btn btn-primary m-1"
           href="#!"
           role="button"
         >
