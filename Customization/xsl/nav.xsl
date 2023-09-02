@@ -56,6 +56,26 @@
     </xsl:choose>
   </xsl:template>
 
+  <xsl:template name="nav-spacer">
+    <xsl:if
+      test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='spacer')]"
+    >
+      <xsl:variable
+        name="content"
+        select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='spacer')]/@content"
+      />
+      <li>
+        <hr class="m-1"/>
+        <xsl:if test="not($content = '')">
+          <span class="ps-3 bd-spacer">
+            <xsl:value-of disable-output-escaping="yes" select="$content"/>
+          </span>
+        </xsl:if>
+      </li>
+    </xsl:if>
+</xsl:template>
+
+
   <xsl:template name="nav-icon">
       <xsl:if
       test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]"
@@ -128,7 +148,14 @@
   </xsl:template>
 
   <xsl:template name="offcanvas-sidebar">
-    <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel" aria-modal="true" role="dialog">
+    <div
+      class="offcanvas-lg offcanvas-start"
+      tabindex="-1"
+      id="bdSidebar"
+      aria-labelledby="bdSidebarOffcanvasLabel"
+      aria-modal="true"
+      role="dialog"
+    >
       <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">
           <xsl:choose>
@@ -150,11 +177,19 @@
               <xsl:value-of select="//*[contains(@class, ' map/map ')]/@title"/>
             </xsl:when>
             <xsl:otherwise>
-              <xsl:value-of select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"/>
+              <xsl:value-of
+                select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"
+              />
             </xsl:otherwise>
           </xsl:choose>
         </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+          data-bs-target="#bdSidebar"
+        />
       </div>
       <div class="offcanvas-body">
         <xsl:call-template name="sidebar-content"/>
@@ -630,6 +665,9 @@
     <xsl:variable name="show-menu">
       <xsl:call-template name="get-show-menu"/>
     </xsl:variable>
+    <xsl:if test="not($BOOTSTRAP_MENUBAR_TOC = 'yes')">
+      <xsl:call-template name="nav-spacer"/>
+    </xsl:if>
     <li>
       <xsl:choose>
         <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($show-menu = 'show')">
@@ -804,6 +842,7 @@
                   <xsl:variable name="title">
                     <xsl:apply-templates select="." mode="get-navtitle"/>
                   </xsl:variable>
+                  <xsl:call-template name="nav-spacer"/>
                   <li role="none">
                     <a role="menuitem">
                       <xsl:call-template name="nav-attributes">
