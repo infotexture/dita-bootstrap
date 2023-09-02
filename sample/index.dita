@@ -481,7 +481,13 @@
       <p>The default header file <filepath>includes/bs-navbar-default.hdr.xml</filepath> uses the Bootstrap primary
         (blue) background color for the
         <xref href="https://getbootstrap.com/docs/5.3/examples/navbars/" format="html" scope="external">navbar
-          component</xref>, and provides a theme menu to toggle <xref href="./dark-mode.dita">dark mode</xref>.</p>
+          component</xref>, and provides a theme menu to toggle <xref
+          href="./dark-mode.dita"
+        >dark mode</xref>.  Bootstrap itself offers additional <xref
+          href="https://getbootstrap.com/docs/5.3/examples/headers/"
+          format="html"
+          scope="external"
+        >header examples</xref>.</p>
       <p>You can edit a copy of this file to adjust the content of the global navigation. To override the global
         navigation with your own header, pass a custom header file to the <cmdname>dita</cmdname> command via the
           <parmname>--args.hdr</parmname> parameter:</p>
@@ -500,7 +506,11 @@
           href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-footer-example.xml"
           format="html"
           scope="external"
-        >footer file</xref>. To add a footer to the generated output, pass a custom
+        >footer file</xref> and Bootstrap also offers additional <xref
+          href="https://getbootstrap.com/docs/5.3/examples/headers/"
+          format="html"
+          scope="external"
+        >examples</xref>. To add a footer to the generated output, pass a custom
         footer file to the <cmdname>dita</cmdname> command via the <parmname>--args.ftr</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
