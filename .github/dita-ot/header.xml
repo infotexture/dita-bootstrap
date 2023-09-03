@@ -75,19 +75,16 @@
           It requires JavaScript to function.
         -->
         <li class="nav-item d-flex align-items-center">
-          <span class="nav-link pe-2"><i class="bi bi-search"/></span>
-          <form
-            class="bd-search position-relative me-auto"
-            onsubmit="return search(this);"
-          >
+          <span class="nav-link pe-2">
+            <i class="bi bi-search"/>
+          </span>
+          <form class="position-relative me-auto search-box">
           <input
               type="search"
-              class="form-control ds-input"
-              id="search-input"
+              class="form-control"
               placeholder="Search…"
               aria-label="Search for…"
               dir="auto"
-              style="position: relative; vertical-align: top;"
             />
           </form>
         </li>

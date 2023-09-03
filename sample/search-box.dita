@@ -83,15 +83,14 @@
 
     <section>
       <title>Example Header Nav Bar</title>
-      <p>To add a search box to the menu bar, add a <xmlelement>form</xmlelement> element
-      with an <xmlelement>input id="search-input"</xmlelement> as shown here.</p>
+      <p>To add a search box to the menu bar, add a <xmlelement>form class="search-box"</xmlelement> element
+      with an <xmlelement>input type="search"</xmlelement> as shown here.</p>
       <codeblock>&lt;ul class="navbar-nav ms-auto"&gt;
   &lt;li class="nav-item d-flex align-items-center"&gt;
-    &lt;span class="nav-link py-2 pe-2"&gt;&lt;i class="bi bi-search"/&gt;&lt;/span&gt;
-    &lt;form class="bd-search position-relative me-auto" onsubmit="return search(this);"&gt;
-      &lt;input id="search-input" type="search" dir="auto" class="form-control ds-input"
-        placeholder="Search…" aria-label="Search for…"
-        style="position: relative; vertical-align: top;" /&gt;
+    &lt;span class="nav-link pe-2"&gt;&lt;i class="bi bi-search"/&gt;&lt;/span&gt;
+    &lt;form class="position-relative me-auto search-box"&gt;
+      &lt;input type="search" class="form-control"
+        placeholder="Search…" aria-label="Search for…" dir="auto"/&gt;
     &lt;/form&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</codeblock>
