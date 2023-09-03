@@ -108,3 +108,9 @@
 [type='search']::placeholder {
   color: var(--bs-link-color) !important;
 }
+
+[type='search']:hover,
+[type='search']:focus-visible {
+  outline: 2px solid;
+  outline-color: var(--bs-link-hover-color);
+}
