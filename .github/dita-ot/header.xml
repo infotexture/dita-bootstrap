@@ -78,7 +78,7 @@
           <span class="nav-link pe-2">
             <i class="bi bi-search"/>
           </span>
-          <form class="position-relative me-auto search-box">
+          <form class="position-relative me-auto search-box rounded">
           <input
               type="search"
               class="form-control"
