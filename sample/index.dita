@@ -481,7 +481,13 @@
       <p>The default header file <filepath>includes/bs-navbar-default.hdr.xml</filepath> uses the Bootstrap primary
         (blue) background color for the
         <xref href="https://getbootstrap.com/docs/5.3/examples/navbars/" format="html" scope="external">navbar
-          component</xref>, and provides a theme menu to toggle <xref href="./dark-mode.dita">dark mode</xref>.</p>
+          component</xref>, and provides a theme menu to toggle <xref
+          href="./dark-mode.dita"
+        >dark mode</xref>.  Bootstrap itself offers additional <xref
+          href="https://getbootstrap.com/docs/5.3/examples/headers/"
+          format="html"
+          scope="external"
+        >header examples</xref>.</p>
       <p>You can edit a copy of this file to adjust the content of the global navigation. To override the global
         navigation with your own header, pass a custom header file to the <cmdname>dita</cmdname> command via the
           <parmname>--args.hdr</parmname> parameter:</p>
@@ -500,7 +506,11 @@
           href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-footer-example.xml"
           format="html"
           scope="external"
-        >footer file</xref>. To add a footer to the generated output, pass a custom
+        >footer file</xref> and Bootstrap also offers additional <xref
+          href="https://getbootstrap.com/docs/5.3/examples/headers/"
+          format="html"
+          scope="external"
+        >examples</xref>. To add a footer to the generated output, pass a custom
         footer file to the <cmdname>dita</cmdname> command via the <parmname>--args.ftr</parmname> parameter:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
@@ -632,6 +642,7 @@
       <indexterm><parmname>--bootstrap.css.carousel</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel.caption</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.carousel.indicators</parmname></indexterm>
+      <indexterm><parmname>--bootstrap.css.footer</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.table</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs</parmname></indexterm>
       <indexterm><parmname>--bootstrap.css.tabs.vertical</parmname></indexterm>
@@ -712,6 +723,10 @@
         <li>
           <parmname>--bootstrap.css.figure.image</parmname> – common Bootstrap utility classes for DITA
             <xmlelement>image</xmlelement> elements within <xmlelement>fig</xmlelement> elements
+        </li>
+        <li>
+          <parmname>--bootstrap.css.footer</parmname> – common utility classes for the HTML
+            <xmlelement>footer</xmlelement> element
         </li>
         <li>
           <parmname>--bootstrap.css.nav.parent</parmname> – common Bootstrap utility classes for ancestors of active
@@ -838,7 +853,7 @@
             scope="external"
           >dark mode</xref> toggler</li>
       </ul>
-      <p>Opt-in breadcrumbs and menu bars can be added using the following parameters:</p>
+      <p>Opt-in breadcrumbs and menu bars and other modifiers can be added using the following parameters:</p>
       <ul>
         <li>
           <parmname>--args.breadcrumbs</parmname> – enable Bootstrap

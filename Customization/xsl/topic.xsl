@@ -14,6 +14,7 @@
 
   <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
   <xsl:param name="BIDIRECTIONAL_DOCUMENT" select="'no'" as="xs:string"/>
+  <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'mt-3 border-top bg-primary-subtle'"/>
 
   <xsl:variable name="defaultDirection">
     <xsl:apply-templates select="." mode="get-render-direction">
@@ -77,8 +78,11 @@
         </xsl:if>
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:attribute name="aria-labelledby">
-          <xsl:apply-templates select="*[contains(@class,' topic/title ')] |
-                                       self::dita/*[1]/*[contains(@class,' topic/title ')]" mode="return-aria-label-id"/>
+          <xsl:apply-templates
+            select="*[contains(@class,' topic/title ')] |
+                                       self::dita/*[1]/*[contains(@class,' topic/title ')]"
+            mode="return-aria-label-id"
+          />
         </xsl:attribute>
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
         <!-- ↓ Add Bootstrap breadcrumb ↓ -->
@@ -151,19 +155,23 @@
             </xsl:analyze-string>
           </xsl:for-each>
         </xsl:variable>
-        <xsl:for-each select="@props |
+        <xsl:for-each
+          select="@props |
                               @audience |
                               @platform |
                               @product |
                               @otherprops |
                               @deliveryTarget |
-                              @*[local-name() = $specializations]">
+                              @*[local-name() = $specializations]"
+        >
           <xsl:attribute name="data-{name()}" select="."/>
         </xsl:for-each>
       </xsl:when>
       <xsl:when test="exists($passthrough-attrs)">
         <xsl:for-each select="@*">
-          <xsl:if test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]">
+          <xsl:if
+            test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]"
+          >
             <xsl:attribute name="data-{name()}" select="."/>
           </xsl:if>
         </xsl:for-each>
@@ -207,7 +215,10 @@
         </xsl:call-template>
       </span>
       <xsl:text> </xsl:text>
-      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop" mode="ditaval-outputflag"/>
+      <xsl:apply-templates
+        select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop"
+        mode="ditaval-outputflag"
+      />
       <xsl:apply-templates/>
       <!-- Normal end flags and revision end flags both go out after the content. -->
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
@@ -249,7 +260,10 @@
   <xsl:template name="place-fig-lbl">
     <xsl:param name="stringName"/>
     <!-- Number of fig/title's including this one -->
-    <xsl:variable name="fig-count-actual" select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"/>
+    <xsl:variable
+      name="fig-count-actual"
+      select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"
+    />
     <xsl:variable name="ancestorlang">
       <xsl:call-template name="getLowerCaseLang"/>
     </xsl:variable>
@@ -409,5 +423,25 @@
       <xsl:call-template name="setidaname"/>
       <xsl:apply-templates/>
     </abbr>
+  </xsl:template>
+
+  <xsl:template match="*" mode="addFooterToHtmlBodyElement">
+    <xsl:variable name="footer-content" as="node()*">
+      <xsl:call-template name="gen-user-footer"/> <!-- include user's XSL running footer here -->
+      <xsl:call-template name="processFTR"/>      <!-- Include XHTML footer, if specified -->
+    </xsl:variable>
+    <xsl:if test="exists($footer-content)">
+      <footer xsl:use-attribute-sets="footer">
+        <!-- ↓ Add Bootstrap CSS ↓ -->
+        <xsl:attribute name="class">
+          <xsl:value-of select="$BOOTSTRAP_CSS_FOOTER"/>
+          <xsl:if test="not($TOC_SPACER_PADDING = '0')">
+            <xsl:value-of select="concat(' py-', $TOC_SPACER_PADDING)"/>
+          </xsl:if>
+        </xsl:attribute>
+        <xsl:sequence select="$footer-content"/>
+         <!-- ↓ Add Bootstrap CSS ↓ -->
+      </footer>
+    </xsl:if>
   </xsl:template>
 </xsl:stylesheet>

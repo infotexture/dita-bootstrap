@@ -94,7 +94,7 @@ For more extensive Sass customizations, you may want to install the [dita-bootst
 
 The plug-in includes a default static navigation menu with a project name and global link placeholders.
 
-The default header file `includes/bs-navbar-default.hdr.xml` uses the Bootstrap primary (blue) background color for the [navbar component][3].
+The default header file `includes/bs-navbar-default.hdr.xml` uses the Bootstrap primary (blue) background color for the [navbar component][3]. Bootstrap itself offers additional [header examples][20].
 
 To change the color to a dark (black) background, replace the primary background color class `bg-primary` on the first line with the dark variant `bg-dark`:
 
@@ -113,7 +113,7 @@ dita --input=path/to/your.ditamap \
 
 The plug-in includes a sample [header alternative with a light navbar][4].
 
-No footer is added by default, but the plug-in also includes a sample [footer file][5]. To add a footer to the generated output, pass a custom footer file to the `dita` command via the `--args.ftr` parameter:
+No footer is added by default, but the plug-in also includes a sample [footer file][5] and Bootstrap also offers additional [examples][19]. To add a footer to the generated output, pass a custom footer file to the `dita` command via the `--args.ftr` parameter:
 
 ```console
 dita --input=path/to/your.ditamap \
@@ -174,6 +174,7 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
 - `bootstrap.css.figure.caption` – common utility classes for DITA figure titles
 - `bootstrap.css.figure.image` – common utility classes for images within DITA`<fig>` elements
+- `bootstrap.css.footer` – common utility classes for the HTML `<footer>` element
 - `bootstrap.css.nav.parent` – common utility classes for ancestors of active nav-pill elements
 - `bootstrap.css.pagination` – common utility classes for Bootstrap pagination components
 - `bootstrap.css.section.title` – common Bootstrap utility classes for DITA `<section>` titles
@@ -211,7 +212,7 @@ Bootstrap icons, popovers, tooltips and the dark-mode toggler are enabled by def
 - `popovers.include` – enable Bootstrap popover components and tooltip components
 - `dark.mode.include` - whether to include support for a [dark mode][17] toggler
 
-Additionally, opt-in breadcrumbs and menu bars can be added using the following parameters
+Additionally, opt-in breadcrumbs and menu bars and other modifiers can be added using the following parameters
 
 - `args.breadcrumbs` – add Bootstrap breadcrumb components
 - `menubar-toc.include` – add a Bootstrap menubar
@@ -252,3 +253,5 @@ Within the sample documentation, where necessary, the texts describing the usage
 [16]: https://getbootstrap.com/docs/5.3/components/collapse/
 [17]: https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
 [18]: https://getbootstrap.com/docs/5.3/components/scrollspy/
+[19]: https://getbootstrap.com/docs/5.3/examples/footers/
+[20]: https://getbootstrap.com/docs/5.3/examples/headers/
