@@ -22,14 +22,14 @@
         >
           <i class="bi bi-linkedin text-white"/>
         </a>
-        <!-- Twitter -->
+        <!-- Mastodon -->
         <a
           class="btn m-1"
-          href="https://twitter.com/infotexture"
+          href="https://indieweb.social/@infotexture"
           role="button"
-          style="background-color: #55acee;"
+          style="background-color: #563acc;"
         >
-          <i class="bi bi-twitter text-white"/>
+          <i class="bi bi-mastodon text-white"/>
         </a>
       </p>
       <p>
