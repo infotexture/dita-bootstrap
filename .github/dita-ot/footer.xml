@@ -4,10 +4,6 @@
     <div class="col">
       <!-- Social media -->
       <p class="p-3">
-        <!-- Twitter -->
-        <a class="btn btn-primary m-1" href="" role="button"><i
-            class="bi bi-twitter"
-          /></a>
         <!-- GitHub -->
         <a
           class="btn m-1"
