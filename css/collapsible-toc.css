@@ -32,7 +32,7 @@
   color: var(--bs-link-hover-color);
 }
 
-.bd-links span.bd-spacer:hover {
+.bd-links span.bd-divider:hover {
   color: var(--bs-body-color);
 }
 
@@ -62,7 +62,7 @@
   font-size: 0.875em;
 }
 
-.bd-spacer {
+.bd-divider {
   font-size: 0.875em;
   font-weight: 600;
 }
