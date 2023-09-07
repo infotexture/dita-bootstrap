@@ -56,18 +56,18 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template name="nav-spacer">
+  <xsl:template name="nav-divider">
     <xsl:if
-      test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='spacer')]"
+      test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='divider')]"
     >
       <xsl:variable
         name="content"
-        select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='spacer')]/@content"
+        select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='divider')]/@content"
       />
       <li>
         <hr class="m-1"/>
         <xsl:if test="not($content = '')">
-          <span class="ps-3 bd-spacer">
+          <span class="ps-3 bd-divider">
             <xsl:value-of disable-output-escaping="yes" select="$content"/>
           </span>
         </xsl:if>
@@ -666,7 +666,7 @@
       <xsl:call-template name="get-show-menu"/>
     </xsl:variable>
     <xsl:if test="not($BOOTSTRAP_MENUBAR_TOC = 'yes')">
-      <xsl:call-template name="nav-spacer"/>
+      <xsl:call-template name="nav-divider"/>
     </xsl:if>
     <li>
       <xsl:choose>
@@ -842,7 +842,7 @@
                   <xsl:variable name="title">
                     <xsl:apply-templates select="." mode="get-navtitle"/>
                   </xsl:variable>
-                  <xsl:call-template name="nav-spacer"/>
+                  <xsl:call-template name="nav-divider"/>
                   <li role="none">
                     <a role="menuitem">
                       <xsl:call-template name="nav-attributes">

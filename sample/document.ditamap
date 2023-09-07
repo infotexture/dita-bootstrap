@@ -85,7 +85,7 @@
     <topicref navtitle="Search Box" format="dita" type="topic" href="search-box.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-search"/>
-        <othermeta name="spacer" content="Additional Plug-ins"/>
+        <othermeta name="divider" content="Additional Plug-ins"/>
       </topicmeta>
     </topicref>
     <topicref navtitle="Offline Mode" format="dita" type="topic" href="offline.dita">
