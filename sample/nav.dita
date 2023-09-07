@@ -157,7 +157,7 @@
           href="https://getbootstrap.com/docs/5.3/components/dropdowns/#dividers"
           format="html"
           scope="external"
-        >Dividers</xref> can be added to collapsible sidebars and menus by adding the
+        >Dividers</xref> can be added to items rendered in collapsible sidebars and menus by adding the
          <xmlelement>othermeta name="divider"</xmlelement> element with the <xmlelement>topicmeta</xmlelement> of the <filepath>*.ditamap</filepath>. The content of the
          <xmlatt>content</xmlatt> (if any) is rendered after the divider bar itself.
       </p>
