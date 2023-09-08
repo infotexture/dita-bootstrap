@@ -16,6 +16,18 @@
     <xref href="https://feathericons.com/" format="html" scope="external">Feather</xref> and
     <xref href="https://octicons.github.com/" format="html" scope="external">Octicons</xref> can also be added using
     command line parameters.</shortdesc>
+  <prolog>
+    <metadata>
+      <keywords>
+        <indexterm>Icons</indexterm>
+        <indexterm>CSS
+          <indexterm><xmlatt>outputclass</xmlatt></indexterm>
+        </indexterm>
+        <indexterm><xmlatt>otherprops</xmlatt></indexterm>
+        <indexterm><xmlelement>othermeta</xmlelement></indexterm>
+      </keywords>
+    </metadata>
+  </prolog>
   <body outputclass="language-markup">
     <section>
       <title>Bootstrap Icons</title>

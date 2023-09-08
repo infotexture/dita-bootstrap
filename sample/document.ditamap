@@ -21,6 +21,7 @@
       <othermeta name="icon" content="bi-grid-fill"/>
       <othermeta name="icon-style" content="color: var(--bs-teal)"/>
     </topicmeta>
+    <topicref navtitle="Navigation Menus" format="dita" type="topic" href="nav.dita"/>
     <topicref navtitle="Grid" format="dita" type="topic" href="grid.dita"/>
     <topicref navtitle="Right-to-Left Languages" format="dita" href="rtl.dita" locktitle="yes"/>
   </chapter>
@@ -85,6 +86,7 @@
     <topicref navtitle="Search Box" format="dita" type="topic" href="search-box.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-search"/>
+        <othermeta name="divider" content="Additional Plug-ins"/>
       </topicmeta>
     </topicref>
     <topicref navtitle="Offline Mode" format="dita" type="topic" href="offline.dita">
