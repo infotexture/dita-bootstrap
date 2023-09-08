@@ -101,10 +101,10 @@
 &lt;/ul&gt;</codeblock>
       <p>The <term>DITA Bootstrap Lunr Search</term> plug-in includes a sample search box in its
           <xref
-            href="https://github.com/infotexture/dita-bootstrap.lunr/blob/master/includes/bs-navbar-lunr.hdr.xml"
-            format="html"
-            scope="external"
-          >header navbar</xref>.</p>
+          href="https://github.com/infotexture/dita-bootstrap.lunr/blob/master/includes/bs-navbar-lunr.hdr.xml"
+          format="html"
+          scope="external"
+        >header navbar</xref>.</p>
       <p>Additional styling can be added using standard Bootstrap CSS classes such as
         <codeph>input-group</codeph></p>
       <fig>
