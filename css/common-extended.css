@@ -264,6 +264,10 @@ article [tabindex='0'] {
   color: var(--bs-link-hover-color);
 }
 
+.bd-links span.bd-divider:hover {
+  color: var(--bs-body-color);
+}
+
 @media (min-width: 768px) {
   .bd-links {
     position: -webkit-sticky;
@@ -288,6 +292,11 @@ article [tabindex='0'] {
 
 .bd-links li li a {
   font-size: 0.875em;
+}
+
+.bd-divider {
+  font-size: 0.875em;
+  font-weight: 600;
 }
 
 .bd-links .btn {
