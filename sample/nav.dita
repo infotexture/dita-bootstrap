@@ -32,7 +32,8 @@
           format="html"
           scope="external"
         >navigation parameter</xref>
-        <parmname>--nav-toc</parmname> to add table of contents items to the navigation sidebar. (The navigation is rendered as
+        <parmname
+        >--nav-toc</parmname> to add table of contents items to the navigation sidebar. (The navigation is rendered as
         a sidebar in desktop browsers and collapsible  on smaller devices.)</p>
       <p>By default, the plug-in uses the <option>partial</option> option to include the current topic in the ToC along
         with its parents, siblings and children. As with the default HTML5 plug-in, the <option>full</option> option can
@@ -119,7 +120,8 @@
       </ol>
 
       <p>
-        The sidebar is hidden by default on mobile. To ensure that the sidebar content can be accessed, the header file must include the following toggle with <xmlatt>data-bs-target="#bdSidebar"</xmlatt>
+        The sidebar is hidden by default on mobile. To ensure that the sidebar content can be accessed, the header file must include the following toggle with <xmlatt
+        >data-bs-target="#bdSidebar"</xmlatt>
         and <xmlatt>data-bs-toggle="offcanvas"</xmlatt>
       </p>
       <codeblock outputclass="language-xml">&lt;div class="bd-navbar-toggle"&gt;
@@ -154,11 +156,14 @@
           format="html"
           scope="external"
         >Dividers</xref> can be added to items rendered in collapsible sidebars and menus by adding the
-         <xmlelement>othermeta name="divider"</xmlelement> element with the <xmlelement>topicmeta</xmlelement> of the <filepath>*.ditamap</filepath>. The content of the
+         <xmlelement>othermeta name="divider"</xmlelement> element with the <xmlelement
+        >topicmeta</xmlelement> of the <filepath>*.ditamap</filepath>. The content of the
          <xmlatt>content</xmlatt> (if any) is rendered after the divider bar itself.
       </p>
     </section>
-    <codeblock outputclass="language-xml">&lt;topicref navtitle="Search Box" format="dita" type="topic" href="search-box.dita">
+    <codeblock
+      outputclass="language-xml"
+    >&lt;topicref navtitle="Search Box" format="dita" type="topic" href="search-box.dita">
   &lt;topicmeta&gt;
     &lt;othermeta name="divider" content="Additional Plug-ins"/&gt;
   &lt;/topicmeta&gt;
