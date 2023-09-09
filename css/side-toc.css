@@ -68,7 +68,6 @@
     height: calc(100vh - 6rem);
     padding-left: 0.25rem;
     margin-left: -0.25rem;
-    overflow-y: auto;
   }
 }
 

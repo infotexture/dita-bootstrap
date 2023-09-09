@@ -355,10 +355,10 @@
           <xsl:attribute name="class">
           <xsl:choose>
             <xsl:when test="not($TOC_SPACER_PADDING = '0')">
-                <xsl:value-of select="concat('bs-sidebar py-', $TOC_SPACER_PADDING)"/>
+                <xsl:value-of select="concat('overflow-y-auto bs-sidebar py-', $TOC_SPACER_PADDING)"/>
             </xsl:when>
             <xsl:otherwise>
-              <xsl:text>bs-sidebar</xsl:text>
+              <xsl:text>overflow-y-auto bs-sidebar</xsl:text>
             </xsl:otherwise>
           </xsl:choose>
           </xsl:attribute>
