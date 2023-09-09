@@ -33,6 +33,14 @@
   top: 0;
 }
 
+.bs-fixed-fill {
+  height: calc(80vh);
+}
+.bs-fixed-footer {
+  height: calc(10vh);
+}
+
+
 @media (max-width: 991.98px) {
   .bs-main {
     max-width: 760px;

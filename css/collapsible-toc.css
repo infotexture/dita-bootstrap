@@ -51,8 +51,6 @@
   .bd-links > ul {
     padding: 1.5rem 0.75rem;
     background-color: var(--bs-body-bg);
-    border-bottom: 1px solid;
-    border-bottom-color: var(--bs-body-color);
   }
 }
 

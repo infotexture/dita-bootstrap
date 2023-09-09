@@ -1,6 +1,6 @@
-<div class="d-flex justify-content-center bg-success">
-  <div class="align-self-center p-3">
-    <p class="text-white">Other content</p>
-    <p class="text-center mb-0"><button type="button" class="btn btn-primary btn-sm">FOOTER</button></p>
+<div class="alert alert-success d-flex justify-content-center p-1">
+  <div class="align-self-center">
+    <p class="mb-1">Other content</p>
+    <p class="text-center mb-0"><button type="button" class="btn btn-success btn-sm">FOOTER</button></p>
   </div>
 </div>
