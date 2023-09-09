@@ -16,10 +16,50 @@
   <xsl:param name="FILENAME" as="xs:string?"/>
   <xsl:param name="BOOTSTRAP_CSS_ACTIVE_NAV_PARENT" select="'active'"/>
   <xsl:param name="TOC_SPACER_PADDING" select="'0'"/>
+  <xsl:param name="BOOTSTRAP_SIDEBAR_HDR" />
+  <xsl:param name="BOOTSTRAP_SIDEBAR_FTR" />
   <xsl:param name="input.map.url" as="xs:string?"/>
 
   <xsl:variable name="input.map" as="document-node()?">
     <xsl:apply-templates select="document($input.map.url)" mode="normalize-map"/>
+  </xsl:variable>
+
+  <xsl:variable name="SIDEBAR_HDRFILE">
+    <xsl:choose>
+      <xsl:when test="not($BOOTSTRAP_SIDEBAR_HDR)"/> <!-- If no filterfile leave empty -->
+      <xsl:when test="starts-with($BOOTSTRAP_SIDEBAR_HDR, 'file:')">
+        <xsl:value-of select="$BOOTSTRAP_SIDEBAR_HDR"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:choose>
+          <xsl:when test="starts-with($BOOTSTRAP_SIDEBAR_HDR, '/')">
+            <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_SIDEBAR_HDR"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_SIDEBAR_HDR"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:variable name="SIDEBAR_FTRFILE">
+    <xsl:choose>
+      <xsl:when test="not($BOOTSTRAP_SIDEBAR_FTR)"/> <!-- If no filterfile leave empty -->
+      <xsl:when test="starts-with($BOOTSTRAP_SIDEBAR_FTR, 'file:')">
+        <xsl:value-of select="$BOOTSTRAP_SIDEBAR_FTR"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:choose>
+          <xsl:when test="starts-with($BOOTSTRAP_SIDEBAR_FTR, '/')">
+            <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_SIDEBAR_FTR"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_SIDEBAR_FTR"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:variable>
 
   <!-- A topic is active if it is currently selected -->
@@ -147,6 +187,50 @@
     </div>
   </xsl:template>
 
+<xsl:template name="default-sidebar-header">
+  <div class="offcanvas-header border-bottom">
+    <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">
+      <xsl:choose>
+        <xsl:when test="$input.map//*[contains(@class,' topic/title ')][1]">
+          <xsl:for-each select="$input.map//*[contains(@class,' topic/title ')][1]">
+            <xsl:if test="position() = 1">
+              <xsl:value-of select="."/>
+            </xsl:if>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:when test="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
+          <xsl:for-each select="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
+            <xsl:if test="position() = 1">
+              <xsl:value-of select="."/>
+            </xsl:if>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:when test="//*[contains(@class, ' map/map ')]/@title">
+          <xsl:value-of select="//*[contains(@class, ' map/map ')]/@title"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of
+            select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"
+          />
+        </xsl:otherwise>
+      </xsl:choose>
+    </h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+      data-bs-target="#bdSidebar"
+    />
+  </div>
+ </xsl:template>
+
+  <xsl:template name="default-sidebar-footer">
+     <xsl:if test="$BOOTSTRAP_SIDEBAR_FTR">
+        <xsl:copy-of select="document($BOOTSTRAP_SIDEBAR_FTR, /)"/>
+      </xsl:if>
+  </xsl:template>
+
   <xsl:template name="offcanvas-sidebar">
     <div
       class="offcanvas-lg offcanvas-start"
@@ -156,43 +240,19 @@
       aria-modal="true"
       role="dialog"
     >
-      <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">
-          <xsl:choose>
-            <xsl:when test="$input.map//*[contains(@class,' topic/title ')][1]">
-              <xsl:for-each select="$input.map//*[contains(@class,' topic/title ')][1]">
-                <xsl:if test="position() = 1">
-                  <xsl:value-of select="."/>
-                </xsl:if>
-              </xsl:for-each>
-            </xsl:when>
-            <xsl:when test="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
-              <xsl:for-each select="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
-                <xsl:if test="position() = 1">
-                  <xsl:value-of select="."/>
-                </xsl:if>
-              </xsl:for-each>
-            </xsl:when>
-            <xsl:when test="//*[contains(@class, ' map/map ')]/@title">
-              <xsl:value-of select="//*[contains(@class, ' map/map ')]/@title"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of
-                select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"
-              />
-            </xsl:otherwise>
-          </xsl:choose>
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-          data-bs-target="#bdSidebar"
-        />
-      </div>
-      <div class="offcanvas-body">
+
+        <xsl:choose>
+          <xsl:when test="not($BOOTSTRAP_SIDEBAR_HDR)">
+            <xsl:call-template name="default-sidebar-header"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:copy-of select="document($BOOTSTRAP_SIDEBAR_HDR, /)"/>
+          </xsl:otherwise>
+        </xsl:choose>
+
+      <div class="offcanvas-body flex-column h-100">
         <xsl:call-template name="sidebar-content"/>
+        <!--xsl:call-template name="default-sidebar-footer"/-->
       </div>
     </div>
   </xsl:template>
@@ -279,7 +339,7 @@
         </nav>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:next-match/>
+          <xsl:next-match/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>

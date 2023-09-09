@@ -94,7 +94,7 @@ For more extensive Sass customizations, you may want to install the [dita-bootst
 
 The plug-in includes a default static navigation menu with a project name and global link placeholders.
 
-The default header file `includes/bs-navbar-default.hdr.xml` uses the Bootstrap primary (blue) background color for the [navbar component][3]. Bootstrap itself offers additional [header examples][20].
+The default header file `includes/hdr.navbar.default.xml` uses the Bootstrap primary (blue) background color for the [navbar component][3]. Bootstrap itself offers additional [header examples][20].
 
 To change the color to a dark (black) background, replace the primary background color class `bg-primary` on the first line with the dark variant `bg-dark`:
 
@@ -238,8 +238,8 @@ Within the sample documentation, where necessary, the texts describing the usage
 [1]: http://www.dita-ot.org
 [2]: https://getbootstrap.com/docs/5.3
 [3]: https://getbootstrap.com/docs/5.3/examples/navbars/
-[4]: ./includes/bs-navbar-light.hdr.xml
-[5]: ./includes/bs-footer-example.xml
+[4]: ./includes/hdr.navbar.example.xml
+[5]: ./includes/ftr.content.example.xml
 [6]: https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc
 [7]: https://getbootstrap.com/docs/5.3/components/list-group/
 [8]: https://infotexture.github.io/dita-bootstrap
