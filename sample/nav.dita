@@ -20,6 +20,8 @@
         <indexterm><parmname>--nav-toc</parmname></indexterm>
         <indexterm><parmname>--menubar-toc.include</parmname></indexterm>
         <indexterm><xmlelement>othermeta</xmlelement></indexterm>
+        <indexterm><parmname>--bootstrap.sidebar.hdr</parmname></indexterm>
+        <indexterm><parmname>--bootstrap.sidebar.ftr</parmname></indexterm>
       </keywords>
     </metadata>
   </prolog>
@@ -73,7 +75,7 @@
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
-     <parmname>--nav-toc</parmname>=<option>list-group-partial</option></codeblock>
+     <parmname>--nav-toc</parmname>=<option>&lt;sidebar-style&gt;</option></codeblock>
       <ol outputclass="carousel pt-2" otherprops="indicators(true)">
         <li>
           <fig>
@@ -131,6 +133,38 @@
     &lt;i class="bi bi-list"/&gt;
   &lt;/button&gt;
 &lt;/div&gt;</codeblock>
+
+      <p>The look and feel of the mobile sidebar header can be altered using the  <parmname
+        >--bootstrap.sidebar.hdr</parmname> parameter and supplying a HTML header file </p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+  <parmname>--nav-toc</parmname>=<option>&lt;sidebar-style&gt;</option> \
+  <parmname>--bootstrap.sidebar.hdr</parmname>=<filepath>path/to/your.header</filepath></codeblock>
+
+      <p>The plug-in includes a sample
+        <xref
+          href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/hdr.sidebar.example.xml"
+          format="html"
+          scope="external"
+        >header</xref>.</p>
+
+
+      <p>No footer is added to the sidebar by default, but a custom sidebar footer can be added using the  <parmname
+        >--bootstrap.sidebar.ftr</parmname> parameter and supplying a HTML footer file </p>
+      <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
+        >path/to/your.ditamap</filepath> \
+  <parmname>--format</parmname>=<option>html5-bootstrap</option> \
+  <parmname>--nav-toc</parmname>=<option>&lt;sidebar-style&gt;</option> \
+  <parmname>--bootstrap.sidebar.footer</parmname>=<filepath>path/to/your.footer</filepath></codeblock>
+
+      <p>The plug-in also includes a sample
+        <xref
+          href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/ftr.sidebar.example.xml"
+          format="html"
+          scope="external"
+        >custom footer</xref>.</p>
+
 
     </section>
     <section>
