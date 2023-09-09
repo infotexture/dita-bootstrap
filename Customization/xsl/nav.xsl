@@ -16,8 +16,8 @@
   <xsl:param name="FILENAME" as="xs:string?"/>
   <xsl:param name="BOOTSTRAP_CSS_ACTIVE_NAV_PARENT" select="'active'"/>
   <xsl:param name="TOC_SPACER_PADDING" select="'0'"/>
-  <xsl:param name="BOOTSTRAP_SIDEBAR_HDR" />
-  <xsl:param name="BOOTSTRAP_SIDEBAR_FTR" />
+  <xsl:param name="BOOTSTRAP_SIDEBAR_HDR"/>
+  <xsl:param name="BOOTSTRAP_SIDEBAR_FTR"/>
   <xsl:param name="input.map.url" as="xs:string?"/>
 
   <xsl:variable name="input.map" as="document-node()?">
@@ -210,18 +210,12 @@
         </xsl:when>
         <xsl:otherwise>
           <xsl:value-of
-            select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"
-          />
+              select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"
+            />
         </xsl:otherwise>
       </xsl:choose>
     </h5>
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-      data-bs-target="#bdSidebar"
-    />
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"/>
   </div>
  </xsl:template>
 
