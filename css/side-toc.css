@@ -87,9 +87,14 @@
     grid-template-columns: 0fr 1fr;
   }
 
-  .codeblock {
-    max-width: calc(100vw - 11rem);
-    min-width: 100%;
+  .codeblock,
+  .table,
+  .tablist,
+  .note,
+  .carousel,
+  .section,
+  .topic {
+    max-width: calc(100vw - 4rem);
   }
 
   .bs-sidebar .offcanvas-lg {

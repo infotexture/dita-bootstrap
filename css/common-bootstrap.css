@@ -63,6 +63,7 @@
 .xmlpi {
   color: var(--dita-violet);
   font-family: var(--bs-font-monospace);
+  overflow-wrap: break-word;
 }
 
 .cmdname,
@@ -72,6 +73,7 @@
 .parmname {
   color: var(--bs-code-color);
   font-family: var(--bs-font-monospace);
+  overflow-wrap: break-word;
 }
 
 .cmdname,
