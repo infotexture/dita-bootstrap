@@ -93,6 +93,7 @@
   .note,
   .carousel,
   .section,
+  .shortdesc,
   .topic {
     max-width: calc(100vw - 4rem);
   }
