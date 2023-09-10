@@ -1,6 +1,5 @@
 <div class="alert alert-success d-flex justify-content-center p-1">
   <div class="align-self-center">
-    <p class="mb-1">Other content</p>
     <p class="text-center mb-0"><button
         type="button"
         class="btn btn-success btn-sm"
