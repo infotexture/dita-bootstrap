@@ -50,7 +50,7 @@
 &lt;/ul&gt;</codeblock>
     <section>
       <title>Compacted List Group</title>
-      <p>Add <xmlatt>compact="yes"</xmlatt> to reduce the line-height of list items</p>
+      <p>Add <xmlatt>compact="yes"</xmlatt> to reduce the padding of list items</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ul outputclass="list-group" compact="yes">
@@ -64,7 +64,7 @@
 &lt;/ul&gt;</codeblock>
     <section>
       <title>Expanded List Group</title>
-      <p>Add <xmlatt>compact="no"</xmlatt> to increase the line-height of list items</p>
+      <p>Add <xmlatt>compact="no"</xmlatt> to increase the padding of list items</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <ul outputclass="list-group" compact="no">

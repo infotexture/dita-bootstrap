@@ -452,13 +452,13 @@
       <xsl:when test="parent::*/@compact = 'no'">
         <!-- handle non-compact list items -->
         <xsl:call-template name="commonattributes">
-          <xsl:with-param name="default-output-class" select="'lh-lg'"/>
+          <xsl:with-param name="default-output-class" select="'py-3'"/>
         </xsl:call-template>
       </xsl:when>
       <xsl:when test="parent::*/@compact = 'yes'">
         <!-- handle non-compact list items -->
         <xsl:call-template name="commonattributes">
-          <xsl:with-param name="default-output-class" select="'lh-sm'"/>
+          <xsl:with-param name="default-output-class" select="'py-0'"/>
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
