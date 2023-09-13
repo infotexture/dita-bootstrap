@@ -90,7 +90,7 @@
         <li>And a fifth one</li>
       </ul>
     </bodydiv>
-    <codeblock>&lt;ul outputclass="list-group list-group-flush"&gt;
+    <codeblock>&lt;ul outputclass="list-group-flush"&gt;
   &lt;li&gt;An item&lt;/li&gt;
   &lt;li&gt;A second item&lt;/li&gt;
   &lt;li&gt;A third item&lt;/li&gt;
