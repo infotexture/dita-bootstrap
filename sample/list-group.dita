@@ -22,6 +22,7 @@
         </indexterm>
         <indexterm><xmlelement>ul</xmlelement></indexterm>
         <indexterm><xmlelement>ol</xmlelement></indexterm>
+        <indexterm><xmlatt>compact</xmlatt></indexterm>
       </keywords>
     </metadata>
   </prolog>
@@ -48,12 +49,40 @@
   &lt;li&gt;And a fifth one&lt;/li&gt;
 &lt;/ul&gt;</codeblock>
     <section>
+      <title>Compacted List Group</title>
+      <p>Add <xmlatt>compact="yes"</xmlatt> to reduce the line-height of list items</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ul outputclass="list-group" compact="yes">
+        <li>Item One</li>
+        <li>Item Two</li>
+        <li>Item Three</li>
+      </ul>
+    </bodydiv>
+    <codeblock>&lt;ul outputclass="list-group" compact="yes" &gt;
+  ...
+&lt;/ul&gt;</codeblock>
+    <section>
+      <title>Expanded List Group</title>
+      <p>Add <xmlatt>compact="no"</xmlatt> to increase the line-height of list items</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ul outputclass="list-group" compact="no">
+        <li>Item One</li>
+        <li>Item Two</li>
+        <li>Item Three</li>
+      </ul>
+    </bodydiv>
+    <codeblock>&lt;ul outputclass="list-group" compact="no" &gt;
+  ...
+&lt;/ul&gt;</codeblock>
+    <section>
       <title>Flush</title>
-      <p>Add an <xmlatt>outputclass</xmlatt> and set it to <codeph>list-group-flush</codeph> to remove some borders and
+      <p>Add an <xmlatt>outputclass="list-group-flush"</xmlatt> to remove some borders and
         rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <ul outputclass="list-group list-group-flush">
+      <ul outputclass="list-group-flush">
         <li>An item</li>
         <li>A second item</li>
         <li>A third item</li>
