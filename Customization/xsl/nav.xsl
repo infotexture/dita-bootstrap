@@ -686,7 +686,7 @@
                   <!-- ↓ Add Toggle without text ↓ -->
                   <button data-bs-toggle="collapse">
                     <xsl:attribute name="class">
-                      <xsl:text>btn d-inline-flex align-items-center pe-0 b-0</xsl:text>
+                      <xsl:text>btn d-inline-flex align-items-center pe-0 border-0</xsl:text>
                       <xsl:if test="$show-menu='show'">
                         <xsl:text> active</xsl:text>
                       </xsl:if>
@@ -737,7 +737,7 @@
               <div class="d-flex flex-row">
                 <button data-bs-toggle="collapse">
                   <xsl:attribute name="class">
-                    <xsl:text>btn d-inline-flex align-items-center pe-0 b-0</xsl:text>
+                    <xsl:text>btn d-inline-flex align-items-center pe-0 border-0</xsl:text>
                     <xsl:if test="$show-menu='show'">
                       <xsl:text> active</xsl:text>
                     </xsl:if>
