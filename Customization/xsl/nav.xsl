@@ -352,14 +352,10 @@
       <xsl:otherwise>
         <div>
           <xsl:attribute name="class">
-          <xsl:choose>
-            <xsl:when test="not($TOC_SPACER_PADDING = '0')">
-                <xsl:value-of select="concat('overflow-y-auto bs-sidebar py-', $TOC_SPACER_PADDING)"/>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:text>overflow-y-auto bs-sidebar</xsl:text>
-            </xsl:otherwise>
-          </xsl:choose>
+            <xsl:value-of select="'overflow-y-auto bs-sidebar'"/>
+            <xsl:if test="not($TOC_SPACER_PADDING = '0')">
+              <xsl:value-of select="concat(' py-', $TOC_SPACER_PADDING)"/>
+            </xsl:if>
           </xsl:attribute>
           <xsl:call-template name="offcanvas-sidebar"/>
         </div>
@@ -687,7 +683,7 @@
           </xsl:when>
           <xsl:otherwise>
             <!-- ↓ Add Bootstrap nav-brand class ↓ -->
-            <span class="my-1 ps-3 navbar-brand">
+            <span class="my-1 ps-3 navbar-brand pt-2 pb-1">
               <xsl:call-template name="nav-icon"/>
               <xsl:value-of select="$title"/>
             </span>
