@@ -152,7 +152,7 @@
     <!-- Location of page header template with hard-coded links -->
     <property
       name="args.hdr"
-      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bs-navbar-default.hdr.xml"
+      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/hdr.navbar.default.xml"
     />
     <!-- Location of bootstrap icons if required -->
     <makeurl
@@ -163,6 +163,17 @@
     <property
       name="args.xsl"
       location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"
+    />
+
+    <makeurl
+      if:set="bootstrap.sidebar.hdr"
+      property="bootstrap.sidebar.hdr.path"
+      file="${bootstrap.sidebar.hdr}"
+    />
+    <makeurl
+      if:set="bootstrap.sidebar.ftr"
+      property="bootstrap.sidebar.ftr.path"
+      file="${bootstrap.sidebar.ftr}"
     />
     <!-- Default parameter values -->
     <property name="args.html5.toc" value="toc"/>

@@ -478,7 +478,7 @@
       <indexterm><parmname>--args.hdr</parmname></indexterm>
       <indexterm><parmname>--args.ftr</parmname></indexterm>
       <p>The plug-in includes a default static navigation menu with a project name and global link placeholders.</p>
-      <p>The default header file <filepath>includes/bs-navbar-default.hdr.xml</filepath> uses the Bootstrap primary
+      <p>The default header file <filepath>includes/hdr.navbar.default.xml</filepath> uses the Bootstrap primary
         (blue) background color for the
         <xref href="https://getbootstrap.com/docs/5.3/examples/navbars/" format="html" scope="external">navbar
           component</xref>, and provides a theme menu to toggle <xref
@@ -497,13 +497,13 @@
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath></codeblock>
       <p>The plug-in includes a sample
         <xref
-          href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-navbar-light.hdr.xml"
+          href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/hdr.navbar.example.xml"
           format="html"
           scope="external"
         >header alternative with a light navbar</xref>.</p>
       <p>No footer is added by default, but the plug-in also includes a sample
         <xref
-          href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/bs-footer-example.xml"
+          href="https://github.com/infotexture/dita-bootstrap/blob/develop/includes/ftr.content.example.xml"
           format="html"
           scope="external"
         >footer file</xref> and Bootstrap also offers additional <xref
