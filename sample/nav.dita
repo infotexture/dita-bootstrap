@@ -134,8 +134,8 @@
   &lt;/button&gt;
 &lt;/div&gt;</codeblock>
 
-      <p>The look and feel of the mobile sidebar header can be altered using the  <parmname
-        >--bootstrap.sidebar.hdr</parmname> parameter and supplying a HTML header file </p>
+      <p>The look and feel of the mobile sidebar header can be altered using the <parmname
+        >--bootstrap.sidebar.hdr</parmname> parameter and supplying an HTML header file:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
   <parmname>--format</parmname>=<option>html5-bootstrap</option> \
@@ -149,9 +149,8 @@
           scope="external"
         >header</xref>.</p>
 
-
-      <p>No footer is added to the sidebar by default, but a custom sidebar footer can be added using the  <parmname
-        >--bootstrap.sidebar.ftr</parmname> parameter and supplying a HTML footer file </p>
+      <p>No footer is added to the sidebar by default, but a custom sidebar footer can be added using the <parmname
+        >--bootstrap.sidebar.ftr</parmname> parameter and supplying an HTML footer file:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
   <parmname>--format</parmname>=<option>html5-bootstrap</option> \
