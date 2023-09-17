@@ -330,7 +330,7 @@
   ...etc
 &lt;/table&gt;</codeblock>
     <section>
-      <title>Small Tables</title>
+      <title>Small tables</title>
       <p>Add <xmlatt>outputclass="table-sm"</xmlatt> make any table more compact by cutting all cell <codeph
         >padding</codeph> in half.</p>
     </section>

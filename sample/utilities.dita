@@ -46,7 +46,7 @@
 &lt;ph outputclass="border-bottom"&gt;...&lt;/ph&gt;
 &lt;ph outputclass="border-start"&gt;...&lt;/ph&gt;</codeblock>
     <section id="frames">
-      <title><xmlatt>frame</xmlatt> Support</title>
+      <title>Frame attribute support</title>
       <p>For DITA elements which support the <xmlatt>frame</xmlatt> attribute, such as <xmlelement>lines</xmlelement>
         and <xmlelement>codeblock</xmlelement>, additional frame borders are automatically added as shown:</p>
     </section>
