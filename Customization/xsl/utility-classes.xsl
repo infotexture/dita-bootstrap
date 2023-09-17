@@ -210,6 +210,9 @@
       <xsl:when test="contains(@outputclass, 'alert-')">
         <xsl:text>alert</xsl:text>
       </xsl:when>
+      <xsl:when test="contains(@outputclass, 'list-group-')">
+        <xsl:text>list-group</xsl:text>
+      </xsl:when>
       <xsl:when test="contains(@class, ' topic/fig ')">
         <xsl:text> figure </xsl:text>
         <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE"/>

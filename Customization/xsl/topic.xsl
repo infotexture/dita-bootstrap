@@ -444,4 +444,29 @@
       </footer>
     </xsl:if>
   </xsl:template>
+
+  <!-- list item -->
+  <xsl:template match="*[contains(@class, ' topic/li ')]" name="topic.li">
+  <li>
+    <xsl:choose>
+      <xsl:when test="parent::*/@compact = 'no'">
+        <!-- handle non-compact list items -->
+        <xsl:call-template name="commonattributes">
+          <xsl:with-param name="default-output-class" select="'py-3'"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="parent::*/@compact = 'yes'">
+        <!-- handle non-compact list items -->
+        <xsl:call-template name="commonattributes">
+          <xsl:with-param name="default-output-class" select="'py-0'"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="commonattributes"/>
+      </xsl:otherwise>
+    </xsl:choose>
+    <xsl:call-template name="setidaname"/>
+    <xsl:apply-templates/>
+  </li>
+  </xsl:template>
 </xsl:stylesheet>
