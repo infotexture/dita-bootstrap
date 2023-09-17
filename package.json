@@ -40,11 +40,11 @@
     ],
     "rules": {
       "declaration-no-important": null,
-      "number-leading-zero": "always",
       "selector-max-id": 1,
       "selector-max-type": 3,
       "selector-no-qualifying-type": null,
-      "string-quotes": "single"
+      "stylistic/number-leading-zero": "always",
+      "stylistic/string-quotes": "single"
     }
   },
   "devDependencies": {
