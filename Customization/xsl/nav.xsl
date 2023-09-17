@@ -68,8 +68,7 @@
       <xsl:when test=". is $current-topicref">
         <xsl:value-of select="' active'"/>
       </xsl:when>
-      <xsl:when test="$nav-toc = ('collapsible')">
-      </xsl:when>
+      <xsl:when test="$nav-toc = ('collapsible')"/>
       <xsl:otherwise>
         <xsl:for-each select="descendant::*">
           <xsl:if test=". is $current-topicref">
@@ -113,27 +112,24 @@
         </xsl:if>
       </li>
     </xsl:if>
-</xsl:template>
-
+  </xsl:template>
 
   <xsl:template name="nav-icon">
-      <xsl:if
-      test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]"
-    >
-        <i>
-          <xsl:attribute name="class">
-            <xsl:text>me-2 </xsl:text>
-            <xsl:value-of
+    <xsl:if test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]">
+      <i>
+        <xsl:attribute name="class">
+          <xsl:text>me-2 </xsl:text>
+          <xsl:value-of
             select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]/@content"
           />
-          </xsl:attribute>
-          <xsl:attribute name="style">
-             <xsl:value-of
+        </xsl:attribute>
+        <xsl:attribute name="style">
+          <xsl:value-of
             select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon-style')]/@content"
           />
-          </xsl:attribute>
-        </i>
-      </xsl:if>
+        </xsl:attribute>
+      </i>
+    </xsl:if>
   </xsl:template>
 
   <!-- Add bootstrap classes and href to a link -->
@@ -187,44 +183,50 @@
     </div>
   </xsl:template>
 
-<xsl:template name="default-sidebar-header">
-  <div class="offcanvas-header border-bottom">
-    <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">
-      <xsl:choose>
-        <xsl:when test="$input.map//*[contains(@class,' topic/title ')][1]">
-          <xsl:for-each select="$input.map//*[contains(@class,' topic/title ')][1]">
-            <xsl:if test="position() = 1">
-              <xsl:value-of select="."/>
-            </xsl:if>
-          </xsl:for-each>
-        </xsl:when>
-        <xsl:when test="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
-          <xsl:for-each select="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
-            <xsl:if test="position() = 1">
-              <xsl:value-of select="."/>
-            </xsl:if>
-          </xsl:for-each>
-        </xsl:when>
-        <xsl:when test="//*[contains(@class, ' map/map ')]/@title">
-          <xsl:value-of select="//*[contains(@class, ' map/map ')]/@title"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:value-of
+  <xsl:template name="default-sidebar-header">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">
+        <xsl:choose>
+          <xsl:when test="$input.map//*[contains(@class,' topic/title ')][1]">
+            <xsl:for-each select="$input.map//*[contains(@class,' topic/title ')][1]">
+              <xsl:if test="position() = 1">
+                <xsl:value-of select="."/>
+              </xsl:if>
+            </xsl:for-each>
+          </xsl:when>
+          <xsl:when test="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
+            <xsl:for-each select="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
+              <xsl:if test="position() = 1">
+                <xsl:value-of select="."/>
+              </xsl:if>
+            </xsl:for-each>
+          </xsl:when>
+          <xsl:when test="//*[contains(@class, ' map/map ')]/@title">
+            <xsl:value-of select="//*[contains(@class, ' map/map ')]/@title"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of
               select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"
             />
-        </xsl:otherwise>
-      </xsl:choose>
-    </h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"/>
-  </div>
- </xsl:template>
+          </xsl:otherwise>
+        </xsl:choose>
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+        data-bs-target="#bdSidebar"
+      />
+    </div>
+  </xsl:template>
 
   <xsl:template name="default-sidebar-footer">
-     <xsl:if test="$BOOTSTRAP_SIDEBAR_FTR">
-        <div class="bs-fixed-footer">
-          <xsl:copy-of select="document($BOOTSTRAP_SIDEBAR_FTR, /)"/>
-        </div>
-      </xsl:if>
+    <xsl:if test="$BOOTSTRAP_SIDEBAR_FTR">
+      <div class="bs-fixed-footer">
+        <xsl:copy-of select="document($BOOTSTRAP_SIDEBAR_FTR, /)"/>
+      </div>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template name="offcanvas-sidebar">
@@ -236,15 +238,14 @@
       aria-modal="true"
       role="dialog"
     >
-
-        <xsl:choose>
-          <xsl:when test="not($BOOTSTRAP_SIDEBAR_HDR)">
-            <xsl:call-template name="default-sidebar-header"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:copy-of select="document($BOOTSTRAP_SIDEBAR_HDR, /)"/>
-          </xsl:otherwise>
-        </xsl:choose>
+      <xsl:choose>
+        <xsl:when test="not($BOOTSTRAP_SIDEBAR_HDR)">
+          <xsl:call-template name="default-sidebar-header"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:copy-of select="document($BOOTSTRAP_SIDEBAR_HDR, /)"/>
+        </xsl:otherwise>
+      </xsl:choose>
 
       <div class="offcanvas-body flex-column h-100">
         <xsl:call-template name="sidebar-content"/>
@@ -269,7 +270,7 @@
           <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
             <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↓ -->
             <div class="list-group me-3">
-            <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+              <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
               <xsl:choose>
                 <xsl:when test="$nav-toc = 'list-group-partial'">
                   <xsl:apply-templates select="$current-topicref" mode="list-group-toc-pull">
@@ -290,13 +291,13 @@
                   </xsl:apply-templates>
                 </xsl:when>
               </xsl:choose>
-            <!-- ↓ Close <div> element from Bootstrap list-group ↑ -->
+              <!-- ↓ Close <div> element from Bootstrap list-group ↑ -->
             </div>
           </xsl:when>
           <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
             <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
             <nav class="nav nav-pills flex-column navbar-light">
-            <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+              <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
               <xsl:choose>
                 <xsl:when test="$nav-toc = 'nav-pill-partial'">
                   <xsl:apply-templates select="$current-topicref" mode="nav-pill-toc-pull">
@@ -317,7 +318,7 @@
                   </xsl:apply-templates>
                 </xsl:when>
               </xsl:choose>
-            <!-- ↓ Close Bootstrap <nav> element -->
+              <!-- ↓ Close Bootstrap <nav> element -->
             </nav>
           </xsl:when>
           <xsl:when test="$nav-toc = ('collapsible')">
@@ -728,8 +729,7 @@
         <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($show-menu = 'show')">
           <!-- no-op - if a menubar-toc is present, the nav-bar is reduced to current decendents only -->
         </xsl:when>
-        <xsl:when test="not(.)">
-        </xsl:when>
+        <xsl:when test="not(.)"/>
         <xsl:when test="normalize-space($title)">
           <xsl:variable name="id" select="dita-ot:generate-html-id(.)"/>
           <xsl:choose>

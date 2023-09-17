@@ -288,7 +288,7 @@
 
   <!-- Add additional Bootstrap CSS classes and roles to <dd> elements -->
   <xsl:template name="bootstrap-dd">
-     <xsl:variable name="terms" select="count(../*[contains(@class, ' topic/dt ')])"/>
+    <xsl:variable name="terms" select="count(../*[contains(@class, ' topic/dt ')])"/>
     <xsl:variable name="is-first-dd" select="empty(preceding-sibling::*[contains(@class, ' topic/dd ')])"/>
     <xsl:choose>
       <xsl:when test="not($is-first-dd)">
@@ -322,7 +322,7 @@
       <xsl:when test="$terms=3">
         <xsl:text>col-lg-3 </xsl:text>
       </xsl:when>
-       <xsl:when test="$terms=4">
+      <xsl:when test="$terms=4">
         <xsl:text>col-lg-2 </xsl:text>
       </xsl:when>
     </xsl:choose>
@@ -445,7 +445,7 @@
 
     <xsl:choose>
       <xsl:when test="contains(@otherprops, 'icon(')">
-         <xsl:element name="i">
+        <xsl:element name="i">
           <xsl:call-template name="otherprops-attributes"/>
         </xsl:element>
       </xsl:when>

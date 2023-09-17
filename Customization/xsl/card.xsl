@@ -57,7 +57,9 @@
       </xsl:choose>
     </xsl:variable>
     <xsl:element name="{$headLevel}">
-      <xsl:attribute name="class"><xsl:value-of select="$bootstrap-class"/></xsl:attribute>
+      <xsl:attribute name="class">
+        <xsl:value-of select="$bootstrap-class"/>
+      </xsl:attribute>
       <xsl:call-template name="commonattributes">
         <xsl:with-param name="default-output-class" select="$bootstrap-class"/>
       </xsl:call-template>

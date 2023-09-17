@@ -87,9 +87,11 @@
     <xsl:if test="*[(contains(@class, ' topic/title ') or contains(@class, ' topic/desc '))]">
       <caption>
         <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="label"/>
-        <xsl:apply-templates select="
+        <xsl:apply-templates
+          select="
           *[contains(@class, ' topic/title ')] | *[contains(@class, ' topic/desc ')]
-        "/>
+        "
+        />
       </caption>
     </xsl:if>
   </xsl:template>

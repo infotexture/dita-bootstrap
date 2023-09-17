@@ -103,7 +103,6 @@
       file="${extend.css.file}"
     />
 
-
     <!-- Append Bootstrap collapsible CSS if toc is collapsible -->
     <condition
       if:set="dita-bootstrap.css.add"
@@ -248,7 +247,7 @@
         <equals arg1="${bootstrap.theme}" arg2="sketchy"/>
       </or>
     </condition>
-     <condition property="toc-spacer.padding" value="3">
+    <condition property="toc-spacer.padding" value="3">
       <or>
         <equals arg1="${bootstrap.theme}" arg2="lux"/>
       </or>

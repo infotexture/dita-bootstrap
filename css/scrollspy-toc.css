@@ -19,7 +19,6 @@
   }
 
   .bs-scrollspy {
-    position: -webkit-sticky;
     position: sticky;
     top: 5.25rem;
     right: 0;
@@ -44,8 +43,8 @@
 }
 
 .bs-scrollspy nav[dir='rtl'] ul ul {
-  padding-left: 0;
   padding-right: 1rem;
+  padding-left: 0;
 }
 
 .bs-scrollspy nav a {
@@ -64,15 +63,15 @@
 
 .bs-scrollspy nav[dir='rtl'] a.active,
 .bs-scrollspy nav[dir='rtl'] a:hover {
-  border-left-color: transparent;
   border-right-color: var(--bs-primary);
   border-right-style: solid;
+  border-left-color: transparent;
 }
 
 .bs-scrollspy nav a.nav-link:hover,
 .bs-scrollspy nav a.nav-link.active {
-  border-left-color: transparent;
   border-right-color: transparent;
+  border-left-color: transparent;
 }
 
 .bs-scrollspy nav a.active {

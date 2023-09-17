@@ -43,7 +43,7 @@
               <xsl:attribute name="class">
                 <xsl:value-of select="$BOOTSTRAP_CSS_CAROUSEL_INDICATORS"/>
                 <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
-                   <xsl:text> active</xsl:text>
+                  <xsl:text> active</xsl:text>
                 </xsl:if>
               </xsl:attribute>
               <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
@@ -55,7 +55,7 @@
                 select="count(preceding-sibling::*[contains(@class, ' topic/li ')])"
               />
             </button>
-        </xsl:for-each>
+          </xsl:for-each>
         </div>
       </xsl:if>
       <div class="carousel-inner pb-1">
@@ -91,14 +91,14 @@
     <div>
       <xsl:call-template name="commonattributes">
         <xsl:with-param name="default-output-class">
-            <xsl:text>carousel-item</xsl:text>
-            <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
-              <xsl:text> active</xsl:text>
-            </xsl:if>
+          <xsl:text>carousel-item</xsl:text>
+          <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
+            <xsl:text> active</xsl:text>
+          </xsl:if>
         </xsl:with-param>
       </xsl:call-template>
       <xsl:if test="contains(@otherprops, 'interval(')">
-         <xsl:call-template name="otherprops-interval"/>
+        <xsl:call-template name="otherprops-interval"/>
       </xsl:if>
       <div class="container mx-0">
         <div class="row">
@@ -107,7 +107,7 @@
         </div>
         <xsl:apply-templates select="*[contains(@class,' topic/div ')]" mode="carousel"/>
         <xsl:if test="../../*[contains(@otherprops, 'indicators(true)')]">
-          <div class="row py-3"></div>
+          <div class="row py-3"/>
         </xsl:if>
       </div>
       <xsl:apply-templates
@@ -129,7 +129,7 @@
       <xsl:otherwise>
         <span class="btn btn-primary btn-sm p-0">
           <span aria-hidden="true">
-              <xsl:attribute name="class" select="concat($icon, ' align-middle')"/>
+            <xsl:attribute name="class" select="concat($icon, ' align-middle')"/>
           </span>
         </span>
       </xsl:otherwise>
@@ -145,7 +145,7 @@
           <xsl:text>col-12</xsl:text>
         </xsl:when>
         <xsl:when test="$images=2">
-           <xsl:text>col-6</xsl:text>
+          <xsl:text>col-6</xsl:text>
         </xsl:when>
         <xsl:when test="$images=3">
           <xsl:text>col-4</xsl:text>
@@ -157,34 +157,34 @@
     </xsl:variable>
 
     <div>
-       <xsl:attribute name="class" select="$imageWidth"/>
-    <img>
-      <xsl:call-template name="commonattributes">
-        <xsl:with-param name="default-output-class" select="'d-block w-100'"/>
-      </xsl:call-template>
-      <xsl:call-template name="setid"/>
-      <xsl:choose>
-        <xsl:when test="*[contains(@class, ' topic/longdescref ')]">
-          <xsl:apply-templates select="*[contains(@class, ' topic/longdescref ')]"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:apply-templates select="@longdescref"/>
-        </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="@href|@height|@width"/>
-      <xsl:apply-templates select="@scale"/>
-      <xsl:choose>
-        <xsl:when test="*[contains(@class, ' topic/alt ')]">
-          <xsl:variable name="alt-content">
-            <xsl:apply-templates select="*[contains(@class, ' topic/alt ')]" mode="text-only"/>
-          </xsl:variable>
-          <xsl:attribute name="alt" select="normalize-space($alt-content)"/>
-        </xsl:when>
-        <xsl:when test="@alt">
-          <xsl:attribute name="alt" select="@alt"/>
-        </xsl:when>
-      </xsl:choose>
-    </img>
+      <xsl:attribute name="class" select="$imageWidth"/>
+      <img>
+        <xsl:call-template name="commonattributes">
+          <xsl:with-param name="default-output-class" select="'d-block w-100'"/>
+        </xsl:call-template>
+        <xsl:call-template name="setid"/>
+        <xsl:choose>
+          <xsl:when test="*[contains(@class, ' topic/longdescref ')]">
+            <xsl:apply-templates select="*[contains(@class, ' topic/longdescref ')]"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:apply-templates select="@longdescref"/>
+          </xsl:otherwise>
+        </xsl:choose>
+        <xsl:apply-templates select="@href|@height|@width"/>
+        <xsl:apply-templates select="@scale"/>
+        <xsl:choose>
+          <xsl:when test="*[contains(@class, ' topic/alt ')]">
+            <xsl:variable name="alt-content">
+              <xsl:apply-templates select="*[contains(@class, ' topic/alt ')]" mode="text-only"/>
+            </xsl:variable>
+            <xsl:attribute name="alt" select="normalize-space($alt-content)"/>
+          </xsl:when>
+          <xsl:when test="@alt">
+            <xsl:attribute name="alt" select="@alt"/>
+          </xsl:when>
+        </xsl:choose>
+      </img>
     </div>
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
   </xsl:template>

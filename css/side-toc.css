@@ -9,9 +9,9 @@
 
 .bs-container {
   display: grid;
-  gap: 1.5rem;
   grid-template-areas: 'sidebar main';
   grid-template-columns: 1fr 5fr;
+  gap: 1.5rem;
 }
 
 .bs-sidebar {
@@ -28,7 +28,6 @@
 }
 
 .bs-header {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -67,12 +66,11 @@
   }
 
   .codeblock {
-    max-width: calc(80vw - 2rem);
     min-width: 100%;
+    max-width: calc(80vw - 2rem);
   }
 
   .bs-sidebar {
-    position: -webkit-sticky;
     position: sticky;
     top: 5rem;
     display: block !important;

@@ -54,7 +54,10 @@
   <!-- Override to connect an collapsed element to a button -->
   <xsl:template match="*[contains(@class,' topic/xref ') and contains(@props, 'collapse-toggle')]">
     <xsl:variable name="href" select="substring-after(@href, '#')"/>
-    <xsl:variable name="id" select="if(//*[@id=$href]) then dita-ot:generate-html-id(//*[@id=$href]) else generate-id(//*[@id=$href])"/>
+    <xsl:variable
+      name="id"
+      select="if(//*[@id=$href]) then dita-ot:generate-html-id(//*[@id=$href]) else generate-id(//*[@id=$href])"
+    />
 
     <a data-bs-toggle="collapse">
       <xsl:call-template name="commonattributes"/>

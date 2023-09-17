@@ -78,8 +78,8 @@
 
 .cmdname,
 .parmname {
+  font-weight: 700;
   color: var(--dita-prussian-blue);
-  font-weight: bold;
 }
 
 .boolean {
