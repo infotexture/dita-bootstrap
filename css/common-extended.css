@@ -79,8 +79,8 @@
 
 .cmdname,
 .parmname {
+  font-weight: 700;
   color: var(--dita-prussian-blue);
-  font-weight: bold;
 }
 
 .boolean {
@@ -129,9 +129,9 @@
 
 .bs-container {
   display: grid;
-  gap: 1.5rem;
   grid-template-areas: 'sidebar main';
   grid-template-columns: 1fr 5fr;
+  gap: 1.5rem;
 }
 
 .bs-sidebar {
@@ -148,7 +148,6 @@
 }
 
 .bs-header {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
@@ -187,12 +186,11 @@
   }
 
   .codeblock {
-    max-width: calc(80vw - 2rem);
     min-width: 100%;
+    max-width: calc(80vw - 2rem);
   }
 
   .bs-sidebar {
-    position: -webkit-sticky;
     position: sticky;
     top: 5rem;
     display: block !important;
@@ -258,16 +256,16 @@ article [tabindex='0'] {
  */
 
 .bd-links {
+  padding-left: none;
   overflow: auto;
   font-weight: 600;
-  padding-left: none;
 }
 
 .bd-links a {
   padding: 0.1875rem 0.5rem;
   margin-top: 0.125rem;
-  text-decoration: none;
   color: var(--bs-body-color);
+  text-decoration: none;
 }
 
 .bd-links a:hover {
@@ -288,7 +286,6 @@ article [tabindex='0'] {
 
 @media (min-width: 768px) {
   .bd-links {
-    position: -webkit-sticky;
     position: sticky;
     display: block !important;
 
@@ -315,17 +312,17 @@ article [tabindex='0'] {
 
 .bd-links .btn {
   padding-top: 0.25rem;
-  padding-bottom: 0rem;
+  padding-bottom: 0;
+  padding-left: 0.25rem !important;
   font-weight: 600;
+  color: var(--bs-body-color);
   background-color: transparent;
   box-shadow: none;
-  color: var(--bs-body-color);
-  padding-left: 0.25rem !important;
 }
 
 [dir='rtl'] .bd-links .btn {
-  padding-left: 0rem !important;
   padding-right: 0.25rem !important;
+  padding-left: 0 !important;
 }
 
 .bd-links svg:hover {
@@ -337,8 +334,8 @@ article [tabindex='0'] {
 }
 
 [dir='rtl'] .bd-links .ps-2 {
-  padding-left: 0rem !important;
   padding-right: 0.5rem !important;
+  padding-left: 0 !important;
 }
 
 .bd-links .ps-3 {
@@ -346,8 +343,8 @@ article [tabindex='0'] {
 }
 
 [dir='rtl'] .bd-links .ps-3 {
-  padding-left: 0rem !important;
   padding-right: 0.75rem !important;
+  padding-left: 0 !important;
 }
 
 .bd-links .ps-4 {
@@ -355,8 +352,8 @@ article [tabindex='0'] {
 }
 
 [dir='rtl'] .bd-links .ps-4 {
-  padding-left: 0rem !important;
   padding-right: 1rem !important;
+  padding-left: 0 !important;
 }
 
 [dir='rtl'] .bd-links svg {
