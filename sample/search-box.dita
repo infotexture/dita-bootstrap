@@ -25,7 +25,8 @@
   </prolog>
   <body outputclass="language-markup">
     <fig>
-      <image scalefit="yes" href="./src/search-box.png"/>
+      <title>Sample search results</title>
+      <image scalefit="yes" href="./src/search-result.png"/>
     </fig>
 
     <section>
@@ -82,25 +83,48 @@
     </section>
 
     <section>
-      <title>Example Header Nav Bar</title>
-      <p>To add a search box to the menu bar, add a <xmlelement>form</xmlelement> element
-      with an <xmlelement>input id="search-input"</xmlelement> as shown here.</p>
+      <title>Sample header navigation bars</title>
+      <p>To add a search box to the menu bar, add a <xmlelement>form class="search-box"</xmlelement> element
+      with an <xmlelement>input type="search"</xmlelement> as shown here.</p>
+      <fig>
+        <title>Simple search box</title>
+        <image scalefit="yes" href="./src/search-simple.png"/>
+      </fig>
       <codeblock>&lt;ul class="navbar-nav ms-auto"&gt;
   &lt;li class="nav-item d-flex align-items-center"&gt;
-    &lt;span class="nav-link py-2 pe-2"&gt;&lt;i class="bi bi-search"/&gt;&lt;/span&gt;
-    &lt;form class="bd-search position-relative me-auto" onsubmit="return search(this);"&gt;
-      &lt;input id="search-input" type="search" dir="auto" class="form-control ds-input"
-        placeholder="Search…" aria-label="Search for…"
-        style="position: relative; vertical-align: top;" /&gt;
+    &lt;span class="nav-link pe-2"&gt;&lt;i class="bi bi-search"/&gt;&lt;/span&gt;
+    &lt;form class="position-relative me-auto search-box rounded"&gt;
+      &lt;input type="search" class="form-control"
+        placeholder="Search…" aria-label="Search for…" dir="auto"/&gt;
     &lt;/form&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</codeblock>
-    <p>The <term>DITA Bootstrap Lunr Search</term> plug-in includes a sample search box in its
-        <xref
+      <p>The <term>DITA Bootstrap Lunr Search</term> plug-in includes a sample search box in its
+          <xref
           href="https://github.com/infotexture/dita-bootstrap.lunr/blob/master/includes/bs-navbar-lunr.hdr.xml"
           format="html"
           scope="external"
         >header navbar</xref>.</p>
+      <p>Additional styling can be added using standard Bootstrap CSS classes such as
+        <codeph>input-group</codeph>:</p>
+      <fig>
+        <title>Elaborate search box</title>
+        <image scalefit="yes" href="./src/search-complex.png"/>
+      </fig>
+      <codeblock>&lt;ul class="navbar-nav ms-auto"&gt;
+  &lt;li class="nav-item d-flex align-items-center"&gt;
+    &lt;form class="position-relative me-auto search-box rounded"&gt;
+      &lt;div class="input-group"&gt;
+        &lt;span class="input-group-text bg-primary-subtle"&gt;
+          &lt;i class="bi bi-search"/&gt;
+        &lt;/span&gt;
+        &lt;input type="search" class="form-control shadow-none"
+        placeholder="Search…" aria-label="Search for…" dir="auto"/&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</codeblock>
+
     </section>
   </body>
 </topic>
