@@ -61,7 +61,7 @@ dita --input=path/to/your.ditamap \
 
 ### Bootswatch themes
 
-Alternate Bootstrap themes can be downloaded directly from [Bootswatch][9].
+Alternate Bootstrap themes can be downloaded directly from [Bootswatch][3].
 
 To override the default appearance with a Bootswatch theme, pass a theme name to the `dita` command via the `--bootstrap.theme` parameter:
 
@@ -90,13 +90,13 @@ dita --input=path/to/your.ditamap \
 ```
  
 > **Note**
-> For more extensive customizations with [Sass][], you may want to install the [dita-bootstrap.sass][10] plug-in.
+> For more extensive customizations with [Sass][4], you may want to install the [dita-bootstrap.sass][5] plug-in.
 
 ### Headers and footers
 
 The plug-in includes a default static navigation menu with a project name and global link placeholders.
 
-The default header file `includes/hdr.navbar.default.xml` uses the Bootstrap primary (blue) background color for the [navbar component][3]. Bootstrap itself offers additional [header examples][20].
+The default header file `includes/hdr.navbar.default.xml` uses the Bootstrap primary (blue) background color for the [navbar component][6]. Bootstrap itself offers additional [header examples][7].
 
 To change the color to a dark (black) background, replace the primary background color class `bg-primary` on the first line with the dark variant `bg-dark`:
 
@@ -113,9 +113,9 @@ dita --input=path/to/your.ditamap \
      --args.hdr=path/to/your-header.xml
 ```
 
-The plug-in includes a sample [header alternative with a light navbar][4].
+The plug-in includes a sample [header alternative with a light navbar][8].
 
-No footer is added by default, but the plug-in also includes a sample [footer file][5] and Bootstrap also offers additional [examples][19]. To add a footer to the generated output, pass a custom footer file to the `dita` command via the `--args.ftr` parameter:
+No footer is added by default, but the plug-in also includes a sample [footer file][9] and Bootstrap also offers additional [examples][10]. To add a footer to the generated output, pass a custom footer file to the `dita` command via the `--args.ftr` parameter:
 
 ```console
 dita --input=path/to/your.ditamap \
@@ -125,11 +125,11 @@ dita --input=path/to/your.ditamap \
 
 ### Navigation menu
 
-The plug-in extends the standard HTML5 table of contents (ToC) [navigation parameter][6] `--nav-toc` to add styled list groups to the navigation menu. (The navigation is rendered as a sidebar in desktop browsers and above the content on smaller devices.)
+The plug-in extends the standard HTML5 table of contents (ToC) [navigation parameter][11] `--nav-toc` to add styled list groups to the navigation menu. (The navigation is rendered as a sidebar in desktop browsers and above the content on smaller devices.)
 
 By default, the plug-in uses the `partial` option to include the current topic in the ToC along with its parents, siblings and children. As with the default HTML5 plug-in, the `full` option can also be used to generate a complete ToC for the entire map, or `none` to disable the table of contents entirely.
 
-As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with either the Bootstrap [list group][7] component, [nav-pills][16], or [collapsible][17] menus:
+As of version 5.3.1, the plug-in provides five new options to style the table of contents navigation with either the Bootstrap [list group][12] component, [nav-pills][13], or [collapsible][14] menus:
 
 - `list-group-full` – Styled full ToC within a Bootstrap list group
 - `list-group-partial` – Partial ToC with the current topic, parents, siblings, and children in a list group
@@ -145,7 +145,7 @@ dita --input=path/to/your.ditamap \
      --nav-toc=list-group-partial
 ```
 
-For an example of `collapsible` styling, see the output at [infotexture.github.io/dita-bootstrap][8].
+For an example of `collapsible` styling, see the output at [infotexture.github.io/dita-bootstrap][15].
 
 Additionally, the first-level navigation menu can be switched to a horizontal Bootstrap menu bar to reduce the depth of the ToC.
 
@@ -187,7 +187,7 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.thead` – common utility classes for DITA `<thead>` elements
 - `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<topic>` titles
 
-You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][11] is included within this repository.
+You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][16] is included within this repository.
 
 ### Bootstrap icons for DITA notes
 
@@ -212,24 +212,24 @@ Bootstrap icons, popovers, tooltips and the dark-mode toggler are enabled by def
 
 - `icons.include` – enable Bootstrap icons
 - `popovers.include` – enable Bootstrap popover components and tooltip components
-- `dark.mode.include` - whether to include support for a [dark mode][17] toggler
+- `dark.mode.include` - whether to include support for a [dark mode][14] toggler
 
 Additionally, opt-in breadcrumbs and menu bars and other modifiers can be added using the following parameters
 
 - `args.breadcrumbs` – add Bootstrap breadcrumb components
 - `menubar-toc.include` – add a Bootstrap menubar
-- `scrollspy-toc` – add a Bootstrap [scrollspy][18] navigator
+- `scrollspy-toc` – add a Bootstrap [scrollspy][17] navigator
 - `bidi.include` – whether to force included support for RTL languages
 - `toc-spacer.padding` – specifies the vertical padding to add to the side menu
 
 ## Feedback
 
-- If you find this useful and build something of your own on top of it, [let me know][12].
+- If you find this useful and build something of your own on top of it, [let me know][18].
 
-- If you find a bug or would like to suggest a change, [create an issue][13].
+- If you find a bug or would like to suggest a change, [create an issue][19].
   _(If it’s a bug, provide steps to recreate the issue.)_
 
-- If you know how to fix it yourself, [submit a pull request][14] with the proposed changes.
+- If you know how to fix it yourself, [submit a pull request][20] with the proposed changes.
 
 ## License
 
@@ -239,22 +239,21 @@ Within the sample documentation, where necessary, the texts describing the usage
 
 [1]: http://www.dita-ot.org
 [2]: https://getbootstrap.com/docs/5.3
-[3]: https://getbootstrap.com/docs/5.3/examples/navbars/
-[4]: ./includes/hdr.navbar.example.xml
-[5]: ./includes/ftr.content.example.xml
-[6]: https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc
-[7]: https://getbootstrap.com/docs/5.3/components/list-group/
-[8]: https://infotexture.github.io/dita-bootstrap
-[9]: https://bootswatch.com/
-[10]: https://github.com/infotexture/dita-bootstrap.sass
-[11]: ./xsl/html5-bootstrap-template.xsl
-[12]: https://twitter.com/infotexture
-[13]: https://github.com/infotexture/dita-bootstrap/issues/new
-[14]: https://help.github.com/articles/using-pull-requests/
-[15]: https://getbootstrap.com/docs/5.3/components/navs-tabs/#pills
-[16]: https://getbootstrap.com/docs/5.3/components/collapse/
-[17]: https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
-[18]: https://getbootstrap.com/docs/5.3/components/scrollspy/
-[19]: https://getbootstrap.com/docs/5.3/examples/footers/
-[20]: https://getbootstrap.com/docs/5.3/examples/headers/
-[Sass]: https://sass-lang.com
+[3]: https://bootswatch.com
+[4]: https://sass-lang.com
+[5]: https://github.com/infotexture/dita-bootstrap.sass
+[6]: https://getbootstrap.com/docs/5.3/examples/navbars/
+[7]: https://getbootstrap.com/docs/5.3/examples/headers/
+[8]: ./includes/hdr.navbar.example.xml
+[9]: ./includes/ftr.content.example.xml
+[10]: https://getbootstrap.com/docs/5.3/examples/footers/
+[11]: https://www.dita-ot.org/dev/parameters/parameters-html5.html#html5__nav-toc
+[12]: https://getbootstrap.com/docs/5.3/components/list-group/
+[13]: https://getbootstrap.com/docs/5.3/components/collapse/
+[14]: https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode
+[15]: https://infotexture.github.io/dita-bootstrap
+[16]: ./xsl/html5-bootstrap-template.xsl
+[17]: https://getbootstrap.com/docs/5.3/components/scrollspy/
+[18]: https://indieweb.social/@infotexture
+[19]: https://github.com/infotexture/dita-bootstrap/issues/new
+[20]: https://help.github.com/articles/using-pull-requests/
