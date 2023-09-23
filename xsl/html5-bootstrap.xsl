@@ -19,7 +19,7 @@
   <xsl:param name="BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE" select="'yes'"/>
   <!-- Whether to include dark mode toggling.  values are 'yes' or 'no' -->
   <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'yes'"/>
-<!-- Whether to include a scrollspy Toc -->
+  <!-- Whether to include a scrollspy Toc -->
   <xsl:param name="BOOTSTRAP_SCROLLSPY_TOC" select="'none'"/>
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
@@ -209,10 +209,11 @@
   <xsl:attribute-set name="toc">
     <xsl:attribute name="role">navigation</xsl:attribute>
     <xsl:attribute name="id">bs-sidebar-nav</xsl:attribute>
+    <xsl:attribute name="class">d-flex flex-align-start flex-column h-100 overflow-y-auto</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="menubar-toc">
-    <xsl:attribute name="class">navbar bg-body-tertiary px-3</xsl:attribute>
+    <xsl:attribute name="class">navbar bg-body-tertiary px-3 border-0</xsl:attribute>
     <xsl:attribute name="role">navigation</xsl:attribute>
     <xsl:attribute name="id">bs-menubar-nav</xsl:attribute>
   </xsl:attribute-set>

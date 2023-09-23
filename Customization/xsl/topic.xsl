@@ -11,7 +11,6 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot dita2html"
 >
-
   <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
   <xsl:param name="BIDIRECTIONAL_DOCUMENT" select="'no'" as="xs:string"/>
   <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'mt-3 border-top bg-primary-subtle'"/>
@@ -107,7 +106,6 @@
         </xsl:if>
       </xsl:if>
     </main>
-
   </xsl:template>
 
   <!-- Override to add Bootstrap classes and roles -->
@@ -116,9 +114,9 @@
     <xsl:apply-templates select="@xml:lang"/>
     <xsl:apply-templates select="@dir"/>
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/@style" mode="add-ditaval-style"/>
-     <!-- ↓ Add Bootstrap role template ↓ -->
+    <!-- ↓ Add Bootstrap role template ↓ -->
     <xsl:call-template name="bootstrap-role"/>
-     <!-- ↓ Set Bidi to auto for code ↓ -->
+    <!-- ↓ Set Bidi to auto for code ↓ -->
     <xsl:call-template name="bidi-auto-code"/>
     <!-- ↓ Add Bootstrap class attributes template ↓ -->
     <xsl:variable name="bootstrap-class">
@@ -443,5 +441,30 @@
          <!-- ↓ Add Bootstrap CSS ↓ -->
       </footer>
     </xsl:if>
+  </xsl:template>
+
+  <!-- list item -->
+  <xsl:template match="*[contains(@class, ' topic/li ')]" name="topic.li">
+  <li>
+    <xsl:choose>
+      <xsl:when test="parent::*/@compact = 'no'">
+        <!-- handle non-compact list items -->
+        <xsl:call-template name="commonattributes">
+          <xsl:with-param name="default-output-class" select="'py-3'"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="parent::*/@compact = 'yes'">
+        <!-- handle non-compact list items -->
+        <xsl:call-template name="commonattributes">
+          <xsl:with-param name="default-output-class" select="'py-0'"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="commonattributes"/>
+      </xsl:otherwise>
+    </xsl:choose>
+    <xsl:call-template name="setidaname"/>
+    <xsl:apply-templates/>
+  </li>
   </xsl:template>
 </xsl:stylesheet>

@@ -38,9 +38,6 @@
       <p>Carousels don’t automatically normalize slide dimensions. As such, you may need to use additional utilities or
         custom styles to appropriately size content. While carousels support previous/next controls and indicators,
         they’re not explicitly required. Add and customize as you see fit.</p>
-    </section>
-    <section>
-      <title>Example</title>
       <p>Here is an example with slides</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">

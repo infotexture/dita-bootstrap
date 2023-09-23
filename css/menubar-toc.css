@@ -8,8 +8,8 @@
  */
 @media (min-width: 992px) {
   .bs-sidebar {
-    height: calc(100vh - 13rem);
     top: 9rem;
+    height: calc(100vh - 13rem);
   }
   .bs-scrollspy {
     top: 9rem;

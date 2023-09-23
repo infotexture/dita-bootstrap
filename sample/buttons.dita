@@ -49,7 +49,7 @@
 &lt;xref href="#" outputclass="btn-light"&gt;Light&lt;/xref&gt;
 &lt;xref href="#" outputclass="btn-dark"&gt;Dark&lt;/xref&gt;</codeblock>
     <section>
-      <title>Outline Buttons</title>
+      <title>Outline buttons</title>
       <p>In need of a button, but not the hefty background colors they bring? Replace the default modifier classes with
         the <xmlatt>outputclass</xmlatt> and a value of <codeph>btn-outline-*</codeph> to remove all background images
         and colors on any button.</p>

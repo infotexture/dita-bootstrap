@@ -23,10 +23,7 @@
   </xsl:template>
 
   <xsl:template name="expand-accordion-head">
-    <xsl:attribute
-        name="aria-expanded"
-        select="contains(@outputclass,'show')"
-    />
+    <xsl:attribute name="aria-expanded" select="contains(@outputclass,'show')"/>
     <xsl:attribute name="class">
       <xsl:choose>
         <xsl:when test="contains(@outputclass,'show')">
@@ -40,12 +37,12 @@
   </xsl:template>
 
   <xsl:template name="expand-accordion-body">
-     <xsl:attribute name="class">
-          <xsl:text>accordion-collapse collapse</xsl:text>
-          <xsl:if test="contains(@outputclass,'show')">
-            <xsl:text> show</xsl:text>
-          </xsl:if>
-      </xsl:attribute>
+    <xsl:attribute name="class">
+      <xsl:text>accordion-collapse collapse</xsl:text>
+      <xsl:if test="contains(@outputclass,'show')">
+        <xsl:text> show</xsl:text>
+      </xsl:if>
+    </xsl:attribute>
   </xsl:template>
 
   <xsl:template match="*[contains(@class, ' topic/section ')]" mode="accordion">
@@ -66,14 +63,14 @@
         <xsl:attribute name="type" select="'accordion-header'"/>
         <xsl:attribute name="id" select="concat('heading_' ,$id)"/>
         <button class="accordion-button" type="button" data-bs-toggle="collapse">
-          <xsl:call-template  name="expand-accordion-head"/>
+          <xsl:call-template name="expand-accordion-head"/>
           <xsl:attribute name="data-bs-target" select="concat('#collapse_' ,$id)"/>
           <xsl:attribute name="aria-controls" select="concat('collapse_' ,$id)"/>
           <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
         </button>
       </xsl:element>
       <div>
-        <xsl:call-template  name="expand-accordion-body"/>
+        <xsl:call-template name="expand-accordion-body"/>
         <xsl:attribute name="id" select="concat('collapse_' ,$id)"/>
         <xsl:attribute name="aria-labelledby" select="concat('heading_' ,$id)"/>
         <xsl:choose>

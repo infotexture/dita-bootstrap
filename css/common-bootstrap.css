@@ -61,8 +61,9 @@
 .xmlelement,
 .xmlnsname,
 .xmlpi {
-  color: var(--dita-violet);
   font-family: var(--bs-font-monospace);
+  color: var(--dita-violet);
+  overflow-wrap: break-word;
 }
 
 .cmdname,
@@ -70,14 +71,15 @@
 .filepath,
 .option,
 .parmname {
-  color: var(--bs-code-color);
   font-family: var(--bs-font-monospace);
+  color: var(--bs-code-color);
+  overflow-wrap: break-word;
 }
 
 .cmdname,
 .parmname {
+  font-weight: 700;
   color: var(--dita-prussian-blue);
-  font-weight: bold;
 }
 
 .boolean {

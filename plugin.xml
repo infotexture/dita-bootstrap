@@ -328,6 +328,16 @@
       <val>yeti</val>
       <val>zephyr</val>
     </param>
+    <param
+      name="bootstrap.sidebar.hdr"
+      desc="Specifies an XML file that contains custom content for the sidebar header."
+      type="file"
+    />
+    <param
+      name="bootstrap.sidebar.ftr"
+      desc="Specifies an XML file that contains content for the sidebar footer."
+      type="file"
+    />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>

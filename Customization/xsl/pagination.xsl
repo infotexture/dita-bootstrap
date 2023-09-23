@@ -22,14 +22,12 @@
     </nav>
   </xsl:template>
 
-  <xsl:template
-    match="*[ contains(@class, ' topic/section ') and contains(@outputclass, 'pagination')]"
-  >
+  <xsl:template match="*[ contains(@class, ' topic/section ') and contains(@outputclass, 'pagination')]">
     <nav>
       <xsl:attribute name="aria-label">
         <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
       </xsl:attribute>
-      <xsl:apply-templates select="*[(contains(@class, ' topic/ol ') or contains(@class, ' topic/ul '))]" />
+      <xsl:apply-templates select="*[(contains(@class, ' topic/ol ') or contains(@class, ' topic/ul '))]"/>
     </nav>
   </xsl:template>
 </xsl:stylesheet>
