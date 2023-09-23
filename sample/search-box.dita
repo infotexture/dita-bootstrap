@@ -93,7 +93,7 @@
       <codeblock>&lt;ul class="navbar-nav ms-auto"&gt;
   &lt;li class="nav-item d-flex align-items-center"&gt;
     &lt;span class="nav-link pe-2"&gt;&lt;i class="bi bi-search"/&gt;&lt;/span&gt;
-    &lt;form class="position-relative me-auto search-box"&gt;
+    &lt;form class="position-relative me-auto search-box rounded"&gt;
       &lt;input type="search" class="form-control"
         placeholder="Search…" aria-label="Search for…" dir="auto"/&gt;
     &lt;/form&gt;
