@@ -25,7 +25,7 @@
   </prolog>
   <body outputclass="language-markup">
     <fig>
-      <title>Search Result</title>
+      <title>Sample search results</title>
       <image scalefit="yes" href="./src/search-result.png"/>
     </fig>
 
@@ -83,11 +83,11 @@
     </section>
 
     <section>
-      <title>Example Header Nav Bars</title>
+      <title>Sample header navigation bars</title>
       <p>To add a search box to the menu bar, add a <xmlelement>form class="search-box"</xmlelement> element
       with an <xmlelement>input type="search"</xmlelement> as shown here.</p>
       <fig>
-        <title>Simple Search Box</title>
+        <title>Simple search box</title>
         <image scalefit="yes" href="./src/search-simple.png"/>
       </fig>
       <codeblock>&lt;ul class="navbar-nav ms-auto"&gt;
@@ -106,9 +106,9 @@
           scope="external"
         >header navbar</xref>.</p>
       <p>Additional styling can be added using standard Bootstrap CSS classes such as
-        <codeph>input-group</codeph></p>
+        <codeph>input-group</codeph>:</p>
       <fig>
-        <title>Elaborate Search Box</title>
+        <title>Elaborate search box</title>
         <image scalefit="yes" href="./src/search-complex.png"/>
       </fig>
       <codeblock>&lt;ul class="navbar-nav ms-auto"&gt;
