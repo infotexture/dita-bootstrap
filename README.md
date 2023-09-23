@@ -62,7 +62,8 @@ dita --input=path/to/your.ditamap \
 ### Bootswatch themes
 
 Alternate Bootstrap themes can be downloaded directly from [Bootswatch][9].
-To override the default theme, pass a Bootswatch theme name to the `dita` command via the `--bootstrap.theme` parameter:
+
+To override the default appearance with a Bootswatch theme, pass a theme name to the `dita` command via the `--bootstrap.theme` parameter:
 
 ```console
 dita --input=path/to/your.ditamap \
@@ -73,7 +74,9 @@ dita --input=path/to/your.ditamap \
 
 ### Custom CSS
 
-To supplement the chosen theme, pass a custom CSS file to the `dita` command via the `--args.css` parameter. For a complete override of the theme CSS where the default Bootstrap CSS is no longer required, set `--bootstrap.theme=none`:
+To extend the chosen theme, pass a custom CSS file to the `dita` command via the `--args.css` parameter.
+
+For a complete override of the theme where the default Bootstrap CSS is no longer required, you can disable it by setting `--bootstrap.theme=none`:
 
 ```console
 dita --input=path/to/your.ditamap \
@@ -85,10 +88,9 @@ dita --input=path/to/your.ditamap \
      --args.csspath=css \
      --args.cssroot=path/to/your/theme
 ```
-
-![Sample DITA Bootstrap output](images/custom-bootstrap.png)
-
-For more extensive Sass customizations, you may want to install the [dita-bootstrap.sass][10] plug-in.
+ 
+> **Note**
+> For more extensive customizations with [Sass][], you may want to install the [dita-bootstrap.sass][10] plug-in.
 
 ### Headers and footers
 
@@ -255,3 +257,4 @@ Within the sample documentation, where necessary, the texts describing the usage
 [18]: https://getbootstrap.com/docs/5.3/components/scrollspy/
 [19]: https://getbootstrap.com/docs/5.3/examples/footers/
 [20]: https://getbootstrap.com/docs/5.3/examples/headers/
+[Sass]: https://sass-lang.com
