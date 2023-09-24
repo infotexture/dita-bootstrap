@@ -465,8 +465,11 @@
      <parmname>--args.cssroot</parmname>=<filepath>path/to/your/theme</filepath></codeblock>
       <note type="tip">For more extensive customizations with
         <xref href="https://sass-lang.com" format="html" scope="external">Sass</xref>, you may want to install the
-        <xref href="https://github.com/infotexture/dita-bootstrap.sass" format="html" scope="external"
-          >dita-bootstrap.sass</xref> plug-in.</note>
+        <xref
+          href="https://github.com/infotexture/dita-bootstrap.sass"
+          format="html"
+          scope="external"
+        >dita-bootstrap.sass</xref> plug-in.</note>
     </section>
     <section>
       <title>Customizing headers, footers and sidebars</title>
