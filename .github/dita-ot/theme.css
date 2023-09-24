@@ -28,3 +28,8 @@
 .custom-tooltip {
   --bs-tooltip-bg: var(--bs-primary);
 }
+
+/* override part of the Bootstrap color scheme */
+:root {
+  --bs-code-color: var(--bs-secondary-color);
+}
