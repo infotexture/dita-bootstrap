@@ -7,6 +7,7 @@
   --dita-prussian-blue: #1d365d;
   --dita-maroon: #800000;
   --dita-violet: var(--bs-purple);
+  --bs-code-color: var(--bs-secondary-color);
 }
 
 [data-bs-theme='dark'] {
