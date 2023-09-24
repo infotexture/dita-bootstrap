@@ -79,13 +79,13 @@
       <ol outputclass="carousel pt-2" otherprops="indicators(true)">
         <li>
           <fig>
-            <title><option>full</option> – Unstyled full TOC</title>
+            <title><option>full</option> – DITA-OT default unstyled full ToC</title>
             <image href="./src/full.png"/>
           </fig>
         </li>
         <li>
           <fig>
-            <title><option>partial</option> – Unstyled partial TOC</title>
+            <title><option>partial</option> – DITA-OT default unstyled partial ToC</title>
             <image href="./src/partial.png"/>
           </fig>
         </li>
