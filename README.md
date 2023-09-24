@@ -89,8 +89,6 @@ dita --input=path/to/your.ditamap \
      --args.cssroot=path/to/your/theme
 ```
 
-
-
 > **Note**
 > For more extensive customizations with [Sass][4], you may want to install the [dita-bootstrap.sass][5] plug-in.
 
