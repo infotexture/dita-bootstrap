@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="container">
+  <div class="container-xxl">
     <!-- This shows the menu on mobile -->
     <div class="bd-navbar-toggle">
       <button
