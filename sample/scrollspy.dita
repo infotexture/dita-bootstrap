@@ -7,8 +7,8 @@
    components correctly using outputclass. -->
 <topic id="scrollspy">
   <title>Scrollspy</title>
-  <shortdesc>Automatically update a side-bar ToC using Bootstrap navigation or list group components based on scroll
-    position to indicate which link is currently active in the viewport.</shortdesc>
+  <shortdesc>Automatically update a page contents sidebar ToC using Bootstrap navigation or list group components based
+    on scroll position to indicate which link is currently active in the viewport.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
