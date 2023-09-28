@@ -13,7 +13,7 @@
       <othermeta name="icon" content="bi-book-half"/>
       <othermeta name="icon-style" content="color: var(--bs-indigo)"/>
     </topicmeta>
-    <topicref navtitle="Introduction" href="index.dita"/>
+    <topicref navtitle="Introduction" href="index.dita" locktitle="yes"/>
   </chapter>
   <chapter>
     <topicmeta>
@@ -65,7 +65,7 @@
       <othermeta name="icon" content="bi-braces-asterisk"/>
       <othermeta name="icon-style" content="color: var(--bs-pink)"/>
     </topicmeta>
-    <topicref navtitle="Colors &amp; etc." href="utilities.dita"/>
+    <topicref href="utilities.dita" navtitle="Borders and Colors" locktitle="yes"/>
   </chapter>
   <chapter>
     <topicmeta>

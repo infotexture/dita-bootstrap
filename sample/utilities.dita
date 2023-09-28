@@ -11,7 +11,7 @@
 
     -->
 <topic id="utilities">
-  <title>Borders, Color and Background</title>
+  <title>Background, Borders, and Colors</title>
   <shortdesc>Use border utilities to quickly style the border and border-radius of an element and convey meaning through
       <codeph>color</codeph> and <codeph>background-color</codeph> with a handful of color utility classes.</shortdesc>
   <prolog>
