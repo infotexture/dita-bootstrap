@@ -94,6 +94,11 @@
         <othermeta name="icon" content="bi-wifi-off"/>
       </topicmeta>
     </topicref>
+    <topicref href="sass.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-filetype-sass"/>
+      </topicmeta>
+    </topicref>
   </chapter>
   <backmatter deliveryTarget="pdf">
     <booklists>
