@@ -235,6 +235,12 @@ Additionally, opt-in breadcrumbs and menu bars and other modifiers can be added 
 
 [Apache 2.0](LICENSE) © 2017–2023 Roger W. Fienhold Sheen
 
+The generated HTML created by this software includes the following additional software components which are obtained under license:
+
+- Bootstrap – https://github.com/twbs/bootstrap – **MIT license**
+- Bootstrap Icons – https://github.com/twbs/icons – **MIT license**
+- Bootswatch Themes – https://github.com/thomaspark/bootswatch – **MIT license**
+
 Within the sample documentation, where necessary, the texts describing the usage of each component have been copied directly from the official [Bootstrap 5.3 documentation][2], however DITA markup is used throughout the examples describing how to implement these components correctly using `outputclass`. The text is therefore a derivative of "Bootstrap 5.3 docs" by Twitter, Inc. and the Bootstrap Authors, and used under CC BY 3.0.
 
 [1]: http://www.dita-ot.org
