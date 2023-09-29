@@ -11,19 +11,12 @@
    file for applicable licenses.-->
 <topic id="index">
   <title>DITA Bootstrap</title>
-  <abstract>
-    <shortdesc>A plug-in for
-      <xref href="http://www.dita-ot.org" format="html" scope="external">DITA Open Toolkit</xref> that extends the
-      default HTML5 output with a
-      <xref href="https://getbootstrap.com/docs/5.3" format="html" scope="external">Bootstrap 5.3</xref> template and
-      components.</shortdesc>
-    <p>Where necessary, the texts describing the usage of each component have been copied directly from the
-      <xref href="https://getbootstrap.com/docs/5.3" format="html" scope="external">official Bootstrap 5.3
-        documentation</xref>, however DITA markup is used throughout the examples describing how to implement these
-      components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute. This text is therefore a derivative of
-        <cite>Bootstrap 5 docs</cite> by Twitter, Inc. and the Bootstrap Authors, and used under
-      <xref href="https://creativecommons.org/licenses/by/3.0/" format="html" scope="external">CC BY 3.0.</xref></p>
-  </abstract>
+  <shortdesc>A plug-in for
+    <xref href="http://www.dita-ot.org" format="html" scope="external">DITA Open Toolkit</xref> that extends the default
+    HTML5 output with a
+    <xref href="https://getbootstrap.com/docs/5.3" format="html" scope="external">Bootstrap 5.3</xref> template and
+    components.
+  </shortdesc>
   <prolog>
     <metadata>
       <keywords>
@@ -811,6 +804,17 @@
         <li>
           <parmname>--toc-spacer.padding</parmname> – specifies the vertical padding to add to the side menu</li>
       </ul>
+    </section>
+    <section>
+      <note>Within the sample documentation, the texts describing the usage of each component have been copied directly
+        from the
+        <xref href="https://getbootstrap.com/docs/5.3" format="html" scope="external">official Bootstrap 5.3
+          documentation</xref>, however DITA markup is used throughout the examples describing how to implement these
+        components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute. This text is therefore a derivative
+        of <cite>Bootstrap 5 docs</cite> by Twitter, Inc. and the Bootstrap Authors, and used under
+        <xref href="https://creativecommons.org/licenses/by/3.0/" format="html" scope="external">CC BY
+        3.0.</xref>
+      </note>
     </section>
   </body>
 </topic>
