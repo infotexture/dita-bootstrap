@@ -11,9 +11,9 @@
   version="2.0"
   exclude-result-prefixes="xs dita-ot dita2html"
 >
-
   <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
   <xsl:param name="BIDIRECTIONAL_DOCUMENT" select="'no'" as="xs:string"/>
+  <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'mt-3 border-top bg-primary-subtle'"/>
 
   <xsl:variable name="defaultDirection">
     <xsl:apply-templates select="." mode="get-render-direction">
@@ -64,7 +64,7 @@
 
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
-      <article xsl:use-attribute-sets="article">
+      <article role="article" class="bs-content">
         <!-- ↓ Add check for bi-directional content ↓ -->
         <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
           <xsl:variable name="direction">
@@ -77,8 +77,11 @@
         </xsl:if>
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:attribute name="aria-labelledby">
-          <xsl:apply-templates select="*[contains(@class,' topic/title ')] |
-                                       self::dita/*[1]/*[contains(@class,' topic/title ')]" mode="return-aria-label-id"/>
+          <xsl:apply-templates
+            select="*[contains(@class,' topic/title ')] |
+                                       self::dita/*[1]/*[contains(@class,' topic/title ')]"
+            mode="return-aria-label-id"
+          />
         </xsl:attribute>
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
         <!-- ↓ Add Bootstrap breadcrumb ↓ -->
@@ -95,6 +98,13 @@
         <xsl:call-template name="gen-endnotes"/>    <!-- include footnote-endnotes -->
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
       </article>
+      <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
+        <xsl:if test="count(*[contains(@class, ' topic/topic ')])&gt;0">
+          <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+            <xsl:call-template name="scrollspy-content"/>
+          </div>
+        </xsl:if>
+      </xsl:if>
     </main>
   </xsl:template>
 
@@ -104,9 +114,9 @@
     <xsl:apply-templates select="@xml:lang"/>
     <xsl:apply-templates select="@dir"/>
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/@style" mode="add-ditaval-style"/>
-     <!-- ↓ Add Bootstrap role template ↓ -->
+    <!-- ↓ Add Bootstrap role template ↓ -->
     <xsl:call-template name="bootstrap-role"/>
-     <!-- ↓ Set Bidi to auto for code ↓ -->
+    <!-- ↓ Set Bidi to auto for code ↓ -->
     <xsl:call-template name="bidi-auto-code"/>
     <!-- ↓ Add Bootstrap class attributes template ↓ -->
     <xsl:variable name="bootstrap-class">
@@ -143,19 +153,23 @@
             </xsl:analyze-string>
           </xsl:for-each>
         </xsl:variable>
-        <xsl:for-each select="@props |
+        <xsl:for-each
+          select="@props |
                               @audience |
                               @platform |
                               @product |
                               @otherprops |
                               @deliveryTarget |
-                              @*[local-name() = $specializations]">
+                              @*[local-name() = $specializations]"
+        >
           <xsl:attribute name="data-{name()}" select="."/>
         </xsl:for-each>
       </xsl:when>
       <xsl:when test="exists($passthrough-attrs)">
         <xsl:for-each select="@*">
-          <xsl:if test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]">
+          <xsl:if
+            test="$passthrough-attrs[@att = name(current()) and (empty(@val) or (some $v in tokenize(current(), '\s+') satisfies $v = @val))]"
+          >
             <xsl:attribute name="data-{name()}" select="."/>
           </xsl:if>
         </xsl:for-each>
@@ -164,7 +178,7 @@
   </xsl:template>
 
   <!-- Override to add Bootstrap Alert classes and roles to Note elements -->
-  <!-- https://getbootstrap.com/docs/5.2/components/alerts/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/alerts/ -->
   <xsl:template match="*" mode="process.note.common-processing">
     <xsl:param name="type" select="@type"/>
     <xsl:param name="title">
@@ -199,7 +213,10 @@
         </xsl:call-template>
       </span>
       <xsl:text> </xsl:text>
-      <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop" mode="ditaval-outputflag"/>
+      <xsl:apply-templates
+        select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]/revprop"
+        mode="ditaval-outputflag"
+      />
       <xsl:apply-templates/>
       <!-- Normal end flags and revision end flags both go out after the content. -->
       <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
@@ -207,7 +224,7 @@
   </xsl:template>
 
   <!-- Customization to add Bootstrap Figure Content -->
-  <!-- https://getbootstrap.com/docs/5.2/content/figures/ -->
+  <!-- https://getbootstrap.com/docs/5.3/content/figures/ -->
   <xsl:template
     match="*[contains(@class, ' topic/fig ') and not(contains(@class,' pr-d/syntaxdiagram '))]"
     name="topic.fig"
@@ -241,7 +258,10 @@
   <xsl:template name="place-fig-lbl">
     <xsl:param name="stringName"/>
     <!-- Number of fig/title's including this one -->
-    <xsl:variable name="fig-count-actual" select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"/>
+    <xsl:variable
+      name="fig-count-actual"
+      select="count(preceding::*[contains(@class, ' topic/fig ')]/*[contains(@class, ' topic/title ')])+1"
+    />
     <xsl:variable name="ancestorlang">
       <xsl:call-template name="getLowerCaseLang"/>
     </xsl:variable>
@@ -316,7 +336,7 @@
   </xsl:template>
 
   <!-- Customization to add Bootstrap Borders to Codeblock elements-->
-  <!-- https://getbootstrap.com/docs/5.2/utilities/borders/ -->
+  <!-- https://getbootstrap.com/docs/5.3/utilities/borders/ -->
   <xsl:template match="*[contains(@class, ' topic/pre ') and @frame]">
     <xsl:variable name="default-fig-class">
       <xsl:apply-templates select="." mode="dita2html:get-default-fig-class"/>
@@ -343,7 +363,7 @@
   </xsl:template>
 
   <!-- Customization to add Bootstrap Borders to Lines elements-->
-  <!-- https://getbootstrap.com/docs/5.2/utilities/borders/ -->
+  <!-- https://getbootstrap.com/docs/5.3/utilities/borders/ -->
   <xsl:template match="*[contains(@class, ' topic/lines ') and @frame]">
     <xsl:variable name="default-fig-class">
       <xsl:apply-templates select="." mode="dita2html:get-default-fig-class"/>
@@ -401,5 +421,50 @@
       <xsl:call-template name="setidaname"/>
       <xsl:apply-templates/>
     </abbr>
+  </xsl:template>
+
+  <xsl:template match="*" mode="addFooterToHtmlBodyElement">
+    <xsl:variable name="footer-content" as="node()*">
+      <xsl:call-template name="gen-user-footer"/> <!-- include user's XSL running footer here -->
+      <xsl:call-template name="processFTR"/>      <!-- Include XHTML footer, if specified -->
+    </xsl:variable>
+    <xsl:if test="exists($footer-content)">
+      <footer xsl:use-attribute-sets="footer">
+        <!-- ↓ Add Bootstrap CSS ↓ -->
+        <xsl:attribute name="class">
+          <xsl:value-of select="$BOOTSTRAP_CSS_FOOTER"/>
+          <xsl:if test="not($TOC_SPACER_PADDING = '0')">
+            <xsl:value-of select="concat(' py-', $TOC_SPACER_PADDING)"/>
+          </xsl:if>
+        </xsl:attribute>
+        <xsl:sequence select="$footer-content"/>
+         <!-- ↓ Add Bootstrap CSS ↓ -->
+      </footer>
+    </xsl:if>
+  </xsl:template>
+
+  <!-- list item -->
+  <xsl:template match="*[contains(@class, ' topic/li ')]" name="topic.li">
+  <li>
+    <xsl:choose>
+      <xsl:when test="parent::*/@compact = 'no'">
+        <!-- handle non-compact list items -->
+        <xsl:call-template name="commonattributes">
+          <xsl:with-param name="default-output-class" select="'py-3'"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:when test="parent::*/@compact = 'yes'">
+        <!-- handle non-compact list items -->
+        <xsl:call-template name="commonattributes">
+          <xsl:with-param name="default-output-class" select="'py-0'"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="commonattributes"/>
+      </xsl:otherwise>
+    </xsl:choose>
+    <xsl:call-template name="setidaname"/>
+    <xsl:apply-templates/>
+  </li>
   </xsl:template>
 </xsl:stylesheet>

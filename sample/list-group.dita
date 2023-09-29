@@ -2,11 +2,11 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
+   5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.2 docs" by Twitter, Inc.
+   This work, is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc.
    and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
    file for applicable licenses.-->
 <topic id="list-group">
@@ -22,6 +22,7 @@
         </indexterm>
         <indexterm><xmlelement>ul</xmlelement></indexterm>
         <indexterm><xmlelement>ol</xmlelement></indexterm>
+        <indexterm><xmlatt>compact</xmlatt></indexterm>
       </keywords>
     </metadata>
   </prolog>
@@ -48,12 +49,40 @@
   &lt;li&gt;And a fifth one&lt;/li&gt;
 &lt;/ul&gt;</codeblock>
     <section>
+      <title>Compacted list group</title>
+      <p>Add <xmlatt>compact="yes"</xmlatt> to reduce the padding of list items</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ul outputclass="list-group" compact="yes">
+        <li>Item One</li>
+        <li>Item Two</li>
+        <li>Item Three</li>
+      </ul>
+    </bodydiv>
+    <codeblock>&lt;ul outputclass="list-group" compact="yes" &gt;
+  ...
+&lt;/ul&gt;</codeblock>
+    <section>
+      <title>Expanded list group</title>
+      <p>Add <xmlatt>compact="no"</xmlatt> to increase the padding of list items</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <ul outputclass="list-group" compact="no">
+        <li>Item One</li>
+        <li>Item Two</li>
+        <li>Item Three</li>
+      </ul>
+    </bodydiv>
+    <codeblock>&lt;ul outputclass="list-group" compact="no" &gt;
+  ...
+&lt;/ul&gt;</codeblock>
+    <section>
       <title>Flush</title>
-      <p>Add an <xmlatt>outputclass</xmlatt> and set it to <codeph>list-group-flush</codeph> to remove some borders and
+      <p>Add an <xmlatt>outputclass="list-group-flush"</xmlatt> to remove some borders and
         rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <ul outputclass="list-group list-group-flush">
+      <ul outputclass="list-group-flush">
         <li>An item</li>
         <li>A second item</li>
         <li>A third item</li>
@@ -61,7 +90,7 @@
         <li>And a fifth one</li>
       </ul>
     </bodydiv>
-    <codeblock>&lt;ul outputclass="list-group list-group-flush"&gt;
+    <codeblock>&lt;ul outputclass="list-group-flush"&gt;
   &lt;li&gt;An item&lt;/li&gt;
   &lt;li&gt;A second item&lt;/li&gt;
   &lt;li&gt;A third item&lt;/li&gt;

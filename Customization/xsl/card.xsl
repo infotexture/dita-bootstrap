@@ -12,7 +12,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
   <!-- Customization to add Bootstrap Card Component -->
-  <!-- https://getbootstrap.com/docs/5.2/components/card/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/card/ -->
 
   <xsl:template match="*[contains(@class,' topic/section ') and contains(@outputclass, 'card')]">
     <div>
@@ -52,12 +52,14 @@
       <xsl:choose>
         <xsl:when
           test="count(preceding-sibling::*[contains(@class, ' topic/title ')]) > 0"
-        >sectiontitle card-subtitle text-muted</xsl:when>
+        >sectiontitle card-subtitle text-body-secondary</xsl:when>
         <xsl:otherwise>sectiontitle card-title</xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
     <xsl:element name="{$headLevel}">
-      <xsl:attribute name="class"><xsl:value-of select="$bootstrap-class"/></xsl:attribute>
+      <xsl:attribute name="class">
+        <xsl:value-of select="$bootstrap-class"/>
+      </xsl:attribute>
       <xsl:call-template name="commonattributes">
         <xsl:with-param name="default-output-class" select="$bootstrap-class"/>
       </xsl:call-template>

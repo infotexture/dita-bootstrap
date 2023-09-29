@@ -15,10 +15,51 @@
   <xsl:param name="FILEDIR" as="xs:string?"/>
   <xsl:param name="FILENAME" as="xs:string?"/>
   <xsl:param name="BOOTSTRAP_CSS_ACTIVE_NAV_PARENT" select="'active'"/>
+  <xsl:param name="TOC_SPACER_PADDING" select="'0'"/>
+  <xsl:param name="BOOTSTRAP_SIDEBAR_HDR"/>
+  <xsl:param name="BOOTSTRAP_SIDEBAR_FTR"/>
   <xsl:param name="input.map.url" as="xs:string?"/>
 
   <xsl:variable name="input.map" as="document-node()?">
     <xsl:apply-templates select="document($input.map.url)" mode="normalize-map"/>
+  </xsl:variable>
+
+  <xsl:variable name="SIDEBAR_HDRFILE">
+    <xsl:choose>
+      <xsl:when test="not($BOOTSTRAP_SIDEBAR_HDR)"/> <!-- If no filterfile leave empty -->
+      <xsl:when test="starts-with($BOOTSTRAP_SIDEBAR_HDR, 'file:')">
+        <xsl:value-of select="$BOOTSTRAP_SIDEBAR_HDR"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:choose>
+          <xsl:when test="starts-with($BOOTSTRAP_SIDEBAR_HDR, '/')">
+            <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_SIDEBAR_HDR"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_SIDEBAR_HDR"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:variable name="SIDEBAR_FTRFILE">
+    <xsl:choose>
+      <xsl:when test="not($BOOTSTRAP_SIDEBAR_FTR)"/> <!-- If no filterfile leave empty -->
+      <xsl:when test="starts-with($BOOTSTRAP_SIDEBAR_FTR, 'file:')">
+        <xsl:value-of select="$BOOTSTRAP_SIDEBAR_FTR"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:choose>
+          <xsl:when test="starts-with($BOOTSTRAP_SIDEBAR_FTR, '/')">
+            <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_SIDEBAR_FTR"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_SIDEBAR_FTR"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:variable>
 
   <!-- A topic is active if it is currently selected -->
@@ -27,8 +68,7 @@
       <xsl:when test=". is $current-topicref">
         <xsl:value-of select="' active'"/>
       </xsl:when>
-      <xsl:when test="$nav-toc = ('collapsible')">
-      </xsl:when>
+      <xsl:when test="$nav-toc = ('collapsible')"/>
       <xsl:otherwise>
         <xsl:for-each select="descendant::*">
           <xsl:if test=". is $current-topicref">
@@ -53,6 +93,43 @@
         </xsl:for-each>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <xsl:template name="nav-divider">
+    <xsl:if
+      test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='divider')]"
+    >
+      <xsl:variable
+        name="content"
+        select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='divider')]/@content"
+      />
+      <li>
+        <hr class="m-1"/>
+        <xsl:if test="not($content = '')">
+          <span class="ps-3 bd-divider">
+            <xsl:value-of disable-output-escaping="yes" select="$content"/>
+          </span>
+        </xsl:if>
+      </li>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="nav-icon">
+    <xsl:if test="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]">
+      <i>
+        <xsl:attribute name="class">
+          <xsl:text>me-2 </xsl:text>
+          <xsl:value-of
+            select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon')]/@content"
+          />
+        </xsl:attribute>
+        <xsl:attribute name="style">
+          <xsl:value-of
+            select="./*[contains(@class, ' map/topicmeta ')]/*[contains(@class, ' topic/othermeta ') and (@name='icon-style')]/@content"
+          />
+        </xsl:attribute>
+      </i>
+    </xsl:if>
   </xsl:template>
 
   <!-- Add bootstrap classes and href to a link -->
@@ -106,110 +183,189 @@
     </div>
   </xsl:template>
 
+  <xsl:template name="default-sidebar-header">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">
+        <xsl:choose>
+          <xsl:when test="$input.map//*[contains(@class,' topic/title ')][1]">
+            <xsl:for-each select="$input.map//*[contains(@class,' topic/title ')][1]">
+              <xsl:if test="position() = 1">
+                <xsl:value-of select="."/>
+              </xsl:if>
+            </xsl:for-each>
+          </xsl:when>
+          <xsl:when test="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
+            <xsl:for-each select="$input.map//*[contains(@class,' bookmap/mainbooktitle ')][1]">
+              <xsl:if test="position() = 1">
+                <xsl:value-of select="."/>
+              </xsl:if>
+            </xsl:for-each>
+          </xsl:when>
+          <xsl:when test="//*[contains(@class, ' map/map ')]/@title">
+            <xsl:value-of select="//*[contains(@class, ' map/map ')]/@title"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of
+              select="/descendant::*[contains(@class, ' topic/topic ')][1]/*[contains(@class, ' topic/title ')]"
+            />
+          </xsl:otherwise>
+        </xsl:choose>
+      </h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+        data-bs-target="#bdSidebar"
+      />
+    </div>
+  </xsl:template>
+
+  <xsl:template name="default-sidebar-footer">
+    <xsl:if test="$BOOTSTRAP_SIDEBAR_FTR">
+      <div class="bs-fixed-footer">
+        <xsl:copy-of select="document($BOOTSTRAP_SIDEBAR_FTR, /)"/>
+      </div>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="offcanvas-sidebar">
+    <div
+      class="offcanvas-lg offcanvas-start"
+      tabindex="-1"
+      id="bdSidebar"
+      aria-labelledby="bdSidebarOffcanvasLabel"
+      aria-modal="true"
+      role="dialog"
+    >
+      <xsl:choose>
+        <xsl:when test="not($BOOTSTRAP_SIDEBAR_HDR)">
+          <xsl:call-template name="default-sidebar-header"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:copy-of select="document($BOOTSTRAP_SIDEBAR_HDR, /)"/>
+        </xsl:otherwise>
+      </xsl:choose>
+
+      <div class="offcanvas-body flex-column h-100">
+        <xsl:call-template name="sidebar-content"/>
+      </div>
+    </div>
+  </xsl:template>
+
+  <xsl:template name="sidebar-content">
+    <nav xsl:use-attribute-sets="toc">
+      <div>
+        <xsl:attribute name="class">
+          <xsl:text>overflow-y-auto</xsl:text>
+          <xsl:if test="$BOOTSTRAP_SIDEBAR_FTR">
+            <xsl:text> bs-fixed-sidetoc</xsl:text>
+          </xsl:if>
+          <xsl:if test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
+            <xsl:text> alert alert-light</xsl:text>
+          </xsl:if>
+        </xsl:attribute>
+
+        <xsl:choose>
+          <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
+            <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↓ -->
+            <div class="list-group me-3">
+              <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+              <xsl:choose>
+                <xsl:when test="$nav-toc = 'list-group-partial'">
+                  <xsl:apply-templates select="$current-topicref" mode="list-group-toc-pull">
+                    <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+                    <xsl:with-param name="children" as="element()*">
+                      <xsl:apply-templates
+                        select="$current-topicref/*[contains(@class, ' map/topicref ')]"
+                        mode="list-group-toc"
+                      >
+                        <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+                      </xsl:apply-templates>
+                    </xsl:with-param>
+                  </xsl:apply-templates>
+                </xsl:when>
+                <xsl:when test="$nav-toc = 'list-group-full'">
+                  <xsl:apply-templates select="$input.map" mode="list-group-toc">
+                    <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+                  </xsl:apply-templates>
+                </xsl:when>
+              </xsl:choose>
+              <!-- ↓ Close <div> element from Bootstrap list-group ↑ -->
+            </div>
+          </xsl:when>
+          <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
+            <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
+            <nav class="nav nav-pills flex-column navbar-light">
+              <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+              <xsl:choose>
+                <xsl:when test="$nav-toc = 'nav-pill-partial'">
+                  <xsl:apply-templates select="$current-topicref" mode="nav-pill-toc-pull">
+                    <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+                    <xsl:with-param name="children" as="element()*">
+                      <xsl:apply-templates
+                        select="$current-topicref/*[contains(@class, ' map/topicref ')]"
+                        mode="nav-pill-toc"
+                      >
+                        <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+                      </xsl:apply-templates>
+                    </xsl:with-param>
+                  </xsl:apply-templates>
+                </xsl:when>
+                <xsl:when test="$nav-toc = 'nav-pill-full'">
+                  <xsl:apply-templates select="$input.map" mode="nav-pill-toc">
+                    <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+                  </xsl:apply-templates>
+                </xsl:when>
+              </xsl:choose>
+              <!-- ↓ Close Bootstrap <nav> element -->
+            </nav>
+          </xsl:when>
+          <xsl:when test="$nav-toc = ('collapsible')">
+            <div class="flex-column bd-links">
+              <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+                <xsl:attribute name="direction" select="$defaultDirection"/>
+              </xsl:if>
+              <ul class="list-unstyled mb-0 py-3 pt-md-1">
+                <xsl:apply-templates select="$input.map" mode="collapsible-toc">
+                  <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+                </xsl:apply-templates>
+              </ul>
+            </div>
+          </xsl:when>
+          <xsl:otherwise>
+            <div>
+              <xsl:next-match/>
+            </div>
+          </xsl:otherwise>
+        </xsl:choose>
+      </div>
+      <xsl:call-template name="default-sidebar-footer"/>
+    </nav>
+  </xsl:template>
+
   <!-- Override to add Bootstrap list-group, nav-pill and collapse classes -->
   <xsl:template match="*" mode="gen-user-sidetoc">
     <xsl:choose>
-      <xsl:when test="$nav-toc = ('list-group-partial', 'list-group-full')">
-        <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add <div> element from Bootstrap list-group ↓ -->
-          <div class="list-group me-3">
-          <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-            <xsl:choose>
-              <xsl:when test="$nav-toc = 'list-group-partial'">
-                <xsl:apply-templates select="$current-topicref" mode="list-group-toc-pull">
-                  <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-                  <xsl:with-param name="children" as="element()*">
-                    <xsl:apply-templates
-                      select="$current-topicref/*[contains(@class, ' map/topicref ')]"
-                      mode="list-group-toc"
-                    >
-                      <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-                    </xsl:apply-templates>
-                  </xsl:with-param>
-                </xsl:apply-templates>
-              </xsl:when>
-              <xsl:when test="$nav-toc = 'list-group-full'">
-                <xsl:apply-templates select="$input.map" mode="list-group-toc">
-                  <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-                </xsl:apply-templates>
-              </xsl:when>
-            </xsl:choose>
-          <!-- ↓ Close <div> element from Bootstrap list-group ↑ -->
-          </div>
-          <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-        </nav>
-      </xsl:when>
-      <xsl:when test="$nav-toc = ('list-group-scrollspy')">
-        <nav xsl:use-attribute-sets="toc">
-          <div class="list-group me-3" id="bs-scrollspy">
-            <xsl:apply-templates mode="scrollspy"/>
-          </div>
-        </nav>
-      </xsl:when>
-
-      <xsl:when test="$nav-toc = ('nav-pill-partial', 'nav-pill-full')">
-        <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
-          <nav class="nav nav-pills flex-column navbar-light bg-light">
-          <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-            <xsl:choose>
-              <xsl:when test="$nav-toc = 'nav-pill-partial'">
-                <xsl:apply-templates select="$current-topicref" mode="nav-pill-toc-pull">
-                  <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-                  <xsl:with-param name="children" as="element()*">
-                    <xsl:apply-templates
-                      select="$current-topicref/*[contains(@class, ' map/topicref ')]"
-                      mode="nav-pill-toc"
-                    >
-                      <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-                    </xsl:apply-templates>
-                  </xsl:with-param>
-                </xsl:apply-templates>
-              </xsl:when>
-              <xsl:when test="$nav-toc = 'nav-pill-full'">
-                <xsl:apply-templates select="$input.map" mode="nav-pill-toc">
-                  <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-                </xsl:apply-templates>
-              </xsl:when>
-            </xsl:choose>
-          <!-- ↓ Close Bootstrap <nav> element -->
-          </nav>
-          <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-        </nav>
-      </xsl:when>
-      <xsl:when test="$nav-toc = ('nav-pill-scrollspy')">
-        <nav xsl:use-attribute-sets="toc">
-          <!-- ↓ Remove <ul> and add nested <nav> element with Bootstrap classes ↓ -->
-          <nav class="nav nav-pills flex-column navbar-light bg-light" id="bs-scrollspy">
-            <xsl:apply-templates mode="scrollspy"/>
-          </nav>
-        </nav>
-      </xsl:when>
-      <xsl:when test="$nav-toc = ('collapsible')">
-        <!--xsl:variable name="direction">
-          <xsl:apply-templates select="." mode="get-render-direction">
-            <xsl:with-param name="lang" select="$defaultLanguage"/>
-          </xsl:apply-templates>
-        </xsl:variable-->
-        <nav role="navigation" id="bs-sidebar-nav" class="flex-column bd-links">
-          <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
-            <xsl:attribute name="direction" select="$defaultDirection"/>
-          </xsl:if>
-          <ul class="list-unstyled mb-0 py-3 pt-md-1">
-            <xsl:apply-templates select="$input.map" mode="collapsible-toc">
-              <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-            </xsl:apply-templates>
-          </ul>
-        </nav>
+      <xsl:when test="$nav-toc = 'none'">
+        <xsl:call-template name="sidebar-content"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:next-match/>
+        <div>
+          <xsl:attribute name="class">
+            <xsl:value-of select="'overflow-y-auto bs-sidebar'"/>
+            <xsl:if test="not($TOC_SPACER_PADDING = '0')">
+              <xsl:value-of select="concat(' py-', $TOC_SPACER_PADDING)"/>
+            </xsl:if>
+          </xsl:attribute>
+          <xsl:call-template name="offcanvas-sidebar"/>
+        </div>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
   <!-- list-group sidebar toc processing to add Bootstrap list-group menu -->
-  <!-- https://getbootstrap.com/docs/5.2/components/list-group/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/list-group/ -->
 
   <!-- partial list-group sidebar toc processing -->
   <xsl:template match="*[contains(@class, ' map/map ')]" mode="list-group-toc-pull">
@@ -239,7 +395,7 @@
   </xsl:template>
 
   <!-- nav-pill sidebar toc processing to add Bootstrap nav-pills menu -->
-  <!-- https://getbootstrap.com/docs/5.2/components/navs-tabs/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/navs-tabs/ -->
 
   <!-- partial nav-pill sidebar toc processing -->
   <xsl:template match="*[contains(@class, ' map/map ')]" mode="nav-pill-toc-pull">
@@ -269,7 +425,7 @@
   </xsl:template>
 
   <!-- collapsible sidebar toc processing to add Bootstrap collapsing menu classes -->
-  <!-- https://getbootstrap.com/docs/5.2/components/collapse/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/collapse/ -->
   <xsl:template match="*" mode="collapsible-toc" priority="-10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="collapsible-toc">
@@ -278,7 +434,7 @@
   </xsl:template>
 
   <!-- nav-pill menubar-toc submenu toc processing - a navbar with dropdowns -->
-  <!-- https://getbootstrap.com/docs/5.2/components/dropdowns/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/dropdowns/ -->
   <xsl:template match="*" mode="menubar-toc" priority="-10">
     <xsl:param name="pathFromMaplist" as="xs:string"/>
     <xsl:apply-templates select="*[contains(@class, ' map/topicref ')]" mode="menubar-toc">
@@ -321,10 +477,12 @@
                       </xsl:if>
                     </xsl:with-param>
                   </xsl:call-template>
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </a>
               </xsl:when>
               <!--xsl:otherwise>
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </xsl:otherwise-->
             </xsl:choose>
@@ -383,19 +541,21 @@
                 <xsl:with-param name="class">
                   <xsl:text>list-group-item list-group-item-action</xsl:text>
                   <xsl:if test="parent::* is $current-topicref">
-                    <xsl:text> bg-light</xsl:text>
+                    <xsl:text> bg-body-tertiary</xsl:text>
                   </xsl:if>
                   <xsl:if test=". is $current-topicref">
                     <xsl:text> active</xsl:text>
                   </xsl:if>
                 </xsl:with-param>
               </xsl:call-template>
+              <xsl:call-template name="nav-icon"/>
               <xsl:value-of select="$title"/>
             </a>
           </xsl:when>
           <xsl:otherwise>
             <!-- ↓ Add Bootstrap list-group-item class and light background color ↓ -->
-            <span class="list-group-item bg-light">
+            <span class="list-group-item bg-body-tertiary">
+              <xsl:call-template name="nav-icon"/>
               <xsl:value-of select="$title"/>
             </span>
             <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
@@ -450,10 +610,12 @@
                       <xsl:value-of select="$active-class"/>
                     </xsl:with-param>
                   </xsl:call-template>
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </a>
               </xsl:when>
               <!--xsl:otherwise>
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </xsl:otherwise-->
             </xsl:choose>
@@ -516,18 +678,20 @@
                   <xsl:value-of select="$active-class"/>
                 </xsl:with-param>
               </xsl:call-template>
+              <xsl:call-template name="nav-icon"/>
               <xsl:value-of select="$title"/>
             </a>
           </xsl:when>
           <xsl:otherwise>
             <!-- ↓ Add Bootstrap nav-brand class ↓ -->
-            <span class="my-1 ps-3 navbar-brand">
+            <span class="my-1 ps-3 navbar-brand pt-2 pb-1">
+              <xsl:call-template name="nav-icon"/>
               <xsl:value-of select="$title"/>
             </span>
           </xsl:otherwise>
         </xsl:choose>
         <xsl:if test="exists($children)">
-          <nav class="nav nav-pills flex-column ps-3">
+          <nav class="nav nav-pills flex-column ps-3 mw-100 w-100">
             <xsl:apply-templates select="$children" mode="#current">
               <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
             </xsl:apply-templates>
@@ -557,13 +721,15 @@
     <xsl:variable name="show-menu">
       <xsl:call-template name="get-show-menu"/>
     </xsl:variable>
+    <xsl:if test="not($BOOTSTRAP_MENUBAR_TOC = 'yes')">
+      <xsl:call-template name="nav-divider"/>
+    </xsl:if>
     <li>
       <xsl:choose>
         <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes' and count(ancestor::*/@href) eq 0 and not($show-menu = 'show')">
           <!-- no-op - if a menubar-toc is present, the nav-bar is reduced to current decendents only -->
         </xsl:when>
-        <xsl:when test="not(.)">
-        </xsl:when>
+        <xsl:when test="not(.)"/>
         <xsl:when test="normalize-space($title)">
           <xsl:variable name="id" select="dita-ot:generate-html-id(.)"/>
           <xsl:choose>
@@ -575,7 +741,7 @@
                   <!-- ↓ Add Toggle without text ↓ -->
                   <button data-bs-toggle="collapse">
                     <xsl:attribute name="class">
-                      <xsl:text>btn d-inline-flex align-items-center pe-0</xsl:text>
+                      <xsl:text>btn d-inline-flex align-items-center pe-0 border-0</xsl:text>
                       <xsl:if test="$show-menu='show'">
                         <xsl:text> active</xsl:text>
                       </xsl:if>
@@ -616,6 +782,7 @@
                       <xsl:value-of select="$active-class"/>
                     </xsl:with-param>
                   </xsl:call-template>
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </a>
               </div>
@@ -625,7 +792,7 @@
               <div class="d-flex flex-row">
                 <button data-bs-toggle="collapse">
                   <xsl:attribute name="class">
-                    <xsl:text>btn d-inline-flex align-items-center pe-0</xsl:text>
+                    <xsl:text>btn d-inline-flex align-items-center pe-0 border-0</xsl:text>
                     <xsl:if test="$show-menu='show'">
                       <xsl:text> active</xsl:text>
                     </xsl:if>
@@ -658,6 +825,8 @@
                     <xsl:attribute name="aria-expanded" select="'true'"/>
                     <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
+
+                  <xsl:call-template name="nav-icon"/>
                   <xsl:value-of select="$title"/>
                 </span>
               </div>
@@ -703,6 +872,7 @@
                   <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                   <xsl:with-param name="class" select="'nav-link'"/>
                 </xsl:call-template>
+                <xsl:call-template name="nav-icon"/>
                 <xsl:value-of select="$title"/>
               </a>
             </li>
@@ -718,6 +888,7 @@
                 aria-expanded="false"
                 aria-haspopup="true"
               >
+                <xsl:call-template name="nav-icon"/>
                 <xsl:value-of select="$title"/>
               </a>
               <ul class="dropdown-menu" role="menu">
@@ -726,12 +897,14 @@
                   <xsl:variable name="title">
                     <xsl:apply-templates select="." mode="get-navtitle"/>
                   </xsl:variable>
+                  <xsl:call-template name="nav-divider"/>
                   <li role="none">
                     <a role="menuitem">
                       <xsl:call-template name="nav-attributes">
                         <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
                         <xsl:with-param name="class" select="'dropdown-item'"/>
                       </xsl:call-template>
+                      <xsl:call-template name="nav-icon"/>
                       <xsl:value-of select="$title"/>
                     </a>
                   </li>

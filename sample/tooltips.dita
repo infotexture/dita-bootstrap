@@ -2,11 +2,11 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
+   5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.2 docs" by Twitter, Inc.
+   This work, is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc.
    and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
    file for applicable licenses.-->
 <topic id="tooltips">
@@ -33,13 +33,14 @@
       <ul>
         <li>Tooltips rely on the third-party library
           <xref href="https://popper.js.org" format="html" scope="external">Popper</xref> for positioning.</li>
-        <li>Tooltips are opt-in for performance reasons, so <b>you must initialize them yourself</b> by setting
-            <parmname>--popovers.include</parmname>=<option>yes</option>.</li>
         <li>Tooltips with a zero-length <xmlelement>desc</xmlelement> element are never displayed.</li>
         <li>Triggering tooltips on hidden elements will not work.</li>
         <li>Tooltips for <xmlatt>outputclass="disabled"</xmlatt> elements must be triggered on a wrapper element.</li>
         <li>Tooltips must be hidden before their corresponding elements have been removed from the DOM.</li>
         <li>Tooltips can be triggered thanks to an element inside a shadow DOM.</li>
+        <li>Tooltips are included by default, but for performance reasons, <b
+          >you may exclude them yourself</b> by setting
+            <parmname>--popovers.include</parmname>=<option>no</option>.</li>
       </ul>
     </section>
 

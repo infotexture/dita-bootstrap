@@ -39,5 +39,6 @@
         "parser": "xml"
       }
     }
-  ]
+  ],
+  "plugins": ["@prettier/plugin-xml"]
 }

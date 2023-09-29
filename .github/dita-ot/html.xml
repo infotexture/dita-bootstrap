@@ -26,6 +26,16 @@
       <param name="processing-mode" value="strict"/>
       <param name="icons.include" value="yes"/>
       <param name="popovers.include" value="yes"/>
+      <param name="dark.mode.include" value="yes"/>
+      <param
+        name="open-graph.url"
+        value="https://infotexture.github.io/dita-bootstrap"
+      />
+      <param
+        name="lunr.search"
+        value="https://infotexture.github.io/dita-bootstrap"
+      />
+      <param name="twitter.site" value="@infotexture"/>
     </publication>
   </deliverable>
 </project>

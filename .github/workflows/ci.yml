@@ -5,13 +5,27 @@ name: CI
       - master
       - develop
   workflow_dispatch:
+
 jobs:
   build-dita:
     name: Build DITA
     runs-on: ubuntu-latest
     steps:
       - name: Git checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Calculate short SHA
+        uses: benjlevesque/short-sha@v2.2
+        id: short-sha
+        with:
+          length: 7
+      - run: echo $SHA
+        env:
+          SHA: ${{ steps.short-sha.outputs.sha }}
+      - run: echo $SHA
+        env:
+          SHA: ${{ env.SHA }}
+
       - name: Build Bootstrap
         uses: dita-ot/dita-ot-action@master
         with:
@@ -23,12 +37,18 @@ jobs:
           plugins: |
             fox.jason.extend.css
             https://github.com/infotexture/dita-bootstrap/archive/develop.zip
-            fox.jason.prismjs
+            https://github.com/infotexture/dita-bootstrap.lunr/archive/develop.zip
+            https://github.com/jason-fox/fox.jason.prismjs/archive/master.zip
             fox.jason.favicon
+            https://github.com/jason-fox/fox.jason.open-graph/archive/master.zip
           project: .github/dita-ot/html.xml
+
       - name: Deploy HTML 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: out/html # The folder the action should deploy.
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages # The branch the action should deploy to.
+          folder: out/html # The folder the action should deploy.
+          commit-message: '🚀 Deploy infotexture/dita-bootstrap@${{ env.SHA }} to GitHub Pages'
+          git-config-name: 'GitHub Action'
+          git-config-email: 'action@github.com'

@@ -12,7 +12,7 @@
   exclude-result-prefixes="xs xhtml dita-ot"
 >
   <!-- Customization to add Bootstrap Accordion Component -->
-  <!-- https://getbootstrap.com/docs/5.2/components/accordion/ -->
+  <!-- https://getbootstrap.com/docs/5.3/components/accordion/ -->
 
   <xsl:template match="*[contains(@class,' topic/bodydiv ') and contains(@outputclass, 'accordion')]">
     <div>
@@ -20,6 +20,29 @@
       <xsl:call-template name="commonattributes"/>
       <xsl:apply-templates mode="accordion"/>
     </div>
+  </xsl:template>
+
+  <xsl:template name="expand-accordion-head">
+    <xsl:attribute name="aria-expanded" select="contains(@outputclass,'show')"/>
+    <xsl:attribute name="class">
+      <xsl:choose>
+        <xsl:when test="contains(@outputclass,'show')">
+          <xsl:text>accordion-button</xsl:text>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:text>accordion-button collapsed</xsl:text>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:attribute>
+  </xsl:template>
+
+  <xsl:template name="expand-accordion-body">
+    <xsl:attribute name="class">
+      <xsl:text>accordion-collapse collapse</xsl:text>
+      <xsl:if test="contains(@outputclass,'show')">
+        <xsl:text> show</xsl:text>
+      </xsl:if>
+    </xsl:attribute>
   </xsl:template>
 
   <xsl:template match="*[contains(@class, ' topic/section ')]" mode="accordion">
@@ -36,39 +59,26 @@
     <xsl:variable name="parent" select="dita-ot:generate-html-id(..)"/>
 
     <div class="accordion-item">
-      <!--xsl:call-template name="commonattributes">
-           <xsl:with-param name="default-output-class" select="'accordion-item'"/>
-      </xsl:call-template-->
-
       <xsl:element name="{$headLevel}">
         <xsl:attribute name="type" select="'accordion-header'"/>
         <xsl:attribute name="id" select="concat('heading_' ,$id)"/>
         <button class="accordion-button" type="button" data-bs-toggle="collapse">
-          <xsl:attribute
-            name="aria-expanded"
-            select="(count(preceding-sibling::*[contains(@class, ' topic/section ')]) = 0)"
-          />
-          <xsl:attribute name="class">
-            <xsl:text>accordion-button</xsl:text>
-            <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/section ')]) > 0">
-              <xsl:text> collapsed</xsl:text>
-            </xsl:if>
-          </xsl:attribute>
+          <xsl:call-template name="expand-accordion-head"/>
           <xsl:attribute name="data-bs-target" select="concat('#collapse_' ,$id)"/>
           <xsl:attribute name="aria-controls" select="concat('collapse_' ,$id)"/>
           <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
         </button>
       </xsl:element>
       <div>
-        <xsl:attribute name="class">
-          <xsl:text>accordion-collapse collapse</xsl:text>
-          <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/section ')]) = 0">
-            <xsl:text> show</xsl:text>
-          </xsl:if>
-        </xsl:attribute>
+        <xsl:call-template name="expand-accordion-body"/>
         <xsl:attribute name="id" select="concat('collapse_' ,$id)"/>
         <xsl:attribute name="aria-labelledby" select="concat('heading_' ,$id)"/>
-        <xsl:attribute name="data-bs-parent" select="concat('#', $parent)"/>
+        <xsl:choose>
+          <xsl:when test="contains(../@outputclass,'accordion-open')"/>
+          <xsl:otherwise>
+            <xsl:attribute name="data-bs-parent" select="concat('#', $parent)"/>
+          </xsl:otherwise>
+        </xsl:choose>
         <div class="accordion-body">
           <!--xsl:call-template name="commonattributes">
                 <xsl:with-param name="default-output-class" select="'accordion-body'"/>

@@ -10,6 +10,11 @@
     if:set="bootstrap.breadcrumb.divider"
   />
   <param
+    name="BOOTSTRAP_DARK_MODE_INCLUDE"
+    expression="${dark.mode.include}"
+    if:set="dark.mode.include"
+  />
+  <param
     name="BOOTSTRAP_POPOVERS_INCLUDE"
     expression="${popovers.include}"
     if:set="popovers.include"
@@ -23,6 +28,11 @@
     name="BOOTSTRAP_ICONS_INCLUDE"
     expression="${icons.include}"
     if:set="icons.include"
+  />
+  <param
+    name="BOOTSTRAP_SCROLLSPY_TOC"
+    expression="${scrollspy-toc}"
+    if:set="scrollspy-toc"
   />
   <param
     name="BOOTSTRAP_CSS_SHORTDESC"
@@ -55,9 +65,19 @@
     if:set="bootstrap.css.carousel"
   />
   <param
+    name="BOOTSTRAP_CSS_CAROUSEL_INDICATORS"
+    expression="${bootstrap.css.carousel.indicators}"
+    if:set="bootstrap.css.carousel.indicators"
+  />
+  <param
     name="BOOTSTRAP_CSS_CAPTION"
     expression="${bootstrap.css.carousel.caption}"
     if:set="bootstrap.css.carousel.caption"
+  />
+  <param
+    name="BOOTSTRAP_CSS_FOOTER"
+    expression="${bootstrap.css.footer}"
+    if:set="bootstrap.css.footer"
   />
   <param
     name="BOOTSTRAP_CSS_TABS"
@@ -143,5 +163,80 @@
     name="BIDIRECTIONAL_DOCUMENT"
     expression="${bidi.include}"
     if:set="bidi.include"
+  />
+  <param
+    name="TOC_SPACER_PADDING"
+    expression="${toc-spacer.padding}"
+    if:set="toc-spacer.padding"
+  />
+  <param
+    name="BOOTSTRAP_ICON_TIP"
+    expression="${bootstrap.icon.tip}"
+    if:set="bootstrap.icon.tip"
+  />
+  <param
+    name="BOOTSTRAP_ICON_FASTPATH"
+    expression="${bootstrap.icon.fastpath}"
+    if:set="bootstrap.icon.fastpath"
+  />
+  <param
+    name="BOOTSTRAP_ICON_REMEMBER"
+    expression="${bootstrap.icon.remember}"
+    if:set="bootstrap.icon.remember"
+  />
+  <param
+    name="BOOTSTRAP_ICON_RESTRICTION"
+    expression="${bootstrap.icon.restriction}"
+    if:set="bootstrap.icon.restriction"
+  />
+  <param
+    name="BOOTSTRAP_ICON_IMPORTANT"
+    expression="${bootstrap.icon.important}"
+    if:set="bootstrap.icon.important"
+  />
+  <param
+    name="BOOTSTRAP_ICON_ATTENTION"
+    expression="${bootstrap.icon.attention}"
+    if:set="bootstrap.icon.attention"
+  />
+  <param
+    name="BOOTSTRAP_ICON_CAUTION"
+    expression="${bootstrap.icon.caution}"
+    if:set="bootstrap.icon.caution"
+  />
+  <param
+    name="BOOTSTRAP_ICON_WARNING"
+    expression="${bootstrap.icon.warning}"
+    if:set="bootstrap.icon.warning"
+  />
+  <param
+    name="BOOTSTRAP_ICON_TROUBLE"
+    expression="${bootstrap.icon.trouble}"
+    if:set="bootstrap.icon.trouble"
+  />
+  <param
+    name="BOOTSTRAP_ICON_DANGER"
+    expression="${bootstrap.icon.danger}"
+    if:set="bootstrap.icon.danger"
+  />
+  <param
+    name="BOOTSTRAP_ICON_NOTICE"
+    expression="${bootstrap.icon.notice}"
+    if:set="bootstrap.icon.notice"
+  />
+  <param
+    name="BOOTSTRAP_ICON_NOTE"
+    expression="${bootstrap.icon.note}"
+    if:set="bootstrap.icon.note"
+  />
+  <param
+    name="BOOTSTRAP_SIDEBAR_HDR"
+    expression="${bootstrap.sidebar.hdr.path}"
+    if:set="bootstrap.sidebar.hdr.path"
+  />
+  <param
+    name="BOOTSTRAP_SIDEBAR_FTR"
+    expression="${bootstrap.sidebar.ftr.path}"
+    if:set="bootstrap.sidebar.ftr.path"
   />
 </dummy>

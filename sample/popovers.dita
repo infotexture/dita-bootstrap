@@ -2,11 +2,11 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
+   5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.2 docs" by Twitter, Inc.
+   This work, is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc.
    and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
    file for applicable licenses.-->
 <topic id="popovers">
@@ -35,14 +35,15 @@
       <ul>
         <li>Popovers rely on the third-party library
           <xref href="https://popper.js.org" format="html" scope="external">Popper</xref> for positioning.</li>
-        <li>Popovers are opt-in for performance reasons, so <b>you must initialize them yourself</b> by setting
-            <parmname>--popovers.include</parmname>=<option>yes</option>
-        </li>
         <li>Popovers with a zero-length <xmlelement>desc</xmlelement> element are never displayed.</li>
         <li>Triggering popovers on hidden elements will not work.</li>
         <li>Popovers for <xmlatt>outputclass="disabled"</xmlatt> elements must be triggered on a wrapper element.</li>
         <li>Popovers must be hidden before their corresponding elements have been removed from the DOM.</li>
         <li>Popovers can be triggered thanks to an element inside a shadow DOM.</li>
+        <li>Popovers are include by default, but for performance reasons, <b
+          >you may exclude them yourself</b> by setting
+            <parmname>--popovers.include</parmname>=<option>no</option>
+        </li>
       </ul>
     </section>
 
@@ -54,11 +55,11 @@
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <xref href="#" outputclass="btn-lg btn-danger popover-top">
         <data name="title">Popover title</data>
-        <desc>And here's some amazing content. It's very engaging. Right?</desc> Click to toggle popover </xref>
+        <desc>And here’s some amazing content. It’s very engaging. Right?</desc> Click to toggle popover </xref>
     </bodydiv>
     <codeblock> &lt;xref href="#" outputclass="btn-lg btn-danger popover-top"&gt;
   &lt;data name="title">&gt;Popover title&lt;/data&gt;
-  &lt;desc&gt;And here's some amazing content. It's very engaging. Right?&lt;/desc&gt;
+  &lt;desc&gt;And here’s some amazing content. It’s very engaging. Right?&lt;/desc&gt;
   Click to toggle popover
 &lt;/xref&gt;</codeblock>
 
@@ -114,12 +115,12 @@
         <xref href="#" outputclass="btn-lg btn-danger popover-top">
           <data name="title">Popover title</data>
           <data name="class">custom-popover</data>
-          <desc>And here's some amazing content. It's very engaging. Right?</desc>Custom popover</xref>
+          <desc>And here’s some amazing content. It’s very engaging. Right?</desc>Custom popover</xref>
     </bodydiv>
     <codeblock>&lt;xref href="#" outputclass="btn-lg btn-danger popover-top"&gt;
   &lt;data name="title"&gt;Popover title&lt;/data&gt;
   &lt;data name="class"&gt;custom-popover&lt;/data&gt;
-  &lt;desc&gt;And here's some amazing content. It's very engaging. Right?&lt;/desc&gt;
+  &lt;desc&gt;And here’s some amazing content. It’s very engaging. Right?&lt;/desc&gt;
   Custom popover
 &lt;/xref&gt;</codeblock>
   </body>

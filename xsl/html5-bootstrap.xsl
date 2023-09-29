@@ -12,11 +12,15 @@
        (file name and extension only - no path). -->
   <xsl:param name="BOOTSTRAP_ICONS_CDN"/>
   <!-- Whether to include bootstrap icons.  values are 'yes' or 'no' -->
-  <xsl:param name="BOOTSTRAP_ICONS_INCLUDE" select="'no'"/>
+  <xsl:param name="BOOTSTRAP_ICONS_INCLUDE" select="'yes'"/>
   <!-- Whether include a subheader menu bar.  values are 'yes' or 'no' -->
   <xsl:param name="BOOTSTRAP_MENUBAR_TOC" select="'no'"/>
   <!-- Whether to include bootstrap popovers.  values are 'yes' or 'no' -->
-  <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'no'"/>
+  <xsl:param name="BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE" select="'yes'"/>
+  <!-- Whether to include dark mode toggling.  values are 'yes' or 'no' -->
+  <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'yes'"/>
+  <!-- Whether to include a scrollspy Toc -->
+  <xsl:param name="BOOTSTRAP_SCROLLSPY_TOC" select="'none'"/>
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
@@ -101,7 +105,7 @@
           </xsl:if>
           <!-- ↓ Ensure that menubar has background color if present -->
           <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
-            <xsl:text> bg-light</xsl:text>
+            <xsl:text> bg-body-tertiary</xsl:text>
           </xsl:if>
         </xsl:attribute>
 
@@ -110,25 +114,27 @@
           <xsl:apply-templates select="." mode="gen-user-toptoc"/>
         </xsl:if>
       </div>
-      <div class="bs-container" id="content">
+      <div class="bs-container container-xxl bd-gutter mt-3 my-md-4" id="content">
         <xsl:call-template name="gen-user-sidetoc"/>
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
       </div>
 
-      <xsl:if test="$BOOTSTRAP_POPOVERS_INCLUDE = 'yes'">
-        <script language="javascript">//
-          <![CDATA[
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-              return new bootstrap.Tooltip(tooltipTriggerEl)
-            })
+      <xsl:variable name="relpath">
+        <xsl:choose>
+          <xsl:when test="$FILEDIR='.'">
+            <xsl:text>.</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select=" replace($FILEDIR,'[^/]+','..')"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
 
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-            var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-              return new bootstrap.Popover(popoverTriggerEl)
-            })
-         // ]]>
-        </script>
+      <xsl:if test="$BOOTSTRAP_POPOVERS_INCLUDE = 'yes'">
+        <script language="javascript" src="{$relpath}/js/popovers.js"/>
+      </xsl:if>
+      <xsl:if test="$BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE = 'yes'">
+        <script language="javascript" src="{$relpath}/js/dark-mode-toggler.js"/>
       </xsl:if>
       <!-- ↑ End customization -->
       <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
@@ -163,33 +169,9 @@
                 <xsl:with-param name="id" select="'Skip to docs navigation'"/>
               </xsl:call-template>
             </a>
-            <!-- sidebar holds a topic nav, not a document nav -->
-            <xsl:if test="$nav-toc = ('nav-pill-scrollspy', 'list-group-scrollspy')">
-              <a href="#bs-sidebar-nav">
-                <xsl:attribute
-                  name="class"
-                  select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
-                />
-                <xsl:call-template name="getVariable">
-                  <xsl:with-param name="id" select="'Skip to topic navigation'"/>
-                </xsl:call-template>
-              </a>
-            </xsl:if>
           </xsl:when>
           <xsl:when test="$nav-toc = 'none'">
             <!-- do not add a "skip to docs" link -->
-          </xsl:when>
-          <xsl:when test="$nav-toc = ('nav-pill-scrollspy', 'list-group-scrollspy')">
-            <!-- sidebar holds a topic nav, not a document nav -->
-            <a href="#bs-sidebar-nav">
-              <xsl:attribute
-                name="class"
-                select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
-              />
-              <xsl:call-template name="getVariable">
-                <xsl:with-param name="id" select="'Skip to topic navigation'"/>
-              </xsl:call-template>
-            </a>
           </xsl:when>
           <xsl:otherwise>
             <!-- Add a "skip to docs" link to the sidebar -->
@@ -210,10 +192,9 @@
 
   <!-- Override to add scrollspy -->
   <xsl:template match="*" mode="addAttributesToBody">
-    <xsl:if test="$nav-toc = ('list-group-scrollspy', 'nav-pill-scrollspy')">
+    <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
       <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
       <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
-      <xsl:attribute name="data-bs-offset">10</xsl:attribute>
     </xsl:if>
   </xsl:template>
 
@@ -221,18 +202,18 @@
     Overrides to add CSS classes to use a CSS Grid for the navigation layout
   -->
   <xsl:attribute-set name="main">
-    <xsl:attribute name="class">container bs-main</xsl:attribute>
+    <xsl:attribute name="class">bs-main me-3</xsl:attribute>
     <xsl:attribute name="role">main</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="toc">
-    <xsl:attribute name="class">bs-sidebar-nav</xsl:attribute>
     <xsl:attribute name="role">navigation</xsl:attribute>
     <xsl:attribute name="id">bs-sidebar-nav</xsl:attribute>
+    <xsl:attribute name="class">d-flex flex-align-start flex-column h-100 overflow-y-auto</xsl:attribute>
   </xsl:attribute-set>
 
   <xsl:attribute-set name="menubar-toc">
-    <xsl:attribute name="class">navbar navbar-light bg-light px-3</xsl:attribute>
+    <xsl:attribute name="class">navbar bg-body-tertiary px-3 border-0</xsl:attribute>
     <xsl:attribute name="role">navigation</xsl:attribute>
     <xsl:attribute name="id">bs-menubar-nav</xsl:attribute>
   </xsl:attribute-set>

@@ -2,11 +2,11 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
+   5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.2 docs" by Twitter, Inc.
+   This work, is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc.
    and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
    file for applicable licenses.-->
 <topic id="collapse">
@@ -23,6 +23,7 @@
         <indexterm><xmlelement>bodydiv</xmlelement></indexterm>
         <indexterm><xmlelement>xref</xmlelement></indexterm>
         <indexterm><xmlatt>props</xmlatt></indexterm>
+        <indexterm><xmlatt>otherprops</xmlatt></indexterm>
       </keywords>
     </metadata>
   </prolog>
@@ -74,7 +75,7 @@
       <bodydiv outputclass="collapse-horizontal" id="collapse2" otherprops="style(min-height: 120px;)">
         <div outputclass="card card-body" otherprops="style(width: 300px;)">
           <p>Some placeholder content for the collapse component. This is some placeholder content for a horizontal
-            collapse. It's hidden by default and shown when triggered.</p>
+            collapse. It’s hidden by default and shown when triggered.</p>
         </div>
       </bodydiv>
     </bodydiv>
@@ -83,7 +84,7 @@
 &lt;/p&gt;
 &lt;bodydiv outputclass="collapse-horizontal" id="collapse2" otherprops="style(min-height: 120px;)"&gt;
   &lt;div outputclass="card card-body" otherprops="style(width: 300px;)"&gt;
-    &lt;p&gt;This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.&lt;/p&gt;
+    &lt;p&gt;This is some placeholder content for a horizontal collapse. It’s hidden by default and shown when triggered.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/bodydiv&gt;</codeblock>
   </body>

@@ -2,11 +2,11 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!-- Within the sample documentation, where necessary, the texts describing the
    usage of each component have been copied directly from the official Bootstrap
-   5.2 documentation (found at https://getbootstrap.com/docs/5.2), however DITA
+   5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
    markup is used throughout the examples describing how to implement these
    components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.2 docs" by Twitter, Inc.
+   This work, is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc.
    and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
    file for applicable licenses.-->
 <topic id="alerts">
@@ -20,6 +20,7 @@
         <indexterm>CSS
           <indexterm><xmlatt>outputclass</xmlatt></indexterm>
         </indexterm>
+        <indexterm><xmlatt>otherprops</xmlatt></indexterm>
         <indexterm><xmlelement>note</xmlelement></indexterm>
         <indexterm><xmlelement>section</xmlelement></indexterm>
       </keywords>
@@ -93,7 +94,8 @@
     <section>
       <title>Notes</title>
       <p>DITA <xmlelement>note</xmlelement> elements are displayed as alerts according to the <xmlatt>type</xmlatt>
-        attribute.</p>
+        attribute. With the exception <xmlatt>type="othertype"</xmlatt>, an icon is added if <xmlatt
+        >type</xmlatt> is present.</p>
     </section>
     <div outputclass="bd-example" deliveryTarget="html">
       <note type="note">This is just a note.</note>
@@ -119,16 +121,29 @@
 &lt;note type="restriction"&gt;You can't do what this note says.&lt;/note&gt;
 &lt;note type="danger"&gt;You may hurt yourself!&lt;/note&gt;
 &lt;note type="other" othertype="Another note"&gt;This is something other than a normal note.&lt;/note&gt;</codeblock>
-    <p>The <xmlatt>type</xmlatt> can be overridden by using an <xmlatt>outputclass</xmlatt>.</p>
+    <p>The default colors can be overridden by using an <xmlatt>outputclass</xmlatt>.</p>
     <div outputclass="bd-example" deliveryTarget="html">
-      <note outputclass="alert-primary">This is a primary note.</note>
-      <note outputclass="alert-secondary">This is a secondary note.</note>
-      <note outputclass="alert-light">This is light note.</note>
-      <note outputclass="alert-dark">This is dark note.</note>
+      <note type="note" outputclass="alert-primary">This is a primary note.</note>
+      <note type="note" outputclass="alert-secondary">This is a secondary note.</note>
+      <note type="note" outputclass="alert-light">This is light note.</note>
+      <note type="note" outputclass="alert-dark">This is dark note.</note>
     </div>
-    <codeblock>&lt;note outputclass="alert-primary"&gt;This is a primary note.&lt;/note&gt;
-&lt;note outputclass="alert-secondary"&gt;This is a secondary note.&lt;/note&gt;
-&lt;note outputclass="alert-light"&gt;This is light note.&lt;/note&gt;
-&lt;note outputclass="alert-dark"&gt;This is dark note.&lt;/note&gt;</codeblock>
+    <codeblock>&lt;note type="note" outputclass="alert-primary"&gt;This is a primary note.&lt;/note&gt;
+&lt;note type="note" outputclass="alert-secondary"&gt;This is a secondary note.&lt;/note&gt;
+&lt;note type="note" outputclass="alert-light"&gt;This is light note.&lt;/note&gt;
+&lt;note type="note" outputclass="alert-dark"&gt;This is dark note.&lt;/note&gt;</codeblock>
+    <p>Use an additional <xmlatt
+      >otherprops</xmlatt> to alter the default icon, use CSS font-size and color to change the icon appearance.</p>
+    <div outputclass="bd-example" deliveryTarget="html">
+      <note otherprops="icon(bi-search)" type="other" othertype="Search">This note has a search icon.</note>
+      <note
+        otherprops="icon(bi bi-emoji-smile), style(font-size: 2rem; color: cornflowerblue;)"
+        type="note"
+        othertype="Another note"
+      >This note uses a styled smile emoji.</note>
+    </div>
+    <codeblock
+    >&lt;note otherprops="icon(bi-search)" type="other" othertype="Search"&gt;This note has a search icon.&lt;/note&gt;
+&lt;note otherprops="icon(bi-emoji-smile), style(font-size: 2rem; color: cornflowerblue;)" type="note" othertype="Another note"&gt;This note uses a styled smile emoji.&lt;/note&gt;</codeblock>
   </body>
 </topic>

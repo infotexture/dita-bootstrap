@@ -65,3 +65,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/linux,macos,windows
+
+build_dita2html5-bootstrap.xml
+node_modules
