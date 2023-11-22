@@ -226,7 +226,7 @@
   <!-- Customization to add Bootstrap Figure Content -->
   <!-- https://getbootstrap.com/docs/5.3/content/figures/ -->
   <xsl:template
-    match="*[contains(@class, ' topic/fig ') and not(contains(@class,' pr-d/syntaxdiagram '))]"
+    match="*[contains(@class, ' topic/fig ') and not(contains(@class,' pr-d/syntaxdiagram ')) and not(contains(@class,' ut-d/imagemap '))]"
     name="topic.fig"
   >
     <xsl:variable name="default-fig-class">
