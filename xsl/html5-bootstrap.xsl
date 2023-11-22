@@ -125,7 +125,7 @@
             <xsl:text>.</xsl:text>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select=" replace($FILEDIR,'[^/]+','..')"/>
+            <xsl:value-of select="replace(replace($FILEDIR, '\\', '/') ,'[^/]+','..')"/>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
