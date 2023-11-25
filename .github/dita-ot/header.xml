@@ -186,6 +186,9 @@
               </button>
             </li>
             <li>
+              <hr class="dropdown-divider"/>
+            </li>
+            <li>
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
