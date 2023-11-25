@@ -167,7 +167,7 @@
             aria-expanded="false"
             data-bs-display="static"
           >
-            <i class="bi bi-filetype-css"></i>
+            <i class="bi bi-filetype-css"/>
             <span class="d-lg-none ms-2">Toggle theme</span>
           </a>
           <ul
