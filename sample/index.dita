@@ -435,6 +435,14 @@
           </div>
         </li>
       </ol>
+      <note>
+        <xref
+          href="https://infotexture.github.io/dita-bootstrap/"
+          format="html"
+          scope="external"
+        >https://infotexture.github.io/dita-bootstrap/</xref>, showcases all of the available Bootswatch themes
+        via a dropdown in the menu bar.
+      </note>
     </section>
     <section>
       <title>Custom CSS</title>
