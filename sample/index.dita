@@ -435,7 +435,7 @@
           </div>
         </li>
       </ol>
-      <note>
+      <note type="note">
         <xref
           href="https://infotexture.github.io/dita-bootstrap/"
           format="html"
