@@ -41,7 +41,7 @@ jobs:
             fox.jason.prismjs
             fox.jason.favicon
             fox.jason.open-graph
-            https://github.com/jason-fox/dita-bootstrap.css-toggle/archive/master.zip
+            https://github.com/jason-fox/fox.jason.theme-switcher/archive/master.zip
           project: .github/dita-ot/html.xml
 
       - name: Deploy HTML 🚀
