@@ -35,7 +35,7 @@
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>install</parmname> fox.jason.extend.css
 <cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap
 <cmdname>dita</cmdname> <parmname>install</parmname> net.infotexture.dita-bootstrap.sass</codeblock>
-      <note>The <cite>DITA Bootstrap Sass</cite> plug-in uses the
+      <note type="note">The <cite>DITA Bootstrap Sass</cite> plug-in uses the
         <xref href="https://nodejs.org/" format="html" scope="external">Node.js</xref> JavaScript runtime to generate
         the <filepath>theme.css</filepath> file. Node.js must therefore be present for the index to be generated
         successfully. To download and install a copy, follow the instructions for your operating system on the
