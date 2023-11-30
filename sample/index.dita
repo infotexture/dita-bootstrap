@@ -435,13 +435,12 @@
           </div>
         </li>
       </ol>
-      <note type="note">
+      <note type="note">You can switch between the available themes via the CSS dropdown in the menu bar at
         <xref
           href="https://infotexture.github.io/dita-bootstrap/"
           format="html"
           scope="external"
-        >https://infotexture.github.io/dita-bootstrap/</xref>, showcases all of the available Bootswatch themes
-        via a dropdown in the menu bar.
+        >infotexture.github.io/dita-bootstrap</xref>.
       </note>
     </section>
     <section>
