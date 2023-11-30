@@ -30,7 +30,7 @@
   setTheme(getPreferredTheme());
 
   const showActiveTheme = (theme, focus = false) => {
-    const themeSwitcher = document.querySelector('#bd-theme');
+    const themeSwitcher = document.querySelector('#bd-color-mode');
 
     if (!themeSwitcher) {
       return;
