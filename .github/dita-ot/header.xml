@@ -88,15 +88,17 @@
             />
           </form>
         </li>
+      </ul>
+      <ul class="navbar-nav ms-0 me-1">
         <!--
-          This is a dark/light color theme toggler
+          This is a dark/light color theme toggler.
           It requires JavaScript to function.
         -->
         <li class="nav-item dropdown">
           <a
             href="#"
             class="nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
-            id="bd-theme"
+            id="bd-color-mode"
             data-bs-toggle="dropdown"
             aria-expanded="false"
             data-bs-display="static"
@@ -110,11 +112,11 @@
             <span class="d-auto">
               <i class="bi bi-circle-half"/>
             </span>
-            <span class="d-lg-none ms-2">Toggle theme</span>
+            <span class="d-lg-none ms-2">Color mode</span>
           </a>
           <ul
             class="dropdown-menu dropdown-menu-end"
-            aria-labelledby="bd-theme"
+            aria-labelledby="bd-color-mode"
             style="--bs-dropdown-min-width: 6rem;"
             data-bs-popper="static"
           >
@@ -146,6 +148,261 @@
               >
                 <i class="bi bi-circle-half"/>
                 <span class="ms-2">Auto</span>
+              </button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-0 me-1">
+        <!--
+          This is a css bootstrap theme toggler.
+          It requires JavaScript to function.
+        -->
+        <li class="nav-item dropdown">
+          <a
+            href="#"
+            class="nav-link px-0 px-lg-2 dropdown-toggle d-flex align-items-center"
+            id="bd-css-theme"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            data-bs-display="static"
+          >
+            <i class="bi bi-filetype-css"/>
+            <span class="d-lg-none ms-2">Toggle theme</span>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end css-themes-list overflow-y-auto"
+            aria-labelledby="bd-css-theme"
+            style="--bs-dropdown-min-width: 6rem;"
+            data-bs-popper="static"
+          >
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+              >
+                Default
+              </button>
+            </li>
+            <li>
+              <hr class="dropdown-divider"/>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/cerulean/bootstrap.min.css"
+              >
+                Cerulean
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/cyborg/bootstrap.min.css"
+              >
+                Cyborg
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/darkly/bootstrap.min.css"
+              >
+                Darkly
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/flatly/bootstrap.min.css"
+              >
+                Flatly
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/journal/bootstrap.min.css"
+              >
+                Journal
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/litera/bootstrap.min.css"
+              >
+                Litera
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/lumen/bootstrap.min.css"
+              >
+                Lumen
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/lux/bootstrap.min.css"
+              >
+                Lux
+              </button>
+            </li>
+          <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/materia/bootstrap.min.css"
+              >
+                Materia
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/minty/bootstrap.min.css"
+              >
+                Minty
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/morph/bootstrap.min.css"
+              >
+                Morph
+              </button>
+            </li>
+
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/pulse/bootstrap.min.css"
+              >
+                Pulse
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/quartz/bootstrap.min.css"
+              >
+                Quartz
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/sandstone/bootstrap.min.css"
+              >
+                Sandstone
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/simplex/bootstrap.min.css"
+              >
+                Simplex
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/sketchy/bootstrap.min.css"
+              >
+                Sketchy
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/slate/bootstrap.min.css"
+              >
+                Slate
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/solar/bootstrap.min.css"
+              >
+                Solar
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/spacelab/bootstrap.min.css"
+              >
+                SpaceLab
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/superhero/bootstrap.min.css"
+              >
+                Superhero
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/united/bootstrap.min.css"
+              >
+                United
+              </button>
+            </li>
+          <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/vapor/bootstrap.min.css"
+              >
+                Vapor
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/yeti/bootstrap.min.css"
+              >
+                Yeti
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/zephyr/bootstrap.min.css"
+              >
+                Zephyr
               </button>
             </li>
           </ul>

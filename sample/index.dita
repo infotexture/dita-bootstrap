@@ -435,6 +435,13 @@
           </div>
         </li>
       </ol>
+      <note type="note">You can switch between the available themes via the CSS dropdown in the menu bar at
+        <xref
+          href="https://infotexture.github.io/dita-bootstrap/"
+          format="html"
+          scope="external"
+        >infotexture.github.io/dita-bootstrap</xref>.
+      </note>
     </section>
     <section>
       <title>Custom CSS</title>
@@ -806,7 +813,9 @@
       </ul>
     </section>
     <section>
-      <note>Within the sample documentation, the texts describing the usage of each component have been copied directly
+      <note
+        type="note"
+      >Within the sample documentation, the texts describing the usage of each component have been copied directly
         from the
         <xref href="https://getbootstrap.com/docs/5.3" format="html" scope="external">official Bootstrap 5.3
           documentation</xref>, however DITA markup is used throughout the examples describing how to implement these
