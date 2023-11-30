@@ -41,6 +41,6 @@
 
 @media (max-width: 991.98px) {
   .css-themes-list {
-    height: 40px;
+    height: calc(100vh - 25rem);
   }
 }
