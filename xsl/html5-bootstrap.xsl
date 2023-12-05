@@ -16,7 +16,7 @@
   <!-- Whether include a subheader menu bar.  values are 'yes' or 'no' -->
   <xsl:param name="BOOTSTRAP_MENUBAR_TOC" select="'no'"/>
   <!-- Whether to include bootstrap popovers.  values are 'yes' or 'no' -->
-  <xsl:param name="BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE" select="'yes'"/>
+  <xsl:param name="BOOTSTRAP_DARK_MODE_INCLUDE" select="'yes'"/>
   <!-- Whether to include dark mode toggling.  values are 'yes' or 'no' -->
   <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'yes'"/>
   <!-- Whether to include a scrollspy Toc -->
@@ -133,7 +133,7 @@
       <xsl:if test="$BOOTSTRAP_POPOVERS_INCLUDE = 'yes'">
         <script language="javascript" src="{$relpath}/js/popovers.js"/>
       </xsl:if>
-      <xsl:if test="$BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE = 'yes'">
+      <xsl:if test="$BOOTSTRAP_DARK_MODE_INCLUDE = 'yes'">
         <script language="javascript" src="{$relpath}/js/dark-mode-toggler.js"/>
       </xsl:if>
       <!-- ↑ End customization -->
