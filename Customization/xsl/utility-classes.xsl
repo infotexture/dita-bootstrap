@@ -86,8 +86,19 @@
     match="*[contains(@class, ' topic/section ')]/*[contains(@class, ' topic/title ')]"
     mode="get-output-class"
   >
-    <xsl:value-of select="$BOOTSTRAP_CSS_SECTION_TITLE"/>
-    <xsl:next-match/>
+    <xsl:choose>
+      <xsl:when test="contains(@outputclass, 'h1')"/>
+      <xsl:when test="contains(@outputclass, 'h2')"/>
+      <xsl:when test="contains(@outputclass, 'h3')"/>
+      <xsl:when test="contains(@outputclass, 'h4')"/>
+      <xsl:when test="contains(@outputclass, 'h5')"/>
+      <xsl:when test="contains(@outputclass, 'h6')"/>
+      <xsl:when test="contains(@outputclass, 'display-')"/>
+      <xsl:otherwise>
+        <xsl:value-of select="$BOOTSTRAP_CSS_SECTION_TITLE"/>
+        <xsl:text> </xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of cards -->
@@ -185,6 +196,13 @@
 
   <!-- Add additional Bootstrap CSS classes based on outputclass -->
   <xsl:template name="bootstrap-class">
+    <xsl:apply-templates select="." mode="bootstrap-class"/>
+    <xsl:apply-templates select="." mode="gen-user-bootstrap-class"/>
+  </xsl:template>
+
+  <xsl:template match="/|node()|@*" mode="gen-user-bootstrap-class" priority="-10"/>
+
+  <xsl:template match="/ | @* | node()" mode="bootstrap-class">
     <xsl:choose>
       <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
         <xsl:text/>
@@ -379,7 +397,11 @@
 
   <!-- Add style to a bootstrap element based on otherprops -->
   <xsl:template name="otherprops-attributes">
-    <xsl:analyze-string select="@otherprops" regex="[a-z]*\([^\)]*\)">
+    <xsl:apply-templates select="." mode="otherprops-attributes"/>
+  </xsl:template>
+
+  <xsl:template match="/ | @* | node()" mode="otherprops-attributes">
+    <xsl:analyze-string select="@otherprops" regex="[A-Za-z0-9_\-]*\([^\)]*\)">
       <xsl:matching-substring>
         <xsl:variable name="var">
           <xsl:value-of select="."/>

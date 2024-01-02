@@ -141,6 +141,7 @@
         </xsl:apply-templates>
       </xsl:otherwise>
     </xsl:choose>
+    <xsl:call-template name="gen-user-bootstrap-attrs"/>
     <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
     <xsl:choose>
       <xsl:when test="exists($passthrough-attrs[empty(@att) and empty(@value)])">
@@ -176,6 +177,14 @@
       </xsl:when>
     </xsl:choose>
   </xsl:template>
+
+  <xsl:template name="gen-user-bootstrap-attrs">
+    <xsl:apply-templates select="." mode="gen-user-bootstrap-attrs"/>
+  </xsl:template>
+
+  <xsl:template match="/ | @* | node()" mode="gen-user-bootstrap-attrs" priority="-10">
+  </xsl:template>
+
 
   <!-- Override to add Bootstrap Alert classes and roles to Note elements -->
   <!-- https://getbootstrap.com/docs/5.3/components/alerts/ -->
