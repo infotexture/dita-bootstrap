@@ -43,8 +43,8 @@
       "selector-max-id": 1,
       "selector-max-type": 3,
       "selector-no-qualifying-type": null,
-      "stylistic/number-leading-zero": "always",
-      "stylistic/string-quotes": "single"
+      "@stylistic/number-leading-zero": "always",
+      "@stylistic/string-quotes": "single"
     }
   },
   "devDependencies": {
@@ -55,7 +55,7 @@
     "husky": "^8.0.3",
     "lint-staged": "15.2.0",
     "prettier": "3.1.1",
-    "stylelint": "^15.11.0",
-    "stylelint-config-twbs-bootstrap": "^12.0.0"
+    "stylelint": "^16.1.0",
+    "stylelint-config-twbs-bootstrap": "^13.0.0"
   }
 }
