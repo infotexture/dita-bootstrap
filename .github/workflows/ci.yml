@@ -50,6 +50,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages # The branch the action should deploy to.
           folder: out/html # The folder the action should deploy.
-          commit-message: '🚀 Deploy infotexture/dita-bootstrap@${{ env.SHA }} to GitHub Pages'
+          commit-message: '🚀 Deploy ${{ env.SHA }} to GitHub Pages'
           git-config-name: 'GitHub Action'
           git-config-email: 'action@github.com'
