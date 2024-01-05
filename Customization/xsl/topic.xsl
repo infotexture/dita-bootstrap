@@ -47,19 +47,19 @@
   <!-- Customized templates from `org.dita.html5/xsl/topic.xsl` -->
 
   <xsl:template name="chapter-setup">
-  <html>
-    <!-- ↓ Add check for bi-directional content ↓ -->
-    <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'no'">
-      <xsl:call-template name="setTopicLanguage"/>
-    </xsl:if>
-    <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
-      <xsl:attribute name="dir" select="$defaultDirection"/>
-      <xsl:attribute name="lang" select="$defaultLanguage"/>
-    </xsl:if>
-    <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
-    <xsl:call-template name="chapterHead"/>
-    <xsl:call-template name="chapterBody"/>
-  </html>
+    <html>
+      <!-- ↓ Add check for bi-directional content ↓ -->
+      <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'no'">
+        <xsl:call-template name="setTopicLanguage"/>
+      </xsl:if>
+      <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
+        <xsl:attribute name="dir" select="$defaultDirection"/>
+        <xsl:attribute name="lang" select="$defaultLanguage"/>
+      </xsl:if>
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+      <xsl:call-template name="chapterHead"/>
+      <xsl:call-template name="chapterBody"/>
+    </html>
   </xsl:template>
 
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
@@ -141,6 +141,7 @@
         </xsl:apply-templates>
       </xsl:otherwise>
     </xsl:choose>
+    <xsl:call-template name="gen-user-bootstrap-attrs"/>
     <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
     <xsl:choose>
       <xsl:when test="exists($passthrough-attrs[empty(@att) and empty(@value)])">
@@ -176,6 +177,12 @@
       </xsl:when>
     </xsl:choose>
   </xsl:template>
+
+  <xsl:template name="gen-user-bootstrap-attrs">
+    <xsl:apply-templates select="." mode="gen-user-bootstrap-attrs"/>
+  </xsl:template>
+
+  <xsl:template match="/ | @* | node()" mode="gen-user-bootstrap-attrs" priority="-10"/>
 
   <!-- Override to add Bootstrap Alert classes and roles to Note elements -->
   <!-- https://getbootstrap.com/docs/5.3/components/alerts/ -->
@@ -438,33 +445,33 @@
           </xsl:if>
         </xsl:attribute>
         <xsl:sequence select="$footer-content"/>
-         <!-- ↓ Add Bootstrap CSS ↓ -->
+        <!-- ↓ Add Bootstrap CSS ↓ -->
       </footer>
     </xsl:if>
   </xsl:template>
 
   <!-- list item -->
   <xsl:template match="*[contains(@class, ' topic/li ')]" name="topic.li">
-  <li>
-    <xsl:choose>
-      <xsl:when test="parent::*/@compact = 'no'">
-        <!-- handle non-compact list items -->
-        <xsl:call-template name="commonattributes">
-          <xsl:with-param name="default-output-class" select="'py-3'"/>
-        </xsl:call-template>
-      </xsl:when>
-      <xsl:when test="parent::*/@compact = 'yes'">
-        <!-- handle non-compact list items -->
-        <xsl:call-template name="commonattributes">
-          <xsl:with-param name="default-output-class" select="'py-0'"/>
-        </xsl:call-template>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:call-template name="commonattributes"/>
-      </xsl:otherwise>
-    </xsl:choose>
-    <xsl:call-template name="setidaname"/>
-    <xsl:apply-templates/>
-  </li>
+    <li>
+      <xsl:choose>
+        <xsl:when test="parent::*/@compact = 'no'">
+          <!-- handle non-compact list items -->
+          <xsl:call-template name="commonattributes">
+            <xsl:with-param name="default-output-class" select="'py-3'"/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:when test="parent::*/@compact = 'yes'">
+          <!-- handle non-compact list items -->
+          <xsl:call-template name="commonattributes">
+            <xsl:with-param name="default-output-class" select="'py-0'"/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:call-template name="commonattributes"/>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:call-template name="setidaname"/>
+      <xsl:apply-templates/>
+    </li>
   </xsl:template>
 </xsl:stylesheet>
