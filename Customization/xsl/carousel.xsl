@@ -18,28 +18,28 @@
 
   <xsl:template name="carousel-previous-next">
     <xsl:param name="id"/>
-      <a class="carousel-control-prev" role="button" data-bs-slide="prev">
-        <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
-        <xsl:call-template name="color-control">
-          <xsl:with-param name="icon" select="'carousel-control-prev-icon'"/>
+    <a class="carousel-control-prev" role="button" data-bs-slide="prev">
+      <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
+      <xsl:call-template name="color-control">
+        <xsl:with-param name="icon" select="'carousel-control-prev-icon'"/>
+      </xsl:call-template>
+      <span class="visually-hidden">
+        <xsl:call-template name="getVariable">
+          <xsl:with-param name="id" select="'Previous'"/>
         </xsl:call-template>
-        <span class="visually-hidden">
-          <xsl:call-template name="getVariable">
-            <xsl:with-param name="id" select="'Previous'"/>
-          </xsl:call-template>
-        </span>
-      </a>
-      <a class="carousel-control-next" role="button" data-bs-slide="next">
-        <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
-        <xsl:call-template name="color-control">
-          <xsl:with-param name="icon" select="'carousel-control-next-icon'"/>
+      </span>
+    </a>
+    <a class="carousel-control-next" role="button" data-bs-slide="next">
+      <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
+      <xsl:call-template name="color-control">
+        <xsl:with-param name="icon" select="'carousel-control-next-icon'"/>
+      </xsl:call-template>
+      <span class="visually-hidden">
+        <xsl:call-template name="getVariable">
+          <xsl:with-param name="id" select="'Next'"/>
         </xsl:call-template>
-        <span class="visually-hidden">
-          <xsl:call-template name="getVariable">
-            <xsl:with-param name="id" select="'Next'"/>
-          </xsl:call-template>
-        </span>
-      </a>
+      </span>
+    </a>
   </xsl:template>
 
   <xsl:template name="carousel-indicators">
@@ -84,9 +84,9 @@
       <xsl:attribute name="id" select="$id"/>
       <xsl:call-template name="commonattributes"/>
       <xsl:if test="contains(@otherprops, 'indicators(true)')">
-         <xsl:call-template name="carousel-indicators">
+        <xsl:call-template name="carousel-indicators">
           <xsl:with-param name="id" select="$id"/>
-         </xsl:call-template>
+        </xsl:call-template>
       </xsl:if>
       <div class="carousel-inner pb-1">
         <xsl:apply-templates mode="carousel"/>
