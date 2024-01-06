@@ -99,6 +99,12 @@
         <othermeta name="icon" content="bi-filetype-sass"/>
       </topicmeta>
     </topicref>
+     <topicref href="bootstrap-extension.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-bootstrap"/>
+      </topicmeta>
+    </topicref>
+
   </chapter>
   <backmatter deliveryTarget="pdf">
     <booklists>
