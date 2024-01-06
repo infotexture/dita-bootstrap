@@ -338,6 +338,11 @@
       desc="Specifies an XML file that contains content for the sidebar footer."
       type="file"
     />
+    <param
+      name="bootstrap.topbar.hdr"
+      desc="Specifies an XML file that contains content for the topbar header."
+      type="file"
+    />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>

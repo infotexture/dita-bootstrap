@@ -27,11 +27,6 @@
   min-width: 1px;
 }
 
-.bs-header {
-  position: sticky;
-  top: 0;
-}
-
 .bs-fixed-sidetoc {
   height: calc(100vh - 10rem);
 }
