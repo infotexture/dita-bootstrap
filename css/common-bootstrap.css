@@ -103,10 +103,6 @@
   overflow: auto;
 }
 
-.bs-header {
-  z-index: 1020;
-}
-
 .search-box [type='search']::placeholder {
   color: var(--bs-link-color) !important;
 }

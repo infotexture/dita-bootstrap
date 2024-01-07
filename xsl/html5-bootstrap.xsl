@@ -96,24 +96,11 @@
 
       <xsl:call-template name="gen-skip-to-main"/>
       <!-- ↓ Add CSS classes to use a CSS Grid - see side-toc.css for details  -->
-      <div>
-        <xsl:attribute name="class">
-          <xsl:text>bs-header</xsl:text>
-          <!-- ↓ Ensure that the header remains visible even if no side-toc is present -->
-          <xsl:if test="$nav-toc = 'none'">
-            <xsl:text> sticky-top</xsl:text>
-          </xsl:if>
-          <!-- ↓ Ensure that menubar has background color if present -->
-          <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
-            <xsl:text> bg-body-tertiary</xsl:text>
-          </xsl:if>
-        </xsl:attribute>
+      <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
+      <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
+        <xsl:apply-templates select="." mode="gen-user-toptoc"/>
+      </xsl:if>
 
-        <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
-        <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
-          <xsl:apply-templates select="." mode="gen-user-toptoc"/>
-        </xsl:if>
-      </div>
       <div class="bs-container container-xxl bd-gutter mt-3 my-md-4" id="content">
         <xsl:call-template name="gen-user-sidetoc"/>
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>

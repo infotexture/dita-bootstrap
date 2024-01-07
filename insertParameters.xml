@@ -239,4 +239,9 @@
     expression="${bootstrap.sidebar.ftr.path}"
     if:set="bootstrap.sidebar.ftr.path"
   />
+  <param
+    name="BOOTSTRAP_TOPBAR_HDR"
+    expression="${bootstrap.topbar.hdr.path}"
+    if:set="bootstrap.topbar.hdr.path"
+  />
 </dummy>
