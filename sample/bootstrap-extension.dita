@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
 <!--
+  Bootstrap Extension is designed and built by Peter Joiner.
+  The code is licensed using MIT. Copyright (c) 2018-2023 Peter  Joiner — AKK IT, Inc.
 
-   Bootstrap Extension is designed and built by Peter Joiner.
-   The code is licensed using MIT. Copyright (c) 2018-2023 Peter  Joiner — AKK IT, Inc.
+  Within this documentation, where necessary, the texts describing the Bootstrap Extension usage of each component have
+  been copied directly from the Bootstrap Extension documentation (found at https://bootstrapextensions.com/), however
+  DITA markup is used throughout the examples describing how to implement these components correctly using outputclass.
 
-   Within this documentation, where necessary, the texts describing the bootstrap extension usage of each component have
-   been copied directly from the Bootstrap Extension documentation however DITA markup is used throughout the examples
-   describing how to implement these components correctly using outputclass.
-
-   This work is a derivative of "Bootstrap Extension docs" by AKK IT, Inc, and used under MIT. 
-   See the accompanying LICENSE file for applicable licenses.
+  This work is a derivative of "Bootstrap Extension docs" by AKK IT, Inc, and used under MIT.
+  See the accompanying LICENSE file for applicable licenses.
 -->
 <topic id="extension">
   <title>Bootstrap Extension</title>
