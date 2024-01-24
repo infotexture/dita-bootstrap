@@ -710,7 +710,7 @@
     priority="10"
   >
     <xsl:param name="pathFromMaplist" as="xs:string"/>
-    <xsl:param name="children" select="*[contains(@class, ' map/topicref ')]" as="element()*"/>
+    <xsl:param name="children" select="*[contains(@class, ' map/topicref ')] [not(@toc = 'no')] [not(@processing-role = 'resource-only')]" as="element()*"/>
     <xsl:variable name="title">
       <xsl:apply-templates select="." mode="get-navtitle"/>
     </xsl:variable>
