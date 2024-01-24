@@ -37,7 +37,6 @@
 
 @media (max-width: 991.98px) {
   .bs-main {
-    max-width: 760px;
     margin-inline: auto;
   }
   .bs-fixed-sidetoc {
