@@ -71,14 +71,14 @@
       <title>Titles, text, and links</title>
       <p>Links are added and placed next to each other by altering the <xmlatt>outputclass</xmlatt> and adding
           <codeph>card-link</codeph> to an <xmlelement>xref</xmlelement> tag.</p>
-      <p>Subtitles are used by adding a <xmlelement>sectiondiv</xmlelement> element.</p>
+      <p>Subtitles are used by adding a <xmlelement>div</xmlelement> element.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <bodydiv outputclass="row">
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
             <title outputclass="h5">Card Title</title>
-            <sectiondiv outputclass="h6">Card Subtitle</sectiondiv>
+            <div outputclass="h6">Card Subtitle</div>
             <p>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
             <xref outputclass="card-link" href="#">Card Link</xref>
             <xref outputclass="card-link" href="#">Another Link</xref>
@@ -90,7 +90,7 @@
   &lt;bodydiv outputclass="col"&gt;
     &lt;section outputclass="card w-50"&gt;
       &lt;title outputclass="h5"&gt;Card Title&lt;/title&gt;
-      &lt;sectiondiv outputclass="h6"&gt;Card Subtitle&lt;/title&gt;
+      &lt;div outputclass="h6"&gt;Card Subtitle&lt;/title&gt;
       &lt;p&gt;Some quick example text to build on the card title and make up the bulk of the card’s content.&lt;/p&gt;
       &lt;xref outputclass="card-link" href="#"&gt;Card Link&lt;/xref&gt;
       &lt;xref outputclass="card-link" href="#"&gt;Another Link&lt;/xref&gt;
@@ -131,7 +131,7 @@
         <bodydiv outputclass="col">
           <section outputclass="card w-50">
             <title outputclass="h5">Special title treatment</title>
-            <sectiondiv outputclass="card-header">Featured</sectiondiv>
+            <div outputclass="card-header">Featured</div>
             <p>With supporting text below as a natural lead-in to additional content.</p>
             <xref href="#" outputclass="btn-primary">Go somewhere</xref>
           </section>
@@ -141,7 +141,7 @@
     <codeblock>&lt;bodydiv outputclass="row"&gt;
   &lt;bodydiv outputclass="col"&gt;
     &lt;section outputclass="card w-50"&gt;
-      &lt;sectiondiv outputclass="card-header"&gt;Featured&lt;/sectiondiv&gt;
+      &lt;div outputclass="card-header"&gt;Featured&lt;/div&gt;
       &lt;title outputclass="h5"&gt;Special title treatment&lt;/title&gt;
       &lt;p&gt;With supporting text below as a natural lead-in to additional content.&lt;/p&gt;
       &lt;xref href="#" outputclass="btn-primary"&gt;Go somewhere&lt;/xref&gt;
