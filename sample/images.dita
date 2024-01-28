@@ -92,16 +92,11 @@
     <bodydiv outputclass="bd-example" deliveryTarget="html">
        <p>Change the width of the browser to view different images:</p>
        <div outputclass="d-picture" deliveryTarget="html">
-        <image otherprops="media((min-width: 700px))" scope="external"
-          href="https://picsum.photos/id/0/800/200"/>
-        <image otherprops="media((min-width: 450px))" scope="external"
-          href="https://picsum.photos/id/2/400/200"/>
-        <image otherprops="type(image/jpeg)" scope="external"
-          href="https://picsum.photos/id/8/200/200.jpg"/>
-        <image otherprops="type(image/webp)" scope="external"
-          href="https://picsum.photos/id/8/200/200.webp"/>
-        <image scope="external"
-          href="https://picsum.photos/id/8/200/200"/>
+        <image otherprops="media((min-width: 700px))" scope="external" href="https://picsum.photos/id/0/800/200"/>
+        <image otherprops="media((min-width: 450px))" scope="external" href="https://picsum.photos/id/2/400/200"/>
+        <image otherprops="type(image/jpeg)" scope="external" href="https://picsum.photos/id/8/200/200.jpg"/>
+        <image otherprops="type(image/webp)" scope="external" href="https://picsum.photos/id/8/200/200.webp"/>
+        <image scope="external" href="https://picsum.photos/id/8/200/200"/>
       </div>
     </bodydiv>
     <codeblock>&lt;div outputclass="d-picture" deliveryTarget="html"&gt;

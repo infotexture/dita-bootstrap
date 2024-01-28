@@ -543,7 +543,7 @@
       <xsl:for-each select="*[contains(@class,' topic/image ')]">
         <xsl:choose>
           <xsl:when test="position()=last()">
-            <xsl:apply-templates select="." />
+            <xsl:apply-templates select="."/>
           </xsl:when>
           <xsl:otherwise>
             <source>
@@ -590,7 +590,10 @@
       <xsl:apply-templates select="@scale"/>
       <xsl:choose>
         <xsl:when test="*[contains(@class, ' topic/alt ')]">
-          <xsl:variable name="alt-content"><xsl:apply-templates select="*[contains(@class, ' topic/alt ')]" mode="text-only"/></xsl:variable>
+          <xsl:variable name="alt-content"><xsl:apply-templates
+              select="*[contains(@class, ' topic/alt ')]"
+              mode="text-only"
+            /></xsl:variable>
           <xsl:attribute name="alt" select="normalize-space($alt-content)"/>
         </xsl:when>
         <xsl:when test="@alt">
