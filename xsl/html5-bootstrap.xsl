@@ -200,7 +200,7 @@
   </xsl:attribute-set>
 
   <xsl:attribute-set name="menubar-toc">
-    <xsl:attribute name="class">navbar bg-body-tertiary px-3 border-0</xsl:attribute>
+    <xsl:attribute name="class">navbar px-3 border-0</xsl:attribute>
     <xsl:attribute name="role">navigation</xsl:attribute>
     <xsl:attribute name="id">bs-menubar-nav</xsl:attribute>
   </xsl:attribute-set>
