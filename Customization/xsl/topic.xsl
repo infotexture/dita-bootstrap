@@ -534,4 +534,73 @@
       <xsl:apply-templates/>
     </li>
   </xsl:template>
+
+  <!-- Process a list of images as a single HTML5 Picture element. -->
+  <xsl:template match="*[contains(@class, ' topic/div ') and contains(@outputclass, 'd-picture')]">
+    <picture>
+      <xsl:call-template name="commonattributes"/>
+      <xsl:call-template name="setid"/>
+      <xsl:for-each select="*[contains(@class,' topic/image ')]">
+        <xsl:choose>
+          <xsl:when test="position()=last()">
+            <xsl:apply-templates select="."/>
+          </xsl:when>
+          <xsl:otherwise>
+            <source>
+              <xsl:attribute name="srcset" select="@href"/>
+              <xsl:if test="@otherprops">
+                <xsl:apply-templates select="." mode="otherprops-attributes"/>
+              </xsl:if>
+            </source>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:for-each>
+    </picture>
+  </xsl:template>
+
+  <xsl:template name="topic-image">
+    <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
+    <img>
+      <xsl:call-template name="commonattributes">
+        <xsl:with-param name="default-output-class">
+          <xsl:if test="@placement = 'break'"><!--Align only works for break-->
+            <xsl:choose>
+              <xsl:when test="@align = 'left'">imageleft</xsl:when>
+              <xsl:when test="@align = 'right'">imageright</xsl:when>
+              <xsl:when test="@align = 'center'">imagecenter</xsl:when>
+            </xsl:choose>
+          </xsl:if>
+        </xsl:with-param>
+      </xsl:call-template>
+      <xsl:call-template name="setid"/>
+      <!-- ↓ Add otherprops for lazy loading ↓ -->
+      <xsl:if test="@otherprops">
+        <xsl:apply-templates select="." mode="otherprops-attributes"/>
+      </xsl:if>
+       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+      <xsl:choose>
+        <xsl:when test="*[contains(@class, ' topic/longdescref ')]">
+          <xsl:apply-templates select="*[contains(@class, ' topic/longdescref ')]"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:apply-templates select="@longdescref"/>
+        </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="@href|@height|@width"/>
+      <xsl:apply-templates select="@scale"/>
+      <xsl:choose>
+        <xsl:when test="*[contains(@class, ' topic/alt ')]">
+          <xsl:variable name="alt-content"><xsl:apply-templates
+              select="*[contains(@class, ' topic/alt ')]"
+              mode="text-only"
+            /></xsl:variable>
+          <xsl:attribute name="alt" select="normalize-space($alt-content)"/>
+        </xsl:when>
+        <xsl:when test="@alt">
+          <xsl:attribute name="alt" select="@alt"/>
+        </xsl:when>
+      </xsl:choose>
+    </img>
+    <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
+  </xsl:template>
 </xsl:stylesheet>

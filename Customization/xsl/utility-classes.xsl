@@ -413,6 +413,12 @@
           <xsl:when test="$attr='icon'">
             <xsl:attribute name="class" select="concat('pe-2 ', substring-before(substring-after($var, '('),')'))"/>
           </xsl:when>
+          <xsl:when test="$attr='media'">
+            <xsl:attribute
+              name="media"
+              select="concat('(', concat( substring-before(substring-after($var, '('),')'), ')'))"
+            />
+          </xsl:when>
           <xsl:otherwise>
             <xsl:attribute name="{$attr}" select="substring-before(substring-after($var, '('),')')"/>
           </xsl:otherwise>

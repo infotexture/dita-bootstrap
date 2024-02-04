@@ -75,5 +75,36 @@
   &lt;image outputclass="img-thumbnail d-dark" href="..." deliveryTarget="html"/&gt;
 &lt;/fig&gt;
     </codeblock>
+    <section>
+      <title>Support Lazy Loading</title>
+      <p>Use the <xmlatt>otherprops="loading(lazy)"</xmlatt> attribute on <xmlelement>image</xmlelement> elements
+        to wait until an image is on screen before loading.
+      </p>
+    </section>
+    <codeblock>&lt;image otherprops="loading(lazy)" href="..."/></codeblock>
+    <section>
+      <title>Support HTML <xmlelement>picture</xmlelement> element</title>
+      <p>Use the <xmlatt>outputclass="d-picture"</xmlatt> attributes on a  <xmlelement>div</xmlelement>
+      holding multiple <xmlelement>image</xmlelement> elements to display different images on
+      different media. The <xmlatt>otherprops</xmlatt> attribute defines the media query and/or
+      image MIME type. The final <xmlelement>image</xmlelement> is the default.</p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+       <p>Change the width of the browser to view different images:</p>
+       <div outputclass="d-picture" deliveryTarget="html">
+        <image otherprops="media(min-width: 700px)" scope="external" href="https://picsum.photos/id/1/800/400"/>
+        <image otherprops="media(min-width: 450px)" scope="external" href="https://picsum.photos/id/4/400/200"/>
+        <image otherprops="type(image/jpeg)" scope="external" href="https://picsum.photos/id/5/200/200.jpg"/>
+        <image otherprops="type(image/webp)" scope="external" href="https://picsum.photos/id/5/200/200.webp"/>
+        <image scope="external" href="https://picsum.photos/id/3/200/200"/>
+      </div>
+    </bodydiv>
+    <codeblock>&lt;div outputclass="d-picture" deliveryTarget="html"&gt;
+  &lt;image otherprops="media(min-width: 700px)" href="..."&gt;
+  &lt;image otherprops="media(min-width: 450px)" href="..."/&gt;
+  &lt;image otherprops="type(image/jpeg)" href="..."/&gt;
+  &lt;image otherprops="type(image/webp)" href="..."/&gt;
+  &lt;image href="..."/&gt;
+&lt;/div&gt;</codeblock>
   </body>
 </topic>
