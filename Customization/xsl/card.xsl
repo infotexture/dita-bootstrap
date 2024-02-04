@@ -19,18 +19,18 @@
       <xsl:call-template name="commonattributes"/>
       <xsl:call-template name="setid"/>
       <xsl:apply-templates
-        select="*[contains(@class, ' topic/sectiondiv ') and contains(@outputclass, 'card-header')]"
+        select="*[contains(@outputclass, 'card-header') and (contains(@class, ' topic/sectiondiv ') or contains(@class, ' topic/div '))]"
       />
       <xsl:apply-templates select="*[contains(@outputclass, 'card-img-top')]"/>
       <div class="card-body">
         <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="card"/>
         <xsl:apply-templates
-          select="*[not(contains(@class, ' topic/title '))  and not(contains(@outputclass, 'card-img-top')) and not(contains(@outputclass, 'card-img-bottom'))  and not(contains(@outputclass, 'card-header'))  and not(contains(@outputclass, 'card-footer'))    ]"
+          select="*[not(contains(@class, ' topic/title '))  and not(contains(@outputclass, 'card-img-top')) and not(contains(@outputclass, 'card-img-bottom'))  and not(contains(@outputclass, 'card-header'))  and not(contains(@outputclass, 'card-footer'))]"
         />
       </div>
       <xsl:apply-templates select="*[contains(@outputclass, 'card-img-bottom')]"/>
       <xsl:apply-templates
-        select="*[contains(@class, ' topic/sectiondiv ') and contains(@outputclass, 'card-footer')]"
+        select="*[contains(@outputclass, 'card-footer') and (contains(@class, ' topic/sectiondiv ') or contains(@class, ' topic/div '))]"
       />
     </div>
   </xsl:template>
