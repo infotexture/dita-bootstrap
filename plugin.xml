@@ -352,10 +352,7 @@
   />
   <feature extension="dita.conductor.html5.param" file="insertParameters.xml"/>
   <feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
-  <feature
-    extension="depend.preprocess.post"
-    value="bootstrap.scripts.copy"
-  />
+  <feature extension="depend.preprocess.post" value="bootstrap.scripts.copy"/>
   <!-- Offers two additional extension points for dependent plug-ins -->
   <extension-point
     id="bootstrap.process.pre"
