@@ -3,7 +3,7 @@
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
 <plugin id="net.infotexture.dita-bootstrap">
-  <feature extension="package.version" value="5.3.3"/>
+  <feature extension="package.version" value="5.3.4"/>
   <require plugin="org.dita.html5"/>
   <require plugin="fox.jason.extend.css"/>
   <transtype
@@ -338,6 +338,11 @@
       desc="Specifies an XML file that contains content for the sidebar footer."
       type="file"
     />
+    <param
+      name="bootstrap.topbar.hdr"
+      desc="Specifies an XML file that contains content for the topbar header."
+      type="file"
+    />
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
@@ -347,10 +352,7 @@
   />
   <feature extension="dita.conductor.html5.param" file="insertParameters.xml"/>
   <feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
-  <feature
-    extension="depend.preprocess.copy-html.pre"
-    value="bootstrap.scripts.copy"
-  />
+  <feature extension="depend.preprocess.post" value="bootstrap.scripts.copy"/>
   <!-- Offers two additional extension points for dependent plug-ins -->
   <extension-point
     id="bootstrap.process.pre"

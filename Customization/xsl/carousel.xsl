@@ -16,6 +16,53 @@
 
   <xsl:param name="BOOTSTRAP_CSS_CAROUSEL_INDICATORS" select="'btn btn-primary bg-primary btn-sm'"/>
 
+  <xsl:template name="carousel-previous-next">
+    <xsl:param name="id"/>
+    <a class="carousel-control-prev" role="button" data-bs-slide="prev">
+      <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
+      <xsl:call-template name="color-control">
+        <xsl:with-param name="icon" select="'carousel-control-prev-icon'"/>
+      </xsl:call-template>
+      <span class="visually-hidden">
+        <xsl:call-template name="getVariable">
+          <xsl:with-param name="id" select="'Previous'"/>
+        </xsl:call-template>
+      </span>
+    </a>
+    <a class="carousel-control-next" role="button" data-bs-slide="next">
+      <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
+      <xsl:call-template name="color-control">
+        <xsl:with-param name="icon" select="'carousel-control-next-icon'"/>
+      </xsl:call-template>
+      <span class="visually-hidden">
+        <xsl:call-template name="getVariable">
+          <xsl:with-param name="id" select="'Next'"/>
+        </xsl:call-template>
+      </span>
+    </a>
+  </xsl:template>
+
+  <xsl:template name="carousel-indicators">
+    <xsl:param name="id"/>
+    <div class="carousel-indicators">
+      <xsl:for-each select="*[contains(@class, ' topic/li ')]">
+        <button type="button">
+          <xsl:attribute name="class">
+            <xsl:value-of select="$BOOTSTRAP_CSS_CAROUSEL_INDICATORS"/>
+            <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
+              <xsl:text> active</xsl:text>
+            </xsl:if>
+          </xsl:attribute>
+          <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
+            <xsl:attribute name="aria-current" select="'true'"/>
+          </xsl:if>
+          <xsl:attribute name="data-bs-target" select="concat('#', $id)"/>
+          <xsl:attribute name="data-bs-slide-to" select="count(preceding-sibling::*[contains(@class, ' topic/li ')])"/>
+        </button>
+      </xsl:for-each>
+    </div>
+  </xsl:template>
+
   <xsl:template
     match="*[ (contains(@class,' topic/ul ') or contains(@class, ' topic/ol ')) and contains(@outputclass, 'carousel')]"
   >
@@ -37,52 +84,16 @@
       <xsl:attribute name="id" select="$id"/>
       <xsl:call-template name="commonattributes"/>
       <xsl:if test="contains(@otherprops, 'indicators(true)')">
-        <div class="carousel-indicators">
-          <xsl:for-each select="*[contains(@class, ' topic/li ')]">
-            <button type="button">
-              <xsl:attribute name="class">
-                <xsl:value-of select="$BOOTSTRAP_CSS_CAROUSEL_INDICATORS"/>
-                <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
-                  <xsl:text> active</xsl:text>
-                </xsl:if>
-              </xsl:attribute>
-              <xsl:if test="count(preceding-sibling::*[contains(@class, ' topic/li ')]) = 0">
-                <xsl:attribute name="aria-current" select="'true'"/>
-              </xsl:if>
-              <xsl:attribute name="data-bs-target" select="concat('#', $id)"/>
-              <xsl:attribute
-                name="data-bs-slide-to"
-                select="count(preceding-sibling::*[contains(@class, ' topic/li ')])"
-              />
-            </button>
-          </xsl:for-each>
-        </div>
+        <xsl:call-template name="carousel-indicators">
+          <xsl:with-param name="id" select="$id"/>
+        </xsl:call-template>
       </xsl:if>
       <div class="carousel-inner pb-1">
         <xsl:apply-templates mode="carousel"/>
       </div>
-      <a class="carousel-control-prev" role="button" data-bs-slide="prev">
-        <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
-        <xsl:call-template name="color-control">
-          <xsl:with-param name="icon" select="'carousel-control-prev-icon'"/>
-        </xsl:call-template>
-        <span class="visually-hidden">
-          <xsl:call-template name="getVariable">
-            <xsl:with-param name="id" select="'Previous'"/>
-          </xsl:call-template>
-        </span>
-      </a>
-      <a class="carousel-control-next" role="button" data-bs-slide="next">
-        <xsl:attribute name="data-bs-target" select="concat('#' , $id)"/>
-        <xsl:call-template name="color-control">
-          <xsl:with-param name="icon" select="'carousel-control-next-icon'"/>
-        </xsl:call-template>
-        <span class="visually-hidden">
-          <xsl:call-template name="getVariable">
-            <xsl:with-param name="id" select="'Next'"/>
-          </xsl:call-template>
-        </span>
-      </a>
+      <xsl:call-template name="carousel-previous-next">
+        <xsl:with-param name="id" select="$id"/>
+      </xsl:call-template>
     </div>
   </xsl:template>
 

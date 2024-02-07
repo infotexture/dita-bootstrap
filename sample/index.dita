@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<!-- Within the sample documentation, where necessary, the texts describing the
-   usage of each component have been copied directly from the official Bootstrap
-   5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
-   markup is used throughout the examples describing how to implement these
-   components correctly using outputclass.
+<!--
+  Within the sample documentation, where necessary, the texts describing the usage of each component have been copied
+  directly from the official Bootstrap 5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
+  markup is used throughout the examples describing how to implement these components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc.
-   and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
-   file for applicable licenses.-->
+  This work is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc. and the Bootstrap Authors,
+  and used under CC BY 3.0. See the accompanying LICENSE file for applicable licenses.
+-->
 <topic id="index">
   <title>DITA Bootstrap</title>
   <shortdesc>A plug-in for
@@ -435,6 +434,13 @@
           </div>
         </li>
       </ol>
+      <note type="note">You can switch between the available themes via the CSS dropdown in the menu bar at
+        <xref
+          href="https://infotexture.github.io/dita-bootstrap/"
+          format="html"
+          scope="external"
+        >infotexture.github.io/dita-bootstrap</xref>.
+      </note>
     </section>
     <section>
       <title>Custom CSS</title>
@@ -806,7 +812,9 @@
       </ul>
     </section>
     <section>
-      <note>Within the sample documentation, the texts describing the usage of each component have been copied directly
+      <note
+        type="note"
+      >Within the sample documentation, the texts describing the usage of each component have been copied directly
         from the
         <xref href="https://getbootstrap.com/docs/5.3" format="html" scope="external">official Bootstrap 5.3
           documentation</xref>, however DITA markup is used throughout the examples describing how to implement these

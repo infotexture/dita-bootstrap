@@ -16,7 +16,7 @@
   <!-- Whether include a subheader menu bar.  values are 'yes' or 'no' -->
   <xsl:param name="BOOTSTRAP_MENUBAR_TOC" select="'no'"/>
   <!-- Whether to include bootstrap popovers.  values are 'yes' or 'no' -->
-  <xsl:param name="BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE" select="'yes'"/>
+  <xsl:param name="BOOTSTRAP_DARK_MODE_INCLUDE" select="'yes'"/>
   <!-- Whether to include dark mode toggling.  values are 'yes' or 'no' -->
   <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'yes'"/>
   <!-- Whether to include a scrollspy Toc -->
@@ -96,24 +96,11 @@
 
       <xsl:call-template name="gen-skip-to-main"/>
       <!-- ↓ Add CSS classes to use a CSS Grid - see side-toc.css for details  -->
-      <div>
-        <xsl:attribute name="class">
-          <xsl:text>bs-header</xsl:text>
-          <!-- ↓ Ensure that the header remains visible even if no side-toc is present -->
-          <xsl:if test="$nav-toc = 'none'">
-            <xsl:text> sticky-top</xsl:text>
-          </xsl:if>
-          <!-- ↓ Ensure that menubar has background color if present -->
-          <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
-            <xsl:text> bg-body-tertiary</xsl:text>
-          </xsl:if>
-        </xsl:attribute>
+      <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
+      <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
+        <xsl:apply-templates select="." mode="gen-user-toptoc"/>
+      </xsl:if>
 
-        <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
-        <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
-          <xsl:apply-templates select="." mode="gen-user-toptoc"/>
-        </xsl:if>
-      </div>
       <div class="bs-container container-xxl bd-gutter mt-3 my-md-4" id="content">
         <xsl:call-template name="gen-user-sidetoc"/>
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
@@ -125,7 +112,7 @@
             <xsl:text>.</xsl:text>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select=" replace($FILEDIR,'[^/]+','..')"/>
+            <xsl:value-of select="replace(replace($FILEDIR, '\\', '/') ,'[^/]+','..')"/>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
@@ -133,7 +120,7 @@
       <xsl:if test="$BOOTSTRAP_POPOVERS_INCLUDE = 'yes'">
         <script language="javascript" src="{$relpath}/js/popovers.js"/>
       </xsl:if>
-      <xsl:if test="$BOOTSTRAP_DARK_MODE_TOGGLER_INCLUDE = 'yes'">
+      <xsl:if test="$BOOTSTRAP_DARK_MODE_INCLUDE = 'yes'">
         <script language="javascript" src="{$relpath}/js/dark-mode-toggler.js"/>
       </xsl:if>
       <!-- ↑ End customization -->
@@ -213,7 +200,7 @@
   </xsl:attribute-set>
 
   <xsl:attribute-set name="menubar-toc">
-    <xsl:attribute name="class">navbar bg-body-tertiary px-3 border-0</xsl:attribute>
+    <xsl:attribute name="class">navbar px-3 border-0</xsl:attribute>
     <xsl:attribute name="role">navigation</xsl:attribute>
     <xsl:attribute name="id">bs-menubar-nav</xsl:attribute>
   </xsl:attribute-set>

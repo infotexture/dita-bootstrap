@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
-<!-- Within the sample documentation, where necessary, the texts describing the
-   usage of each component have been copied directly from the official Bootstrap
-   5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
-   markup is used throughout the examples describing how to implement these
-   components correctly using outputclass.
+<!--
+  Within the sample documentation, where necessary, the texts describing the usage of each component have been copied
+  directly from the official Bootstrap 5.3 documentation (found at https://getbootstrap.com/docs/5.3), however DITA
+  markup is used throughout the examples describing how to implement these components correctly using outputclass.
 
-   This work, is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc.
-   and the Bootstrap Authors, and used under CC BY 3.0. See the accompanying LICENSE
-   file for applicable licenses.-->
+  This work is a derivative of "Bootstrap 5.3 docs" by Twitter, Inc. and the Bootstrap Authors,
+  and used under CC BY 3.0. See the accompanying LICENSE file for applicable licenses.
+-->
 <topic id="dark-mode">
   <title>Dark Mode</title>
   <shortdesc
@@ -33,10 +32,10 @@
       <codeblock>&lt;ul class="navbar-nav ms-auto"&gt;
   &lt;li class="nav-item dropdown"&gt;
     &lt;a href="#" class="nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center show"
-      id="bd-theme" data-bs-toggle="dropdown" aria-expanded="false"
+      id="bd-color-mode" data-bs-toggle="dropdown" aria-expanded="false"
       data-bs-display="static"&gt;Toggle theme&lt;/a&gt;
     &lt;ul class="dropdown-menu dropdown-menu-end"
-      aria-labelledby="bd-theme" style="--bs-dropdown-min-width: 6rem;"
+      aria-labelledby="bd-color-mode" style="--bs-dropdown-min-width: 6rem;"
       data-bs-popper="static"&gt;
       &lt;li&gt;
         &lt;button type="button" class="dropdown-item d-flex align-items-center"

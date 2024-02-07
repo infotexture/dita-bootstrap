@@ -172,14 +172,16 @@
 
   <!-- Generate a menubar-toc - a menubar as part of the static header -->
   <xsl:template match="*" mode="gen-user-toptoc">
-    <div class="container">
-      <nav xsl:use-attribute-sets="menubar-toc">
-        <ul class="nav nav-pills" role="menubar">
-          <xsl:apply-templates select="$input.map" mode="menubar-toc">
-            <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
-          </xsl:apply-templates>
-        </ul>
-      </nav>
+    <div class="bg-body-tertiary">
+      <div class="container-xxl">
+        <nav xsl:use-attribute-sets="menubar-toc">
+          <ul class="nav nav-pills" role="menubar">
+            <xsl:apply-templates select="$input.map" mode="menubar-toc">
+              <xsl:with-param name="pathFromMaplist" select="$PATH2PROJ" as="xs:string"/>
+            </xsl:apply-templates>
+          </ul>
+        </nav>
+      </div>
     </div>
   </xsl:template>
 
@@ -710,7 +712,11 @@
     priority="10"
   >
     <xsl:param name="pathFromMaplist" as="xs:string"/>
-    <xsl:param name="children" select="*[contains(@class, ' map/topicref ')]" as="element()*"/>
+    <xsl:param
+      name="children"
+      select="*[contains(@class, ' map/topicref ')] [not(@toc = 'no')] [not(@processing-role = 'resource-only')]"
+      as="element()*"
+    />
     <xsl:variable name="title">
       <xsl:apply-templates select="." mode="get-navtitle"/>
     </xsl:variable>
