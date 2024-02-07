@@ -17,7 +17,7 @@
     "format:xml": "prettier --write \"**/*.xml\"",
     "format:xsl": "prettier --write \"**/*.xsl\"",
     "lint-staged": "lint-staged",
-    "prepare": "husky install",
+    "prepare": "husky",
     "prettier": "prettier --write \"**/*.{css,dita*,json,md,xml,xsl,yml}\"",
     "prettier-check": "prettier --check \"**/*.{css,dita*,json,md,xml,xsl,yml}\"",
     "stylelint": "stylelint \"css/*.css\" .github/dita-ot/theme.css",
