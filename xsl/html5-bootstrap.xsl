@@ -21,6 +21,8 @@
   <xsl:param name="BOOTSTRAP_POPOVERS_INCLUDE" select="'yes'"/>
   <!-- Whether to include a scrollspy Toc -->
   <xsl:param name="BOOTSTRAP_SCROLLSPY_TOC" select="'none'"/>
+  <!-- Defines container class for main layout and menubar-TOC -->
+  <xsl:param name="BOOTSTRAP_CSS_CONTAINER_SIZE" select="'container-xxl'"/>
 
   <xsl:import href="plugin:org.dita.html5:xsl/dita2html5.xsl"/>
 
@@ -101,7 +103,12 @@
         <xsl:apply-templates select="." mode="gen-user-toptoc"/>
       </xsl:if>
 
-      <div class="bs-container container-xxl bd-gutter mt-3 my-md-4" id="content">
+      <div>
+        <xsl:attribute
+          name="class"
+          select="concat('bs-container ', $BOOTSTRAP_CSS_CONTAINER_SIZE, ' bd-gutter mt-3 my-md-4')"
+        />
+        <xsl:attribute name="id" select="'content'"/>
         <xsl:call-template name="gen-user-sidetoc"/>
         <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
       </div>

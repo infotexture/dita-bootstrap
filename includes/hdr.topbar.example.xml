@@ -1,4 +1,5 @@
 <nav class="navbar bg-black p-0">
+  <!-- Modify -xxl to change container size -->
   <div class="container-xxl px-4">
     <a class="btn mx-1" href="#!" role="button">
       <i class="bi bi-github text-white"/>

@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <!-- Modify -xxl to change container size -->
   <div class="container-xxl">
     <!-- This shows the menu on mobile -->
     <div class="bd-navbar-toggle">
