@@ -170,6 +170,7 @@ The HTML output for the following DITA elements can be annotated with common Boo
 - `bootstrap.css.carousel.caption` – common utility classes for Bootstrap carousel captions
 - `bootstrap.css.carousel.indicators` – common utility classes for Bootstrap carousel indicators
 - `bootstrap.css.codeblock` – common Bootstrap utility classes for DITA `<codeblock>` elements
+- `bootstrap.css.container.size` - defines Bootstrap container class for main layout and menubar-TOC. Options: `container`, `container-fluid`, `container-sm`, `container-md`, `container-lg`, `container-xl`, `container-xxl` (default)
 - `bootstrap.css.dd` – common utility classes for DITA `<dd>` elements
 - `bootstrap.css.dl` – common utility classes for DITA `<dl>` elements
 - `bootstrap.css.dt` – common utility classes for DITA `<dt>` elements

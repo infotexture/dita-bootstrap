@@ -343,6 +343,19 @@
       desc="Specifies an XML file that contains content for the topbar header."
       type="file"
     />
+    <param
+      name="bootstrap.css.container.size"
+      type="enum"
+      desc="Defines Bootstrap container class for main layout and menubar-TOC."
+    >
+      <val>container</val>
+      <val>container-sm</val>
+      <val>container-md</val>
+      <val>container-lg</val>
+      <val>container-xl</val>
+      <val default="true">container-xxl</val>
+      <val>container-fluid</val>
+    </param>
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>

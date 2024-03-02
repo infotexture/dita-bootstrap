@@ -640,6 +640,12 @@
             <xmlelement>codeblock</xmlelement> elements
         </li>
         <li>
+          <parmname>--bootstrap.css.container.size</parmname> – defines Bootstrap container class for main layout and
+           menubar-TOC. Options: <option>container</option>, <option>container-fluid</option>,
+           <option>container-sm</option>, <option>container-md</option>, <option>container-lg</option>,
+           <option>container-xl</option>, <option>container-xxl</option> (default)
+        </li>
+        <li>
           <parmname>--bootstrap.css.dd</parmname> – common Bootstrap utility classes for DITA
             <xmlelement>dd</xmlelement> definition description elements
         </li>
