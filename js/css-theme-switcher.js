@@ -11,8 +11,11 @@
   const setCss = css => {
       if(css){
         const link = linkRegex(/.*\.min\.css/)[0];
+        const bodyStyle = document.querySelector('body').style;
+        bodyStyle.visibility = "hidden"; 
         link.removeAttribute("integrity");
         link.setAttribute("href", css);
+        setTimeout(()=>{bodyStyle.visibility = "visible";}, 300)
       }
   };
 

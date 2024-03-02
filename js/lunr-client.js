@@ -60,7 +60,7 @@
     return `<article role="article">
       <div class="modal-header">
   	        <h1>Search Results</h1>
-            <button type="button" class="btn-close" aria-label="Close" onclick="closeSearch(this);"></button>
+            <button type="button" class="btn-close search-close" aria-label="Close"></button>
         </div>
         <div class="modal-body">
       ${parseLunrResults(results)}
@@ -108,6 +108,9 @@
 
         elements[0].classList.add("collapse");
         window.scrollTo(0, 0);
+
+        const closeBox = document.getElementsByClassName("search-close")[0];
+        closeBox.addEventListener("click", closeSearch);
         return false;
       })
       .catch((e) => {

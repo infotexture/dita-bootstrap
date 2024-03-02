@@ -428,18 +428,24 @@ ul.simple {
   font-weight: bold;
 }
 
-/* Use CSS to expand lists with @compact="no" */
+/* Use CSS to expand compact lists */
 .dltermexpand {
   font-weight: bold;
   margin-top: 1em;
 }
 
+/* Compact lists use attributes up to DITA-OT 4.1.2 */
 *[compact=yes] > li {
   margin-top: 0;
 }
 
 *[compact=no] > li {
   margin-top: 0.53em;
+}
+
+/* Compact lists use classes starting in DITA-OT 4.2 */
+.compact > li {
+  margin-top: 0;
 }
 
 .liexpand {
@@ -485,6 +491,10 @@ dt.prereq {
 .note .note__title {
   font-weight: bold;
 }
+.note .note__body {
+  display: inline;
+}
+
 /* Various basic phrase styles */
 .bold {
   font-weight: bold;
@@ -527,33 +537,6 @@ table {
 table .desc {
   display: block;
   font-style: italic;
-}
-
-.cellrowborder {
-  border-bottom: solid 1px;
-  border-left: 0;
-  border-right: solid 1px;
-  border-top: 0;
-}
-
-.row-nocellborder {
-  border-bottom: solid 1px;
-  border-left: 0;
-  border-top: 0;
-}
-
-.cell-norowborder {
-  border-left: 0;
-  border-right: solid 1px;
-  border-top: 0;
-}
-
-.nocellnorowborder {
-  border: 0;
-}
-
-.firstcol {
-  font-weight: bold;
 }
 
 .table--pgwide-1 {
