@@ -201,6 +201,15 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cosmo/bootstrap.min.css"
+              >
+                Cosmo
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="dropdown-item d-flex align-items-center"
                 data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/cyborg/bootstrap.min.css"
               >
                 Cyborg
