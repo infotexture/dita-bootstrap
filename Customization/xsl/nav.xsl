@@ -742,13 +742,13 @@
           <xsl:choose>
             <xsl:when test="normalize-space(@href)">
               <div>
-                <xsl:attribute name="class" select="'d-flex flex-row'"/>
+                <xsl:attribute name="class" select="'d-flex flex-row ps-0'"/>
                 <xsl:if test="exists($children)">
                   <xsl:attribute name="id" select="concat('menu-collapse-trigger-',$id)"/>
                   <!-- ↓ Add Toggle without text ↓ -->
                   <button data-bs-toggle="collapse">
                     <xsl:attribute name="class">
-                      <xsl:text>btn d-inline-flex align-items-center pe-0 border-0</xsl:text>
+                      <xsl:text>btn d-inline-flex align-items-center p-0 border-0</xsl:text>
                       <xsl:if test="$show-menu='show'">
                         <xsl:text> active</xsl:text>
                       </xsl:if>
@@ -760,7 +760,7 @@
                     </xsl:if>
                     <xsl:attribute name="aria-labelledby" select="concat('menu-collapse-trigger-',$id)"/>
                     <xsl:attribute name="aria-controls" select="concat('menu-collapse-',$id)"/>
-                    <svg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 16 16'>
+                    <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
                       <path
                         fill='none'
                         stroke='currentColor'
@@ -770,6 +770,7 @@
                         d='M5 14l6-6-6-6'
                       />
                     </svg>
+
                   </button>
                 </xsl:if>
                 <!-- ↓ Add Bootstrap classes to topic link ↓ -->
@@ -779,11 +780,10 @@
                     <xsl:with-param name="class">
                       <xsl:text>d-inline-flex align-items-center flex-shrink-1 </xsl:text>
                       <xsl:choose>
-                        <xsl:when test="exists($children)">
-                          <xsl:text>ps-1</xsl:text>
-                        </xsl:when>
+                        <xsl:when test="exists($children)"/>
+                        <xsl:when test="count(ancestor::*/@href) eq 0"/>
                         <xsl:otherwise>
-                          <xsl:text>ps-3</xsl:text>
+                          <xsl:text>ps-2</xsl:text>
                         </xsl:otherwise>
                       </xsl:choose>
                       <xsl:value-of select="$active-class"/>
@@ -796,10 +796,10 @@
             </xsl:when>
             <xsl:otherwise>
               <!-- ↓ Add Toggle with title text ↓ -->
-              <div class="d-flex flex-row">
+              <div class="d-flex flex-row ps-0">
                 <button data-bs-toggle="collapse">
                   <xsl:attribute name="class">
-                    <xsl:text>btn d-inline-flex align-items-center pe-0 border-0</xsl:text>
+                    <xsl:text>btn d-inline-flex align-items-center p-0 border-0</xsl:text>
                     <xsl:if test="$show-menu='show'">
                       <xsl:text> active</xsl:text>
                     </xsl:if>
@@ -809,7 +809,7 @@
                     <xsl:attribute name="aria-expanded" select="'true'"/>
                     <xsl:attribute name="aria-current" select="'true'"/>
                   </xsl:if>
-                  <svg xmlns='http://www.w3.org/2000/svg' width='20' height='16' viewBox='0 0 16 16'>
+                  <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'>
                     <path
                       fill='none'
                       stroke='currentColor'
@@ -822,7 +822,7 @@
                 </button>
                 <span data-bs-toggle="collapse">
                   <xsl:attribute name="class">
-                    <xsl:text>d-inline-flex align-items-center flex-shrink-1 ps-1</xsl:text>
+                    <xsl:text>d-inline-flex align-items-center flex-shrink-1 ps-2</xsl:text>
                     <xsl:if test="$show-menu='show'">
                       <xsl:text> active</xsl:text>
                     </xsl:if>
@@ -842,7 +842,7 @@
           <xsl:if test="exists($children)">
             <div>
               <xsl:attribute name="id" select="concat('menu-collapse-',$id)"/>
-              <xsl:attribute name="class" select="concat('collapse ', $show-menu)"/>
+              <xsl:attribute name="class" select="concat('ps-2 collapse ', $show-menu)"/>
               <ul class="list-unstyled fw-normal ps-4">
                 <xsl:apply-templates select="$children" mode="#current">
                   <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
