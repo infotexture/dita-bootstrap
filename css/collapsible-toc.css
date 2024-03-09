@@ -61,7 +61,7 @@
 }
 
 .bd-links .btn {
-  padding: 0.25rem 0.25rem 0 !important;
+  padding: 0.25rem !important;
   font-weight: 600;
   color: var(--bs-body-color);
   background-color: transparent;
