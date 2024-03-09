@@ -278,9 +278,7 @@ article [tabindex='0'] {
   .bd-links {
     position: sticky;
     display: block !important;
-
-    padding-left: 0.25rem;
-    margin-left: -0.25rem;
+    padding: 0 0.25rem;
   }
 }
 
@@ -301,18 +299,11 @@ article [tabindex='0'] {
 }
 
 .bd-links .btn {
-  padding-top: 0.25rem;
-  padding-bottom: 0;
-  padding-left: 0.25rem !important;
+  padding: 0.25rem !important;
   font-weight: 600;
   color: var(--bs-body-color);
   background-color: transparent;
   box-shadow: none;
-}
-
-[dir='rtl'] .bd-links .btn {
-  padding-right: 0.25rem !important;
-  padding-left: 0 !important;
 }
 
 .bd-links svg:hover {
