@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!-- Modify -xxl to change container size -->
   <div class="container-xxl">
     <!-- This shows the menu on mobile -->
     <div class="bd-navbar-toggle">
@@ -112,7 +113,7 @@
             <span class="d-auto">
               <i class="bi bi-circle-half"/>
             </span>
-            <span class="d-lg-none ms-2">Color mode</span>
+            <span class="d-lg-none ms-2">Toggle color mode</span>
           </a>
           <ul
             class="dropdown-menu dropdown-menu-end"

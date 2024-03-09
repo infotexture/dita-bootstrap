@@ -78,7 +78,7 @@
             <span class="d-auto">
               <i class="bi bi-circle-half"/>
             </span>
-            <span class="d-lg-none ms-2">Toggle Color Mode</span>
+            <span class="d-lg-none ms-2">Toggle color mode</span>
           </a>
           <ul
             class="dropdown-menu dropdown-menu-end"
