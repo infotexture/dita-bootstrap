@@ -640,7 +640,10 @@
             <xmlelement>codeblock</xmlelement> elements
         </li>
         <li>
-          <parmname>--bootstrap.css.container.size</parmname> – defines the Bootstrap <xref href="./containers.dita" format="dita">container class</xref> for main layout and
+          <parmname>--bootstrap.css.container.size</parmname> – defines the Bootstrap <xref
+            href="./containers.dita"
+            format="dita"
+          >container class</xref> for main layout and
            menubar-TOC.
         </li>
         <li>

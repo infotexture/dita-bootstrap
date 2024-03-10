@@ -10,7 +10,8 @@
 -->
 <topic id="containers">
   <title>Containers</title>
-  <shortdesc>Containers are a fundamental building block of Bootstrap that contain, pad, and align your content within a given device or viewport.</shortdesc>
+  <shortdesc
+  >Containers are a fundamental building block of Bootstrap that contain, pad, and align your content within a given device or viewport.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
@@ -24,7 +25,8 @@
   <body outputclass="language-markup">
     <section>
       <title>How they work</title>
-      <p>Containers are the most basic layout element in Bootstrap and are required when using the default grid system. Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be nested, most layouts do not require a nested container.</p>
+      <p
+      >Containers are the most basic layout element in Bootstrap and are required when using the default grid system. Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be nested, most layouts do not require a nested container.</p>
       <p>DITA Bootstrap comes with three different container styles:</p>
       <ul>
         <li>
@@ -54,7 +56,7 @@
         <colspec colname="COLSPEC6" colwidth="1*"/>
         <thead>
           <row>
-            <entry colname="COLSPEC0" valign="top"></entry>
+            <entry colname="COLSPEC0" valign="top"/>
             <entry colname="COLSPEC1" valign="top">Extra small
               <div outputclass="fw-normal">&lt;576px</div>
             </entry>
@@ -206,7 +208,7 @@
       <parmname>--bootstrap.css.container.size</parmname> parameter:
     </p>
     <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
-        >path/to/your.ditamap</filepath> \
+      >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--bootstrap.css.container.size</parmname>=<option>&lt;container-style&gt;</option></codeblock>
   </body>
