@@ -22,6 +22,7 @@
       <othermeta name="icon-style" content="color: var(--bs-teal)"/>
     </topicmeta>
     <topicref href="nav.dita"/>
+    <topicref href="containers.dita"/>
     <topicref href="grid.dita"/>
     <topicref href="rtl.dita" navtitle="Right-to-Left Languages" locktitle="yes"/>
   </chapter>
