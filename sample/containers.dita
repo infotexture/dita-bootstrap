@@ -10,8 +10,7 @@
 -->
 <topic id="containers">
   <title>Containers</title>
-  <shortdesc
-  >Containers are a fundamental building block of Bootstrap that contain, pad, and align your content within a given device or viewport.</shortdesc>
+  <shortdesc>Bootstrap containers determine the width of the content area within a given device or viewport.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
@@ -25,8 +24,9 @@
   <body outputclass="language-markup">
     <section>
       <title>How they work</title>
-      <p
-      >Containers are the most basic layout element in Bootstrap and are required when using the default grid system. Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be nested, most layouts do not require a nested container.</p>
+      <p>Containers are the most basic layout element in Bootstrap and are required when using the default grid system.
+        Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be
+        nested, most layouts do not require a nested container.</p>
       <p>DITA Bootstrap comes with three different container styles:</p>
       <ul>
         <li>
@@ -202,11 +202,11 @@
         </tbody>
       </tgroup>
     </table>
-    <p>
-      The default sizing is <option>container-xxl</option> To use another sizing, pass the desired
-      value to the <cmdname>dita</cmdname> command via the
-      <parmname>--bootstrap.css.container.size</parmname> parameter:
-    </p>
+    <note type="note">The DITA Bootstrap plug-in uses the responsive <option>container-xxl</option> by default to fill
+      the viewport width with page content up to the extra extra large breakpoint. At 1400px or wider, content width is
+      constrained to 1320px to ensure lines remain readable.</note>
+    <p>To use different size, pass the desired value to the <cmdname>dita</cmdname> command via the
+        <parmname>--bootstrap.css.container.size</parmname> parameter: </p>
     <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
       >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
