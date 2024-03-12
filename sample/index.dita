@@ -564,7 +564,7 @@
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
      <parmname>--nav-toc</parmname>=<option>&lt;sidebar-style&gt;</option></codeblock>
 
-       <note outputclass="alert-primary">For an example of <option>collapsible</option> styling, see the output at
+       <note type="note">For an example of <option>collapsible</option> styling, see the output at
         <xref
           href="https://infotexture.github.io/dita-bootstrap/"
           format="html"
@@ -819,16 +819,13 @@
       </ul>
     </section>
     <section>
-      <note
-        type="note"
-      >Within the sample documentation, the texts describing the usage of each component have been copied directly
-        from the
+      <note type="note">Within the sample documentation, the texts describing the usage of each component have been
+        copied directly from the
         <xref href="https://getbootstrap.com/docs/5.3" format="html" scope="external">official Bootstrap 5.3
           documentation</xref>, however DITA markup is used throughout the examples describing how to implement these
         components correctly using the DITA <xmlatt>outputclass</xmlatt> attribute. This text is therefore a derivative
         of <cite>Bootstrap 5 docs</cite> by Twitter, Inc. and the Bootstrap Authors, and used under
-        <xref href="https://creativecommons.org/licenses/by/3.0/" format="html" scope="external">CC BY
-        3.0.</xref>
+        <xref href="https://creativecommons.org/licenses/by/3.0/" format="html" scope="external">CC BY 3.0.</xref>
       </note>
     </section>
   </body>

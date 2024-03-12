@@ -384,7 +384,7 @@
         <xsl:text>alert-info</xsl:text>
       </xsl:when>
       <xsl:when test="@type='note'">
-        <xsl:text>alert-info</xsl:text>
+        <xsl:text>alert-primary</xsl:text>
       </xsl:when>
       <xsl:when test="@type='other'">
         <xsl:text>alert-dark</xsl:text>
