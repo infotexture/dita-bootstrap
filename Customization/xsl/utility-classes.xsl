@@ -301,6 +301,9 @@
     <xsl:if test="@scalefit='yes'">
       <xsl:text> img-fluid</xsl:text>
     </xsl:if>
+    <xsl:if test="ancestor::*[contains(@class, ' topic/dt ')]">
+      <xsl:call-template name="bootstrap-dt-word-wrap"/>
+    </xsl:if>
     <xsl:text> </xsl:text>
   </xsl:template>
 
@@ -342,6 +345,21 @@
       </xsl:when>
       <xsl:when test="$terms=4">
         <xsl:text>col-lg-2 </xsl:text>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- Add additional Bootstrap CSS classes to software elements -->
+  <xsl:template name="bootstrap-dt-word-wrap">
+    <xsl:choose>
+      <xsl:when test="contains(@class,' pr-d/')">
+        <xsl:text> text-wrap</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class,' sw-d/')">
+        <xsl:text> text-wrap</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class,' xml-d/')">
+        <xsl:text> text-wrap</xsl:text>
       </xsl:when>
     </xsl:choose>
   </xsl:template>
