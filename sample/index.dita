@@ -997,7 +997,8 @@
           </pd>
         </plentry>
       </parml>
-      <p>Opt-in breadcrumbs and menu bars and other modifiers can be added using the following parameters:</p>
+      <p>Opt-in breadcrumbs and menu bars and other modifiers can be enabled by
+      setting the following command line parameters to <option>yes</option>:</p>
       <parml otherprops="cols(4)">
         <plentry>
           <pt>
