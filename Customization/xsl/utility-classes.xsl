@@ -313,10 +313,31 @@
     <xsl:variable name="is-first-dd" select="empty(preceding-sibling::*[contains(@class, ' topic/dd ')])"/>
     <xsl:choose>
       <xsl:when test="not($is-first-dd)">
-        <xsl:text>col-lg-12  </xsl:text>
+        <xsl:text>col-lg-12 </xsl:text>
       </xsl:when>
       <xsl:when test="$terms=1">
-        <xsl:text>col-lg-9 </xsl:text>
+        <xsl:variable name="term" select="preceding-sibling::*[contains(@class, ' topic/dt ')][1]"/>
+        <xsl:choose>
+          <xsl:when test="$term/@outputclass='col-lg-6'">
+            <xsl:text>col-lg-6</xsl:text>
+          </xsl:when>
+          <xsl:when test="$term/@outputclass='col-lg-5'">
+            <xsl:text>col-lg-7</xsl:text>
+          </xsl:when>
+          <xsl:when test="$term/@outputclass='col-lg-4'">
+            <xsl:text>col-lg-8</xsl:text>
+          </xsl:when>
+          <xsl:when test="$term/@outputclass='col-lg-2'">
+            <xsl:text>col-lg-10</xsl:text>
+          </xsl:when>
+          <xsl:when test="$term/@outputclass='col-lg-1'">
+            <xsl:text>col-lg-11</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>col-lg-9</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
+        <xsl:text> </xsl:text>
       </xsl:when>
       <xsl:when test="$terms=2">
         <xsl:text>col-lg-6 </xsl:text>

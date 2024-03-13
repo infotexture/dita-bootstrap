@@ -616,7 +616,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.accessibility&#8203;.link</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common Bootstrap utility classes for accessibility links
           </pd>
         </plentry>
@@ -624,7 +624,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.accessibility&#8203;.nav</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common Bootstrap utility classes for accessibility navigation
           </pd>
         </plentry>
@@ -632,7 +632,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.accordion</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common utility classes for Bootstrap
             <xref href="./accordion.dita" format="dita">accordion components</xref>
           </pd>
@@ -641,7 +641,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.card</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common utility classes for Bootstrap
             <xref href="./card.dita" format="dita">card components</xref>
           </pd>
@@ -650,7 +650,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.carousel</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common utility classes for Bootstrap
             <xref href="./carousel.dita" format="dita">carousel components</xref>
           </pd>
@@ -659,7 +659,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.carousel&#8203;.caption</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common utility classes for Bootstrap
             <xref href="./carousel.dita" format="dita">carousel captions</xref>
           </pd>
@@ -668,7 +668,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.carousel&#8203;.indicators</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common utility classes for Bootstrap
             <xref href="./carousel.dita" format="dita">carousel indicators</xref>
           </pd>
@@ -677,7 +677,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.codeblock</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common Bootstrap utility classes for DITA
             <xmlelement>codeblock</xmlelement> elements
           </pd>
@@ -686,7 +686,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.container&#8203;.size</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             defines Bootstrap <xref
               href="./containers.dita"
               format="dita"
@@ -697,7 +697,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.dd</parmname>
           </pt>
-          <pd outputclass="col-lg-8">common Bootstrap utility classes for DITA
+          <pd>common Bootstrap utility classes for DITA
             <xmlelement>dd</xmlelement> definition description elements
           </pd>
         </plentry>
@@ -705,7 +705,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.dl</parmname>
           </pt>
-          <pd outputclass="col-lg-8">common Bootstrap utility classes for DITA
+          <pd>common Bootstrap utility classes for DITA
             <xmlelement>dl</xmlelement> definition list elements
           </pd>
         </plentry>
@@ -713,7 +713,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.dt</parmname>
           </pt>
-          <pd outputclass="col-lg-8">common Bootstrap utility classes for DITA
+          <pd>common Bootstrap utility classes for DITA
             <xmlelement>dt</xmlelement> definition term elements
           </pd>
         </plentry>
@@ -721,7 +721,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.figure</parmname>
           </pt>
-          <pd outputclass="col-lg-8">common Bootstrap utility classes for DITA
+          <pd>common Bootstrap utility classes for DITA
             <xmlelement>fig</xmlelement> elements
           </pd>
         </plentry>
@@ -729,7 +729,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.figure&#8203;.caption</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common Bootstrap utility classes for DITA
             <xmlelement>title</xmlelement> elements within <xmlelement>fig</xmlelement> elements
           </pd>
@@ -738,7 +738,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.figure&#8203;.image</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common Bootstrap utility classes for DITA
             <xmlelement>image</xmlelement> elements within <xmlelement>fig</xmlelement> elements
           </pd>
@@ -747,7 +747,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.footer</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common utility classes for the HTML
             <xmlelement>footer</xmlelement> element
           </pd>
@@ -756,7 +756,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.nav&#8203;.parent</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common Bootstrap utility classes for ancestors of active nav-pill elements
           </pd>
         </plentry>
@@ -764,7 +764,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.pagination</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common utility classes for Bootstrap
             <xref href="./pagination.dita" format="dita">pagination components</xref>
           </pd>
@@ -773,7 +773,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.section&#8203;.title</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common Bootstrap utility classes for DITA
             <xmlelement>title</xmlelement> elements within <xmlelement>section</xmlelement> elements
           </pd>
@@ -782,7 +782,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.shortdesc</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common Bootstrap utility classes for DITA
             <xmlelement>shortdesc</xmlelement> elements
           </pd>
@@ -791,7 +791,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.table</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common Bootstrap utility classes for DITA
             <xmlelement>table</xmlelement> elements
           </pd>
@@ -800,7 +800,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.tabs</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common utility classes for Bootstrap
             <xref href="./tabs.dita" format="dita">tabbed dialog components</xref>
           </pd>
@@ -809,7 +809,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.tabs&#8203;.vertical</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common utility classes for Bootstrap
             <xref href="./tabs.dita" format="dita">vertical tabbed dialog components</xref>
           </pd>
@@ -818,7 +818,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.thead</parmname>
           </pt>
-          <pd outputclass="col-lg-8">common Bootstrap utility classes for DITA
+          <pd>common Bootstrap utility classes for DITA
             <xmlelement>thead</xmlelement> elements
           </pd>
         </plentry>
@@ -826,7 +826,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.css&#8203;.topic&#8203;.title</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             common Bootstrap utility classes for DITA
             <xmlelement>title</xmlelement> elements within <xmlelement>topic</xmlelement> elements
           </pd>
@@ -854,7 +854,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.note</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for standard notes
           </pd>
         </plentry>
@@ -862,7 +862,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.attention</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for attention notes
           </pd>
         </plentry>
@@ -870,7 +870,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.caution</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for caution notes
           </pd>
         </plentry>
@@ -878,7 +878,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.danger</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for danger notes
           </pd>
         </plentry>
@@ -886,7 +886,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.fastpath</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for fastpath notes
           </pd>
         </plentry>
@@ -894,7 +894,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.important</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for important notes
           </pd>
         </plentry>
@@ -902,7 +902,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.notice</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for notice notes
           </pd>
         </plentry>
@@ -910,7 +910,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.remember</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for remember notes
           </pd>
         </plentry>
@@ -918,7 +918,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.restriction</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for restriction notes
           </pd>
         </plentry>
@@ -926,7 +926,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.tip</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for tips
           </pd>
         </plentry>
@@ -934,7 +934,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.trouble</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for trouble notes
           </pd>
         </plentry>
@@ -942,7 +942,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bootstrap.icon&#8203;.warning</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             icon for warning notes
           </pd>
         </plentry>
@@ -969,7 +969,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--icons.include</parmname>
           </pt>
-          <pd outputclass="col-lg-8">enable Bootstrap
+          <pd>enable Bootstrap
             <xref href="./icons.dita" format="dita">icons</xref>
           </pd>
         </plentry>
@@ -977,7 +977,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--popovers.include</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             enable Bootstrap
             <xref href="./popovers.dita" format="dita">popover components</xref> and
             <xref href="./tooltips.dita" format="dita">tooltip components</xref>
@@ -987,7 +987,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--dark.mode.include</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             whether to include support for a
             <xref
               href="https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode"
@@ -1003,7 +1003,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--args.breadcrumbs</parmname>
           </pt>
-          <pd outputclass="col-lg-8">enable Bootstrap
+          <pd>enable Bootstrap
           <xref href="./breadcrumb.dita" format="dita">breadcrumb components</xref>
         </pd>
         </plentry>
@@ -1011,7 +1011,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--menubar-toc.include</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             add a Bootstrap menubar
           </pd>
         </plentry>
@@ -1019,7 +1019,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--scrollspy-toc</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             add a Bootstrap <xref href="./scrollspy.dita" format="dita">scrollspy</xref> navigator
           </pd>
         </plentry>
@@ -1027,7 +1027,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--bidi.include</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             whether to force included support for
             <xref href="./rtl.dita" format="dita">RTL languages</xref>
           </pd>
@@ -1036,7 +1036,7 @@
           <pt outputclass="col-lg-4">
             <parmname>--toc-spacer.padding</parmname>
           </pt>
-          <pd outputclass="col-lg-8">
+          <pd>
             specifies the vertical padding to add to the side menu
           </pd>
         </plentry>
