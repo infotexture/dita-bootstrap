@@ -611,9 +611,9 @@
         <xref href="https://getbootstrap.com/docs/5.3/utilities/text" format="html" scope="external">text</xref>,
         <xref href="https://getbootstrap.com/docs/5.3/utilities/spacing" format="html" scope="external">spacing</xref>,
         etc. using additional command line parameters:</p>
-      <parml>
+      <parml otherprops="cols(4)">
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.accessibility&#8203;.link</parmname>
           </pt>
           <pd>
@@ -621,7 +621,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.accessibility&#8203;.nav</parmname>
           </pt>
           <pd>
@@ -629,7 +629,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.accordion</parmname>
           </pt>
           <pd>
@@ -638,7 +638,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.card</parmname>
           </pt>
           <pd>
@@ -647,7 +647,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.carousel</parmname>
           </pt>
           <pd>
@@ -656,7 +656,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.carousel&#8203;.caption</parmname>
           </pt>
           <pd>
@@ -665,7 +665,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.carousel&#8203;.indicators</parmname>
           </pt>
           <pd>
@@ -674,7 +674,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.codeblock</parmname>
           </pt>
           <pd>
@@ -683,7 +683,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.container&#8203;.size</parmname>
           </pt>
           <pd>
@@ -694,7 +694,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.dd</parmname>
           </pt>
           <pd>common Bootstrap utility classes for DITA
@@ -702,7 +702,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.dl</parmname>
           </pt>
           <pd>common Bootstrap utility classes for DITA
@@ -710,7 +710,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.dt</parmname>
           </pt>
           <pd>common Bootstrap utility classes for DITA
@@ -718,7 +718,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.figure</parmname>
           </pt>
           <pd>common Bootstrap utility classes for DITA
@@ -726,7 +726,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.figure&#8203;.caption</parmname>
           </pt>
           <pd>
@@ -735,7 +735,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.figure&#8203;.image</parmname>
           </pt>
           <pd>
@@ -744,7 +744,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.footer</parmname>
           </pt>
           <pd>
@@ -753,7 +753,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.nav&#8203;.parent</parmname>
           </pt>
           <pd>
@@ -761,7 +761,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.pagination</parmname>
           </pt>
           <pd>
@@ -770,7 +770,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.section&#8203;.title</parmname>
           </pt>
           <pd>
@@ -779,7 +779,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.shortdesc</parmname>
           </pt>
           <pd>
@@ -788,7 +788,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.table</parmname>
           </pt>
           <pd>
@@ -797,7 +797,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.tabs</parmname>
           </pt>
           <pd>
@@ -806,7 +806,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.tabs&#8203;.vertical</parmname>
           </pt>
           <pd>
@@ -815,7 +815,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.thead</parmname>
           </pt>
           <pd>common Bootstrap utility classes for DITA
@@ -823,7 +823,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.css&#8203;.topic&#8203;.title</parmname>
           </pt>
           <pd>
@@ -849,9 +849,9 @@
       <indexterm><parmname>--bootstrap.icon.warning</parmname></indexterm>
       <p>The default Bootstrap icons used for DITA <xmlelement
         >note</xmlelement> elements can be overridden using additional command line parameters:</p>
-      <parml>
+      <parml otherprops="cols(4)">
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.note</parmname>
           </pt>
           <pd>
@@ -859,7 +859,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.attention</parmname>
           </pt>
           <pd>
@@ -867,7 +867,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.caution</parmname>
           </pt>
           <pd>
@@ -875,7 +875,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.danger</parmname>
           </pt>
           <pd>
@@ -883,7 +883,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.fastpath</parmname>
           </pt>
           <pd>
@@ -891,7 +891,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.important</parmname>
           </pt>
           <pd>
@@ -899,7 +899,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.notice</parmname>
           </pt>
           <pd>
@@ -907,7 +907,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.remember</parmname>
           </pt>
           <pd>
@@ -915,7 +915,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.restriction</parmname>
           </pt>
           <pd>
@@ -923,7 +923,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.tip</parmname>
           </pt>
           <pd>
@@ -931,7 +931,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.trouble</parmname>
           </pt>
           <pd>
@@ -939,7 +939,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bootstrap.icon&#8203;.warning</parmname>
           </pt>
           <pd>
@@ -964,9 +964,9 @@
           format="dita"
         >dark mode toggler</xref> are enabled by default, but for performance reasons they can be disabled by setting
         the following command line parameters to <option>no</option>:</p>
-      <parml>
+      <parml otherprops="cols(4)">
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--icons.include</parmname>
           </pt>
           <pd>enable Bootstrap
@@ -974,7 +974,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--popovers.include</parmname>
           </pt>
           <pd>
@@ -984,7 +984,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--dark.mode.include</parmname>
           </pt>
           <pd>
@@ -1000,7 +1000,7 @@
       <p>Opt-in breadcrumbs and menu bars and other modifiers can be added using the following parameters:</p>
       <parml>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--args.breadcrumbs</parmname>
           </pt>
           <pd>enable Bootstrap
@@ -1008,7 +1008,7 @@
         </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--menubar-toc.include</parmname>
           </pt>
           <pd>
@@ -1016,7 +1016,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--scrollspy-toc</parmname>
           </pt>
           <pd>
@@ -1024,7 +1024,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--bidi.include</parmname>
           </pt>
           <pd>
@@ -1033,7 +1033,7 @@
           </pd>
         </plentry>
         <plentry>
-          <pt outputclass="col-lg-4">
+          <pt>
             <parmname>--toc-spacer.padding</parmname>
           </pt>
           <pd>

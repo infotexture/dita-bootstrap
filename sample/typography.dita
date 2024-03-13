@@ -18,6 +18,7 @@
         </indexterm>
         <indexterm><xmlatt>otherprops</xmlatt></indexterm>
         <indexterm><xmlelement>title</xmlelement></indexterm>
+        <indexterm><xmlelement>dl</xmlelement></indexterm>
       </keywords>
     </metadata>
   </prolog>
@@ -327,6 +328,41 @@
             inside your definition list.&lt;/dd&gt;
         &lt;/dlentry&gt;
       &lt;/dl&gt;
+    &lt;/dd&gt;
+  &lt;/dlentry&gt;
+&lt;/dl&gt;</codeblock>
+    <section>
+      <title outputclass="h3">Description list column width</title>
+      <p>Definitions lists use the twelve column system defined by the Bootstrap grid. By default each <xmlelement
+        >dt</xmlelement> spreads over 3 column widths and each <xmlelement
+        >dd</xmlelement> spreads over 9 column widths. Alter default width of terms by adding <xmlelement
+        >dl otherprops="cols(..)"</xmlelement></p>
+    </section>
+    <bodydiv outputclass="bd-example" deliveryTarget="html">
+      <dl otherprops="cols(2)">
+        <dlentry>
+          <dt>Description lists</dt>
+          <dd>A description list is perfect for defining terms.</dd>
+        </dlentry>
+        <dlentry>
+          <dt>Term</dt>
+          <dd>
+            <p>Definition for the term.</p>
+            <p>And some more placeholder definition text.</p>
+          </dd>
+        </dlentry>
+      </dl>
+    </bodydiv>
+    <codeblock>&lt;dl otherprops="cols(2)"&gt;
+  &lt;dlentry&gt;
+    &lt;dt&gt;Description lists&lt;/dt&gt;
+    &lt;dd&gt;A description list is perfect for defining terms.&lt;/dd&gt;
+  &lt;/dlentry&gt;
+  &lt;dlentry&gt;
+    &lt;dt&gt;Term&lt;/dt&gt;
+    &lt;dd&gt;
+      &lt;p&gt;Definition for the term.&lt;/p&gt;
+      &lt;p&gt;And some more placeholder definition text.&lt;/p&gt;
     &lt;/dd&gt;
   &lt;/dlentry&gt;
 &lt;/dl&gt;</codeblock>
