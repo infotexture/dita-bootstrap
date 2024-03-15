@@ -1018,19 +1018,23 @@
         </plentry>
         <plentry>
           <pt>
-            <parmname>--scrollspy-toc</parmname>
-          </pt>
-          <pd>
-            add a Bootstrap <xref href="./scrollspy.dita" format="dita">scrollspy</xref> navigator
-          </pd>
-        </plentry>
-        <plentry>
-          <pt>
             <parmname>--bidi.include</parmname>
           </pt>
           <pd>
             whether to force included support for
             <xref href="./rtl.dita" format="dita">RTL languages</xref>
+          </pd>
+        </plentry>
+      </parml>
+      <p>The following additional command line parameters are also available and described in more detail within
+        the documentation:</p>
+      <parml otherprops="cols(4)">
+        <plentry>
+          <pt>
+            <parmname>--scrollspy-toc</parmname>
+          </pt>
+          <pd>
+            add a Bootstrap <xref href="./scrollspy.dita" format="dita">scrollspy</xref> navigator
           </pd>
         </plentry>
         <plentry>
