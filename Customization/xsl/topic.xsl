@@ -13,7 +13,7 @@
 >
   <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
   <xsl:param name="BIDIRECTIONAL_DOCUMENT" select="'no'" as="xs:string"/>
-  <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'mt-3 border-top bg-primary-subtle'"/>
+  <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'border-top bg-primary-subtle'"/>
   <xsl:param name="BOOTSTRAP_TOPBAR_HDR"/>
 
 
@@ -499,7 +499,7 @@
       <footer xsl:use-attribute-sets="footer">
         <!-- ↓ Add Bootstrap CSS ↓ -->
         <xsl:attribute name="class">
-          <xsl:value-of select="concat('fixed-bottom ', $BOOTSTRAP_CSS_FOOTER)"/>
+          <xsl:value-of select="concat('mt-auto ', $BOOTSTRAP_CSS_FOOTER)"/>
           <xsl:if test="not($TOC_SPACER_PADDING = '0')">
             <xsl:value-of select="concat(' py-', $TOC_SPACER_PADDING)"/>
           </xsl:if>

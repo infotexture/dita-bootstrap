@@ -90,6 +90,20 @@
     </head>
   </xsl:template>
 
+  <xsl:template match="*" mode="addAttributesToBody" priority="5.0">
+    <xsl:attribute name="class">
+      <xsl:text>d-flex flex-column min-vh-100 </xsl:text>
+      <xsl:if test="body/@outputclass">
+        <xsl:value-of select="body/@outputclass"/>
+      </xsl:if>
+      <xsl:if test="self::dita">
+        <xsl:if test="body/*[contains(@class, ' topic/topic ')][1]/@outputclass">
+          <xsl:value-of select="*[contains(@class, ' topic/topic ')][1]/@outputclass"/>
+        </xsl:if>
+      </xsl:if>
+    </xsl:attribute>
+  </xsl:template>
+
   <!-- Override to use a CSS Grid -->
   <xsl:template match="*" mode="chapterBody">
     <body>
