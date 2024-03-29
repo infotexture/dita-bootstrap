@@ -108,8 +108,7 @@
 }
 
 .bd-links .btn:focus-visible {
-  outline: 2px solid;
-  outline-color: var(--bs-link-hover-color);
+  outline: -webkit-focus-ring-color auto 1px;
 }
 
 .bd-links .active {
