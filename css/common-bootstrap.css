@@ -103,7 +103,7 @@
   overflow: auto;
 }
 
-.search-box [type='search']::placeholder {
+[type='search']::placeholder {
   color: rgba(var(--bs-body-color-rgb), 0.3);
 }
 
