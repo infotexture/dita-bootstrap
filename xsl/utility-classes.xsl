@@ -199,8 +199,7 @@
     <xsl:apply-templates select="." mode="bootstrap-class"/>
     <xsl:apply-templates select="." mode="gen-user-bootstrap-class"/>
   </xsl:template>
-
-  <xsl:template match="/|node()|@*" mode="gen-user-bootstrap-class" priority="-10"/>
+  <xsl:template match="/ | @* | node()" mode="gen-user-bootstrap-class"/>
 
   <xsl:template match="/ | @* | node()" mode="bootstrap-class">
     <xsl:choose>

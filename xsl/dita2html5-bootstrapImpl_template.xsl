@@ -40,31 +40,32 @@
   <xsl:import href="plugin:org.dita.html5:xsl/xml-d.xsl"/>
   <xsl:import href="plugin:org.dita.html5:xsl/svg-d.xsl"/>
   <xsl:import href="plugin:org.dita.html5:xsl/hazard-d.xsl"/>
-
   <xsl:import href="plugin:org.dita.html5:xsl/nav.xsl"/>
-
   <xsl:import href="plugin:org.dita.html5:xsl/htmlflag.xsl"/>
-
-  <xsl:include href="../Customization/xsl/accordion.xsl"/>
-  <xsl:include href="../Customization/xsl/breadcrumb.xsl"/>
-  <xsl:include href="../Customization/xsl/card.xsl"/>
-  <xsl:include href="../Customization/xsl/carousel.xsl"/>
-  <xsl:include href="../Customization/xsl/collapse.xsl"/>
-  <xsl:include href="../Customization/xsl/hi-d.xsl"/>
-  <xsl:include href="../Customization/xsl/nav.xsl"/>
-  <xsl:include href="../Customization/xsl/offcanvas.xsl"/>
-  <xsl:include href="../Customization/xsl/pagination.xsl"/>
-  <xsl:include href="../Customization/xsl/popovers.xsl"/>
-  <xsl:include href="../Customization/xsl/scrollspy.xsl"/>
-  <xsl:include href="../Customization/xsl/tables.xsl"/>
-  <xsl:include href="../Customization/xsl/tabs.xsl"/>
-  <xsl:include href="../Customization/xsl/tooltips.xsl"/>
-  <xsl:include href="../Customization/xsl/topic.xsl"/>
-  <xsl:include href="../Customization/xsl/utility-classes.xsl"/>
 
   <dita:extension id="dita.xsl.html5"
       behavior="org.dita.dost.platform.ImportXSLAction"
       xmlns:dita="http://dita-ot.sourceforge.net"/>
+
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/accordion.xsl"/>
+
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/breadcrumb.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/card.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/carousel.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/collapse.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/hi-d.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/nav.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/offcanvas.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/pagination.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/popovers.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/scrollspy.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/tables.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/tabs.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/tooltips.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/topic.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/utility-classes.xsl"/>
+
+
 
   <dita:extension id="dita.xsl.html5-bootstrap"
       behavior="org.dita.dost.platform.ImportXSLAction"
@@ -226,6 +227,8 @@
       <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
     </xsl:if>
   </xsl:template>
+
+
 
   <!--
     Overrides to add CSS classes to use a CSS Grid for the navigation layout
