@@ -161,7 +161,7 @@
     <!-- Entrypoint for XSL transforms -->
     <property
       name="args.xsl"
-      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"
+      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/dita2html5-bootstrap.xsl"
     />
 
     <makeurl
