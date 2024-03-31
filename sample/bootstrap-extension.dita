@@ -17,25 +17,21 @@
     not included in vanilla Bootstrap 5.x.</shortdesc>
 
   <body outputclass="language-markup">
-
-    <section>
-      <title>Extending Bootstrap</title>
-      <p>Bootstrap is designed to be extensible. Additional CSS and JavaScript libraries can be added to the generated
-        HTML pages to allow for new Bootstrap components and extend Bootstrap classes. Similarly, the <term>DITA
-          Bootstrap</term> plug-in itself can be extended to process DITA files to create valid Bootstrap HTML to drive
-        these custom components.</p>
-
       <p>The <term>DITA Bootstrap Extension</term> is a DITA-OT plug-in that incorporates the
         <xref href="https://bootstrapextensions.com/" format="html" scope="external">Bootstrap Extension</xref> library
         and adds the necessary CSS and JavaScript — for sliders, whitebox galleries, parallax components, greyscale
-        images and additional styling options.</p>
+        images and additional styling options such as new colors.</p>
       <p>For the full documentation, see
         <xref
-          href="https://infotexture.github.io/dita-bootstrap.extension/"
-          format="html"
-          scope="external"
-        >infotexture.github.io/dita-bootstrap.extension</xref>.</p>
-    </section>
+        href="https://infotexture.github.io/dita-bootstrap.extension/"
+        format="html"
+        scope="external"
+      >infotexture.github.io/dita-bootstrap.extension</xref>.</p>
+
+    <fig>
+      <title>Additional Bootstrap Extension Colors</title>
+      <image scalefit="yes" href="./src/extensions.png"/>
+    </fig>
 
     <section>
       <title>Installing the <term>DITA Bootstrap Extension</term> plug-in</title>

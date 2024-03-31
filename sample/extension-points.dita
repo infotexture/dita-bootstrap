@@ -26,6 +26,13 @@
     </metadata>
   </prolog>
   <body>
+    <section>
+      <title>Extending Bootstrap</title>
+      <p>Bootstrap is designed to be extensible. Additional CSS and JavaScript libraries can be added to the generated
+        HTML pages to allow for new Bootstrap components and extend Bootstrap classes. Similarly, the <term>DITA
+          Bootstrap</term> plug-in itself can be extended to process DITA files to create valid Bootstrap HTML to drive
+        these custom components.</p>
+    </section>
     <p>The Bootstrap <ph
         outputclass="initialism"
         otherprops="title(HyperText Markup Language)"
