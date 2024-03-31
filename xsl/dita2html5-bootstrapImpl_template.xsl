@@ -47,22 +47,21 @@
       behavior="org.dita.dost.platform.ImportXSLAction"
       xmlns:dita="http://dita-ot.sourceforge.net"/>
 
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/accordion.xsl"/>
-
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/breadcrumb.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/card.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/carousel.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/collapse.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/hi-d.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/nav.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/offcanvas.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/pagination.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/popovers.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/scrollspy.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/tables.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/tabs.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/tooltips.xsl"/>
-  <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/topic.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/accordion.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/breadcrumb.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/card.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/carousel.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/collapse.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/hi-d.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/nav.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/offcanvas.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/pagination.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/popovers.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/scrollspy.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/tables.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/tabs.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/tooltips.xsl"/>
+  <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/topic.xsl"/>
   <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/utility-classes.xsl"/>
 
 

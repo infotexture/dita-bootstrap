@@ -74,7 +74,6 @@
       <table>
         <!-- ↓ Add Bootstrap CSS class processing ↓ -->
         <xsl:call-template name="commonattributes"/>
-        <xsl:call-template name="otherprops-attributes"/>
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:call-template name="setid"/>
         <xsl:apply-templates select="." mode="css-class"/>
