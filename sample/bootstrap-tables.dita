@@ -9,8 +9,8 @@
   and used under CC BY 3.0. See the accompanying LICENSE file for applicable licenses.
 -->
 <topic id="tables">
-  <title>Tables</title>
-  <shortdesc>Documentation and examples for creating dynamic tables with Bootstrap.</shortdesc>
+  <title>Dynamic Tables</title>
+  <shortdesc>Documentation and examples for creating dynamic tables with the Bootstrap Tables extension.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
