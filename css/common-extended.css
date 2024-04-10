@@ -104,14 +104,13 @@
   overflow: auto;
 }
 
-.search-box [type='search']::placeholder {
-  color: var(--bs-link-color) !important;
+[type='search']::placeholder {
+  color: rgba(var(--bs-body-color-rgb), 0.3);
 }
 
 .search-box:hover,
 .search-box:focus-visible {
-  outline: 2px solid;
-  outline-color: var(--bs-link-hover-color);
+  outline: -webkit-focus-ring-color auto 1px;
 }
 
 /*!
@@ -346,8 +345,7 @@ article [tabindex='0'] {
 }
 
 .bd-links .btn:focus-visible {
-  outline: 2px solid;
-  outline-color: var(--bs-link-hover-color);
+  outline: -webkit-focus-ring-color auto 1px;
 }
 
 .bd-links .active {
