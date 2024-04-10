@@ -542,23 +542,28 @@
           scope="external"
         >collapsible</xref> menus. The following new options are available:
       </p>
-      <ul>
-        <li>
-          <option>nav-pill-full</option> – Styled full ToC using nav-pills
-        </li>
-        <li>
-          <option>nav-pill-partial</option> – Styled partial ToC using nav-pills
-        </li>
-        <li>
-          <option>list-group-full</option> – Styled full ToC within a list group
-        </li>
-        <li>
-          <option>list-group-partial</option> – Styled partial ToC within a list group
-        </li>
-        <li>
-          <option>collapsible</option> - tyled full ToC with collapsible elements
-        </li>
-      </ul>
+      <parml>
+        <plentry>
+          <pt><option>nav-pill-full</option></pt>
+          <pd>Styled full ToC using nav-pills</pd>
+        </plentry>
+        <plentry>
+          <pt><option>nav-pill-partial</option></pt>
+          <pd>Styled partial ToC using nav-pills</pd>
+        </plentry>
+        <plentry>
+          <pt><option>list-group-full</option></pt>
+          <pd>Styled full ToC within a list group</pd>
+        </plentry>
+        <plentry>
+          <pt><option>list-group-partial</option></pt>
+          <pd>Styled partial ToC within a list group</pd>
+        </plentry>
+        <plentry>
+          <pt><option>collapsible</option></pt>
+          <pd>Styled full ToC with collapsible elements</pd>
+        </plentry>
+      </parml>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname>--input</parmname>=<filepath
         >path/to/your.ditamap</filepath> \
      <parmname>--format</parmname>=<option>html5-bootstrap</option> \
@@ -606,111 +611,227 @@
         <xref href="https://getbootstrap.com/docs/5.3/utilities/text" format="html" scope="external">text</xref>,
         <xref href="https://getbootstrap.com/docs/5.3/utilities/spacing" format="html" scope="external">spacing</xref>,
         etc. using additional command line parameters:</p>
-      <ul>
-        <li>
-          <parmname>--bootstrap.css.accessibility.link</parmname> – common Bootstrap utility classes for accessibility
-          links
-        </li>
-        <li>
-          <parmname>--bootstrap.css.accessibility.nav</parmname> – common Bootstrap utility classes for accessibility
-          navigation
-        </li>
-        <li>
-          <parmname>--bootstrap.css.accordion</parmname> – common utility classes for Bootstrap
-          <xref href="./accordion.dita" format="dita">accordion components</xref>
-        </li>
-        <li>
-          <parmname>--bootstrap.css.card</parmname> – common utility classes for Bootstrap
-          <xref href="./card.dita" format="dita">card components</xref>
-        </li>
-        <li>
-          <parmname>--bootstrap.css.carousel</parmname> – common utility classes for Bootstrap
-          <xref href="./carousel.dita" format="dita">carousel components</xref>
-        </li>
-        <li>
-          <parmname>--bootstrap.css.carousel.caption</parmname> – common utility classes for Bootstrap
-          <xref href="./carousel.dita" format="dita">carousel captions</xref>
-        </li>
-        <li>
-          <parmname>--bootstrap.css.carousel.indicators</parmname> – common utility classes for Bootstrap
-          <xref href="./carousel.dita" format="dita">carousel indicators</xref>
-        </li>
-        <li>
-          <parmname>--bootstrap.css.codeblock</parmname> – common Bootstrap utility classes for DITA
+      <parml otherprops="cols(4)">
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.accessibility&#8203;.link</parmname>
+          </pt>
+          <pd>
+            Common Bootstrap utility classes for accessibility links
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.accessibility&#8203;.nav</parmname>
+          </pt>
+          <pd>
+            Common Bootstrap utility classes for accessibility navigation
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.accordion</parmname>
+          </pt>
+          <pd>
+            Common utility classes for Bootstrap
+            <xref href="./accordion.dita" format="dita">accordion components</xref>
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.card</parmname>
+          </pt>
+          <pd>
+            Common utility classes for Bootstrap
+            <xref href="./card.dita" format="dita">card components</xref>
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.carousel</parmname>
+          </pt>
+          <pd>
+            Common utility classes for Bootstrap
+            <xref href="./carousel.dita" format="dita">carousel components</xref>
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.carousel&#8203;.caption</parmname>
+          </pt>
+          <pd>
+            Common utility classes for Bootstrap
+            <xref href="./carousel.dita" format="dita">carousel captions</xref>
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.carousel&#8203;.indicators</parmname>
+          </pt>
+          <pd>
+            Common utility classes for Bootstrap
+            <xref href="./carousel.dita" format="dita">carousel indicators</xref>
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.codeblock</parmname>
+          </pt>
+          <pd>
+            Common Bootstrap utility classes for DITA
             <xmlelement>codeblock</xmlelement> elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.container.size</parmname> – defines the Bootstrap <xref
-            href="./containers.dita"
-            format="dita"
-          >container class</xref> for main layout and
-           menubar-TOC.
-        </li>
-        <li>
-          <parmname>--bootstrap.css.dd</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.container&#8203;.size</parmname>
+          </pt>
+          <pd>
+            Bootstrap <xref
+              href="./containers.dita"
+              format="dita"
+            >container class</xref> for main layout and menubar-TOC
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.dd</parmname>
+          </pt>
+          <pd>Common Bootstrap utility classes for DITA
             <xmlelement>dd</xmlelement> definition description elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.dl</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.dl</parmname>
+          </pt>
+          <pd>Common Bootstrap utility classes for DITA
             <xmlelement>dl</xmlelement> definition list elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.dt</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.dt</parmname>
+          </pt>
+          <pd>Common Bootstrap utility classes for DITA
             <xmlelement>dt</xmlelement> definition term elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.figure</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.figure</parmname>
+          </pt>
+          <pd>Common Bootstrap utility classes for DITA
             <xmlelement>fig</xmlelement> elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.figure.caption</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.figure&#8203;.caption</parmname>
+          </pt>
+          <pd>
+            Common Bootstrap utility classes for DITA
             <xmlelement>title</xmlelement> elements within <xmlelement>fig</xmlelement> elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.figure.image</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.figure&#8203;.image</parmname>
+          </pt>
+          <pd>
+            Common Bootstrap utility classes for DITA
             <xmlelement>image</xmlelement> elements within <xmlelement>fig</xmlelement> elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.footer</parmname> – common utility classes for the HTML
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.footer</parmname>
+          </pt>
+          <pd>
+            Common utility classes for the HTML
             <xmlelement>footer</xmlelement> element
-        </li>
-        <li>
-          <parmname>--bootstrap.css.nav.parent</parmname> – common Bootstrap utility classes for ancestors of active
-          nav-pill elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.pagination</parmname> – common utility classes for Bootstrap
-          <xref href="./pagination.dita" format="dita">pagination components</xref>
-        </li>
-        <li>
-          <parmname>--bootstrap.css.section.title</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.nav&#8203;.parent</parmname>
+          </pt>
+          <pd>
+            Common Bootstrap utility classes for ancestors of active nav-pill elements
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.pagination</parmname>
+          </pt>
+          <pd>
+            Common utility classes for Bootstrap
+            <xref href="./pagination.dita" format="dita">pagination components</xref>
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.section&#8203;.title</parmname>
+          </pt>
+          <pd>
+            Common Bootstrap utility classes for DITA
             <xmlelement>title</xmlelement> elements within <xmlelement>section</xmlelement> elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.shortdesc</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.shortdesc</parmname>
+          </pt>
+          <pd>
+            Common Bootstrap utility classes for DITA
             <xmlelement>shortdesc</xmlelement> elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.table</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.table</parmname>
+          </pt>
+          <pd>
+            Common Bootstrap utility classes for DITA
             <xmlelement>table</xmlelement> elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.tabs</parmname> – common utility classes for Bootstrap
-          <xref href="./tabs.dita" format="dita">tabbed dialog components</xref>
-        </li>
-        <li>
-          <parmname>--bootstrap.css.tabs.vertical</parmname> – common utility classes for Bootstrap
-          <xref href="./tabs.dita" format="dita">vertical tabbed dialog components</xref>
-        </li>
-        <li>
-          <parmname>--bootstrap.css.thead</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.tabs</parmname>
+          </pt>
+          <pd>
+            Common utility classes for Bootstrap
+            <xref href="./tabs.dita" format="dita">tabbed dialog components</xref>
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.tabs&#8203;.vertical</parmname>
+          </pt>
+          <pd>
+            Common utility classes for Bootstrap
+            <xref href="./tabs.dita" format="dita">vertical tabbed dialog components</xref>
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.thead</parmname>
+          </pt>
+          <pd>Common Bootstrap utility classes for DITA
             <xmlelement>thead</xmlelement> elements
-        </li>
-        <li>
-          <parmname>--bootstrap.css.topic.title</parmname> – common Bootstrap utility classes for DITA
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.css&#8203;.topic&#8203;.title</parmname>
+          </pt>
+          <pd>
+            Common Bootstrap utility classes for DITA
             <xmlelement>title</xmlelement> elements within <xmlelement>topic</xmlelement> elements
-        </li>
-      </ul>
+          </pd>
+        </plentry>
+      </parml>
     </section>
     <section>
       <title>Bootstrap icons for DITA notes</title>
@@ -728,44 +849,104 @@
       <indexterm><parmname>--bootstrap.icon.warning</parmname></indexterm>
       <p>The default Bootstrap icons used for DITA <xmlelement
         >note</xmlelement> elements can be overridden using additional command line parameters:</p>
-      <ul>
-        <li>
-          <parmname>--bootstrap.icon.note</parmname> – icon for standard notes
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.attention</parmname> – icon for attention notes
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.caution</parmname> – icon for caution notes
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.danger</parmname> – icon for danger notes
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.fastpath</parmname> – icon for fastpath notes
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.important</parmname> – icon for important notes
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.notice</parmname> – icon for notice notes
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.remember</parmname> – icon for remember notes
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.restriction</parmname> – icon for restriction notes
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.tip</parmname> – icon for tips
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.trouble</parmname> – icon for trouble notes
-        </li>
-        <li>
-          <parmname>--bootstrap.icon.warning</parmname> – icon for warning notes
-        </li>
-      </ul>
+      <parml otherprops="cols(4)">
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.note</parmname>
+          </pt>
+          <pd>
+            Icon for standard notes
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.attention</parmname>
+          </pt>
+          <pd>
+            Icon for attention notes
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.caution</parmname>
+          </pt>
+          <pd>
+            Icon for caution notes
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.danger</parmname>
+          </pt>
+          <pd>
+            Icon for danger notes
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.fastpath</parmname>
+          </pt>
+          <pd>
+            Icon for fastpath notes
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.important</parmname>
+          </pt>
+          <pd>
+            Icon for important notes
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.notice</parmname>
+          </pt>
+          <pd>
+            Icon for notice notes
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.remember</parmname>
+          </pt>
+          <pd>
+            Icon for remember notes
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.restriction</parmname>
+          </pt>
+          <pd>
+            Icon for restriction notes
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.tip</parmname>
+          </pt>
+          <pd>
+            Icon for tips
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.trouble</parmname>
+          </pt>
+          <pd>
+            Icon for trouble notes
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bootstrap.icon&#8203;.warning</parmname>
+          </pt>
+          <pd>
+            Icon for warning notes
+          </pd>
+        </plentry>
+      </parml>
     </section>
     <section>
       <title>Optional elements</title>
@@ -783,40 +964,88 @@
           format="dita"
         >dark mode toggler</xref> are enabled by default, but for performance reasons they can be disabled by setting
         the following command line parameters to <option>no</option>:</p>
-      <ul>
-        <li>
-          <parmname>--icons.include</parmname> – enable Bootstrap
-          <xref href="./icons.dita" format="dita">icons</xref></li>
-        <li>
-          <parmname>--popovers.include</parmname> – enable Bootstrap
-          <xref href="./popovers.dita" format="dita">popover components</xref> and
-          <xref href="./tooltips.dita" format="dita">tooltip components</xref></li>
-        <li>
-          <parmname>--dark.mode.include</parmname> – whether to include support for a
-          <xref
-            href="https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode"
-            format="html"
-            scope="external"
-          >dark mode</xref> toggler</li>
-      </ul>
-      <p>Opt-in breadcrumbs and menu bars and other modifiers can be added using the following parameters:</p>
-      <ul>
-        <li>
-          <parmname>--args.breadcrumbs</parmname> – enable Bootstrap
-          <xref href="./breadcrumb.dita" format="dita">breadcrumb components</xref></li>
-        <li>
-          <parmname>--menubar-toc.include</parmname> – add a Bootstrap menubar</li>
-        <li>
-          <parmname>--scrollspy-toc</parmname> – add a Bootstrap <xref
-            href="./scrollspy.dita"
-            format="dita"
-          >scrollspy</xref> navigator</li>
-        <li>
-          <parmname>--bidi.include</parmname> – whether to force included support for
-          <xref href="./rtl.dita" format="dita">RTL languages</xref></li>
-        <li>
-          <parmname>--toc-spacer.padding</parmname> – specifies the vertical padding to add to the side menu</li>
-      </ul>
+      <parml otherprops="cols(4)">
+        <plentry>
+          <pt>
+            <parmname>--icons.include</parmname>
+          </pt>
+          <pd>Enable Bootstrap
+            <xref href="./icons.dita" format="dita">icons</xref>
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--popovers.include</parmname>
+          </pt>
+          <pd>
+            Enable Bootstrap
+            <xref href="./popovers.dita" format="dita">popover components</xref> and
+            <xref href="./tooltips.dita" format="dita">tooltip components</xref>
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--dark.mode.include</parmname>
+          </pt>
+          <pd>
+            Whether to include support for a
+            <xref
+              href="https://getbootstrap.com/docs/5.3/customize/color-modes/#dark-mode"
+              format="html"
+              scope="external"
+            >dark mode</xref> toggler
+          </pd>
+        </plentry>
+      </parml>
+      <p>Opt-in breadcrumbs and menu bars and other modifiers can be enabled by
+      setting the following command line parameters to <option>yes</option>:</p>
+      <parml otherprops="cols(4)">
+        <plentry>
+          <pt>
+            <parmname>--args.breadcrumbs</parmname>
+          </pt>
+          <pd>Enable Bootstrap
+          <xref href="./breadcrumb.dita" format="dita">breadcrumb components</xref>
+        </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--menubar-toc.include</parmname>
+          </pt>
+          <pd>
+            Add a Bootstrap menubar
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--bidi.include</parmname>
+          </pt>
+          <pd>
+            Whether to force included support for
+            <xref href="./rtl.dita" format="dita">RTL languages</xref>
+          </pd>
+        </plentry>
+      </parml>
+      <p>The following additional command line parameters are also available and described in more detail within
+        the documentation:</p>
+      <parml otherprops="cols(4)">
+        <plentry>
+          <pt>
+            <parmname>--scrollspy-toc</parmname>
+          </pt>
+          <pd>
+            Add a Bootstrap <xref href="./scrollspy.dita" format="dita">scrollspy</xref> navigator
+          </pd>
+        </plentry>
+        <plentry>
+          <pt>
+            <parmname>--toc-spacer.padding</parmname>
+          </pt>
+          <pd>
+            Vertical padding to add to the side menu
+          </pd>
+        </plentry>
+      </parml>
     </section>
     <section>
       <note type="note">Within the sample documentation, the texts describing the usage of each component have been
