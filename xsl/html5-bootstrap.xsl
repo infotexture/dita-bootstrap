@@ -94,12 +94,12 @@
     <xsl:attribute name="class">
       <xsl:text>d-flex flex-column min-vh-100</xsl:text>
       <xsl:if test="*[contains(@class, ' topic/body ')]/@outputclass">
-         <xsl:text> </xsl:text>
+        <xsl:text> </xsl:text>
         <xsl:value-of select="*[contains(@class, ' topic/body ')]/@outputclass"/>
       </xsl:if>
       <xsl:if test="self::dita">
         <xsl:if test="*[contains(@class, ' topic/body ')]/*[contains(@class, ' topic/topic ')][1]/@outputclass">
-           <xsl:text> </xsl:text>
+          <xsl:text> </xsl:text>
           <xsl:value-of
             select="*[contains(@class, ' topic/body ')]/*[contains(@class, ' topic/topic ')][1]/@outputclass"
           />
