@@ -13,7 +13,7 @@
 >
   <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
   <xsl:param name="BIDIRECTIONAL_DOCUMENT" select="'no'" as="xs:string"/>
-  <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'mt-3 border-top bg-primary-subtle'"/>
+  <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'border-top bg-primary-subtle'"/>
   <xsl:param name="BOOTSTRAP_TOPBAR_HDR"/>
 
 
@@ -167,6 +167,25 @@
       </xsl:if>
     </main>
   </xsl:template>
+
+  <xsl:template match="*" mode="addAttributesToBody" priority="5.0">
+    <xsl:attribute name="class">
+      <xsl:text>d-flex flex-column min-vh-100</xsl:text>
+      <xsl:if test="*[contains(@class, ' topic/body ')]/@outputclass">
+        <xsl:text> </xsl:text>
+        <xsl:value-of select="*[contains(@class, ' topic/body ')]/@outputclass"/>
+      </xsl:if>
+      <xsl:if test="self::dita">
+        <xsl:if test="*[contains(@class, ' topic/body ')]/*[contains(@class, ' topic/topic ')][1]/@outputclass">
+          <xsl:text> </xsl:text>
+          <xsl:value-of
+            select="*[contains(@class, ' topic/body ')]/*[contains(@class, ' topic/topic ')][1]/@outputclass"
+          />
+        </xsl:if>
+      </xsl:if>
+    </xsl:attribute>
+  </xsl:template>
+
 
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template match="@* | node()" mode="commonattributes">
@@ -499,7 +518,7 @@
       <footer xsl:use-attribute-sets="footer">
         <!-- ↓ Add Bootstrap CSS ↓ -->
         <xsl:attribute name="class">
-          <xsl:value-of select="$BOOTSTRAP_CSS_FOOTER"/>
+          <xsl:value-of select="concat('mt-auto ', $BOOTSTRAP_CSS_FOOTER)"/>
           <xsl:if test="not($TOC_SPACER_PADDING = '0')">
             <xsl:value-of select="concat(' py-', $TOC_SPACER_PADDING)"/>
           </xsl:if>

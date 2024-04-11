@@ -300,6 +300,9 @@
     <xsl:if test="@scalefit='yes'">
       <xsl:text> img-fluid</xsl:text>
     </xsl:if>
+    <xsl:if test="ancestor::*[contains(@class, ' topic/dt ')]">
+      <xsl:call-template name="bootstrap-dt-word-wrap"/>
+    </xsl:if>
     <xsl:text> </xsl:text>
   </xsl:template>
 
@@ -309,10 +312,32 @@
     <xsl:variable name="is-first-dd" select="empty(preceding-sibling::*[contains(@class, ' topic/dd ')])"/>
     <xsl:choose>
       <xsl:when test="not($is-first-dd)">
-        <xsl:text>col-lg-12  </xsl:text>
+        <xsl:text>col-lg-12 </xsl:text>
       </xsl:when>
       <xsl:when test="$terms=1">
-        <xsl:text>col-lg-9 </xsl:text>
+        <xsl:variable name="dl" select="../../."/>
+        <xsl:text>col-lg-</xsl:text>
+        <xsl:choose>
+          <xsl:when test="contains($dl/@otherprops, 'cols(6)')">
+            <xsl:text>6</xsl:text>
+          </xsl:when>
+          <xsl:when test="contains($dl/@otherprops, 'cols(5)')">
+            <xsl:text>7</xsl:text>
+          </xsl:when>
+          <xsl:when test="contains($dl/@otherprops, 'cols(4)')">
+            <xsl:text>8</xsl:text>
+          </xsl:when>
+          <xsl:when test="contains($dl/@otherprops, 'cols(2)')">
+            <xsl:text>10</xsl:text>
+          </xsl:when>
+          <xsl:when test="contains($dl/@otherprops, 'cols(1)')">
+            <xsl:text>11</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>9</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
+        <xsl:text> </xsl:text>
       </xsl:when>
       <xsl:when test="$terms=2">
         <xsl:text>col-lg-6 </xsl:text>
@@ -331,7 +356,29 @@
     <xsl:variable name="terms" select="count(../*[contains(@class, ' topic/dt ')])"/>
     <xsl:choose>
       <xsl:when test="$terms=1">
-        <xsl:text>col-lg-3 </xsl:text>
+        <xsl:variable name="dl" select="../../."/>
+        <xsl:text>col-lg-</xsl:text>
+        <xsl:choose>
+          <xsl:when test="contains($dl/@otherprops, 'cols(6)')">
+            <xsl:text>6</xsl:text>
+          </xsl:when>
+          <xsl:when test="contains($dl/@otherprops, 'cols(5)')">
+            <xsl:text>5</xsl:text>
+          </xsl:when>
+          <xsl:when test="contains($dl/@otherprops, 'cols(4)')">
+            <xsl:text>4</xsl:text>
+          </xsl:when>
+          <xsl:when test="contains($dl/@otherprops, 'cols(2)')">
+            <xsl:text>2</xsl:text>
+          </xsl:when>
+          <xsl:when test="contains($dl/@otherprops, 'cols(1)')">
+            <xsl:text>1</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>3</xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
+        <xsl:text> </xsl:text>
       </xsl:when>
       <xsl:when test="$terms=2">
         <xsl:text>col-lg-3 </xsl:text>
@@ -341,6 +388,21 @@
       </xsl:when>
       <xsl:when test="$terms=4">
         <xsl:text>col-lg-2 </xsl:text>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- Add additional Bootstrap CSS classes to software elements -->
+  <xsl:template name="bootstrap-dt-word-wrap">
+    <xsl:choose>
+      <xsl:when test="contains(@class,' pr-d/')">
+        <xsl:text> text-wrap</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class,' sw-d/')">
+        <xsl:text> text-wrap</xsl:text>
+      </xsl:when>
+      <xsl:when test="contains(@class,' xml-d/')">
+        <xsl:text> text-wrap</xsl:text>
       </xsl:when>
     </xsl:choose>
   </xsl:template>
@@ -383,7 +445,7 @@
         <xsl:text>alert-info</xsl:text>
       </xsl:when>
       <xsl:when test="@type='note'">
-        <xsl:text>alert-info</xsl:text>
+        <xsl:text>alert-primary</xsl:text>
       </xsl:when>
       <xsl:when test="@type='other'">
         <xsl:text>alert-dark</xsl:text>
