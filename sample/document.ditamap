@@ -84,6 +84,11 @@
         <othermeta name="icon" content="bi-moon-stars"/>
       </topicmeta>
     </topicref>
+    <topicref href="extension-points.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-wrench-adjustable"/>
+      </topicmeta>
+    </topicref>
     <topicref href="search-box.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-search"/>
