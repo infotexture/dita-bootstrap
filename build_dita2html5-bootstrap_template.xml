@@ -158,10 +158,25 @@
       property="icons.cdn.path"
       file="${dita.plugin.net.infotexture.dita-bootstrap.dir}/includes/bootstrap.icons.hdf.xml"
     />
+    <!--
+      For DITA-OT 3.0, 3.1 and 3.2 import a version of the
+      HTML transform without reference to Hazard Statements
+    -->
+    <condition
+      property="bootstrap.xsl"
+      value="bootstrap-3.0.xsl"
+      else="bootstrap.xsl"
+    >
+      <or>
+        <equals arg1="${otrelease}" arg2="3.0"/>
+        <equals arg1="${otrelease}" arg2="3.1"/>
+        <equals arg1="${otrelease}" arg2="3.2"/>
+      </or>
+    </condition>
     <!-- Entrypoint for XSL transforms -->
     <property
       name="args.xsl"
-      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/html5-bootstrap.xsl"
+      location="${dita.plugin.net.infotexture.dita-bootstrap.dir}/xsl/dita2html5-${bootstrap.xsl}"
     />
 
     <makeurl
