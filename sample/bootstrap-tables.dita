@@ -10,11 +10,11 @@
 -->
 <topic id="tables">
   <title>Dynamic Tables</title>
-  <shortdesc>Documentation and examples for creating dynamic tables with the Bootstrap Tables extension.</shortdesc>
+  <shortdesc>Documentation and examples for creating dynamic tables with the Bootstrap Table extension.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
-        <indexterm>Bootstrap Tables</indexterm>
+        <indexterm>Bootstrap Table</indexterm>
         <indexterm><xmlatt>otherprops</xmlatt></indexterm>
         <indexterm><xmlelement>table</xmlelement></indexterm>
       </keywords>
@@ -26,16 +26,16 @@
         and adds the necessary CSS and JavaScript for dynamic tables with search, sort and pagination functions</p>
       <p>For the full documentation, see
         <xref
-        href="https://infotexture.github.io/dita-bootstrap.tables/"
+        href="https://infotexture.github.io/dita-bootstrap.table/"
         format="html"
         scope="external"
-      >infotexture.github.io/dita-bootstrap.tables</xref>.</p>
+      >infotexture.github.io/dita-bootstrap.table</xref>.</p>
     <section>
       <title>Installing the <term>DITA Bootstrap Table</term> plug-in</title>
       <p>Use the <cmdname>dita</cmdname> command to add the <term>DITA Bootstrap Table</term>
        plug-in to your DITA Open Toolkit installation:</p>
       <codeblock outputclass="language-bash"><cmdname>dita</cmdname> <parmname
-        >install</parmname> net.infotexture.dita-bootstrap.tables</codeblock>
+        >install</parmname> net.infotexture.dita-bootstrap.table</codeblock>
     </section>
 
     <section>
