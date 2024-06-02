@@ -105,6 +105,11 @@
         <othermeta name="icon" content="bi-filetype-sass"/>
       </topicmeta>
     </topicref>
+    <topicref href="bootstrap-table.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-table"/>
+      </topicmeta>
+    </topicref>
     <topicref href="bootstrap-extension.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-bootstrap"/>
