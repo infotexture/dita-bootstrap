@@ -56,6 +56,6 @@
     "lint-staged": "15.2.5",
     "prettier": "3.2.5",
     "stylelint": "^16.2.1",
-    "stylelint-config-twbs-bootstrap": "^14.1.0"
+    "stylelint-config-twbs-bootstrap": "^14.2.0"
   }
 }
