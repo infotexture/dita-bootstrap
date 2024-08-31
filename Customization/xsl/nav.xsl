@@ -106,7 +106,7 @@
       <li>
         <hr class="m-1"/>
         <xsl:if test="not($content = '')">
-          <span class="ps-3 bd-divider">
+          <span class="ps-3 bd-divider d-inline-flex">
             <xsl:value-of disable-output-escaping="yes" select="$content"/>
           </span>
         </xsl:if>
