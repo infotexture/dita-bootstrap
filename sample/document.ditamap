@@ -92,7 +92,7 @@
     <topicref href="search-box.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-search"/>
-        <othermeta name="divider" content="Additional Plug-ins"/>
+        <othermeta name="divider" content="Additional Plug&#8209;ins"/>
       </topicmeta>
     </topicref>
     <topicref href="offline.dita">
