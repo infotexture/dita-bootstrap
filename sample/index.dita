@@ -504,7 +504,7 @@
           format="html"
           scope="external"
         >footer file</xref> and Bootstrap also offers additional <xref
-          href="https://getbootstrap.com/docs/5.3/examples/headers/"
+          href="https://getbootstrap.com/docs/5.3/examples/footers/"
           format="html"
           scope="external"
         >examples</xref>. To add a footer to the generated output, pass a custom
