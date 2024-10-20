@@ -34,6 +34,12 @@
       type="enum"
       desc="Specifies whether to generate a navigation TOC in topic pages."
     >
+      <val desc="No TOC">none</val>
+      <val
+        default="true"
+        desc="Partial TOC that shows the current topic"
+      >partial</val>
+      <val desc="Full TOC">full</val>
       <val
         desc="Bootstrap styled partial TOC with descendents in a list-group"
       >list-group-partial</val>
