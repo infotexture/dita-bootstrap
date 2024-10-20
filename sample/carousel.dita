@@ -141,7 +141,7 @@
     <section>
       <title>With non-image elements</title>
       <p>Place additional DITA elements within a <xmlelement>div</xmlelement> element to add them within a carousel.
-        Additional structure and spacing can be added by settting the <xmlatt>outputclass="col-*"</xmlatt>
+        Additional structure and spacing can be added by setting the <xmlatt>outputclass="col-*"</xmlatt>
         attribute.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
