@@ -38,11 +38,11 @@
     }
   },
   "devDependencies": {
-    "@evilmartians/lefthook": "^1.7.22",
     "@prettier/plugin-xml": "3.4.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "bootswatch": "^5.3.3",
+    "lefthook": "^1.7.22",
     "prettier": "3.2.5",
     "stylelint": "^16.2.1",
     "stylelint-config-twbs-bootstrap": "^14.1.0"
