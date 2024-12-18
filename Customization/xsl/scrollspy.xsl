@@ -107,7 +107,7 @@
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template  match="*[contains(@class, ' topic/body ')]" mode="scrollspy">
+  <xsl:template match="*[contains(@class, ' topic/body ')]" mode="scrollspy">
     <xsl:if test="*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))]">
       <xsl:choose>
         <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('list-group')">
@@ -127,9 +127,16 @@
     </xsl:if>
   </xsl:template>
 
-  <xsl:template match="*[contains(@class,' topic/section ') and contains(@outputclass, 'offcanvas-')]" mode="scrollspy" priority="5"/>
+  <xsl:template
+    match="*[contains(@class,' topic/section ') and contains(@outputclass, 'offcanvas-')]"
+    mode="scrollspy"
+    priority="5"
+  />
 
-  <xsl:template match="*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))]" mode="scrollspy">
+  <xsl:template
+    match="*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))]"
+    mode="scrollspy"
+  >
     <xsl:choose>
       <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('list-group')">
         <a class="list-group-item list-group-item-action">

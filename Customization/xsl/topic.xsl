@@ -132,7 +132,9 @@
             <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
             <xsl:attribute name="data-bs-offset">0</xsl:attribute>
           </xsl:when>
-          <xsl:when test="count(*/*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))])&gt;0">
+          <xsl:when
+            test="count(*/*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))])&gt;0"
+          >
             <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
             <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
             <xsl:attribute name="data-bs-offset">0</xsl:attribute>
@@ -182,7 +184,9 @@
               <xsl:call-template name="scrollspy-content"/>
             </div>
           </xsl:when>
-          <xsl:when test="count(*/*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))])&gt;0">
+          <xsl:when
+            test="count(*/*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))])&gt;0"
+          >
             <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
               <xsl:call-template name="scrollspy-content"/>
             </div>
