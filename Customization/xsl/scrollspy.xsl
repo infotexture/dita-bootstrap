@@ -134,7 +134,7 @@
   />
 
   <xsl:template
-    match="*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))]"
+    match="*[@id and ./*[contains(@class, ' topic/title ')] and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))]"
     mode="scrollspy"
   >
     <xsl:choose>
@@ -144,7 +144,7 @@
             <xsl:text>#</xsl:text>
             <xsl:sequence select="dita-ot:generate-id(parent::*/parent::*/@id, @id)"/>
           </xsl:attribute>
-          <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
+          <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="scrollspy-section-title"/>
         </a>
       </xsl:when>
       <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('nav-pill')">
@@ -153,7 +153,7 @@
             <xsl:text>#</xsl:text>
             <xsl:sequence select="dita-ot:generate-id(parent::*/parent::*/@id, @id)"/>
           </xsl:attribute>
-          <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
+          <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="scrollspy-section-title"/>
         </a>
       </xsl:when>
       <xsl:otherwise>
@@ -163,14 +163,16 @@
               <xsl:text>#</xsl:text>
               <xsl:sequence select="dita-ot:generate-id(parent::*/parent::*/@id, @id)"/>
             </xsl:attribute>
-            <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
+            <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="scrollspy-section-title"/>
           </a>
         </li>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
-
+  <xsl:template match="*[contains(@class, ' topic/title ')]" mode="scrollspy-section-title">
+    <xsl:apply-templates/>
+  </xsl:template>
 
   <xsl:template match="*" mode="scrollspy"/>
 </xsl:stylesheet>
