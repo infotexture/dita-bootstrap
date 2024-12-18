@@ -107,5 +107,59 @@
     </xsl:choose>
   </xsl:template>
 
+  <xsl:template  match="*[contains(@class, ' topic/body ')]" mode="scrollspy">
+    <xsl:if test="*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))]">
+      <xsl:choose>
+        <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('list-group')">
+          <xsl:apply-templates mode="scrollspy"/>
+        </xsl:when>
+        <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('nav-pill')">
+          <nav class="nav nav-pills flex-column ps-3">
+            <xsl:apply-templates mode="scrollspy"/>
+          </nav>
+        </xsl:when>
+        <xsl:otherwise>
+          <ul>
+            <xsl:apply-templates mode="scrollspy"/>
+          </ul>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template match="*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))]" mode="scrollspy">
+    <xsl:choose>
+      <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('list-group')">
+        <a class="list-group-item list-group-item-action">
+          <xsl:attribute name="href">
+            <xsl:text>#</xsl:text>
+            <xsl:sequence select="dita-ot:generate-id(parent::*/parent::*/@id, @id)"/>
+          </xsl:attribute>
+          <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
+        </a>
+      </xsl:when>
+      <xsl:when test="$BOOTSTRAP_SCROLLSPY_TOC = ('nav-pill')">
+        <a class="my-1 ps-2 nav-link">
+          <xsl:attribute name="href">
+            <xsl:text>#</xsl:text>
+            <xsl:sequence select="dita-ot:generate-id(parent::*/parent::*/@id, @id)"/>
+          </xsl:attribute>
+          <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
+        </a>
+      </xsl:when>
+      <xsl:otherwise>
+        <li>
+          <a class="ps-2">
+            <xsl:attribute name="href">
+              <xsl:text>#</xsl:text>
+              <xsl:sequence select="dita-ot:generate-id(parent::*/parent::*/@id, @id)"/>
+            </xsl:attribute>
+            <xsl:value-of select="*[contains(@class, ' topic/title ')]"/>
+          </a>
+        </li>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
   <xsl:template match="*" mode="scrollspy"/>
 </xsl:stylesheet>

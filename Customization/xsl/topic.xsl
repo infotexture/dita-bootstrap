@@ -159,11 +159,18 @@
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
       </article>
       <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
-        <xsl:if test="count(*[contains(@class, ' topic/topic ')])&gt;0">
-          <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
-            <xsl:call-template name="scrollspy-content"/>
-          </div>
-        </xsl:if>
+        <xsl:choose>
+          <xsl:when test="count(*[contains(@class, ' topic/topic ')])&gt;0">
+            <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+              <xsl:call-template name="scrollspy-content"/>
+            </div>
+          </xsl:when>
+          <xsl:when test="count(*/*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))])&gt;0">
+            <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+              <xsl:call-template name="scrollspy-content"/>
+            </div>
+          </xsl:when>
+        </xsl:choose>
       </xsl:if>
     </main>
   </xsl:template>
