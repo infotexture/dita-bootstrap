@@ -124,6 +124,23 @@
 
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
+      <!-- ↓ Override to add scrollspy ↓ -->
+      <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
+       <xsl:choose>
+          <xsl:when test="count(*[contains(@class, ' topic/topic ')])&gt;0">
+            <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
+            <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
+            <xsl:attribute name="data-bs-offset">0</xsl:attribute>
+          </xsl:when>
+          <xsl:when test="count(*/*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))])&gt;0">
+            <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
+            <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
+            <xsl:attribute name="data-bs-offset">0</xsl:attribute>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:if>
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+
       <article role="article" class="bs-content">
         <!-- ↓ Add check for bi-directional content ↓ -->
         <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
@@ -772,16 +789,6 @@
       </div>
     </div>
   </xsl:template>
-
-  <!-- Override to add scrollspy -->
-  <xsl:template match="*" mode="addAttributesToBody">
-    <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
-      <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
-      <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
-    </xsl:if>
-  </xsl:template>
-
-
 
   <!--
     Overrides to add CSS classes to use a CSS Grid for the navigation layout

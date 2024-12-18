@@ -26,13 +26,13 @@
     </metadata>
   </prolog>
   <body outputclass="language-markup">
-    <section>
+    <section id="how-it-works">
       <title>How it works</title>
       <p>The carousel is a slideshow for cycling through a series of content, built with CSS 3D transforms and a bit of
         JavaScript. It works with a series of images, text, or custom markup. It also includes support for previous/next
         controls and indicators.</p>
     </section>
-    <section>
+    <section id="example">
       <title>Example</title>
       <p>Carousels don’t automatically normalize slide dimensions. As such, you may need to use additional utilities or
         custom styles to appropriately size content. While carousels support previous/next controls and indicators,
@@ -63,7 +63,7 @@
     &lt;image href="..." /&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
-    <section>
+    <section id="indicators">
       <title>Indicators</title>
       <p> Set <xmlatt>otherprops="indicators(true)"</xmlatt> to add indicators to the carousel, alongside the
         previous/next controls. The indicators let users jump directly to a particular slide.</p>
@@ -92,7 +92,7 @@
     &lt;image href="..." /&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
-    <section>
+    <section id="with-captions">
       <title>With captions</title>
       <p>Add captions by using <xmlelement>fig</xmlelement> elements</p>
     </section>
@@ -138,7 +138,7 @@
     &lt;/fig&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
-    <section>
+    <section id="with-non-image-elements">
       <title>With non-image elements</title>
       <p>Place additional DITA elements within a <xmlelement>div</xmlelement> element to add them within a carousel.
         Additional structure and spacing can be added by setting the <xmlatt>outputclass="col-*"</xmlatt>
@@ -219,7 +219,7 @@ And, kept unused, the user so destroys it.</lines>
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
 
-    <section>
+    <section id="multiple-slides">
       <title>Multiple slides side-by-side</title>
       <p>Add multiple <xmlelement>image</xmlelement> elements within each <xmlelement>li</xmlelement></p>
     </section>
@@ -260,7 +260,7 @@ And, kept unused, the user so destroys it.</lines>
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
 
-    <section>
+    <section id="multiple-slides-with-titles">
       <title>Multiple slides with titles</title>
       <p>Add multiple <xmlelement>image</xmlelement> elements within each <xmlelement>li</xmlelement> and include a
           <xmlelement>div</xmlelement> element for title texts.</p>
@@ -367,7 +367,7 @@ And, kept unused, the user so destroys it.</lines>
     &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
-    <section>
+    <section id="crossfade">
       <title>Crossfade</title>
       <p> Add <xmlatt>outputclass="carousel-fade"</xmlatt> to your carousel to animate slides with a fade transition
         instead of a slide. Depending on your carousel content (e.g., text only slides), you may want to add
@@ -398,7 +398,7 @@ And, kept unused, the user so destroys it.</lines>
     &lt;image href="..." /&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
-    <section>
+    <section id="autoplaying-carousels">
       <title>Autoplaying carousels</title>
       <p>Carousels autoplay on page load by default. Autoplaying carousels automatically pause while hovered with the
         mouse. In browsers that support the Page Visibility API, the carousel will stop cycling when the webpage is not
@@ -430,7 +430,7 @@ And, kept unused, the user so destroys it.</lines>
     &lt;image href="..." /&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
-    <section>
+    <section id="intervals">
       <title>Individual carousel item interval</title>
       <p>Add <xmlatt>otherprops="interval(1000)"</xmlatt> to a carousel item to change the amount of time to delay
         between automatically cycling to the next item.</p>
@@ -459,7 +459,7 @@ And, kept unused, the user so destroys it.</lines>
     &lt;image href="..." /&gt;
   &lt;/li&gt;
 &lt;/ol&gt;</codeblock>
-    <section>
+    <section id="disable-touch-swipe">
       <title>Disable touch swiping</title>
       <p>Carousels support swiping left/right on touchscreen devices to move between slides. Add
           <xmlatt>otherprops="touch(false)"</xmlatt> to disable this option.</p>
