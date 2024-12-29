@@ -108,7 +108,7 @@
       <title>Excluding <xmlelement>section</xmlelement> elements from the navigation</title>
       <p>
         Omit the <xmlatt>id</xmlatt> to ignore a <xmlelement>section</xmlelement>, or wrap the <xmlelement
-        >section</xmlelement> in a <xmlelement>bodydiv</xmlelement> element. <xref
+        >section</xmlelement> in a <xmlelement>bodydiv</xmlelement> element. Any <xref
           href="./offcanvas.dita"
           format="dita"
         >offcanvas components</xref> are ignored automatically.
