@@ -16,6 +16,14 @@
   --dita-maroon: #ff7676;
 }
 
+.list-group-item {
+  border-radius: 0;
+}
+
+.tab-pane pre[class*='language-'] {
+  margin: 0;
+}
+
 .d-dark,
 .d-light {
   display: none;
