@@ -15,6 +15,10 @@
   --dita-maroon: #ff7676;
 }
 
+.list-group-item {
+  border-radius: 0;
+}
+
 .d-dark,
 .d-light {
   display: none;
