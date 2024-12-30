@@ -10,6 +10,8 @@
   --dita-violet: var(--bs-purple);
 }
 
+.list-group-item.active,
+.nav-link.active,
 [data-bs-theme='dark'] {
   --dita-prussian-blue: #6a91cf;
   --dita-violet: #cc99cd;
