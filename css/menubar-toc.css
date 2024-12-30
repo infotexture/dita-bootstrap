@@ -26,7 +26,8 @@ article h1 {
 article h2,
 article h3,
 article h4,
-article [tabindex='0'] {
+article [tabindex='0'],
+section {
   scroll-margin-top: 9rem;
   scroll-margin-bottom: 100px;
 }

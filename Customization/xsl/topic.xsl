@@ -124,6 +124,25 @@
 
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
+      <!-- ↓ Override to add scrollspy ↓ -->
+      <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
+       <xsl:choose>
+          <xsl:when test="count(*[contains(@class, ' topic/topic ')])&gt;0">
+            <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
+            <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
+            <xsl:attribute name="data-bs-offset">0</xsl:attribute>
+          </xsl:when>
+          <xsl:when
+            test="count(*/*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))])&gt;0"
+          >
+            <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
+            <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
+            <xsl:attribute name="data-bs-offset">0</xsl:attribute>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:if>
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+
       <article role="article" class="bs-content">
         <!-- ↓ Add check for bi-directional content ↓ -->
         <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
@@ -159,11 +178,20 @@
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
       </article>
       <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
-        <xsl:if test="count(*[contains(@class, ' topic/topic ')])&gt;0">
-          <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
-            <xsl:call-template name="scrollspy-content"/>
-          </div>
-        </xsl:if>
+        <xsl:choose>
+          <xsl:when test="count(*[contains(@class, ' topic/topic ')])&gt;0">
+            <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+              <xsl:call-template name="scrollspy-content"/>
+            </div>
+          </xsl:when>
+          <xsl:when
+            test="count(*/*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))])&gt;0"
+          >
+            <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+              <xsl:call-template name="scrollspy-content"/>
+            </div>
+          </xsl:when>
+        </xsl:choose>
       </xsl:if>
     </main>
   </xsl:template>
@@ -765,16 +793,6 @@
       </div>
     </div>
   </xsl:template>
-
-  <!-- Override to add scrollspy -->
-  <xsl:template match="*" mode="addAttributesToBody">
-    <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
-      <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
-      <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
-    </xsl:if>
-  </xsl:template>
-
-
 
   <!--
     Overrides to add CSS classes to use a CSS Grid for the navigation layout

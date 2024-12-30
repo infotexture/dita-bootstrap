@@ -89,3 +89,7 @@ article h4,
 article [tabindex='0'] {
   scroll-margin-bottom: 100px;
 }
+
+section {
+  scroll-margin-top: 5.25rem;
+}
