@@ -42,7 +42,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "bootswatch": "^5.3.3",
-    "lefthook": "^1.8.5",
+    "lefthook": "^1.10.10",
     "prettier": "3.4.2",
     "stylelint": "^16.14.1",
     "stylelint-config-twbs-bootstrap": "^15.1.0"
