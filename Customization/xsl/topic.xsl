@@ -45,7 +45,7 @@
   </xsl:variable>
 
   <!-- Define a $newline variable that inserts a Unicode line feed character -->
-  <xsl:variable name="newline" select="'&#xa;'"/>
+  <xsl:variable name="newline" select="'&#xa;'" as="xs:string"/>
 
   <xsl:template name="bidi-auto-code">
     <!-- ↓ Ensure code is rendered LTR in RTL documents ↓ -->
