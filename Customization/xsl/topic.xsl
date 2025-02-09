@@ -107,12 +107,12 @@
     <xsl:if test="exists($header-content)">
       <header xsl:use-attribute-sets="banner">
         <!-- ↓ Add Bootstrap class attributes template ↓ -->
-        <xsl:attribute name="class">
-          <xsl:text>sticky-top</xsl:text>
-          <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
-            <xsl:text> bg-body-tertiary</xsl:text>
-          </xsl:if>
-        </xsl:attribute>
+        <xsl:attribute
+          name="class"
+          select="
+            if ($BOOTSTRAP_MENUBAR_TOC = 'yes') then 'sticky-top bg-body-tertiary'
+            else 'sticky-top'"
+        />
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:sequence select="$header-content"/>
       </header>
@@ -499,14 +499,15 @@
 
   <!-- Determine the default Bootstrap class attribute for a figure -->
   <xsl:template match="*" mode="dita2html:get-default-fig-class">
-    <xsl:choose>
-      <xsl:when test="@frame = 'all'">border</xsl:when>
-      <xsl:when test="@frame = 'sides'">border-start border-end</xsl:when>
-      <xsl:when test="@frame = 'top'">border-top</xsl:when>
-      <xsl:when test="@frame = 'bottom'">border-bottom</xsl:when>
-      <xsl:when test="@frame = 'topbot'">border-top border-bottom</xsl:when>
-      <xsl:otherwise/>
-    </xsl:choose>
+    <xsl:value-of
+      select="
+        if (@frame = 'all') then 'border'
+        else if (@frame = 'sides') then 'border-start border-end'
+        else if (@frame = 'top') then 'border-top'
+        else if (@frame = 'bottom') then 'border-bottom'
+        else if (@frame = 'topbot') then 'border-top border-bottom'
+        else ''"
+    />
   </xsl:template>
 
   <xsl:template

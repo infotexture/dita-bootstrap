@@ -54,11 +54,13 @@
   <!-- Add a Bootstrap CSS border to tables -->
   <xsl:template match="*[contains(@class, ' topic/table ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_TABLE"/>
-    <xsl:choose>
-      <xsl:when test="@colsep='1' and @rowsep='1'"> table-bordered</xsl:when>
-      <xsl:when test="@colsep='0' and @rowsep='0'"> table-borderless</xsl:when>
-      <xsl:otherwise/>
-    </xsl:choose>
+
+     <xsl:value-of
+      select="
+        if (@colsep='1' and @rowsep='1') then ' table-bordered'
+        else if (@colsep='0' and @rowsep='0') then ' table-borderless'
+        else ''"
+    />
     <xsl:next-match/>
   </xsl:template>
   <!-- Enhance the default Bootstrap CSS text color of the table headers -->
@@ -86,19 +88,17 @@
     match="*[contains(@class, ' topic/section ')]/*[contains(@class, ' topic/title ')]"
     mode="get-output-class"
   >
-    <xsl:choose>
-      <xsl:when test="contains(@outputclass, 'h1')"/>
-      <xsl:when test="contains(@outputclass, 'h2')"/>
-      <xsl:when test="contains(@outputclass, 'h3')"/>
-      <xsl:when test="contains(@outputclass, 'h4')"/>
-      <xsl:when test="contains(@outputclass, 'h5')"/>
-      <xsl:when test="contains(@outputclass, 'h6')"/>
-      <xsl:when test="contains(@outputclass, 'display-')"/>
-      <xsl:otherwise>
-        <xsl:value-of select="$BOOTSTRAP_CSS_SECTION_TITLE"/>
-        <xsl:text> </xsl:text>
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:value-of
+      select="
+          if (contains(@outputclass, 'h1')) then ''
+          else if (contains(@outputclass, 'h2')) then ''
+          else if (contains(@outputclass, 'h3')) then ''
+          else if (contains(@outputclass, 'h4')) then ''
+          else if (contains(@outputclass, 'h5')) then ''
+          else if (contains(@outputclass, 'h6')) then ''
+          else if (contains(@outputclass, 'display-')) then ''
+          else ($BOOTSTRAP_CSS_SECTION_TITLE || ' ')"
+    />
   </xsl:template>
 
   <!-- Change the default Bootstrap CSS classes of cards -->
@@ -203,43 +203,6 @@
 
   <xsl:template match="/ | @* | node()" mode="bootstrap-class">
     <xsl:choose>
-      <xsl:when test="contains(@outputclass, 'btn-group-vertical')">
-        <xsl:text/>
-      </xsl:when>
-      <xsl:when test="contains(@outputclass, 'btn-group')">
-        <xsl:text/>
-      </xsl:when>
-      <xsl:when test="contains(@outputclass, 'btn-toolbar')">
-        <xsl:text/>
-      </xsl:when>
-      <xsl:when test="contains(@outputclass, 'accordion-')">
-        <xsl:text>accordion</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@outputclass, 'btn-')">
-        <xsl:text>btn</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@outputclass, 'collapse-')">
-        <xsl:text>collapse</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class, ' topic/ph ') and contains(@outputclass, 'bg-')">
-        <xsl:text>badge</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@outputclass, 'alert-')">
-        <xsl:text>alert</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@outputclass, 'list-group-')">
-        <xsl:text>list-group</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class, ' topic/fig ')">
-        <xsl:text> figure </xsl:text>
-        <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE"/>
-      </xsl:when>
-      <xsl:when test="contains(@class, ' topic/lq ')">
-        <xsl:text> blockquote </xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class, ' topic/dl ')">
-        <xsl:value-of select="$BOOTSTRAP_CSS_DL"/>
-      </xsl:when>
       <xsl:when test="contains(@class, ' topic/dt ')">
         <xsl:if test="empty(@outputclass)">
           <xsl:call-template name="bootstrap-dt"/>
@@ -252,53 +215,44 @@
         </xsl:if>
         <xsl:value-of select="$BOOTSTRAP_CSS_DD"/>
       </xsl:when>
-      <xsl:when test="contains(@class, ' topic/image ') and ancestor::*[contains(@class, ' topic/fig ')]">
-        <xsl:text> figure-img </xsl:text>
-        <xsl:value-of select="$BOOTSTRAP_CSS_FIGURE_IMAGE"/>
-      </xsl:when>
-      <xsl:when test="contains(@outputclass, 'carousel-')">
-        <xsl:text>carousel</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class, ' topic/title ') and ancestor::*[contains(@outputclass, 'alert-')]">
-        <xsl:text>alert-heading</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'alert-')]">
-        <xsl:text>alert-link</xsl:text>
-      </xsl:when>
-      <xsl:when
-        test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])"
-      >
-        <xsl:text>list-group-item</xsl:text>
-      </xsl:when>
-      <xsl:when
-        test="contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])"
-      >
-        <xsl:text>list-inline-item</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@outputclass, 'pagination-')">
-        <xsl:text>pagination</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class, ' topic/li ') and ancestor::*[contains(@outputclass, 'pagination')]">
-        <xsl:text>page-item</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]">
-        <xsl:text>page-link</xsl:text>
-      </xsl:when>
-      <xsl:when test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">
-        <xsl:choose>
-          <xsl:when test="contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')">
-            <xsl:text>bi</xsl:text>
-          </xsl:when>
-          <xsl:when
-            test="contains(@class, ' topic/xref ') and .//*[contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')]"
-          >
-            <xsl:text>icon-link</xsl:text>
-          </xsl:when>
-        </xsl:choose>
-      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of
+          select="
+              if (contains(@outputclass, 'btn-group-vertical')) then ''
+              else if (contains(@outputclass, 'btn-group')) then ''
+              else if (contains(@outputclass, 'btn-toolbar')) then ''
+              else if (contains(@outputclass, 'accordion-')) then 'accordion'
+              else if (contains(@outputclass, 'btn-')) then 'btn'
+              else if (contains(@outputclass, 'collapse-')) then 'collapse'
+              else if (contains(@class, ' topic/ph ') and contains(@outputclass, 'bg-')) then 'badge'
+              else if (contains(@outputclass, 'alert-')) then 'alert'
+              else if (contains(@outputclass, 'list-group-')) then 'list-group'
+              else if (contains(@class, ' topic/fig ')) then ' figure ' || $BOOTSTRAP_CSS_FIGURE
+              else if (contains(@class, ' topic/lq ')) then ' blockquote '
+              else if (contains(@class, ' topic/dl ')) then $BOOTSTRAP_CSS_DL
+              else if (contains(@class, ' topic/image ') and ancestor::*[contains(@class, ' topic/fig ')]) then '  figure-img ' || $BOOTSTRAP_CSS_FIGURE_IMAGE
+              else if (contains(@outputclass, 'carousel-')) then 'carousel'
+              else if (contains(@class, ' topic/title ') and ancestor::*[contains(@outputclass, 'alert-')]) then 'alert-heading'
+              else if (contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'alert-')]) then 'alert-link'
+              else if (contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])) then 'list-group-item'
+              else if (contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])) then 'list-inline-item'
+              else if (contains(@outputclass, 'pagination-')) then 'pagination'
+              else if (contains(@class, ' topic/li ') and ancestor::*[contains(@outputclass, 'pagination')]) then 'page-item'
+              else if (contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]) then 'page-link'
+              else ''"
+        />
+      </xsl:otherwise>
     </xsl:choose>
-    <xsl:if test="@scalefit='yes'">
+    <xsl:if test="(@scalefit='yes')">
       <xsl:text> img-fluid</xsl:text>
+    </xsl:if>
+    <xsl:if test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">
+      <xsl:value-of
+        select="
+          if (contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')) then 'bi'
+          else if (contains(@class, ' topic/xref ') and .//*[contains(@class,' hi-d/i ') and contains(@outputclass, 'bi-')]) then 'icon-link'
+          else ''"
+      />
     </xsl:if>
     <xsl:if test="ancestor::*[contains(@class, ' topic/dt ')]">
       <xsl:call-template name="bootstrap-dt-word-wrap"/>
@@ -316,38 +270,25 @@
       </xsl:when>
       <xsl:when test="$terms=1">
         <xsl:variable name="dl" select="../../."/>
-        <xsl:text>col-lg-</xsl:text>
-        <xsl:choose>
-          <xsl:when test="contains($dl/@otherprops, 'cols(6)')">
-            <xsl:text>6</xsl:text>
-          </xsl:when>
-          <xsl:when test="contains($dl/@otherprops, 'cols(5)')">
-            <xsl:text>7</xsl:text>
-          </xsl:when>
-          <xsl:when test="contains($dl/@otherprops, 'cols(4)')">
-            <xsl:text>8</xsl:text>
-          </xsl:when>
-          <xsl:when test="contains($dl/@otherprops, 'cols(2)')">
-            <xsl:text>10</xsl:text>
-          </xsl:when>
-          <xsl:when test="contains($dl/@otherprops, 'cols(1)')">
-            <xsl:text>11</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:text>9</xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
-        <xsl:text> </xsl:text>
+         <xsl:value-of
+          select="
+            if (contains($dl/@otherprops, 'cols(6)')) then 'col-lg-6 '
+            else if (contains($dl/@otherprops, 'cols(5)')) then 'col-lg-7 '
+            else if (contains($dl/@otherprops, 'cols(4)')) then 'col-lg-8 '
+            else if (contains($dl/@otherprops, 'cols(2)')) then 'col-lg-10 '
+            else if (contains($dl/@otherprops, 'cols(1)')) then 'col-lg-11 '
+            else 'col-lg-9 '"
+        />
       </xsl:when>
-      <xsl:when test="$terms=2">
-        <xsl:text>col-lg-6 </xsl:text>
-      </xsl:when>
-      <xsl:when test="$terms=3">
-        <xsl:text>col-lg-3 </xsl:text>
-      </xsl:when>
-      <xsl:when test="$terms=4">
-        <xsl:text>col-lg-2 </xsl:text>
-      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of
+          select="
+            if ($terms=2) then 'col-lg-6 '
+            else if ($terms=3) then 'col-lg-3 '
+            else if ($terms=4) then 'col-lg-2 '
+            else ''"
+        />
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
@@ -357,103 +298,59 @@
     <xsl:choose>
       <xsl:when test="$terms=1">
         <xsl:variable name="dl" select="../../."/>
-        <xsl:text>col-lg-</xsl:text>
-        <xsl:choose>
-          <xsl:when test="contains($dl/@otherprops, 'cols(6)')">
-            <xsl:text>6</xsl:text>
-          </xsl:when>
-          <xsl:when test="contains($dl/@otherprops, 'cols(5)')">
-            <xsl:text>5</xsl:text>
-          </xsl:when>
-          <xsl:when test="contains($dl/@otherprops, 'cols(4)')">
-            <xsl:text>4</xsl:text>
-          </xsl:when>
-          <xsl:when test="contains($dl/@otherprops, 'cols(2)')">
-            <xsl:text>2</xsl:text>
-          </xsl:when>
-          <xsl:when test="contains($dl/@otherprops, 'cols(1)')">
-            <xsl:text>1</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:text>3</xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
-        <xsl:text> </xsl:text>
+        <xsl:value-of
+          select="
+            if (contains($dl/@otherprops, 'cols(6)')) then 'col-lg-6 '
+            else if (contains($dl/@otherprops, 'cols(5)')) then 'col-lg-5 '
+            else if (contains($dl/@otherprops, 'cols(4)')) then 'col-lg-4 '
+            else if (contains($dl/@otherprops, 'cols(2)')) then 'col-lg-2 '
+            else if (contains($dl/@otherprops, 'cols(1)')) then 'col-lg-1 '
+            else 'col-lg-3 '"
+        />
       </xsl:when>
-      <xsl:when test="$terms=2">
-        <xsl:text>col-lg-3 </xsl:text>
-      </xsl:when>
-      <xsl:when test="$terms=3">
-        <xsl:text>col-lg-3 </xsl:text>
-      </xsl:when>
-      <xsl:when test="$terms=4">
-        <xsl:text>col-lg-2 </xsl:text>
-      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of
+          select="
+            if ($terms=2) then 'col-lg-3 '
+            else if ($terms=3) then 'col-lg-3 '
+            else if ($terms=4) then 'col-lg-2 '
+            else ''"
+        />
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
   <!-- Add additional Bootstrap CSS classes to software elements -->
   <xsl:template name="bootstrap-dt-word-wrap">
-    <xsl:choose>
-      <xsl:when test="contains(@class,' pr-d/')">
-        <xsl:text> text-wrap</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class,' sw-d/')">
-        <xsl:text> text-wrap</xsl:text>
-      </xsl:when>
-      <xsl:when test="contains(@class,' xml-d/')">
-        <xsl:text> text-wrap</xsl:text>
-      </xsl:when>
-    </xsl:choose>
+    <xsl:value-of
+      select="
+        if (contains(@class,' pr-d/')) then ' text-wrap'
+        else if (contains(@class,' sw-d/')) then ' text-wrap'
+        else if (contains(@class,' xml-d/')) then ' text-wrap'
+        else ''"
+    />
   </xsl:template>
 
   <!-- Add additional Bootstrap CSS classes and roles to <note> elements -->
   <xsl:template name="bootstrap-note">
     <xsl:text>alert </xsl:text>
-    <xsl:choose>
-      <xsl:when test="@type='tip'">
-        <xsl:text>alert-success</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='fastpath'">
-        <xsl:text>alert-success</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='remember'">
-        <xsl:text>alert-success</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='restriction'">
-        <xsl:text>alert-warning</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='important'">
-        <xsl:text>alert-warning</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='attention'">
-        <xsl:text>alert-warning</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='caution'">
-        <xsl:text>alert-warning</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='warning'">
-        <xsl:text>alert-warning</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='trouble'">
-        <xsl:text>alert-warning</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='danger'">
-        <xsl:text>alert-danger</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='notice'">
-        <xsl:text>alert-info</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='note'">
-        <xsl:text>alert-primary</xsl:text>
-      </xsl:when>
-      <xsl:when test="@type='other'">
-        <xsl:text>alert-dark</xsl:text>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:text>alert-info</xsl:text>
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:value-of
+      select="
+        if (@type='tip') then 'alert-success'
+        else if (@type='fastpath') then 'alert-success'
+        else if (@type='remember') then 'alert-success'
+        else if (@type='restriction') then 'alert-warning'
+        else if (@type='important') then 'alert-warning'
+        else if (@type='attention') then 'alert-warning'
+        else if (@type='caution') then 'alert-warning'
+        else if (@type='warning') then 'alert-warning'
+        else if (@type='trouble') then 'alert-warning'
+        else if (@type='danger') then 'alert-danger'
+        else if (@type='notice') then 'alert-info'
+        else if (@type='note') then 'alert-primary'
+        else if (@type='other') then 'alert-dark'
+        else 'alert-info'"
+    />
   </xsl:template>
 
   <!-- Add style to a bootstrap element based on otherprops -->
@@ -491,45 +388,22 @@
   <!-- Add icons to <note> elements -->
   <xsl:template name="bootstrap-icon">
     <xsl:variable name="icon">
-      <xsl:choose>
-        <xsl:when test="@type='tip'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_TIP"/>
-        </xsl:when>
-        <xsl:when test="@type='fastpath'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_FASTPATH"/>
-        </xsl:when>
-        <xsl:when test="@type='remember'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_REMEMBER"/>
-        </xsl:when>
-        <xsl:when test="@type='restriction'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_RESTRICTION"/>
-        </xsl:when>
-        <xsl:when test="@type='important'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_IMPORTANT"/>
-        </xsl:when>
-        <xsl:when test="@type='attention'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_ATTENTION"/>
-        </xsl:when>
-        <xsl:when test="@type='caution'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_CAUTION"/>
-        </xsl:when>
-        <xsl:when test="@type='warning'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_WARNING"/>
-        </xsl:when>
-        <xsl:when test="@type='trouble'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_TROUBLE"/>
-        </xsl:when>
-        <xsl:when test="@type='danger'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_DANGER"/>
-        </xsl:when>
-        <xsl:when test="@type='notice'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_NOTICE"/>
-        </xsl:when>
-        <xsl:when test="@type='note'">
-          <xsl:value-of select="$BOOTSTRAP_ICON_NOTE"/>
-        </xsl:when>
-        <!--xsl:when test="@type='other'"/-->
-      </xsl:choose>
+      <xsl:value-of
+        select="
+          if (@type='tip') then $BOOTSTRAP_ICON_TIP
+          else if (@type='fastpath') then $BOOTSTRAP_ICON_FASTPATH
+          else if (@type='remember') then $BOOTSTRAP_ICON_REMEMBER
+          else if (@type='restriction') then $BOOTSTRAP_ICON_RESTRICTION
+          else if (@type='important') then $BOOTSTRAP_ICON_IMPORTANT
+          else if (@type='attention') then $BOOTSTRAP_ICON_ATTENTION
+          else if (@type='caution') then $BOOTSTRAP_ICON_CAUTION
+          else if (@type='warning') then $BOOTSTRAP_ICON_WARNING
+          else if (@type='trouble') then $BOOTSTRAP_ICON_TROUBLE
+          else if (@type='danger') then $BOOTSTRAP_ICON_DANGER
+          else if (@type='notice') then $BOOTSTRAP_ICON_NOTICE
+          else if (@type='note') then $BOOTSTRAP_ICON_NOTE
+          else ''"
+      />
     </xsl:variable>
 
     <xsl:choose>
