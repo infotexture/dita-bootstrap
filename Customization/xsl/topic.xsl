@@ -16,27 +16,25 @@
   <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'border-top bg-primary-subtle'"/>
   <xsl:param name="BOOTSTRAP_TOPBAR_HDR"/>
 
-
   <!--Check the file Url Definition of the TOP HDR FTR-->
   <xsl:variable name="TOPHDFFILE">
     <xsl:choose>
-     <xsl:when test="not($BOOTSTRAP_TOPBAR_HDR)"/> <!-- If no filterfile leave empty -->
-     <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, 'file:')">
-       <xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
-     </xsl:when>
-     <xsl:otherwise>
-       <xsl:choose>
-         <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, '/')">
-           <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
-         </xsl:when>
-         <xsl:otherwise>
-           <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
-         </xsl:otherwise>
-       </xsl:choose>
-     </xsl:otherwise>
+      <xsl:when test="not($BOOTSTRAP_TOPBAR_HDR)"/> <!-- If no filterfile leave empty -->
+      <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, 'file:')">
+        <xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:choose>
+          <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, '/')">
+            <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
-
 
   <xsl:variable name="defaultDirection">
     <xsl:apply-templates select="." mode="get-render-direction">
@@ -123,7 +121,7 @@
     <main xsl:use-attribute-sets="main">
       <!-- ↓ Override to add scrollspy ↓ -->
       <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
-       <xsl:choose>
+        <xsl:choose>
           <xsl:when test="count(*[contains(@class, ' topic/topic ')])&gt;0">
             <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
             <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
@@ -210,7 +208,6 @@
       </xsl:if>
     </xsl:attribute>
   </xsl:template>
-
 
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template match="@* | node()" mode="commonattributes">
@@ -622,7 +619,7 @@
       <xsl:if test="@otherprops">
         <xsl:apply-templates select="." mode="otherprops-attributes"/>
       </xsl:if>
-       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <xsl:choose>
         <xsl:when test="*[contains(@class, ' topic/longdescref ')]">
           <xsl:apply-templates select="*[contains(@class, ' topic/longdescref ')]"/>
@@ -648,8 +645,6 @@
     </img>
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
   </xsl:template>
-
-
 
   <!-- Override to add <meta> elements to page heads -->
   <xsl:template match="*" mode="chapterHead">

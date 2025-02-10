@@ -42,26 +42,26 @@
   </xsl:template>
 
   <xsl:template match="*" mode="frame-processing">
-     <xsl:choose>
-        <xsl:when test="@frame = 'sides'">
-          <xsl:attribute name="class" select="'border-start border-end pt-3 px-3'"/>
-        </xsl:when>
-        <xsl:when test="@frame = 'top'">
-          <xsl:attribute name="class" select="'border-top pt-3'"/>
-        </xsl:when>
-        <xsl:when test="@frame = 'bottom'">
-          <xsl:attribute name="class" select="'border-bottom pt-3 px-3'"/>
-        </xsl:when>
-        <xsl:when test="@frame = 'topbot'">
-          <xsl:attribute name="class" select="'border-top border-bottom pt-3 px-3'"/>
-        </xsl:when>
-        <xsl:when test="@frame = 'all'">
-          <xsl:attribute name="class" select="'border pt-3 px-3'"/>
-        </xsl:when>
-        <xsl:when test="@frame = 'none'">
-          <xsl:attribute name="class" select="'border-0 pt-3 px-3'"/>
-        </xsl:when>
-      </xsl:choose>
+    <xsl:choose>
+      <xsl:when test="@frame = 'sides'">
+        <xsl:attribute name="class" select="'border-start border-end pt-3 px-3'"/>
+      </xsl:when>
+      <xsl:when test="@frame = 'top'">
+        <xsl:attribute name="class" select="'border-top pt-3'"/>
+      </xsl:when>
+      <xsl:when test="@frame = 'bottom'">
+        <xsl:attribute name="class" select="'border-bottom pt-3 px-3'"/>
+      </xsl:when>
+      <xsl:when test="@frame = 'topbot'">
+        <xsl:attribute name="class" select="'border-top border-bottom pt-3 px-3'"/>
+      </xsl:when>
+      <xsl:when test="@frame = 'all'">
+        <xsl:attribute name="class" select="'border pt-3 px-3'"/>
+      </xsl:when>
+      <xsl:when test="@frame = 'none'">
+        <xsl:attribute name="class" select="'border-0 pt-3 px-3'"/>
+      </xsl:when>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="*[contains(@class,' topic/table ')]" name="topic.table">

@@ -770,7 +770,6 @@
                         d='M5 14l6-6-6-6'
                       />
                     </svg>
-
                   </button>
                 </xsl:if>
                 <!-- ↓ Add Bootstrap classes to topic link ↓ -->

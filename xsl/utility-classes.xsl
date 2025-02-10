@@ -55,7 +55,7 @@
   <xsl:template match="*[contains(@class, ' topic/table ')]" mode="get-output-class">
     <xsl:value-of select="$BOOTSTRAP_CSS_TABLE"/>
 
-     <xsl:value-of
+    <xsl:value-of
       select="
         if (@colsep='1' and @rowsep='1') then ' table-bordered'
         else if (@colsep='0' and @rowsep='0') then ' table-borderless'
@@ -90,14 +90,14 @@
   >
     <xsl:value-of
       select="
-          if (contains(@outputclass, 'h1')) then ''
-          else if (contains(@outputclass, 'h2')) then ''
-          else if (contains(@outputclass, 'h3')) then ''
-          else if (contains(@outputclass, 'h4')) then ''
-          else if (contains(@outputclass, 'h5')) then ''
-          else if (contains(@outputclass, 'h6')) then ''
-          else if (contains(@outputclass, 'display-')) then ''
-          else ($BOOTSTRAP_CSS_SECTION_TITLE || ' ')"
+        if (contains(@outputclass, 'h1')) then ''
+        else if (contains(@outputclass, 'h2')) then ''
+        else if (contains(@outputclass, 'h3')) then ''
+        else if (contains(@outputclass, 'h4')) then ''
+        else if (contains(@outputclass, 'h5')) then ''
+        else if (contains(@outputclass, 'h6')) then ''
+        else if (contains(@outputclass, 'display-')) then ''
+        else ($BOOTSTRAP_CSS_SECTION_TITLE || ' ')"
     />
   </xsl:template>
 
@@ -218,28 +218,28 @@
       <xsl:otherwise>
         <xsl:value-of
           select="
-              if (contains(@outputclass, 'btn-group-vertical')) then ''
-              else if (contains(@outputclass, 'btn-group')) then ''
-              else if (contains(@outputclass, 'btn-toolbar')) then ''
-              else if (contains(@outputclass, 'accordion-')) then 'accordion'
-              else if (contains(@outputclass, 'btn-')) then 'btn'
-              else if (contains(@outputclass, 'collapse-')) then 'collapse'
-              else if (contains(@class, ' topic/ph ') and contains(@outputclass, 'bg-')) then 'badge'
-              else if (contains(@outputclass, 'alert-')) then 'alert'
-              else if (contains(@outputclass, 'list-group-')) then 'list-group'
-              else if (contains(@class, ' topic/fig ')) then ' figure ' || $BOOTSTRAP_CSS_FIGURE
-              else if (contains(@class, ' topic/lq ')) then ' blockquote '
-              else if (contains(@class, ' topic/dl ')) then $BOOTSTRAP_CSS_DL
-              else if (contains(@class, ' topic/image ') and ancestor::*[contains(@class, ' topic/fig ')]) then '  figure-img ' || $BOOTSTRAP_CSS_FIGURE_IMAGE
-              else if (contains(@outputclass, 'carousel-')) then 'carousel'
-              else if (contains(@class, ' topic/title ') and ancestor::*[contains(@outputclass, 'alert-')]) then 'alert-heading'
-              else if (contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'alert-')]) then 'alert-link'
-              else if (contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])) then 'list-group-item'
-              else if (contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])) then 'list-inline-item'
-              else if (contains(@outputclass, 'pagination-')) then 'pagination'
-              else if (contains(@class, ' topic/li ') and ancestor::*[contains(@outputclass, 'pagination')]) then 'page-item'
-              else if (contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]) then 'page-link'
-              else ''"
+            if (contains(@outputclass, 'btn-group-vertical')) then ''
+            else if (contains(@outputclass, 'btn-group')) then ''
+            else if (contains(@outputclass, 'btn-toolbar')) then ''
+            else if (contains(@outputclass, 'accordion-')) then 'accordion'
+            else if (contains(@outputclass, 'btn-')) then 'btn'
+            else if (contains(@outputclass, 'collapse-')) then 'collapse'
+            else if (contains(@class, ' topic/ph ') and contains(@outputclass, 'bg-')) then 'badge'
+            else if (contains(@outputclass, 'alert-')) then 'alert'
+            else if (contains(@outputclass, 'list-group-')) then 'list-group'
+            else if (contains(@class, ' topic/fig ')) then ' figure ' || $BOOTSTRAP_CSS_FIGURE
+            else if (contains(@class, ' topic/lq ')) then ' blockquote '
+            else if (contains(@class, ' topic/dl ')) then $BOOTSTRAP_CSS_DL
+            else if (contains(@class, ' topic/image ') and ancestor::*[contains(@class, ' topic/fig ')]) then '  figure-img ' || $BOOTSTRAP_CSS_FIGURE_IMAGE
+            else if (contains(@outputclass, 'carousel-')) then 'carousel'
+            else if (contains(@class, ' topic/title ') and ancestor::*[contains(@outputclass, 'alert-')]) then 'alert-heading'
+            else if (contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'alert-')]) then 'alert-link'
+            else if (contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-group')] or ancestor::ol[contains(@outputclass, 'list-group')])) then 'list-group-item'
+            else if (contains(@class, ' topic/li ') and (ancestor::ul[contains(@outputclass, 'list-inline')] or ancestor::ol[contains(@outputclass, 'list-inline')])) then 'list-inline-item'
+            else if (contains(@outputclass, 'pagination-')) then 'pagination'
+            else if (contains(@class, ' topic/li ') and ancestor::*[contains(@outputclass, 'pagination')]) then 'page-item'
+            else if (contains(@class, ' topic/xref ') and ancestor::*[contains(@outputclass, 'pagination')]) then 'page-link'
+            else ''"
         />
       </xsl:otherwise>
     </xsl:choose>
@@ -270,7 +270,7 @@
       </xsl:when>
       <xsl:when test="$terms=1">
         <xsl:variable name="dl" select="../../."/>
-         <xsl:value-of
+        <xsl:value-of
           select="
             if (contains($dl/@otherprops, 'cols(6)')) then 'col-lg-6 '
             else if (contains($dl/@otherprops, 'cols(5)')) then 'col-lg-7 '
