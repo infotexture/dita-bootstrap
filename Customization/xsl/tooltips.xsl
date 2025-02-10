@@ -18,22 +18,14 @@
     <xsl:attribute name="data-bs-toggle">
       <xsl:text>tooltip</xsl:text>
     </xsl:attribute>
-    <xsl:attribute name="data-bs-placement">
-      <xsl:choose>
-        <xsl:when test="contains(@outputclass, 'tooltip-left')">
-          <xsl:text>left</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@outputclass, 'tooltip-right')">
-          <xsl:text>right</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@outputclass, 'tooltip-bottom')">
-          <xsl:text>bottom</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:text>top</xsl:text>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:attribute>
+    <xsl:attribute
+      name="data-bs-placement"
+      select="
+        if (contains(@outputclass, 'tooltip-left')) then 'left'
+        else if (contains(@outputclass, 'tooltip-right')) then 'right'
+        else if (contains(@outputclass, 'tooltip-bottom')) then 'bottom'
+        else 'top'"
+    />
     <xsl:if test="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]">
       <xsl:attribute name="data-bs-custom-class">
         <xsl:value-of select="*[contains(@class, ' topic/data ') and contains(@name, 'class')][1]"/>

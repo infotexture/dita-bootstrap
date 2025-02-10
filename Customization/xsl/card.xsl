@@ -48,14 +48,12 @@
       </xsl:choose>
     </xsl:param>
 
-    <xsl:variable name="bootstrap-class">
-      <xsl:choose>
-        <xsl:when
-          test="count(preceding-sibling::*[contains(@class, ' topic/title ')]) > 0"
-        >sectiontitle card-subtitle text-body-secondary</xsl:when>
-        <xsl:otherwise>sectiontitle card-title</xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
+    <xsl:variable
+      name="bootstrap-class"
+      select="
+        if (count(preceding-sibling::*[contains(@class, ' topic/title ')]) > 0) then 'sectiontitle card-subtitle text-body-secondary'
+        else 'sectiontitle card-title'"
+    />
     <xsl:element name="{$headLevel}">
       <xsl:attribute name="class">
         <xsl:value-of select="$bootstrap-class"/>

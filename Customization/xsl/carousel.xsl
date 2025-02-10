@@ -150,22 +150,14 @@
   <xsl:template match="*[contains(@class,' topic/image ')]" mode="carousel">
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
     <xsl:variable name="images" select="count(../*[contains(@class, ' topic/image ')])"/>
-    <xsl:variable name="imageWidth">
-      <xsl:choose>
-        <xsl:when test="$images=1">
-          <xsl:text>col-12</xsl:text>
-        </xsl:when>
-        <xsl:when test="$images=2">
-          <xsl:text>col-6</xsl:text>
-        </xsl:when>
-        <xsl:when test="$images=3">
-          <xsl:text>col-4</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:text>col-3</xsl:text>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:variable>
+    <xsl:variable
+      name="imageWidth"
+      select="
+        if ($images=1) then 'col-12'
+        else if ($images=2) then 'col-6'
+        else if ($images=3) then 'col-4'
+        else 'col-3'"
+    />
 
     <div>
       <xsl:attribute name="class" select="$imageWidth"/>

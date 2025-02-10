@@ -16,27 +16,25 @@
   <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'border-top bg-primary-subtle'"/>
   <xsl:param name="BOOTSTRAP_TOPBAR_HDR"/>
 
-
   <!--Check the file Url Definition of the TOP HDR FTR-->
   <xsl:variable name="TOPHDFFILE">
     <xsl:choose>
-     <xsl:when test="not($BOOTSTRAP_TOPBAR_HDR)"/> <!-- If no filterfile leave empty -->
-     <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, 'file:')">
-       <xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
-     </xsl:when>
-     <xsl:otherwise>
-       <xsl:choose>
-         <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, '/')">
-           <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
-         </xsl:when>
-         <xsl:otherwise>
-           <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
-         </xsl:otherwise>
-       </xsl:choose>
-     </xsl:otherwise>
+      <xsl:when test="not($BOOTSTRAP_TOPBAR_HDR)"/> <!-- If no filterfile leave empty -->
+      <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, 'file:')">
+        <xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:choose>
+          <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, '/')">
+            <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
-
 
   <xsl:variable name="defaultDirection">
     <xsl:apply-templates select="." mode="get-render-direction">
@@ -107,12 +105,12 @@
     <xsl:if test="exists($header-content)">
       <header xsl:use-attribute-sets="banner">
         <!-- ↓ Add Bootstrap class attributes template ↓ -->
-        <xsl:attribute name="class">
-          <xsl:text>sticky-top</xsl:text>
-          <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
-            <xsl:text> bg-body-tertiary</xsl:text>
-          </xsl:if>
-        </xsl:attribute>
+        <xsl:attribute
+          name="class"
+          select="
+            if ($BOOTSTRAP_MENUBAR_TOC = 'yes') then 'sticky-top bg-body-tertiary'
+            else 'sticky-top'"
+        />
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:sequence select="$header-content"/>
       </header>
@@ -123,7 +121,7 @@
     <main xsl:use-attribute-sets="main">
       <!-- ↓ Override to add scrollspy ↓ -->
       <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
-       <xsl:choose>
+        <xsl:choose>
           <xsl:when test="count(*[contains(@class, ' topic/topic ')])&gt;0">
             <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
             <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
@@ -210,7 +208,6 @@
       </xsl:if>
     </xsl:attribute>
   </xsl:template>
-
 
   <!-- Override to add Bootstrap classes and roles -->
   <xsl:template match="@* | node()" mode="commonattributes">
@@ -499,14 +496,15 @@
 
   <!-- Determine the default Bootstrap class attribute for a figure -->
   <xsl:template match="*" mode="dita2html:get-default-fig-class">
-    <xsl:choose>
-      <xsl:when test="@frame = 'all'">border</xsl:when>
-      <xsl:when test="@frame = 'sides'">border-start border-end</xsl:when>
-      <xsl:when test="@frame = 'top'">border-top</xsl:when>
-      <xsl:when test="@frame = 'bottom'">border-bottom</xsl:when>
-      <xsl:when test="@frame = 'topbot'">border-top border-bottom</xsl:when>
-      <xsl:otherwise/>
-    </xsl:choose>
+    <xsl:value-of
+      select="
+        if (@frame = 'all') then 'border'
+        else if (@frame = 'sides') then 'border-start border-end'
+        else if (@frame = 'top') then 'border-top'
+        else if (@frame = 'bottom') then 'border-bottom'
+        else if (@frame = 'topbot') then 'border-top border-bottom'
+        else ''"
+    />
   </xsl:template>
 
   <xsl:template
@@ -621,7 +619,7 @@
       <xsl:if test="@otherprops">
         <xsl:apply-templates select="." mode="otherprops-attributes"/>
       </xsl:if>
-       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <xsl:choose>
         <xsl:when test="*[contains(@class, ' topic/longdescref ')]">
           <xsl:apply-templates select="*[contains(@class, ' topic/longdescref ')]"/>
@@ -647,8 +645,6 @@
     </img>
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
   </xsl:template>
-
-
 
   <!-- Override to add <meta> elements to page heads -->
   <xsl:template match="*" mode="chapterHead">

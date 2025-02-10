@@ -2,8 +2,7 @@
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0">
-
-    <!-- the file name containing XHTML to be placed in the HEAD area
+  <!-- the file name containing XHTML to be placed in the HEAD area
        (file name and extension only - no path). -->
   <xsl:param name="BOOTSTRAP_ICONS_CDN"/>
   <!-- Whether to include bootstrap icons.  values are 'yes' or 'no' -->
@@ -65,20 +64,14 @@
   <xsl:import href="plugin:net.infotexture.dita-bootstrap:Customization/xsl/topic.xsl"/>
   <xsl:import href="plugin:net.infotexture.dita-bootstrap:xsl/utility-classes.xsl"/>
 
-
-
   <dita:extension
     id="dita.xsl.html5-bootstrap"
     behavior="org.dita.dost.platform.ImportXSLAction"
     xmlns:dita="http://dita-ot.sourceforge.net"
   />
 
-
-
   <!-- root rule -->
   <xsl:template match="/">
     <xsl:apply-templates/>
   </xsl:template>
-
-
 </xsl:stylesheet>

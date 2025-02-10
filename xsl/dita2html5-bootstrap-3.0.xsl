@@ -2,7 +2,6 @@
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="3.0">
-
   <!--
     For DITA-OT 3.0, 3.1 and 3.2 import a version of the
     HTML transform without reference to Hazard Statements
@@ -21,5 +20,4 @@
   <xsl:template match="/">
     <xsl:apply-templates/>
   </xsl:template>
-
 </xsl:stylesheet>
