@@ -41,32 +41,35 @@
     <xsl:apply-templates select="@pgwide, @scale" mode="#current"/>
   </xsl:template>
 
+  <xsl:template match="*" mode="frame-processing">
+    <xsl:choose>
+      <xsl:when test="@frame = 'sides'">
+        <xsl:attribute name="class" select="'border-start border-end pt-3 px-3'"/>
+      </xsl:when>
+      <xsl:when test="@frame = 'top'">
+        <xsl:attribute name="class" select="'border-top pt-3'"/>
+      </xsl:when>
+      <xsl:when test="@frame = 'bottom'">
+        <xsl:attribute name="class" select="'border-bottom pt-3 px-3'"/>
+      </xsl:when>
+      <xsl:when test="@frame = 'topbot'">
+        <xsl:attribute name="class" select="'border-top border-bottom pt-3 px-3'"/>
+      </xsl:when>
+      <xsl:when test="@frame = 'all'">
+        <xsl:attribute name="class" select="'border pt-3 px-3'"/>
+      </xsl:when>
+      <xsl:when test="@frame = 'none'">
+        <xsl:attribute name="class" select="'border-0 pt-3 px-3'"/>
+      </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+
   <xsl:template match="*[contains(@class,' topic/table ')]" name="topic.table">
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>
 
     <div>
       <!-- ↓ Add Bootstrap CSS frame processing ↓ -->
-      <xsl:choose>
-        <xsl:when test="@frame = 'sides'">
-          <xsl:attribute name="class" select="'border-start border-end pt-3 ps-3 pe-3'"/>
-        </xsl:when>
-        <xsl:when test="@frame = 'top'">
-          <xsl:attribute name="class" select="'border-top pt-3'"/>
-        </xsl:when>
-        <xsl:when test="@frame = 'bottom'">
-          <xsl:attribute name="class" select="'border-bottom pt-3 ps-3 pe-3'"/>
-        </xsl:when>
-        <xsl:when test="@frame = 'topbot'">
-          <xsl:attribute name="class" select="'border-top border-bottom pt-3 ps-3 pe-3'"/>
-        </xsl:when>
-        <xsl:when test="@frame = 'all'">
-          <xsl:attribute name="class" select="'border pt-3 ps-3 pe-3'"/>
-        </xsl:when>
-        <xsl:when test="@frame = 'none'">
-          <xsl:attribute name="class" select="'border-0 pt-3 ps-3 pe-3'"/>
-        </xsl:when>
-      </xsl:choose>
-
+      <xsl:apply-templates select="." mode="frame-processing"/>
       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <table>
         <!-- ↓ Add Bootstrap CSS class processing ↓ -->

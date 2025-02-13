@@ -77,12 +77,12 @@
       <button data-bs-toggle="tab" type="button" role="tab">
         <xsl:attribute name="id" select="concat('heading_' ,$parent)"/>
         <xsl:attribute name="data-bs-target" select="concat('#tab_' ,$parent)"/>
-        <xsl:attribute name="class">
-          <xsl:text>nav-link</xsl:text>
-          <xsl:if test="$index = 0">
-            <xsl:text> active</xsl:text>
-          </xsl:if>
-        </xsl:attribute>
+        <xsl:attribute
+          name="class"
+          select="
+            if ($index = 0) then 'nav-link active'
+            else 'nav-link'"
+        />
         <xsl:attribute name="aria-selected" select="$index=0"/>
         <xsl:attribute name="aria-controls" select="$title"/>
         <xsl:apply-templates/>
@@ -98,12 +98,9 @@
     <button data-bs-toggle="tab" type="button" role="tab">
       <xsl:attribute name="id" select="concat('heading_' ,$parent)"/>
       <xsl:attribute name="data-bs-target" select="concat('#tab_' ,$parent)"/>
-      <xsl:attribute name="class">
-        <xsl:text>nav-link</xsl:text>
-        <xsl:if test="$index = 0">
-          <xsl:text> active</xsl:text>
-        </xsl:if>
-      </xsl:attribute>
+      <xsl:attribute name="class" select="
+        if ($index = 0) then 'nav-link active'
+        else 'nav-link'"/>
       <xsl:attribute name="aria-selected" select="$index=0"/>
       <xsl:attribute name="aria-controls" select="$title"/>
       <xsl:apply-templates/>
@@ -116,13 +113,12 @@
     <xsl:variable name="index" select="count(preceding-sibling::*[contains(@class, ' topic/section ')])"/>
 
     <div role="tabpanel">
-      <xsl:attribute name="class">
-        <xsl:text>tab-pane fade</xsl:text>
-        <xsl:if test="$index = 0">
-          <xsl:text> show active</xsl:text>
-        </xsl:if>
-      </xsl:attribute>
-
+      <xsl:attribute
+        name="class"
+        select="
+          if ($index = 0) then 'tab-pane fade show active'
+          else 'tab-pane fade'"
+      />
       <xsl:attribute name="id" select="concat('tab_' ,$id)"/>
       <xsl:attribute name="aria-labelledby" select="concat('heading_' ,$id)"/>
       <xsl:apply-templates select="*[not(contains(@class,' topic/title '))]"/>

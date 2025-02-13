@@ -162,30 +162,31 @@ dita --input=path/to/your.ditamap \
 
 The HTML output for the following DITA elements can be annotated with common Bootstrap utility classes for borders, background, text, spacing, etc. using additional command line parameters:
 
-- `bootstrap.css.accessibility.link` – common Bootstrap utility classes for accessibility links
-- `bootstrap.css.accessibility.nav` – common Bootstrap utility classes for accessibility navigation
-- `bootstrap.css.accordion` – common utility classes for Bootstrap accordion components
-- `bootstrap.css.card` – common utility classes for Bootstrap card components
-- `bootstrap.css.carousel` – common utility classes for Bootstrap carousel components
-- `bootstrap.css.carousel.caption` – common utility classes for Bootstrap carousel captions
-- `bootstrap.css.carousel.indicators` – common utility classes for Bootstrap carousel indicators
-- `bootstrap.css.codeblock` – common Bootstrap utility classes for DITA `<codeblock>` elements
-- `bootstrap.css.dd` – common utility classes for DITA `<dd>` elements
-- `bootstrap.css.dl` – common utility classes for DITA `<dl>` elements
-- `bootstrap.css.dt` – common utility classes for DITA `<dt>` elements
-- `bootstrap.css.figure` – common utility classes for DITA `<fig>` elements
-- `bootstrap.css.figure.caption` – common utility classes for DITA figure titles
-- `bootstrap.css.figure.image` – common utility classes for images within DITA`<fig>` elements
-- `bootstrap.css.footer` – common utility classes for the HTML `<footer>` element
-- `bootstrap.css.nav.parent` – common utility classes for ancestors of active nav-pill elements
-- `bootstrap.css.pagination` – common utility classes for Bootstrap pagination components
-- `bootstrap.css.section.title` – common Bootstrap utility classes for DITA `<section>` titles
-- `bootstrap.css.shortdesc` – common Bootstrap utility classes for DITA`<shortdesc>` elements
-- `bootstrap.css.table` – common utility classes for DITA `<table>` elements
-- `bootstrap.css.tabs` – common utility classes for Bootstrap horizontal tab components
-- `bootstrap.css.tabs.vertical` – common utility classes for Bootstrap vertical tabs
-- `bootstrap.css.thead` – common utility classes for DITA `<thead>` elements
-- `bootstrap.css.topic.title` – common Bootstrap utility classes for DITA `<topic>` titles
+- `bootstrap.css.accessibility.link` – Common Bootstrap utility classes for accessibility links
+- `bootstrap.css.accessibility.nav` – Common Bootstrap utility classes for accessibility navigation
+- `bootstrap.css.accordion` – Common utility classes for Bootstrap accordion components
+- `bootstrap.css.card` – Common utility classes for Bootstrap card components
+- `bootstrap.css.carousel` – Common utility classes for Bootstrap carousel components
+- `bootstrap.css.carousel.caption` – Common utility classes for Bootstrap carousel captions
+- `bootstrap.css.carousel.indicators` – Common utility classes for Bootstrap carousel indicators
+- `bootstrap.css.codeblock` – Common Bootstrap utility classes for DITA `<codeblock>` elements
+- `bootstrap.css.container.size` – Bootstrap container class for main layout and menubar-TOC. Options: `container`, `container-fluid`, `container-sm`, `container-md`, `container-lg`, `container-xl`, `container-xxl` (default)
+- `bootstrap.css.dd` – Common utility classes for DITA `<dd>` elements
+- `bootstrap.css.dl` – Common utility classes for DITA `<dl>` elements
+- `bootstrap.css.dt` – Common utility classes for DITA `<dt>` elements
+- `bootstrap.css.figure` – Common utility classes for DITA `<fig>` elements
+- `bootstrap.css.figure.caption` – Common utility classes for DITA figure titles
+- `bootstrap.css.figure.image` – Common utility classes for images within DITA`<fig>` elements
+- `bootstrap.css.footer` – Common utility classes for the HTML `<footer>` element
+- `bootstrap.css.nav.parent` – Common utility classes for ancestors of active nav-pill elements
+- `bootstrap.css.pagination` – Common utility classes for Bootstrap pagination components
+- `bootstrap.css.section.title` – Common Bootstrap utility classes for DITA `<section>` titles
+- `bootstrap.css.shortdesc` – Common Bootstrap utility classes for DITA`<shortdesc>` elements
+- `bootstrap.css.table` – Common utility classes for DITA `<table>` elements
+- `bootstrap.css.tabs` – Common utility classes for Bootstrap horizontal tab components
+- `bootstrap.css.tabs.vertical` – Common utility classes for Bootstrap vertical tabs
+- `bootstrap.css.thead` – Common utility classes for DITA `<thead>` elements
+- `bootstrap.css.topic.title` – Common Bootstrap utility classes for DITA `<topic>` titles
 
 You can add your own XSLT customizations by creating a new plug-in that extends the DITA Bootstrap XSLT transforms. Just amend `args.xsl` to point to your own XSLT files. An [XSLT template][16] is included within this repository.
 
@@ -193,34 +194,34 @@ You can add your own XSLT customizations by creating a new plug-in that extends 
 
 The default Bootstrap icons used for DITA `<note>` elements can be overridden using additional command line parameters:
 
-- `bootstrap.icon.note` – icon for standard notes
-- `bootstrap.icon.attention` – icon for attention notes
-- `bootstrap.icon.caution` – icon for caution notes
-- `bootstrap.icon.danger` – icon for danger notes
-- `bootstrap.icon.fastpath` – icon for fastpath notes
-- `bootstrap.icon.important` – icon for important notes
-- `bootstrap.icon.notice` – icon for notice notes
-- `bootstrap.icon.remember` – icon for remember notes
-- `bootstrap.icon.restriction` – icon for restriction notes
-- `bootstrap.icon.tip` – icon for tips
-- `bootstrap.icon.trouble` – icon for trouble notes
-- `bootstrap.icon.warning` – icon for warning notes
+- `bootstrap.icon.note` – Icon for standard notes
+- `bootstrap.icon.attention` – Icon for attention notes
+- `bootstrap.icon.caution` – Icon for caution notes
+- `bootstrap.icon.danger` – Icon for danger notes
+- `bootstrap.icon.fastpath` – Icon for fastpath notes
+- `bootstrap.icon.important` – Icon for important notes
+- `bootstrap.icon.notice` – Icon for notice notes
+- `bootstrap.icon.remember` – Icon for remember notes
+- `bootstrap.icon.restriction` – Icon for restriction notes
+- `bootstrap.icon.tip` – Icon for tips
+- `bootstrap.icon.trouble` – Icon for trouble notes
+- `bootstrap.icon.warning` – Icon for warning notes
 
 ### Optional elements
 
 Bootstrap icons, popovers, tooltips and the dark-mode toggler are enabled by default, but for performance reasons they can be disabled by setting the following command line parameters to `no`:
 
-- `icons.include` – enable Bootstrap icons
-- `popovers.include` – enable Bootstrap popover components and tooltip components
-- `dark.mode.include` - whether to include support for a [dark mode][14] toggler
+- `icons.include` – Enable Bootstrap icons
+- `popovers.include` – Enable Bootstrap popover components and tooltip components
+- `dark.mode.include` – Whether to include support for a [dark mode][14] toggler
 
 Additionally, opt-in breadcrumbs and menu bars and other modifiers can be added using the following parameters
 
-- `args.breadcrumbs` – add Bootstrap breadcrumb components
-- `menubar-toc.include` – add a Bootstrap menubar
-- `scrollspy-toc` – add a Bootstrap [scrollspy][17] navigator
-- `bidi.include` – whether to force included support for RTL languages
-- `toc-spacer.padding` – specifies the vertical padding to add to the side menu
+- `args.breadcrumbs` – Add Bootstrap breadcrumb components
+- `menubar-toc.include` – Add a Bootstrap menubar
+- `scrollspy-toc` – Add a Bootstrap [scrollspy][17] navigator
+- `bidi.include` – Whether to force included support for RTL languages
+- `toc-spacer.padding` – Vertical padding to add to the side menu
 
 ## Feedback
 
@@ -233,7 +234,7 @@ Additionally, opt-in breadcrumbs and menu bars and other modifiers can be added 
 
 ## License
 
-[Apache 2.0](LICENSE) © 2017–2024 Roger W. Fienhold Sheen
+[Apache 2.0](LICENSE) © 2017–2025 Roger W. Fienhold Sheen
 
 The generated HTML created by this software includes the following additional software components which are obtained under license:
 

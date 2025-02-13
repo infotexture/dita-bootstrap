@@ -28,11 +28,11 @@
     <section>
       <title>Overview</title>
       <p>Due to the widespread use of <xmlelement>table</xmlelement> elements across third-party widgets like calendars
-        and date pickers, Bootstrap’s tables are opt-in. Extend with optional modifier outputclasses or custom styles.
+        and date pickers, Bootstrap’s tables are opt-in. Extend with optional modifier output classes or custom styles.
         All table styles are not inherited in Bootstrap, meaning any nested tables can be styled independent from the
         parent.</p>
       <p>Using the most basic table markup, here’s how the default DITA Bootstrap <codeph>.table</codeph>-based tables
-        look in Bootstrap</p>
+        look in Bootstrap.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
       <table>
@@ -69,6 +69,10 @@
     <codeblock>&lt;table&gt;
   ...etc
 &lt;/table&gt;</codeblock>
+    <note type="note">The output classes and custom styles described here are provided by the <term>DITA
+        Bootstrap</term> plug-in itself. If you need additional features like search, sort, and pagination, you can use
+      the <term>Bootstrap Table</term> extension for
+      <xref href="bootstrap-table.dita"/>.</note>
     <section>
       <title>Variants</title>
       <p>Use contextual classes to color tables, table rows or individual cells.</p>
@@ -136,8 +140,7 @@
         </tgroup>
       </table>
     </bodydiv>
-    <codeblock outputclass="xml">
-&lt;!-- On tables --&gt;
+    <codeblock outputclass="xml">&lt;!-- On tables --&gt;
 &lt;table class="table-primary"&gt;...&lt;/table&gt;
 &lt;table class="table-secondary"&gt;...&lt;/table&gt;
 &lt;table class="table-success"&gt;...&lt;/table&gt;

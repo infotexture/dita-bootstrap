@@ -24,25 +24,21 @@
 
   <xsl:template name="expand-accordion-head">
     <xsl:attribute name="aria-expanded" select="contains(@outputclass,'show')"/>
-    <xsl:attribute name="class">
-      <xsl:choose>
-        <xsl:when test="contains(@outputclass,'show')">
-          <xsl:text>accordion-button</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:text>accordion-button collapsed</xsl:text>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:attribute>
+    <xsl:attribute
+      name="class"
+      select="
+        if (contains(@outputclass,'show')) then 'accordion-button'
+        else 'accordion-button collapsed'"
+    />
   </xsl:template>
 
   <xsl:template name="expand-accordion-body">
-    <xsl:attribute name="class">
-      <xsl:text>accordion-collapse collapse</xsl:text>
-      <xsl:if test="contains(@outputclass,'show')">
-        <xsl:text> show</xsl:text>
-      </xsl:if>
-    </xsl:attribute>
+    <xsl:attribute
+      name="class"
+      select="
+        if (contains(@outputclass,'show')) then 'accordion-collapse collapse show'
+        else 'accordion-collapse collapse'"
+    />
   </xsl:template>
 
   <xsl:template match="*[contains(@class, ' topic/section ')]" mode="accordion">
@@ -80,9 +76,6 @@
           </xsl:otherwise>
         </xsl:choose>
         <div class="accordion-body">
-          <!--xsl:call-template name="commonattributes">
-                <xsl:with-param name="default-output-class" select="'accordion-body'"/>
-             </xsl:call-template-->
           <xsl:call-template name="gen-toc-id"/>
           <xsl:call-template name="setidaname"/>
           <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-startprop ')]" mode="out-of-line"/>

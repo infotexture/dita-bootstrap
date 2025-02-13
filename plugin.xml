@@ -3,9 +3,14 @@
 <!-- Copyright © 2017 · infotexture · Roger W. Fienhold Sheen -->
 <!-- See the accompanying LICENSE file for applicable license -->
 <plugin id="net.infotexture.dita-bootstrap">
-  <feature extension="package.version" value="5.3.4"/>
+  <feature extension="package.version" value="5.3.5"/>
   <require plugin="org.dita.html5"/>
   <require plugin="fox.jason.extend.css"/>
+  <!-- extension points -->
+  <extension-point
+    id="dita.xsl.html5-bootstrap"
+    name="HTML5 Bootstrap XSLT import"
+  />
   <transtype
     name="html5-bootstrap"
     extends="html5"
@@ -29,6 +34,12 @@
       type="enum"
       desc="Specifies whether to generate a navigation TOC in topic pages."
     >
+      <val desc="No TOC">none</val>
+      <val
+        default="true"
+        desc="Partial TOC that shows the current topic"
+      >partial</val>
+      <val desc="Full TOC">full</val>
       <val
         desc="Bootstrap styled partial TOC with descendents in a list-group"
       >list-group-partial</val>
@@ -343,6 +354,19 @@
       desc="Specifies an XML file that contains content for the topbar header."
       type="file"
     />
+    <param
+      name="bootstrap.css.container.size"
+      type="enum"
+      desc="Defines Bootstrap container class for main layout and menubar-TOC."
+    >
+      <val>container</val>
+      <val>container-sm</val>
+      <val>container-md</val>
+      <val>container-lg</val>
+      <val>container-xl</val>
+      <val default="true">container-xxl</val>
+      <val>container-fluid</val>
+    </param>
   </transtype>
   <feature extension="ant.import" file="build_dita2html5-bootstrap.xml"/>
   <feature extension="extend.css.process" value="dita-bootstrap.css.copy"/>
@@ -364,4 +388,6 @@
   />
   <!-- Add a template file to enable overrides to use extension points -->
   <template file="build_dita2html5-bootstrap_template.xml"/>
+  <template file="xsl/dita2html5-bootstrapImpl_template.xsl"/>
+  <template file="xsl/dita2html5-legacy-3.0_template.xsl"/>
 </plugin>

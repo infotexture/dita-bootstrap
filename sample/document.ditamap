@@ -22,6 +22,7 @@
       <othermeta name="icon-style" content="color: var(--bs-teal)"/>
     </topicmeta>
     <topicref href="nav.dita"/>
+    <topicref href="containers.dita"/>
     <topicref href="grid.dita"/>
     <topicref href="rtl.dita" navtitle="Right-to-Left Languages" locktitle="yes"/>
   </chapter>
@@ -83,10 +84,15 @@
         <othermeta name="icon" content="bi-moon-stars"/>
       </topicmeta>
     </topicref>
+    <topicref href="extension-points.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-wrench-adjustable"/>
+      </topicmeta>
+    </topicref>
     <topicref href="search-box.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-search"/>
-        <othermeta name="divider" content="Additional Plug-ins"/>
+        <othermeta name="divider" content="Additional Plug&#8209;ins"/>
       </topicmeta>
     </topicref>
     <topicref href="offline.dita">
@@ -99,12 +105,16 @@
         <othermeta name="icon" content="bi-filetype-sass"/>
       </topicmeta>
     </topicref>
-     <topicref href="bootstrap-extension.dita">
+    <topicref href="bootstrap-table.dita">
+      <topicmeta>
+        <othermeta name="icon" content="bi-table"/>
+      </topicmeta>
+    </topicref>
+    <topicref href="bootstrap-extension.dita">
       <topicmeta>
         <othermeta name="icon" content="bi-bootstrap"/>
       </topicmeta>
     </topicref>
-
   </chapter>
   <backmatter deliveryTarget="pdf">
     <booklists>

@@ -18,22 +18,14 @@
     <xsl:attribute name="data-bs-toggle">
       <xsl:text>popover</xsl:text>
     </xsl:attribute>
-    <xsl:attribute name="data-bs-placement">
-      <xsl:choose>
-        <xsl:when test="contains(@outputclass, 'popover-left')">
-          <xsl:text>left</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@outputclass, 'popover-right')">
-          <xsl:text>right</xsl:text>
-        </xsl:when>
-        <xsl:when test="contains(@outputclass, 'popover-bottom')">
-          <xsl:text>bottom</xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:text>top</xsl:text>
-        </xsl:otherwise>
-      </xsl:choose>
-    </xsl:attribute>
+    <xsl:attribute
+      name="data-bs-placement"
+      select="
+        if (contains(@outputclass, 'popover-left')) then 'left'
+        else if (contains(@outputclass, 'popover-right')) then 'right'
+        else if (contains(@outputclass, 'popover-bottom')) then 'bottom'
+        else 'top'"
+    />
     <xsl:if test="*[contains(@class, ' topic/data ') and contains(@name, 'title')][1]">
       <xsl:attribute name="title">
         <xsl:value-of select="*[contains(@class, ' topic/data ') and contains(@name, 'title')][1]"/>

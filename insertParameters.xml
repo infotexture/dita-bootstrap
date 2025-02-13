@@ -244,4 +244,9 @@
     expression="${bootstrap.topbar.hdr.path}"
     if:set="bootstrap.topbar.hdr.path"
   />
+  <param
+    name="BOOTSTRAP_CSS_CONTAINER_SIZE"
+    expression="${bootstrap.css.container.size}"
+    if:set="bootstrap.css.container.size"
+  />
 </dummy>

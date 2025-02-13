@@ -13,30 +13,28 @@
 >
   <xsl:param name="defaultLanguage" select="'en'" as="xs:string"/>
   <xsl:param name="BIDIRECTIONAL_DOCUMENT" select="'no'" as="xs:string"/>
-  <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'mt-3 border-top bg-primary-subtle'"/>
+  <xsl:param name="BOOTSTRAP_CSS_FOOTER" select="'border-top bg-primary-subtle'"/>
   <xsl:param name="BOOTSTRAP_TOPBAR_HDR"/>
-
 
   <!--Check the file Url Definition of the TOP HDR FTR-->
   <xsl:variable name="TOPHDFFILE">
     <xsl:choose>
-     <xsl:when test="not($BOOTSTRAP_TOPBAR_HDR)"/> <!-- If no filterfile leave empty -->
-     <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, 'file:')">
-       <xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
-     </xsl:when>
-     <xsl:otherwise>
-       <xsl:choose>
-         <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, '/')">
-           <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
-         </xsl:when>
-         <xsl:otherwise>
-           <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
-         </xsl:otherwise>
-       </xsl:choose>
-     </xsl:otherwise>
+      <xsl:when test="not($BOOTSTRAP_TOPBAR_HDR)"/> <!-- If no filterfile leave empty -->
+      <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, 'file:')">
+        <xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:choose>
+          <xsl:when test="starts-with($BOOTSTRAP_TOPBAR_HDR, '/')">
+            <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_TOPBAR_HDR"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
     </xsl:choose>
   </xsl:variable>
-
 
   <xsl:variable name="defaultDirection">
     <xsl:apply-templates select="." mode="get-render-direction">
@@ -44,11 +42,8 @@
     </xsl:apply-templates>
   </xsl:variable>
 
-  <!-- Define a newline character -->
-  <xsl:variable name="newline">
-<xsl:text>
-</xsl:text>
-  </xsl:variable>
+  <!-- Define a $newline variable that inserts a Unicode line feed character -->
+  <xsl:variable name="newline" select="'&#xa;'" as="xs:string"/>
 
   <xsl:template name="bidi-auto-code">
     <!-- ↓ Ensure code is rendered LTR in RTL documents ↓ -->
@@ -110,12 +105,12 @@
     <xsl:if test="exists($header-content)">
       <header xsl:use-attribute-sets="banner">
         <!-- ↓ Add Bootstrap class attributes template ↓ -->
-        <xsl:attribute name="class">
-          <xsl:text>sticky-top</xsl:text>
-          <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
-            <xsl:text> bg-body-tertiary</xsl:text>
-          </xsl:if>
-        </xsl:attribute>
+        <xsl:attribute
+          name="class"
+          select="
+            if ($BOOTSTRAP_MENUBAR_TOC = 'yes') then 'sticky-top bg-body-tertiary'
+            else 'sticky-top'"
+        />
         <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
         <xsl:sequence select="$header-content"/>
       </header>
@@ -124,6 +119,25 @@
 
   <xsl:template match="*" mode="addContentToHtmlBodyElement">
     <main xsl:use-attribute-sets="main">
+      <!-- ↓ Override to add scrollspy ↓ -->
+      <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
+        <xsl:choose>
+          <xsl:when test="count(*[contains(@class, ' topic/topic ')])&gt;0">
+            <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
+            <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
+            <xsl:attribute name="data-bs-offset">0</xsl:attribute>
+          </xsl:when>
+          <xsl:when
+            test="count(*/*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))])&gt;0"
+          >
+            <xsl:attribute name="data-bs-spy">scroll</xsl:attribute>
+            <xsl:attribute name="data-bs-target">#bs-scrollspy</xsl:attribute>
+            <xsl:attribute name="data-bs-offset">0</xsl:attribute>
+          </xsl:when>
+        </xsl:choose>
+      </xsl:if>
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+
       <article role="article" class="bs-content">
         <!-- ↓ Add check for bi-directional content ↓ -->
         <xsl:if test="$BIDIRECTIONAL_DOCUMENT = 'yes'">
@@ -159,13 +173,40 @@
         <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
       </article>
       <xsl:if test="$BOOTSTRAP_SCROLLSPY_TOC != 'none'">
-        <xsl:if test="count(*[contains(@class, ' topic/topic ')])&gt;0">
-          <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
-            <xsl:call-template name="scrollspy-content"/>
-          </div>
-        </xsl:if>
+        <xsl:choose>
+          <xsl:when test="count(*[contains(@class, ' topic/topic ')])&gt;0">
+            <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+              <xsl:call-template name="scrollspy-content"/>
+            </div>
+          </xsl:when>
+          <xsl:when
+            test="count(*/*[@id and (contains(@class, ' topic/section ') or contains(@class, ' topic/example '))])&gt;0"
+          >
+            <div class="bs-scrollspy mt-3 mb-5 my-lg-0 mb-lg-5 px-sm-1 text-body-secondary">
+              <xsl:call-template name="scrollspy-content"/>
+            </div>
+          </xsl:when>
+        </xsl:choose>
       </xsl:if>
     </main>
+  </xsl:template>
+
+  <xsl:template match="*" mode="addAttributesToBody" priority="5.0">
+    <xsl:attribute name="class">
+      <xsl:text>d-flex flex-column min-vh-100</xsl:text>
+      <xsl:if test="*[contains(@class, ' topic/body ')]/@outputclass">
+        <xsl:text> </xsl:text>
+        <xsl:value-of select="*[contains(@class, ' topic/body ')]/@outputclass"/>
+      </xsl:if>
+      <xsl:if test="self::dita">
+        <xsl:if test="*[contains(@class, ' topic/body ')]/*[contains(@class, ' topic/topic ')][1]/@outputclass">
+          <xsl:text> </xsl:text>
+          <xsl:value-of
+            select="*[contains(@class, ' topic/body ')]/*[contains(@class, ' topic/topic ')][1]/@outputclass"
+          />
+        </xsl:if>
+      </xsl:if>
+    </xsl:attribute>
   </xsl:template>
 
   <!-- Override to add Bootstrap classes and roles -->
@@ -455,14 +496,15 @@
 
   <!-- Determine the default Bootstrap class attribute for a figure -->
   <xsl:template match="*" mode="dita2html:get-default-fig-class">
-    <xsl:choose>
-      <xsl:when test="@frame = 'all'">border</xsl:when>
-      <xsl:when test="@frame = 'sides'">border-start border-end</xsl:when>
-      <xsl:when test="@frame = 'top'">border-top</xsl:when>
-      <xsl:when test="@frame = 'bottom'">border-bottom</xsl:when>
-      <xsl:when test="@frame = 'topbot'">border-top border-bottom</xsl:when>
-      <xsl:otherwise/>
-    </xsl:choose>
+    <xsl:value-of
+      select="
+        if (@frame = 'all') then 'border'
+        else if (@frame = 'sides') then 'border-start border-end'
+        else if (@frame = 'top') then 'border-top'
+        else if (@frame = 'bottom') then 'border-bottom'
+        else if (@frame = 'topbot') then 'border-top border-bottom'
+        else ''"
+    />
   </xsl:template>
 
   <xsl:template
@@ -499,7 +541,7 @@
       <footer xsl:use-attribute-sets="footer">
         <!-- ↓ Add Bootstrap CSS ↓ -->
         <xsl:attribute name="class">
-          <xsl:value-of select="$BOOTSTRAP_CSS_FOOTER"/>
+          <xsl:value-of select="concat('mt-auto ', $BOOTSTRAP_CSS_FOOTER)"/>
           <xsl:if test="not($TOC_SPACER_PADDING = '0')">
             <xsl:value-of select="concat(' py-', $TOC_SPACER_PADDING)"/>
           </xsl:if>
@@ -577,7 +619,7 @@
       <xsl:if test="@otherprops">
         <xsl:apply-templates select="." mode="otherprops-attributes"/>
       </xsl:if>
-       <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
       <xsl:choose>
         <xsl:when test="*[contains(@class, ' topic/longdescref ')]">
           <xsl:apply-templates select="*[contains(@class, ' topic/longdescref ')]"/>
@@ -603,4 +645,165 @@
     </img>
     <xsl:apply-templates select="*[contains(@class, ' ditaot-d/ditaval-endprop ')]" mode="out-of-line"/>
   </xsl:template>
+
+  <!-- Override to add <meta> elements to page heads -->
+  <xsl:template match="*" mode="chapterHead">
+    <head>
+      <!-- initial meta information -->
+      <xsl:call-template name="generateCharset"/>   <!-- Set the character set to UTF-8 -->
+      <!-- ↓ Add <meta> element from Bootstrap starter template ↓ -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+      <!-- ↑ End customization · Continue with DITA-OT defaults ↓ -->
+      <xsl:call-template name="generateDefaultCopyright"/> <!-- Generate a default copyright, if needed -->
+      <xsl:call-template name="generateDefaultMeta"/> <!-- Standard meta for security, robots, etc -->
+      <xsl:call-template name="getMeta"/>           <!-- Process metadata from topic prolog -->
+      <xsl:call-template name="copyright"/>         <!-- Generate copyright, if specified manually -->
+      <xsl:call-template name="generateChapterTitle"/> <!-- Generate the <title> element -->
+      <xsl:call-template name="gen-user-head"/>    <!-- include user's XSL HEAD processing here -->
+      <xsl:call-template name="gen-user-scripts"/> <!-- include user's XSL javascripts here -->
+      <xsl:call-template name="processHDF"/>        <!-- Add user HDF file, if specified -->
+      <xsl:call-template name="generateCssLinks"/>  <!-- Generate links to CSS files -->
+      <xsl:call-template name="gen-user-styles"/>   <!-- include user's XSL style element and content here -->
+
+      <!-- Add Bootstrap icons -->
+      <xsl:if test="$BOOTSTRAP_ICONS_INCLUDE = 'yes'">
+        <!--Check the file Url Definition of HDF HDR FTR-->
+        <xsl:variable name="BOOTSTRAP_CDNFILE">
+          <xsl:choose>
+            <xsl:when test="not($BOOTSTRAP_ICONS_CDN)"/> <!-- If no filterfile leave empty -->
+            <xsl:when test="starts-with($BOOTSTRAP_ICONS_CDN, 'file:')">
+              <xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:choose>
+                <xsl:when test="starts-with($BOOTSTRAP_ICONS_CDN, '/')">
+                  <xsl:text>file://</xsl:text><xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:text>file:/</xsl:text><xsl:value-of select="$BOOTSTRAP_ICONS_CDN"/>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:otherwise>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:if test="string-length($BOOTSTRAP_CDNFILE) > 0">
+          <xsl:copy-of select="document($BOOTSTRAP_CDNFILE, /)"/>
+        </xsl:if>
+      </xsl:if>
+    </head>
+  </xsl:template>
+
+  <!-- Override to use a CSS Grid -->
+  <xsl:template match="*" mode="chapterBody">
+    <body>
+      <xsl:apply-templates select="." mode="addAttributesToHtmlBodyElement"/>
+      <xsl:call-template name="setaname"/>  <!-- For HTML4 compatibility, if needed -->
+
+      <xsl:call-template name="gen-skip-to-main"/>
+      <!-- ↓ Add CSS classes to use a CSS Grid - see side-toc.css for details  -->
+      <xsl:apply-templates select="." mode="addHeaderToHtmlBodyElement"/>
+      <xsl:if test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
+        <xsl:apply-templates select="." mode="gen-user-toptoc"/>
+      </xsl:if>
+
+      <div>
+        <xsl:attribute
+          name="class"
+          select="concat('bs-container ', $BOOTSTRAP_CSS_CONTAINER_SIZE, ' bd-gutter mt-3 my-md-4')"
+        />
+        <xsl:attribute name="id" select="'content'"/>
+        <xsl:call-template name="gen-user-sidetoc"/>
+        <xsl:apply-templates select="." mode="addContentToHtmlBodyElement"/>
+      </div>
+
+      <xsl:variable name="relpath">
+        <xsl:choose>
+          <xsl:when test="$FILEDIR='.'">
+            <xsl:text>.</xsl:text>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="replace(replace($FILEDIR, '\\', '/') ,'[^/]+','..')"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:variable>
+
+      <xsl:if test="$BOOTSTRAP_POPOVERS_INCLUDE = 'yes'">
+        <script language="javascript" src="{$relpath}/js/popovers.js"/>
+      </xsl:if>
+      <xsl:if test="$BOOTSTRAP_DARK_MODE_INCLUDE = 'yes'">
+        <script language="javascript" src="{$relpath}/js/dark-mode-toggler.js"/>
+      </xsl:if>
+      <!-- ↑ End customization -->
+      <xsl:apply-templates select="." mode="addFooterToHtmlBodyElement"/>
+    </body>
+  </xsl:template>
+
+  <!-- Hidden accessibility buttons for screen readers and keyboard navigation-->
+  <xsl:template name="gen-skip-to-main">
+    <div>
+      <xsl:attribute
+        name="class"
+        select="concat('visually-hidden-focusable overflow-hidden p-2 ', $BOOTSTRAP_CSS_ACCESSIBILITY_NAV)"
+      />
+
+      <div class="container-xl">
+        <a>
+          <xsl:attribute name="class" select="concat('d-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"/>
+          <xsl:apply-templates mode="scrollspy-href" select="*[contains(@class, ' topic/title ')][1]"/>
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Skip to main content'"/>
+          </xsl:call-template>
+        </a>
+        <xsl:choose>
+          <xsl:when test="$BOOTSTRAP_MENUBAR_TOC = 'yes'">
+            <!-- "skip to docs" link refers to the menubar -->
+            <a href="#bs-menubar-nav">
+              <xsl:attribute
+                name="class"
+                select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
+              />
+              <xsl:call-template name="getVariable">
+                <xsl:with-param name="id" select="'Skip to docs navigation'"/>
+              </xsl:call-template>
+            </a>
+          </xsl:when>
+          <xsl:when test="$nav-toc = 'none'">
+            <!-- do not add a "skip to docs" link -->
+          </xsl:when>
+          <xsl:otherwise>
+            <!-- Add a "skip to docs" link to the sidebar -->
+            <a href="#bs-sidebar-nav">
+              <xsl:attribute
+                name="class"
+                select="concat('d-none d-md-inline-flex m-1 ', $BOOTSTRAP_CSS_ACCESSIBILITY_LINK)"
+              />
+              <xsl:call-template name="getVariable">
+                <xsl:with-param name="id" select="'Skip to docs navigation'"/>
+              </xsl:call-template>
+            </a>
+          </xsl:otherwise>
+        </xsl:choose>
+      </div>
+    </div>
+  </xsl:template>
+
+  <!--
+    Overrides to add CSS classes to use a CSS Grid for the navigation layout
+  -->
+  <xsl:attribute-set name="main">
+    <xsl:attribute name="class">bs-main me-3</xsl:attribute>
+    <xsl:attribute name="role">main</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="toc">
+    <xsl:attribute name="role">navigation</xsl:attribute>
+    <xsl:attribute name="id">bs-sidebar-nav</xsl:attribute>
+    <xsl:attribute name="class">d-flex flex-align-start flex-column h-100 overflow-y-auto</xsl:attribute>
+  </xsl:attribute-set>
+
+  <xsl:attribute-set name="menubar-toc">
+    <xsl:attribute name="class">navbar px-3 border-0</xsl:attribute>
+    <xsl:attribute name="role">navigation</xsl:attribute>
+    <xsl:attribute name="id">bs-menubar-nav</xsl:attribute>
+  </xsl:attribute-set>
 </xsl:stylesheet>
