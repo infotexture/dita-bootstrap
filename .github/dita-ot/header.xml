@@ -181,7 +181,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
               >
                 Default
               </button>
@@ -193,7 +193,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/cerulean/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/cerulean/bootstrap.min.css"
               >
                 Cerulean
               </button>
@@ -202,7 +202,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/cosmo/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/cosmo/bootstrap.min.css"
               >
                 Cosmo
               </button>
@@ -211,7 +211,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/cyborg/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/cyborg/bootstrap.min.css"
               >
                 Cyborg
               </button>
@@ -220,7 +220,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/darkly/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/darkly/bootstrap.min.css"
               >
                 Darkly
               </button>
@@ -229,7 +229,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/flatly/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/flatly/bootstrap.min.css"
               >
                 Flatly
               </button>
@@ -238,7 +238,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/journal/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/journal/bootstrap.min.css"
               >
                 Journal
               </button>
@@ -247,7 +247,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/litera/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/litera/bootstrap.min.css"
               >
                 Litera
               </button>
@@ -256,7 +256,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/lumen/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/lumen/bootstrap.min.css"
               >
                 Lumen
               </button>
@@ -265,7 +265,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/lux/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/lux/bootstrap.min.css"
               >
                 Lux
               </button>
@@ -274,7 +274,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/materia/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/materia/bootstrap.min.css"
               >
                 Materia
               </button>
@@ -283,7 +283,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/minty/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/minty/bootstrap.min.css"
               >
                 Minty
               </button>
@@ -292,7 +292,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/morph/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/morph/bootstrap.min.css"
               >
                 Morph
               </button>
@@ -302,7 +302,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/pulse/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/pulse/bootstrap.min.css"
               >
                 Pulse
               </button>
@@ -311,7 +311,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/quartz/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/quartz/bootstrap.min.css"
               >
                 Quartz
               </button>
@@ -320,7 +320,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/sandstone/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/sandstone/bootstrap.min.css"
               >
                 Sandstone
               </button>
@@ -329,7 +329,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/simplex/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/simplex/bootstrap.min.css"
               >
                 Simplex
               </button>
@@ -338,7 +338,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/sketchy/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/sketchy/bootstrap.min.css"
               >
                 Sketchy
               </button>
@@ -347,7 +347,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/slate/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/slate/bootstrap.min.css"
               >
                 Slate
               </button>
@@ -356,7 +356,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/solar/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/solar/bootstrap.min.css"
               >
                 Solar
               </button>
@@ -365,7 +365,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/spacelab/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/spacelab/bootstrap.min.css"
               >
                 SpaceLab
               </button>
@@ -374,7 +374,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/superhero/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/superhero/bootstrap.min.css"
               >
                 Superhero
               </button>
@@ -383,7 +383,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/united/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/united/bootstrap.min.css"
               >
                 United
               </button>
@@ -392,7 +392,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/vapor/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/vapor/bootstrap.min.css"
               >
                 Vapor
               </button>
@@ -401,7 +401,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/yeti/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/yeti/bootstrap.min.css"
               >
                 Yeti
               </button>
@@ -410,7 +410,7 @@
               <button
                 type="button"
                 class="dropdown-item d-flex align-items-center"
-                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.5/dist/zephyr/bootstrap.min.css"
+                data-bs-css-href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.6/dist/zephyr/bootstrap.min.css"
               >
                 Zephyr
               </button>
