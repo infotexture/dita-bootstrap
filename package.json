@@ -40,7 +40,7 @@
   "devDependencies": {
     "@prettier/plugin-xml": "3.4.1",
     "bootstrap": "^5.3.5",
-    "bootstrap-icons": "^1.11.3",
+    "bootstrap-icons": "^1.13.1",
     "bootswatch": "^5.3.5",
     "lefthook": "^1.11.13",
     "prettier": "3.5.3",
