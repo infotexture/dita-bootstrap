@@ -45,6 +45,6 @@
     "lefthook": "^1.11.13",
     "prettier": "3.5.3",
     "stylelint": "^16.19.1",
-    "stylelint-config-twbs-bootstrap": "^16.0.0"
+    "stylelint-config-twbs-bootstrap": "^16.1.0"
   }
 }
