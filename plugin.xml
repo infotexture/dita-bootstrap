@@ -312,6 +312,7 @@
       desc="Defines a specific custom bootstrap theme to use"
       type="enum"
     >
+      <val>brite</val>
       <val>cerulean</val>
       <val>cosmo</val>
       <val>cyborg</val>
