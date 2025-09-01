@@ -77,11 +77,7 @@
           <div>
             <div outputclass="col-4">
               <div outputclass="card w-100">
-                <image
-                  outputclass="card-img-top"
-                  scope="external"
-                  href="https://bootswatch.com/brite/thumbnail.png"
-                />
+                <image outputclass="card-img-top" scope="external" href="https://bootswatch.com/brite/thumbnail.png"/>
                 <p outputclass="text-center">
                   <xref
                     outputclass="link stretched-link link-underline link-underline-opacity-0"
