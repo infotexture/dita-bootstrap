@@ -72,7 +72,7 @@
      <parmname>--args.hdr</parmname>=<filepath>path/to/your-header.xml</filepath> \
      <parmname>--bootstrap.theme</parmname>=<option>&lt;theme-name&gt;</option></codeblock>
 
-     <ol outputclass="carousel pt-2" deliveryTarget="html" otherprops="indicators(true)">
+      <ol outputclass="carousel pt-2" deliveryTarget="html" otherprops="indicators(true)">
         <li>
           <div>
             <div outputclass="col-4">
@@ -163,7 +163,7 @@
             </div>
           </div>
         </li>
-         <li>
+        <li>
           <div>
             <div outputclass="col-4">
               <div outputclass="card w-100">
@@ -249,7 +249,7 @@
             </div>
           </div>
         </li>
-         <li>
+        <li>
           <div>
             <div outputclass="col-4">
               <div outputclass="card w-100">
@@ -339,7 +339,7 @@
             </div>
           </div>
         </li>
-         <li>
+        <li>
           <div>
             <div outputclass="col-4">
               <div outputclass="card w-100">
