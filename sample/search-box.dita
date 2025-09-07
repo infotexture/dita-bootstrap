@@ -52,13 +52,13 @@
     </section>
 
     <section id="installing-node.js">
-        <title>Installing Node.js</title>
-        <p>
-          The <term>DITA Bootstrap Lunr Search</term> plug-in uses the <xref
-          href="https://nodejs.org/"
-          format="html"
-          scope="external"
-        >Node.js</xref> JavaScript runtime to generate the Lunr.js search index.
+      <title>Installing Node.js</title>
+      <p>
+        The
+        <term>DITA Bootstrap Lunr Search</term>
+        plug-in uses the
+        <xref href="https://nodejs.org/" format="html" scope="external">Node.js</xref>
+        JavaScript runtime to generate the Lunr.js search index.
         Node.js must therefore be present for the index to be generated successfully.
         </p>
         <p>

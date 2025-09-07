@@ -33,14 +33,14 @@
           <codeph>alert-success</codeph>).</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-      <section outputclass="alert-primary">A simple primary alert—check it out! </section>
-      <section outputclass="alert-secondary">A simple secondary alert—check it out! </section>
-      <section outputclass="alert-success">A simple success alert—check it out! </section>
-      <section outputclass="alert-danger">A simple danger alert—check it out! </section>
-      <section outputclass="alert-warning">A simple warning alert—check it out! </section>
-      <section outputclass="alert-info">A simple info alert—check it out! </section>
-      <section outputclass="alert-light">A simple light alert—check it out! </section>
-      <section outputclass="alert-dark">A simple dark alert—check it out! </section>
+      <section outputclass="alert-primary">A simple primary alert—check it out!</section>
+      <section outputclass="alert-secondary">A simple secondary alert—check it out!</section>
+      <section outputclass="alert-success">A simple success alert—check it out!</section>
+      <section outputclass="alert-danger">A simple danger alert—check it out!</section>
+      <section outputclass="alert-warning">A simple warning alert—check it out!</section>
+      <section outputclass="alert-info">A simple info alert—check it out!</section>
+      <section outputclass="alert-light">A simple light alert—check it out!</section>
+      <section outputclass="alert-dark">A simple dark alert—check it out!</section>
     </bodydiv>
     <codeblock>&lt;section outputclass="alert-primary"&gt;
   A simple primary alert—check it out!
@@ -106,7 +106,7 @@
       <note type="caution">Care is required when proceeding.</note>
       <note type="important">This note is important.</note>
       <note type="restriction">You can't do what this note says.</note>
-      <note type="danger">You may hurt yourself! </note>
+      <note type="danger">You may hurt yourself!</note>
       <note type="other" othertype="Another note">This is something other than a normal note.</note>
     </div>
     <codeblock>&lt;note type="note"&gt;This is just a note.&lt;/note&gt;

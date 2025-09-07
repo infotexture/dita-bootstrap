@@ -28,7 +28,7 @@
   <body outputclass="language-markup">
     <section>
       <title>Overview</title>
-      <p>Things to know when using the tooltip plugin: </p>
+      <p>Things to know when using the tooltip plugin:</p>
       <ul>
         <li>Tooltips rely on the third-party library
           <xref href="https://popper.js.org" format="html" scope="external">Popper</xref> for positioning.</li>
