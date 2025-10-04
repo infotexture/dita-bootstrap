@@ -3,7 +3,7 @@
 <div class="container text-center">
   <div class="row">
     <div class="col">
-      <!-- Social media -->
+      <!-- Social Media -->
       <p class="pt-3">
         <!-- Bluesky -->
         <a
@@ -14,41 +14,14 @@
         >
           <i class="bi bi-bluesky text-white"/>
         </a>
-        <!-- GitHub -->
+        <!-- Dribbble -->
         <a
           class="btn m-1"
+          style="background-color: #ec4a89;"
           href="#!"
           role="button"
-          style="background-color: #333333;"
         >
-          <i class="bi bi-github text-white"/>
-        </a>
-        <!-- Linkedin -->
-        <a
-          class="btn m-1"
-          href="#!"
-          role="button"
-          style="background-color: #0082ca;"
-        >
-          <i class="bi bi-linkedin text-white"/>
-        </a>
-        <!-- Mastodon -->
-        <a
-          class="btn m-1"
-          href="#!"
-          role="button"
-          style="background-color: #563acc;"
-        >
-          <i class="bi bi-mastodon text-white"/>
-        </a>
-        <!-- Twitter -->
-        <a
-          class="btn m-1"
-          href="#!"
-          role="button"
-          style="background-color: #55acee;"
-        >
-          <i class="bi bi-twitter text-white"/>
+          <i class="bi bi-dribbble text-white"/>
         </a>
         <!-- Facebook -->
         <a
@@ -58,6 +31,15 @@
           role="button"
         >
           <i class="bi bi-facebook text-white"/>
+        </a>
+        <!-- GitHub -->
+        <a
+          class="btn m-1"
+          href="#!"
+          role="button"
+          style="background-color: #333333;"
+        >
+          <i class="bi bi-github text-white"/>
         </a>
         <!-- Google -->
         <a
@@ -77,6 +59,24 @@
         >
           <i class="bi bi-instagram text-white"/>
         </a>
+        <!-- LinkedIn -->
+        <a
+          class="btn m-1"
+          href="#!"
+          role="button"
+          style="background-color: #0082ca;"
+        >
+          <i class="bi bi-linkedin text-white"/>
+        </a>
+        <!-- Mastodon -->
+        <a
+          class="btn m-1"
+          href="#!"
+          role="button"
+          style="background-color: #563acc;"
+        >
+          <i class="bi bi-mastodon text-white"/>
+        </a>
         <!-- Pinterest -->
         <a
           class="btn m-1"
@@ -85,42 +85,6 @@
           role="button"
         >
           <i class="bi bi-pinterest text-white"/>
-        </a>
-        <!-- Stack overflow -->
-        <a
-          class="btn m-1"
-          style="background-color: #ffac44;"
-          href="#!"
-          role="button"
-        >
-          <i class="bi bi-stack-overflow text-white"/>
-        </a>
-        <!-- Youtube -->
-        <a
-          class="btn m-1"
-          style="background-color: #ed302f;"
-          href="#!"
-          role="button"
-        >
-          <i class="bi bi-youtube text-white"/>
-        </a>
-        <!-- Slack -->
-        <a
-          class="btn m-1"
-          style="background-color: #481449;"
-          href="#!"
-          role="button"
-        >
-          <i class="bi bi-slack text-white"/>
-        </a>
-        <!-- Dribbble -->
-        <a
-          class="btn m-1"
-          style="background-color: #ec4a89;"
-          href="#!"
-          role="button"
-        >
-          <i class="bi bi-dribbble text-white"/>
         </a>
         <!-- Reddit -->
         <a
@@ -131,7 +95,43 @@
         >
           <i class="bi bi-reddit text-white"/>
         </a>
-        <!-- Whatsapp -->
+        <!-- Slack -->
+        <a
+          class="btn m-1"
+          style="background-color: #481449;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-slack text-white"/>
+        </a>
+        <!-- Stack Overflow -->
+        <a
+          class="btn m-1"
+          style="background-color: #ffac44;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-stack-overflow text-white"/>
+        </a>
+        <!-- Twitter -->
+        <a
+          class="btn m-1"
+          href="#!"
+          role="button"
+          style="background-color: #55acee;"
+        >
+          <i class="bi bi-twitter text-white"/>
+        </a>
+        <!-- Youtube -->
+        <a
+          class="btn m-1"
+          style="background-color: #ed302f;"
+          href="#!"
+          role="button"
+        >
+          <i class="bi bi-youtube text-white"/>
+        </a>
+        <!-- WhatsApp -->
         <a
           class="btn m-1"
           style="background-color: #25d366;"
