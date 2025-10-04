@@ -5,6 +5,15 @@
     <div class="col">
       <!-- Social media -->
       <p class="pt-3">
+        <!-- Bluesky -->
+        <a
+          class="btn m-1"
+          href="#!"
+          role="button"
+          style="background-color: #0085ff;"
+        >
+          <i class="bi bi-bluesky text-white"/>
+        </a>
         <!-- GitHub -->
         <a
           class="btn m-1"
