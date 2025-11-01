@@ -25,7 +25,7 @@
     </metadata>
   </prolog>
   <body outputclass="language-markup">
-   <section>
+    <section>
       <title>Sidebar</title>
       <p>The plug-in extends the standard HTML5 table of contents (ToC)
         <xref

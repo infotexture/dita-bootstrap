@@ -38,13 +38,13 @@
     }
   },
   "devDependencies": {
-    "@prettier/plugin-xml": "3.4.1",
-    "bootstrap": "^5.3.6",
+    "@prettier/plugin-xml": "3.4.2",
+    "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",
-    "bootswatch": "^5.3.6",
-    "lefthook": "^1.11.13",
-    "prettier": "3.5.3",
-    "stylelint": "^16.19.1",
-    "stylelint-config-twbs-bootstrap": "^16.0.0"
+    "bootswatch": "^5.3.8",
+    "lefthook": "^2.0.2",
+    "prettier": "3.6.2",
+    "stylelint": "^16.25.0",
+    "stylelint-config-twbs-bootstrap": "^16.1.0"
   }
 }

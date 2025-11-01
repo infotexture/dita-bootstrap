@@ -90,8 +90,8 @@
       image MIME type. The final <xmlelement>image</xmlelement> is the default.</p>
     </section>
     <bodydiv outputclass="bd-example" deliveryTarget="html">
-       <p>Change the width of the browser to view different images:</p>
-       <div outputclass="d-picture" deliveryTarget="html">
+      <p>Change the width of the browser to view different images:</p>
+      <div outputclass="d-picture" deliveryTarget="html">
         <image otherprops="media(min-width: 700px)" scope="external" href="https://picsum.photos/id/1/800/400"/>
         <image otherprops="media(min-width: 450px)" scope="external" href="https://picsum.photos/id/4/400/200"/>
         <image otherprops="type(image/jpeg)" scope="external" href="https://picsum.photos/id/5/200/200.jpg"/>
