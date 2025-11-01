@@ -13,7 +13,7 @@
         >
           <i class="bi bi-github text-white"/>
         </a>
-        <!-- Linkedin -->
+        <!-- LinkedIn -->
         <a
           class="btn m-1"
           href="https://www.linkedin.com/in/infotexture/"
@@ -30,6 +30,15 @@
           style="background-color: #563acc;"
         >
           <i class="bi bi-mastodon text-white"/>
+        </a>
+        <!-- Bluesky -->
+        <a
+          class="btn m-1"
+          href="https://bsky.app/profile/infotexture.net"
+          role="button"
+          style="background-color: #0085ff;"
+        >
+          <i class="bi bi-bluesky text-white"/>
         </a>
       </p>
       <p>
