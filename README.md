@@ -2,6 +2,11 @@
 
 A plug-in for [DITA Open Toolkit][1] that extends the default HTML5 output with a basic [Bootstrap][2] template.
 
+> [!IMPORTANT]
+> This repository archive tracked the original `infotexture` version of the DITA Bootstrap plug-in.
+> **The latest version has been transferred to the new [dita-bootstrap](https://github.com/dita-bootstrap/dita-bootstrap) organization on GitHub.**
+> Please update your remote repository URLs to track `dita-bootstrap/dita-bootstrap`.
+
 <!-- MarkdownTOC levels="2,3" -->
 
 - [Installing](#installing)
